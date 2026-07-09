@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lingemy Curriculum — A1 to C1</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+  :root {
+    --orange: #E87722;
+    --orange-light: #FDF0E6;
+    --orange-mid: #F5C49A;
+    --dark: #1C1F2E;
+    --slate: #3A4055;
+    --muted: #6B7080;
+    --border: #E8E4DC;
+    --bg: #FAF8F5;
+    --white: #FFFFFF;
+    --green: #2F7A4F;
+    --green-light: #EBF5F0;
+    --blue: #2A5DB0;
+    --blue-light: #EEF3FB;
+    --purple: #6B3FA0;
+    --purple-light: #F3EEF9;
+    --teal: #1A6B7A;
+    --teal-light: #E8F4F6;
+    --rose: #A83060;
+    --rose-light: #F9EEF3;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--dark);
+    font-size: 14.5px;
+    line-height: 1.6;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--dark);
+    color: #fff;
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+  }
+  .header .brand {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 4vw, 40px);
+    font-weight: 700;
+    color: #F5F0E8;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+  .header p {
+    color: #8A90A0;
+    font-size: 14px;
+    margin-bottom: 1.75rem;
+  }
+  .level-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+  .level-pill {
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1.5px solid transparent;
+  }
+  .level-pill:hover { transform: translateY(-1px); }
+
+  /* ── SEARCH BAR ── */
+  .search-bar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .search-bar input {
+    flex: 1;
+    border: 1.5px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--dark);
+    outline: none;
+    transition: border 0.2s;
+    background: var(--bg);
+  }
+  .search-bar input:focus { border-color: var(--orange); }
+  .search-bar label { font-size: 13px; color: var(--muted); white-space: nowrap; }
+  .search-bar .clear-btn {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 7px 12px;
+    font-size: 12px;
+    color: var(--muted);
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+  }
+  .search-bar .clear-btn:hover { background: var(--bg); }
+
+  /* ── PAGE ── */
+  .page { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem 5rem; }
+
+  /* ── HOW TO USE ── */
+  .how-to {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--orange);
+    border-radius: 0 8px 8px 0;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .how-to .icon { font-size: 22px; margin-top: 2px; }
+  .how-to h3 { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+  .how-to p { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+
+  /* ── GRADE SECTION ── */
+  .grade-section {
+    margin-bottom: 3rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  .grade-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  .grade-badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+    flex-shrink: 0;
+  }
+  .grade-info h2 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 2px;
+  }
+  .grade-info .level-tag {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 12px;
+    letter-spacing: 0.03em;
+  }
+  .grade-toggle {
+    margin-left: auto;
+    font-size: 18px;
+    color: var(--muted);
+    transition: transform 0.25s;
+  }
+  .grade-section.open .grade-toggle { transform: rotate(180deg); }
+
+  .grade-body {
+    display: none;
+    border-top: 1px solid var(--border);
+  }
+  .grade-section.open .grade-body { display: block; }
+
+  /* ── UNIT TABLE ── */
+  .unit-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .unit-table thead tr {
+    background: #F5F2EC;
+  }
+  .unit-table thead th {
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+  }
+  .unit-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+  .unit-table tbody tr:last-child { border-bottom: none; }
+  .unit-table tbody tr:hover { background: #FBF8F4; }
+  .unit-table tbody td {
+    padding: 12px 14px;
+    vertical-align: top;
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+  .unit-num {
+    width: 48px;
+    text-align: center;
+  }
+  .unit-num span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--white);
+  }
+  .col-grammar { width: 28%; }
+  .col-vocab { width: 26%; }
+  .col-theme { width: 22%; }
+  .tag-item {
+    display: inline-block;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 12px;
+    margin: 2px 2px 2px 0;
+    color: var(--slate);
+    font-weight: 500;
+  }
+  .theme-cell {
+    font-weight: 500;
+    color: var(--slate);
+  }
+  .grammar-cell { color: var(--dark); }
+  .vocab-cell { color: var(--slate); }
+
+  /* ── LEVEL COLOURS ── */
+  /* Grade 1 — A1 — orange */
+  .g1 .grade-badge { background: #E87722; }
+  .g1 .grade-header { background: linear-gradient(135deg, #FDF0E6, var(--white)); }
+  .g1 .level-tag { background: var(--orange-light); color: var(--orange); }
+  .g1 .unit-num span { background: var(--orange); }
+  /* Grade 2 — A1-A2 — amber */
+  .g2 .grade-badge { background: #D4882A; }
+  .g2 .grade-header { background: linear-gradient(135deg, #FDF5E6, var(--white)); }
+  .g2 .level-tag { background: #FDF5E6; color: #D4882A; }
+  .g2 .unit-num span { background: #D4882A; }
+  /* Grade 3 — A2 — gold */
+  .g3 .grade-badge { background: #B8920A; }
+  .g3 .grade-header { background: linear-gradient(135deg, #FBF5E0, var(--white)); }
+  .g3 .level-tag { background: #FBF5E0; color: #B8920A; }
+  .g3 .unit-num span { background: #B8920A; }
+  /* Grade 4 — A2-B1 — sage */
+  .g4 .grade-badge { background: #4A8A5A; }
+  .g4 .grade-header { background: linear-gradient(135deg, #EBF5EE, var(--white)); }
+  .g4 .level-tag { background: var(--green-light); color: var(--green); }
+  .g4 .unit-num span { background: var(--green); }
+  /* Grade 5 — B1 — teal */
+  .g5 .grade-badge { background: #1A7A6A; }
+  .g5 .grade-header { background: linear-gradient(135deg, #E6F5F2, var(--white)); }
+  .g5 .level-tag { background: #E6F5F2; color: #1A7A6A; }
+  .g5 .unit-num span { background: #1A7A6A; }
+  /* Grade 6 — B1-B2 — blue */
+  .g6 .grade-badge { background: #2A5DB0; }
+  .g6 .grade-header { background: linear-gradient(135deg, var(--blue-light), var(--white)); }
+  .g6 .level-tag { background: var(--blue-light); color: var(--blue); }
+  .g6 .unit-num span { background: var(--blue); }
+  /* Grade 7 — B2 — indigo */
+  .g7 .grade-badge { background: #3A3AA0; }
+  .g7 .grade-header { background: linear-gradient(135deg, #EEEEF9, var(--white)); }
+  .g7 .level-tag { background: #EEEEF9; color: #3A3AA0; }
+  .g7 .unit-num span { background: #3A3AA0; }
+  /* Grade 8 — B2+ — purple */
+  .g8 .grade-badge { background: var(--purple); }
+  .g8 .grade-header { background: linear-gradient(135deg, var(--purple-light), var(--white)); }
+  .g8 .level-tag { background: var(--purple-light); color: var(--purple); }
+  .g8 .unit-num span { background: var(--purple); }
+  /* Grade 9 — C1 — rose */
+  .g9 .grade-badge { background: var(--rose); }
+  .g9 .grade-header { background: linear-gradient(135deg, var(--rose-light), var(--white)); }
+  .g9 .level-tag { background: var(--rose-light); color: var(--rose); }
+  .g9 .unit-num span { background: var(--rose); }
+  /* Grade 10 — C1 — dark */
+  .g10 .grade-badge { background: var(--dark); }
+  .g10 .grade-header { background: linear-gradient(135deg, #ECEEF2, var(--white)); }
+  .g10 .level-tag { background: #ECEEF2; color: var(--dark); }
+  .g10 .unit-num span { background: var(--dark); }
+
+  /* ── NO RESULTS ── */
+  .no-results {
+    text-align: center;
+    padding: 3rem;
+    color: var(--muted);
+    font-size: 15px;
+    display: none;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--dark);
+    color: #6B7080;
+    text-align: center;
+    padding: 1.75rem;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    margin-top: 3rem;
+  }
+  .footer span { color: var(--orange); }
+
+  @media (max-width: 640px) {
+    .unit-table thead { display: none; }
+    .unit-table tbody tr { display: block; padding: 12px 14px; }
+    .unit-table tbody td { display: block; padding: 3px 0; border: none; width: 100% !important; }
+    .unit-num { width: 100% !important; }
+    .col-grammar, .col-vocab, .col-theme { width: 100% !important; }
+    .unit-table tbody td::before {
+      content: attr(data-label);
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <h1>Your Learning Curriculum</h1>
+  <p>A complete roadmap from A1 to C1 — find your level and see what's ahead</p>
+  <div class="level-pills">
+    <span class="level-pill" style="background:#FDF0E6;color:#E87722;border-color:#E87722" onclick="filterLevel('A1')">A1</span>
+    <span class="level-pill" style="background:#FDF5E6;color:#D4882A;border-color:#D4882A" onclick="filterLevel('A1–A2')">A1–A2</span>
+    <span class="level-pill" style="background:#FBF5E0;color:#B8920A;border-color:#B8920A" onclick="filterLevel('A2')">A2</span>
+    <span class="level-pill" style="background:#EBF5EE;color:#4A8A5A;border-color:#4A8A5A" onclick="filterLevel('A2–B1')">A2–B1</span>
+    <span class="level-pill" style="background:#E6F5F2;color:#1A7A6A;border-color:#1A7A6A" onclick="filterLevel('B1')">B1</span>
+    <span class="level-pill" style="background:#EEF3FB;color:#2A5DB0;border-color:#2A5DB0" onclick="filterLevel('B1–B2')">B1–B2</span>
+    <span class="level-pill" style="background:#EEEEF9;color:#3A3AA0;border-color:#3A3AA0" onclick="filterLevel('B2')">B2</span>
+    <span class="level-pill" style="background:#F3EEF9;color:#6B3FA0;border-color:#6B3FA0" onclick="filterLevel('B2+')">B2+</span>
+    <span class="level-pill" style="background:#F9EEF3;color:#A83060;border-color:#A83060" onclick="filterLevel('C1')">C1</span>
+    <span class="level-pill" style="background:#333;color:#fff;border-color:#555" onclick="filterLevel('all')">Show All</span>
+  </div>
+</header>
+
+<!-- SEARCH -->
+<div class="search-bar">
+  <label>🔍</label>
+  <input type="text" id="searchInput" placeholder="Search grammar, vocabulary, or theme..." oninput="searchCurriculum()">
+  <button class="clear-btn" onclick="clearSearch()">Clear</button>
+</div>
+
+<div class="page">
+
+  <div class="how-to">
+    <div class="icon">💡</div>
+    <div>
+      <h3>How to use this curriculum</h3>
+      <p>Click any grade to expand it and see the 5 units inside. Use the level buttons above to jump to your level, or search for any topic. Each unit shows what grammar you'll study, what vocabulary you'll learn, and the theme of that week's classes.</p>
+    </div>
+  </div>
+
+  <div id="no-results" class="no-results">No results found. Try a different search term.</div>
+
+  <!-- ═══════════════════════════ GRADE 1 ═══════════════════════════ -->
+  <div class="grade-section g1 open" data-level="A1" id="grade1">
+    <div class="grade-header" onclick="toggleGrade(this)">
+      <div class="grade-badge">1</div>
+      <div class="grade-info">
+        <h2>Grade 1</h2>
+        <span class="level-tag">A1 — Beginner</span>
+      </div>
+      <div class="grade-toggle">▾</div>
+    </div>
+    <div class="grade-body">
+      <table class="unit-table">
+        <thead>
+          <tr>
+            <th class="unit-num">Unit</th>
+            <th class="col-grammar">Grammar</th>
+            <th class="col-vocab">Vocabulary</th>
+            <th class="col-theme">Theme</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="unit-num" data-label="Unit"><span>1</span></td>
+            <td class="col-grammar grammar-cell" data-label="Grammar">To Be Verbs · Have Got</td>
+            <td class="col-vocab vocab-cell" data-label="Vocabulary">Feelings · Countries & Nationalities · Numbers</td>
+            <td class="col-theme theme-cell" data-label="Theme">Getting to Know Each Other</td>
+          </tr>
+          <tr>
+            <td class="unit-num" data-label="Unit"><span>2</span></td>
+            <td class="grammar-cell" data-label="Grammar">Adjectives & Nouns · Indefinite Articles (a/an) · Basic Conjunctions (and, but, or)</td>
+            <td class="vocab-cell" data-label="Vocabulary">Jobs · Common feeling words: happy, sad, tired, angry</td>
+            <td class="theme-cell" data-label="Theme">Jobs · Starting a Conversation</td>
+          </tr>
+          <tr>
+            <td class="unit-num" data-label="Unit"><span>3</span></td>
+            <td class="grammar-cell" data-label="Grammar">To Be Questions · Demonstratives (this/that/these/those)</td>
+            <td class="vocab-cell" data-label="Vocabulary">Descriptive Adjectives · Numbers (review)</td>
+            <td class="theme-cell" data-label="Theme">People</td>
+          </tr>
+          <tr>
+            <td class="unit-num" data-label="Unit"><span>4</span></td>
+            <td class="grammar-cell" data-label="Grammar">Plural Nouns · Possessive Adjectives · Object Pronouns (me, him, her, us, them)</td>
+            <td class="vocab-cell" data-label="Vocabulary">Time · Days & Months</td>
+            <td class="theme-cell" data-label="Theme">People & Objects</td>
+          </tr>
+          <tr>
+            <td class="unit-num" data-label="Unit"><span>5</span></td>
+            <td class="grammar-cell" data-label="Grammar">Wh- Questions · Can for Requests</td>
+            <td class="vocab-cell" data-label="Vocabulary">Greetings</td>
+            <td class="theme-cell" data-label="Theme">Greeting</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ GRADE 2 ═══════════════════════════ -->
+  <div class="grade-section g2" data-level="A1–A2" id="grade2">
+    <div class="grade-header" onclick="toggleGrade(this)">
+      <div class="grade-badge">2</div>
+      <div class="grade-info">
+        <h2>Grade 2</h2>
+        <span class="level-tag">A1–A2 — Elementary</span>
+      </div>
+      <div class="grade-toggle">▾</div>
+    </div>
+    <div class="grade-body">
+      <table class="unit-table">
+        <thead><tr><th class="unit-num">Unit</th><th class="col-grammar">Grammar</th><th class="col-vocab">Vocabulary</th><th class="col-theme">Theme</th></tr></thead>
+        <tbody>
+          <tr><td class="unit-num" data-label="Unit"><span>1</span></td><td class="grammar-cell" data-label="Grammar">Present Simple · Possessive Adjectives (review)</td><td class="vocab-cell" data-label="Vocabulary">Routines · Family Tree · Adverbs: always, usually, sometimes, never</td><td class="theme-cell" data-label="Theme">Routines & Daily Activities</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>2</span></td><td class="grammar-cell" data-label="Grammar">Present Simple Questions · Adverbs of Frequency · Can for Requests (review)</td><td class="vocab-cell" data-label="Vocabulary">Hobbies & Activities · Routine</td><td class="theme-cell" data-label="Theme">Hobbies</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>3</span></td><td class="grammar-cell" data-label="Grammar">There Is / There Are · Wh- Questions (review) · Prepositions of Place</td><td class="vocab-cell" data-label="Vocabulary">House · Rooms & Furniture</td><td class="theme-cell" data-label="Theme">Houses · House Hunting</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>4</span></td><td class="grammar-cell" data-label="Grammar">Countable & Uncountable Nouns · Some / Any · Possessive Adjectives (review)</td><td class="vocab-cell" data-label="Vocabulary">Food · Fruit & Vegetables</td><td class="theme-cell" data-label="Theme">Food</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>5</span></td><td class="grammar-cell" data-label="Grammar">Imperatives · Punctuation</td><td class="vocab-cell" data-label="Vocabulary">Coffee Shop Menu · Dates & Ordinal Numbers</td><td class="theme-cell" data-label="Theme">Cafés</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ GRADE 3 ═══════════════════════════ -->
+  <div class="grade-section g3" data-level="A2" id="grade3">
+    <div class="grade-header" onclick="toggleGrade(this)">
+      <div class="grade-badge">3</div>
+      <div class="grade-info">
+        <h2>Grade 3</h2>
+        <span class="level-tag">A2 — Pre-Intermediate</span>
+      </div>
+      <div class="grade-toggle">▾</div>
+    </div>
+    <div class="grade-body">
+      <table class="unit-table">
+        <thead><tr><th class="unit-num">Unit</th><th class="col-grammar">Grammar</th><th class="col-vocab">Vocabulary</th><th class="col-theme">Theme</th></tr></thead>
+        <tbody>
+          <tr><td class="unit-num" data-label="Unit"><span>1</span></td><td class="grammar-cell" data-label="Grammar">Present Progressive · Order of Adjectives</td><td class="vocab-cell" data-label="Vocabulary">Clothes · Appearance</td><td class="theme-cell" data-label="Theme">Describing Appearance</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>2</span></td><td class="grammar-cell" data-label="Grammar">Modal Verbs: Can / Can't / Could</td><td class="vocab-cell" data-label="Vocabulary">Body Parts · Ability vocabulary</td><td class="theme-cell" data-label="Theme">Abilities & Appearances</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>3</span></td><td class="grammar-cell" data-label="Grammar">Gerunds after Prepositions (good at swimming, interested in cooking) · Containers</td><td class="vocab-cell" data-label="Vocabulary">Types of Stores · Grocery Shopping</td><td class="theme-cell" data-label="Theme">Cooking</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>4</span></td><td class="grammar-cell" data-label="Grammar">Simple Past of Be · Going To (preview) · Me Neither/Either!</td><td class="vocab-cell" data-label="Vocabulary">Weather · Travel · Hometown</td><td class="theme-cell" data-label="Theme">Traveling</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>5</span></td><td class="grammar-cell" data-label="Grammar">Prepositions of Time · Prepositions of Place · Wh- Questions (review)</td><td class="vocab-cell" data-label="Vocabulary">Prepositions · Weather words: forecast, degree, temperature</td><td class="theme-cell" data-label="Theme">Discussing Time & Place</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ GRADE 4 ═══════════════════════════ -->
+  <div class="grade-section g4" data-level="A2–B1" id="grade4">
+    <div class="grade-header" onclick="toggleGrade(this)">
+      <div class="grade-badge">4</div>
+      <div class="grade-info">
+        <h2>Grade 4</h2>
+        <span class="level-tag">A2–B1 — Intermediate</span>
+      </div>
+      <div class="grade-toggle">▾</div>
+    </div>
+    <div class="grade-body">
+      <table class="unit-table">
+        <thead><tr><th class="unit-num">Unit</th><th class="col-grammar">Grammar</th><th class="col-vocab">Vocabulary</th><th class="col-theme">Theme</th></tr></thead>
+        <tbody>
+          <tr><td class="unit-num" data-label="Unit"><span>1</span></td><td class="grammar-cell" data-label="Grammar">Present Simple (consolidation) · Object Pronouns (review)</td><td class="vocab-cell" data-label="Vocabulary">Jobs · Hobbies</td><td class="theme-cell" data-label="Theme">Jobs & Hobbies</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>2</span></td><td class="grammar-cell" data-label="Grammar">Simple Past of Regular Verbs · Adverbs of Manner</td><td class="vocab-cell" data-label="Vocabulary">Around the City · Direction words</td><td class="theme-cell" data-label="Theme">Towns & Cities</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>3</span></td><td class="grammar-cell" data-label="Grammar">Simple Past of Irregular Verbs (said, went, got, came, took, knew, saw, thought, made, told)</td><td class="vocab-cell" data-label="Vocabulary">Shopping · Cars</td><td class="theme-cell" data-label="Theme">Shopping · Borrowing</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>4</span></td><td class="grammar-cell" data-label="Grammar">Comparative & Superlative Adjectives</td><td class="vocab-cell" data-label="Vocabulary">Sports</td><td class="theme-cell" data-label="Theme">Sports</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>5</span></td><td class="grammar-cell" data-label="Grammar">Past Progressive · Definite Article "The" · Linkers: and, but, because, so, however, although · Present Perfect (preview)</td><td class="vocab-cell" data-label="Vocabulary">Discourse linkers · Time expressions</td><td class="theme-cell" data-label="Theme">Describing the Past</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ GRADE 5 ═══════════════════════════ -->
+  <div class="grade-section g5" data-level="B1" id="grade5">
+    <div class="grade-header" onclick="toggleGrade(this)">
+      <div class="grade-badge">5</div>
+      <div class="grade-info">
+        <h2>Grade 5</h2>
+        <span class="level-tag">B1 — Intermediate</span>
+      </div>
+      <div class="grade-toggle">▾</div>
+    </div>
+    <div class="grade-body">
+      <table class="unit-table">
+        <thead><tr><th class="unit-num">Unit</th><th class="col-grammar">Grammar</th><th class="col-vocab">Vocabulary</th><th class="col-theme">Theme</th></tr></thead>
+        <tbody>
+          <tr><td class="unit-num" data-label="Unit"><span>1</span></td><td class="grammar-cell" data-label="Grammar">Be Going To (full treatment) · Future Plans</td><td class="vocab-cell" data-label="Vocabulary">Movies & Movie Recommendations</td><td class="theme-cell" data-label="Theme">Movies & Entertainment</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>2</span></td><td class="grammar-cell" data-label="Grammar">Present Perfect (introduced) · Enough / Too · Verb + Gerund (enjoy, avoid, finish, mind, suggest)</td><td class="vocab-cell" data-label="Vocabulary">Life Experiences · Illnesses</td><td class="theme-cell" data-label="Theme">Life Experiences · Ailments</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>3</span></td><td class="grammar-cell" data-label="Grammar">Going To vs. Will (contrast) · Discourse Markers: well, actually, I mean, you know</td><td class="vocab-cell" data-label="Vocabulary">Plans & Trips · At the Hotel</td><td class="theme-cell" data-label="Theme">Trips · Hotels</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>4</span></td><td class="grammar-cell" data-label="Grammar">Present Perfect (for/since → already/yet/just) · Reflexive Pronouns (myself, yourself, himself, herself)</td><td class="vocab-cell" data-label="Vocabulary">Injuries · Renovation & Construction</td><td class="theme-cell" data-label="Theme">Renovation · Incidents</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>5</span></td><td class="grammar-cell" data-label="Grammar">Prefer / Would Rather · Modal Verbs (extended) · As + adj + As · Reported Speech (preview)</td><td class="vocab-cell" data-label="Vocabulary">At the Bank · Basic reporting verbs: said, told, asked</td><td class="theme-cell" data-label="Theme">Bank · Advice</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ GRADE 6 ═══════════════════════════ -->
+  <div class="grade-section g6" data-level="B1–B2" id="grade6">
+    <div class="grade-header" onclick="toggleGrade(this)">
+      <div class="grade-badge">6</div>
+      <div class="grade-info">
+        <h2>Grade 6</h2>
+        <span class="level-tag">B1–B2 — Upper Intermediate</span>
+      </div>
+      <div class="grade-toggle">▾</div>
+    </div>
+    <div class="grade-body">
+      <table class="unit-table">
+        <thead><tr><th class="unit-num">Unit</th><th class="col-grammar">Grammar</th><th class="col-vocab">Vocabulary</th><th class="col-theme">Theme</th></tr></thead>
+        <tbody>
+          <tr><td class="unit-num" data-label="Unit"><span>1</span></td><td class="grammar-cell" data-label="Grammar">Past Simple vs. Present Perfect · Zero Conditional (review) · 1st Conditional</td><td class="vocab-cell" data-label="Vocabulary">School & Education · Strengths & Weaknesses</td><td class="theme-cell" data-label="Theme">School</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>2</span></td><td class="grammar-cell" data-label="Grammar">Future Forms: going to, present continuous, will · Tag Questions</td><td class="vocab-cell" data-label="Vocabulary">Bank · Transportation</td><td class="theme-cell" data-label="Theme">Transportation · Banking</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>3</span></td><td class="grammar-cell" data-label="Grammar">Determiners (some, most, all) · Modal Verbs (extended) · Indirect Questions</td><td class="vocab-cell" data-label="Vocabulary">Airport · Stereotypes & Cultural differences</td><td class="theme-cell" data-label="Theme">At the Airport · Culture</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>4</span></td><td class="grammar-cell" data-label="Grammar">Possessive Forms · Compound Words · Collocation (make/do, strong/powerful)</td><td class="vocab-cell" data-label="Vocabulary">Personality Adjectives · Relationships</td><td class="theme-cell" data-label="Theme">Relationships</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>5</span></td><td class="grammar-cell" data-label="Grammar">Phrasal Verbs (find out, come back, go on, turn on/off, pick up, give up, look up, carry on) · Gerunds vs. Infinitives (remember, stop, try)</td><td class="vocab-cell" data-label="Vocabulary">Technology · Slang Words</td><td class="theme-cell" data-label="Theme">Technology · (In)Formality</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ GRADE 7 ═══════════════════════════ -->
+  <div class="grade-section g7" data-level="B2" id="grade7">
+    <div class="grade-header" onclick="toggleGrade(this)">
+      <div class="grade-badge">7</div>
+      <div class="grade-info">
+        <h2>Grade 7</h2>
+        <span class="level-tag">B2 — Upper Intermediate</span>
+      </div>
+      <div class="grade-toggle">▾</div>
+    </div>
+    <div class="grade-body">
+      <table class="unit-table">
+        <thead><tr><th class="unit-num">Unit</th><th class="col-grammar">Grammar</th><th class="col-vocab">Vocabulary</th><th class="col-theme">Theme</th></tr></thead>
+        <tbody>
+          <tr><td class="unit-num" data-label="Unit"><span>1</span></td><td class="grammar-cell" data-label="Grammar">Second Conditional · Wish + Past Simple · Wish + Could/Would</td><td class="vocab-cell" data-label="Vocabulary">Politics · Wishes & regret vocabulary</td><td class="theme-cell" data-label="Theme">Politics</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>2</span></td><td class="grammar-cell" data-label="Grammar">Passive Voice (be-passive) · Get-Passive · Order of Adjectives (review)</td><td class="vocab-cell" data-label="Vocabulary">Fabrics, Materials & Patterns</td><td class="theme-cell" data-label="Theme">Clothing</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>3</span></td><td class="grammar-cell" data-label="Grammar">Used to / Would · Be Used to Doing · Get Used to Doing</td><td class="vocab-cell" data-label="Vocabulary">Society · Nostalgia vocabulary</td><td class="theme-cell" data-label="Theme">Childhood & Memories</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>4</span></td><td class="grammar-cell" data-label="Grammar">Relative Clauses (defining vs. non-defining) · Whose · Supposed to · Discourse Coherence: on the other hand, in contrast, as a result, consequently</td><td class="vocab-cell" data-label="Vocabulary">Festivals · Accident-related words</td><td class="theme-cell" data-label="Theme">Festivities</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>5</span></td><td class="grammar-cell" data-label="Grammar">Modal Verbs (full range) · Collocation: verb + noun (make a decision, take a risk, do research)</td><td class="vocab-cell" data-label="Vocabulary">Education · Falling in Love</td><td class="theme-cell" data-label="Theme">Education</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ GRADE 8 ═══════════════════════════ -->
+  <div class="grade-section g8" data-level="B2+" id="grade8">
+    <div class="grade-header" onclick="toggleGrade(this)">
+      <div class="grade-badge">8</div>
+      <div class="grade-info">
+        <h2>Grade 8</h2>
+        <span class="level-tag">B2+ — Advanced</span>
+      </div>
+      <div class="grade-toggle">▾</div>
+    </div>
+    <div class="grade-body">
+      <table class="unit-table">
+        <thead><tr><th class="unit-num">Unit</th><th class="col-grammar">Grammar</th><th class="col-vocab">Vocabulary</th><th class="col-theme">Theme</th></tr></thead>
+        <tbody>
+          <tr><td class="unit-num" data-label="Unit"><span>1</span></td><td class="grammar-cell" data-label="Grammar">Present Perfect Progressive · While & Even Though</td><td class="vocab-cell" data-label="Vocabulary">Medical Conditions</td><td class="theme-cell" data-label="Theme">Health Issues</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>2</span></td><td class="grammar-cell" data-label="Grammar">Past Perfect · Verb Patterns (that-clause, infinitive) · Collocation: adjective + noun (strong opinion, heavy traffic)</td><td class="vocab-cell" data-label="Vocabulary">Social Media</td><td class="theme-cell" data-label="Theme">Relationships · Social Media</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>3</span></td><td class="grammar-cell" data-label="Grammar">Third Conditional · Wish & Hope · Hedging Language: It seems, It appears, apparently, presumably</td><td class="vocab-cell" data-label="Vocabulary">Hopes & Regrets</td><td class="theme-cell" data-label="Theme">Wishes & Regrets</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>4</span></td><td class="grammar-cell" data-label="Grammar">Reported Speech (full treatment + backshift) · Cleft Sentences (What clause)</td><td class="vocab-cell" data-label="Vocabulary">Traffic Violation</td><td class="theme-cell" data-label="Theme">Traffic · Crime</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>5</span></td><td class="grammar-cell" data-label="Grammar">Past Perfect Progressive · Vague Language: kind of, sort of, like, stuff, things, whatever</td><td class="vocab-cell" data-label="Vocabulary">Crime Scene</td><td class="theme-cell" data-label="Theme">Crime & Punishment</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ GRADE 9 ═══════════════════════════ -->
+  <div class="grade-section g9" data-level="C1" id="grade9">
+    <div class="grade-header" onclick="toggleGrade(this)">
+      <div class="grade-badge">9</div>
+      <div class="grade-info">
+        <h2>Grade 9</h2>
+        <span class="level-tag">C1 — Advanced</span>
+      </div>
+      <div class="grade-toggle">▾</div>
+    </div>
+    <div class="grade-body">
+      <table class="unit-table">
+        <thead><tr><th class="unit-num">Unit</th><th class="col-grammar">Grammar</th><th class="col-vocab">Vocabulary</th><th class="col-theme">Theme</th></tr></thead>
+        <tbody>
+          <tr><td class="unit-num" data-label="Unit"><span>1</span></td><td class="grammar-cell" data-label="Grammar">Mixed Conditional · Unreal Conditionals</td><td class="vocab-cell" data-label="Vocabulary">Vaccination · Abortion & Adoption · Controversy vocabulary</td><td class="theme-cell" data-label="Theme">Conspiracy Theories · Abortion & Adoption</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>2</span></td><td class="grammar-cell" data-label="Grammar">Passive Voice Review · Get vs. Be Passive · Nominalisation (unemployment → the rise in unemployment)</td><td class="vocab-cell" data-label="Vocabulary">Unemployment · Academic/formal vocabulary</td><td class="theme-cell" data-label="Theme">Unemployment · Eradicating Poverty</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>3</span></td><td class="grammar-cell" data-label="Grammar">Future Progressive · Collocation: prepositional phrases (in terms of, with regard to, as a result of)</td><td class="vocab-cell" data-label="Vocabulary">Astrology-related words · Formal prepositional phrases</td><td class="theme-cell" data-label="Theme">Astrology & Superstition</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>4</span></td><td class="grammar-cell" data-label="Grammar">As...as (extended) · Perfect Modals (should have, could have, might have) · Correlative Conjunctions: not only...but also, both...and, neither...nor</td><td class="vocab-cell" data-label="Vocabulary">Natural Disasters · Safety vocabulary</td><td class="theme-cell" data-label="Theme">Disasters & Safety</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>5</span></td><td class="grammar-cell" data-label="Grammar">Perfect Modals (must have, might have, can't have) · Idiomatic Collocations (bite the bullet, sit on the fence, break the ice)</td><td class="vocab-cell" data-label="Vocabulary">Lying & Disinformation · Media literacy vocabulary</td><td class="theme-cell" data-label="Theme">Lying</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ GRADE 10 ═══════════════════════════ -->
+  <div class="grade-section g10" data-level="C1" id="grade10">
+    <div class="grade-header" onclick="toggleGrade(this)">
+      <div class="grade-badge">10</div>
+      <div class="grade-info">
+        <h2>Grade 10</h2>
+        <span class="level-tag">C1 — Proficient</span>
+      </div>
+      <div class="grade-toggle">▾</div>
+    </div>
+    <div class="grade-body">
+      <table class="unit-table">
+        <thead><tr><th class="unit-num">Unit</th><th class="col-grammar">Grammar</th><th class="col-vocab">Vocabulary</th><th class="col-theme">Theme</th></tr></thead>
+        <tbody>
+          <tr><td class="unit-num" data-label="Unit"><span>1</span></td><td class="grammar-cell" data-label="Grammar">Ever Clauses (whatever, whenever, however) · If & Unless · Formal vs. Informal Register</td><td class="vocab-cell" data-label="Vocabulary">Relationship · Friendship · Formal & informal equivalents</td><td class="theme-cell" data-label="Theme">Relationship · Friendship</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>2</span></td><td class="grammar-cell" data-label="Grammar">Future Perfect · Academic Vocabulary List (AWL): analyse, concept, significant, establish, identify</td><td class="vocab-cell" data-label="Vocabulary">Immigration · Weddings · AWL word families</td><td class="theme-cell" data-label="Theme">Immigration · Weddings</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>3</span></td><td class="grammar-cell" data-label="Grammar">Inversion (Not only did he..., Rarely have I...) · Participle Clauses · Extended Writing: Essays & Reports</td><td class="vocab-cell" data-label="Vocabulary">Job Interviews · Professional vocabulary</td><td class="theme-cell" data-label="Theme">Employment & Interviews</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>4</span></td><td class="grammar-cell" data-label="Grammar">Gerund & Possessives · Verb Patterns (-ing) · Graph Description: increase, decrease, rise, fall, peak, fluctuate, remain stable</td><td class="vocab-cell" data-label="Vocabulary">Nature · Graph Description · Data & statistics vocabulary</td><td class="theme-cell" data-label="Theme">Natural World</td></tr>
+          <tr><td class="unit-num" data-label="Unit"><span>5</span></td><td class="grammar-cell" data-label="Grammar">Tenses Review (present perfect vs. past simple; future forms) · Collocation Review · Formal Letters & Proposals</td><td class="vocab-cell" data-label="Vocabulary">Technology · AWL review · Formal writing phrases</td><td class="theme-cell" data-label="Theme">Technology & Future</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div><!-- end page -->
+
+<footer class="footer">
+  Student Curriculum Reference · A1 → C1 · Grades 1–10
+</footer>
+
+<script>
+  function toggleGrade(header) {
+    const section = header.closest('.grade-section');
+    section.classList.toggle('open');
+  }
+
+  function filterLevel(level) {
+    clearSearch();
+    const sections = document.querySelectorAll('.grade-section');
+    sections.forEach(s => {
+      if (level === 'all') {
+        s.style.display = '';
+      } else {
+        const sLevel = s.getAttribute('data-level');
+        s.style.display = sLevel === level ? '' : 'none';
+        if (sLevel === level) s.classList.add('open');
+      }
+    });
+    document.getElementById('no-results').style.display = 'none';
+  }
+
+  function searchCurriculum() {
+    const query = document.getElementById('searchInput').value.toLowerCase().trim();
+    const sections = document.querySelectorAll('.grade-section');
+    let anyVisible = false;
+
+    sections.forEach(s => {
+      if (!query) {
+        s.style.display = '';
+        return;
+      }
+      const text = s.textContent.toLowerCase();
+      if (text.includes(query)) {
+        s.style.display = '';
+        s.classList.add('open');
+        anyVisible = true;
+      } else {
+        s.style.display = 'none';
+      }
+    });
+
+    document.getElementById('no-results').style.display = (query && !anyVisible) ? 'block' : 'none';
+  }
+
+  function clearSearch() {
+    document.getElementById('searchInput').value = '';
+    document.querySelectorAll('.grade-section').forEach(s => s.style.display = '');
+    document.getElementById('no-results').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
