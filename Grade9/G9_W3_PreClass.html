@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 9 · Week 3 — Astrology &amp; Making Predictions | Full Reference</title>
+<style>
+:root {
+  --indigo:     #1B1A3A;
+  --navy:       #252450;
+  --navy-mid:   #303070;
+  --violet:     #7B5EA7;
+  --violet-pale:#F0EDF8;
+  --gold:       #C9A84C;
+  --gold-pale:  #FBF5E0;
+  --gold-deep:  #9A7A2A;
+  --silver:     #C8C4D8;
+  --paper:      #F8F7FC;
+  --paper-line: #E4E0EE;
+  --white:      #FFFFFF;
+  --concrete:   #7A7A94;
+  --ink:        #1B1A3A;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--paper);color:var(--ink);font-family:Cambria,Georgia,serif;font-size:16.5px;line-height:1.78;}
+.wrap{max-width:940px;margin:0 auto;padding:0 24px 80px;}
+.progress-track{position:sticky;top:0;height:4px;background:var(--paper-line);z-index:100;}
+.progress-fill{height:100%;width:0;background:var(--gold);transition:width .1s;}
+
+/* MASTHEAD */
+.masthead{background:var(--indigo);margin:0 -24px;padding:44px 24px 38px;position:relative;overflow:hidden;}
+.stars{position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none;}
+.star{position:absolute;border-radius:50%;background:var(--gold);opacity:.55;}
+.masthead::after{content:'';position:absolute;left:0;right:0;bottom:0;height:5px;background:linear-gradient(to right,var(--violet),var(--gold),var(--violet));}
+.masthead-inner{max-width:892px;margin:0 auto;position:relative;z-index:1;}
+.eyebrow{font-family:Arial,sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:0 0 12px;font-weight:bold;}
+h1.title{font-family:Cambria,Georgia,serif;font-size:34px;line-height:1.12;color:var(--white);margin:0 0 16px;max-width:680px;}
+.masthead-meta{display:flex;gap:28px;flex-wrap:wrap;font-family:Arial,sans-serif;font-size:13px;color:var(--silver);margin-top:14px;}
+.masthead-meta span{color:var(--white);font-weight:bold;}
+.podcast-badge{position:absolute;right:28px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.06);border:1px solid rgba(200,196,216,.2);border-radius:12px;padding:12px 18px;text-align:center;z-index:1;}
+.podcast-badge .pb-title{font-family:Cambria,serif;font-size:13px;color:var(--gold);font-weight:bold;}
+.podcast-badge .pb-ep{font-family:Arial,sans-serif;font-size:11px;color:var(--silver);margin-top:4px;}
+
+/* TOC */
+.toc{background:var(--white);border-radius:10px;margin-top:-6px;padding:22px 28px;box-shadow:0 4px 20px rgba(27,26,58,.13);position:relative;z-index:2;}
+.toc h2{font-family:Arial,sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--concrete);margin:0 0 12px;}
+.toc ol{margin:0;padding-left:18px;columns:2;column-gap:32px;font-size:14px;line-height:1.65;}
+.toc li{margin-bottom:5px;}
+.toc a{color:var(--navy);text-decoration:none;font-weight:bold;font-family:Arial,sans-serif;}
+.toc a:hover{color:var(--gold-deep);text-decoration:underline;}
+
+/* SECTIONS */
+.tab-section{margin-top:50px;}
+.tab-header{display:flex;align-items:center;gap:14px;margin-bottom:6px;flex-wrap:wrap;}
+.tab-badge{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;letter-spacing:.1em;text-transform:uppercase;border-radius:5px;padding:5px 12px;white-space:nowrap;}
+.tb-engage{background:var(--indigo);color:var(--white);}
+.tb-context{background:var(--navy);color:var(--white);}
+.tb-notice{background:var(--navy-mid);color:var(--white);}
+.tb-study{background:var(--violet);color:var(--white);}
+.tb-study2{background:var(--gold-deep);color:var(--white);}
+.tb-vocab{background:var(--indigo);color:var(--white);}
+.tb-practice{background:var(--navy-mid);color:var(--white);}
+.tb-together{background:var(--gold-deep);color:var(--white);}
+.tb-explore{background:#2A6B4A;color:var(--white);}
+.tb-ref{background:var(--indigo);color:var(--white);}
+h2.tab-title{font-family:Cambria,Georgia,serif;font-size:22px;color:var(--ink);}
+.tab-rule{border:none;border-top:1.5px solid var(--paper-line);margin:12px 0 22px;}
+
+/* CARDS */
+.card{background:var(--white);border-radius:10px;padding:22px 26px;margin-bottom:20px;box-shadow:0 2px 10px rgba(27,26,58,.07);}
+.card h3{font-family:Cambria,serif;font-size:17px;margin:0 0 10px;color:var(--ink);}
+
+/* PODCAST */
+.podcast{border-radius:12px;overflow:hidden;margin-bottom:22px;box-shadow:0 4px 16px rgba(27,26,58,.12);}
+.podcast-header{background:var(--indigo);padding:14px 24px;font-family:Arial,sans-serif;display:flex;align-items:center;gap:16px;}
+.podcast-dot{width:10px;height:10px;border-radius:50%;background:var(--gold);}
+.podcast-info .ep{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:3px;}
+.podcast-info .name{font-size:15px;font-weight:bold;color:var(--white);font-family:Cambria,serif;}
+.podcast-info .hosts{font-size:12px;color:var(--silver);}
+.podcast-body{background:var(--white);padding:24px 28px;}
+.podcast-section{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;letter-spacing:.1em;text-transform:uppercase;color:var(--violet);margin:16px 0 8px;border-bottom:1px solid var(--paper-line);padding-bottom:4px;}
+.podcast-body p{margin:0 0 13px;font-size:15.5px;line-height:1.78;}
+.podcast-body p:last-child{margin:0;}
+.speaker{font-family:Arial,sans-serif;font-weight:bold;font-size:13px;letter-spacing:.04em;text-transform:uppercase;margin-right:6px;}
+.sp-yuna{color:var(--violet);}
+.sp-rafael{color:var(--gold-deep);}
+.sp-listener{color:var(--navy);}
+
+/* HIGHLIGHTS */
+.hl-violet{background:var(--violet-pale);color:var(--violet);padding:1px 5px;border-radius:3px;font-weight:bold;}
+.hl-gold{background:var(--gold-pale);color:var(--gold-deep);padding:1px 5px;border-radius:3px;font-weight:bold;}
+.hl-nav{background:#EAEFF8;color:var(--navy);padding:1px 5px;border-radius:3px;font-weight:bold;}
+
+/* NOTICE */
+.notice-box{background:#FFFBF0;border:2px dashed var(--gold);border-radius:10px;padding:22px 26px;margin-bottom:20px;}
+.notice-box h3{font-family:Cambria,serif;font-size:18px;color:var(--gold-deep);margin:0 0 14px;}
+.notice-q{margin-bottom:14px;padding-left:30px;position:relative;font-size:15.5px;}
+.notice-q::before{content:'?';position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--gold-deep);color:var(--white);font-size:13px;font-weight:bold;text-align:center;line-height:20px;font-family:Arial,sans-serif;}
+.reveal-btn{display:inline-block;margin-top:6px;background:none;border:1px solid var(--gold-deep);color:var(--gold-deep);border-radius:5px;padding:3px 10px;font-size:12px;cursor:pointer;font-family:Arial,sans-serif;transition:all .15s;}
+.reveal-btn:hover{background:var(--gold-deep);color:var(--white);}
+.notice-reveal{margin-top:8px;font-size:14px;color:var(--navy);font-style:italic;border-left:3px solid var(--gold-deep);padding-left:10px;display:none;}
+
+/* GRAMMAR */
+.grammar-box{background:var(--white);border-radius:10px;padding:26px 30px;margin-bottom:24px;box-shadow:0 2px 10px rgba(27,26,58,.07);}
+.grammar-box h3{font-family:Cambria,serif;font-size:21px;margin:0 0 6px;}
+.grammar-box h3.violet{color:var(--violet);}
+.grammar-box h3.gold{color:var(--gold-deep);}
+.grammar-sub{font-family:Arial,sans-serif;font-size:14px;color:var(--concrete);margin:0 0 18px;font-style:italic;}
+
+/* TABLES */
+table.rule-table{width:100%;border-collapse:collapse;margin:16px 0 8px;font-size:14.5px;font-family:Arial,sans-serif;}
+table.rule-table th{background:var(--indigo);color:var(--white);padding:9px 13px;text-align:left;font-size:13px;}
+table.rule-table td{padding:9px 13px;border-bottom:1px solid var(--paper-line);vertical-align:top;}
+table.rule-table tr:nth-child(even) td{background:var(--violet-pale);}
+
+/* PREP PHRASE BOXES */
+.prep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0;}
+.prep-card{background:var(--white);border-radius:10px;padding:16px 18px;border-top:4px solid var(--violet);box-shadow:0 2px 8px rgba(27,26,58,.07);}
+.prep-card.gold{border-top-color:var(--gold-deep);}
+.prep-card .phrase{font-family:Cambria,serif;font-weight:bold;font-size:16px;color:var(--ink);margin:0 0 6px;}
+.prep-card .meaning{font-family:Arial,sans-serif;font-size:13px;color:var(--concrete);margin:0 0 10px;}
+.prep-card .ex{font-size:14px;font-style:italic;margin:0 0 8px;}
+.prep-card .pattern{font-family:Arial,sans-serif;font-size:12px;color:var(--violet);background:var(--violet-pale);border-radius:4px;padding:4px 8px;display:inline-block;margin-top:4px;}
+.prep-card.gold .pattern{color:var(--gold-deep);background:var(--gold-pale);}
+
+/* EXAMPLE ROWS */
+.example-row{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;margin-bottom:10px;padding:10px 14px;background:var(--paper);border-radius:8px;}
+.mark.ok{color:var(--violet);font-weight:bold;font-size:18px;}
+.mark.bad{color:var(--gold-deep);font-weight:bold;font-size:18px;}
+.gloss{display:block;font-family:Arial,sans-serif;font-size:13px;color:var(--concrete);margin-top:3px;}
+.note{display:block;font-family:Arial,sans-serif;font-size:12.5px;color:var(--gold-deep);margin-top:3px;font-weight:bold;}
+
+/* CHIP ROWS */
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;}
+.chip{background:var(--paper);border:1px solid var(--paper-line);border-radius:999px;padding:5px 14px;font-family:Arial,sans-serif;font-size:13.5px;color:var(--ink);}
+.chip.violet{background:var(--violet-pale);border-color:var(--violet);color:var(--violet);}
+.chip.gold{background:var(--gold-pale);border-color:var(--gold-deep);color:var(--gold-deep);}
+.chip.nav{background:#EAEFF8;border-color:var(--navy);color:var(--navy);}
+
+/* VOCAB */
+.vocab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:14px 0;}
+.vocab-card{background:var(--white);border-radius:8px;padding:14px 16px;border-left:4px solid var(--violet);box-shadow:0 2px 8px rgba(27,26,58,.06);}
+.vocab-card.gold{border-left-color:var(--gold-deep);}
+.vocab-card.nav{border-left-color:var(--navy);}
+.vocab-card .word{font-family:Cambria,serif;font-weight:bold;color:var(--ink);font-size:16px;}
+.vocab-card .pos{font-family:Arial,sans-serif;font-size:11px;color:var(--concrete);text-transform:uppercase;margin-left:6px;}
+.vocab-card .pron{font-family:Arial,sans-serif;font-size:13px;color:var(--concrete);margin-top:3px;}
+.vocab-card .def{font-size:14px;margin-top:5px;}
+.vocab-card .ex{font-family:Arial,sans-serif;font-size:13px;color:var(--concrete);margin-top:5px;font-style:italic;}
+
+/* EXERCISES */
+.exercise{background:var(--white);border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(27,26,58,.07);}
+.ex-label{display:inline-block;font-family:Arial,sans-serif;font-size:11px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;border-radius:4px;padding:3px 10px;margin-bottom:10px;}
+.ex-label.violet{background:var(--violet);color:var(--white);}
+.ex-label.gold{background:var(--gold-deep);color:var(--white);}
+.ex-label.nav{background:var(--navy);color:var(--white);}
+.exercise h4{font-family:Cambria,serif;font-size:18px;margin:0 0 12px;color:var(--ink);}
+.exercise .instr{font-family:Arial,sans-serif;font-size:13.5px;color:var(--concrete);margin-bottom:14px;font-style:italic;}
+.q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:11px;flex-wrap:wrap;}
+.q-num{font-family:Arial,sans-serif;font-weight:bold;color:var(--gold-deep);min-width:22px;}
+.blank-input{border:none;border-bottom:2px solid var(--gold-deep);background:var(--paper);font-family:Cambria,serif;font-size:15px;padding:3px 8px;width:260px;color:var(--ink);}
+.blank-input:focus{outline:none;border-color:var(--violet);}
+.wide-input{width:100%;margin-top:6px;}
+.check-btn{background:var(--navy);color:var(--white);border:none;border-radius:6px;padding:9px 22px;font-family:Arial,sans-serif;font-weight:bold;font-size:14px;cursor:pointer;margin-top:10px;transition:background .15s;}
+.check-btn:hover{background:var(--indigo);}
+.feedback{margin-top:12px;font-family:Arial,sans-serif;font-size:14px;border-radius:6px;padding:10px 14px;display:none;}
+.feedback.show{display:block;}
+.feedback.good{background:var(--violet-pale);color:var(--violet);}
+.feedback.bad{background:var(--gold-pale);color:var(--gold-deep);}
+textarea.response-box{width:100%;min-height:110px;border-radius:8px;border:2px solid var(--paper-line);padding:12px 14px;font-family:Cambria,serif;font-size:15px;resize:vertical;background:var(--white);color:var(--ink);line-height:1.65;}
+textarea.response-box:focus{outline:none;border-color:var(--violet);}
+.word-count{font-family:Arial,sans-serif;font-size:12px;color:var(--concrete);margin-top:5px;text-align:right;}
+
+/* ACTIVATE */
+.activate-box{background:var(--indigo);border-radius:10px;padding:26px 30px;margin-bottom:20px;border-bottom:4px solid var(--gold);}
+.activate-box h3{font-family:Cambria,serif;font-size:20px;color:var(--gold);margin:0 0 12px;}
+.activate-box p{color:var(--silver);margin:0 0 10px;font-size:15.5px;}
+
+/* EXPLORE */
+.explore-card{background:#EEF8F4;border:1px solid #B0DBC8;border-radius:10px;padding:22px 26px;margin-bottom:18px;}
+.explore-card h3{font-family:Cambria,serif;font-size:17px;color:#2A6B4A;margin:0 0 10px;}
+.explore-tag{display:inline-block;font-family:Arial,sans-serif;font-size:11px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;background:#2A6B4A;color:var(--white);border-radius:4px;padding:3px 9px;margin-bottom:10px;}
+.explore-card ul{padding-left:20px;margin:10px 0 0;font-size:15px;}
+.explore-card li{margin-bottom:7px;}
+
+/* ANSWER KEY */
+.answer-key{background:var(--white);border-radius:10px;padding:26px 30px;margin-top:48px;border:2px solid var(--gold-deep);box-shadow:0 4px 16px rgba(27,26,58,.10);}
+.ak-title{font-family:Cambria,serif;font-size:22px;color:var(--ink);margin:0 0 6px;}
+.ak-sub{font-family:Arial,sans-serif;font-size:13.5px;color:var(--concrete);margin:0 0 20px;font-style:italic;}
+.ak-section{margin-bottom:20px;}
+.ak-section h4{font-family:Arial,sans-serif;font-size:13px;font-weight:bold;letter-spacing:.07em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 10px;border-bottom:1px solid var(--paper-line);padding-bottom:6px;}
+.ak-item{display:grid;grid-template-columns:28px 1fr 1fr;gap:8px;padding:8px 4px;border-bottom:1px solid var(--paper-line);font-size:14px;}
+.ak-item:last-child{border-bottom:none;}
+.an{font-family:Arial,sans-serif;font-weight:bold;color:var(--gold-deep);}
+.av{font-weight:bold;color:var(--violet);}
+.anote{font-family:Arial,sans-serif;font-size:13px;color:var(--concrete);font-style:italic;}
+
+table.ref-table{width:100%;border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px;}
+table.ref-table th{background:var(--indigo);color:var(--white);padding:10px 14px;text-align:left;font-size:13px;}
+table.ref-table td{padding:10px 14px;border-bottom:1px solid var(--paper-line);vertical-align:top;}
+table.ref-table tr:nth-child(even) td{background:var(--paper);}
+
+.wrapup{background:var(--indigo);color:var(--white);border-radius:10px;padding:26px 30px;margin-top:40px;border-bottom:4px solid var(--gold);}
+.wrapup h3{font-family:Cambria,serif;color:var(--gold);margin:0 0 12px;font-size:18px;}
+.wrapup ul{padding-left:20px;margin:0;}
+.wrapup li{margin-bottom:7px;font-size:15px;color:var(--silver);}
+
+@media(max-width:600px){h1.title{font-size:24px;}.vocab-grid{grid-template-columns:1fr;}.prep-grid{grid-template-columns:1fr;}.toc ol{columns:1;}.ak-item{grid-template-columns:28px 1fr;}.ak-item .anote{grid-column:2;}.podcast-badge{display:none;}}
+</style>
+</head>
+<body>
+<div class="progress-track"><div class="progress-fill" id="pf"></div></div>
+
+<div class="masthead" id="masthead">
+  <div class="stars" id="starField"></div>
+  <div class="podcast-badge">
+    <div class="pb-title">The Celestial Sceptic</div>
+    <div class="pb-ep">Episode 47 · Season 3</div>
+  </div>
+  <div class="masthead-inner">
+    <p class="eyebrow">Grade 9 · Week 3 · Complete Reference &amp; Pre-Class Material</p>
+    <h1 class="title">Astrology &amp; Making Predictions:<br>The Future Progressive &amp; Prepositional Phrases</h1>
+    <div class="masthead-meta">
+      <div>Level: <span>C1</span></div>
+      <div>Theme: <span>Astrology · Superstition · Science vs. Belief</span></div>
+      <div>Grammar: <span>Future Progressive · Prepositional Phrase Collocations</span></div>
+      <div>Est. time: <span>70–80 min</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="toc">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#engage">1. Engage — do you believe?</a></li>
+      <li><a href="#ctx1">2. Context: The Celestial Sceptic podcast</a></li>
+      <li><a href="#nd1">3. Notice &amp; discover (future progressive)</a></li>
+      <li><a href="#s1">4. Study: Future Progressive</a></li>
+      <li><a href="#p1">5. Practice: future progressive</a></li>
+      <li><a href="#nd2">6. Notice &amp; discover (prepositional phrases)</a></li>
+      <li><a href="#s2">7. Study: Prepositional phrase collocations</a></li>
+      <li><a href="#p2">8. Practice: prepositional phrases</a></li>
+      <li><a href="#vocab">9. Vocabulary: astrology &amp; superstition</a></li>
+      <li><a href="#vocab2">9b. Vocabulary: pseudoscience &amp; scientific literacy</a></li>
+      <li><a href="#vp">10. Practice: vocabulary</a></li>
+      <li><a href="#together">11. Putting it together</a></li>
+      <li><a href="#explore">12. Explore on your own</a></li>
+      <li><a href="#ref">13. Quick reference</a></li>
+      <li><a href="#ak">14. Answer key</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. ENGAGE -->
+  <div class="tab-section" id="engage">
+    <div class="tab-header"><span class="tab-badge tb-engage">ENGAGE</span><h2 class="tab-title">Before we start: where do you stand?</h2></div>
+    <hr class="tab-rule">
+    <div class="card">
+      <h3>Two quick positions</h3>
+      <p>Astrology is this week's theme — and it's a genuinely interesting case study for language learning, because <strong>making predictions</strong> is at the heart of astrological discourse. Astrologers predict. Sceptics critique. Both use the same grammar.</p>
+      <p>Before looking at any language: what's your position? Choose one for each question.</p>
+      <p style="margin-top:14px;"><strong>1. Do you think astrology has any genuine predictive value?</strong></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+        <button class="reveal-btn" style="border-color:var(--violet);color:var(--violet);" onclick="this.style.background='var(--violet)';this.style.color='#fff';">Yes — I find it meaningful</button>
+        <button class="reveal-btn" style="border-color:var(--gold-deep);color:var(--gold-deep);" onclick="this.style.background='var(--gold-deep)';this.style.color='#fff';">No — it's entertainment, not science</button>
+        <button class="reveal-btn" onclick="this.style.background='var(--navy)';this.style.color='#fff';this.style.borderColor='var(--navy)';">Uncertain — I'm open to arguments</button>
+      </div>
+      <p style="margin-top:14px;"><strong>2. Have you ever acted on a prediction — horoscope, tarot, fortune-teller — and had it feel accurate?</strong></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+        <button class="reveal-btn" style="border-color:var(--violet);color:var(--violet);" onclick="this.style.background='var(--violet)';this.style.color='#fff';">Yes — and it was striking</button>
+        <button class="reveal-btn" style="border-color:var(--gold-deep);color:var(--gold-deep);" onclick="this.style.background='var(--gold-deep)';this.style.color='#fff';">Yes — but I know it was coincidence</button>
+        <button class="reveal-btn" onclick="this.style.background='var(--navy)';this.style.color='#fff';this.style.borderColor='var(--navy)';">No — never</button>
+      </div>
+      <p style="margin-top:14px;font-family:Arial,sans-serif;font-size:13.5px;color:var(--concrete);">Bring your answers to Session 1 — we open the class by comparing positions. Neither answer is more intelligent than the other; both are linguistically productive.</p>
+    </div>
+    <div class="card">
+      <h3>Colour code for this week</h3>
+      <p><span class="hl-violet">Violet</span> = future progressive (will be + -ing). &nbsp;<span class="hl-gold">Gold</span> = prepositional phrase collocations (in terms of, with regard to, as a result of). &nbsp;<span class="hl-nav">Blue</span> = astrology &amp; superstition vocabulary.</p>
+    </div>
+  </div>
+
+  <!-- 2. CONTEXT: PODCAST -->
+  <div class="tab-section" id="ctx1">
+    <div class="tab-header"><span class="tab-badge tb-context">CONTEXT</span><h2 class="tab-title">Read first: The Celestial Sceptic — Episode 47</h2></div>
+    <hr class="tab-rule">
+    <div class="card"><p><strong>Before any grammar:</strong> What is each host's core position? What is the listener's experience? Where does the disagreement between Yuna and Rafael become sharpest?</p></div>
+
+    <div class="podcast">
+      <div class="podcast-header">
+        <div class="podcast-dot"></div>
+        <div class="podcast-info">
+          <div class="ep">The Celestial Sceptic · Season 3, Episode 47</div>
+          <div class="name">"Mercury Retrograde Made Me Miss My Flight (Or Did It?)"</div>
+          <div class="hosts">Yuna Ishikawa (data journalist, sceptic) &amp; Rafael Andrade (former astrophysicist, astrology enthusiast)</div>
+        </div>
+      </div>
+      <div class="podcast-body">
+        <p class="podcast-section">Part 1: Opening — The prediction</p>
+        <p><span class="speaker sp-rafael">Rafael:</span> Right, so we <span class="hl-violet">will be kicking off</span> today with a listener story — but first, some context. As anyone who follows us knows, <span class="hl-nav">Mercury retrograde</span> began last Tuesday. <span class="hl-violet">We will be feeling its effects</span> for approximately three weeks. <span class="hl-gold">In terms of</span> communication, travel, and technology — these are the domains where you need to be careful.</p>
+        <p><span class="speaker sp-yuna">Yuna:</span> Right. And <span class="hl-gold">with regard to</span> that — this is where I want to start. Rafael, what exactly <span class="hl-violet">will be happening</span> to communication during Mercury retrograde? Because <span class="hl-gold">in terms of</span> the mechanism, I genuinely don't understand what you think is going on.</p>
+        <p><span class="speaker sp-rafael">Rafael:</span> Well, look — I'm not a strict <span class="hl-nav">adherent</span> anymore. I approach it <span class="hl-gold">in terms of</span> symbolic resonance rather than physical causation. When Mercury appears to move backwards, it becomes a symbol for periods of reflection, revisiting old decisions — not a literal gravitational force. <span class="hl-gold">With regard to</span> the mechanism question: I think you're asking the wrong question.</p>
+        <p><span class="speaker sp-yuna">Yuna:</span> That's a very elegant way of not answering it.</p>
+
+        <p class="podcast-section">Part 2: The listener's story</p>
+        <p><span class="speaker sp-yuna">Yuna:</span> OK, let's bring in our listener. This is Priya, writing from Amsterdam. She says: "I <span class="hl-nav">had my natal chart read</span> last October by a professional <span class="hl-nav">astrologer</span>. She told me that <span class="hl-violet">Venus would be moving into Capricorn</span> in December and that <span class="hl-gold">as a result of</span> this transit, I <span class="hl-violet">would be entering a period</span> of significant romantic opportunity. In December, I met my partner. I'm not saying it caused it — but I <span class="hl-nav">can't dismiss it as pure coincidence</span>."</p>
+        <p><span class="speaker sp-rafael">Rafael:</span> And that, <span class="hl-gold">in terms of</span> personal significance, is exactly what astrology does well. It creates a frame of attention. Priya was looking — <span class="hl-gold">as a result of</span> the reading, she was open to connection in a way she might not otherwise have been.</p>
+        <p><span class="speaker sp-yuna">Yuna:</span> That's interesting, actually. <span class="hl-gold">With regard to</span> confirmation <span class="hl-nav">bias</span> — and I think this is the key psychological concept here — the reading changed Priya's behaviour, not the stars. She <span class="hl-violet">was already going to be meeting</span> lots of people in December. The reading made her notice one of them differently. <span class="hl-gold">In terms of</span> predictive accuracy, the forecast was self-fulfilling.</p>
+
+        <p class="podcast-section">Part 3: The science question</p>
+        <p><span class="speaker sp-rafael">Rafael:</span> I don't disagree with any of that. <span class="hl-gold">In terms of</span> empirical prediction — astrology <span class="hl-nav">makes no falsifiable claims</span>. I accept that. But <span class="hl-gold">with regard to</span> psychological function, it can be genuinely useful. People are <span class="hl-violet">going to be grappling with</span> questions about their lives whether they have a <span class="hl-nav">horoscope</span> or not. If a <span class="hl-nav">transit</span> gives them a framework for reflection, that has value.</p>
+        <p><span class="speaker sp-yuna">Yuna:</span> OK, I'll grant you the therapeutic framing. My concern is when astrology crosses into medical advice, financial decisions, or relationship choices. <span class="hl-gold">As a result of</span> that kind of advice, real harm gets done. <span class="hl-gold">With regard to</span> the boundary between personal meaning-making and potentially dangerous guidance — I think astrologers need to be clearer about that line.</p>
+        <p><span class="speaker sp-rafael">Rafael:</span> Absolutely. And <span class="hl-gold">in terms of</span> responsible practice — the best astrologers I know are explicitly clear about this. They describe what <span class="hl-violet">will be unfolding</span> symbolically and invite the client to interpret it through their own experience. They're not forecasting the future; they're structuring a conversation about it.</p>
+        <p><span class="speaker sp-yuna">Yuna:</span> That I can respect. The universe <span class="hl-violet">will be continuing</span> to be indifferent to our birth dates — but if the metaphor helps people think, maybe that's enough. Slightly.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Comprehension check</h3>
+      <p>1. What is Rafael's current relationship with astrology? Is he a true believer — or something more nuanced?</p>
+      <p>2. Yuna says Priya's story is "self-fulfilling." What does she mean — and do you think she's right?</p>
+      <p>3. Where does Rafael draw the line between acceptable and unacceptable uses of astrology?</p>
+      <p>4. The episode ends with Yuna saying "slightly." What does that small word reveal about her position?</p>
+    </div>
+  </div>
+
+  <!-- 3. NOTICE: FUTURE PROGRESSIVE -->
+  <div class="tab-section" id="nd1">
+    <div class="tab-header"><span class="tab-badge tb-notice">NOTICE &amp; DISCOVER</span><h2 class="tab-title">Look at the violet phrases — what do they have in common?</h2></div>
+    <hr class="tab-rule">
+    <div class="notice-box">
+      <h3>Three questions about the violet phrases</h3>
+      <div class="notice-q">
+        Look at: <em>"We will be feeling its effects for approximately three weeks."</em><br>
+        Compare: <em>"We will feel its effects."</em> Which version sounds more certain, and which more like a gradual ongoing process?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">"Will feel" is a simple future prediction — it could be a single event or a state. "Will be feeling" is the future progressive — it foregrounds the activity as ongoing and in-progress over time. In the astrology context, Rafael is describing a process that will be happening across three weeks, not a single moment.</p>
+      </div>
+      <div class="notice-q">
+        Look at: <em>"Venus would be moving into Capricorn in December."</em><br>
+        This is reported speech — the original prediction was future progressive. What does the future progressive add here that a simple future wouldn't?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">A planetary transit is a gradual movement — it unfolds over time, it doesn't "happen" in a single moment. The future progressive ("will be moving") is more accurate than "will move" because it frames the transit as an in-progress action rather than a single completed event. This is a key function: describing future situations in progress, not just future events.</p>
+      </div>
+      <div class="notice-q">
+        Yuna says: <em>"She was already going to be meeting lots of people in December."</em><br>
+        This isn't will + be + -ing — it's going to + be + -ing. Is this the same structure? What does "already going to be" mean?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">"Going to be meeting" is the future progressive with "going to" instead of "will" — same progressive structure, different future marker. "Going to" here signals that the event was already planned or predictable before Priya's reading. Yuna's point: Priya would have been meeting people anyway — the stars didn't create the situation, they just gave it a frame.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. STUDY: FUTURE PROGRESSIVE -->
+  <div class="tab-section" id="s1">
+    <div class="tab-header"><span class="tab-badge tb-study">STUDY</span><h2 class="tab-title">Future Progressive — Form, Meaning, and When to Use It</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3 class="violet">Future Progressive</h3>
+      <p class="grammar-sub">Two forms — both describe an action that will be in progress at or around a future point. The key contrast is with the simple future.</p>
+
+      <p><strong>Forms:</strong></p>
+      <table class="rule-table">
+        <tr><th>Form</th><th>Structure</th><th>Example</th></tr>
+        <tr><td><strong>will be + -ing</strong></td><td>subject + will be + verb-ing</td><td><em>"Mercury <span class="hl-violet">will be moving</span> through Scorpio for the next three weeks."</em></td></tr>
+        <tr><td><strong>going to be + -ing</strong></td><td>subject + am/is/are going to be + verb-ing</td><td><em>"We <span class="hl-violet">are going to be feeling</span> the effects well into November."</em></td></tr>
+        <tr><td><strong>Negative</strong></td><td>subject + won't be + verb-ing</td><td><em>"Astrology <span class="hl-violet">won't be making</span> falsifiable claims anytime soon."</em></td></tr>
+        <tr><td><strong>Question</strong></td><td>Will + subject + be + verb-ing?</td><td><em>"<span class="hl-violet">Will you be attending</span> the astrology conference next month?"</em></td></tr>
+      </table>
+
+      <p style="margin-top:20px;"><strong>Five main uses — all from the podcast context:</strong></p>
+      <table class="rule-table">
+        <tr><th>#</th><th>Use</th><th>Example</th><th>Why not simple future?</th></tr>
+        <tr><td><strong>1</strong></td><td><strong>In-progress future</strong><br>An action in progress at a specific future time</td><td><em>"At midnight, Mercury <span class="hl-violet">will be entering</span> Scorpio."</em></td><td>"Will enter" = simple event. "Will be entering" = the transition is in motion at that moment.</td></tr>
+        <tr><td><strong>2</strong></td><td><strong>Gradual process / extended period</strong><br>Describes something unfolding over time</td><td><em>"We <span class="hl-violet">will be feeling</span> its effects for three weeks."</em></td><td>"Will feel" sounds like a single future moment. "Will be feeling" = ongoing, spread across time.</td></tr>
+        <tr><td><strong>3</strong></td><td><strong>Planned / expected future event</strong><br>Something already arranged or predictable</td><td><em>"She <span class="hl-violet">was going to be meeting</span> lots of people in December anyway."</em></td><td>"Going to be meeting" emphasises the arrangement was already in place before any horoscope.</td></tr>
+        <tr><td><strong>4</strong></td><td><strong>Polite enquiry about plans</strong><br>Asking about future arrangements without presupposing</td><td><em>"<span class="hl-violet">Will you be coming</span> to next week's recording?"</em></td><td>"Will you come?" sounds like a request or invitation. "Will you be coming?" is softer — just asking about plans.</td></tr>
+        <tr><td><strong>5</strong></td><td><strong>Simultaneous future actions</strong><br>Two things happening at the same future time</td><td><em>"While Rafael <span class="hl-violet">will be reading</span> the chart, Yuna <span class="hl-violet">will be checking</span> the statistics."</em></td><td>Simple future here would sound like two separate completed events, not simultaneous processes.</td></tr>
+      </table>
+
+      <p style="margin-top:20px;"><strong>Future progressive vs. simple future — the key contrast:</strong></p>
+      <div class="example-row"><span class="mark ok">will + inf.</span><span><em>"Mercury will enter Scorpio on Thursday."</em><span class="gloss">Simple event — completed at a point in time. Like a switch being flipped.</span></span></div>
+      <div class="example-row"><span class="mark ok">will be + -ing</span><span><em>"Mercury will be moving through Scorpio for the next three weeks."</em><span class="gloss">Gradual in-progress process — Mercury is in motion throughout the period.</span></span></div>
+      <div class="example-row"><span class="mark ok">will + inf.</span><span><em>"I will meet you at the conference."</em><span class="gloss">Simple future decision or prediction — a single meeting event.</span></span></div>
+      <div class="example-row"><span class="mark ok">will be + -ing</span><span><em>"I will be attending the conference all week."</em><span class="gloss">In-progress — I'll be there throughout the week, not just for one moment.</span></span></div>
+
+      <p style="margin-top:20px;"><strong>⚠ Stative verbs — no progressive:</strong></p>
+      <p>As with other progressive tenses, stative verbs (know, believe, understand, contain, seem) cannot normally form the future progressive:</p>
+      <div class="example-row"><span class="mark bad">✗</span><span><em>I will be believing in astrology more after this episode.</em><span class="note">WRONG — "believe" is stative. Use: "I will believe in astrology more after this episode."</span></span></div>
+      <div class="example-row"><span class="mark ok">✓</span><span><em>I will be reading about astrology more after this episode.</em><span class="gloss">OK — "read" is dynamic (an activity), so progressive is fine.</span></span></div>
+
+      <p style="margin-top:20px;"><strong>⚠ Common errors:</strong></p>
+      <div class="example-row"><span class="mark bad">✗</span><span><em>Mercury will moving through Scorpio next week.</em><span class="note">WRONG — "be" is missing. Will + be + -ing: "will be moving."</span></span></div>
+      <div class="example-row"><span class="mark bad">✗</span><span><em>What will you be doing yesterday at this time?</em><span class="note">WRONG — future progressive cannot refer to the past. Use past progressive: "What were you doing yesterday at this time?"</span></span></div>
+    </div>
+  </div>
+
+  <!-- 5. PRACTICE: FUTURE PROGRESSIVE -->
+  <div class="tab-section" id="p1">
+    <div class="tab-header"><span class="tab-badge tb-practice">PRACTICE</span><h2 class="tab-title">Try it: future progressive</h2></div>
+    <hr class="tab-rule">
+    <div class="exercise">
+      <span class="ex-label violet">Exercise 1 · Will be -ing or will + infinitive?</span>
+      <h4>Choose the better option — or explain why both are possible. All sentences come from the podcast context.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span>According to Rafael, Venus ____________ (move) into Capricorn on Thursday. [simple event — use infinitive OR progressive?]</span>
+        <input type="text" class="blank-input wide-input" id="e1a" data-answer="will move|will be moving" placeholder="will move / will be moving / both — explain…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">2.</span><span>Yuna says that during the retrograde period, she ____________ (keep) her phone backed up just in case. [ongoing precaution over a period]</span>
+        <input type="text" class="blank-input wide-input" id="e1b" data-answer="will be keeping" placeholder="will keep / will be keeping…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">3.</span><span>At the time of the next new moon, Priya ____________ (travel) to her partner's city for the first time. [in-progress at a specific future moment]</span>
+        <input type="text" class="blank-input wide-input" id="e1c" data-answer="will be travelling|will be traveling" placeholder="will travel / will be travelling…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">4.</span><span>Rafael ____________ (understand) Yuna's scepticism better after this conversation. [stative verb — careful!]</span>
+        <input type="text" class="blank-input wide-input" id="e1d" data-answer="will understand" placeholder="will understand / will be understanding…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">5.</span><span>"____________ (you / appear) on the next episode?" asked the listener. [polite enquiry about plans]</span>
+        <input type="text" class="blank-input wide-input" id="e1e" data-answer="will you be appearing" placeholder="Will you appear / Will you be appearing…"></div>
+      <button class="check-btn" onclick="checkEx1()">Check my answers</button>
+      <div class="feedback" id="fb-ex1"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label violet">Exercise 2 · Complete the prediction</span>
+      <h4>Complete each astrological prediction using the future progressive. Use the verb in brackets. All are in Rafael's voice.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span>"Over the next fortnight, Saturn ____________ (form) a rare alignment with Jupiter, which means many of you ____________ (reconsider) long-held beliefs."</span></div>
+      <input type="text" class="blank-input wide-input" id="e2a" data-answer="will be forming" placeholder="Saturn…">
+      <input type="text" class="blank-input wide-input" id="e2b" data-answer="will be reconsidering" placeholder="many of you…" style="margin-top:6px;">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">2.</span><span>"Throughout this lunar cycle, those born under Scorpio ____________ (navigate) a period of intense emotional renegotiation."</span></div>
+      <input type="text" class="blank-input wide-input" id="e2c" data-answer="will be navigating" placeholder="those born under Scorpio…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">3.</span><span>"While Venus ____________ (transit) your seventh house, you ____________ (not / focus) on career — your attention ____________ (be drawn) to relationships."</span></div>
+      <input type="text" class="blank-input wide-input" id="e2d" data-answer="will be transiting" placeholder="While Venus…">
+      <input type="text" class="blank-input wide-input" id="e2e" data-answer="won't be focusing|will not be focusing" placeholder="you…" style="margin-top:6px;">
+      <input type="text" class="blank-input wide-input" id="e2f" data-answer="will be drawn" placeholder="your attention…" style="margin-top:6px;">
+      <button class="check-btn" onclick="checkEx2()">Check my answers</button>
+      <div class="feedback" id="fb-ex2"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label violet">Exercise 3 · Error correction</span>
+      <h4>Each sentence contains one error. Find and fix it.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span>The stars will moving into a rare configuration on the winter solstice.</span></div>
+      <input type="text" class="blank-input wide-input" id="e3a" data-answer="the stars will be moving into a rare configuration on the winter solstice" placeholder="Corrected…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">2.</span><span>At exactly midnight on New Year's Day, Jupiter will be enter Aquarius.</span></div>
+      <input type="text" class="blank-input wide-input" id="e3b" data-answer="at exactly midnight on new year's day, jupiter will be entering aquarius" placeholder="Corrected…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">3.</span><span>I will be knowing my birth chart by heart after this course.</span></div>
+      <input type="text" class="blank-input wide-input" id="e3c" data-answer="i will know my birth chart by heart after this course" placeholder="Corrected…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">4.</span><span>Will you be believe in astrology differently after reading Yuna's sceptic column?</span></div>
+      <input type="text" class="blank-input wide-input" id="e3d" data-answer="will you believe in astrology differently after reading yuna's sceptic column" placeholder="Corrected…">
+      <button class="check-btn" onclick="checkEx3()">Check my answers</button>
+      <div class="feedback" id="fb-ex3"></div>
+    </div>
+  </div>
+
+  <!-- 6. NOTICE: PREPOSITIONAL PHRASES -->
+  <div class="tab-section" id="nd2">
+    <div class="tab-header"><span class="tab-badge tb-notice">NOTICE &amp; DISCOVER</span><h2 class="tab-title">Look at the gold phrases — how do they function?</h2></div>
+    <hr class="tab-rule">
+    <div class="notice-box">
+      <h3>Find the function of each gold phrase</h3>
+      <div class="notice-q">
+        Look at: <em>"<span class="hl-gold">In terms of</span> communication, travel, and technology — these are the domains where you need to be careful."</em><br>
+        What does "in terms of" do here? Could you replace it with a simpler word?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">"In terms of" introduces the domain or dimension being discussed — "regarding" or "concerning" could replace it, but "in terms of" is more formal and allows a longer list to follow naturally. It tells the reader: "I'm going to specify the area we're talking about." It focuses the scope of what follows.</p>
+      </div>
+      <div class="notice-q">
+        Look at: <em>"<span class="hl-gold">As a result of</span> the reading, she was open to connection."</em><br>
+        What relationship between ideas does "as a result of" signal? Is it cause or effect — and which side of that relationship comes in the phrase?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">"As a result of" signals a cause-effect relationship — the phrase introduces the CAUSE ("the reading"), and the main clause describes the EFFECT ("she was open to connection"). It's the formal equivalent of "because of" — but more academic and appropriate for written registers.</p>
+      </div>
+      <div class="notice-q">
+        Look at: <em>"<span class="hl-gold">With regard to</span> confirmation bias — I think this is the key concept here."</em><br>
+        Compare: "<span class="hl-gold">In terms of</span> confirmation bias…" — are these interchangeable? What's the nuance?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">Both introduce a topic or domain. "With regard to" is slightly more formal and more commonly used at the start of a new point or to signal a topic shift. "In terms of" tends to be used when specifying a dimension or angle of evaluation. In practice, they overlap significantly — the most important thing is knowing both and using them to replace "about" or "concerning" in formal speech or writing.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. STUDY: PREPOSITIONAL PHRASES -->
+  <div class="tab-section" id="s2">
+    <div class="tab-header"><span class="tab-badge tb-study2">STUDY</span><h2 class="tab-title">Prepositional Phrase Collocations — The C1 Fluency Markers</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3 class="gold">Prepositional Phrase Collocations</h3>
+      <p class="grammar-sub">Corpus research confirms that the most significant gap between B2 and C1 learner writing is not grammar errors — it is the absence of multi-word prepositional collocations. These phrases are fluency markers that signal academic register, organisation of ideas, and discourse sophistication.</p>
+
+      <div class="prep-grid">
+        <div class="prep-card">
+          <div class="phrase">in terms of</div>
+          <div class="meaning">Regarding a specific dimension, aspect, or area of evaluation</div>
+          <p class="ex">"<em>In terms of</em> predictive accuracy, astrology has no empirical basis."</p>
+          <p class="ex">"<em>In terms of</em> psychological benefit, the reading helped Priya feel more attentive."</p>
+          <p class="ex">"How does this differ, <em>in terms of</em> methodology, from cold reading?"</p>
+          <span class="pattern">in terms of + noun phrase / noun clause</span>
+        </div>
+        <div class="prep-card gold">
+          <div class="phrase">with regard to</div>
+          <div class="meaning">Concerning a particular topic or issue — used to introduce or shift to a new point</div>
+          <p class="ex">"<em>With regard to</em> the mechanism — I think you're asking the wrong question."</p>
+          <p class="ex">"<em>With regard to</em> confirmation bias, this is the key psychological concept."</p>
+          <p class="ex">"<em>With regard to</em> responsible practice, the best astrologers are explicit."</p>
+          <span class="pattern gold">with regard to + noun phrase (no article omission)</span>
+        </div>
+        <div class="prep-card">
+          <div class="phrase">as a result of</div>
+          <div class="meaning">Because of / due to — introduces a cause. The effect follows in the main clause.</div>
+          <p class="ex">"<em>As a result of</em> the reading, she was open to connection."</p>
+          <p class="ex">"<em>As a result of</em> confirmation bias, accurate predictions are remembered more."</p>
+          <p class="ex">"<em>As a result of</em> this transit, a period of reflection will follow."</p>
+          <span class="pattern">as a result of + noun phrase → [comma] + main clause (effect)</span>
+        </div>
+      </div>
+
+      <p style="margin-top:20px;"><strong>Extended set — four more high-frequency C1 phrases:</strong></p>
+      <div class="prep-grid">
+        <div class="prep-card" style="border-top-color:var(--navy);">
+          <div class="phrase" style="color:var(--navy);">in the context of</div>
+          <div class="meaning">Against the background of; taking into account the situation of</div>
+          <p class="ex">"<em>In the context of</em> rising anxiety rates, astrology's appeal is understandable."</p>
+          <span class="pattern">in the context of + noun phrase</span>
+        </div>
+        <div class="prep-card" style="border-top-color:var(--navy);">
+          <div class="phrase" style="color:var(--navy);">on the basis of</div>
+          <div class="meaning">Using something as evidence or reason for a decision</div>
+          <p class="ex">"No major life decision should be made <em>on the basis of</em> a horoscope."</p>
+          <span class="pattern">on the basis of + noun phrase</span>
+        </div>
+        <div class="prep-card" style="border-top-color:var(--navy);">
+          <div class="phrase" style="color:var(--navy);">in the light of</div>
+          <div class="meaning">Taking into account new information or evidence</div>
+          <p class="ex">"<em>In the light of</em> the evidence, we should reconsider the claim."</p>
+          <span class="pattern">in the light of / in light of + noun phrase</span>
+        </div>
+        <div class="prep-card gold" style="border-top-color:var(--gold-deep);">
+          <div class="phrase">in addition to</div>
+          <div class="meaning">As well as; besides — adds a further point</div>
+          <p class="ex">"<em>In addition to</em> confirmation bias, the Barnum effect explains astrology's appeal."</p>
+          <span class="pattern">in addition to + noun phrase / verb-ing</span>
+        </div>
+      </div>
+
+      <p style="margin-top:20px;"><strong>The Barnum effect — a key concept for this week:</strong></p>
+      <div class="card" style="background:var(--violet-pale);border-left:4px solid var(--violet);margin:0 0 16px;">
+        <p>The <strong>Barnum effect</strong> (also called the Forer effect) is the psychological phenomenon where people rate general personality statements as highly accurate descriptions of themselves, without realising the same statement applies to almost everyone. Horoscopes depend on this: phrases like "You sometimes feel that others don't fully appreciate you" are true of almost all humans, yet feel remarkably personal.</p>
+        <p style="margin-top:10px;"><em>"In terms of psychological mechanisms, the Barnum effect and confirmation bias together explain most of astrology's perceived accuracy."</em></p>
+      </div>
+
+      <p><strong>⚠ Common errors with prepositional phrases:</strong></p>
+      <div class="example-row"><span class="mark bad">✗</span><span><em>In terms to the mechanism, I disagree.</em><span class="note">WRONG — "in terms of" not "in terms to."</span></span></div>
+      <div class="example-row"><span class="mark bad">✗</span><span><em>With regard of the evidence, the claim is weak.</em><span class="note">WRONG — "with regard to" not "with regard of."</span></span></div>
+      <div class="example-row"><span class="mark bad">✗</span><span><em>As a result, she opened up more. As a result of, she met him.</em><span class="note">WRONG — "as a result of" must be followed by a noun phrase. "As a result" (without "of") is used as a sentence adverbial, not before a noun phrase.</span></span></div>
+      <div class="example-row"><span class="mark ok">✓</span><span><em>As a result of the reading, she met him. / She met him; as a result, she changed her mind about astrology.</em><span class="gloss">Correct: "as a result of" + noun phrase; "as a result" + comma as standalone connector.</span></span></div>
+    </div>
+  </div>
+
+  <!-- 8. PRACTICE: PREPOSITIONAL PHRASES -->
+  <div class="tab-section" id="p2">
+    <div class="tab-header"><span class="tab-badge tb-practice">PRACTICE</span><h2 class="tab-title">Try it: prepositional phrases</h2></div>
+    <hr class="tab-rule">
+    <div class="exercise">
+      <span class="ex-label gold">Exercise 4 · Complete with the correct phrase</span>
+      <h4>Complete each sentence with the best prepositional phrase from the box.</h4>
+      <p class="instr"><em>in terms of · with regard to · as a result of · in the context of · on the basis of · in the light of</em></p>
+      <div class="q-row"><span class="q-num">1.</span><span>____________ the new longitudinal study, researchers are reconsidering whether astrology has any measurable psychological benefit beyond placebo.</span>
+        <input type="text" class="blank-input wide-input" id="e4a" data-answer="in the light of" placeholder="phrase…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">2.</span><span>____________ empirical validity, there is no peer-reviewed study demonstrating predictive accuracy for astrological forecasts beyond chance.</span>
+        <input type="text" class="blank-input wide-input" id="e4b" data-answer="in terms of" placeholder="phrase…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">3.</span><span>____________ the Barnum effect, Priya's feeling that the horoscope was "accurate" is psychologically predictable rather than evidence of genuine prediction.</span>
+        <input type="text" class="blank-input wide-input" id="e4c" data-answer="in the context of|as a result of" placeholder="phrase…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">4.</span><span>____________ responsible practice, Rafael argues that professional astrologers should be explicit about the symbolic, rather than predictive, nature of their readings.</span>
+        <input type="text" class="blank-input wide-input" id="e4d" data-answer="with regard to" placeholder="phrase…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">5.</span><span>She changed her attitude ____________ the reading — not because the stars moved, but because her frame of attention shifted.</span>
+        <input type="text" class="blank-input wide-input" id="e4e" data-answer="as a result of" placeholder="phrase…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">6.</span><span>No therapy, medical treatment, or legal decision should be made ____________ an astrological reading alone.</span>
+        <input type="text" class="blank-input wide-input" id="e4f" data-answer="on the basis of" placeholder="phrase…"></div>
+      <button class="check-btn" onclick="checkEx4()">Check my answers</button>
+      <div class="feedback" id="fb-ex4"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label gold">Exercise 5 · Build the sentence</span>
+      <h4>Write a complete sentence using the prompt and the prepositional phrase given. The sentence must be in formal register and relate to the podcast's themes.</h4>
+      <p class="instr">No single correct answer — bring your best sentence to class.</p>
+      <div class="q-row"><span class="q-num">1.</span><span>Use: <strong>in terms of</strong> · Topic: the difference between astrology and astronomy</span></div>
+      <textarea class="response-box" id="e5a" style="min-height:70px;" placeholder="In terms of scientific methodology, astrology differs from astronomy in that…"></textarea>
+      <div class="q-row" style="margin-top:10px;"><span class="q-num">2.</span><span>Use: <strong>as a result of</strong> · Topic: confirmation bias and astrological belief</span></div>
+      <textarea class="response-box" id="e5b" style="min-height:70px;" placeholder="As a result of confirmation bias, people who consult horoscopes regularly…"></textarea>
+      <div class="q-row" style="margin-top:10px;"><span class="q-num">3.</span><span>Use: <strong>with regard to</strong> + future progressive · Topic: what will be happening in astrology over the next decade</span></div>
+      <textarea class="response-box" id="e5c" style="min-height:70px;" placeholder="With regard to the relationship between astrology and psychology, researchers will be exploring…"></textarea>
+    </div>
+  </div>
+
+  <!-- 9. VOCABULARY -->
+  <div class="tab-section" id="vocab">
+    <div class="tab-header"><span class="tab-badge tb-vocab">VOCABULARY</span><h2 class="tab-title">Astrology &amp; Superstition — The Full Word Set</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3 class="gold">Core vocabulary: astrology &amp; belief</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card violet"><span class="word">horoscope</span><span class="pos">noun</span><div class="pron">/ˈhɒrəskəʊp/</div><div class="def">a forecast of a person's future, based on the positions of the stars and planets at the time of their birth. Usually presented as a sign-based prediction (Aries, Taurus, etc.).</div><div class="ex">"Rafael checks his horoscope every morning — Yuna considers this a charming but irrational habit."</div></div>
+        <div class="vocab-card violet"><span class="word">natal chart</span><span class="pos">noun phrase</span><div class="pron">/ˈneɪtəl tʃɑːt/</div><div class="def">a map of where all the planets were positioned at the exact moment of a person's birth. The core document of astrological interpretation — far more detailed than a sun sign horoscope.</div><div class="ex">"Priya had her natal chart read professionally — it described her Venus placement and its implications."</div></div>
+        <div class="vocab-card violet"><span class="word">transit</span><span class="pos">noun / verb</span><div class="pron">/ˈtrænzɪt/</div><div class="def">the movement of a planet through a sign of the zodiac, or past a point on an individual's natal chart. Astrologers interpret transits as symbolically significant periods.</div><div class="ex">"Venus will be transiting Capricorn throughout December — an auspicious period for Libra."</div></div>
+        <div class="vocab-card violet"><span class="word">retrograde</span><span class="pos">adj / noun</span><div class="pron">/ˈretrəɡreɪd/</div><div class="def">the apparent backward movement of a planet as observed from Earth (due to orbital mechanics). In astrology, Mercury retrograde is associated with communication and travel disruption.</div><div class="ex">"Mercury retrograde is a real astronomical phenomenon — the astrological interpretation of its effects is not."</div></div>
+        <div class="vocab-card gold"><span class="word">astrologer</span><span class="pos">noun</span><div class="pron">/əˈstrɒlədʒə/</div><div class="def">a person who studies or practises astrology — interpreting planetary positions to make predictions or provide guidance. Distinct from an astronomer (who studies the physical universe scientifically).</div><div class="ex">"The astrologer told Priya that her Venus placement suggested a strong capacity for deep commitment."</div></div>
+        <div class="vocab-card gold"><span class="word">adherent</span><span class="pos">noun / adj</span><div class="pron">/ədˈhɪərənt/</div><div class="def">a person who supports or follows a particular belief, cause, or philosophy. Used for both religious and non-religious belief systems.</div><div class="ex">"Rafael describes himself as a former strict adherent who now takes a more symbolic approach."</div></div>
+        <div class="vocab-card gold"><span class="word">confirmation bias</span><span class="pos">noun phrase</span><div class="pron">/ˌkɒnfəˈmeɪʃən ˈbaɪəs/</div><div class="def">the psychological tendency to search for, interpret, and recall information in a way that confirms one's existing beliefs. A key concept in understanding why people find horoscopes convincing.</div><div class="ex">"Confirmation bias means we remember the accurate predictions and forget the many that were wrong."</div></div>
+        <div class="vocab-card gold"><span class="word">falsifiable</span><span class="pos">adj</span><div class="pron">/ˈfɔːlsɪfaɪəbəl/</div><div class="def">capable of being tested and potentially proven false. Karl Popper's criterion for scientific claims — a claim is scientific only if it could, in principle, be disproven. Astrology's claims are widely considered not falsifiable.</div><div class="ex">"Rafael concedes that astrology makes no falsifiable claims — and that this matters."</div></div>
+      </div>
+    </div>
+
+    <div class="grammar-box">
+      <h3 class="gold">Extended vocabulary: superstition &amp; belief systems</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card nav"><span class="word">superstition</span><span class="pos">noun</span><div class="pron">/ˌsuːpəˈstɪʃən/</div><div class="def">a belief or practice based on the idea that events can be influenced by specific rituals, omens, or magical thinking, without any rational basis.</div><div class="ex">"Touching wood, avoiding the number thirteen, and reading horoscopes are all forms of superstition."</div></div>
+        <div class="vocab-card nav"><span class="word">the Barnum effect</span><span class="pos">noun phrase</span><div class="pron">/ˈbɑːnəm ɪˈfekt/</div><div class="def">the tendency for people to accept vague, general statements as specifically accurate descriptions of themselves. Also called the Forer effect. Central to understanding horoscope credibility.</div><div class="ex">"The Barnum effect explains why 'You have a great need for others to like you' feels personally revealing."</div></div>
+        <div class="vocab-card nav"><span class="word">sceptic / skeptic</span><span class="pos">noun</span><div class="pron">/ˈskeptɪk/</div><div class="def">a person who questions beliefs that are accepted without sufficient evidence. In the context of astrology: someone who demands empirical proof before accepting astrological claims.</div><div class="ex">"Yuna self-identifies as a sceptic — but by the end of the episode, she concedes 'slightly.'"</div></div>
+        <div class="vocab-card nav"><span class="word">zodiac</span><span class="pos">noun</span><div class="pron">/ˈzəʊdiæk/</div><div class="def">a band of sky along which the sun, moon, and planets appear to travel. Divided into twelve signs, each named after a constellation. The basis of Western astrology.</div><div class="ex">"The twelve signs of the zodiac correspond to the twelve months — Aries through Pisces."</div></div>
+        <div class="vocab-card nav"><span class="word">celestial</span><span class="pos">adj</span><div class="pron">/sɪˈlestiəl/</div><div class="def">relating to the sky or outer space — stars, planets, comets. Also used metaphorically to mean heavenly or divine.</div><div class="ex">"Celestial bodies — planets and stars — move in patterns that astrologers claim are symbolically meaningful."</div></div>
+        <div class="vocab-card nav"><span class="word">mystical</span><span class="pos">adj</span><div class="pron">/ˈmɪstɪkəl/</div><div class="def">relating to a belief in forces or realities beyond human understanding or scientific explanation. Often used positively (a sense of wonder) and critically (lacking evidence).</div><div class="ex">"Rafael's mystical framing of planetary transits coexists, surprisingly, with his scientific background."</div></div>
+        <div class="vocab-card nav"><span class="word">cognitive dissonance</span><span class="pos">noun phrase</span><div class="pron">/ˈkɒɡnɪtɪv ˈdɪsənəns/</div><div class="def">the psychological discomfort caused by holding two contradictory beliefs simultaneously. Rafael — a former astrophysicist who follows astrology — is a case study in cognitive dissonance.</div><div class="ex">"Rafael's position produces cognitive dissonance: he knows astrology isn't scientific, yet finds it meaningful."</div></div>
+        <div class="vocab-card nav"><span class="word">self-fulfilling prophecy</span><span class="pos">noun phrase</span><div class="pron">/selfˈfʊlfɪlɪŋ ˈprɒfɪsi/</div><div class="def">a prediction that directly or indirectly causes itself to become true, because of the belief in the prediction changing the believer's behaviour.</div><div class="ex">"Priya's horoscope may have been a self-fulfilling prophecy — believing she would meet someone made her more open."</div></div>
+      </div>
+    </div>
+
+    <div class="grammar-box" id="vocab2">
+      <h3 class="gold">Extended vocabulary II: pseudoscience &amp; scientific literacy</h3>
+      <p class="grammar-sub">These terms give you the precise language to analyse <em>why</em> astrology, homeopathy, crystal healing, and similar belief systems are considered pseudoscientific — and to do so with nuance, not dismissiveness.</p>
+      <div class="vocab-grid">
+        <div class="vocab-card gold"><span class="word">pseudoscience</span><span class="pos">noun</span><div class="pron">/ˈsjuːdəʊˌsaɪəns/</div><div class="def">a set of beliefs or practices that claim to be scientific but lack the evidence, methodology, or falsifiability required by actual science. The prefix <em>pseudo-</em> (Greek: false) signals the imitation without the substance. Examples: astrology, homeopathy, phrenology, crystal healing, conversion therapy.</div><div class="ex">"Astrology is frequently cited as a textbook example of pseudoscience — not because its practitioners are dishonest, but because its claims are not empirically testable."</div></div>
+        <div class="vocab-card gold"><span class="word">anecdotal evidence</span><span class="pos">noun phrase</span><div class="pron">/ˌænɪkˈdəʊtəl ˈevɪdəns/</div><div class="def">evidence based on personal stories, individual cases, or informal observations rather than systematic data collection. Compelling as narrative but scientifically weak — it cannot establish causation and is subject to confirmation bias and selective memory.</div><div class="ex">"Rafael's argument rests partly on anecdotal evidence — the accounts of his clients — which Yuna notes cannot substitute for controlled studies."</div></div>
+        <div class="vocab-card gold"><span class="word">placebo effect</span><span class="pos">noun phrase</span><div class="pron">/pləˈsiːbəʊ ɪˈfekt/</div><div class="def">a measurable, real improvement in a person's condition caused by their belief in a treatment — rather than the treatment itself. Crucial in evaluating pseudoscientific therapies: people feel better after crystal healing, but is the crystal causing it, or the belief and attention?</div><div class="ex">"The placebo effect is real and documented — which makes it genuinely difficult to dismiss practices like homeopathy on the grounds that 'nothing happens,' because something does happen."</div></div>
+        <div class="vocab-card gold"><span class="word">empiricism</span><span class="pos">noun</span><div class="pron">/ɪmˈpɪrɪsɪzəm/</div><div class="def">the philosophical position that knowledge comes primarily from sensory experience and observation — the foundation of the scientific method. An <strong>empiricist</strong> demands observable, replicable evidence before accepting a claim as knowledge.</div><div class="ex">"Yuna's empiricism leads her to demand peer-reviewed data — a standard that no astrological tradition has yet met."</div></div>
+        <div class="vocab-card violet"><span class="word">peer review</span><span class="pos">noun phrase</span><div class="pron">/pɪə rɪˈvjuː/</div><div class="def">the process by which scientific research is evaluated by other experts in the same field before publication, to verify its methodology and conclusions. The gold standard for scientific credibility — and the threshold that pseudoscience typically cannot clear.</div><div class="ex">"In terms of peer review, no rigorous double-blind study has found astrology to predict personality or events above chance level."</div></div>
+        <div class="vocab-card violet"><span class="word">correlation ≠ causation</span><span class="pos">maxim</span><div class="pron">/ˌkɒrəˈleɪʃən ˌkɔːzˈeɪʃən/</div><div class="def">the principle that two things occurring together (a correlation) does not mean one causes the other. A foundational concept in statistics and critical thinking. Astrological predictions that seem accurate often reflect correlation at best — the patterns people notice may share a third cause, or be coincidental.</div><div class="ex">"Yuna's core methodological objection is that correlation does not equal causation: even if people born in March do share certain traits, that doesn't mean Mars caused them."</div></div>
+        <div class="vocab-card violet"><span class="word">cherry-picking</span><span class="pos">noun / verb phrase</span><div class="pron">/ˈtʃeri pɪkɪŋ/</div><div class="def">selectively choosing data or evidence that supports a conclusion while ignoring contradictory data. A common criticism of pseudoscientific claims and anecdotal reasoning — you count the hits and forget the misses.</div><div class="ex">"As a result of cherry-picking confirming instances, believers in astrology build a compelling but statistically misleading case for its accuracy."</div></div>
+        <div class="vocab-card violet"><span class="word">extraordinary claims require extraordinary evidence</span><span class="pos">maxim (Sagan)</span><div class="pron">&nbsp;</div><div class="def">a principle associated with Carl Sagan stating that the more unusual or counter-intuitive a claim, the more robust the evidence required before it should be accepted. Widely used in sceptical discourse about pseudoscience and the paranormal.</div><div class="ex">"With regard to the claim that Mercury's position affects contract negotiations, Yuna invokes the Sagan standard: extraordinary claims require extraordinary evidence."</div></div>
+        <div class="vocab-card gold"><span class="word">homeopathy</span><span class="pos">noun</span><div class="pron">/ˌhəʊmiˈɒpəθi/</div><div class="def">a system of alternative medicine based on the belief that a substance that causes symptoms in healthy people can cure similar symptoms in sick people, when diluted to extreme concentrations. Considered pseudoscientific by mainstream medicine; randomised controlled trials consistently find it no more effective than placebo.</div><div class="ex">"Homeopathy is perhaps the most extensively studied pseudoscience — and the gap between its popularity and its evidence base is striking."</div></div>
+        <div class="vocab-card gold"><span class="word">apophenia</span><span class="pos">noun</span><div class="pron">/ˌæpəˈfiːniə/</div><div class="def">the tendency to perceive meaningful connections or patterns in unrelated things — sometimes called patternicity. Thought to underlie many forms of magical thinking, conspiracy theories, and belief in astrology: the human brain is so good at finding patterns that it finds them even in random noise.</div><div class="ex">"Rafael's pattern-noticing could be reframed as apophenia — the brain's tendency to find signal in noise, which is adaptive in evolution but misleading in epistemology."</div></div>
+        <div class="vocab-card violet"><span class="word">occam's razor</span><span class="pos">noun phrase</span><div class="pron">/ˈɒkəmz ˈreɪzə/</div><div class="def">the principle that among competing explanations, the one requiring the fewest assumptions should be preferred. Named after 14th-century philosopher William of Ockham. Applied to astrology: the simplest explanation for horoscope accuracy is the Barnum effect and confirmation bias — no planetary mechanism required.</div><div class="ex">"In light of Occam's razor, Yuna argues that the psychological explanation for astrology's appeal is far more parsimonious than any causal claim involving celestial mechanics."</div></div>
+        <div class="vocab-card violet"><span class="word">double-blind trial</span><span class="pos">noun phrase</span><div class="pron">/ˈdʌbəl blaɪnd ˈtraɪəl/</div><div class="def">a scientific experiment in which neither the participants nor the researchers know who is receiving a real treatment versus a placebo — eliminating researcher and participant bias. The methodological gold standard for testing medical and psychological claims.</div><div class="ex">"By virtue of the double-blind design, the study eliminated both expectation bias and researcher confirmation effects — and still found no astrological effect."</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Key collocations</h3>
+      <div class="chip-row">
+        <span class="chip violet">read / consult / dismiss a horoscope</span>
+        <span class="chip violet">natal / birth chart · retrograde motion</span>
+        <span class="chip violet">transit (of) Venus / Saturn / Jupiter</span>
+        <span class="chip gold">confirmation / recency / attribution bias</span>
+        <span class="chip gold">falsifiable / testable / empirical claim</span>
+        <span class="chip gold">strict / devout / lapsed adherent</span>
+        <span class="chip nav">celestial body / mechanics / event</span>
+        <span class="chip nav">deeply / mildly sceptical · invoke / dismiss a claim</span>
+        <span class="chip nav">self-fulfilling prophecy · Barnum / Forer effect</span>
+        <span class="chip gold">pseudoscientific claim / practice / tradition</span>
+        <span class="chip gold">anecdotal / empirical / peer-reviewed evidence</span>
+        <span class="chip gold">placebo / nocebo effect</span>
+        <span class="chip violet">cherry-pick data · apophenia / patternicity</span>
+        <span class="chip violet">invoke Occam's razor · apply the Sagan standard</span>
+        <span class="chip violet">double-blind / randomised controlled trial</span>
+        <span class="chip violet">correlation does not imply causation</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. VOCAB PRACTICE -->
+  <div class="tab-section" id="vp">
+    <div class="tab-header"><span class="tab-badge tb-vocab">PRACTICE</span><h2 class="tab-title">Try it: vocabulary</h2></div>
+    <hr class="tab-rule">
+    <div class="exercise">
+      <span class="ex-label nav">Exercise 6 · Gap-fill</span>
+      <h4>Complete each sentence with the correct word from the box.</h4>
+      <p class="instr"><em>horoscope · natal chart · retrograde · falsifiable · confirmation bias · Barnum effect · sceptic · self-fulfilling prophecy</em></p>
+      <div class="q-row"><span class="q-num">1.</span><span>Karl Popper argued that a theory is only scientific if it makes ____________ predictions — ones that could, in principle, be proven wrong.</span>
+        <input type="text" class="blank-input wide-input" id="e6a" data-answer="falsifiable" placeholder="word…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">2.</span><span>The ____________ is a more detailed document than a sun-sign horoscope — it maps the position of every planet at the exact moment of birth.</span>
+        <input type="text" class="blank-input wide-input" id="e6b" data-answer="natal chart" placeholder="phrase…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">3.</span><span>The ____________ explains why "You sometimes feel misunderstood by people close to you" feels like a uniquely accurate personal insight — when it is in fact true of nearly everyone.</span>
+        <input type="text" class="blank-input wide-input" id="e6c" data-answer="barnum effect" placeholder="phrase…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">4.</span><span>Priya's experience of meeting her partner after a Venus reading could be a ____________ — the belief changed her behaviour, which changed the outcome.</span>
+        <input type="text" class="blank-input wide-input" id="e6d" data-answer="self-fulfilling prophecy" placeholder="phrase…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">5.</span><span>Yuna is a ____________ — she accepts no claim without peer-reviewed evidence, and finds Mercury ____________ a convenient folk explanation for normal human error.</span>
+        <input type="text" class="blank-input wide-input" id="e6e" data-answer="sceptic|skeptic" placeholder="first word…">
+        <input type="text" class="blank-input wide-input" id="e6f" data-answer="retrograde" placeholder="second word…" style="margin-top:4px;"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">6.</span><span>____________ means we tend to remember the one prediction that came true and forget the seventeen that didn't — which makes any vague system of prediction seem accurate over time.</span>
+        <input type="text" class="blank-input wide-input" id="e6g" data-answer="confirmation bias" placeholder="phrase…"></div>
+      <button class="check-btn" onclick="checkEx6()">Check my answers</button>
+      <div class="feedback" id="fb-ex6"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label gold">Exercise 6b · Pseudoscience vocabulary — definitions in use</span>
+      <h4>Match each sentence to the concept it best illustrates. Write the term in the blank.</h4>
+      <p class="instr"><em>pseudoscience · anecdotal evidence · placebo effect · cherry-picking · apophenia · Occam's razor · double-blind trial · correlation ≠ causation · peer review · empiricism</em></p>
+      <div class="q-row"><span class="q-num">1.</span><span>"Rafael counts every time a client says the transit reading was helpful — but never tracks the times it wasn't." This is an example of: ______________</span></div>
+      <input type="text" class="blank-input wide-input" id="e6ba" data-answer="cherry-picking" placeholder="term…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">2.</span><span>"People who have crystal healing sessions often report feeling calmer — but is that the crystal, or the hour of quiet attention to their wellbeing?" The relevant concept: ______________</span></div>
+      <input type="text" class="blank-input wide-input" id="e6bb" data-answer="placebo effect" placeholder="term…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">3.</span><span>"Yuna points out that people born in winter months do score differently on some personality tests — but winter births correlate with vitamin D exposure, school year cut-offs, and parental age. None of this proves astrology." The relevant principle: ______________</span></div>
+      <input type="text" class="blank-input wide-input" id="e6bc" data-answer="correlation does not equal causation|correlation causation|correlation" placeholder="term or principle…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">4.</span><span>"Rafael's pattern-noticing — finding deep meaning in the timing of planetary transits — could be the brain doing what it evolved to do: find signal in noise, even when there isn't any." This describes: ______________</span></div>
+      <input type="text" class="blank-input wide-input" id="e6bd" data-answer="apophenia" placeholder="term…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">5.</span><span>"The simplest explanation for horoscope accuracy is the Barnum effect and confirmation bias — no celestial mechanism required." This argument invokes: ______________</span></div>
+      <input type="text" class="blank-input wide-input" id="e6be" data-answer="occam's razor|occams razor" placeholder="term…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">6.</span><span>"No rigorous study in which participants didn't know whether they were receiving real or fake astrological readings has found an effect above chance." This study design is called a: ______________</span></div>
+      <input type="text" class="blank-input wide-input" id="e6bf" data-answer="double-blind trial|double blind trial" placeholder="term…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">7.</span><span>"Astrology describes cyclical patterns with poetic names and makes predictions — but its predictions have never been independently verified. It imitates the form of science without meeting its standards." This makes it a: ______________</span></div>
+      <input type="text" class="blank-input wide-input" id="e6bg" data-answer="pseudoscience" placeholder="term…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">8.</span><span>"Rafael says his clients report that the readings are accurate — but these are individual testimonials, not controlled data." Yuna would call this: ______________</span></div>
+      <input type="text" class="blank-input wide-input" id="e6bh" data-answer="anecdotal evidence" placeholder="term…">
+      <button class="check-btn" onclick="checkEx6b()">Check my answers</button>
+      <div class="feedback" id="fb-ex6b"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label nav">Exercise 7 · Integrate: future progressive + prepositional phrase + vocabulary</span>
+      <h4>Write one sentence that includes all three elements: a future progressive verb, a prepositional phrase collocation, and a vocabulary item from this week.</h4>
+      <p class="instr">Example: "In terms of the Barnum effect, researchers will be exploring whether astrological predictions are structurally indistinguishable from cold-reading techniques."</p>
+      <textarea class="response-box" id="e7a" placeholder="Your integrated sentence…" style="min-height:80px;"></textarea>
+      <textarea class="response-box" id="e7b" placeholder="A second one (try a different prepositional phrase)…" style="min-height:80px;margin-top:10px;"></textarea>
+      <p style="font-family:Arial,sans-serif;font-size:13.5px;color:var(--concrete);margin-top:10px;font-style:italic;">Open-ended — bring to class for peer review in Session 2.</p>
+    </div>
+  </div>
+
+  <!-- 11. PUTTING IT TOGETHER -->
+  <div class="tab-section" id="together">
+    <div class="tab-header"><span class="tab-badge tb-together">PUTTING IT TOGETHER</span><h2 class="tab-title">Write a short analytical response</h2></div>
+    <hr class="tab-rule">
+    <div class="activate-box">
+      <h3>Writing task: respond to the podcast</h3>
+      <p>Write an analytical response to The Celestial Sceptic, Episode 47 (130–150 words). You may agree with Yuna, with Rafael, or take a third position — but your response must be analytical, not merely opinion.</p>
+      <p>Your response must include:</p>
+      <p>✓ At least <strong>3 uses of the future progressive</strong> — including at least one prediction and one polite enquiry form<br>
+         ✓ At least <strong>3 prepositional phrase collocations</strong> (from the full set: in terms of, with regard to, as a result of, in the context of, on the basis of, in the light of, in addition to)<br>
+         ✓ At least <strong>4 vocabulary items</strong> from this week<br>
+         ✓ Formal register — no casual language<br>
+         ✓ At least one reference to a psychological concept (Barnum effect, confirmation bias, self-fulfilling prophecy, or cognitive dissonance)</p>
+      <p style="font-size:14px;color:rgba(255,255,255,.75);margin-top:8px;"><em>Starter: "In terms of Rafael's position, I find his distinction between symbolic and predictive astrology persuasive — with regard to responsible practice, astrologers will be doing a disservice to clients if they fail to make this distinction explicit. As a result of…"</em></p>
+      <textarea class="response-box" id="togetherBox" placeholder="Write your analytical response here…" style="border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.95);"></textarea>
+      <div class="word-count" id="togetherCount" style="color:rgba(255,255,255,.7);">0 words</div>
+    </div>
+    <div class="card">
+      <h3>Bring to Session 2</h3>
+      <p>Exchange with a partner. Find: every future progressive (circle it and name the use — in-progress, gradual process, polite enquiry, etc.), every prepositional phrase (underline it), every vocabulary item (tick it). Then: is the register consistently formal? Is there a clear analytical argument — or is it just a list of opinions?</p>
+    </div>
+  </div>
+
+  <!-- 12. EXPLORE -->
+  <div class="tab-section" id="explore">
+    <div class="tab-header"><span class="tab-badge tb-explore">EXPLORE ON YOUR OWN</span><h2 class="tab-title">Go further</h2></div>
+    <hr class="tab-rule">
+    <div class="explore-card">
+      <span class="explore-tag">Listening</span>
+      <h3>Find a real astrology podcast</h3>
+      <p>Search for any English-language astrology podcast episode (there are many — try "The Astrology Podcast" or "Ghost of a Podcast"). Listen for 10 minutes and note:</p>
+      <ul>
+        <li>Every future progressive you hear — write it down verbatim. Is the host using it for in-progress predictions or gradual process?</li>
+        <li>How many prepositional phrase collocations do you hear? ("In terms of," "with regard to," etc.) Note any alternatives — do they use "concerning," "regarding," "because of"?</li>
+        <li>How does the register compare with Yuna and Rafael's podcast? More or less formal? Why?</li>
+      </ul>
+    </div>
+    <div class="explore-card">
+      <span class="explore-tag">Research</span>
+      <h3>Mercury retrograde — the astronomy</h3>
+      <p>Mercury retrograde is a real astronomical phenomenon. Research how it actually works:</p>
+      <ul>
+        <li>Why does Mercury appear to move backwards? Draw or describe the orbital mechanics.</li>
+        <li>How many times per year does Mercury retrograde occur? How long does each one last?</li>
+        <li>Write a one-paragraph explanation of Mercury retrograde using at least 3 future progressives (describing what will be happening in the next retrograde period) and 2 prepositional phrase collocations.</li>
+      </ul>
+    </div>
+    <div class="explore-card">
+      <span class="explore-tag">Psychology</span>
+      <h3>The Forer experiment</h3>
+      <p>In 1948, psychologist Bertram Forer gave students a "personalised" personality assessment — actually, every student received the same text. Research this experiment and:</p>
+      <ul>
+        <li>What average accuracy score did students give the "personalised" assessment? (Hint: it's very high.)</li>
+        <li>Write a short summary of the Forer experiment using prepositional phrases: "In terms of… / As a result of… / With regard to…"</li>
+        <li>How does this connect to the Barnum effect described in the podcast?</li>
+      </ul>
+    </div>
+    <div class="explore-card">
+      <span class="explore-tag">Grammar extension</span>
+      <h3>Future progressive vs. future perfect progressive</h3>
+      <p>This week covers the future progressive (will be + -ing). There is also a future perfect progressive (will have been + -ing). Research the difference:</p>
+      <ul>
+        <li>What does "By next year, I will have been studying English for ten years" mean — and how does it differ from "I will be studying English next year"?</li>
+        <li>Can you find an example of future perfect progressive in the podcast context? (Hint: think about Priya.)</li>
+        <li>Write two sentences: one future progressive, one future perfect progressive, both about an astrological event.</li>
+      </ul>
+    </div>
+    <div class="explore-card">
+      <span class="explore-tag">Writing</span>
+      <h3>Write your own horoscope — and deconstruct it</h3>
+      <p>Write a sun-sign horoscope for any sign — make it sound authentically astrological, using future progressive and the vocabulary from this week. Then, in a second paragraph, deconstruct it using psychological concepts (Barnum effect, confirmation bias, self-fulfilling prophecy) and prepositional phrase collocations. Bring both to class.</p>
+    </div>
+  </div>
+
+  <!-- 13. QUICK REFERENCE -->
+  <div class="tab-section" id="ref">
+    <div class="tab-header"><span class="tab-badge tb-ref">QUICK REFERENCE</span><h2 class="tab-title">Everything on one page</h2></div>
+    <hr class="tab-rule">
+    <div style="overflow-x:auto;">
+      <table class="ref-table">
+        <tr><th>Form</th><th>Structure</th><th>Key use</th><th>Example</th></tr>
+        <tr><td><strong>Future Progressive (will)</strong></td><td>will be + verb-ing</td><td>In-progress at future time; gradual process; simultaneous future actions</td><td><em>"Mercury will be moving through Scorpio for three weeks."</em></td></tr>
+        <tr><td><strong>Future Progressive (going to)</strong></td><td>am/is/are going to be + verb-ing</td><td>Arranged/expected future in progress</td><td><em>"She was going to be meeting people in December anyway."</em></td></tr>
+        <tr><td><strong>Negative</strong></td><td>won't be + verb-ing</td><td>Future action that will not be in progress</td><td><em>"Astrology won't be making falsifiable claims anytime soon."</em></td></tr>
+        <tr><td><strong>Polite enquiry</strong></td><td>Will + subject + be + verb-ing?</td><td>Asking about plans without presupposing</td><td><em>"Will you be appearing on the next episode?"</em></td></tr>
+        <tr><td><strong>Stative verb warning</strong></td><td>Stative verbs → no progressive</td><td>believe, know, understand, seem → use simple will</td><td><em>"I will know / will believe" — NOT "will be knowing"</em></td></tr>
+      </table>
+    </div>
+    <div style="overflow-x:auto;margin-top:20px;">
+      <table class="ref-table">
+        <tr><th>Phrase</th><th>Function</th><th>Pattern</th><th>Example</th></tr>
+        <tr><td><strong>in terms of</strong></td><td>Specifying a dimension or area of evaluation</td><td>in terms of + NP</td><td><em>"In terms of predictive accuracy, astrology has no empirical basis."</em></td></tr>
+        <tr><td><strong>with regard to</strong></td><td>Introducing or shifting to a topic</td><td>with regard to + NP (no article omission)</td><td><em>"With regard to responsible practice, astrologers must be clear."</em></td></tr>
+        <tr><td><strong>as a result of</strong></td><td>Introducing a cause; effect follows in main clause</td><td>as a result of + NP → [comma] + effect</td><td><em>"As a result of the reading, she was more open."</em></td></tr>
+        <tr><td><strong>in the context of</strong></td><td>Against the background of</td><td>in the context of + NP</td><td><em>"In the context of rising anxiety, astrology's appeal is understandable."</em></td></tr>
+        <tr><td><strong>on the basis of</strong></td><td>Using as evidence or grounds for a decision</td><td>on the basis of + NP</td><td><em>"No major decision should be made on the basis of a horoscope."</em></td></tr>
+        <tr><td><strong>in the light of</strong></td><td>Taking into account new information</td><td>in the light of + NP</td><td><em>"In the light of the evidence, the claim requires revision."</em></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 14. ANSWER KEY -->
+  <div class="answer-key" id="ak">
+    <div class="ak-title">Answer Key</div>
+    <p class="ak-sub">Exercises 5, 7, and Putting It Together are open-ended — review in class.</p>
+
+    <div class="ak-section">
+      <h4>Exercise 1 — Will be -ing or will + infinitive?</h4>
+      <div class="ak-item"><span class="an">1.</span><span class="av">will move (simple event) OR will be moving (if emphasising the transit as a gradual process)</span><span class="anote">Both are grammatically possible. "Will move into Capricorn" = moment of entry. "Will be moving into Capricorn" = transition in progress. In astrology, the progressive is common because transits are gradual.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">will be keeping</span><span class="anote">Ongoing precaution during the retrograde period — progressive emphasises the continuous action across time, not a single act of backing up.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">will be travelling</span><span class="anote">In-progress at a specific future moment (the new moon). At that point in time, the travel will be happening — not completed.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">will understand</span><span class="anote">Stative verb — "understand" cannot take progressive aspect. Use simple future: "will understand."</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">Will you be appearing</span><span class="anote">Polite enquiry about plans. "Will you appear?" sounds like a direct request or invitation; "Will you be appearing?" is softer — merely asking about arrangements.</span></div>
+    </div>
+
+    <div class="ak-section">
+      <h4>Exercise 2 — Complete the prediction</h4>
+      <div class="ak-item"><span class="an">1a.</span><span class="av">will be forming</span><span class="anote">Gradual astronomical process over a fortnight — progressive appropriate.</span></div>
+      <div class="ak-item"><span class="an">1b.</span><span class="av">will be reconsidering</span><span class="anote">Ongoing mental process, spread across time — progressive appropriate.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">will be navigating</span><span class="anote">"Navigate a period" = extended process throughout the lunar cycle. Progressive.</span></div>
+      <div class="ak-item"><span class="an">3a.</span><span class="av">will be transiting</span><span class="anote">Venus transiting = gradual movement through a house — in-progress across a period.</span></div>
+      <div class="ak-item"><span class="an">3b.</span><span class="av">won't be focusing / will not be focusing</span><span class="anote">Negative future progressive. Note: "won't be focus" is wrong — needs -ing.</span></div>
+      <div class="ak-item"><span class="an">3c.</span><span class="av">will be drawn</span><span class="anote">Passive future progressive — "attention will be drawn" (be-passive, future progressive form).</span></div>
+    </div>
+
+    <div class="ak-section">
+      <h4>Exercise 3 — Error correction</h4>
+      <div class="ak-item"><span class="an">1.</span><span class="av">The stars will be moving into a rare configuration on the winter solstice.</span><span class="anote">"will moving" → "will be moving." Missing "be" in the future progressive structure.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">At exactly midnight on New Year's Day, Jupiter will be entering Aquarius.</span><span class="anote">"will be enter" → "will be entering." After "will be," the verb must be in -ing form.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">I will know my birth chart by heart after this course.</span><span class="anote">"will be knowing" → "will know." "Know" is a stative verb — no progressive form.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">Will you believe in astrology differently after reading Yuna's sceptic column?</span><span class="anote">"will you be believe" → "will you believe." "Believe" is stative — no progressive. Also: "be believe" is grammatically impossible regardless.</span></div>
+    </div>
+
+    <div class="ak-section">
+      <h4>Exercise 4 — Prepositional phrase gap-fill</h4>
+      <div class="ak-item"><span class="an">1.</span><span class="av">In the light of</span><span class="anote">New evidence (a new study) prompts reconsideration — "in the light of" introduces new information that changes the picture.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">In terms of</span><span class="anote">Empirical validity is the specific dimension being evaluated — "in terms of" introduces the frame of assessment.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">In the context of / As a result of</span><span class="anote">Both work: "in the context of the Barnum effect" = against the background of that phenomenon; "as a result of" = because of. Both defensible. "In the context of" is slightly more precise here.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">With regard to</span><span class="anote">Introducing a topic for discussion — "with regard to responsible practice" shifts to the question of what astrologers should do.</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">as a result of</span><span class="anote">"As a result of the reading" — the reading is the cause; the attitudinal change is the effect in the main clause.</span></div>
+      <div class="ak-item"><span class="an">6.</span><span class="av">on the basis of</span><span class="anote">"On the basis of an astrological reading alone" — the reading is the grounds being warned against. "On the basis of" = using as evidence or justification for a decision.</span></div>
+    </div>
+
+    <div class="ak-section">
+      <h4>Exercise 6 — Vocabulary gap-fill</h4>
+      <div class="ak-item"><span class="an">1.</span><span class="av">falsifiable</span><span class="anote">Popper's criterion: a claim is scientific only if it could be disproven.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">natal chart</span><span class="anote">More detailed than a horoscope — maps all planet positions at birth.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">Barnum effect</span><span class="anote">General statements feel personally specific — the mechanism behind horoscope credibility.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">self-fulfilling prophecy</span><span class="anote">Belief in the prediction changes behaviour → outcome matches prediction.</span></div>
+      <div class="ak-item"><span class="an">5a.</span><span class="av">sceptic / skeptic</span><span class="anote">Yuna demands evidence before accepting any claim.</span></div>
+      <div class="ak-item"><span class="an">5b.</span><span class="av">retrograde</span><span class="anote">Mercury retrograde = the apparent backward movement of Mercury.</span></div>
+      <div class="ak-item"><span class="an">6.</span><span class="av">confirmation bias</span><span class="anote">We remember hits, forget misses — makes vague systems seem accurate.</span></div>
+    </div>
+
+    <div class="ak-section">
+      <h4>Exercise 6b — Pseudoscience vocabulary</h4>
+      <div class="ak-item"><span class="an">1.</span><span class="av">cherry-picking</span><span class="anote">Counting confirming instances (helpful readings) while ignoring disconfirming ones (unhelpful ones). A core flaw in anecdotal reasoning.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">placebo effect</span><span class="anote">The benefit is real — but it's caused by belief and attention, not the crystal itself. Important nuance: placebo effect doesn't make a practice scientific.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">correlation ≠ causation</span><span class="anote">Birth-month personality correlations might exist for many reasons — school year effects, vitamin D, parental age — with no planetary mechanism needed.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">apophenia</span><span class="anote">The brain finds patterns in random noise — adaptive for survival, misleading for epistemology. Explains why planetary timing seems meaningful even to trained scientists like Rafael.</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">Occam's razor</span><span class="anote">The simpler explanation (Barnum effect + confirmation bias) should be preferred over the more complex one (celestial causal mechanism). Parsimony as a methodological principle.</span></div>
+      <div class="ak-item"><span class="an">6.</span><span class="av">double-blind trial</span><span class="anote">Neither participants nor researchers know who received the real treatment — eliminates expectation bias on both sides. The gold standard that pseudoscientific claims typically cannot meet.</span></div>
+      <div class="ak-item"><span class="an">7.</span><span class="av">pseudoscience</span><span class="anote">Imitates science in form (predictions, patterns, categories) but fails the methodological tests: falsifiability, replication, peer review, controlled study.</span></div>
+      <div class="ak-item"><span class="an">8.</span><span class="av">anecdotal evidence</span><span class="anote">Individual client testimonials — compelling as narrative, but cannot establish causation and subject to cherry-picking, Barnum effect, and confirmation bias simultaneously.</span></div>
+    </div>
+  </div>
+
+  <div class="wrapup">
+    <h3>Before Session 1, make sure you can…</h3>
+    <ul>
+      <li>Form the future progressive: will be + -ing (and going to be + -ing), negative, and question forms</li>
+      <li>Identify the five main uses: in-progress at future time, gradual process, planned/expected event, polite enquiry, simultaneous future actions</li>
+      <li>Avoid the two main errors: missing "be" (will + -ing ✗), and progressive with stative verbs</li>
+      <li>Use in terms of, with regard to, and as a result of correctly — including the distinction between "as a result of + NP" and "as a result" (standalone connector)</li>
+      <li>Explain the Barnum effect, confirmation bias, and self-fulfilling prophecy in your own words</li>
+      <li>Define and distinguish: pseudoscience · anecdotal evidence · placebo effect · apophenia · Occam's razor · double-blind trial</li>
+      <li>Explain why "correlation does not equal causation" matters when evaluating astrological claims</li>
+      <li>Have the Putting It Together paragraph ready for peer review in Session 2</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+// Stars
+const field=document.getElementById('starField');
+for(let i=0;i<55;i++){
+  const st=document.createElement('div');
+  st.className='star';
+  const s=Math.random()*3+1;
+  st.style.cssText=`width:${s}px;height:${s}px;top:${Math.random()*100}%;left:${Math.random()*100}%;opacity:${Math.random()*.5+.15};`;
+  field.appendChild(st);
+}
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  document.getElementById('pf').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+});
+document.querySelectorAll('.reveal-btn').forEach(btn=>{
+  if(btn.dataset.noReveal) return;
+  const next=btn.nextElementSibling;
+  if(next&&next.classList.contains('notice-reveal')){
+    btn.addEventListener('click',()=>{next.style.display='block';btn.style.display='none';});
+  }
+});
+function norm(v){return v.trim().toLowerCase().replace(/[.,!?'"]/g,'').replace(/\s+/g,' ');}
+function matches(val,ans){
+  const v=norm(val);
+  return ans.split('|').some(a=>{a=norm(a);return v===a||(v.length>5&&(a.startsWith(v.substring(0,Math.min(v.length,22)))||v.startsWith(a.substring(0,Math.min(a.length,22)))));});
+}
+function checkGroup(ids,answers,fbId){
+  let ok=0;
+  ids.forEach((id,i)=>{
+    const el=document.getElementById(id);if(!el)return;
+    if(answers[i]==='open'){el.style.borderColor='#7B5EA7';ok++;return;}
+    if(matches(el.value,answers[i])){ok++;el.style.borderColor='#7B5EA7';}
+    else{el.style.borderColor='#9A7A2A';}
+  });
+  const fb=document.getElementById(fbId);fb.classList.add('show');
+  if(ok===ids.length){fb.classList.remove('bad');fb.classList.add('good');fb.textContent='All correct!';}
+  else{fb.classList.remove('good');fb.classList.add('bad');fb.textContent=ok+' of '+ids.length+' correct — check amber borders. See answer key below.';}
+}
+function checkEx1(){checkGroup(['e1a','e1b','e1c','e1d','e1e'],['will move|will be moving|both','will be keeping','will be travelling|will be traveling','will understand','will you be appearing'],'fb-ex1');}
+function checkEx2(){checkGroup(['e2a','e2b','e2c','e2d','e2e','e2f'],['will be forming','will be reconsidering','will be navigating','will be transiting','won\'t be focusing|will not be focusing','will be drawn'],'fb-ex2');}
+function checkEx3(){checkGroup(['e3a','e3b','e3c','e3d'],['the stars will be moving into a rare configuration on the winter solstice','at exactly midnight on new year\'s day jupiter will be entering aquarius','i will know my birth chart by heart after this course','will you believe in astrology differently after reading yuna\'s sceptic column'],'fb-ex3');}
+function checkEx4(){checkGroup(['e4a','e4b','e4c','e4d','e4e','e4f'],['in the light of','in terms of','in the context of|as a result of','with regard to','as a result of','on the basis of'],'fb-ex4');}
+function checkEx6b(){checkGroup(['e6ba','e6bb','e6bc','e6bd','e6be','e6bf','e6bg','e6bh'],['cherry-picking','placebo effect','correlation does not equal causation|correlation causation|correlation','apophenia','occam\'s razor|occams razor','double-blind trial|double blind trial','pseudoscience','anecdotal evidence'],'fb-ex6b');}
+function checkEx6(){checkGroup(['e6a','e6b','e6c','e6d','e6e','e6f','e6g'],['falsifiable','natal chart','barnum effect','self-fulfilling prophecy','sceptic|skeptic','retrograde','confirmation bias'],'fb-ex6');}
+const box=document.getElementById('togetherBox'),cnt=document.getElementById('togetherCount');
+if(box&&cnt) box.addEventListener('input',()=>{const w=box.value.trim().split(/\s+/).filter(x=>x.length>0);cnt.textContent=(box.value.trim()===''?0:w.length)+' words';});
+</script>
+</body>
+</html>

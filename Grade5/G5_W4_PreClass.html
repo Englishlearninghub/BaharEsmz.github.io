@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 5 · Week 4 — The Renovation Diary</title>
+<style>
+  :root{
+    --paper:#f4ecdd;
+    --paper2:#efe4cf;
+    --ink:#2c2417;
+    --ink-soft:#5b4f3d;
+    --brick:#a8461f;
+    --brick-dark:#7c3216;
+    --concrete:#6b7075;
+    --safety:#d98a1c;
+    --safety-dark:#b06e10;
+    --sage:#5c7a5e;
+    --sage-dark:#3f5a41;
+    --card:#fffaf0;
+    --line:#cbb894;
+    --danger:#a3261c;
+    --good:#2f6b3a;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"Bookman Old Style","Century Schoolbook","Georgia",serif;
+    color:var(--ink);
+    background:
+      repeating-linear-gradient(0deg, rgba(0,0,0,0.015) 0px, rgba(0,0,0,0.015) 1px, transparent 1px, transparent 3px),
+      radial-gradient(circle at 15% 8%, #fbf3e2 0%, var(--paper) 45%, var(--paper2) 100%);
+    line-height:1.6;
+    padding-bottom:60px;
+  }
+  #progress{
+    position:fixed; top:0; left:0; height:6px; width:0%;
+    background:linear-gradient(90deg,var(--brick),var(--safety));
+    z-index:999; transition:width .1s ease-out;
+  }
+  header.hero{
+    padding:56px 8vw 40px;
+    background:
+      linear-gradient(135deg, rgba(168,70,31,0.93), rgba(124,50,22,0.93)),
+      repeating-linear-gradient(45deg, rgba(255,255,255,0.04) 0 10px, transparent 10px 20px);
+    color:#fbf1e2;
+    border-bottom:6px solid var(--safety);
+  }
+  header.hero .eyebrow{
+    font-family:Arial,Helvetica,sans-serif;
+    text-transform:uppercase; letter-spacing:3px; font-size:12.5px;
+    color:#f4d9a8; font-weight:700;
+  }
+  header.hero h1{ font-size:clamp(28px,4vw,44px); margin:10px 0 6px; }
+  header.hero p.lead{ font-size:18px; max-width:760px; color:#f6e6cf; }
+  .badge-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .pill{
+    font-family:Arial,sans-serif; font-size:13px; font-weight:700;
+    padding:7px 14px; border-radius:20px; background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.35); color:#fff;
+  }
+  main{ max-width:960px; margin:0 auto; padding:0 6vw; }
+
+  nav.toc{
+    background:var(--card); border:2px solid var(--line); border-radius:6px;
+    margin:-28px auto 40px; padding:26px 30px; max-width:900px;
+    box-shadow:0 6px 18px rgba(60,40,10,0.12);
+  }
+  nav.toc h2{ margin-top:0; font-size:20px; color:var(--brick-dark); }
+  nav.toc ol{
+    columns:2; column-gap:34px; list-style:none; padding:0; margin:0; counter-reset:tocnum;
+  }
+  nav.toc li{ break-inside:avoid; margin-bottom:9px; }
+  nav.toc a{
+    text-decoration:none; color:var(--ink); font-size:15px; display:flex; gap:10px; align-items:baseline;
+  }
+  nav.toc a:hover{ color:var(--brick); }
+  nav.toc .n{
+    font-family:Arial,sans-serif; font-weight:800; font-size:12px; color:#fff;
+    background:var(--concrete); border-radius:50%; min-width:22px; height:22px;
+    display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  nav.toc li:nth-child(4n+1) .n{background:var(--brick);}
+  nav.toc li:nth-child(4n+2) .n{background:var(--safety-dark);}
+  nav.toc li:nth-child(4n+3) .n{background:var(--sage-dark);}
+  nav.toc li:nth-child(4n+4) .n{background:var(--concrete);}
+
+  section{ margin-bottom:56px; scroll-margin-top:20px; }
+  .sec-head{ display:flex; align-items:center; gap:14px; margin-bottom:18px; }
+  .sec-num{
+    font-family:Arial,sans-serif; font-weight:800; color:#fff; background:var(--brick);
+    width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    flex-shrink:0; font-size:17px;
+  }
+  h2{ font-size:26px; margin:0; color:var(--brick-dark); }
+  h3{ color:var(--sage-dark); font-size:20px; }
+  .tag{
+    font-family:Arial,sans-serif; font-size:11.5px; text-transform:uppercase; letter-spacing:1.5px;
+    font-weight:700; color:var(--ink-soft);
+  }
+
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:6px;
+    padding:22px 26px; margin-bottom:18px; box-shadow:0 3px 10px rgba(60,40,10,0.06);
+  }
+  .card-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; }
+
+  /* Realia documents */
+  .doc{
+    background:#fffdf7; border:1px solid #d8c9a4; border-radius:3px; padding:20px 24px; margin-bottom:20px;
+    position:relative; box-shadow:2px 3px 0 rgba(0,0,0,0.05);
+  }
+  .doc::before{
+    content:attr(data-doctype); position:absolute; top:-11px; left:18px; background:var(--safety);
+    color:#2c2417; font-family:Arial,sans-serif; font-size:11px; font-weight:800; letter-spacing:1px;
+    padding:3px 10px; border-radius:3px; text-transform:uppercase;
+  }
+  .doc .doc-meta{ font-family:Arial,sans-serif; font-size:12.5px; color:var(--ink-soft); margin-bottom:10px; }
+  .doc.chat{ background:#eef4ee; }
+  .chat-bubble{ max-width:75%; padding:9px 14px; border-radius:14px; margin:6px 0; font-family:Arial,sans-serif; font-size:14.5px; }
+  .chat-bubble.me{ background:#dcefe0; margin-left:auto; border-bottom-right-radius:3px; }
+  .chat-bubble.them{ background:#fff; border:1px solid #ddd; border-bottom-left-radius:3px; }
+  .chat-name{ font-size:11px; color:var(--ink-soft); margin:8px 0 2px; font-family:Arial,sans-serif; }
+
+  mark.hl{ background:#f7d98f; padding:1px 4px; border-radius:3px; }
+  mark.hl2{ background:#c9e0cb; padding:1px 4px; border-radius:3px; }
+
+  .notice-box{
+    border-left:5px solid var(--sage-dark); background:#f1f5ee; padding:16px 20px; border-radius:0 4px 4px 0;
+    margin:16px 0;
+  }
+  .notice-box p{ margin:6px 0; }
+
+  table{ width:100%; border-collapse:collapse; margin:16px 0; font-family:Arial,sans-serif; font-size:14.5px; }
+  th, td{ border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; }
+  th{ background:var(--brick); color:#fff; font-size:13px; text-transform:uppercase; letter-spacing:.5px; }
+  tr:nth-child(even) td{ background:#faf3e2; }
+
+  .timeline{ position:relative; margin:26px 0; padding-left:30px; border-left:3px solid var(--safety); }
+  .t-item{ position:relative; margin-bottom:22px; }
+  .t-item::before{
+    content:""; position:absolute; left:-38px; top:2px; width:15px; height:15px; border-radius:50%;
+    background:var(--brick); border:3px solid var(--paper);
+  }
+  .t-item .t-date{ font-family:Arial,sans-serif; font-weight:800; color:var(--brick-dark); font-size:13px; }
+
+  .rule-box{
+    background:#fff3e0; border:2px dashed var(--safety-dark); border-radius:6px; padding:18px 22px; margin:16px 0;
+  }
+  .rule-box h4{ margin-top:0; color:var(--brick-dark); font-family:Arial,sans-serif; }
+
+  button.reveal{
+    font-family:Arial,sans-serif; font-weight:700; font-size:13.5px; color:#fff; background:var(--sage-dark);
+    border:none; border-radius:20px; padding:8px 18px; cursor:pointer; margin-top:8px;
+  }
+  button.reveal:hover{ background:var(--sage); }
+  .answer{ display:none; background:#eef4ee; border-left:4px solid var(--sage-dark); padding:10px 16px; margin-top:8px; border-radius:0 4px 4px 0; font-size:14.5px; }
+  .answer.show{ display:block; }
+
+  .quiz-item{ background:var(--card); border:1px solid var(--line); border-radius:6px; padding:16px 20px; margin-bottom:12px; }
+  .quiz-item p.q{ font-weight:700; margin:0 0 10px; }
+  .tf-buttons button, .mc-options button{
+    font-family:Arial,sans-serif; font-size:13.5px; font-weight:700; padding:7px 16px; margin-right:8px;
+    border:2px solid var(--concrete); background:#fff; border-radius:5px; cursor:pointer; color:var(--ink);
+  }
+  .mc-options{ display:flex; flex-direction:column; gap:6px; align-items:flex-start; }
+  .tf-buttons button:hover, .mc-options button:hover{ background:#f1ece0; }
+  button.correct{ background:var(--good)!important; color:#fff!important; border-color:var(--good)!important; }
+  button.wrong{ background:var(--danger)!important; color:#fff!important; border-color:var(--danger)!important; }
+  .feedback{ font-family:Arial,sans-serif; font-size:13.5px; margin-top:8px; font-weight:700; }
+
+  .match-wrap{ display:grid; grid-template-columns:1fr 1fr; gap:30px; }
+  .match-col button{
+    display:block; width:100%; text-align:left; margin-bottom:8px; padding:10px 14px; border-radius:5px;
+    border:2px solid var(--line); background:#fff; font-family:Arial,sans-serif; font-size:14px; cursor:pointer;
+  }
+  .match-col button.selected{ border-color:var(--safety-dark); background:#fff3e0; }
+  .match-col button.paired-correct{ border-color:var(--good); background:#e4f2e6; color:var(--good); font-weight:700;}
+  .match-col button.paired-wrong{ border-color:var(--danger); background:#fbe6e4; }
+  #matchScore{ font-family:Arial,sans-serif; font-weight:700; margin-top:10px; }
+
+  textarea#writingBox{
+    width:100%; min-height:160px; font-family:"Bookman Old Style",serif; font-size:15px; padding:14px;
+    border:2px solid var(--line); border-radius:6px; resize:vertical;
+  }
+  #wordCount{ font-family:Arial,sans-serif; font-size:13.5px; margin-top:6px; color:var(--ink-soft); }
+  #wordCount.ok{ color:var(--good); font-weight:700; }
+  #wordCount.low{ color:var(--danger); font-weight:700; }
+
+  .vocab-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; }
+  .vocab-card{ background:var(--card); border:1px solid var(--line); border-radius:6px; padding:14px 18px; }
+  .vocab-card h5{ margin:0 0 6px; color:var(--brick-dark); font-size:15.5px; }
+  .vocab-card ul{ margin:0; padding-left:18px; font-size:14.5px; }
+
+  /* Rich vocabulary entries: word + pronunciation + part of speech + definition + example + collocations */
+  .vocab-cols{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; margin:16px 0; }
+  .vocab-entry{ background:var(--card); border:1px solid var(--line); border-radius:6px; padding:16px 20px; }
+  .vocab-entry .headword{ font-family:Arial,sans-serif; }
+  .vocab-entry .word{ font-weight:800; font-size:16px; color:var(--brick-dark); }
+  .vocab-entry .pron{ font-family:"Courier New",monospace; font-size:11px; background:var(--ink); color:var(--paper); border-radius:3px; padding:1px 7px; margin-left:8px; }
+  .vocab-entry .pos{ font-family:Arial,sans-serif; font-size:10.5px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.5px; margin-left:8px; }
+  .vocab-entry .def{ margin-top:7px; font-size:14.5px; }
+  .vocab-entry .ex{ margin-top:7px; font-size:13.5px; font-style:italic; color:var(--ink-soft); border-left:3px solid var(--safety); padding-left:10px; }
+  .vocab-entry .colloc{ margin-top:7px; font-size:12.5px; color:var(--sage-dark); font-family:Arial,sans-serif; }
+  .vocab-more{ background:#fbf6ea; border:1px dashed var(--line); border-radius:6px; padding:14px 20px; margin-top:6px; font-size:14px; }
+  .vocab-more h5{ margin:0 0 8px; font-family:Arial,sans-serif; font-size:13px; text-transform:uppercase; letter-spacing:.5px; color:var(--ink-soft); }
+
+  /* Dialogue transcript */
+  .doc.dialogue{ background:#fdfaf2; }
+  .dialogue-line{ margin:9px 0; font-family:Arial,sans-serif; font-size:14.5px; line-height:1.55; }
+  .dialogue-line .speaker{ font-weight:800; margin-right:6px; }
+  .speaker.marek{ color:var(--concrete); }
+  .speaker.nora{ color:var(--sage-dark); }
+  .speaker.lukas{ color:var(--brick-dark); }
+
+  /* Fill-in inputs */
+  .fill-input{ font-family:Arial,sans-serif; font-size:14px; border:none; border-bottom:2px solid var(--safety-dark); background:transparent; width:90px; text-align:center; padding:2px 4px; }
+  .fill-input:focus{ outline:none; border-bottom-color:var(--brick-dark); }
+  .fill-line{ margin-bottom:14px; font-family:Arial,sans-serif; font-size:15px; }
+
+  .explore-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+  .explore-card{
+    background:linear-gradient(160deg,#f1ece0,#e9dfc9); border:1px solid var(--line); border-radius:8px;
+    padding:18px 20px;
+  }
+  .explore-card h5{ margin-top:0; color:var(--sage-dark); font-family:Arial,sans-serif; }
+  .explore-card a{ color:var(--brick-dark); font-weight:700; }
+
+  .summary-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:16px; }
+  .summary-card{
+    background:var(--card); border-top:none; border:1px solid var(--line); border-radius:8px; padding:18px;
+    text-align:center;
+  }
+  .summary-card .icon{ font-size:30px; margin-bottom:8px; display:block; }
+  .summary-card h5{ margin:6px 0; color:var(--brick-dark); font-family:Arial,sans-serif; }
+
+  .checklist label{ display:flex; gap:10px; align-items:flex-start; margin-bottom:10px; font-size:15px; cursor:pointer; }
+  .checklist input{ margin-top:4px; }
+
+  footer{ text-align:center; font-family:Arial,sans-serif; font-size:12.5px; color:var(--ink-soft); padding:30px 0 10px; }
+
+  .skip-link{ position:absolute; left:-9999px; }
+  ::selection{ background:#f7d98f; }
+  @media(max-width:640px){
+    nav.toc ol{ columns:1; }
+    .match-wrap{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<header class="hero">
+  <div class="eyebrow">Grade 5 · Week 4 · Renovation — Incidents</div>
+  <h1>The Renovation Diary</h1>
+  <p class="lead">Lukas and Nora are turning a run-down flat in Vienna into a small guesthouse. Six weeks in, the walls are half-painted, the budget is stretched, and somebody always seems to get hurt. Their story is your classroom this week.</p>
+  <div class="badge-row">
+    <span class="pill">Present Perfect: for / since / already / yet / just</span>
+    <span class="pill">Reflexive Pronouns</span>
+    <span class="pill">Vocabulary: Renovation &amp; Injuries</span>
+    <span class="pill">Skills: Listening · Writing · Multimedia</span>
+  </div>
+</header>
+
+<main>
+
+<nav class="toc" aria-label="Table of contents">
+  <h2>On This Page</h2>
+  <ol>
+    <li><a href="#sec1"><span class="n">1</span> The Renovation Diary</a></li>
+    <li><a href="#sec2"><span class="n">2</span> Notice the Pattern</a></li>
+    <li><a href="#sec3"><span class="n">3</span> Grammar Focus — Present Perfect</a></li>
+    <li><a href="#sec4"><span class="n">4</span> Grammar Focus — Reflexive Pronouns</a></li>
+    <li><a href="#sec5"><span class="n">5</span> Vocabulary — Renovation &amp; Construction</a></li>
+    <li><a href="#sec6"><span class="n">6</span> Vocabulary — Injuries &amp; Safety</a></li>
+    <li><a href="#sec7"><span class="n">7</span> Practice — Complete the Dialogue</a></li>
+    <li><a href="#sec8"><span class="n">8</span> Practice — True or False</a></li>
+    <li><a href="#sec9"><span class="n">9</span> Practice — Match the Collocations</a></li>
+    <li><a href="#sec10"><span class="n">10</span> Practice — Multiple Choice</a></li>
+    <li><a href="#sec11"><span class="n">11</span> Practice — Fix the Errors</a></li>
+    <li><a href="#sec12"><span class="n">12</span> Skills — Listening: The Voicemail</a></li>
+    <li><a href="#sec13"><span class="n">13</span> Skills — Writing: Incident Report</a></li>
+    <li><a href="#sec14"><span class="n">14</span> Explore More — Independent Learning</a></li>
+    <li><a href="#sec15"><span class="n">15</span> Week Summary</a></li>
+    <li><a href="#sec16"><span class="n">16</span> Self-Check</a></li>
+    <li><a href="#sec17"><span class="n">17</span> Before Next Class</a></li>
+  </ol>
+</nav>
+
+<!-- 1 -->
+<section id="sec1">
+  <div class="sec-head"><div class="sec-num">1</div><h2>The Renovation Diary</h2></div>
+  <p class="tag">Read first. Don't worry about grammar yet — just find out what happened to Lukas and Nora.</p>
+
+  <div class="doc" data-doctype="Renovation Logbook">
+    <div class="doc-meta">Flat 4B, Burggasse 21, Vienna — kept by Nora since the project began</div>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-date">1 February</div>
+        <p>We've bought the flat! It's a disaster — the kitchen hasn't been touched <mark class="hl">since the 1980s</mark>, and there's a crack in the bathroom ceiling. We're starting <mark class="hl">work</mark> next week.</p>
+      </div>
+      <div class="t-item">
+        <div class="t-date">10 February</div>
+        <p>Demolition day. Lukas <mark class="hl2">cut himself</mark> on a piece of broken tile while pulling up the old kitchen floor. Nothing serious — just a small bandage. He says he's "already an expert" after one week.</p>
+      </div>
+      <div class="t-item">
+        <div class="t-date">24 February</div>
+        <p>Big news: we've <mark class="hl">already</mark> finished the electrics! The electrician has <mark class="hl">just</mark> left — he says the wiring is finally safe. We haven't started the plumbing <mark class="hl">yet</mark>, though.</p>
+      </div>
+      <div class="t-item">
+        <div class="t-date">3 March</div>
+        <p>Not a good day. Nora <mark class="hl2">burned herself</mark> on the blowtorch while soldering a pipe. We've had two accidents <mark class="hl">since we started</mark> this project — Lukas jokes that we should buy a first-aid kit "in bulk."</p>
+      </div>
+      <div class="t-item">
+        <div class="t-date">14 March</div>
+        <p>We've been renovating this flat <mark class="hl">for six weeks</mark> now, and it finally looks like a home. The workers have <mark class="hl">just</mark> installed the new bathtub — but two of them <mark class="hl2">hurt themselves</mark> moving it up the stairs. One twisted his ankle.</p>
+      </div>
+      <div class="t-item">
+        <div class="t-date">20 March — today</div>
+        <p>Lukas has <mark class="hl">already</mark> painted the living room, but we haven't chosen the tiles for the bathroom <mark class="hl">yet</mark>. We open for guests in three weeks. Wish us luck.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc chat" data-doctype="WhatsApp — 'Renovation Chaos' group">
+    <div class="doc-meta">Nora, Lukas, and Marek (the contractor) — 14 March, 18:42</div>
+    <div class="chat-name">Marek</div>
+    <div class="chat-bubble them">Guys, I've just spoken to the plumber. He says he can start on Monday.</div>
+    <div class="chat-name">Nora</div>
+    <div class="chat-bubble me">Perfect! We've already cleared the bathroom for him.</div>
+    <div class="chat-name">Lukas</div>
+    <div class="chat-bubble them">Careful with the old pipe on the left — I cut myself on it last week. It's still sharp.</div>
+    <div class="chat-name">Marek</div>
+    <div class="chat-bubble them">Noted. Has anyone hurt themselves since the bathtub incident?</div>
+    <div class="chat-name">Nora</div>
+    <div class="chat-bubble me">Not yet, touch wood. We've had enough drama for one renovation.</div>
+  </div>
+
+  <div class="doc" data-doctype="Insurance Incident Report">
+    <div class="doc-meta">Form ref. VN-2291 — submitted by site supervisor</div>
+    <p><strong>Description of incident:</strong> Two workers injured themselves while carrying a cast-iron bathtub up a narrow staircase. One employee lost his footing and twisted his ankle; his colleague, trying to steady the tub, scraped his arm against the wall. Neither worker has needed hospital treatment. The site has already installed non-slip mats on the stairs since the accident, and workers have been reminded to lift heavy objects in pairs, using proper technique.</p>
+  </div>
+
+  <div class="doc dialogue" data-doctype="Full Transcript — On Site with Marek">
+    <div class="doc-meta">Recorded by Nora on her phone, with permission — 15 March, 08:30</div>
+    <div class="dialogue-line"><span class="speaker marek">Marek:</span> Nora, Lukas — do you have a minute? I want to walk you through what's happened since the bathtub incident.</div>
+    <div class="dialogue-line"><span class="speaker nora">Nora:</span> Of course. Is everyone alright?</div>
+    <div class="dialogue-line"><span class="speaker marek">Marek:</span> Yes, don't worry. Nobody has needed hospital treatment. One of the guys twisted his ankle, and his colleague scraped his arm against the wall, but they're both fine.</div>
+    <div class="dialogue-line"><span class="speaker lukas">Lukas:</span> What happened exactly?</div>
+    <div class="dialogue-line"><span class="speaker marek">Marek:</span> They were carrying the bathtub up the staircase and one of them lost his footing. He didn't hurt himself badly — he just twisted his ankle a little.</div>
+    <div class="dialogue-line"><span class="speaker nora">Nora:</span> Have you already reported it?</div>
+    <div class="dialogue-line"><span class="speaker marek">Marek:</span> Yes, I've just finished the incident report. I've also already installed non-slip mats on the stairs since the accident.</div>
+    <div class="dialogue-line"><span class="speaker lukas">Lukas:</span> Good. We've had two accidents since we started this project — I really don't want a third.</div>
+    <div class="dialogue-line"><span class="speaker marek">Marek:</span> I understand completely. From now on, the team lifts heavy objects in pairs, using proper technique. I've reminded everyone this morning.</div>
+    <div class="dialogue-line"><span class="speaker nora">Nora:</span> Thank you, Marek. Have you spoken to the insurance company yet?</div>
+    <div class="dialogue-line"><span class="speaker marek">Marek:</span> Not yet — I'll call them this afternoon. I just wanted to update you first.</div>
+    <div class="dialogue-line"><span class="speaker lukas">Lukas:</span> We really appreciate it. By the way, has the plumber started the new pipes yet?</div>
+    <div class="dialogue-line"><span class="speaker marek">Marek:</span> He has! He's already connected the bathroom pipes, but he hasn't finished the kitchen yet. He said he'd finish everything by Friday.</div>
+    <div class="dialogue-line"><span class="speaker nora">Nora:</span> Perfect. We've been renovating this flat for six weeks now — it's almost hard to believe we're this close to finishing.</div>
+    <div class="dialogue-line"><span class="speaker marek">Marek:</span> You've both worked incredibly hard. I think you'll be very proud when it's done.</div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="sec2">
+  <div class="sec-head"><div class="sec-num">2</div><h2>Notice the Pattern</h2></div>
+  <p>Go back to the diary. Look closely at the <mark class="hl">yellow</mark> and <mark class="hl2">green</mark> highlights before reading on.</p>
+  <div class="notice-box">
+    <p><strong>A. Yellow highlights</strong> — all use a verb form with <em>have/has</em> + past participle. Some are followed by <strong>for</strong>, some by <strong>since</strong>, and some contain the words <strong>already, yet,</strong> or <strong>just</strong>.</p>
+    <p>Look at "for six weeks" and "since we started." One tells you a <em>length of time</em>. One tells you a <em>starting point</em>. Which is which?</p>
+    <p>Now look at "already finished," "haven't started yet," and "has just left." One means "before now, earlier than expected." One means "not now, but we expect it soon." One means "a very short time ago." Can you match them?</p>
+    <p><strong>B. Green highlights</strong> — words like <em>himself, herself, themselves</em>. In each case, who is doing the action, and who receives it? Are they the same person, or different people?</p>
+  </div>
+  <button class="reveal" onclick="toggleAnswer('n1')">Check your noticing</button>
+  <div class="answer" id="n1">
+    <p><strong>for</strong> + a length of time (for six weeks). <strong>since</strong> + a starting point (since we started, since the 1980s).</p>
+    <p><strong>already</strong> = before now / sooner than expected. <strong>yet</strong> = not now, used in negatives/questions, expecting it soon. <strong>just</strong> = a very short time ago.</p>
+    <p>In every green example, the person doing the action and the person affected by it are <strong>the same person</strong> — that's exactly what a reflexive pronoun signals.</p>
+  </div>
+  <p>You have just done what linguists call <strong>noticing</strong> — spotting a pattern in real language before anyone gives you a rule. Section 3 and 4 now give that pattern a name.</p>
+</section>
+
+<!-- 3 -->
+<section id="sec3">
+  <div class="sec-head"><div class="sec-num">3</div><h2>Grammar Focus — Present Perfect</h2></div>
+  <p class="tag">for · since · already · yet · just</p>
+
+  <div class="rule-box">
+    <h4>Form</h4>
+    <p><strong>have / has + past participle</strong></p>
+    <p>We've renovated the kitchen. &nbsp;·&nbsp; Lukas has cut himself. &nbsp;·&nbsp; They haven't started the plumbing.</p>
+  </div>
+
+  <h3>3.1 For vs. Since — talking about duration</h3>
+  <p>We use the present perfect to connect the past to the present: an action or state that started before now and is still relevant, true, or continuing.</p>
+  <table>
+    <tr><th>Word</th><th>Used with</th><th>Example from the diary</th></tr>
+    <tr><td><strong>for</strong></td><td>a <em>period</em> of time (how long)</td><td>We've been renovating this flat <em>for six weeks</em>.</td></tr>
+    <tr><td><strong>since</strong></td><td>a <em>point</em> in time (when it started)</td><td>The kitchen hasn't been touched <em>since the 1980s</em>.</td></tr>
+  </table>
+  <p><strong>Quick test:</strong> if you can answer the question "How long?" with your time expression, use <em>for</em>. If it answers "Since when?", use <em>since</em>.</p>
+  <div class="timeline" style="border-color:var(--sage-dark);">
+    <div class="t-item" style="margin-bottom:0;"><div class="t-date">1 Feb (start) ————— since here —————&gt; 20 March (now)</div>
+    <p style="margin-top:4px;">for six weeks = the whole distance between the two points.</p></div>
+  </div>
+
+  <h3>3.2 Already, Yet, Just — talking about recent or expected events</h3>
+  <table>
+    <tr><th>Word</th><th>Meaning</th><th>Position</th><th>Sentence type</th></tr>
+    <tr><td><strong>already</strong></td><td>sooner than expected; before now</td><td>mid-position, between have/has and the participle</td><td>affirmative — <em>We've already finished the electrics.</em></td></tr>
+    <tr><td><strong>yet</strong></td><td>not now, but expected soon</td><td>end of the sentence</td><td>negatives and questions — <em>We haven't chosen the tiles yet. Have you finished yet?</em></td></tr>
+    <tr><td><strong>just</strong></td><td>a very short time ago</td><td>mid-position, between have/has and the participle</td><td>affirmative — <em>The electrician has just left.</em></td></tr>
+  </table>
+  <div class="rule-box">
+    <h4>Corpus note (EGP frequency order)</h4>
+    <p>Learners usually meet these three words in the order <strong>for → since → already → yet → just</strong> because that's roughly how often they appear in real spoken and written English at B1. If you can use "already" and "yet" comfortably, "just" tends to follow quickly — the three share the same grammatical slot.</p>
+  </div>
+
+  <h3>3.3 A quick contrast: Present Perfect vs. Simple Past</h3>
+  <p>You met the simple past in Grade 4. The present perfect is <em>not</em> about finishing a story — it's about the connection to <strong>now</strong>.</p>
+  <table>
+    <tr><th></th><th>Simple Past</th><th>Present Perfect</th></tr>
+    <tr><td>Focus</td><td>a finished moment in the past, often with a specific time</td><td>the result now, or an unfinished period up to now</td></tr>
+    <tr><td>Example</td><td>Lukas cut himself <em>on 10 February</em>.</td><td>Lukas <em>has</em> cut himself — his hand is still bandaged.</td></tr>
+  </table>
+
+  <button class="reveal" onclick="toggleAnswer('g1')">Try it: choose for or since</button>
+  <div class="answer" id="g1">
+    <p>1. We haven't slept properly <strong>since</strong> the renovation began.<br>
+    2. Marek has worked with us <strong>for</strong> three months.<br>
+    3. Nobody has used that staircase <strong>since</strong> the bathtub incident.<br>
+    4. The paint has been drying <strong>for</strong> two days.</p>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="sec4">
+  <div class="sec-head"><div class="sec-num">4</div><h2>Grammar Focus — Reflexive Pronouns</h2></div>
+  <p class="tag">myself · yourself · himself · herself (singular first)</p>
+
+  <div class="rule-box">
+    <h4>Form</h4>
+    <p>Subject pronoun + <strong>-self</strong> (singular) or <strong>-selves</strong> (plural)</p>
+  </div>
+
+  <table>
+    <tr><th>Subject</th><th>Reflexive pronoun</th></tr>
+    <tr><td>I</td><td><strong>myself</strong></td></tr>
+    <tr><td>you (singular)</td><td><strong>yourself</strong></td></tr>
+    <tr><td>he</td><td><strong>himself</strong></td></tr>
+    <tr><td>she</td><td><strong>herself</strong></td></tr>
+    <tr><td>it</td><td>itself</td></tr>
+    <tr><td>we</td><td>ourselves</td></tr>
+    <tr><td>you (plural)</td><td>yourselves</td></tr>
+    <tr><td>they</td><td>themselves</td></tr>
+  </table>
+  <p style="font-size:14px;color:var(--ink-soft);">We focus on the singular forms this week — <em>myself, yourself, himself, herself</em> — because learner data shows these cause the most confusion when speakers default to object pronouns instead (<em>"he hurt him"</em> instead of <em>"he hurt himself"</em>). The plural forms follow the same pattern.</p>
+
+  <h3>4.1 When the subject and object are the same person</h3>
+  <p>Use a reflexive pronoun when the person doing the action and the person affected by it are the same:</p>
+  <ul>
+    <li>Lukas cut <strong>himself</strong>. <em>(Lukas cut Lukas — same person.)</em></li>
+    <li>Nora burned <strong>herself</strong> on the blowtorch.</li>
+    <li>Did you hurt <strong>yourself</strong> carrying that tile?</li>
+  </ul>
+  <div class="notice-box">
+    <p><strong>Compare:</strong> Lukas cut <em>himself</em>. (his own hand) &nbsp;vs.&nbsp; Lukas cut <em>him</em>. (someone else's hand — a different person entirely.) Mixing these up is one of the most common B1 errors in learner corpora, especially with verbs like <em>hurt, cut, burn, injure.</em></p>
+  </div>
+
+  <h3>4.2 Reflexive pronouns for emphasis</h3>
+  <p>A second, very different use: adding a reflexive pronoun to emphasise that someone did something <em>alone, without help</em>, or that they, personally, did it (not somebody else).</p>
+  <ul>
+    <li>Lukas taught <strong>himself</strong> how to lay tiles. <em>(no teacher — he learned alone)</em></li>
+    <li>I painted the whole room <strong>myself</strong>. <em>(nobody helped me)</em></li>
+    <li>The architect designed the plan <strong>herself</strong>. <em>(emphasis: she, personally)</em></li>
+  </ul>
+  <p style="font-size:14px;color:var(--ink-soft);">Notice the difference in position: the true reflexive sits right after the verb (<em>cut himself</em>); the emphatic reflexive often moves to the end of the clause and can usually be removed without changing the core meaning.</p>
+
+  <h3>4.3 Common expressions with reflexive pronouns</h3>
+  <table>
+    <tr><th>Expression</th><th>Meaning</th></tr>
+    <tr><td>enjoy yourself / myself / himself...</td><td>have a good time</td></tr>
+    <tr><td>help yourself</td><td>serve yourself (food, tools, etc.)</td></tr>
+    <tr><td>behave yourself</td><td>act politely / correctly</td></tr>
+    <tr><td>by myself / by himself</td><td>alone, without company or help</td></tr>
+    <tr><td>talk to yourself</td><td>speak aloud with no listener</td></tr>
+  </table>
+
+  <button class="reveal" onclick="toggleAnswer('g2')">Try it: pronoun or reflexive pronoun?</button>
+  <div class="answer" id="g2">
+    <p>1. Marek warned Nora, but she didn't listen and burned <strong>herself</strong> anyway.<br>
+    2. The workers hurt <strong>themselves</strong> lifting the bathtub, but nobody hurt <strong>them</strong> on purpose.<br>
+    3. Lukas is proud that he fixed the wiring <strong>himself</strong> — he didn't hire an electrician for that part.<br>
+    4. Please, help <strong>yourself</strong> to a coffee while you wait.</p>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="sec5">
+  <div class="sec-head"><div class="sec-num">5</div><h2>Vocabulary — Renovation &amp; Construction</h2></div>
+  <p class="tag">Every word below appeared in Section 1. Read the example from the story before the definition — figure out the meaning from context first.</p>
+
+  <div class="vocab-cols">
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">staircase</span><span class="pron">ˈsteəkeɪs</span><span class="pos">n</span></div>
+      <div class="ex">"Two workers hurt themselves carrying the bathtub up a narrow <strong>staircase</strong>."</div>
+      <div class="def">A set of stairs, usually indoors, connecting one floor of a building to another.</div>
+      <div class="colloc">Collocates: <em>narrow/spiral staircase, go up/down the staircase, at the top of the staircase</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">wiring</span><span class="pron">ˈwaɪərɪŋ</span><span class="pos">n, uncountable</span></div>
+      <div class="ex">"The electrician has just left — he says the <strong>wiring</strong> is finally safe."</div>
+      <div class="def">The system of electrical wires installed inside the walls of a building.</div>
+      <div class="colloc">Collocates: <em>faulty/exposed wiring, rewire a flat, check the wiring</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">plumbing</span><span class="pron">ˈplʌmɪŋ</span><span class="pos">n, uncountable</span></div>
+      <div class="ex">"We haven't started the <strong>plumbing</strong> yet, though."</div>
+      <div class="def">The system of pipes that carries water and gas through a building.</div>
+      <div class="colloc">Collocates: <em>plumbing problem, call a plumber, connect the plumbing</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">blowtorch</span><span class="pron">ˈbləʊtɔːtʃ</span><span class="pos">n</span></div>
+      <div class="ex">"Nora burned herself on the <strong>blowtorch</strong> while soldering a pipe."</div>
+      <div class="def">A small tool that produces a very hot, controlled flame, used for joining metal or removing old paint.</div>
+      <div class="colloc">Collocates: <em>light/use a blowtorch, burn yourself on the blowtorch</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">solder</span><span class="pron">ˈsɒldər</span><span class="pos">v</span></div>
+      <div class="ex">"...while <strong>soldering</strong> a pipe" — joining two pieces of metal together using melted metal.</div>
+      <div class="def">To join metal parts (like pipes or wires) by melting a soft metal between them.</div>
+      <div class="colloc">Collocates: <em>solder a pipe/joint, solder together, a soldering iron</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">demolish / demolition</span><span class="pron">dɪˈmɒlɪʃ / ˌdeməˈlɪʃən</span><span class="pos">v / n</span></div>
+      <div class="ex">"<strong>Demolition</strong> day. Lukas cut himself on a piece of broken tile while pulling up the old kitchen floor."</div>
+      <div class="def">To pull down or destroy a structure completely, usually before building something new.</div>
+      <div class="colloc">Collocates: <em>demolish a wall, demolition work, demolition day</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">renovate / renovation</span><span class="pron">ˈrenəveɪt / ˌrenəˈveɪʃən</span><span class="pos">v / n</span></div>
+      <div class="ex">"We've been <strong>renovating</strong> this flat for six weeks now, and it finally looks like a home."</div>
+      <div class="def">To repair and improve an old building so it's in good condition again.</div>
+      <div class="colloc">Collocates: <em>a major/minor renovation, renovate a property, mid-renovation</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">contractor</span><span class="pron">kənˈtræktər</span><span class="pos">n</span></div>
+      <div class="ex">"I've just spoken to the plumber," writes Marek, <strong>the contractor</strong>, in the group chat.</div>
+      <div class="def">A person or company hired to carry out building or repair work, usually managing a team of workers.</div>
+      <div class="colloc">Collocates: <em>hire a contractor, the site contractor, contractor's team</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">cast-iron</span><span class="pron">ˌkɑːst ˈaɪən</span><span class="pos">adj</span></div>
+      <div class="ex">"...while carrying a <strong>cast-iron</strong> bathtub up a narrow staircase."</div>
+      <div class="def">Made of a very hard, heavy type of iron — old bathtubs were traditionally made from it.</div>
+      <div class="colloc">Collocates: <em>cast-iron bathtub, cast-iron pipe, heavy as cast iron</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">non-slip mat</span><span class="pos">n phrase</span></div>
+      <div class="ex">"The site has already installed <strong>non-slip mats</strong> on the stairs since the accident."</div>
+      <div class="def">A mat with a rough or textured surface designed to prevent people from slipping.</div>
+      <div class="colloc">Collocates: <em>install non-slip mats, a non-slip surface</em></div>
+    </div>
+  </div>
+
+  <div class="vocab-more">
+    <h5>More Renovation Words to Know</h5>
+    <p>flat / apartment (n) · ceiling (n) · flooring (n) · tile cutter (n) · power drill (n) · scaffolding (n) · sandpaper (n) · spirit level (n) · install (v) · lay tiles (v phrase) · strip old paint (v phrase) · refurbish (v) · electrician / plumber / site supervisor / architect (n) · tile / grout / plaster / insulation / pipe / cable (n) · over budget (adj phrase) · meet a deadline (v phrase)</p>
+  </div>
+
+  <h3 style="margin-top:26px;">Language on the Renovation Site — What to Say</h3>
+  <table>
+    <tr><th>Situation</th><th>Useful phrases (from the dialogue)</th></tr>
+    <tr><td><strong>Updating someone</strong></td><td><em>Do you have a minute? I want to walk you through what's happened. / I just wanted to update you first.</em></td></tr>
+    <tr><td><strong>Reassuring someone</strong></td><td><em>Don't worry. / They're both fine. / He didn't hurt himself badly.</em></td></tr>
+    <tr><td><strong>Asking about progress</strong></td><td><em>Have you already reported it? / Has the plumber started the new pipes yet?</em></td></tr>
+    <tr><td><strong>Explaining next steps</strong></td><td><em>From now on, the team lifts heavy objects in pairs. / I've reminded everyone this morning.</em></td></tr>
+    <tr><td><strong>Giving a timeframe</strong></td><td><em>Not yet — I'll call them this afternoon. / He said he'd finish everything by Friday.</em></td></tr>
+  </table>
+</section>
+
+<!-- 6 -->
+<section id="sec6">
+  <div class="sec-head"><div class="sec-num">6</div><h2>Vocabulary — Injuries &amp; Safety</h2></div>
+  <p class="tag">Read the story example first, then the definition. Notice which verbs are almost always followed by a reflexive pronoun.</p>
+
+  <div class="vocab-cols">
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">cut yourself</span><span class="pos">v phrase</span></div>
+      <div class="ex">"Lukas <strong>cut himself</strong> on a piece of broken tile while pulling up the old kitchen floor."</div>
+      <div class="def">To injure your skin with something sharp. Almost always used with a reflexive pronoun when you injure your own body.</div>
+      <div class="colloc">Collocates: <em>cut yourself badly/slightly, cut yourself on something</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">burn yourself</span><span class="pos">v phrase</span></div>
+      <div class="ex">"Nora <strong>burned herself</strong> on the blowtorch while soldering a pipe."</div>
+      <div class="def">To injure your skin with heat or fire.</div>
+      <div class="colloc">Collocates: <em>burn yourself on something, get burned</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">twist an ankle</span><span class="pron">twɪst</span><span class="pos">v phrase</span></div>
+      <div class="ex">"One employee lost his footing and <strong>twisted his ankle</strong>."</div>
+      <div class="def">To injure a joint (usually the ankle or wrist) by turning it suddenly and awkwardly.</div>
+      <div class="colloc">Collocates: <em>twist an ankle/wrist/knee, a twisted ankle</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">scrape</span><span class="pron">skreɪp</span><span class="pos">v</span></div>
+      <div class="ex">"...his colleague, trying to steady the tub, <strong>scraped</strong> his arm against the wall."</div>
+      <div class="def">To injure the surface of your skin by rubbing it against something rough or hard.</div>
+      <div class="colloc">Collocates: <em>scrape your arm/knee/elbow, a scraped knee</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">lose your footing</span><span class="pos">idiom</span></div>
+      <div class="ex">"One employee <strong>lost his footing</strong> and twisted his ankle."</div>
+      <div class="def">To suddenly lose your balance and start to slip or fall.</div>
+      <div class="colloc">Collocates: <em>lose your footing on the stairs/ice</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">first-aid kit</span><span class="pos">n phrase</span></div>
+      <div class="ex">Lukas jokes that they should buy a <strong>first-aid kit</strong> "in bulk" after two accidents.</div>
+      <div class="def">A small box or bag containing basic supplies (bandages, plasters) for treating minor injuries.</div>
+      <div class="colloc">Collocates: <em>keep a first-aid kit, a fully-stocked first-aid kit</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">incident report</span><span class="pos">n phrase</span></div>
+      <div class="ex">"I've just finished the <strong>incident report</strong>," Marek tells Nora and Lukas.</div>
+      <div class="def">An official written record describing exactly what happened during an accident at work.</div>
+      <div class="colloc">Collocates: <em>submit/file an incident report, according to the incident report</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">risk assessment</span><span class="pos">n phrase</span></div>
+      <div class="ex">Not directly quoted, but implied by the site's new rules: a <strong>risk assessment</strong> would identify the staircase as dangerous.</div>
+      <div class="def">A formal process of identifying possible dangers before work begins, so they can be prevented.</div>
+      <div class="colloc">Collocates: <em>carry out a risk assessment, a thorough risk assessment</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">touch wood</span><span class="pos">idiom, spoken</span></div>
+      <div class="ex">"Not yet, <strong>touch wood</strong>. We've had enough drama for one renovation."</div>
+      <div class="def">Said after mentioning good luck, to (superstitiously) avoid tempting bad luck to happen.</div>
+      <div class="colloc">Used alone, usually at the end of a sentence about something going well so far.</div>
+    </div>
+  </div>
+
+  <div class="vocab-more">
+    <h5>More Safety &amp; Injury Words to Know</h5>
+    <p>bruise (n/v) · bandage (n/v) · need hospital treatment (v phrase) · see a doctor (v phrase) · recover (v) · wear protective gear (v phrase) · lift in pairs (v phrase) · a minor/serious injury (adj phrase) · submit a report (v phrase)</p>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="sec7">
+  <div class="sec-head"><div class="sec-num">7</div><h2>Practice — Complete the Dialogue</h2></div>
+  <p>Go back to the full transcript in Section 1 if you need to check. Fill each gap with the missing word from the real conversation, then click "Check my answers."</p>
+
+  <div class="card">
+    <div class="fill-line">1. "One of the guys <input class="fill-input" data-answer="twisted" size="10"> his ankle."</div>
+    <div class="fill-line">2. "He didn't hurt <input class="fill-input" data-answer="himself" size="10"> badly — he just twisted his ankle a little."</div>
+    <div class="fill-line">3. "I've <input class="fill-input" data-answer="just" size="6"> finished the incident report."</div>
+    <div class="fill-line">4. "I've also <input class="fill-input" data-answer="already" size="10"> installed non-slip mats on the stairs <input class="fill-input" data-answer="since" size="8"> the accident."</div>
+    <div class="fill-line">5. "We've had two accidents <input class="fill-input" data-answer="since" size="8"> we started this project."</div>
+    <div class="fill-line">6. "Have you spoken to the insurance company <input class="fill-input" data-answer="yet" size="6">?" "Not <input class="fill-input" data-answer="yet" size="6"> — I'll call them this afternoon."</div>
+    <div class="fill-line">7. "He's <input class="fill-input" data-answer="already" size="10"> connected the bathroom pipes, but he hasn't finished the kitchen <input class="fill-input" data-answer="yet" size="6">."</div>
+    <div class="fill-line">8. "We've been renovating this flat <input class="fill-input" data-answer="for" size="6"> six weeks now."</div>
+    <button class="reveal" onclick="checkFill()">Check my answers</button>
+    <div class="feedback" id="fillFeedback"></div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="sec8">
+  <div class="sec-head"><div class="sec-num">8</div><h2>Practice — True or False</h2></div>
+  <p>Based on the diary in Section 1.</p>
+  <div class="quiz-item">
+    <p class="q">1. The flat's kitchen was renovated in the 1980s and never again until now.</p>
+    <div class="tf-buttons">
+      <button onclick="tfCheck(this,true)">True</button><button onclick="tfCheck(this,false)">False</button>
+    </div>
+    <div class="feedback"></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">2. Nora cut herself on 10 February.</p>
+    <div class="tf-buttons">
+      <button onclick="tfCheck(this,false)">True</button><button onclick="tfCheck(this,true)">False</button>
+    </div>
+    <div class="feedback"></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">3. By 24 February, the electrics were already finished, but the plumbing hadn't started yet.</p>
+    <div class="tf-buttons">
+      <button onclick="tfCheck(this,true)">True</button><button onclick="tfCheck(this,false)">False</button>
+    </div>
+    <div class="feedback"></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">4. Two workers hurt themselves carrying the bathtub, but neither needed hospital treatment.</p>
+    <div class="tf-buttons">
+      <button onclick="tfCheck(this,true)">True</button><button onclick="tfCheck(this,false)">False</button>
+    </div>
+    <div class="feedback"></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">5. As of 20 March, Lukas and Nora have already chosen the bathroom tiles.</p>
+    <div class="tf-buttons">
+      <button onclick="tfCheck(this,false)">True</button><button onclick="tfCheck(this,true)">False</button>
+    </div>
+    <div class="feedback"></div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section id="sec9">
+  <div class="sec-head"><div class="sec-num">9</div><h2>Practice — Match the Collocations</h2></div>
+  <p>Click a word on the left, then its partner on the right.</p>
+  <div class="match-wrap">
+    <div class="match-col" id="matchLeft">
+      <button data-pair="1">lay</button>
+      <button data-pair="2">twist</button>
+      <button data-pair="3">solder</button>
+      <button data-pair="4">submit an</button>
+      <button data-pair="5">lift in</button>
+      <button data-pair="6">wear protective</button>
+    </div>
+    <div class="match-col" id="matchRight">
+      <button data-pair="3">a pipe</button>
+      <button data-pair="6">gear</button>
+      <button data-pair="1">tiles</button>
+      <button data-pair="4">incident report</button>
+      <button data-pair="2">your ankle</button>
+      <button data-pair="5">pairs</button>
+    </div>
+  </div>
+  <div id="matchScore">Matched: 0 / 6</div>
+</section>
+
+<!-- 10 -->
+<section id="sec10">
+  <div class="sec-head"><div class="sec-num">10</div><h2>Practice — Multiple Choice</h2></div>
+  <div class="quiz-item">
+    <p class="q">1. We ___ this flat for six weeks now.</p>
+    <div class="mc-options">
+      <button onclick="mcCheck(this,false)">A) renovate</button>
+      <button onclick="mcCheck(this,false)">B) renovated</button>
+      <button onclick="mcCheck(this,true)">C) have been renovating</button>
+    </div>
+    <div class="feedback"></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">2. Nobody has used the old staircase ___ the bathtub incident.</p>
+    <div class="mc-options">
+      <button onclick="mcCheck(this,false)">A) for</button>
+      <button onclick="mcCheck(this,true)">B) since</button>
+      <button onclick="mcCheck(this,false)">C) already</button>
+    </div>
+    <div class="feedback"></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">3. Marek ___ finished checking the wiring — he left five minutes ago.</p>
+    <div class="mc-options">
+      <button onclick="mcCheck(this,true)">A) has just</button>
+      <button onclick="mcCheck(this,false)">B) already since</button>
+      <button onclick="mcCheck(this,false)">C) yet has</button>
+    </div>
+    <div class="feedback"></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">4. Lukas hurt ___ while carrying a heavy box of tiles.</p>
+    <div class="mc-options">
+      <button onclick="mcCheck(this,false)">A) him</button>
+      <button onclick="mcCheck(this,true)">B) himself</button>
+      <button onclick="mcCheck(this,false)">C) his</button>
+    </div>
+    <div class="feedback"></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">5. "Have you chosen the tiles ___?" "No, not ___."</p>
+    <div class="mc-options">
+      <button onclick="mcCheck(this,true)">A) yet / yet</button>
+      <button onclick="mcCheck(this,false)">B) already / already</button>
+      <button onclick="mcCheck(this,false)">C) just / just</button>
+    </div>
+    <div class="feedback"></div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="sec11">
+  <div class="sec-head"><div class="sec-num">11</div><h2>Practice — Fix the Errors</h2></div>
+  <p>Five sentences below. <strong>One of them is already correct</strong> — don't "fix" a sentence that has nothing wrong with it. Click reveal to check your work.</p>
+  <div class="quiz-item"><p class="q">1. Nora has burn herself on the blowtorch.</p></div>
+  <div class="quiz-item"><p class="q">2. We haven't chosen the tiles already.</p></div>
+  <div class="quiz-item"><p class="q">3. Lukas taught himself how to lay tiles.</p></div>
+  <div class="quiz-item"><p class="q">4. Marek has worked with us since three months.</p></div>
+  <div class="quiz-item"><p class="q">5. The workers hurt them moving the bathtub.</p></div>
+  <button class="reveal" onclick="toggleAnswer('err1')">Reveal corrections</button>
+  <div class="answer" id="err1">
+    <p>1. Nora <strong>has burned</strong> herself on the blowtorch. (past participle needed)<br>
+    2. We haven't chosen the tiles <strong>yet</strong>. (negative sentences use <em>yet</em>, not <em>already</em>)<br>
+    3. ✅ <strong>Correct as written.</strong> "Taught himself" is a genuine reflexive — no change needed.<br>
+    4. Marek has worked with us <strong>for</strong> three months. (a period of time takes <em>for</em>, not <em>since</em>)<br>
+    5. The workers hurt <strong>themselves</strong> moving the bathtub. (same person acting and affected → reflexive pronoun)</p>
+  </div>
+</section>
+
+<!-- 12 -->
+<section id="sec12">
+  <div class="sec-head"><div class="sec-num">12</div><h2>Skills — Listening: The Voicemail</h2></div>
+  <p class="tag">Transcript-based listening task — read the transcript aloud with a partner, or record yourselves reading it, then answer.</p>
+  <div class="doc" data-doctype="Voicemail transcript">
+    <div class="doc-meta">From: Marek (contractor) → To: Nora — 21 March, 08:15</div>
+    <p><em>"Hi Nora, it's Marek. I've just arrived at the flat and I wanted to update you. The plumber has already connected the new bathtub, and it's working perfectly — no leaks so far, touch wood. We haven't finished the bathroom tiling yet, though; we're still waiting for the tiles you ordered. They said they've had the order since Monday, but it hasn't been delivered yet. Also — small thing — one of the new guys scraped himself on some old wiring in the hallway this morning. He's fine, just a small scratch, nothing like the bathtub incident. Give me a call when you've got a minute. Bye for now."</em></p>
+  </div>
+  <div class="quiz-item">
+    <p class="q">Listening check 1: What has already happened, according to Marek?</p>
+    <button class="reveal" onclick="toggleAnswer('l1')">Reveal</button>
+    <div class="answer" id="l1"><p>The plumber has connected the new bathtub, and it is working with no leaks so far.</p></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">Listening check 2: What hasn't happened yet, and why?</p>
+    <button class="reveal" onclick="toggleAnswer('l2')">Reveal</button>
+    <div class="answer" id="l2"><p>The bathroom tiling hasn't been finished yet because the ordered tiles haven't been delivered yet, even though the shop has had the order since Monday.</p></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">Listening check 3: What happened to the new worker, and how serious was it?</p>
+    <button class="reveal" onclick="toggleAnswer('l3')">Reveal</button>
+    <div class="answer" id="l3"><p>He scraped himself on old wiring in the hallway. It was minor — just a small scratch, much less serious than the bathtub incident.</p></div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section id="sec13">
+  <div class="sec-head"><div class="sec-num">13</div><h2>Skills — Writing: Incident Report</h2></div>
+  <p>Imagine you are the site supervisor. Write a short <strong>incident report</strong> (80–120 words) about something that has happened on the renovation site this week. Use at least:</p>
+  <ul>
+    <li>two present perfect forms with <em>for</em> or <em>since</em></li>
+    <li>one form with <em>already</em>, <em>yet</em>, or <em>just</em></li>
+    <li>one reflexive pronoun</li>
+  </ul>
+  <textarea id="writingBox" placeholder="Description of incident: ..."></textarea>
+  <div id="wordCount">0 words</div>
+</section>
+
+<!-- 14 -->
+<section id="sec14">
+  <div class="sec-head"><div class="sec-num">14</div><h2>Explore More — Independent Learning</h2></div>
+  <p>Grammar and vocabulary are bigger than one worksheet. Choose at least two of these before next class and bring back one thing you discovered.</p>
+  <div class="explore-grid">
+    <div class="explore-card">
+      <h5>Watch</h5>
+      <p>Search YouTube for a short "home renovation fail" or DIY-disaster clip in English. Note down every present perfect sentence you hear in the commentary or captions.</p>
+    </div>
+    <div class="explore-card">
+      <h5>Read</h5>
+      <p>Find a real online article about a building renovation (a news story, a blog, or a property website). Highlight every use of <em>for/since/already/yet/just</em> you can find.</p>
+    </div>
+    <div class="explore-card">
+      <h5>Investigate</h5>
+      <p>Look up the <strong>Cambridge Dictionary</strong> or <strong>British Council</strong> pages on reflexive pronouns. Find one example they give that is different from the ones in this lesson.</p>
+    </div>
+    <div class="explore-card">
+      <h5>Talk</h5>
+      <p>Ask someone (in English, if possible) "How long have you lived in your home?" and "What's the last thing you've fixed or renovated yourself?" Note their exact answers.</p>
+    </div>
+    <div class="explore-card">
+      <h5>Reflect</h5>
+      <p>Think of a small DIY or repair task you have done yourself. Write three sentences about it using <em>for, since,</em> and a reflexive pronoun.</p>
+    </div>
+    <div class="explore-card">
+      <h5>Corpus tool</h5>
+      <p>Try the free <strong>English-Corpora.org</strong> (COCA) search: type "have just" or "have already" and see which verbs appear most often after them in real usage.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 15 -->
+<section id="sec15">
+  <div class="sec-head"><div class="sec-num">15</div><h2>Week Summary</h2></div>
+  <div class="summary-grid">
+    <div class="summary-card"><span class="icon">🕰️</span><h5>For / Since</h5><p>for = a length of time; since = a starting point.</p></div>
+    <div class="summary-card"><span class="icon">✅</span><h5>Already</h5><p>before now, sooner than expected — mid-position, affirmative.</p></div>
+    <div class="summary-card"><span class="icon">⏳</span><h5>Yet</h5><p>not now, expected soon — end position, negatives/questions.</p></div>
+    <div class="summary-card"><span class="icon">⚡</span><h5>Just</h5><p>a very short time ago — mid-position, affirmative.</p></div>
+    <div class="summary-card"><span class="icon">🪞</span><h5>Reflexive Pronouns</h5><p>myself, yourself, himself, herself — same person acts and is affected.</p></div>
+    <div class="summary-card"><span class="icon">🛠️</span><h5>Renovation Vocabulary</h5><p>tools, tradespeople, materials, and the verbs that go with them.</p></div>
+    <div class="summary-card"><span class="icon">🩹</span><h5>Injury &amp; Safety Vocabulary</h5><p>cut, burn, twist, scrape — plus safety and reporting language.</p></div>
+  </div>
+</section>
+
+<!-- 16 -->
+<section id="sec16">
+  <div class="sec-head"><div class="sec-num">16</div><h2>Self-Check</h2></div>
+  <p>Can you do the following? Be honest — this guides your own revision, not a grade.</p>
+  <div class="checklist">
+    <label><input type="checkbox"> I can explain the difference between <em>for</em> and <em>since</em> without looking at the table.</label>
+    <label><input type="checkbox"> I can correctly place <em>already, yet,</em> and <em>just</em> in a sentence.</label>
+    <label><input type="checkbox"> I can choose between an object pronoun (him/her) and a reflexive pronoun (himself/herself) correctly.</label>
+    <label><input type="checkbox"> I can use at least eight renovation or injury words — with their correct part of speech — in a sentence of my own.</label>
+    <label><input type="checkbox"> I completed the dialogue gap-fill (Section 7) without checking the transcript first.</label>
+    <label><input type="checkbox"> I wrote my incident report using all three required grammar points.</label>
+    <label><input type="checkbox"> I completed at least two "Explore More" tasks.</label>
+  </div>
+</section>
+
+<!-- 17 -->
+<section id="sec17">
+  <div class="sec-head"><div class="sec-num">17</div><h2>Before Next Class</h2></div>
+  <div class="card">
+    <ul>
+      <li>Finish and save your Incident Report (Section 13) — bring it to class.</li>
+      <li>Complete at least two Explore More tasks (Section 14) and be ready to share one discovery.</li>
+      <li>Review the vocabulary cards in Sections 5–6; you'll need them for a speaking activity next class.</li>
+      <li>Think of one true story (yours or someone else's) about a small accident or DIY project — you'll tell it in class using this week's grammar.</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>Grade 5 · Week 4 · The Renovation Diary — Flipped-classroom reference (ESA / Post-method / Task-based / CLT)</footer>
+
+<script>
+  // progress bar
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    document.getElementById('progress').style.width = scrolled + '%';
+  });
+
+  function toggleAnswer(id){
+    document.getElementById(id).classList.toggle('show');
+  }
+
+  function tfCheck(btn, correctForThisButton){
+    const container = btn.closest('.quiz-item');
+    const buttons = container.querySelectorAll('.tf-buttons button');
+    buttons.forEach(b => b.disabled = true);
+    const fb = container.querySelector('.feedback');
+    if(correctForThisButton){
+      btn.classList.add('correct');
+      fb.textContent = 'Correct!';
+      fb.style.color = 'var(--good)';
+    } else {
+      btn.classList.add('wrong');
+      fb.textContent = 'Not quite — look again at the diary.';
+      fb.style.color = 'var(--danger)';
+    }
+  }
+
+  function mcCheck(btn, isCorrect){
+    const container = btn.closest('.quiz-item');
+    const buttons = container.querySelectorAll('.mc-options button');
+    buttons.forEach(b => b.disabled = true);
+    const fb = container.querySelector('.feedback');
+    if(isCorrect){
+      btn.classList.add('correct');
+      fb.textContent = 'Correct!';
+      fb.style.color = 'var(--good)';
+    } else {
+      btn.classList.add('wrong');
+      fb.textContent = 'Incorrect. The right answer is now highlighted.';
+      fb.style.color = 'var(--danger)';
+      buttons.forEach(b => { if(b.getAttribute('onclick').includes(',true)')) b.classList.add('correct'); });
+    }
+  }
+
+  // matching game
+  let selectedLeft = null;
+  let matchedCount = 0;
+  document.querySelectorAll('#matchLeft button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      if(btn.classList.contains('paired-correct')) return;
+      document.querySelectorAll('#matchLeft button').forEach(b=>b.classList.remove('selected'));
+      btn.classList.add('selected');
+      selectedLeft = btn;
+    });
+  });
+  document.querySelectorAll('#matchRight button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      if(!selectedLeft || btn.classList.contains('paired-correct')) return;
+      if(selectedLeft.dataset.pair === btn.dataset.pair){
+        selectedLeft.classList.remove('selected');
+        selectedLeft.classList.add('paired-correct');
+        btn.classList.add('paired-correct');
+        matchedCount++;
+        document.getElementById('matchScore').textContent = 'Matched: ' + matchedCount + ' / 6';
+        selectedLeft = null;
+      } else {
+        btn.classList.add('paired-wrong');
+        setTimeout(()=>btn.classList.remove('paired-wrong'), 600);
+      }
+    });
+  });
+
+  function checkFill(){
+    const inputs = document.querySelectorAll('.fill-input');
+    let correct = 0;
+    inputs.forEach(inp=>{
+      const answers = inp.dataset.answer.split('|').map(a=>a.trim().toLowerCase());
+      const val = inp.value.trim().toLowerCase().replace(/’/g, "'");
+      const ok = answers.includes(val);
+      inp.style.borderBottomColor = ok ? 'var(--good)' : 'var(--danger)';
+      if(ok) correct++;
+    });
+    const fb = document.getElementById('fillFeedback');
+    fb.textContent = correct + ' of ' + inputs.length + ' correct.';
+    fb.style.color = correct===inputs.length ? 'var(--good)' : 'var(--danger)';
+    fb.style.fontFamily = 'Arial,sans-serif';
+    fb.style.fontWeight = '700';
+    fb.style.marginTop = '10px';
+  }
+
+  // word counter
+  const box = document.getElementById('writingBox');
+  const counter = document.getElementById('wordCount');
+  box.addEventListener('input', ()=>{
+    const words = box.value.trim().split(/\s+/).filter(Boolean).length;
+    counter.textContent = words + ' words (target: 80–120)';
+    counter.classList.remove('ok','low');
+    if(words >= 80 && words <= 130) counter.classList.add('ok');
+    else if(words > 0) counter.classList.add('low');
+  });
+</script>
+
+</body>
+</html>

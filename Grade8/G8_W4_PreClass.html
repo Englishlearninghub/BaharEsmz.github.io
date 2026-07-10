@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 8 · Week 4 — Night Road | Full Reference</title>
+<style>
+  :root {
+    --night:      #1C1C2E;
+    --night-mid:  #2D2D44;
+    --night-soft: #3D3D58;
+    --blue:       #2563EB;
+    --blue-mid:   #3B82F6;
+    --blue-light: #DBEAFE;
+    --blue-pale:  #EFF6FF;
+    --amber:      #F59E0B;
+    --amber-deep: #B45309;
+    --amber-light:#FEF3C7;
+    --slate:      #3D405B;
+    --slate-soft: #6B6F8A;
+    --paper:      #F8F6F2;
+    --paper-line: #E8E4DC;
+    --white:      #FFFFFF;
+    --ink:        #1A1A2E;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: Georgia, serif; font-size: 16.5px; line-height: 1.75; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px 80px; }
+  .progress-track { position: sticky; top: 0; height: 4px; background: var(--paper-line); z-index: 100; }
+  .progress-fill  { height: 100%; width: 0; background: var(--blue); transition: width 0.1s; }
+
+  /* MASTHEAD */
+  .masthead { background: var(--night); margin: 0 -24px; padding: 44px 24px 36px; position: relative; overflow: hidden; }
+  .masthead::before { content:''; position:absolute; left:0; right:0; bottom:0; height:4px; background: var(--amber); }
+  /* road stripe motif */
+  .road-stripe { position:absolute; height:6px; background:var(--amber); opacity:0.12; border-radius:2px; }
+  .masthead-inner { max-width:872px; margin:0 auto; position:relative; z-index:1; }
+  .eyebrow { font-family:Arial,sans-serif; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--amber); margin:0 0 12px; font-weight:bold; }
+  h1.title { font-family:Cambria,Georgia,serif; font-size:36px; line-height:1.15; color:var(--white); margin:0 0 16px; max-width:640px; }
+  .masthead-meta { display:flex; gap:28px; flex-wrap:wrap; font-family:Arial,sans-serif; font-size:13px; color:#8899BB; margin-top:14px; }
+  .masthead-meta span { color:var(--white); font-weight:bold; }
+
+  /* TOC */
+  .toc { background:var(--white); border-radius:10px; margin-top:-20px; padding:22px 28px; box-shadow:0 4px 20px rgba(28,28,46,0.13); position:relative; z-index:2; }
+  .toc h2 { font-family:Arial,sans-serif; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--slate-soft); margin:0 0 12px; }
+  .toc ol { margin:0; padding-left:18px; columns:2; column-gap:32px; font-size:14px; line-height:1.6; }
+  .toc li { margin-bottom:5px; }
+  .toc a { color:var(--blue); text-decoration:none; font-weight:bold; font-family:Arial,sans-serif; }
+  .toc a:hover { text-decoration:underline; }
+
+  /* SECTION HEADERS */
+  .tab-section { margin-top:48px; }
+  .tab-header { display:flex; align-items:center; gap:14px; margin-bottom:6px; flex-wrap:wrap; }
+  .tab-badge { font-family:Arial,sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.1em; text-transform:uppercase; background:var(--night); color:var(--white); border-radius:5px; padding:5px 12px; white-space:nowrap; }
+  .tab-badge.context  { background:var(--slate); }
+  .tab-badge.study    { background:var(--blue); }
+  .tab-badge.vocab    { background:var(--night-mid); }
+  .tab-badge.practice { background:var(--slate); }
+  .tab-badge.activate { background:var(--amber-deep); color:var(--white); }
+  .tab-badge.explore  { background:#5C3D8A; }
+  .tab-badge.reference{ background:var(--night); }
+  h2.tab-title { font-family:Cambria,Georgia,serif; font-size:23px; color:var(--ink); }
+  .tab-rule { border:none; border-top:1.5px solid var(--paper-line); margin:12px 0 22px; }
+
+  /* CARDS */
+  .card { background:var(--white); border-radius:10px; padding:22px 26px; margin-bottom:20px; box-shadow:0 2px 10px rgba(28,28,46,0.07); }
+  .card h3 { font-family:Cambria,serif; font-size:18px; margin:0 0 10px; color:var(--night); }
+  .card p  { margin:0 0 10px; }
+  .card p:last-child { margin-bottom:0; }
+
+  /* HOOK */
+  .hook-box { background:var(--night); color:var(--white); border-radius:10px; padding:28px 30px; margin-bottom:20px; border-bottom:4px solid var(--amber); }
+  .hook-box h3 { font-family:Cambria,serif; font-size:19px; color:var(--amber); margin:0 0 12px; }
+  .hook-box p  { color:#8899BB; margin:0 0 10px; }
+  .poll { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+  .poll-opt { border:2px solid var(--amber); color:var(--amber); border-radius:999px; padding:8px 18px; font-size:13px; font-weight:bold; cursor:pointer; background:transparent; font-family:Arial,sans-serif; transition:all 0.15s; }
+  .poll-opt:hover, .poll-opt.selected { background:var(--amber); color:var(--night); }
+  .poll-result { margin-top:12px; font-size:13.5px; color:#8899BB; display:none; font-family:Arial,sans-serif; }
+
+  /* REALIA */
+  .realia { background:var(--white); border-radius:10px; overflow:hidden; border:1px solid var(--paper-line); margin-bottom:22px; box-shadow:0 4px 16px rgba(28,28,46,0.09); }
+  .realia-header { background:var(--night-mid); color:var(--white); padding:12px 22px; font-family:Arial,sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.05em; display:flex; align-items:center; gap:10px; }
+  .realia-doctype { font-size:10px; font-weight:bold; letter-spacing:0.1em; text-transform:uppercase; background:var(--blue); color:var(--white); border-radius:3px; padding:3px 8px; }
+  .realia-doctype.amber { background:var(--amber-deep); }
+  .realia-body { padding:24px 28px; }
+  .realia-body p { margin:0 0 13px; }
+  .realia-body p:last-child { margin:0; }
+  .realia-body .byline { font-family:Arial,sans-serif; font-size:13px; color:var(--slate-soft); margin-bottom:18px; font-style:italic; }
+
+  /* HIGHLIGHTS */
+  .hl-amber { background:var(--amber-light); color:var(--amber-deep); padding:1px 5px; border-radius:3px; font-weight:bold; }
+  .hl-blue  { background:var(--blue-light); color:var(--blue); padding:1px 5px; border-radius:3px; font-weight:bold; }
+  .hl-slate { background:#EDEEF4; color:var(--slate); padding:1px 5px; border-radius:3px; font-weight:bold; }
+
+  /* TRANSCRIPT BOX */
+  .transcript { background:var(--night); border-radius:10px; padding:22px 28px; margin-bottom:22px; border-left:4px solid var(--blue); }
+  .transcript .turn { margin-bottom:14px; }
+  .transcript .speaker { font-family:Arial,sans-serif; font-size:12px; font-weight:bold; letter-spacing:0.08em; text-transform:uppercase; color:var(--amber); margin-bottom:4px; }
+  .transcript p { color:#C8D0E0; font-size:15px; line-height:1.65; }
+  .transcript p:last-child { margin:0; }
+
+  /* NOTICE */
+  .notice-box { background:#FFF8E8; border:2px dashed var(--amber-deep); border-radius:10px; padding:22px 26px; margin-bottom:20px; }
+  .notice-box h3 { font-family:Cambria,serif; font-size:18px; color:var(--amber-deep); margin:0 0 14px; }
+  .notice-q { margin-bottom:14px; padding-left:30px; position:relative; font-size:15.5px; }
+  .notice-q::before { content:'?'; position:absolute; left:0; top:0; width:20px; height:20px; border-radius:50%; background:var(--amber-deep); color:var(--white); font-size:13px; font-weight:bold; text-align:center; line-height:20px; font-family:Arial,sans-serif; }
+  .reveal-btn { display:inline-block; margin-top:6px; background:none; border:1px solid var(--amber-deep); color:var(--amber-deep); border-radius:5px; padding:3px 10px; font-size:12px; cursor:pointer; font-family:Arial,sans-serif; transition:all 0.15s; }
+  .reveal-btn:hover { background:var(--amber-deep); color:var(--white); }
+  .notice-reveal { margin-top:8px; font-size:14px; color:var(--slate); font-style:italic; border-left:3px solid var(--amber-deep); padding-left:10px; display:none; }
+
+  /* GRAMMAR BOXES */
+  .grammar-box { background:var(--white); border-radius:10px; padding:26px 30px; margin-bottom:24px; box-shadow:0 2px 10px rgba(28,28,46,0.07); }
+  .grammar-box h3 { font-family:Cambria,serif; font-size:21px; color:var(--blue); margin:0 0 6px; }
+  .grammar-sub { font-family:Arial,sans-serif; font-size:14px; color:var(--slate-soft); margin:0 0 18px; font-style:italic; }
+
+  .example-row { display:grid; grid-template-columns:28px 1fr; gap:10px; align-items:start; margin-bottom:10px; padding:10px 14px; background:var(--paper); border-radius:8px; }
+  .example-row .mark { font-weight:bold; font-size:18px; }
+  .example-row .mark.ok  { color:var(--blue); }
+  .example-row .mark.bad { color:var(--amber-deep); }
+  .example-row .gloss { display:block; font-family:Arial,sans-serif; font-size:13px; color:var(--slate-soft); margin-top:3px; }
+  .example-row .note  { display:block; font-family:Arial,sans-serif; font-size:12.5px; color:var(--amber-deep); margin-top:3px; font-weight:bold; }
+
+  table.rule-table { width:100%; border-collapse:collapse; margin:16px 0 8px; font-size:14.5px; font-family:Arial,sans-serif; }
+  table.rule-table th { background:var(--night); color:var(--white); padding:9px 13px; text-align:left; font-size:13px; }
+  table.rule-table td { padding:9px 13px; border-bottom:1px solid var(--paper-line); vertical-align:top; }
+  table.rule-table tr:nth-child(even) td { background:var(--blue-pale); }
+
+  .backshift-box { background:var(--night); border-radius:10px; padding:20px 24px; margin:18px 0; }
+  .backshift-box h4 { font-family:Cambria,serif; font-size:17px; color:var(--amber); margin:0 0 12px; }
+  .bs-row { display:flex; gap:16px; align-items:center; margin-bottom:10px; }
+  .bs-before { font-family:Arial,sans-serif; font-size:13.5px; color:#A8C0D8; flex:1; }
+  .bs-arrow { color:var(--amber); font-weight:bold; flex-shrink:0; }
+  .bs-after  { font-family:Arial,sans-serif; font-size:13.5px; color:var(--white); flex:1; }
+
+  .cleft-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:14px 0; }
+  .cleft-card { background:var(--blue-pale); border-radius:8px; padding:14px 18px; border:1px solid var(--blue-light); }
+  .cleft-card h4 { font-family:Arial,sans-serif; font-size:12px; font-weight:bold; text-transform:uppercase; letter-spacing:0.07em; color:var(--blue); margin:0 0 8px; }
+  .cleft-card p  { font-size:14.5px; font-family:Georgia,serif; }
+  .cleft-card .emphasis { color:var(--blue); font-weight:bold; }
+  .cleft-card .ex { font-size:13px; font-style:italic; color:var(--slate-soft); margin-top:6px; }
+
+  /* VOCAB */
+  .vocab-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:14px 0; }
+  .vocab-card { background:var(--white); border-radius:8px; padding:14px 16px; border:1px solid var(--paper-line); }
+  .vocab-card .word { font-family:Cambria,serif; font-weight:bold; color:var(--night); font-size:16px; }
+  .vocab-card .pos  { font-family:Arial,sans-serif; font-size:11px; color:var(--slate-soft); text-transform:uppercase; margin-left:6px; }
+  .vocab-card .pron { font-family:Arial,sans-serif; font-size:13px; color:var(--slate-soft); margin-top:3px; }
+  .vocab-card .def  { font-size:14px; margin-top:5px; }
+  .vocab-card .ex   { font-family:Arial,sans-serif; font-size:13px; color:var(--slate-soft); margin-top:5px; font-style:italic; }
+
+  .chip-row { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0; }
+  .chip { background:var(--paper); border:1px solid var(--paper-line); border-radius:999px; padding:5px 14px; font-family:Arial,sans-serif; font-size:13.5px; color:var(--ink); }
+
+  .word-family-table { width:100%; border-collapse:collapse; font-family:Arial,sans-serif; font-size:14px; margin:12px 0; }
+  .word-family-table th { background:var(--night-mid); color:var(--white); padding:8px 12px; text-align:left; font-size:12.5px; }
+  .word-family-table td { padding:8px 12px; border-bottom:1px solid var(--paper-line); }
+  .word-family-table tr:nth-child(even) td { background:var(--blue-pale); }
+
+  /* EXERCISES */
+  .exercise { background:var(--white); border-radius:10px; padding:22px 26px; margin-bottom:18px; box-shadow:0 2px 10px rgba(28,28,46,0.07); }
+  .ex-label { display:inline-block; font-family:Arial,sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.08em; text-transform:uppercase; background:var(--night); color:var(--white); border-radius:4px; padding:3px 10px; margin-bottom:10px; }
+  .ex-label.blue { background:var(--blue); }
+  .ex-label.vocab { background:var(--night-mid); }
+  .exercise h4 { font-family:Cambria,serif; font-size:17px; margin:0 0 12px; color:var(--ink); }
+  .exercise .instr { font-family:Arial,sans-serif; font-size:13.5px; color:var(--slate-soft); margin-bottom:14px; font-style:italic; }
+  .q-row { display:flex; align-items:baseline; gap:10px; margin-bottom:11px; flex-wrap:wrap; }
+  .q-num { font-family:Arial,sans-serif; font-weight:bold; color:var(--amber-deep); min-width:22px; }
+  .blank-input { border:none; border-bottom:2px solid var(--amber); background:var(--paper); font-family:Georgia,serif; font-size:15px; padding:3px 8px; width:220px; color:var(--ink); }
+  .blank-input:focus { outline:none; border-color:var(--blue); }
+  .wide-input { width:100%; margin-top:6px; }
+  .match-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0; }
+  .match-item { background:var(--paper); border-radius:8px; padding:10px 14px; font-family:Arial,sans-serif; font-size:14px; cursor:pointer; border:2px solid transparent; transition:all 0.15s; }
+  .match-item.selected { border-color:var(--amber); }
+  .match-item.matched  { border-color:var(--blue); background:var(--blue-pale); }
+  .match-item.wrong-flash { border-color:var(--amber-deep); background:var(--amber-light); }
+  .check-btn { background:var(--blue); color:var(--white); border:none; border-radius:6px; padding:9px 22px; font-family:Arial,sans-serif; font-weight:bold; font-size:14px; cursor:pointer; margin-top:10px; transition:background 0.15s; }
+  .check-btn:hover { background:var(--night); }
+  .feedback { margin-top:12px; font-family:Arial,sans-serif; font-size:14px; border-radius:6px; padding:10px 14px; display:none; }
+  .feedback.show { display:block; }
+  .feedback.good { background:var(--blue-light); color:var(--blue); }
+  .feedback.bad  { background:var(--amber-light); color:var(--amber-deep); }
+  textarea.response-box { width:100%; min-height:110px; border-radius:8px; border:2px solid var(--paper-line); padding:12px 14px; font-family:Georgia,serif; font-size:15px; resize:vertical; background:var(--white); color:var(--ink); line-height:1.65; }
+  textarea.response-box:focus { outline:none; border-color:var(--blue); }
+  .word-count { font-family:Arial,sans-serif; font-size:12px; color:var(--slate-soft); margin-top:5px; text-align:right; }
+
+  /* ACTIVATE */
+  .activate-box { background:var(--blue); border-radius:10px; padding:26px 30px; margin-bottom:20px; }
+  .activate-box h3 { font-family:Cambria,serif; font-size:19px; color:var(--white); margin:0 0 12px; }
+  .activate-box p  { color:var(--white); margin:0 0 10px; font-size:15.5px; }
+
+  /* EXPLORE */
+  .explore-card { background:#F3EDF8; border:1px solid #D5C0E8; border-radius:10px; padding:22px 26px; margin-bottom:18px; }
+  .explore-card h3 { font-family:Cambria,serif; font-size:17px; color:#5C3D8A; margin:0 0 10px; }
+  .explore-tag { display:inline-block; font-family:Arial,sans-serif; font-size:11px; font-weight:bold; letter-spacing:0.08em; text-transform:uppercase; background:#5C3D8A; color:var(--white); border-radius:4px; padding:3px 9px; margin-bottom:10px; }
+  .explore-card ul { padding-left:20px; margin:10px 0 0; font-size:15px; }
+  .explore-card li { margin-bottom:7px; }
+
+  /* ANSWER KEY */
+  .answer-key { background:var(--white); border-radius:10px; padding:26px 30px; margin-top:48px; border:2px solid var(--blue); box-shadow:0 4px 16px rgba(28,28,46,0.10); }
+  .ak-title { font-family:Cambria,serif; font-size:22px; color:var(--night); margin:0 0 6px; }
+  .ak-sub   { font-family:Arial,sans-serif; font-size:13.5px; color:var(--slate-soft); margin:0 0 20px; font-style:italic; }
+  .ak-section { margin-bottom:20px; }
+  .ak-section h4 { font-family:Arial,sans-serif; font-size:13px; font-weight:bold; letter-spacing:0.07em; text-transform:uppercase; color:var(--blue); margin:0 0 10px; border-bottom:1px solid var(--paper-line); padding-bottom:6px; }
+  .ak-item { display:grid; grid-template-columns:28px 1fr 1fr; gap:8px; padding:8px 4px; border-bottom:1px solid var(--paper-line); font-size:14px; }
+  .ak-item:last-child { border-bottom:none; }
+  .an { font-family:Arial,sans-serif; font-weight:bold; color:var(--amber-deep); }
+  .av { font-weight:bold; color:var(--blue); }
+  .anote { font-family:Arial,sans-serif; font-size:13px; color:var(--slate-soft); font-style:italic; }
+
+  /* REF */
+  .ref-table-wrap { overflow-x:auto; }
+  table.ref-table { width:100%; border-collapse:collapse; font-family:Arial,sans-serif; font-size:14px; }
+  table.ref-table th { background:var(--night); color:var(--white); padding:10px 14px; text-align:left; font-size:13px; }
+  table.ref-table td { padding:10px 14px; border-bottom:1px solid var(--paper-line); vertical-align:top; }
+  table.ref-table tr:nth-child(even) td { background:var(--paper); }
+
+  .wrapup { background:var(--night); color:var(--white); border-radius:10px; padding:26px 30px; margin-top:40px; border-bottom:4px solid var(--amber); }
+  .wrapup h3 { font-family:Cambria,serif; color:var(--amber); margin:0 0 12px; font-size:18px; }
+  .wrapup ul { padding-left:20px; margin:0; }
+  .wrapup li { margin-bottom:7px; font-size:15px; color:#C8D0E0; }
+
+  @media (max-width:600px) { h1.title{font-size:26px;} .vocab-grid,.cleft-grid{grid-template-columns:1fr;} .toc ol{columns:1;} .ak-item{grid-template-columns:28px 1fr;} .ak-item .anote{grid-column:2;} }
+</style>
+</head>
+<body>
+<div class="progress-track"><div class="progress-fill" id="pf"></div></div>
+
+<div class="masthead">
+  <div class="road-stripe" style="top:30%;left:10%;right:30%;"></div>
+  <div class="road-stripe" style="top:65%;left:40%;right:5%;"></div>
+  <div class="masthead-inner">
+    <p class="eyebrow">Grade 8 &middot; Week 4 &middot; Complete Reference &amp; Pre-Class Material</p>
+    <h1 class="title">Night Road — Reporting What Happened &amp; What Was Said</h1>
+    <div class="masthead-meta">
+      <div>Level: <span>B2+</span></div>
+      <div>Theme: <span>Traffic &amp; Crime</span></div>
+      <div>Grammar: <span>Reported Speech &middot; Cleft Sentences (What-clause)</span></div>
+      <div>Est. time: <span>65&ndash;75 min</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="toc">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#engage">1. Engage</a></li>
+      <li><a href="#ctx1">2. Context: the news article</a></li>
+      <li><a href="#nd1">3. Notice &amp; discover (reported speech)</a></li>
+      <li><a href="#s1">4. Study: Reported Speech — backshift</a></li>
+      <li><a href="#s2">5. Study: Reported Speech — questions &amp; requests</a></li>
+      <li><a href="#s3">6. Study: Optional backshift (corpus note)</a></li>
+      <li><a href="#p1">7. Practice: Reported Speech</a></li>
+      <li><a href="#ctx2">8. Context: police interview</a></li>
+      <li><a href="#nd2">9. Notice &amp; discover (cleft sentences)</a></li>
+      <li><a href="#s4">10. Study: Cleft Sentences — What-clause</a></li>
+      <li><a href="#p2">11. Practice: Cleft Sentences</a></li>
+      <li><a href="#vocab">12. Vocabulary: traffic &amp; crime reporting</a></li>
+      <li><a href="#vp">13. Practice: vocabulary</a></li>
+      <li><a href="#together">14. Putting it together</a></li>
+      <li><a href="#explore">15. Explore on your own</a></li>
+      <li><a href="#ref">16. Quick reference</a></li>
+      <li><a href="#ak">17. Answer key</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. ENGAGE -->
+  <div class="tab-section" id="engage">
+    <div class="tab-header"><span class="tab-badge">ENGAGE</span><h2 class="tab-title">What would you say — and how would you report it?</h2></div>
+    <hr class="tab-rule">
+    <div class="hook-box">
+      <h3>Before we start</h3>
+      <p>You witness a car run a red light and clip a cyclist. The cyclist falls. The driver stops briefly, then drives away. A police officer arrives two minutes later and asks you what happened.</p>
+      <p>You say: <em>"The driver ran the red light and hit the cyclist. He said something I couldn't hear, then drove off."</em></p>
+      <p>The officer writes in her report: <em>"The witness stated that the driver had run the red light and had hit the cyclist. She added that the driver had said something she couldn't hear before driving off."</em></p>
+      <p><strong>Which of these feels most true to how you'd handle this situation?</strong></p>
+      <div class="poll" id="pollBox">
+        <button class="poll-opt" data-opt="a">I'd call 999 / 112 immediately and report everything exactly</button>
+        <button class="poll-opt" data-opt="b">I'd take a photo or video first, then report it</button>
+        <button class="poll-opt" data-opt="c">I'd speak to the cyclist first to check they're OK</button>
+        <button class="poll-opt" data-opt="d">I'd be too shaken to do anything quickly</button>
+      </div>
+      <p class="poll-result" id="pollResult"></p>
+    </div>
+    <div class="card">
+      <h3>What you're going to read</h3>
+      <p>You'll read a news article about a hit-and-run incident, and the police interview transcript with the key witness. Both are rich with reported speech and — in the interview — with cleft sentences used for emphasis. Read for meaning and sequence first, then look at how the language works.</p>
+      <p style="font-size:14px;color:var(--slate-soft);">Colour code: <span class="hl-amber">amber</span> = Reported Speech. <span class="hl-blue">blue</span> = Cleft Sentences. <span class="hl-slate">slate</span> = Optional backshift (corpus note).</p>
+    </div>
+  </div>
+
+  <!-- 2. CONTEXT 1: NEWS ARTICLE -->
+  <div class="tab-section" id="ctx1">
+    <div class="tab-header"><span class="tab-badge context">CONTEXT</span><h2 class="tab-title">Read first: the news article</h2></div>
+    <hr class="tab-rule">
+    <div class="card">
+      <p><strong>Before thinking about grammar:</strong> What happened? Who reported it? What is still unknown? Note three facts and one gap in the story.</p>
+    </div>
+    <div class="realia">
+      <div class="realia-header"><span class="realia-doctype">News Article</span><span style="font-family:Georgia,serif;font-size:17px;color:#fff;">Riverside Gazette — Local News</span></div>
+      <div class="realia-body">
+        <h3 style="font-family:Cambria,serif;font-size:20px;margin:0 0 8px;color:var(--night);">Cyclist injured in hit-and-run on Elm Street</h3>
+        <p class="byline">By Rosa Ferreira, Staff Reporter &middot; Tuesday, 11 March</p>
+        <p>A 34-year-old cyclist was taken to Riverside General Hospital on Monday night after being struck by a vehicle that failed to stop at the scene. The incident occurred at approximately 11:15 pm at the junction of Elm Street and Park Road.</p>
+        <p>A witness, Maya Osei, told reporters that <span class="hl-amber">the driver had run the red light at speed</span> and had not appeared to brake before impact. <span class="hl-amber">She added that the driver had briefly stopped the vehicle, opened the window, and then driven away without assisting the victim.</span></p>
+        <p>Officer Diaz of Riverside Police <span class="hl-amber">confirmed that eyewitness statements had been taken</span> and that <span class="hl-amber">the vehicle had been described as a dark-coloured saloon car</span>. <span class="hl-amber">She stated that CCTV footage was being reviewed</span> and that <span class="hl-amber">officers were appealing for anyone with dashcam footage to come forward</span>.</p>
+        <p>The cyclist, who has not been named, <span class="hl-amber">was reported to be in a stable condition</span>. A hospital spokesperson <span class="hl-amber">said that he had been treated for a broken collarbone and minor head injuries</span>.</p>
+        <p>Maya Osei <span class="hl-amber">told this newspaper that she had been standing at the bus stop when she heard the collision</span>. <span class="hl-amber">"What shocked me most," she said, "was that the driver slowed down, looked out, and then just drove away."</span></p>
+        <p style="font-size:14px;color:var(--slate-soft);margin-top:14px;font-family:Arial,sans-serif;font-style:italic;">Anyone with information is asked to contact Riverside Police on 0800 555 111.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Meaning check — no grammar terms yet</h3>
+      <p>1. At what time and location did the incident occur?</p>
+      <p>2. What did the driver do after the collision — according to Maya?</p>
+      <p>3. What two things is the police still trying to establish?</p>
+      <p>4. Maya's direct quote at the end uses "what shocked me most." What is she emphasising? Why does she start the sentence this way rather than saying "I was most shocked that the driver…"?</p>
+    </div>
+  </div>
+
+  <!-- 3. NOTICE & DISCOVER 1 -->
+  <div class="tab-section" id="nd1">
+    <div class="tab-header"><span class="tab-badge study">NOTICE &amp; DISCOVER</span><h2 class="tab-title">Look at the amber phrases — find the reporting pattern</h2></div>
+    <hr class="tab-rule">
+    <div class="notice-box">
+      <h3>Detective work: turning direct speech into reported speech</h3>
+      <div class="notice-q">
+        Maya said: <em>"The driver ran the red light at speed."</em> The article reports: <em>"…the driver had run the red light at speed."</em> What changed — and what didn't?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">The verb changed: "ran" (simple past) → "had run" (past perfect). The reporting verb "told reporters that" introduced the change. When you report what someone said in the past, verbs typically shift one step back in time — this is called backshift.</p>
+      </div>
+      <div class="notice-q">
+        Officer Diaz said: <em>"CCTV footage is being reviewed."</em> The article says: <em>"…CCTV footage was being reviewed."</em> What happened to the tense? What other changes do you notice?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">Present continuous "is being reviewed" → Past continuous "was being reviewed." One step back. Also note: pronouns may change (I → she, you → he/she) and time expressions may shift (today → that day, tomorrow → the following day).</p>
+      </div>
+      <div class="notice-q">
+        Maya's direct quote says: <em>"the driver slowed down, looked out, and then just drove away."</em> This is inside a longer reported section. Does anything shift here? What does this tell you about how journalists use mixed reporting?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">In the direct quote, the verbs stay as simple past — because it's direct speech (actual words, in quotation marks). Journalists often mix direct and indirect speech: exact words in quotes (direct), summaries in their own words (indirect/reported). Both are valid techniques.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. STUDY 1: REPORTED SPEECH — BACKSHIFT -->
+  <div class="tab-section" id="s1">
+    <div class="tab-header"><span class="tab-badge study">STUDY</span><h2 class="tab-title">Reported Speech — Backshift Table</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3>1. Reported Speech — Statement Backshift</h3>
+      <p class="grammar-sub">When we report what someone said in the past, verbs shift one step back in time. This is called backshift.</p>
+      <table class="rule-table">
+        <tr><th>Direct Speech (tense)</th><th>→</th><th>Reported Speech (tense)</th><th>Example</th></tr>
+        <tr><td>Present simple</td><td>→</td><td>Past simple</td><td><em>"He runs red lights." → She said he ran red lights.</em></td></tr>
+        <tr><td>Present continuous</td><td>→</td><td>Past continuous</td><td><em>"CCTV is being reviewed." → She stated it was being reviewed.</em></td></tr>
+        <tr><td>Past simple</td><td>→</td><td>Past perfect</td><td><em>"The driver ran the light." → She told us the driver had run the light.</em></td></tr>
+        <tr><td>Present perfect</td><td>→</td><td>Past perfect</td><td><em>"Officers have arrived." → She confirmed officers had arrived.</em></td></tr>
+        <tr><td>will</td><td>→</td><td>would</td><td><em>"We will appeal for witnesses." → She said they would appeal for witnesses.</em></td></tr>
+        <tr><td>can</td><td>→</td><td>could</td><td><em>"I can see the number plate." → He said he could see the number plate.</em></td></tr>
+        <tr><td>may</td><td>→</td><td>might</td><td><em>"The driver may be local." → Officers said the driver might be local.</em></td></tr>
+      </table>
+      <p style="margin-top:16px;"><strong>Time and place expressions also shift:</strong></p>
+      <table class="rule-table">
+        <tr><th>Direct Speech</th><th>→</th><th>Reported Speech</th></tr>
+        <tr><td>now</td><td>→</td><td>then / at that moment</td></tr>
+        <tr><td>today</td><td>→</td><td>that day</td></tr>
+        <tr><td>yesterday</td><td>→</td><td>the day before / the previous day</td></tr>
+        <tr><td>tomorrow</td><td>→</td><td>the next day / the following day</td></tr>
+        <tr><td>here</td><td>→</td><td>there</td></tr>
+        <tr><td>this</td><td>→</td><td>that</td></tr>
+        <tr><td>ago</td><td>→</td><td>before / previously</td></tr>
+      </table>
+      <p style="margin-top:16px;"><strong>Common reporting verbs:</strong></p>
+      <div class="chip-row">
+        <span class="chip">say (that)</span><span class="chip">tell + object (that)</span><span class="chip">state (that)</span>
+        <span class="chip">confirm (that)</span><span class="chip">add (that)</span><span class="chip">claim (that)</span>
+        <span class="chip">warn (that)</span><span class="chip">admit (that)</span><span class="chip">deny (that)</span>
+        <span class="chip">explain (that)</span><span class="chip">report (that)</span><span class="chip">announce (that)</span>
+      </div>
+      <p style="margin-top:14px;font-size:14px;color:var(--slate-soft);">⚠ Note: <em>say</em> does not take an object directly — "She said that…" ✓ / "She said me that…" ✗. <em>Tell</em> always needs an object — "She told officers that…" ✓ / "She told that…" ✗</p>
+    </div>
+  </div>
+
+  <!-- 5. STUDY 2: QUESTIONS & REQUESTS -->
+  <div class="tab-section" id="s2">
+    <div class="tab-header"><span class="tab-badge study">STUDY</span><h2 class="tab-title">Reported Questions &amp; Requests</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3>2. Reported Questions &amp; Requests</h3>
+      <p class="grammar-sub">Questions and requests change structure — not just tense — when reported. The word order becomes statement order.</p>
+      <p><strong>Yes/No Questions → whether / if</strong></p>
+      <div class="example-row"><span class="mark ok">→</span><span class="txt"><em>Direct: "Did you see the number plate?"</em><br><em>Reported: She asked whether I had seen the number plate.</em><span class="gloss">No question mark. "Did" disappears — backshift only (see → had seen). Word order: subject + verb.</span></span></div>
+      <div class="example-row"><span class="mark ok">→</span><span class="txt"><em>Direct: "Was the driver alone?"</em><br><em>Reported: He asked if the driver had been alone.</em><span class="gloss">If / whether — both correct. "Was" backshifts to "had been."</span></span></div>
+      <p style="margin-top:14px;"><strong>Wh- Questions → wh-word + statement word order</strong></p>
+      <div class="example-row"><span class="mark ok">→</span><span class="txt"><em>Direct: "Where did the car go?"</em><br><em>Reported: She asked where the car had gone.</em><span class="gloss">Wh-word kept. "Did go" → "had gone." No inversion (gone the car ✗ → the car had gone ✓).</span></span></div>
+      <div class="example-row"><span class="mark ok">→</span><span class="txt"><em>Direct: "What time did the incident occur?"</em><br><em>Reported: Officer Diaz asked what time the incident had occurred.</em><span class="gloss">Compound wh-phrase ("what time") stays together. Statement order follows.</span></span></div>
+      <p style="margin-top:14px;"><strong>Requests &amp; Instructions → asked / told + to + infinitive</strong></p>
+      <div class="example-row"><span class="mark ok">→</span><span class="txt"><em>Direct: "Please stay at the scene."</em><br><em>Reported: The officer asked Maya to stay at the scene.</em><span class="gloss">No tense change needed. The infinitive carries the meaning.</span></span></div>
+      <div class="example-row"><span class="mark ok">→</span><span class="txt"><em>Direct: "Don't leave before giving a statement."</em><br><em>Reported: She told witnesses not to leave before giving a statement.</em><span class="gloss">Negative: told + object + not + to + infinitive.</span></span></div>
+      <p style="margin-top:14px;"><strong>⚠ The word-order trap:</strong></p>
+      <div class="example-row"><span class="mark bad">✗</span><span class="txt"><em>She asked where had the car gone.</em><span class="note">WRONG — keep statement word order: "where the car had gone" (subject before verb).</span></span></div>
+      <div class="example-row"><span class="mark ok">✓</span><span class="txt"><em>She asked where the car had gone.</em><span class="gloss">Correct — wh-word + subject + verb.</span></span></div>
+    </div>
+  </div>
+
+  <!-- 6. STUDY 3: OPTIONAL BACKSHIFT -->
+  <div class="tab-section" id="s3">
+    <div class="tab-header"><span class="tab-badge study">STUDY</span><h2 class="tab-title">Corpus Note — When Backshift Is Optional</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3>3. Optional Backshift (corpus-informed)</h3>
+      <p class="grammar-sub">This is a nuance missing from most textbooks but confirmed by corpus research. Backshift is NOT always required — it's optional when the information is still currently true, or in informal spoken English.</p>
+      <div class="backshift-box">
+        <h4>When backshift is optional:</h4>
+        <div class="bs-row">
+          <div class="bs-before">"She told me she <strong>is</strong> a nurse."</div>
+          <div class="bs-arrow">←</div>
+          <div class="bs-after"><strong>Still true now</strong> — she's still a nurse. Backshift optional.</div>
+        </div>
+        <div class="bs-row">
+          <div class="bs-before">"He said the earth <strong>is</strong> round."</div>
+          <div class="bs-arrow">←</div>
+          <div class="bs-after"><strong>Universal/scientific fact</strong> — never backshifts.</div>
+        </div>
+        <div class="bs-row">
+          <div class="bs-before">"She said she <strong>lives</strong> nearby."</div>
+          <div class="bs-arrow">←</div>
+          <div class="bs-after"><strong>Informal spoken English</strong> — present tense kept for immediacy.</div>
+        </div>
+        <div class="bs-row">
+          <div class="bs-before">"He said he <strong>can</strong> help."</div>
+          <div class="bs-arrow">←</div>
+          <div class="bs-after"><strong>Still applicable now</strong> — "could" or "can" both acceptable.</div>
+        </div>
+      </div>
+      <p style="margin-top:16px;"><strong>When backshift IS required (formal written English, or when the situation no longer applies):</strong></p>
+      <div class="example-row"><span class="mark ok">✓</span><span class="txt"><em>She told reporters the driver <strong>had run</strong> the red light.</em><span class="gloss">Formal written report. The running happened in the past — backshift appropriate and expected.</span></span></div>
+      <div class="example-row"><span class="mark ok">✓</span><span class="txt"><em>He claimed he <strong>hadn't seen</strong> the traffic light.</em><span class="gloss">Specific past event being reported formally. Backshift expected.</span></span></div>
+      <p style="margin-top:14px;font-size:14px;color:var(--slate-soft);">In this week's traffic/crime context: always use backshift in formal written reports and police statements. The optional-backshift rule applies more to everyday informal speech. Your exam will expect backshift unless specifically told otherwise.</p>
+    </div>
+  </div>
+
+  <!-- 7. PRACTICE 1 -->
+  <div class="tab-section" id="p1">
+    <div class="tab-header"><span class="tab-badge practice">PRACTICE</span><h2 class="tab-title">Try it: Reported Speech</h2></div>
+    <hr class="tab-rule">
+    <div class="exercise">
+      <span class="ex-label">Exercise 1 &middot; Statement backshift</span>
+      <h4>Report each statement using the verb in brackets. Apply backshift.</h4>
+      <p class="instr">Use the correct reporting verb + that + backshifted clause. Watch pronoun and time expression changes.</p>
+      <div class="q-row"><span class="q-num">1.</span><span>"The vehicle is a dark blue saloon." (Officer Diaz / confirm)</span></div>
+      <input type="text" class="blank-input wide-input" id="e1a" data-answer="officer diaz confirmed that the vehicle was a dark blue saloon" placeholder="Officer Diaz confirmed that…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">2.</span><span>"We are appealing for dashcam footage." (police / state)</span></div>
+      <input type="text" class="blank-input wide-input" id="e1b" data-answer="the police stated that they were appealing for dashcam footage|police stated that they were appealing for dashcam footage" placeholder="The police stated that…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">3.</span><span>"The cyclist has been taken to hospital." (spokesperson / report)</span></div>
+      <input type="text" class="blank-input wide-input" id="e1c" data-answer="the spokesperson reported that the cyclist had been taken to hospital|a spokesperson reported that the cyclist had been taken to hospital" placeholder="The spokesperson reported that…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">4.</span><span>"I will contact you tomorrow." (Officer Diaz / tell / Maya)</span></div>
+      <input type="text" class="blank-input wide-input" id="e1d" data-answer="officer diaz told maya that she would contact her the next day|officer diaz told maya she would contact her the following day|officer diaz told maya that she would contact her the following day" placeholder="Officer Diaz told Maya that…">
+      <button class="check-btn" onclick="checkEx1()">Check my answers</button>
+      <div class="feedback" id="fb-ex1"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label">Exercise 2 &middot; Questions &amp; requests</span>
+      <h4>Report each question or request. Pay attention to word order.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span>"Did you see the colour of the car?" (officer / ask / Maya)</span></div>
+      <input type="text" class="blank-input wide-input" id="e2a" data-answer="the officer asked maya whether she had seen the colour of the car|the officer asked maya if she had seen the colour of the car|officer asked maya if she had seen the colour of the car" placeholder="The officer asked Maya whether/if…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">2.</span><span>"Where did the car go after the collision?" (reporter / ask)</span></div>
+      <input type="text" class="blank-input wide-input" id="e2b" data-answer="the reporter asked where the car had gone after the collision|the reporter asked where the car went after the collision" placeholder="The reporter asked where…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">3.</span><span>"Please wait here until we take your statement." (officer / ask / witnesses)</span></div>
+      <input type="text" class="blank-input wide-input" id="e2c" data-answer="the officer asked witnesses to wait there until they took their statement|the officer asked the witnesses to wait there until they took their statement" placeholder="The officer asked witnesses…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">4.</span><span>"Don't share this information with the press." (officer / tell / Maya)</span></div>
+      <input type="text" class="blank-input wide-input" id="e2d" data-answer="the officer told maya not to share the information with the press|the officer told maya not to share that information with the press" placeholder="The officer told Maya not to…">
+      <button class="check-btn" onclick="checkEx2()">Check my answers</button>
+      <div class="feedback" id="fb-ex2"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label">Exercise 3 &middot; Error correction</span>
+      <h4>Each sentence has one error. Find and fix it.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span>She said me that the driver had not stopped.</span></div>
+      <input type="text" class="blank-input wide-input" id="e3a" data-answer="she told me that the driver had not stopped|she said that the driver had not stopped" placeholder="Correct version…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">2.</span><span>The officer asked where had the car gone.</span></div>
+      <input type="text" class="blank-input wide-input" id="e3b" data-answer="the officer asked where the car had gone" placeholder="Correct version…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">3.</span><span>He told that the road was clear at the time.</span></div>
+      <input type="text" class="blank-input wide-input" id="e3c" data-answer="he said that the road was clear at the time|he told officers that the road was clear at the time|he told them that the road was clear at the time" placeholder="Correct version…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">4.</span><span>She said officers they should check the CCTV footage.</span></div>
+      <input type="text" class="blank-input wide-input" id="e3d" data-answer="she told officers they should check the cctv footage|she told officers to check the cctv footage|she said that officers should check the cctv footage" placeholder="Correct version…">
+      <button class="check-btn" onclick="checkEx3()">Check my answers</button>
+      <div class="feedback" id="fb-ex3"></div>
+    </div>
+  </div>
+
+  <!-- 8. CONTEXT 2: POLICE INTERVIEW -->
+  <div class="tab-section" id="ctx2">
+    <div class="tab-header"><span class="tab-badge context">CONTEXT</span><h2 class="tab-title">Read next: the police interview transcript</h2></div>
+    <hr class="tab-rule">
+    <div class="card">
+      <p>The next morning, Maya gives a formal statement. <strong>Before looking at grammar: which information here is new — not in the news article? Which of Maya's statements seems most significant?</strong></p>
+      <p style="font-size:14px;color:var(--slate-soft);">The <span class="hl-blue">blue-highlighted</span> phrases are Cleft Sentences — look at how they structure emphasis differently from a plain statement.</p>
+    </div>
+    <div class="transcript">
+      <div class="turn">
+        <div class="speaker">Officer Diaz</div>
+        <p>Can you tell me in your own words what you observed last night?</p>
+      </div>
+      <div class="turn">
+        <div class="speaker">Maya Osei</div>
+        <p><span class="hl-blue">What I saw was a dark car accelerating through a red light.</span> The cyclist had no chance. <span class="hl-blue">What happened next was the most disturbing part.</span> The driver actually slowed down — I thought he was going to help. But then he just drove away.</p>
+      </div>
+      <div class="turn">
+        <div class="speaker">Officer Diaz</div>
+        <p>Did you see the driver's face at any point?</p>
+      </div>
+      <div class="turn">
+        <div class="speaker">Maya Osei</div>
+        <p>Not clearly. <span class="hl-blue">What I could make out was that he appeared to be wearing a dark jacket.</span> <span class="hl-blue">What struck me was the way he looked directly at the cyclist and then looked away.</span> He made a choice.</p>
+      </div>
+      <div class="turn">
+        <div class="speaker">Officer Diaz</div>
+        <p>And the vehicle — any details you can give us?</p>
+      </div>
+      <div class="turn">
+        <div class="speaker">Maya Osei</div>
+        <p><span class="hl-blue">What I remember most clearly is the rear number plate — partial, ending in 7 or 9.</span> And it was a saloon, dark blue or possibly black. <span class="hl-blue">What I don't know is whether there were any passengers.</span></p>
+      </div>
+      <div class="turn">
+        <div class="speaker">Officer Diaz</div>
+        <p>Thank you, Ms Osei. This is very helpful. One more question — did anyone else witness the incident?</p>
+      </div>
+      <div class="turn">
+        <div class="speaker">Maya Osei</div>
+        <p>There was a man walking a dog about fifty metres away. <span class="hl-blue">What I'm not sure of is whether he saw the same thing I did.</span> He seemed shaken, though.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Meaning check</h3>
+      <p>1. What detail about the driver's behaviour does Maya emphasise most — and how does her language show that it's the most important thing?</p>
+      <p>2. What partial information does Maya provide about the vehicle?</p>
+      <p>3. All of Maya's blue-highlighted sentences start with "What…". What kind of information follows the "what" part in each sentence?</p>
+    </div>
+  </div>
+
+  <!-- 9. NOTICE 2 -->
+  <div class="tab-section" id="nd2">
+    <div class="tab-header"><span class="tab-badge study">NOTICE &amp; DISCOVER</span><h2 class="tab-title">Look at the blue phrases — find the cleft pattern</h2></div>
+    <hr class="tab-rule">
+    <div class="notice-box">
+      <h3>Detective work: the What-clause for emphasis</h3>
+      <div class="notice-q">
+        Compare: <em>"I saw a dark car accelerating through a red light."</em> (plain) vs. <em>"What I saw was a dark car accelerating through a red light."</em> (cleft). Is the information different? What is different?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">Same information — but the cleft version puts extra weight on "a dark car accelerating through a red light." The structure What + subject + verb + was + [focus] puts the most important part at the end, after "was." The listener's attention is drawn to what comes after "was."</p>
+      </div>
+      <div class="notice-q">
+        Look at: <em>"What happened next was the most disturbing part."</em> Can you split this sentence into two parts — a "what" part and a "focus" part?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">"What happened next" = the subject/topic. "was the most disturbing part" = the focus/emphasis. The cleft formula is: What + [clause] + was + [focus]. The focus (what you want to emphasise) always comes after "was."</p>
+      </div>
+      <div class="notice-q">
+        Look at: <em>"What I don't know is whether there were any passengers."</em> Here the cleft emphasises a gap in knowledge, not a fact. Can you think of a situation where you'd use this kind of sentence?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">What-clefts can emphasise uncertainty, missing information, or limits of knowledge — not just positive facts. "What I'm not sure of is whether…" / "What I can't confirm is…" This is very common in witness statements, academic hedging, and spoken English for emphasis.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. STUDY 4: CLEFT SENTENCES -->
+  <div class="tab-section" id="s4">
+    <div class="tab-header"><span class="tab-badge study">STUDY</span><h2 class="tab-title">Cleft Sentences — What-clause for Emphasis</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3>4. Cleft Sentences (What-clause)</h3>
+      <p class="grammar-sub">A cleft sentence splits a plain statement into two clauses to create emphasis. The What-clause is the most common type in spoken English and witness/interview contexts.</p>
+      <p><strong>The formula:</strong></p>
+      <div style="background:var(--blue-pale);border-radius:8px;padding:14px 18px;margin:12px 0;font-family:Arial,sans-serif;font-size:14px;">
+        <strong>What</strong> + [subject + verb] &nbsp;+&nbsp; <strong>was/is</strong> &nbsp;+&nbsp; [the focus / emphasis]
+      </div>
+      <div class="cleft-grid">
+        <div class="cleft-card">
+          <h4>Emphasising a noun phrase</h4>
+          <p>Plain: <em>I noticed the rear number plate.</em></p>
+          <p><br>Cleft: <em>"<span class="emphasis">What</span> I noticed <span class="emphasis">was</span> the rear number plate."</em></p>
+          <p class="ex">Focus = the rear number plate (put last, after "was")</p>
+        </div>
+        <div class="cleft-card">
+          <h4>Emphasising an action / event</h4>
+          <p>Plain: <em>The driver's looking away disturbed me most.</em></p>
+          <p><br>Cleft: <em>"<span class="emphasis">What</span> struck me <span class="emphasis">was</span> the way he looked away."</em></p>
+          <p class="ex">Focus = the way he looked away — put last for weight</p>
+        </div>
+        <div class="cleft-card">
+          <h4>Emphasising uncertainty / limits</h4>
+          <p>Plain: <em>I don't know if there were passengers.</em></p>
+          <p><br>Cleft: <em>"<span class="emphasis">What</span> I don't know <span class="emphasis">is</span> whether there were any passengers."</em></p>
+          <p class="ex">Focus = a gap in knowledge — what-clause works here too</p>
+        </div>
+        <div class="cleft-card">
+          <h4>Emphasising importance / significance</h4>
+          <p>Plain: <em>The most disturbing thing was what happened next.</em></p>
+          <p><br>Cleft: <em>"<span class="emphasis">What</span> happened next <span class="emphasis">was</span> the most disturbing part."</em></p>
+          <p class="ex">Focus = the most disturbing part — evaluation placed at end</p>
+        </div>
+      </div>
+      <p style="margin-top:16px;"><strong>Tense in the cleft:</strong></p>
+      <table class="rule-table">
+        <tr><th>Context</th><th>Verb in What-clause</th><th>Linking verb</th><th>Example</th></tr>
+        <tr><td>Describing past events</td><td>Past simple / past perfect</td><td>was</td><td><em>"What I saw was a dark car."</em></td></tr>
+        <tr><td>Describing present state</td><td>Present simple</td><td>is</td><td><em>"What concerns me is the lack of CCTV."</em></td></tr>
+        <tr><td>Describing what you remember</td><td>Past simple</td><td>is / was</td><td><em>"What I remember most clearly is the number plate."</em></td></tr>
+      </table>
+      <p style="margin-top:14px;"><strong>⚠ Common errors:</strong></p>
+      <div class="example-row"><span class="mark bad">✗</span><span class="txt"><em>What I saw it was a dark car.</em><span class="note">WRONG — "it" is an extra subject. Remove it: "What I saw was a dark car."</span></span></div>
+      <div class="example-row"><span class="mark bad">✗</span><span class="txt"><em>What happened was the car it drove away.</em><span class="note">WRONG — "it" duplicates the subject again. The focus clause is a noun phrase, not another full clause with its own pronoun.</span></span></div>
+      <div class="example-row"><span class="mark ok">✓</span><span class="txt"><em class="hl-blue">What I remember most clearly is the rear number plate.</em><span class="gloss">Correct — What + [I remember most clearly] + is + [the focus].</span></span></div>
+    </div>
+  </div>
+
+  <!-- 11. PRACTICE 2 -->
+  <div class="tab-section" id="p2">
+    <div class="tab-header"><span class="tab-badge practice">PRACTICE</span><h2 class="tab-title">Try it: Cleft Sentences</h2></div>
+    <hr class="tab-rule">
+    <div class="exercise">
+      <span class="ex-label blue">Exercise 4 &middot; Plain → Cleft</span>
+      <h4>Rewrite each sentence as a What-cleft. Move the underlined part to the focus position (after "was").</h4>
+      <p class="instr">Formula: What + [rest of sentence] + was + [underlined focus].</p>
+      <div class="q-row"><span class="q-num">1.</span><span>I noticed <u>the driver's hesitation</u> most.</span></div>
+      <input type="text" class="blank-input wide-input" id="e4a" data-answer="what i noticed most was the driver's hesitation|what i noticed most was the drivers hesitation" placeholder="What I noticed most was…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">2.</span><span><u>The driver's choice to leave</u> shocked everyone.</span></div>
+      <input type="text" class="blank-input wide-input" id="e4b" data-answer="what shocked everyone was the driver's choice to leave|what shocked everyone was the drivers choice to leave" placeholder="What shocked everyone was…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">3.</span><span>I can't confirm <u>whether the driver was alone</u>.</span></div>
+      <input type="text" class="blank-input wide-input" id="e4c" data-answer="what i can't confirm is whether the driver was alone|what i cannot confirm is whether the driver was alone" placeholder="What I can't confirm is…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">4.</span><span>The partial number plate <u>is</u> what I remember most.</span></div>
+      <input type="text" class="blank-input wide-input" id="e4d" data-answer="what i remember most is the partial number plate|what i remember most clearly is the partial number plate" placeholder="What I remember most is…">
+      <button class="check-btn" onclick="checkEx4()">Check my answers</button>
+      <div class="feedback" id="fb-ex4"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label blue">Exercise 5 &middot; Complete the cleft</span>
+      <h4>Complete each sentence so it makes sense as a witness statement.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span>What I found most surprising was _______________.</span>
+        <input type="text" class="blank-input" id="e5a" data-answer="open" placeholder="your own answer…"></div>
+      <div class="q-row"><span class="q-num">2.</span><span>What concerns me most is _______________.</span>
+        <input type="text" class="blank-input" id="e5b" data-answer="open" placeholder="your own answer…"></div>
+      <div class="q-row"><span class="q-num">3.</span><span>What I'm not sure of is whether _______________.</span>
+        <input type="text" class="blank-input" id="e5c" data-answer="open" placeholder="your own answer…"></div>
+      <div class="q-row"><span class="q-num">4.</span><span>What happened immediately after was _______________.</span>
+        <input type="text" class="blank-input" id="e5d" data-answer="open" placeholder="your own answer…"></div>
+      <p style="font-family:Arial,sans-serif;font-size:13.5px;color:var(--slate-soft);margin-top:10px;font-style:italic;">These are open-ended — bring your answers to class for comparison and discussion.</p>
+    </div>
+  </div>
+
+  <!-- 12. VOCABULARY -->
+  <div class="tab-section" id="vocab">
+    <div class="tab-header"><span class="tab-badge vocab">VOCABULARY</span><h2 class="tab-title">Traffic &amp; Crime Reporting — The Full Word Set</h2></div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>Core vocabulary: the incident</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card"><span class="word">hit-and-run</span><span class="pos">n / adj</span><div class="pron">/ˌhɪt ən ˈrʌn/</div><div class="def">an incident where a driver causes an accident and flees the scene without stopping</div><div class="ex">"The cyclist was injured in a hit-and-run incident on Monday night."</div></div>
+        <div class="vocab-card"><span class="word">to run a red light</span><span class="pos">idiom</span><div class="pron">/rʌn ə red laɪt/</div><div class="def">to drive through a red traffic signal without stopping — a traffic offence</div><div class="ex">"The driver had run the red light at speed."</div></div>
+        <div class="vocab-card"><span class="word">eyewitness</span><span class="pos">noun</span><div class="pron">/ˈaɪwɪtnəs/</div><div class="def">a person who saw an event happen directly — as opposed to hearing about it second-hand</div><div class="ex">"Eyewitness statements were taken at the scene."</div></div>
+        <div class="vocab-card"><span class="word">to appeal (for)</span><span class="pos">verb</span><div class="pron">/əˈpiːl/</div><div class="def">to make a public request for information, help, or action</div><div class="ex">"Police are appealing for anyone with dashcam footage to come forward."</div></div>
+        <div class="vocab-card"><span class="word">to come forward</span><span class="pos">phrasal v</span><div class="pron">/kʌm ˈfɔːwəd/</div><div class="def">to voluntarily offer yourself as a witness or source of information</div><div class="ex">"Officers urged anyone who saw the incident to come forward."</div></div>
+        <div class="vocab-card"><span class="word">dashcam footage</span><span class="pos">noun phrase</span><div class="pron">/ˈdæʃkæm ˈfʊtɪdʒ/</div><div class="def">video recording from a camera mounted on a vehicle's dashboard — often key evidence in traffic incidents</div><div class="ex">"The CCTV footage was being reviewed alongside any dashcam footage."</div></div>
+        <div class="vocab-card"><span class="word">a stable condition</span><span class="pos">noun phrase</span><div class="pron">/ˈsteɪbəl kənˈdɪʃən/</div><div class="def">a medical status indicating that a patient's condition is not worsening — not critical</div><div class="ex">"The cyclist was reported to be in a stable condition."</div></div>
+        <div class="vocab-card"><span class="word">to flee the scene</span><span class="pos">idiom</span><div class="pron">/fliː ðə siːn/</div><div class="def">to leave the location of an incident quickly and without permission — typically to avoid responsibility</div><div class="ex">"The driver fled the scene without assisting the victim."</div></div>
+      </div>
+    </div>
+
+    <div class="grammar-box">
+      <h3>Extended vocabulary: legal &amp; investigative reporting</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card"><span class="word">to be charged with</span><span class="pos">passive phrase</span><div class="pron">/tʃɑːdʒd wɪð/</div><div class="def">to be formally accused of a specific crime by authorities</div><div class="ex">"He was later charged with dangerous driving and failing to stop."</div></div>
+        <div class="vocab-card"><span class="word">to press charges</span><span class="pos">idiom</span><div class="pron">/pres ˈtʃɑːdʒɪz/</div><div class="def">to formally accuse someone of a crime through the legal system</div><div class="ex">"The victim decided to press charges against the driver."</div></div>
+        <div class="vocab-card"><span class="word">a statement</span><span class="pos">noun</span><div class="pron">/ˈsteɪtmənt/</div><div class="def">a formal written or spoken account of what a person witnessed or knows — used in legal and journalistic contexts</div><div class="ex">"Maya was asked to give a formal statement to police."</div></div>
+        <div class="vocab-card"><span class="word">to be in custody</span><span class="pos">phrase</span><div class="pron">/ɪn ˈkʌstədi/</div><div class="def">to be held by police or another authority — detained pending investigation or trial</div><div class="ex">"The suspect was being held in custody for questioning."</div></div>
+        <div class="vocab-card"><span class="word">to deny</span><span class="pos">verb</span><div class="pron">/dɪˈnaɪ/</div><div class="def">to state that something is not true; to refuse to acknowledge something</div><div class="ex">"The driver denied having run the red light."</div></div>
+        <div class="vocab-card"><span class="word">allegedly</span><span class="pos">adverb</span><div class="pron">/əˈledʒɪdli/</div><div class="def">used to indicate that something is claimed to have happened but has not yet been proven — essential in journalism</div><div class="ex">"The driver had allegedly fled without assisting the victim."</div></div>
+        <div class="vocab-card"><span class="word">CCTV</span><span class="pos">noun</span><div class="pron">/ˌsiː siː tiː ˈviː/</div><div class="def">Closed-Circuit Television — a surveillance system using cameras in public spaces</div><div class="ex">"Officers reviewed CCTV footage from cameras at the junction."</div></div>
+        <div class="vocab-card"><span class="word">to make out</span><span class="pos">phrasal v</span><div class="pron">/meɪk ˈaʊt/</div><div class="def">to manage to see, hear, or understand something with difficulty</div><div class="ex">"What I could make out was a partial number plate."</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Reporting verb register</h3>
+      <table class="word-family-table">
+        <tr><th>Verb</th><th>Register</th><th>Structure</th><th>Example</th></tr>
+        <tr><td>say</td><td>neutral</td><td>say (that)</td><td><em>"She said the car was blue."</em></td></tr>
+        <tr><td>tell</td><td>neutral</td><td>tell + object (that)</td><td><em>"She told officers the car was blue."</em></td></tr>
+        <tr><td>state</td><td>formal</td><td>state (that)</td><td><em>"Officer Diaz stated that CCTV was being reviewed."</em></td></tr>
+        <tr><td>confirm</td><td>formal</td><td>confirm (that)</td><td><em>"She confirmed that the vehicle had stopped briefly."</em></td></tr>
+        <tr><td>claim</td><td>neutral–sceptical</td><td>claim (that)</td><td><em>"He claimed he had not seen the red light."</em></td></tr>
+        <tr><td>deny</td><td>formal–legal</td><td>deny + -ing / deny (that)</td><td><em>"He denied running the red light."</em></td></tr>
+        <tr><td>admit</td><td>formal–legal</td><td>admit + -ing / admit (that)</td><td><em>"He admitted having stopped but denied fleeing."</em></td></tr>
+        <tr><td>allege</td><td>journalism–legal</td><td>allege (that)</td><td><em>"The report alleged that he had been aware of the cyclist."</em></td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Collocations: reporting crime &amp; incidents</h3>
+      <div class="chip-row">
+        <span class="chip">give / provide a statement</span>
+        <span class="chip">take a statement (from)</span>
+        <span class="chip">appeal for witnesses</span>
+        <span class="chip">come forward with information</span>
+        <span class="chip">review CCTV footage</span>
+        <span class="chip">be at / flee the scene</span>
+        <span class="chip">be charged with (an offence)</span>
+        <span class="chip">press charges</span>
+        <span class="chip">be held in custody</span>
+        <span class="chip">deny / admit an offence</span>
+        <span class="chip">be released without charge</span>
+        <span class="chip">be remanded in custody</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 13. VOCAB PRACTICE -->
+  <div class="tab-section" id="vp">
+    <div class="tab-header"><span class="tab-badge vocab">PRACTICE</span><h2 class="tab-title">Try it: vocabulary</h2></div>
+    <hr class="tab-rule">
+    <div class="exercise">
+      <span class="ex-label vocab">Exercise 6 &middot; Meaning match</span>
+      <h4>Match each word to its definition.</h4>
+      <div class="match-grid" id="matchGrid">
+        <div class="match-item" data-pair="1">eyewitness</div>
+        <div class="match-item" data-pair="3">to be formally accused of a specific crime</div>
+        <div class="match-item" data-pair="2">to allege</div>
+        <div class="match-item" data-pair="4">to voluntarily offer yourself as a witness</div>
+        <div class="match-item" data-pair="3">to be charged with</div>
+        <div class="match-item" data-pair="1">a person who directly saw an event happen</div>
+        <div class="match-item" data-pair="4">to come forward</div>
+        <div class="match-item" data-pair="2">to claim something happened without proving it</div>
+      </div>
+      <div class="feedback" id="fb-match"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label vocab">Exercise 7 &middot; Reporting verb choice</span>
+      <h4>Choose the most appropriate reporting verb. More than one may be acceptable — justify your choice.</h4>
+      <p class="instr"><em>said · confirmed · claimed · denied · admitted · alleged · stated</em></p>
+      <div class="q-row"><span class="q-num">1.</span><span>The driver __________ that he had not seen the cyclist at all.</span>
+        <input type="text" class="blank-input" id="e7a" data-answer="claimed|stated|said" placeholder="verb…"></div>
+      <div class="q-row"><span class="q-num">2.</span><span>He __________ running the red light when shown the dashcam footage.</span>
+        <input type="text" class="blank-input" id="e7b" data-answer="admitted" placeholder="verb…"></div>
+      <div class="q-row"><span class="q-num">3.</span><span>He __________ having been at the scene — but witnesses contradicted this.</span>
+        <input type="text" class="blank-input" id="e7c" data-answer="denied" placeholder="verb…"></div>
+      <div class="q-row"><span class="q-num">4.</span><span>Officer Diaz __________ that the vehicle had been identified from CCTV footage.</span>
+        <input type="text" class="blank-input" id="e7d" data-answer="confirmed|stated" placeholder="verb…"></div>
+      <div class="q-row"><span class="q-num">5.</span><span>The report __________ that the driver had been aware of the cyclist before impact.</span>
+        <input type="text" class="blank-input" id="e7e" data-answer="alleged|claimed" placeholder="verb…"></div>
+      <button class="check-btn" onclick="checkEx7()">Check my answers</button>
+      <div class="feedback" id="fb-ex7"></div>
+    </div>
+  </div>
+
+  <!-- 14. PUTTING IT TOGETHER -->
+  <div class="tab-section" id="together">
+    <div class="tab-header"><span class="tab-badge activate">PUTTING IT TOGETHER</span><h2 class="tab-title">Combine everything from this week</h2></div>
+    <hr class="tab-rule">
+    <div class="activate-box">
+      <h3>Mini-task: Write the police report</h3>
+      <p>Officer Diaz writes up the formal incident report based on Maya's interview. Write the report (100–120 words) — in the voice of a police officer summarising a witness statement.</p>
+      <p>Your report must include:<br>
+        ✓ At least <strong>4 instances of reported speech</strong> (mix of statements, questions reported as summaries, and at least one request)<br>
+        ✓ At least <strong>2 What-cleft sentences</strong> (quoting or summarising Maya's emphasis)<br>
+        ✓ At least <strong>3 reporting verbs</strong> from the verb register table (state, confirm, claim, deny, allege, etc.)<br>
+        ✓ At least <strong>4 vocabulary items</strong> from this week's word set<br>
+        ✓ Appropriate formal police register — no contractions, precise language</p>
+      <p style="font-size:14px;margin-top:8px;color:rgba(255,255,255,0.85);"><em>Starter: "At approximately 11:15 pm on Monday 10 March, this officer interviewed Maya Osei, an eyewitness to the incident on Elm Street. Ms Osei stated that…"</em></p>
+      <textarea class="response-box" id="togetherBox" placeholder="Write the police report here…"></textarea>
+      <div class="word-count" id="togetherCount">0 words</div>
+    </div>
+    <div class="card">
+      <h3>Bring this to class</h3>
+      <p>In Session 2, you'll compare your report with a partner and check: are the cleft sentences used naturally? Do the reporting verbs match the formality of a police document? Is there any inappropriate backshift (or missed backshift)?</p>
+    </div>
+  </div>
+
+  <!-- 15. EXPLORE -->
+  <div class="tab-section" id="explore">
+    <div class="tab-header"><span class="tab-badge explore">EXPLORE ON YOUR OWN</span><h2 class="tab-title">Go further</h2></div>
+    <hr class="tab-rule">
+    <div class="explore-card">
+      <span class="explore-tag">Grammar extension</span>
+      <h3>It-clefts — a second type</h3>
+      <p>You've studied What-clefts this week. There is a second type: It-cleft. <em>"It was the number plate that Maya noticed."</em> / <em>"It was at 11:15 pm that the incident occurred."</em></p>
+      <ul>
+        <li>Formula: <strong>It + was/is + [focus] + that/who/which + [rest of clause]</strong></li>
+        <li>Rewrite three sentences from the news article as It-clefts.</li>
+        <li>Compare: when would you choose a What-cleft over an It-cleft? Bring one example of each to class.</li>
+      </ul>
+    </div>
+    <div class="explore-card">
+      <span class="explore-tag">Corpus research</span>
+      <h3>Reporting verbs in real journalism</h3>
+      <p>Pick any English-language news article about a crime, accident, or court case. Count how many different reporting verbs are used. Which ones appear most often? Which suggest scepticism (claimed, alleged) vs authority (confirmed, stated)?</p>
+      <ul>
+        <li>List 5 reporting verbs from the article with examples.</li>
+        <li>Find one example of optional backshift — a verb that is NOT backshifted even though it's in a reported clause. Can you explain why?</li>
+      </ul>
+    </div>
+    <div class="explore-card">
+      <span class="explore-tag">Writing extension</span>
+      <h3>The driver's version</h3>
+      <p>Imagine you are the driver's solicitor, preparing their statement. Write 60–80 words reporting what the driver says happened — using reported speech, cleft sentences for emphasis, and the appropriate verbs (denied, claimed, stated).</p>
+      <ul>
+        <li>The driver says: he had green light, the cyclist appeared suddenly, he stopped briefly to check, then drove on believing the cyclist was uninjured.</li>
+        <li>Use "allegedly" and "what the driver maintains is…" at least once each.</li>
+      </ul>
+    </div>
+    <div class="explore-card">
+      <span class="explore-tag">Autonomy task</span>
+      <h3>Bring one question to class</h3>
+      <p>After the exercises, note one genuine question about reported speech — perhaps about when to use "said" vs "told", how to report a question without losing its meaning, or when NOT to backshift. We open Session 1 with a question box.</p>
+    </div>
+  </div>
+
+  <!-- 16. QUICK REFERENCE -->
+  <div class="tab-section" id="ref">
+    <div class="tab-header"><span class="tab-badge reference">QUICK REFERENCE</span><h2 class="tab-title">Everything on one page</h2></div>
+    <hr class="tab-rule">
+    <div class="ref-table-wrap">
+      <table class="ref-table">
+        <tr><th>Item</th><th>Form</th><th>Key rule</th><th>Example</th></tr>
+        <tr><td><strong>Reported statements</strong></td><td>say/tell/state + (that) + backshifted clause</td><td>Verbs shift one tense back; pronouns and time refs change</td><td><em>"It's dark." → She said it was dark.</em></td></tr>
+        <tr><td><strong>Reported yes/no Q</strong></td><td>ask + if/whether + subject + verb (statement order)</td><td>No question mark; "did" removed; word order inverts to statement</td><td><em>"Did you see it?" → He asked if I had seen it.</em></td></tr>
+        <tr><td><strong>Reported wh-Q</strong></td><td>ask + wh-word + subject + verb</td><td>Wh-word kept; statement word order (no inversion)</td><td><em>"Where did it go?" → She asked where it had gone.</em></td></tr>
+        <tr><td><strong>Reported request</strong></td><td>ask/tell + object + (not) + to + inf</td><td>No tense change; infinitive carries meaning</td><td><em>"Please wait." → She asked us to wait.</em></td></tr>
+        <tr><td><strong>Optional backshift</strong></td><td>Present tense may be kept</td><td>When still true now, or in informal spoken English</td><td><em>"She told me she is a nurse." (still true)</em></td></tr>
+        <tr><td><strong>What-cleft</strong></td><td>What + [subject + verb] + was/is + [focus]</td><td>Focus goes after "was/is"; no extra pronoun (not "What I saw it was")</td><td><em>"What I saw was a dark car."</em></td></tr>
+        <tr><td><strong>Cleft for gaps</strong></td><td>What + [I don't know / can't confirm] + is + whether/how/who…</td><td>Works for uncertainty, not just facts</td><td><em>"What I don't know is whether there were passengers."</em></td></tr>
+      </table>
+    </div>
+    <div class="card" style="margin-top:18px;">
+      <h3>Key vocabulary — before Session 1</h3>
+      <div class="chip-row">
+        <span class="chip">hit-and-run</span><span class="chip">run a red light</span><span class="chip">eyewitness</span>
+        <span class="chip">appeal (for)</span><span class="chip">come forward</span><span class="chip">dashcam footage</span>
+        <span class="chip">stable condition</span><span class="chip">flee the scene</span><span class="chip">to be charged with</span>
+        <span class="chip">press charges</span><span class="chip">statement</span><span class="chip">in custody</span>
+        <span class="chip">deny / admit</span><span class="chip">allegedly</span><span class="chip">CCTV</span><span class="chip">make out</span>
+        <span class="chip">state · confirm · claim · allege</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 17. ANSWER KEY -->
+  <div class="answer-key" id="ak">
+    <div class="ak-title">Answer Key</div>
+    <p class="ak-sub">Try every exercise before looking here. Open-ended exercises (Ex 5, Putting It Together) are reviewed in class.</p>
+
+    <div class="ak-section">
+      <h4>Exercise 1 — Statement backshift</h4>
+      <div class="ak-item"><span class="an">1.</span><span class="av">Officer Diaz confirmed that the vehicle was a dark blue saloon.</span><span class="anote">Present simple "is" → past simple "was" (backshift). "Confirm" takes "that" — formal register.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">The police stated that they were appealing for dashcam footage.</span><span class="anote">"We are appealing" → "they were appealing" (pronoun + present continuous → past continuous). "We" → "they."</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">The spokesperson reported that the cyclist had been taken to hospital.</span><span class="anote">Present perfect passive "has been taken" → past perfect passive "had been taken."</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">Officer Diaz told Maya that she would contact her the following day.</span><span class="anote">"will" → "would". "you" → "her". "tomorrow" → "the next / following day". Note: "told" requires an object (Maya) — "said" would not.</span></div>
+    </div>
+
+    <div class="ak-section">
+      <h4>Exercise 2 — Questions &amp; requests</h4>
+      <div class="ak-item"><span class="an">1.</span><span class="av">The officer asked Maya whether/if she had seen the colour of the car.</span><span class="anote">Yes/no Q → if/whether. "Did you see" → "she had seen." No question mark. Statement word order.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">The reporter asked where the car had gone after the collision.</span><span class="anote">Wh-Q → wh-word + subject + verb. "Did go" → "had gone." NOT "where had the car gone" (✗ question inversion).</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">The officer asked witnesses to wait there until they took their statement.</span><span class="anote">Request → ask + object + to + inf. "here" → "there." No tense change in the infinitive.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">The officer told Maya not to share that information with the press.</span><span class="anote">Negative request → tell + object + not to + inf. "this" → "that."</span></div>
+    </div>
+
+    <div class="ak-section">
+      <h4>Exercise 3 — Error correction</h4>
+      <div class="ak-item"><span class="an">1.</span><span class="av">She told me that the driver had not stopped. / She said that the driver had not stopped.</span><span class="anote">"Said me" is the error — say never takes a direct object. "Said (that)…" or "told me (that)…"</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">The officer asked where the car had gone.</span><span class="anote">"Where had the car gone" = question inversion. Reported questions use statement order: where the car had gone.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">He said that the road was clear. / He told officers that the road was clear.</span><span class="anote">"Told that" (without object) is the error. "Tell" always needs an object: "told officers / told us / told me."</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">She told officers they should check the CCTV footage. / She told officers to check the CCTV footage.</span><span class="anote">"Said officers" is wrong — "said" cannot take a personal object. Must be "told officers."</span></div>
+    </div>
+
+    <div class="ak-section">
+      <h4>Exercise 4 — Plain → Cleft</h4>
+      <div class="ak-item"><span class="an">1.</span><span class="av">What I noticed most was the driver's hesitation.</span><span class="anote">Focus = "the driver's hesitation" — placed after "was."</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">What shocked everyone was the driver's choice to leave.</span><span class="anote">"Shocked" moves into the What-clause; the focus goes after "was."</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">What I can't confirm is whether the driver was alone.</span><span class="anote">Cleft with a gap in knowledge. "Is" (not "was") — present tense of the What-clause's state of knowledge.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">What I remember most is the partial number plate.</span><span class="anote">Reordering: the focus (number plate) comes after "is/was."</span></div>
+    </div>
+
+    <div class="ak-section">
+      <h4>Exercise 6 — Matching</h4>
+      <div class="ak-item"><span class="an">1.</span><span class="av">eyewitness → a person who directly saw an event happen</span><span class="anote">Distinguished from "witness" by the directness — eyewitnesses saw it with their own eyes.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">to allege → to claim something happened without proving it</span><span class="anote">"Allegedly" is the adverb form — crucial in journalism to avoid legal liability.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">to be charged with → to be formally accused of a specific crime</span><span class="anote">Always passive in this legal phrase — "he was charged with dangerous driving."</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">to come forward → to voluntarily offer yourself as a witness</span><span class="anote">Police "appeal" for witnesses to "come forward" — these two collocate strongly.</span></div>
+    </div>
+
+    <div class="ak-section">
+      <h4>Exercise 7 — Reporting verb choice</h4>
+      <div class="ak-item"><span class="an">1.</span><span class="av">claimed / stated / said</span><span class="anote">"Claimed" implies mild scepticism — appropriate as it hasn't been verified. "Stated" = neutral formal. Both are acceptable; choice signals editorial stance.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">admitted</span><span class="anote">"Admitted" = acknowledged something unfavourable. After seeing dashcam evidence, this is clearly the right verb — "claimed" would be wrong here as it implies denial.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">denied</span><span class="anote">"Denied" + -ing or "denied that." He's rejecting a claim — "denied" is the only appropriate verb here.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">confirmed / stated</span><span class="anote">"Confirmed" implies the information was already suspected and is now verified — more precise than "said." "Stated" = neutral formal.</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">alleged / claimed</span><span class="anote">"Alleged" is the preferred journalistic term — it protects legal standing by not asserting fact. "Claimed" also works but is slightly less formal.</span></div>
+    </div>
+  </div>
+
+  <div class="wrapup">
+    <h3>Before Session 1, make sure you can…</h3>
+    <ul>
+      <li>Apply backshift correctly to all seven tense types in the table</li>
+      <li>Report a yes/no question using if/whether — with correct statement word order (no inversion)</li>
+      <li>Report a wh-question — keeping the wh-word but using statement order</li>
+      <li>Report a request using ask/tell + object + to + infinitive</li>
+      <li>Explain when backshift is optional and give one clear example</li>
+      <li>Build a What-cleft sentence correctly — with the focus after "was/is" and no extra pronoun</li>
+      <li>Use at least 4 reporting verbs with the correct structure (say, tell, state, confirm, allege, deny)</li>
+      <li>Have the police report (Putting It Together) ready to share</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    document.getElementById('pf').style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+  });
+  let pollDone = false;
+  document.querySelectorAll('.poll-opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (pollDone) return; pollDone = true;
+      document.querySelectorAll('.poll-opt').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      document.getElementById('pollResult').style.display = 'block';
+      document.getElementById('pollResult').textContent = "Bring your reasoning to class — we open Session 1 comparing responses.";
+    });
+  });
+
+  function flex(val, answers) {
+    const v = val.trim().toLowerCase();
+    return answers.split('|').some(a => {
+      a = a.trim().toLowerCase();
+      return v === a || (v.length > 8 && (v.includes(a.substring(0, Math.min(a.length, 20))) || a.includes(v.substring(0, Math.min(v.length, 20)))));
+    });
+  }
+
+  function checkGroup(ids, answers, fbId) {
+    let ok = 0;
+    ids.forEach((id, i) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const isOpen = answers[i] === 'open';
+      if (isOpen) { el.style.borderColor = '#2563EB'; ok++; return; }
+      if (flex(el.value, answers[i])) { ok++; el.style.borderColor = '#2563EB'; }
+      else { el.style.borderColor = '#B45309'; }
+    });
+    const fb = document.getElementById(fbId);
+    fb.classList.add('show');
+    if (ok === ids.length) { fb.classList.remove('bad'); fb.classList.add('good'); fb.textContent = 'All ' + ids.length + ' correct!'; }
+    else { fb.classList.remove('good'); fb.classList.add('bad'); fb.textContent = ok + ' of ' + ids.length + ' correct — check orange borders.'; }
+  }
+
+  function checkEx1() { checkGroup(['e1a','e1b','e1c','e1d'],['officer diaz confirmed that the vehicle was a dark blue saloon','the police stated that they were appealing for dashcam footage|police stated that they were appealing for dashcam footage','the spokesperson reported that the cyclist had been taken to hospital|a spokesperson reported that the cyclist had been taken to hospital','officer diaz told maya that she would contact her the next day|officer diaz told maya she would contact her the following day|officer diaz told maya that she would contact her the following day'],'fb-ex1'); }
+  function checkEx2() { checkGroup(['e2a','e2b','e2c','e2d'],['the officer asked maya whether she had seen the colour of the car|the officer asked maya if she had seen the colour of the car|officer asked maya if she had seen the colour of the car','the reporter asked where the car had gone after the collision|the reporter asked where the car went after the collision','the officer asked witnesses to wait there until they took their statement|the officer asked the witnesses to wait there until they took their statement','the officer told maya not to share the information with the press|the officer told maya not to share that information with the press'],'fb-ex2'); }
+  function checkEx3() { checkGroup(['e3a','e3b','e3c','e3d'],['she told me that the driver had not stopped|she said that the driver had not stopped','the officer asked where the car had gone','he said that the road was clear at the time|he told officers that the road was clear at the time|he told them that the road was clear at the time','she told officers they should check the cctv footage|she told officers to check the cctv footage|she said that officers should check the cctv footage'],'fb-ex3'); }
+  function checkEx4() { checkGroup(['e4a','e4b','e4c','e4d'],["what i noticed most was the driver's hesitation|what i noticed most was the drivers hesitation","what shocked everyone was the driver's choice to leave|what shocked everyone was the drivers choice to leave","what i can't confirm is whether the driver was alone|what i cannot confirm is whether the driver was alone","what i remember most is the partial number plate|what i remember most clearly is the partial number plate"],'fb-ex4'); }
+  function checkEx7() { checkGroup(['e7a','e7b','e7c','e7d','e7e'],['claimed|stated|said','admitted','denied','confirmed|stated','alleged|claimed'],'fb-ex7'); }
+
+  let firstSel = null, matchCount = 0;
+  document.querySelectorAll('.match-item').forEach(item => {
+    item.addEventListener('click', () => {
+      if (item.classList.contains('matched')) return;
+      if (!firstSel) { firstSel = item; item.classList.add('selected'); }
+      else if (firstSel === item) { firstSel.classList.remove('selected'); firstSel = null; }
+      else if (firstSel.dataset.pair === item.dataset.pair) {
+        [firstSel, item].forEach(el => { el.classList.remove('selected'); el.classList.add('matched'); });
+        matchCount++;
+        firstSel = null;
+        const fb = document.getElementById('fb-match');
+        fb.classList.add('show'); fb.classList.remove('bad'); fb.classList.add('good');
+        fb.textContent = matchCount === 4 ? 'All 4 matched!' : matchCount + ' of 4 — keep going!';
+      } else {
+        item.classList.add('wrong-flash');
+        setTimeout(() => { firstSel.classList.remove('selected'); item.classList.remove('wrong-flash'); firstSel = null; }, 500);
+      }
+    });
+  });
+
+  const box = document.getElementById('togetherBox');
+  const cnt = document.getElementById('togetherCount');
+  if (box && cnt) box.addEventListener('input', () => {
+    const w = box.value.trim().split(/\s+/).filter(x => x.length > 0);
+    cnt.textContent = (box.value.trim() === '' ? 0 : w.length) + ' words';
+  });
+</script>
+</body>
+</html>

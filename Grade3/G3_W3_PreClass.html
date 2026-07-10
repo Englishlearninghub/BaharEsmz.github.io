@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 3 · Week 3 — Cooking Together: Gerunds After Prepositions</title>
+<style>
+  :root{
+    --paper:#f7f3ea;
+    --paper-line:#e4dcc8;
+    --ink:#2b2620;
+    --ink-soft:#5c5346;
+    --green:#1d3557;
+    --green-soft:#dbe6f0;
+    --orange:#b8483a;
+    --orange-soft:#f2ddd8;
+    --blue:#2a6f6f;
+    --blue-soft:#dcecec;
+    --plum:#6b4226;
+    --plum-soft:#ece0d5;
+    --gold:#a67c1e;
+    --gold-soft:#f0e6c8;
+    --card-shadow: 0 2px 0 rgba(43,38,32,0.06), 0 8px 18px rgba(43,38,32,0.08);
+  }
+  *{box-sizing:border-box;}
+  h1,h2,h3,h4,h5{font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(ellipse at top left, rgba(29,53,87,0.05), transparent 40%),
+      radial-gradient(ellipse at bottom right, rgba(184,72,58,0.05), transparent 40%),
+      var(--paper);
+    color:var(--ink);
+    font-family:Calibri,"Segoe UI",Arial,sans-serif;
+    line-height:1.6;
+    padding-bottom:80px;
+  }
+  #progress-wrap{position:fixed;top:0;left:0;width:100%;height:6px;background:var(--paper-line);z-index:999;}
+  #progress-bar{height:100%;width:0%;background:linear-gradient(90deg,var(--green),var(--orange));transition:width .1s;}
+
+  .wrap{max-width:920px;margin:0 auto;padding:34px 22px 10px;}
+
+  header.hero{
+    background:linear-gradient(135deg, var(--green) 0%, #0d1f33 100%);
+    color:#fbf8f0;
+    padding:38px 30px 30px;
+    border-radius:14px;
+    margin:26px auto 0;
+    max-width:920px;
+    box-shadow:var(--card-shadow);
+  }
+  header.hero .eyebrow{
+    font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;
+    text-transform:uppercase;letter-spacing:2px;font-size:12.5px;color:#cdd9e6;font-weight:bold;
+  }
+  header.hero h1{font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;font-size:32px;margin:8px 0 6px;line-height:1.25;}
+  header.hero p.sub{color:#e6ecf2;font-size:16px;margin:0 0 4px;font-style:italic;}
+  header.hero .storyline{
+    margin-top:16px;padding:12px 16px;background:rgba(255,255,255,0.09);border-radius:10px;font-size:14.5px;color:#f2ede0;
+  }
+
+  section{max-width:920px;margin:26px auto;padding:0 22px;}
+
+  .box{
+    background:#fffdf8;
+    border:1px solid var(--paper-line);
+    border-radius:12px;
+    padding:22px 24px;
+    box-shadow:var(--card-shadow);
+  }
+
+  h2.sec-title{
+    display:flex;align-items:center;gap:12px;
+    font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;
+    font-size:23px;margin:0 0 16px;color:var(--ink);
+  }
+  .tab-num{
+    flex:0 0 auto;width:38px;height:38px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;
+    color:#fff;font-weight:bold;font-size:16px;box-shadow:0 2px 4px rgba(0,0,0,0.15);
+  }
+  .c1 .tab-num{background:var(--green);} .c2 .tab-num{background:var(--orange);}
+  .c3 .tab-num{background:var(--blue);} .c4 .tab-num{background:var(--plum);}
+  .c5 .tab-num{background:var(--gold);} .c6 .tab-num{background:var(--green);}
+  .c7 .tab-num{background:var(--orange);} .c8 .tab-num{background:var(--blue);}
+  .c9 .tab-num{background:var(--plum);}
+
+  .overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px;}
+  .overview-grid .item{
+    background:var(--green-soft);border-radius:10px;padding:14px 16px;font-size:14.5px;
+  }
+  .overview-grid .item b{font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;display:block;color:var(--green);font-size:13px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;}
+
+  .toc-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;
+  }
+  .toc-grid a{
+    display:flex;align-items:center;gap:10px;
+    text-decoration:none;color:var(--ink);font-size:15px;padding:8px 10px;border-radius:8px;
+    transition:background .15s;
+  }
+  .toc-grid a:hover{background:var(--paper-line);}
+  .toc-num{
+    flex:0 0 auto;width:26px;height:26px;border-radius:50%;color:#fff;font-size:12.5px;font-weight:bold;
+    font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .toc-grid a:nth-child(1) .toc-num{background:var(--green);}
+  .toc-grid a:nth-child(2) .toc-num{background:var(--orange);}
+  .toc-grid a:nth-child(3) .toc-num{background:var(--blue);}
+  .toc-grid a:nth-child(4) .toc-num{background:var(--plum);}
+  .toc-grid a:nth-child(5) .toc-num{background:var(--gold);}
+  .toc-grid a:nth-child(6) .toc-num{background:var(--green);}
+  .toc-grid a:nth-child(7) .toc-num{background:var(--orange);}
+  .toc-grid a:nth-child(8) .toc-num{background:var(--blue);}
+  .toc-grid a:nth-child(9) .toc-num{background:var(--plum);}
+  .toc-grid a:nth-child(10) .toc-num{background:var(--gold);}
+
+  .realia{
+    border:1px solid var(--paper-line);
+    border-radius:10px;
+    background:#fffefb;
+    padding:18px 20px;
+    margin:16px 0;
+    position:relative;
+  }
+  .realia .doc-tag{
+    position:absolute;top:-11px;left:16px;background:var(--blue);color:#fff;font-size:11.5px;
+    font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;
+    padding:3px 10px;border-radius:20px;letter-spacing:0.5px;text-transform:uppercase;font-weight:bold;
+  }
+  .blogpost h4{font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;margin:6px 0 2px;color:var(--green);font-size:19px;}
+  .blogpost .byline{font-size:12.5px;color:var(--ink-soft);margin-bottom:10px;font-style:italic;}
+  .blogpost ul{margin:8px 0;padding-left:20px;}
+
+  .chat{background:#fbf9f2;border-radius:10px;padding:14px 16px 6px;}
+  .chat .bubble{max-width:80%;padding:9px 14px;border-radius:14px;margin-bottom:10px;font-size:14.5px;}
+  .chat .left{background:#eee7d6;border-bottom-left-radius:2px;}
+  .chat .right{background:var(--green-soft);border-bottom-right-radius:2px;margin-left:auto;}
+  .chat .name{font-size:11.5px;font-weight:bold;color:var(--ink-soft);margin-bottom:2px;}
+
+  .highlight{background:#fce9c9;padding:0 3px;border-radius:3px;font-weight:bold;}
+  .highlight2{background:#d7e9f0;padding:0 3px;border-radius:3px;font-weight:bold;}
+
+  .notice-q{background:var(--gold-soft);border-radius:10px;padding:14px 18px;margin:10px 0;font-size:15px;}
+  .notice-q b{color:var(--gold);}
+
+  table.rules{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px;}
+  table.rules th{background:var(--blue);color:#fff;padding:9px 12px;text-align:left;}
+  table.rules td{padding:9px 12px;border-bottom:1px solid var(--paper-line);}
+  table.rules tr:nth-child(even) td{background:#faf7ee;}
+
+  .error-box{background:var(--plum-soft);border-radius:10px;padding:16px 20px;margin:16px 0;}
+  .error-box h4{font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;color:var(--plum);margin:0 0 8px;}
+
+  .vocab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:10px;}
+  .vocab-card{background:var(--orange-soft);border-radius:10px;padding:12px 15px;font-size:14.5px;display:flex;gap:10px;align-items:flex-start;}
+  .vocab-card .emoji{font-size:22px;line-height:1;}
+  .vocab-card b{font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;color:var(--orange);display:block;font-size:15.5px;}
+
+  .collo-row{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0;}
+  .collo-chip{background:var(--blue-soft);color:var(--blue);padding:6px 14px;border-radius:20px;font-size:14px;font-weight:bold;}
+
+  .tl-diagram{background:#fffefb;border:1px solid var(--paper-line);border-radius:12px;padding:14px 16px 10px;margin:16px 0;text-align:center;box-shadow:var(--card-shadow);}
+  .tl-diagram svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+  .tl-caption{font-size:13px;color:var(--ink-soft);margin-top:6px;font-style:italic;}
+  .tl-diagram-title{font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;font-size:14.5px;color:var(--ink);text-align:left;margin:0 0 6px;font-weight:bold;}
+
+  .container-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0;}
+  .container-card{background:#fffefb;border:1px solid var(--paper-line);border-radius:10px;padding:12px;text-align:center;box-shadow:var(--card-shadow);}
+  .container-card .emoji{font-size:30px;}
+  .container-card .cname{font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;font-weight:bold;color:var(--green);font-size:14px;margin:4px 0 2px;}
+  .container-card .cex{font-size:12.5px;color:var(--ink-soft);}
+
+  .quiz-item{background:#fffefb;border:1px solid var(--paper-line);border-radius:10px;padding:14px 18px;margin:10px 0;}
+  .quiz-item .q-text{font-size:15px;margin-bottom:10px;}
+  .tf-btns button, .mc-btns button{
+    font-family:inherit;font-size:14px;padding:7px 16px;margin-right:8px;border-radius:20px;border:2px solid var(--ink-soft);
+    background:#fff;cursor:pointer;transition:.15s;
+  }
+  .tf-btns button:hover, .mc-btns button:hover{background:var(--green-soft);}
+  .feedback{display:none;margin-top:8px;font-size:14px;font-weight:bold;padding:6px 12px;border-radius:8px;}
+  .feedback.correct{background:#dbe9db;color:var(--green);}
+  .feedback.incorrect{background:#f5d8d8;color:#8c2c2c;}
+
+  .reveal-btn{
+    display:inline-block;margin-top:8px;font-size:13.5px;background:var(--gold);color:#fff;border:none;
+    padding:6px 14px;border-radius:20px;cursor:pointer;font-family:inherit;
+  }
+  .reveal-content{display:none;margin-top:10px;background:var(--gold-soft);border-radius:8px;padding:10px 14px;font-size:14px;}
+
+  .match-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:12px;}
+  .match-col .match-item{
+    background:#fff;border:2px solid var(--paper-line);border-radius:8px;padding:8px 12px;margin-bottom:8px;
+    cursor:pointer;font-size:14px;transition:.15s;
+  }
+  .match-col .match-item.selected{border-color:var(--blue);background:var(--blue-soft);}
+  .match-col .match-item.matched{border-color:var(--green);background:var(--green-soft);cursor:default;}
+
+  .fill-blank input{
+    font-family:inherit;font-size:14px;border:none;border-bottom:2px solid var(--ink-soft);
+    background:transparent;width:150px;text-align:center;padding:2px 4px;
+  }
+  .fill-blank input:focus{outline:none;border-color:var(--green);}
+
+  textarea.writing-area{
+    width:100%;min-height:160px;font-family:inherit;font-size:14.5px;padding:14px;border-radius:10px;
+    border:1px solid var(--paper-line);resize:vertical;
+  }
+  .word-count{font-size:13px;color:var(--ink-soft);margin-top:6px;}
+
+  .score-track{font-size:13.5px;color:var(--ink-soft);margin-top:4px;}
+
+  .research-list{list-style:none;padding:0;margin:10px 0;}
+  .research-list li{
+    background:#fffefb;border:1px solid var(--paper-line);border-radius:10px;
+    padding:12px 16px;margin-bottom:10px;font-size:14.5px;
+  }
+  .research-list li b{color:var(--green);}
+
+  .summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px;}
+  .summary-card{
+    background:#fffefb;border-radius:10px;padding:16px;text-align:center;border:1px solid var(--paper-line);
+    box-shadow:var(--card-shadow);
+  }
+  .summary-card .icon{font-size:28px;margin-bottom:6px;}
+  .summary-card h5{font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;margin:4px 0;color:var(--green);font-size:14.5px;}
+  .summary-card p{font-size:12.5px;color:var(--ink-soft);margin:0;}
+
+  .checklist{list-style:none;padding:0;}
+  .checklist li{padding:8px 4px;font-size:14.5px;display:flex;gap:10px;align-items:flex-start;}
+  .checklist input{margin-top:3px;}
+
+  footer{text-align:center;font-size:12.5px;color:var(--ink-soft);margin-top:50px;padding:0 22px;}
+
+  @media(max-width:640px){
+    .toc-grid, .overview-grid, .vocab-grid, .match-grid, .summary-grid, .container-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div id="progress-wrap"><div id="progress-bar"></div></div>
+
+<header class="hero">
+  <div class="eyebrow">Grade 3 · Week 3 · Cooking Together</div>
+  <h1>Good at Cooking? Let's Go Shopping First</h1>
+  <p class="sub">Gerunds after prepositions · containers · grocery shopping vocabulary</p>
+  <div class="storyline">📍 <b>This week's story:</b> After the climbing wall, Tom invites Maya over to cook dinner together. Before they can cook anything, they need to plan the menu and go shopping. Read their planning chat and their shopping list before we name any grammar — both are full of exactly the language you need this week.</div>
+</header>
+
+<div class="wrap">
+
+<section class="box" id="overview">
+  <h2 class="sec-title"><span class="tab-num" style="background:var(--green)">★</span>What You'll Master This Week</h2>
+  <div class="overview-grid">
+    <div class="item"><b>Grammar</b>Using a gerund (verb + -ing) after a preposition — good at cooking, interested in trying, instead of buying.</div>
+    <div class="item"><b>Vocabulary</b>Types of stores, grocery shopping words, and containers (a bag of, a jar of, a tin of...).</div>
+    <div class="item"><b>Function</b>Talking about cooking interests and abilities, grocery shopping, giving a simple recipe.</div>
+    <div class="item"><b>Skills</b>Writing a shopping list, listening, using multimedia recipes, describing a process.</div>
+  </div>
+</section>
+
+<section id="toc">
+  <div class="box">
+    <h2 class="sec-title"><span class="tab-num" style="background:var(--orange)">≡</span>On This Page</h2>
+    <div class="toc-grid">
+      <a href="#context"><span class="toc-num">1</span>Context: Planning Dinner</a>
+      <a href="#notice"><span class="toc-num">2</span>Notice the Language</a>
+      <a href="#grammar"><span class="toc-num">3</span>Grammar Focus</a>
+      <a href="#containers"><span class="toc-num">4</span>Containers</a>
+      <a href="#vocab"><span class="toc-num">5</span>Vocabulary: Shopping &amp; Stores</a>
+      <a href="#practice"><span class="toc-num">6</span>Practice Zone</a>
+      <a href="#errorclinic"><span class="toc-num">7</span>Error Clinic</a>
+      <a href="#writing"><span class="toc-num">8</span>Your Turn: Writing Task</a>
+      <a href="#research"><span class="toc-num">9</span>Explore More (Autonomy)</a>
+      <a href="#summary"><span class="toc-num">10</span>Summary &amp; Self-Check</a>
+    </div>
+  </div>
+</section>
+
+<!-- 1: CONTEXT -->
+<section id="context" class="c1">
+  <h2 class="sec-title"><span class="tab-num">1</span>Context First: Read Before Any Rule</h2>
+  <p>Read Tom and Maya's planning chat, then their shopping list. Just try to understand what they're planning to cook — we'll look at the grammar afterwards.</p>
+
+  <div class="realia">
+    <span class="doc-tag">Text Messages</span>
+    <div class="chat">
+      <div class="bubble left"><div class="name">Tom</div>So... dinner on Friday? I'm actually pretty good <span class="highlight">at cooking</span> pasta.</div>
+      <div class="bubble right"><div class="name">Maya</div>Perfect, I'm really interested <span class="highlight">in trying</span> something new. I'm just not very good <span class="highlight">at chopping</span> vegetables — I'm always so slow!</div>
+      <div class="bubble left"><div class="name">Tom</div>Ha, no problem, I'll do the chopping. Are you keen <span class="highlight">on cooking</span> something spicy, or should we keep it simple?</div>
+      <div class="bubble right"><div class="name">Maya</div>I'm quite excited <span class="highlight">about trying</span> a spicy tomato sauce, actually! And instead <span class="highlight">of buying</span> pre-made sauce, we could make it from scratch.</div>
+      <div class="bubble left"><div class="name">Tom</div>I love that idea. I'm tired <span class="highlight">of eating</span> the same boring meals every week anyway. Let's make a shopping list before going to the store.</div>
+      <div class="bubble right"><div class="name">Maya</div>Good idea. After <span class="highlight">writing</span> the list, we can go to the supermarket together.</div>
+    </div>
+  </div>
+
+  <div class="realia blogpost">
+    <span class="doc-tag">Shopping List</span>
+    <h4>Friday Dinner — Spicy Tomato Pasta</h4>
+    <p class="byline">Tom &amp; Maya's shared shopping list</p>
+    <ul>
+      <li>a <span class="highlight2">bag of</span> pasta</li>
+      <li>a <span class="highlight2">tin of</span> chopped tomatoes</li>
+      <li>a <span class="highlight2">jar of</span> chilli paste</li>
+      <li>a <span class="highlight2">bottle of</span> olive oil</li>
+      <li>a <span class="highlight2">carton of</span> cream</li>
+      <li>a <span class="highlight2">packet of</span> grated cheese</li>
+      <li>a <span class="highlight2">bunch of</span> fresh basil</li>
+      <li>a <span class="highlight2">loaf of</span> bread (for garlic bread!)</li>
+    </ul>
+  </div>
+
+  <p><em>Notice:</em> Both texts are full of small words (at, in, on, about, of, after) immediately followed by a verb ending in "-ing" — never "to + verb". The shopping list also shows a pattern for talking about quantities of food: a container word, then "of", then the food itself.</p>
+</section>
+
+<!-- 2: NOTICE -->
+<section id="notice" class="c2">
+  <h2 class="sec-title"><span class="tab-num">2</span>Notice the Language (Before Any Rule)</h2>
+  <p>Look again at the highlighted words. Talk to a partner about these questions.</p>
+  <div class="notice-q"><b>Q1.</b> Look at "good at cooking", "interested in trying", "keen on cooking", "excited about trying", "instead of buying", "tired of eating", "after writing". What do all of these verbs (cooking, trying, buying, eating, writing) have in common at the end?</div>
+  <div class="notice-q"><b>Q2.</b> Every one of these "-ing" verbs comes immediately after a small word: at, in, on, about, of, after. What type of word do you think at/in/on/about/of/after are?</div>
+  <div class="notice-q"><b>Q3.</b> Do you think you could say "good at to cook" or "interested in to try"? Why not, based on the pattern you found?</div>
+  <div class="notice-q"><b>Q4.</b> Look at the shopping list. What word appears immediately after every container word (bag, tin, jar, bottle...)? What do you think this word's job is here?</div>
+  <p style="font-size:14px;color:var(--ink-soft);">Discuss your answers before you move to Section 3.</p>
+</section>
+
+<!-- 3: GRAMMAR -->
+<section id="grammar" class="c3">
+  <h2 class="sec-title"><span class="tab-num">3</span>Grammar Focus: Gerunds After Prepositions</h2>
+  <p>A <b>gerund</b> is the "-ing" form of a verb used like a noun (cooking, swimming, writing). This week's rule is simple but important:</p>
+
+  <div class="tl-diagram">
+    <div class="tl-diagram-title">The pattern: preposition + gerund (never "to")</div>
+    <svg viewBox="0 0 640 160" xmlns="http://www.w3.org/2000/svg">
+      <rect x="40" y="50" width="220" height="60" rx="12" fill="#1d3557"/>
+      <text x="150" y="76" font-size="15" fill="#fff" font-family="Calibri" font-weight="bold" text-anchor="middle">PREPOSITION</text>
+      <text x="150" y="98" font-size="12.5" fill="#fff" font-family="Calibri" text-anchor="middle">at, in, on, about, of, after...</text>
+      <polygon points="265,80 285,73 285,87" fill="#5c5346"/>
+      <rect x="300" y="50" width="220" height="60" rx="12" fill="#b8483a"/>
+      <text x="410" y="76" font-size="15" fill="#fff" font-family="Calibri" font-weight="bold" text-anchor="middle">GERUND (verb + ing)</text>
+      <text x="410" y="98" font-size="12.5" fill="#fff" font-family="Calibri" text-anchor="middle">cooking, trying, buying...</text>
+      <text x="565" y="88" font-size="30" fill="#c0392b" font-family="Calibri" font-weight="bold" text-anchor="middle">✗</text>
+      <text x="565" y="105" font-size="11" fill="#5c5346" font-family="Calibri" text-anchor="middle">never "to + verb"</text>
+      <text x="320" y="140" font-size="14" fill="#2b2620" font-family="Calibri" font-style="italic" text-anchor="middle">"I'm interested in trying new recipes." (NOT "interested in to try")</text>
+    </svg>
+    <div class="tl-caption">Whenever a verb comes directly after a preposition, it must be a gerund (-ing form) — this never changes, in any tense.</div>
+  </div>
+
+  <h3 style="color:var(--blue);">3.1 — Common Adjective/Verb + Preposition + Gerund Combinations</h3>
+  <table class="rules">
+    <tr><th>Expression</th><th>Example</th></tr>
+    <tr><td>good/bad <b>at</b></td><td>I'm good <b>at cooking</b>, but bad <b>at baking</b>.</td></tr>
+    <tr><td>interested <b>in</b></td><td>She's interested <b>in trying</b> new recipes.</td></tr>
+    <tr><td>keen <b>on</b></td><td>Are you keen <b>on cooking</b> something spicy?</td></tr>
+    <tr><td>excited <b>about</b></td><td>I'm excited <b>about trying</b> a new sauce.</td></tr>
+    <tr><td>tired <b>of</b></td><td>I'm tired <b>of eating</b> the same meals.</td></tr>
+    <tr><td>worried <b>about</b></td><td>He's worried <b>about burning</b> the garlic bread.</td></tr>
+    <tr><td>instead <b>of</b></td><td>Instead <b>of buying</b> sauce, let's make our own.</td></tr>
+    <tr><td><b>before</b> / <b>after</b></td><td><b>After writing</b> the list, we went shopping.</td></tr>
+  </table>
+
+  <div class="error-box">
+    <h4>⚠️ The #1 Error at This Level</h4>
+    <p>Learners very often use the base verb or the infinitive ("to + verb") after a preposition, because that's the pattern used after many other verbs. But after a preposition, only the gerund is correct.</p>
+    <table class="rules">
+      <tr><th>❌ Incorrect</th><th>✅ Correct</th></tr>
+      <tr><td>I'm good at cook.</td><td>I'm good <b>at cooking</b>.</td></tr>
+      <tr><td>She's interested in to try new food.</td><td>She's interested <b>in trying</b> new food.</td></tr>
+      <tr><td>Instead of buy sauce, we made our own.</td><td>Instead <b>of buying</b> sauce, we made our own.</td></tr>
+    </table>
+    <p style="margin-bottom:0;"><b>Rule of thumb:</b> if you can identify the word right before the verb as a preposition (at, in, on, about, of, before, after, instead of, without...), the verb after it must end in "-ing". This rule doesn't change for different tenses — "I <b>was</b> good at cooking" and "I <b>will be</b> good at cooking" both still use "cooking", never "to cook".</p>
+  </div>
+</section>
+
+<!-- 4: CONTAINERS -->
+<section id="containers" class="c4">
+  <h2 class="sec-title"><span class="tab-num">4</span>Containers: Talking About Quantities</h2>
+  <p>English doesn't usually say "two rices" or "three oils" — instead, we use a container word + <b>of</b> + the food. This pattern appeared throughout the shopping list in Section 1.</p>
+  <div class="container-grid">
+    <div class="container-card"><div class="emoji">🛍️</div><div class="cname">a bag of</div><div class="cex">rice, flour, sugar</div></div>
+    <div class="container-card"><div class="emoji">🍾</div><div class="cname">a bottle of</div><div class="cex">olive oil, water, sauce</div></div>
+    <div class="container-card"><div class="emoji">🍯</div><div class="cname">a jar of</div><div class="cex">honey, jam, chilli paste</div></div>
+    <div class="container-card"><div class="emoji">🥫</div><div class="cname">a tin/can of</div><div class="cex">tomatoes, beans, soup</div></div>
+    <div class="container-card"><div class="emoji">📦</div><div class="cname">a box of</div><div class="cex">cereal, tea bags, eggs</div></div>
+    <div class="container-card"><div class="emoji">🧃</div><div class="cname">a carton of</div><div class="cex">milk, cream, juice</div></div>
+    <div class="container-card"><div class="emoji">🎁</div><div class="cname">a packet of</div><div class="cex">crisps, biscuits, grated cheese</div></div>
+    <div class="container-card"><div class="emoji">🍞</div><div class="cname">a loaf of</div><div class="cex">bread</div></div>
+    <div class="container-card"><div class="emoji">🍌</div><div class="cname">a bunch of</div><div class="cex">bananas, grapes, herbs</div></div>
+  </div>
+  <p style="font-size:14px;">These container words can also change number: "two <b>bags of</b> rice", "three <b>jars of</b> honey" — the plural "-s" goes on the container word, never on the food.</p>
+</section>
+
+<!-- 5: VOCAB -->
+<section id="vocab" class="c5">
+  <h2 class="sec-title"><span class="tab-num">5</span>Vocabulary: Shopping &amp; Stores</h2>
+
+  <h3 style="color:var(--plum);">5.1 — Types of Stores</h3>
+  <div class="vocab-grid">
+    <div class="vocab-card"><span class="emoji">🛒</span><div><b>supermarket</b>a large store selling most food and household items</div></div>
+    <div class="vocab-card"><span class="emoji">🥖</span><div><b>bakery</b>a shop selling bread, cakes and pastries</div></div>
+    <div class="vocab-card"><span class="emoji">🥩</span><div><b>butcher's</b>a shop selling meat</div></div>
+    <div class="vocab-card"><span class="emoji">🥕</span><div><b>greengrocer's</b>a shop selling fruit and vegetables</div></div>
+    <div class="vocab-card"><span class="emoji">🧀</span><div><b>deli(catessen)</b>a shop selling cheese, cured meats and prepared food</div></div>
+    <div class="vocab-card"><span class="emoji">🏪</span><div><b>corner shop / convenience store</b>a small, local shop, often open late</div></div>
+  </div>
+
+  <h3 style="color:var(--plum);">5.2 — Grocery Shopping Vocabulary</h3>
+  <div class="vocab-grid">
+    <div class="vocab-card"><span class="emoji">🛍️</span><div><b>basket / trolley (cart)</b>used to carry or move your shopping around the store</div></div>
+    <div class="vocab-card"><span class="emoji">🧾</span><div><b>receipt</b>a piece of paper showing what you paid for</div></div>
+    <div class="vocab-card"><span class="emoji">💳</span><div><b>till / checkout</b>where you pay for your shopping</div></div>
+    <div class="vocab-card"><span class="emoji">🔖</span><div><b>aisle</b>a row/section in a store between shelves</div></div>
+    <div class="vocab-card"><span class="emoji">🏷️</span><div><b>on sale / discount</b>reduced in price</div></div>
+    <div class="vocab-card"><span class="emoji">🥬</span><div><b>fresh produce</b>fresh fruit and vegetables</div></div>
+  </div>
+
+  <h3 style="color:var(--plum);">5.3 — More Related Vocabulary to Recognise</h3>
+  <p style="font-size:14.5px;">ingredients · leftovers · organic · local produce · to run out of (something) · to stock up on (something) · a recipe · to follow a recipe · to substitute (one ingredient for another) · best before / use by date.</p>
+</section>
+
+<!-- 6: PRACTICE -->
+<section id="practice" class="c6">
+  <h2 class="sec-title"><span class="tab-num">6</span>Practice Zone</h2>
+
+  <h3 style="color:var(--gold);">6.1 — True or False: Comprehension Check</h3>
+  <div id="tf-quiz"></div>
+  <div class="score-track" id="tf-score"></div>
+
+  <h3 style="color:var(--gold);">6.2 — Match the Container to Its Typical Content</h3>
+  <div class="match-grid" id="match-game"></div>
+  <div class="score-track" id="match-score"></div>
+
+  <h3 style="color:var(--gold);">6.3 — Multiple Choice: Grammar Check</h3>
+  <div id="mc-quiz"></div>
+
+  <h3 style="color:var(--gold);">6.4 — Fill in the Blank</h3>
+  <p style="font-size:14px;">Complete each sentence with the correct gerund or container word. Then click "Check answers".</p>
+  <div class="box" style="padding:16px 20px;">
+    <p>1. I'm good at <span class="fill-blank"><input data-answer="cooking" placeholder="cook"></span> pasta.</p>
+    <p>2. She's interested in <span class="fill-blank"><input data-answer="trying" placeholder="try"></span> new recipes.</p>
+    <p>3. We need a <span class="fill-blank"><input data-answer="bottle" placeholder="container"></span> of olive oil.</p>
+    <p>4. Instead of <span class="fill-blank"><input data-answer="buying" placeholder="buy"></span> sauce, we made our own.</p>
+    <p>5. He's tired of <span class="fill-blank"><input data-answer="eating" placeholder="eat"></span> the same meals.</p>
+    <p>6. We need a <span class="fill-blank"><input data-answer="jar" placeholder="container"></span> of chilli paste.</p>
+    <button class="reveal-btn" onclick="checkFillBlanks()">Check answers</button>
+    <div id="fill-feedback" class="score-track"></div>
+  </div>
+</section>
+
+<!-- 7: ERROR CLINIC -->
+<section id="errorclinic" class="c7">
+  <h2 class="sec-title"><span class="tab-num">7</span>Error Clinic</h2>
+  <p>Read each sentence. Some have mistakes — fix them. <b>One sentence is already correct — do not "fix" it if it isn't broken.</b></p>
+  <div class="box" style="padding:16px 20px;">
+    <ol style="font-size:14.5px;">
+      <li>"I'm good at cook pasta." <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button><div class="reveal-content">Incorrect — after a preposition, use the gerund: "I'm good <b>at cooking</b> pasta."</div></li>
+      <li>"She's interested in to try new food." <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button><div class="reveal-content">Incorrect — never "to" after a preposition: "She's interested <b>in trying</b> new food."</div></li>
+      <li>"After writing the list, we went to the supermarket." <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button><div class="reveal-content"><b>This sentence is already correct — no error here.</b> "After" is a preposition here, correctly followed by the gerund "writing". Resist the urge to change anything.</div></li>
+      <li>"Instead of buy sauce, let's make our own." <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button><div class="reveal-content">Incorrect — "instead of" is a preposition phrase: "<b>Instead of buying</b> sauce, let's make our own."</div></li>
+      <li>"We need two bags of rice and three jars of honey." <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button><div class="reveal-content"><b>Also correct.</b> The plural "-s" is correctly on the container words (bags, jars), not on the food itself. A second trap — not every sentence needs a correction.</div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 8: WRITING -->
+<section id="writing" class="c8">
+  <h2 class="sec-title"><span class="tab-num">8</span>Your Turn: Writing Task</h2>
+  <p>Write a short message (<b>60–90 words</b>) to a friend about cooking together. Say what you're good at, what you're interested in trying, and make a short shopping list using at least <b>4 different container words</b>. Use at least <b>3 preposition + gerund</b> combinations.</p>
+  <textarea class="writing-area" id="writing-box" placeholder="Start writing here..."></textarea>
+  <div class="word-count" id="word-count">0 words</div>
+  <div class="notice-q" style="margin-top:14px;"><b>Self-check before you submit:</b> Did every verb after a preposition end in "-ing"? Did you avoid "to" after prepositions? Did you put "of" after each container word?</div>
+</section>
+
+<!-- 9: RESEARCH -->
+<section id="research" class="c9">
+  <h2 class="sec-title"><span class="tab-num">9</span>Explore More: Build Your Own Independence</h2>
+  <p>Use these tasks to notice this week's language in real English before your next class.</p>
+  <ul class="research-list">
+    <li><b>Recipe hunt:</b> Find a simple recipe online in English. Count how many container words (a cup of, a pinch of, a tablespoon of...) it uses — there are more than the ones taught this week!</li>
+    <li><b>Preposition + gerund collection:</b> Over the next few days, collect 5 more examples of "preposition + gerund" from anything you read or hear in English (social media, articles, conversations).</li>
+    <li><b>Store vocabulary:</b> Look up the names of 3 real grocery stores or supermarket chains near you (or famous ones). Visit their websites and see what container words they use in their online product descriptions.</li>
+    <li><b>Listening hunt:</b> Watch a 1-2 minute cooking video in English. Note down every container word used (a cup of, a spoonful of, a handful of...).</li>
+    <li><b>Speaking challenge:</b> Tell a friend or classmate three things you're good at, interested in, or tired of — using the target grammar naturally, without writing it down first.</li>
+  </ul>
+</section>
+
+<section id="summary" class="c9">
+  <h2 class="sec-title"><span class="tab-num">✓</span>Summary &amp; Self-Check</h2>
+  <div class="summary-grid">
+    <div class="summary-card"><div class="icon">🔗</div><h5>Preposition + Gerund</h5><p>good at cooking, interested in trying</p></div>
+    <div class="summary-card"><div class="icon">🚫</div><h5>Never "to"</h5><p>at/in/on + verb-ing, never + to-verb</p></div>
+    <div class="summary-card"><div class="icon">🛍️</div><h5>Containers</h5><p>a bag/bottle/jar/tin/box + of + food</p></div>
+    <div class="summary-card"><div class="icon">🏪</div><h5>Store Types</h5><p>supermarket, bakery, butcher's, deli</p></div>
+    <div class="summary-card"><div class="icon">🧾</div><h5>Shopping Vocabulary</h5><p>till, aisle, receipt, on sale</p></div>
+    <div class="summary-card"><div class="icon">🍅</div><h5>Cooking Theme</h5><p>ingredients, recipe, leftovers</p></div>
+  </div>
+
+  <h3 style="color:var(--green);margin-top:26px;">Before Next Class — Checklist</h3>
+  <ul class="checklist">
+    <li><input type="checkbox"> I can use a gerund correctly after a preposition, in any tense.</li>
+    <li><input type="checkbox"> I know at least 6 adjective/verb + preposition + gerund combinations.</li>
+    <li><input type="checkbox"> I can use at least 6 container words correctly with "of".</li>
+    <li><input type="checkbox"> I can name at least 5 types of stores and 5 shopping-related words.</li>
+    <li><input type="checkbox"> I completed the writing task (60–90 words) with the required grammar.</li>
+    <li><input type="checkbox"> I completed at least one "Explore More" task and can talk about it in class.</li>
+  </ul>
+</section>
+
+</div>
+
+<footer>Grade 3 · Week 3 · Cooking Together — Flipped Learning Reference · Study this page fully before your next class.</footer>
+
+<script>
+window.addEventListener('scroll', function(){
+  var h = document.documentElement;
+  var scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  document.getElementById('progress-bar').style.width = scrolled + '%';
+});
+
+var tfData = [
+  {q:"Tom says he's good at chopping vegetables.", a:false, exp:"False — Tom is good at cooking pasta; it's Maya who says she's not good at chopping."},
+  {q:"Maya wants to buy pre-made tomato sauce.", a:false, exp:"False — she suggests making it from scratch instead of buying it."},
+  {q:"The shopping list includes a bunch of fresh basil.", a:true, exp:"True — it's on the list."},
+  {q:"They plan to go shopping before writing the list.", a:false, exp:"False — Maya says 'after writing the list, we can go to the supermarket.'"},
+  {q:"The list includes a loaf of bread for garlic bread.", a:true, exp:"True — it's the last item on the list."}
+];
+var tfContainer = document.getElementById('tf-quiz');
+var tfCorrectCount = 0, tfAnswered = 0;
+tfData.forEach(function(item, i){
+  var div = document.createElement('div');
+  div.className = 'quiz-item';
+  div.innerHTML = '<div class="q-text">' + (i+1) + '. ' + item.q + '</div>' +
+    '<div class="tf-btns"><button data-val="true">True</button><button data-val="false">False</button></div>' +
+    '<div class="feedback"></div>';
+  tfContainer.appendChild(div);
+  var buttons = div.querySelectorAll('.tf-btns button');
+  var fb = div.querySelector('.feedback');
+  var done = false;
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if(done) return;
+      done = true; tfAnswered++;
+      var val = (btn.getAttribute('data-val') === 'true');
+      if(val === item.a){
+        fb.className = 'feedback correct'; fb.textContent = '✔ Correct! ' + item.exp; tfCorrectCount++;
+      } else {
+        fb.className = 'feedback incorrect'; fb.textContent = '✘ Not quite. ' + item.exp;
+      }
+      fb.style.display = 'block';
+      document.getElementById('tf-score').textContent = 'Score: ' + tfCorrectCount + ' / ' + tfData.length + ' (answered ' + tfAnswered + ')';
+    });
+  });
+});
+
+var matchPairs = [
+  {word:"a jar of", def:"honey, jam, or chilli paste"},
+  {word:"a tin of", def:"tomatoes, beans, or soup"},
+  {word:"a carton of", def:"milk, cream, or juice"},
+  {word:"a loaf of", def:"bread"},
+  {word:"a bunch of", def:"bananas, grapes, or herbs"}
+];
+function shuffle(arr){ return arr.map(function(v){return [Math.random(), v];}).sort(function(a,b){return a[0]-b[0];}).map(function(v){return v[1];}); }
+var wordsShuffled = shuffle(matchPairs.map(function(p){return p.word;}));
+var defsShuffled = shuffle(matchPairs.map(function(p){return p.def;}));
+var matchContainer = document.getElementById('match-game');
+var colWords = document.createElement('div'); colWords.className = 'match-col';
+var colDefs = document.createElement('div'); colDefs.className = 'match-col';
+wordsShuffled.forEach(function(w){
+  var d = document.createElement('div'); d.className = 'match-item'; d.textContent = w; d.setAttribute('data-word', w);
+  colWords.appendChild(d);
+});
+defsShuffled.forEach(function(def){
+  var d = document.createElement('div'); d.className = 'match-item'; d.textContent = def; d.setAttribute('data-def', def);
+  colDefs.appendChild(d);
+});
+matchContainer.appendChild(colWords); matchContainer.appendChild(colDefs);
+var selectedWord = null, selectedDef = null, matchCount = 0;
+function checkMatch(){
+  if(selectedWord && selectedDef){
+    var w = selectedWord.getAttribute('data-word');
+    var pair = matchPairs.find(function(p){return p.word === w;});
+    if(pair && pair.def === selectedDef.getAttribute('data-def')){
+      selectedWord.classList.add('matched'); selectedDef.classList.add('matched');
+      selectedWord.classList.remove('selected'); selectedDef.classList.remove('selected');
+      matchCount++;
+      document.getElementById('match-score').textContent = 'Matched: ' + matchCount + ' / ' + matchPairs.length;
+    } else {
+      selectedWord.classList.remove('selected'); selectedDef.classList.remove('selected');
+    }
+    selectedWord = null; selectedDef = null;
+  }
+}
+colWords.querySelectorAll('.match-item').forEach(function(item){
+  item.addEventListener('click', function(){
+    if(item.classList.contains('matched')) return;
+    colWords.querySelectorAll('.match-item').forEach(function(i){ if(i!==item) i.classList.remove('selected'); });
+    item.classList.toggle('selected');
+    selectedWord = item.classList.contains('selected') ? item : null;
+    checkMatch();
+  });
+});
+colDefs.querySelectorAll('.match-item').forEach(function(item){
+  item.addEventListener('click', function(){
+    if(item.classList.contains('matched')) return;
+    colDefs.querySelectorAll('.match-item').forEach(function(i){ if(i!==item) i.classList.remove('selected'); });
+    item.classList.toggle('selected');
+    selectedDef = item.classList.contains('selected') ? item : null;
+    checkMatch();
+  });
+});
+
+var mcData = [
+  {q:"I'm good ___ pasta.", options:["at cook","at to cook","at cooking"], correct:2},
+  {q:"She's interested ___ new recipes.", options:["in trying","in to try","in try"], correct:0},
+  {q:"Instead ___ sauce, we made our own.", options:["of buy","of buying","of to buy"], correct:1},
+  {q:"We need a ___ of olive oil.", options:["bottle","bag","tin"], correct:0}
+];
+var mcContainer = document.getElementById('mc-quiz');
+mcData.forEach(function(item, i){
+  var div = document.createElement('div'); div.className = 'quiz-item';
+  var btnsHtml = item.options.map(function(opt, idx){ return '<button data-idx="'+idx+'">'+opt+'</button>'; }).join('');
+  div.innerHTML = '<div class="q-text">' + (i+1) + '. ' + item.q + '</div><div class="mc-btns">' + btnsHtml + '</div><div class="feedback"></div>';
+  mcContainer.appendChild(div);
+  var fb = div.querySelector('.feedback');
+  var done = false;
+  div.querySelectorAll('.mc-btns button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if(done) return; done = true;
+      var idx = parseInt(btn.getAttribute('data-idx'));
+      if(idx === item.correct){ fb.className='feedback correct'; fb.textContent = '✔ Correct!'; }
+      else { fb.className='feedback incorrect'; fb.textContent = '✘ The correct answer was: ' + item.options[item.correct]; }
+      fb.style.display = 'block';
+    });
+  });
+});
+
+function checkFillBlanks(){
+  var inputs = document.querySelectorAll('.fill-blank input');
+  var correct = 0;
+  inputs.forEach(function(inp){
+    var val = inp.value.trim().toLowerCase();
+    var ans = inp.getAttribute('data-answer').toLowerCase();
+    if(val === ans){ inp.style.borderColor = '#1d3557'; inp.style.color = '#1d3557'; correct++; }
+    else { inp.style.borderColor = '#8c2c2c'; inp.style.color = '#8c2c2c'; }
+  });
+  document.getElementById('fill-feedback').textContent = correct + ' / ' + inputs.length + ' correct. (Correct answers shown in blue, check spelling on red ones.)';
+}
+
+document.getElementById('writing-box').addEventListener('input', function(){
+  var text = this.value.trim();
+  var count = text.length ? text.split(/\s+/).length : 0;
+  var el = document.getElementById('word-count');
+  el.textContent = count + ' words';
+  el.style.color = (count >= 60 && count <= 90) ? '#1d3557' : '#5c5346';
+});
+</script>
+
+</body>
+</html>

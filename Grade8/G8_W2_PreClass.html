@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 8 · Week 2 — Before It All Went Wrong | Full Reference</title>
+<style>
+  :root {
+    --indigo:       #2D3561;
+    --indigo-mid:   #4A5196;
+    --indigo-light: #E8EAFB;
+    --indigo-pale:  #F3F4FD;
+    --rose:         #C1466B;
+    --rose-deep:    #9B2D50;
+    --gold:         #E8A838;
+    --gold-deep:    #C48820;
+    --slate:        #3D405B;
+    --slate-soft:   #6B6F8A;
+    --paper:        #F7F7FB;
+    --paper-line:   #E0E2F0;
+    --white:        #FFFFFF;
+    --ink:          #1A1C2E;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 16.5px;
+    line-height: 1.75;
+  }
+
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px 80px; }
+
+  /* ── PROGRESS ── */
+  .progress-track { position: sticky; top: 0; height: 4px; background: var(--paper-line); z-index: 100; }
+  .progress-fill  { height: 100%; width: 0; background: var(--rose); transition: width 0.1s; }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--indigo);
+    margin: 0 -24px;
+    padding: 44px 24px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  /* phone screen motif */
+  .masthead::before {
+    content: '';
+    position: absolute; right: 52px; top: 18px;
+    width: 72px; height: 120px;
+    border: 4px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+  }
+  .masthead::after {
+    content: '';
+    position: absolute; right: 32px; top: 52px;
+    width: 72px; height: 120px;
+    border: 4px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+  }
+  .masthead-inner { max-width: 872px; margin: 0 auto; position: relative; z-index: 1; }
+  .eyebrow { font-family: Arial, sans-serif; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin: 0 0 12px; font-weight: bold; }
+  h1.title { font-family: Cambria, Georgia, serif; font-size: 38px; line-height: 1.15; color: var(--white); margin: 0 0 16px; max-width: 640px; }
+  .masthead-meta { display: flex; gap: 28px; flex-wrap: wrap; font-family: Arial, sans-serif; font-size: 13px; color: #A8ACCC; margin-top: 14px; }
+  .masthead-meta span { color: var(--white); font-weight: bold; }
+
+  /* ── TOC ── */
+  .toc { background: var(--white); border-radius: 10px; margin-top: -20px; padding: 22px 28px; box-shadow: 0 4px 20px rgba(45,53,97,0.13); position: relative; z-index: 2; }
+  .toc h2 { font-family: Arial, sans-serif; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate-soft); margin: 0 0 12px; }
+  .toc ol { margin: 0; padding-left: 18px; columns: 2; column-gap: 32px; font-size: 14px; line-height: 1.6; }
+  .toc li { margin-bottom: 5px; }
+  .toc a { color: var(--indigo-mid); text-decoration: none; font-weight: bold; font-family: Arial, sans-serif; }
+  .toc a:hover { text-decoration: underline; }
+
+  /* ── SECTION HEADERS ── */
+  .tab-section { margin-top: 48px; }
+  .tab-header { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; flex-wrap: wrap; }
+  .tab-badge {
+    font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; letter-spacing: 0.1em; text-transform: uppercase;
+    background: var(--indigo); color: var(--white); border-radius: 5px; padding: 5px 12px; white-space: nowrap;
+  }
+  .tab-badge.context  { background: var(--slate); }
+  .tab-badge.study    { background: var(--rose-deep); }
+  .tab-badge.vocab    { background: var(--indigo-mid); }
+  .tab-badge.practice { background: var(--slate); }
+  .tab-badge.activate { background: var(--gold-deep); color: var(--ink); }
+  .tab-badge.explore  { background: #5C3D8A; }
+  .tab-badge.reference{ background: var(--indigo); }
+  h2.tab-title { font-family: Cambria, Georgia, serif; font-size: 23px; color: var(--ink); }
+  .tab-rule { border: none; border-top: 1.5px solid var(--paper-line); margin: 12px 0 22px; }
+
+  /* ── CARDS ── */
+  .card { background: var(--white); border-radius: 10px; padding: 22px 26px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(45,53,97,0.07); }
+  .card h3 { font-family: Cambria, Georgia, serif; font-size: 18px; margin: 0 0 10px; color: var(--indigo); }
+  .card p  { margin: 0 0 10px; }
+  .card p:last-child { margin-bottom: 0; }
+
+  /* ── HOOK ── */
+  .hook-box { background: var(--indigo); color: var(--white); border-radius: 10px; padding: 28px 30px; margin-bottom: 20px; }
+  .hook-box h3 { font-family: Cambria, serif; font-size: 19px; color: var(--gold); margin: 0 0 12px; }
+  .hook-box p  { color: #B8BCDA; margin: 0 0 10px; }
+  .poll { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+  .poll-opt { border: 2px solid var(--gold); color: var(--gold); border-radius: 999px; padding: 8px 18px; font-size: 13px; font-weight: bold; cursor: pointer; background: transparent; font-family: Arial, sans-serif; transition: all 0.15s; }
+  .poll-opt:hover, .poll-opt.selected { background: var(--gold); color: var(--indigo); }
+  .poll-result { margin-top: 12px; font-size: 13.5px; color: #8890BA; display: none; font-family: Arial, sans-serif; }
+
+  /* ── DM THREAD ── */
+  .dm-thread { background: var(--white); border-radius: 10px; overflow: hidden; border: 1px solid var(--paper-line); margin-bottom: 22px; box-shadow: 0 4px 16px rgba(45,53,97,0.09); }
+  .dm-header { background: var(--indigo); color: var(--white); padding: 12px 22px; font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; letter-spacing: 0.05em; display: flex; align-items: center; gap: 10px; }
+  .dm-header .dm-avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; color: var(--indigo); flex-shrink: 0; }
+  .dm-bubble-wrap { padding: 18px 22px; }
+  .dm-row { display: flex; gap: 10px; margin-bottom: 14px; align-items: flex-end; }
+  .dm-row.out { flex-direction: row-reverse; }
+  .dm-av { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; flex-shrink: 0; }
+  .dm-av.cyan  { background: #4AC9D8; color: var(--indigo); }
+  .dm-av.rose  { background: var(--rose); color: var(--white); }
+  .dm-bubble {
+    max-width: 70%; border-radius: 14px; padding: 10px 14px; font-size: 15px; line-height: 1.5;
+    font-family: Arial, sans-serif;
+  }
+  .dm-bubble.in  { background: var(--indigo-light); color: var(--ink); border-bottom-left-radius: 4px; }
+  .dm-bubble.out { background: var(--indigo); color: var(--white); border-bottom-right-radius: 4px; }
+  .dm-ts { font-size: 11px; color: var(--slate-soft); text-align: center; margin: 6px 0 10px; }
+
+  /* ── COMMENT THREAD ── */
+  .comment-thread { background: var(--white); border-radius: 10px; overflow: hidden; border: 1px solid var(--paper-line); margin-bottom: 22px; box-shadow: 0 4px 16px rgba(45,53,97,0.09); }
+  .comment-header { background: var(--slate); color: var(--white); padding: 12px 22px; font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; }
+  .comment { padding: 14px 22px; border-bottom: 1px solid var(--paper-line); font-family: Arial, sans-serif; font-size: 15px; display: flex; gap: 12px; }
+  .comment:last-child { border-bottom: none; }
+  .c-av { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; flex-shrink: 0; }
+  .c-name { font-weight: bold; font-size: 13px; color: var(--ink); }
+  .c-time { font-size: 11px; color: var(--slate-soft); margin-left: 6px; }
+  .c-text { font-size: 14.5px; margin-top: 3px; line-height: 1.5; }
+
+  /* highlight */
+  .hl-rose   { background: #FCEAEF; color: var(--rose-deep); padding: 1px 5px; border-radius: 3px; font-weight: bold; }
+  .hl-indigo { background: var(--indigo-light); color: var(--indigo); padding: 1px 5px; border-radius: 3px; font-weight: bold; }
+
+  /* ── NOTICE & DISCOVER ── */
+  .notice-box { background: #FFF8E8; border: 2px dashed var(--gold-deep); border-radius: 10px; padding: 22px 26px; margin-bottom: 20px; }
+  .notice-box h3 { font-family: Cambria, serif; font-size: 18px; color: var(--gold-deep); margin: 0 0 14px; }
+  .notice-q { margin-bottom: 14px; padding-left: 30px; position: relative; font-size: 15.5px; }
+  .notice-q::before { content: '?'; position: absolute; left: 0; top: 0; width: 20px; height: 20px; border-radius: 50%; background: var(--gold-deep); color: var(--white); font-size: 13px; font-weight: bold; text-align: center; line-height: 20px; font-family: Arial, sans-serif; }
+  .reveal-btn { display: inline-block; margin-top: 6px; background: none; border: 1px solid var(--gold-deep); color: var(--gold-deep); border-radius: 5px; padding: 3px 10px; font-size: 12px; cursor: pointer; font-family: Arial, sans-serif; transition: all 0.15s; }
+  .reveal-btn:hover { background: var(--gold-deep); color: var(--white); }
+  .notice-reveal { margin-top: 8px; font-size: 14px; color: var(--slate); font-style: italic; border-left: 3px solid var(--gold-deep); padding-left: 10px; display: none; }
+
+  /* ── GRAMMAR BOXES ── */
+  .grammar-box { background: var(--white); border-radius: 10px; padding: 26px 30px; margin-bottom: 24px; box-shadow: 0 2px 10px rgba(45,53,97,0.07); }
+  .grammar-box h3 { font-family: Cambria, Georgia, serif; font-size: 21px; color: var(--rose-deep); margin: 0 0 6px; }
+  .grammar-sub { font-family: Arial, sans-serif; font-size: 14px; color: var(--slate-soft); margin: 0 0 18px; font-style: italic; }
+
+  .example-row { display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start; margin-bottom: 10px; padding: 10px 14px; background: var(--paper); border-radius: 8px; }
+  .example-row .mark { font-weight: bold; font-size: 18px; }
+  .example-row .mark.ok  { color: var(--indigo-mid); }
+  .example-row .mark.bad { color: var(--rose-deep); }
+  .example-row .txt strong { color: var(--indigo); }
+  .example-row .gloss { display: block; font-family: Arial, sans-serif; font-size: 13px; color: var(--slate-soft); margin-top: 3px; }
+  .example-row .note  { display: block; font-family: Arial, sans-serif; font-size: 12.5px; color: var(--rose-deep); margin-top: 3px; font-weight: bold; }
+
+  table.rule-table { width: 100%; border-collapse: collapse; margin: 16px 0 8px; font-size: 14.5px; font-family: Arial, sans-serif; }
+  table.rule-table th { background: var(--indigo); color: var(--white); padding: 9px 13px; text-align: left; font-size: 13px; }
+  table.rule-table td { padding: 9px 13px; border-bottom: 1px solid var(--paper-line); vertical-align: top; }
+  table.rule-table tr:nth-child(even) td { background: var(--indigo-pale); }
+
+  .rule-pill { display: inline-block; background: var(--gold); color: var(--ink); font-family: Arial, sans-serif; font-weight: bold; font-size: 12.5px; border-radius: 5px; padding: 3px 10px; margin: 3px 5px 3px 0; }
+  .rule-pill.blue { background: var(--indigo-light); color: var(--indigo); }
+
+  /* ── TIMELINE ── */
+  .timeline-wrap { margin: 18px 0 10px; }
+  .timeline-label { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; color: var(--slate-soft); margin-bottom: 7px; }
+  .timeline-bar { position: relative; height: 88px; background: var(--paper); border-radius: 8px; padding: 14px 20px 0; display: flex; align-items: flex-start; }
+  .tl-line { position: absolute; left: 20px; right: 20px; top: 21px; height: 3px; background: var(--slate-soft); }
+  .tl-point { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
+  .tl-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--rose); margin-top: 0; }
+  .tl-dot.now { background: var(--indigo); width: 18px; height: 18px; margin-top: -2px; }
+  .tl-dot.pp  { background: var(--indigo-mid); }
+  .tl-tag { font-family: Arial, sans-serif; font-size: 11px; margin-top: 8px; color: var(--slate-soft); white-space: nowrap; text-align: center; }
+
+  /* ── VERB PATTERNS GRID ── */
+  .vp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+  .vp-card { background: var(--paper); border-radius: 8px; padding: 14px 18px; border: 1px solid var(--paper-line); }
+  .vp-card h4 { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.07em; color: var(--indigo-mid); margin: 0 0 8px; }
+  .vp-card ul { padding-left: 16px; font-family: Arial, sans-serif; font-size: 14px; margin: 0; }
+  .vp-card li { margin-bottom: 5px; }
+  .vp-card .ex { font-size: 13px; font-style: italic; color: var(--slate-soft); margin-top: 6px; border-top: 1px solid var(--paper-line); padding-top: 6px; }
+
+  /* ── COLLOCATION TABLE ── */
+  .coll-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 14px 0; }
+  .coll-card { background: var(--indigo-pale); border-radius: 8px; padding: 10px 14px; font-family: Arial, sans-serif; font-size: 13.5px; text-align: center; }
+  .coll-card .adj { font-weight: bold; color: var(--rose-deep); font-size: 15px; }
+  .coll-card .noun { color: var(--indigo); font-size: 13px; margin-top: 2px; }
+
+  /* ── VOCAB ── */
+  .vocab-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 14px 0; }
+  .vocab-card { background: var(--white); border-radius: 8px; padding: 14px 16px; border: 1px solid var(--paper-line); }
+  .vocab-card .word { font-family: Cambria, Georgia, serif; font-weight: bold; color: var(--indigo); font-size: 16px; }
+  .vocab-card .pos  { font-family: Arial, sans-serif; font-size: 11px; color: var(--slate-soft); text-transform: uppercase; margin-left: 6px; }
+  .vocab-card .pron { font-family: Arial, sans-serif; font-size: 13px; color: var(--slate-soft); margin-top: 3px; }
+  .vocab-card .def  { font-size: 14px; margin-top: 5px; }
+  .vocab-card .ex   { font-family: Arial, sans-serif; font-size: 13px; color: var(--slate-soft); margin-top: 5px; font-style: italic; }
+
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+  .chip { background: var(--paper); border: 1px solid var(--paper-line); border-radius: 999px; padding: 5px 14px; font-family: Arial, sans-serif; font-size: 13.5px; color: var(--ink); }
+  .chip strong { color: var(--rose-deep); }
+
+  .word-family-table { width: 100%; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 14px; margin: 12px 0; }
+  .word-family-table th { background: var(--indigo-mid); color: var(--white); padding: 8px 12px; text-align: left; font-size: 12.5px; }
+  .word-family-table td { padding: 8px 12px; border-bottom: 1px solid var(--paper-line); }
+  .word-family-table tr:nth-child(even) td { background: var(--indigo-pale); }
+
+  /* ── EXERCISES ── */
+  .exercise { background: var(--white); border-radius: 10px; padding: 22px 26px; margin-bottom: 18px; box-shadow: 0 2px 10px rgba(45,53,97,0.07); }
+  .ex-label { display: inline-block; font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; background: var(--indigo); color: var(--white); border-radius: 4px; padding: 3px 10px; margin-bottom: 10px; }
+  .ex-label.vocab { background: var(--indigo-mid); }
+  .exercise h4 { font-family: Cambria, Georgia, serif; font-size: 17px; margin: 0 0 12px; color: var(--ink); }
+  .exercise .instr { font-family: Arial, sans-serif; font-size: 13.5px; color: var(--slate-soft); margin-bottom: 14px; font-style: italic; }
+
+  .q-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 11px; flex-wrap: wrap; }
+  .q-num { font-family: Arial, sans-serif; font-weight: bold; color: var(--rose-deep); min-width: 22px; }
+  .q-text { flex: 1; min-width: 220px; }
+  .blank-input { border: none; border-bottom: 2px solid var(--gold-deep); background: var(--paper); font-family: Georgia, serif; font-size: 15px; padding: 3px 8px; width: 200px; color: var(--ink); }
+  .blank-input:focus { outline: none; border-color: var(--rose-deep); }
+
+  .mc-opt { display: block; background: var(--paper); border: 2px solid var(--paper-line); border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; cursor: pointer; font-size: 15px; transition: border-color 0.15s; font-family: Georgia, serif; }
+  .mc-opt:hover { border-color: var(--gold-deep); }
+  .mc-opt input { margin-right: 10px; }
+  .mc-opt.correct-flash { border-color: var(--indigo-mid); background: var(--indigo-light); }
+  .mc-opt.wrong-flash   { border-color: var(--rose-deep); background: #FCEAEF; }
+
+  .match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0; }
+  .match-item { background: var(--paper); border-radius: 8px; padding: 10px 14px; font-family: Arial, sans-serif; font-size: 14px; cursor: pointer; border: 2px solid transparent; transition: all 0.15s; }
+  .match-item.selected { border-color: var(--gold-deep); }
+  .match-item.matched  { border-color: var(--indigo-mid); background: var(--indigo-light); }
+
+  .check-btn { background: var(--gold); color: var(--ink); border: none; border-radius: 6px; padding: 9px 22px; font-family: Arial, sans-serif; font-weight: bold; font-size: 14px; cursor: pointer; margin-top: 10px; transition: background 0.15s; }
+  .check-btn:hover { background: var(--gold-deep); color: var(--white); }
+  .feedback { margin-top: 12px; font-family: Arial, sans-serif; font-size: 14px; border-radius: 6px; padding: 10px 14px; display: none; }
+  .feedback.show { display: block; }
+  .feedback.good { background: var(--indigo-light); color: var(--indigo); }
+  .feedback.bad  { background: #FCEAEF; color: var(--rose-deep); }
+
+  textarea.response-box { width: 100%; min-height: 110px; border-radius: 8px; border: 2px solid var(--paper-line); padding: 12px 14px; font-family: Georgia, serif; font-size: 15px; resize: vertical; background: var(--white); color: var(--ink); line-height: 1.65; }
+  textarea.response-box:focus { outline: none; border-color: var(--indigo-mid); }
+  .word-count { font-family: Arial, sans-serif; font-size: 12px; color: var(--slate-soft); margin-top: 5px; text-align: right; }
+
+  /* ── ACTIVATE ── */
+  .activate-box { background: var(--gold); border-radius: 10px; padding: 26px 30px; margin-bottom: 20px; }
+  .activate-box h3 { font-family: Cambria, Georgia, serif; font-size: 19px; color: var(--ink); margin: 0 0 12px; }
+  .activate-box p  { color: var(--ink); margin: 0 0 10px; font-size: 15.5px; }
+
+  /* ── EXPLORE ── */
+  .explore-card { background: #F3EDF8; border: 1px solid #D5C0E8; border-radius: 10px; padding: 22px 26px; margin-bottom: 18px; }
+  .explore-card h3 { font-family: Cambria, Georgia, serif; font-size: 17px; color: #5C3D8A; margin: 0 0 10px; }
+  .explore-tag { display: inline-block; font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; background: #5C3D8A; color: var(--white); border-radius: 4px; padding: 3px 9px; margin-bottom: 10px; }
+  .explore-card ul { padding-left: 20px; margin: 10px 0 0; font-size: 15px; }
+  .explore-card li { margin-bottom: 7px; }
+  .link-sug { display: inline-block; background: var(--white); border: 1px solid #D5C0E8; border-radius: 6px; padding: 5px 12px; font-family: Arial, sans-serif; font-size: 12.5px; color: #5C3D8A; margin: 6px 6px 0 0; }
+
+  /* ── ANSWER KEY ── */
+  .answer-key { background: var(--white); border-radius: 10px; padding: 26px 30px; margin-top: 48px; border: 2px solid var(--indigo-mid); box-shadow: 0 4px 16px rgba(45,53,97,0.10); }
+  .ak-title { font-family: Cambria, Georgia, serif; font-size: 22px; color: var(--indigo); margin: 0 0 6px; }
+  .ak-sub   { font-family: Arial, sans-serif; font-size: 13.5px; color: var(--slate-soft); margin: 0 0 20px; font-style: italic; }
+  .ak-section { margin-bottom: 20px; }
+  .ak-section h4 { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; letter-spacing: 0.07em; text-transform: uppercase; color: var(--indigo-mid); margin: 0 0 10px; border-bottom: 1px solid var(--paper-line); padding-bottom: 6px; }
+  .ak-item { display: grid; grid-template-columns: 28px 1fr 1fr; gap: 8px; padding: 8px 4px; border-bottom: 1px solid var(--paper-line); font-size: 14px; }
+  .ak-item:last-child { border-bottom: none; }
+  .an { font-family: Arial, sans-serif; font-weight: bold; color: var(--rose-deep); }
+  .av { font-weight: bold; color: var(--indigo); }
+  .anote { font-family: Arial, sans-serif; font-size: 13px; color: var(--slate-soft); font-style: italic; }
+
+  /* ── REF TABLE ── */
+  .ref-table-wrap { overflow-x: auto; }
+  table.ref-table { width: 100%; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 14px; }
+  table.ref-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-size: 13px; }
+  table.ref-table td { padding: 10px 14px; border-bottom: 1px solid var(--paper-line); vertical-align: top; }
+  table.ref-table tr:nth-child(even) td { background: var(--paper); }
+
+  /* ── WRAPUP ── */
+  .wrapup { background: var(--slate); color: var(--white); border-radius: 10px; padding: 26px 30px; margin-top: 40px; }
+  .wrapup h3 { font-family: Cambria, Georgia, serif; color: var(--gold); margin: 0 0 12px; font-size: 18px; }
+  .wrapup ul { padding-left: 20px; margin: 0; }
+  .wrapup li { margin-bottom: 7px; font-size: 15px; }
+
+  @media (max-width: 600px) {
+    h1.title { font-size: 27px; }
+    .vocab-grid, .match-grid, .vp-grid, .coll-grid { grid-template-columns: 1fr; }
+    .toc ol { columns: 1; }
+    .ak-item { grid-template-columns: 28px 1fr; }
+    .ak-item .anote { grid-column: 2; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="masthead">
+  <div class="masthead-inner">
+    <p class="eyebrow">Grade 8 &middot; Week 2 &middot; Complete Reference &amp; Pre-Class Material</p>
+    <h1 class="title">Before It All Went Wrong — The Past Behind the Past</h1>
+    <div class="masthead-meta">
+      <div>Level: <span>B2+</span></div>
+      <div>Theme: <span>Social Media &amp; Relationships</span></div>
+      <div>Grammar: <span>Past Perfect &middot; Verb Patterns &middot; Adj+Noun Collocations</span></div>
+      <div>Est. time: <span>60&ndash;70 min</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="toc">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#engage">1. Engage — the hook</a></li>
+      <li><a href="#context1">2. Context: the DM thread</a></li>
+      <li><a href="#notice1">3. Notice &amp; discover (Past Perfect)</a></li>
+      <li><a href="#study1">4. Study: Past Perfect</a></li>
+      <li><a href="#practice1">5. Practice: Past Perfect</a></li>
+      <li><a href="#context2">6. Context: the comment thread</a></li>
+      <li><a href="#notice2">7. Notice &amp; discover (verb patterns)</a></li>
+      <li><a href="#study2">8. Study: Verb Patterns</a></li>
+      <li><a href="#study3">9. Study: Adjective + Noun collocations</a></li>
+      <li><a href="#practice2">10. Practice: verb patterns &amp; collocations</a></li>
+      <li><a href="#vocab">11. Vocabulary: social media</a></li>
+      <li><a href="#vocab-cyber">12. Vocabulary: cyber, idioms &amp; phrases</a></li>
+      <li><a href="#vocab-practice">13. Practice: vocabulary</a></li>
+      <li><a href="#together">14. Putting it together</a></li>
+      <li><a href="#explore">15. Explore on your own</a></li>
+      <li><a href="#reference">16. Quick-reference summary</a></li>
+      <li><a href="#answer-key">17. Answer key</a></li>
+    </ol>
+  </div>
+
+  <!-- ═══ ENGAGE ═══ -->
+  <div class="tab-section" id="engage">
+    <div class="tab-header">
+      <span class="tab-badge">ENGAGE</span>
+      <h2 class="tab-title">Have you ever regretted something you posted online?</h2>
+    </div>
+    <hr class="tab-rule">
+    <div class="hook-box">
+      <h3>Before we start &mdash; a quick poll</h3>
+      <p>Someone messages a friend at midnight. They'd had an argument earlier. They'd been stewing over it for hours. They'd already written a long apology — and then deleted it. Then they posted something cryptic on their public profile instead.</p>
+      <p>We've all seen (or done) something like this. <strong>When you look back on a social media mistake, what's the most common reason?</strong></p>
+      <div class="poll" id="pollBox">
+        <button class="poll-opt" data-opt="a">Posted too fast, without thinking</button>
+        <button class="poll-opt" data-opt="b">Misread the tone of someone else's message</button>
+        <button class="poll-opt" data-opt="c">Said something in anger you later regretted</button>
+        <button class="poll-opt" data-opt="d">Didn't realise how public the post was</button>
+      </div>
+      <p class="poll-result" id="pollResult"></p>
+    </div>
+    <div class="card">
+      <h3>What this week is about</h3>
+      <p>You're going to read a DM thread and a comment thread between two friends, Priya and Jade, whose friendship hit a wall after a social media incident. The grammar you'll study — the Past Perfect — is the tense of "before." It's the tense of backstory, context, and explanation. It answers the question: <em>what had already happened before this moment?</em></p>
+      <p>Read both texts for meaning first. Everything in the grammar sections points back to sentences you've already read.</p>
+    </div>
+  </div>
+
+  <!-- ═══ CONTEXT 1: DM THREAD ═══ -->
+  <div class="tab-section" id="context1">
+    <div class="tab-header">
+      <span class="tab-badge context">CONTEXT</span>
+      <h2 class="tab-title">Read first: the DM thread</h2>
+    </div>
+    <hr class="tab-rule">
+    <div class="card">
+      <p>These are direct messages between Priya and Jade. Read the full exchange. Before thinking about grammar, answer: <strong>What happened before this conversation, and how does it affect the tone of Jade's messages?</strong></p>
+      <p style="font-size:14px; color:var(--slate-soft);">The <span class="hl-rose">rose-highlighted</span> phrases are Past Perfect — our first grammar focus. The <span class="hl-indigo">indigo-highlighted</span> phrases are verb patterns — our second focus.</p>
+    </div>
+
+    <div class="dm-thread">
+      <div class="dm-header">
+        <div class="dm-avatar">P</div>
+        <span>Priya &amp; Jade · Direct Messages</span>
+      </div>
+      <div class="dm-bubble-wrap">
+        <div class="dm-ts">Yesterday, 11:47 PM</div>
+
+        <div class="dm-row">
+          <div class="dm-av cyan">P</div>
+          <div class="dm-bubble in">Hey. I saw what you posted. I can't believe you did that.</div>
+        </div>
+        <div class="dm-row out">
+          <div class="dm-av rose">J</div>
+          <div class="dm-bubble out">I know. I <span class="hl-rose">had already deleted</span> it by the time you saw it, but yeah. I shouldn't have.</div>
+        </div>
+        <div class="dm-row">
+          <div class="dm-av cyan">P</div>
+          <div class="dm-bubble in">It <span class="hl-rose">had been up</span> for three hours, Jade. People <span class="hl-rose">had already seen</span> it. Kemal <span class="hl-rose">had already screenshotted</span> it.</div>
+        </div>
+        <div class="dm-row out">
+          <div class="dm-av rose">J</div>
+          <div class="dm-bubble out">I know. I <span class="hl-rose">hadn't thought</span> about that. I was upset. You <span class="hl-rose">hadn't told</span> me you were going to post that story first.</div>
+        </div>
+        <div class="dm-row">
+          <div class="dm-av cyan">P</div>
+          <div class="dm-bubble in">I <span class="hl-indigo">didn't realise</span> it would bother you! I <span class="hl-indigo">thought</span> you'd be fine with it.</div>
+        </div>
+        <div class="dm-row out">
+          <div class="dm-av rose">J</div>
+          <div class="dm-bubble out">I need <span class="hl-indigo">to think</span> about whether I even want <span class="hl-indigo">to continue</span> this conversation tonight. I'm exhausted.</div>
+        </div>
+        <div class="dm-row">
+          <div class="dm-av cyan">P</div>
+          <div class="dm-bubble in">OK. But I want you <span class="hl-indigo">to know</span> that I hadn't meant to hurt you. And I hope we can talk properly tomorrow.</div>
+        </div>
+
+        <div class="dm-ts">Today, 9:12 AM</div>
+        <div class="dm-row out">
+          <div class="dm-av rose">J</div>
+          <div class="dm-bubble out">I've been thinking. By the time you posted that story, we <span class="hl-rose">had been arguing</span> for two weeks. I <span class="hl-rose">had tried</span> to bring it up three times. I feel like I was the only one <span class="hl-indigo">trying</span> to fix things.</div>
+        </div>
+        <div class="dm-row">
+          <div class="dm-av cyan">P</div>
+          <div class="dm-bubble in">I know. I <span class="hl-indigo">admit</span> that I <span class="hl-rose">hadn't been paying</span> enough attention. Can we <span class="hl-indigo">agree</span> to meet in person and talk?</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Meaning check — no grammar terms yet</h3>
+      <p>1. What had Jade done to the post before Priya messaged her?</p>
+      <p>2. Why does Jade feel it was too late to delete the post?</p>
+      <p>3. What does Jade say she had tried to do before the incident?</p>
+    </div>
+  </div>
+
+  <!-- ═══ NOTICE 1 ═══ -->
+  <div class="tab-section" id="notice1">
+    <div class="tab-header">
+      <span class="tab-badge study">NOTICE &amp; DISCOVER</span>
+      <h2 class="tab-title">Look at the rose phrases — what are they doing?</h2>
+    </div>
+    <hr class="tab-rule">
+    <div class="notice-box">
+      <h3>Detective work: the past behind the past</h3>
+
+      <div class="notice-q">
+        Look at: <em>"I had already deleted it by the time you saw it."</em> There are two past events here. Which one happened first — the deleting or the seeing? How does the sentence tell you this?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">The deleting happened FIRST — that's what <em>had already deleted</em> signals. The seeing happened AFTER. "By the time" is a key phrase that explicitly orders two events in the past. <em>Had deleted</em> marks the earlier event.</p>
+      </div>
+
+      <div class="notice-q">
+        Now look at: <em>"People had already seen it. Kemal had already screenshotted it."</em> These appear in Priya's message about the post. Is Priya describing things that happened before or after she sent this message — and before or after the deletion?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">Both happened BEFORE the deletion — which itself happened BEFORE Priya's message. So we have three layers of time: (1) people seeing and screenshotting, (2) Jade deleting, (3) Priya messaging. The Past Perfect marks layer 1 as the furthest back.</p>
+      </div>
+
+      <div class="notice-q">
+        Look at: <em>"I hadn't meant to hurt you."</em> and <em>"You hadn't told me."</em> These use the negative form. What is each person expressing? Is it an excuse, an explanation, or something else?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">Both are explanations of context — things that HADN'T happened before the moment in question. Priya: "My intention wasn't to hurt you" (context for her action). Jade: "You hadn't warned me" (context explaining her reaction). The Past Perfect negative is especially powerful for establishing backstory and justifying a response.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ STUDY 1: PAST PERFECT ═══ -->
+  <div class="tab-section" id="study1">
+    <div class="tab-header">
+      <span class="tab-badge study">STUDY</span>
+      <h2 class="tab-title">Past Perfect — the rule behind what you found</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>1. Past Perfect</h3>
+      <p class="grammar-sub">You found the pattern in the DM thread. Here is the complete rule.</p>
+
+      <p><strong>Form:</strong></p>
+      <table class="rule-table">
+        <tr><th>Subject</th><th>Auxiliary</th><th>Past participle</th><th>Example from the DMs</th></tr>
+        <tr><td>all subjects</td><td>had</td><td>deleted, seen, tried…</td><td>I <strong>had already deleted</strong> it.</td></tr>
+        <tr><td>Negative</td><td>had not / hadn't</td><td>thought, told, meant…</td><td>I <strong>hadn't thought</strong> about that.</td></tr>
+        <tr><td>Question</td><td>Had + subject</td><td>past participle</td><td><strong>Had</strong> she <strong>seen</strong> it by then?</td></tr>
+      </table>
+
+      <p style="margin-top:16px;"><strong>What it means — two main uses:</strong></p>
+      <div class="example-row">
+        <span class="mark ok">1</span>
+        <span class="txt"><strong>Sequencing past events:</strong> marks the earlier of two past actions.<br>
+          <em class="hl-rose">I had already deleted it by the time you saw it.</em>
+          <span class="gloss">Delete = first. See = second. Past Perfect marks "delete" as the earlier event.</span>
+          <span class="note">Key signals: by the time, before, when, already, by then, after</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark ok">2</span>
+        <span class="txt"><strong>Backstory and context:</strong> explains what had already happened to make sense of the present situation.<br>
+          <em class="hl-rose">By the time you posted that story, we had been arguing for two weeks.</em>
+          <span class="gloss">The arguing was ongoing backstory — it explains WHY the post was so hurtful.</span>
+        </span>
+      </div>
+
+      <div class="timeline-wrap">
+        <p class="timeline-label">Past Perfect — ordering two past events</p>
+        <div class="timeline-bar">
+          <div class="tl-line"></div>
+          <div class="tl-point" style="margin-right:auto;">
+            <div class="tl-dot pp"></div>
+            <div class="tl-tag">Past Perfect<br>"had deleted"<br>(earlier event)</div>
+          </div>
+          <div class="tl-point" style="position:absolute; left:45%; top:14px;">
+            <div class="tl-dot"></div>
+            <div class="tl-tag">Simple Past<br>"saw"<br>(later event)</div>
+          </div>
+          <div class="tl-point" style="margin-left:auto;">
+            <div class="tl-dot now"></div>
+            <div class="tl-tag">now<br>(speaking)</div>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top:14px;"><span class="rule-pill">had + past participle</span> = the earlier past event<span class="rule-pill blue">Simple Past</span> = the later past event</p>
+
+      <p style="margin-top: 16px;"><strong>Common error to avoid:</strong></p>
+      <div class="example-row">
+        <span class="mark bad">✗</span>
+        <span class="txt"><em>By the time Priya saw it, Jade deleted the post.</em>
+          <span class="note">WRONG — two Simple Pasts don't show which happened first. The meaning is ambiguous.</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark ok">✓</span>
+        <span class="txt"><em class="hl-rose">By the time Priya saw it, Jade had already deleted the post.</em>
+          <span class="gloss">Correct — Past Perfect makes the sequence unambiguous.</span>
+        </span>
+      </div>
+
+      <p style="margin-top:16px; font-size:14px; color:var(--slate-soft);">⚠ Note: When the sequence is already clear from context words like <em>before</em> or <em>after</em>, the Past Perfect is optional but still natural. <em>"She posted the story after they had argued"</em> and <em>"She posted the story after they argued"</em> are both acceptable — but the Past Perfect version is more formal and more precise.</p>
+    </div>
+  </div>
+
+  <!-- ═══ PRACTICE 1: PAST PERFECT ═══ -->
+  <div class="tab-section" id="practice1">
+    <div class="tab-header">
+      <span class="tab-badge practice">PRACTICE</span>
+      <h2 class="tab-title">Try it: Past Perfect</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="exercise">
+      <span class="ex-label">Exercise 1 &middot; Controlled</span>
+      <h4>Write the Past Perfect or Simple Past. Think about sequence — which event happened first?</h4>
+      <div class="q-row">
+        <span class="q-num">1.</span>
+        <span class="q-text">By the time Priya <em>(see)</em> the post, hundreds of people <em>(already / like)</em> it.</span>
+      </div>
+      <div style="margin-left:32px; margin-bottom:12px; display:flex; gap:12px; flex-wrap:wrap;">
+        <input type="text" class="blank-input" id="e1a" data-answer="saw" placeholder="see →">
+        <input type="text" class="blank-input" id="e1b" data-answer="had already liked" placeholder="already like →">
+      </div>
+      <div class="q-row">
+        <span class="q-num">2.</span>
+        <span class="q-text">Jade <em>(not / realise)</em> how public the post was before she <em>(press)</em> "share."</span>
+      </div>
+      <div style="margin-left:32px; margin-bottom:12px; display:flex; gap:12px; flex-wrap:wrap;">
+        <input type="text" class="blank-input" id="e1c" data-answer="hadn't realised,had not realised" placeholder="not realise →">
+        <input type="text" class="blank-input" id="e1d" data-answer="pressed" placeholder="press →">
+      </div>
+      <div class="q-row">
+        <span class="q-num">3.</span>
+        <span class="q-text">When Priya <em>(check)</em> her phone, Jade already <em>(leave)</em> three voicemails.</span>
+      </div>
+      <div style="margin-left:32px; margin-bottom:12px; display:flex; gap:12px; flex-wrap:wrap;">
+        <input type="text" class="blank-input" id="e1e" data-answer="checked" placeholder="check →">
+        <input type="text" class="blank-input" id="e1f" data-answer="had already left,had left" placeholder="already leave →">
+      </div>
+      <div class="q-row">
+        <span class="q-num">4.</span>
+        <span class="q-text">Their mutual friend <em>(screenshot)</em> the post before Jade <em>(have)</em> a chance to delete it.</span>
+      </div>
+      <div style="margin-left:32px; margin-bottom:12px; display:flex; gap:12px; flex-wrap:wrap;">
+        <input type="text" class="blank-input" id="e1g" data-answer="had screenshotted,had screenshot" placeholder="screenshot →">
+        <input type="text" class="blank-input" id="e1h" data-answer="had" placeholder="have →">
+      </div>
+      <button class="check-btn" onclick="checkPairs()">Check my answers</button>
+      <div class="feedback" id="fb-ex1"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label">Exercise 2 &middot; Error spot</span>
+      <h4>One sentence in each pair is correct. Select it.</h4>
+      <p style="margin-bottom:10px; font-size:14.5px;"><strong>Pair A:</strong></p>
+      <label class="mc-opt"><input type="radio" name="mc-a" value="wrong"> a) By the time we talked, I had already calmed down, but Jade still was upset.</label>
+      <label class="mc-opt"><input type="radio" name="mc-a" value="right"> b) By the time we talked, I had already calmed down, but Jade was still upset.</label>
+      <div class="feedback" id="fb-mca"></div>
+      <p style="margin: 14px 0 10px; font-size:14.5px;"><strong>Pair B:</strong></p>
+      <label class="mc-opt"><input type="radio" name="mc-b" value="wrong"> a) She posted the story before she had discussed it with Priya, which had caused the argument.</label>
+      <label class="mc-opt"><input type="radio" name="mc-b" value="right"> b) She posted the story before she had discussed it with Priya, which caused the argument.</label>
+      <div class="feedback" id="fb-mcb"></div>
+    </div>
+  </div>
+
+  <!-- ═══ CONTEXT 2: COMMENT THREAD ═══ -->
+  <div class="tab-section" id="context2">
+    <div class="tab-header">
+      <span class="tab-badge context">CONTEXT</span>
+      <h2 class="tab-title">Read next: the comment thread</h2>
+    </div>
+    <hr class="tab-rule">
+    <div class="card">
+      <p>A week later, Priya posted advice on a social media wellness forum. This is the comment thread. Before thinking about grammar, answer: <strong>What advice does the community give, and do they agree with each other?</strong></p>
+      <p style="font-size:14px; color:var(--slate-soft);">The <span class="hl-indigo">indigo-highlighted</span> phrases are verb patterns — some take <em>to + infinitive</em>, some take <em>-ing</em>, some take a <em>that-clause</em>.</p>
+    </div>
+
+    <div class="comment-thread">
+      <div class="comment-header">💬 /r/digitalwellness — "Online fallout with a close friend — how do I move on?"</div>
+      <div class="comment">
+        <div class="c-av" style="background:#4A5196; color:white;">PR</div>
+        <div>
+          <span class="c-name">PriyaR_writes</span><span class="c-time">original post · 3d</span>
+          <p class="c-text">I <span class="hl-indigo">admit</span> that I <span class="hl-indigo">handled</span> a situation badly and it hurt someone I care about. I <span class="hl-indigo">keep thinking</span> about what I could have done differently. I've <span class="hl-indigo">tried reaching out</span> but she isn't ready yet. I don't know whether <span class="hl-indigo">to apologise</span> again or <span class="hl-indigo">to give</span> her more space.</p>
+        </div>
+      </div>
+      <div class="comment">
+        <div class="c-av" style="background:#C1466B; color:white;">TK</div>
+        <div>
+          <span class="c-name">TakeshiK</span><span class="c-time">2d</span>
+          <p class="c-text">I <span class="hl-indigo">suggest giving</span> her at least a week. I've <span class="hl-indigo">noticed</span> that people <span class="hl-indigo">tend to need</span> space before they can <span class="hl-indigo">engage</span> productively. <span class="hl-indigo">Avoid sending</span> multiple messages — it can feel overwhelming.</p>
+        </div>
+      </div>
+      <div class="comment">
+        <div class="c-av" style="background:#E8A838; color:#1A1C2E;">LM</div>
+        <div>
+          <span class="c-name">LorraineMcB</span><span class="c-time">2d</span>
+          <p class="c-text">I <span class="hl-indigo">believe</span> that a direct phone call would be more effective than messaging. People <span class="hl-indigo">tend to misread</span> written tone. <span class="hl-indigo">Consider asking</span> her what she needs rather than what you want to say. I <span class="hl-indigo">recommend calling</span> once and then <span class="hl-indigo">waiting</span>.</p>
+        </div>
+      </div>
+      <div class="comment">
+        <div class="c-av" style="background:#3D405B; color:white;">DS</div>
+        <div>
+          <span class="c-name">DiegodeSouza</span><span class="c-time">1d</span>
+          <p class="c-text">I <span class="hl-indigo">think</span> you need <span class="hl-indigo">to own</span> the mistake fully. Don't just <span class="hl-indigo">say</span> you're sorry — <span class="hl-indigo">explain</span> that you <span class="hl-indigo">understand</span> why she was hurt. I've <span class="hl-indigo">found</span> that people <span class="hl-indigo">appreciate knowing</span> their feelings have been understood, not just acknowledged.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Meaning check</h3>
+      <p>1. What three options does Priya describe considering?</p>
+      <p>2. What two pieces of advice conflict — one says to call, another says something different. What's the conflict?</p>
+      <p>3. What does Diego say is the difference between "saying sorry" and truly apologising?</p>
+    </div>
+  </div>
+
+  <!-- ═══ NOTICE 2: VERB PATTERNS ═══ -->
+  <div class="tab-section" id="notice2">
+    <div class="tab-header">
+      <span class="tab-badge study">NOTICE &amp; DISCOVER</span>
+      <h2 class="tab-title">Look at the indigo phrases — what follows each verb?</h2>
+    </div>
+    <hr class="tab-rule">
+    <div class="notice-box">
+      <h3>Detective work: what comes after the verb?</h3>
+
+      <div class="notice-q">
+        Look at these three verbs from the thread: <em>suggest, avoid, consider.</em> What do they all have in common about what comes immediately after them? Check: <em>"suggest giving," "avoid sending," "consider asking."</em>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">They all take an -ing form (gerund) directly after them. You cannot say "suggest to give," "avoid to send," or "consider to ask" in standard English.</p>
+      </div>
+
+      <div class="notice-q">
+        Now look at: <em>"don't know whether to apologise or to give her space,"</em> <em>"tried to reach out,"</em> <em>"recommend calling."</em> Which verb here takes <em>to + infinitive</em>, and which takes <em>-ing</em>? Is there one that could take both?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">"Whether to apologise" = to + infinitive (after verbs of deliberation: know, decide, wonder). "Tried to reach out" = to + infinitive (try meaning "attempt"). "Recommend calling" = -ing. Note: "try" is interesting — "I tried calling" means I attempted it as an experiment; "I tried to call" means I attempted but may not have succeeded.</p>
+      </div>
+
+      <div class="notice-q">
+        Finally: <em>"I admit that I handled it badly,"</em> <em>"I believe that a phone call would be more effective,"</em> <em>"I've found that people appreciate knowing."</em> What structure follows admit, believe, and find here?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">All three are followed by a that-clause (a full sentence with its own subject and verb). This pattern is very common with verbs of thinking, perceiving, and communication — and it's essential for formal and written B2+ English.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ STUDY 2: VERB PATTERNS ═══ -->
+  <div class="tab-section" id="study2">
+    <div class="tab-header">
+      <span class="tab-badge study">STUDY</span>
+      <h2 class="tab-title">Verb Patterns — three types, clear rules</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>2. Verb Patterns</h3>
+      <p class="grammar-sub">The verb that follows a main verb must be in a specific form. There is no universal rule — each verb must be learned with its pattern. But there ARE clear groups.</p>
+
+      <div class="vp-grid">
+        <div class="vp-card">
+          <h4>Verb + to + infinitive</h4>
+          <ul>
+            <li>want, need, decide, hope</li>
+            <li>refuse, agree, offer, promise</li>
+            <li>try (= attempt), manage</li>
+            <li>know, wonder (+ whether/what/how)</li>
+          </ul>
+          <p class="ex">"I need <em>to think</em> about this."<br>"She decided <em>to call</em> him."<br>"I don't know whether <em>to apologise</em>."</p>
+        </div>
+        <div class="vp-card">
+          <h4>Verb + -ing (gerund)</h4>
+          <ul>
+            <li>suggest, recommend, consider</li>
+            <li>avoid, keep, enjoy, mind</li>
+            <li>try (= experiment), practise</li>
+            <li>finish, stop, miss, deny</li>
+          </ul>
+          <p class="ex">"I suggest <em>giving</em> her space."<br>"Avoid <em>sending</em> multiple messages."<br>"I've tried <em>calling</em> — no answer."</p>
+        </div>
+        <div class="vp-card">
+          <h4>Verb + that-clause</h4>
+          <ul>
+            <li>admit, believe, think, know</li>
+            <li>notice, find, realise, feel</li>
+            <li>suggest*, recommend*</li>
+            <li>hope, expect, agree, say</li>
+          </ul>
+          <p class="ex">"I admit <em>that I handled it badly</em>."<br>"I believe <em>that a call would help</em>."<br>"She found <em>that space was needed</em>."</p>
+        </div>
+        <div class="vp-card">
+          <h4>Verb + object + to + infinitive</h4>
+          <ul>
+            <li>want, ask, tell, advise</li>
+            <li>invite, remind, encourage</li>
+            <li>expect, need, allow, warn</li>
+          </ul>
+          <p class="ex">"I want <em>you to know</em> I didn't mean it."<br>"She asked <em>him to wait</em>."<br>"He advised <em>her to call</em>."</p>
+        </div>
+      </div>
+
+      <p style="margin-top:14px;"><strong>The try / remember / stop distinction — meaning changes with pattern:</strong></p>
+      <table class="rule-table">
+        <tr><th>Verb</th><th>+ to + infinitive</th><th>+ -ing</th></tr>
+        <tr><td><strong>try</strong></td><td>attempt (may not succeed): <em>"I tried to call her."</em></td><td>experiment with: <em>"I tried calling — she didn't pick up."</em></td></tr>
+        <tr><td><strong>remember</strong></td><td>before the action: <em>"Remember to call her."</em></td><td>after the action: <em>"I remember calling — she was cold."</em></td></tr>
+        <tr><td><strong>stop</strong></td><td>stop in order to: <em>"She stopped to read the message."</em></td><td>stop the activity: <em>"She stopped messaging him."</em></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══ STUDY 3: ADJ+NOUN COLLOCATIONS ═══ -->
+  <div class="tab-section" id="study3">
+    <div class="tab-header">
+      <span class="tab-badge study">STUDY</span>
+      <h2 class="tab-title">Adjective + Noun Collocations — the strand continues</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>3. Adjective + Noun Collocations</h3>
+      <p class="grammar-sub">Many adjective + noun combinations in English are fixed — the "right" adjective must be learned with its noun. Getting these wrong sounds unnatural even when the meaning is clear.</p>
+
+      <p><strong>From the social media theme this week:</strong></p>
+      <div class="coll-grid">
+        <div class="coll-card"><div class="adj">strong</div><div class="noun">opinion / argument / reaction / bond</div></div>
+        <div class="coll-card"><div class="adj">close</div><div class="noun">friend / relationship / contact / call</div></div>
+        <div class="coll-card"><div class="adj">heavy</div><div class="noun">traffic / workload / silence / criticism</div></div>
+        <div class="coll-card"><div class="adj">mutual</div><div class="noun">friend / respect / agreement / benefit</div></div>
+        <div class="coll-card"><div class="adj">genuine</div><div class="noun">apology / concern / effort / interest</div></div>
+        <div class="coll-card"><div class="adj">direct</div><div class="noun">message / approach / question / contact</div></div>
+        <div class="coll-card"><div class="adj">public</div><div class="noun">post / apology / statement / profile</div></div>
+        <div class="coll-card"><div class="adj">online</div><div class="noun">presence / fallout / community / argument</div></div>
+        <div class="coll-card"><div class="adj">deep</div><div class="noun">regret / understanding / connection / breath</div></div>
+      </div>
+
+      <p style="margin-top:16px;"><strong>Why "wrong" collocations sound odd:</strong></p>
+      <div class="example-row">
+        <span class="mark bad">✗</span>
+        <span class="txt"><em>She has a big opinion about everything.</em>
+          <span class="note">→ "strong opinion" — not "big." Size ≠ intensity in English.</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark bad">✗</span>
+        <span class="txt"><em>He sent a large criticism on her post.</em>
+          <span class="note">→ "heavy criticism" or "strong criticism" — not "large."</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark ok">✓</span>
+        <span class="txt"><em>Priya and Jade had a strong bond before the incident.</em>
+          <span class="gloss">Natural — "strong bond" is a fixed collocation.</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ PRACTICE 2 ═══ -->
+  <div class="tab-section" id="practice2">
+    <div class="tab-header">
+      <span class="tab-badge practice">PRACTICE</span>
+      <h2 class="tab-title">Try it: Verb patterns &amp; Collocations</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="exercise">
+      <span class="ex-label">Exercise 3 &middot; Verb patterns</span>
+      <h4>Complete each sentence with the correct form: <em>to + infinitive</em>, <em>-ing</em>, or a <em>that-clause</em>.</h4>
+      <div class="q-row">
+        <span class="q-num">1.</span>
+        <span class="q-text">Priya avoided <em>(check)</em> her notifications for a whole day.</span>
+        <input type="text" class="blank-input" data-answer="checking" placeholder="check →">
+      </div>
+      <div class="q-row">
+        <span class="q-num">2.</span>
+        <span class="q-text">She decided <em>(send)</em> a voice message instead of a text.</span>
+        <input type="text" class="blank-input" data-answer="to send" placeholder="send →">
+      </div>
+      <div class="q-row">
+        <span class="q-num">3.</span>
+        <span class="q-text">I suggest <em>(give)</em> her at least a week of space.</span>
+        <input type="text" class="blank-input" data-answer="giving" placeholder="give →">
+      </div>
+      <div class="q-row">
+        <span class="q-num">4.</span>
+        <span class="q-text">Jade admitted <em>(not handle / the situation)</em> well.</span>
+        <input type="text" class="blank-input" data-answer="that she hadn't handled the situation,that she had not handled the situation" placeholder="that + clause →">
+      </div>
+      <div class="q-row">
+        <span class="q-num">5.</span>
+        <span class="q-text">Priya wants Jade <em>(know)</em> the apology was genuine.</span>
+        <input type="text" class="blank-input" data-answer="to know" placeholder="know →">
+      </div>
+      <div class="q-row">
+        <span class="q-num">6.</span>
+        <span class="q-text">She keeps <em>(re-read)</em> the old messages.</span>
+        <input type="text" class="blank-input" data-answer="re-reading,rereading" placeholder="re-read →">
+      </div>
+      <button class="check-btn" onclick="checkFillIn('ex3', ['checking','to send','giving','that she hadn\'t handled the situation,that she had not handled the situation','to know','re-reading,rereading'])">Check my answers</button>
+      <div class="feedback" id="fb-ex3"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label">Exercise 4 &middot; Collocations</span>
+      <h4>Choose the correct adjective.</h4>
+      <div class="q-row">
+        <span class="q-num">1.</span>
+        <span class="q-text">She posted a <em>(big / public / wide)</em> ______ apology on her social media profile.</span>
+        <input type="text" class="blank-input" data-answer="public" placeholder="adjective">
+      </div>
+      <div class="q-row">
+        <span class="q-num">2.</span>
+        <span class="q-text">Priya and Jade have a <em>(strong / large / tall)</em> ______ bond that goes back fifteen years.</span>
+        <input type="text" class="blank-input" data-answer="strong" placeholder="adjective">
+      </div>
+      <div class="q-row">
+        <span class="q-num">3.</span>
+        <span class="q-text">The post received <em>(heavy / big / large)</em> ______ criticism from the online community.</span>
+        <input type="text" class="blank-input" data-answer="heavy" placeholder="adjective">
+      </div>
+      <div class="q-row">
+        <span class="q-num">4.</span>
+        <span class="q-text">Kemal was a <em>(joint / mutual / shared)</em> ______ friend of both Priya and Jade.</span>
+        <input type="text" class="blank-input" data-answer="mutual" placeholder="adjective">
+      </div>
+      <div class="q-row">
+        <span class="q-num">5.</span>
+        <span class="q-text">A <em>(direct / forward / straight)</em> ______ message would have been more appropriate than a public post.</span>
+        <input type="text" class="blank-input" data-answer="direct" placeholder="adjective">
+      </div>
+      <button class="check-btn" onclick="checkFillIn('ex4', ['public','strong','heavy','mutual','direct'])">Check my answers</button>
+      <div class="feedback" id="fb-ex4"></div>
+    </div>
+  </div>
+
+  <!-- ═══ VOCABULARY ═══ -->
+  <div class="tab-section" id="vocab">
+    <div class="tab-header">
+      <span class="tab-badge vocab">VOCABULARY</span>
+      <h2 class="tab-title">Social media &amp; online relationships — full word set</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>Core social media vocabulary from the contexts</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <span class="word">to screenshot</span><span class="pos">verb</span>
+          <div class="pron">/ˈskriːnʃɒt/</div>
+          <div class="def">to capture and save an image of your screen; frequently used to preserve evidence of messages</div>
+          <div class="ex">"Kemal had already screenshotted the post." (from the DMs)</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to post / a post</span><span class="pos">verb / noun</span>
+          <div class="pron">/pəʊst/</div>
+          <div class="def">to publish content online; the content itself</div>
+          <div class="ex">"She deleted the post within minutes, but it was too late."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">online fallout</span><span class="pos">noun phrase</span>
+          <div class="pron">/ˈɒnlaɪn ˈfɔːlaʊt/</div>
+          <div class="def">negative consequences or conflict arising from something posted online</div>
+          <div class="ex">"The online fallout lasted weeks."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to reach out</span><span class="pos">phrasal verb</span>
+          <div class="pron">/riːtʃ aʊt/</div>
+          <div class="def">to make contact with someone, especially to offer help or reconnect</div>
+          <div class="ex">"She had tried reaching out, but Jade wasn't ready."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">digital wellbeing</span><span class="pos">noun phrase</span>
+          <div class="pron">/ˈdɪdʒɪtl ˈwelbiːɪŋ/</div>
+          <div class="def">the healthy management of one's online life, including screen time and online relationships</div>
+          <div class="ex">"She posted on a digital wellbeing forum."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to ghost (someone)</span><span class="pos">verb</span>
+          <div class="pron">/ɡəʊst/</div>
+          <div class="def">to suddenly stop all communication with someone without explanation</div>
+          <div class="ex">"After the argument, Jade had practically ghosted her."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">a cryptic post</span><span class="pos">noun phrase</span>
+          <div class="pron">/ˈkrɪptɪk/</div>
+          <div class="def">an online post with hidden or ambiguous meaning, often designed to be understood only by the intended target</div>
+          <div class="ex">"She posted something cryptic that only Priya would understand."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to read into (something)</span><span class="pos">phrasal verb</span>
+          <div class="pron">/riːd ˈɪntə/</div>
+          <div class="def">to find a meaning in something that may not have been intended</div>
+          <div class="ex">"I think you're reading too much into that comment."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grammar-box">
+      <h3>Extended vocabulary: online communication &amp; conflict</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <span class="word">to subtweet</span><span class="pos">verb</span>
+          <div class="pron">/ˈsʌbtwiːt/</div>
+          <div class="def">to post about someone online without naming them directly, usually critically</div>
+          <div class="ex">"People suspected she had subtweeted her ex."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to go viral</span><span class="pos">idiom</span>
+          <div class="pron">/ɡəʊ ˈvaɪrəl/</div>
+          <div class="def">to spread rapidly across social media</div>
+          <div class="ex">"The post had gone viral before she could delete it."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">digital footprint</span><span class="pos">noun phrase</span>
+          <div class="pron">/ˈdɪdʒɪtl ˈfʊtprɪnt/</div>
+          <div class="def">the record of everything a person has posted or done online</div>
+          <div class="ex">"Everything you post adds to your digital footprint."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to mute / to block</span><span class="pos">verb</span>
+          <div class="pron">/mjuːt/ /blɒk/</div>
+          <div class="def">to hide someone's content (mute) or prevent all contact (block)</div>
+          <div class="ex">"She had muted Jade's stories to avoid conflict."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to overshare</span><span class="pos">verb</span>
+          <div class="pron">/ˌəʊvəˈʃeər/</div>
+          <div class="def">to share more personal information online than is appropriate or comfortable for others</div>
+          <div class="ex">"She admitted that she tends to overshare when she's upset."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">accountability</span><span class="pos">noun</span>
+          <div class="pron">/əˌkaʊntəˈbɪlɪti/</div>
+          <div class="def">responsibility for one's actions; in social media, willingness to acknowledge mistakes publicly</div>
+          <div class="ex">"He suggested that genuine accountability matters more than a quick apology."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to clap back</span><span class="pos">phrasal verb (informal)</span>
+          <div class="pron">/klæp bæk/</div>
+          <div class="def">to respond sharply or wittily to a criticism or insult online</div>
+          <div class="ex">"She resisted the urge to clap back and stayed quiet."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">passive-aggressive</span><span class="pos">adjective</span>
+          <div class="pron">/ˌpæsɪv əˈɡresɪv/</div>
+          <div class="def">expressing negative feelings indirectly rather than openly</div>
+          <div class="ex">"The cryptic post was seen as passive-aggressive."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Word family: COMMUNICATE</h3>
+      <table class="word-family-table">
+        <tr><th>Verb</th><th>Noun</th><th>Adjective</th><th>Example</th></tr>
+        <tr><td>communicate</td><td>communication</td><td>communicative</td><td>They failed to communicate their feelings clearly.</td></tr>
+        <tr><td>apologise</td><td>apology</td><td>apologetic</td><td>She made a genuine apology. He was unapologetic.</td></tr>
+        <tr><td>misunderstand</td><td>misunderstanding</td><td>—</td><td>A misunderstanding had led to the whole argument.</td></tr>
+        <tr><td>reconcile</td><td>reconciliation</td><td>reconciled</td><td>After weeks of conflict, they finally reconciled.</td></tr>
+        <tr><td>accuse</td><td>accusation</td><td>accusatory</td><td>She denied the accusation. His tone was accusatory.</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Collocations — verb + social media noun</h3>
+      <div class="chip-row">
+        <span class="chip"><strong>post</strong> a story / an update / an apology</span>
+        <span class="chip"><strong>delete</strong> a post / a comment / a message</span>
+        <span class="chip"><strong>screenshot</strong> a conversation / a post</span>
+        <span class="chip"><strong>send</strong> a direct message / a voice note</span>
+        <span class="chip"><strong>leave</strong> a comment / a voicemail</span>
+        <span class="chip"><strong>make</strong> an apology / a statement</span>
+        <span class="chip"><strong>go</strong> viral / public / offline</span>
+        <span class="chip"><strong>block</strong> / <strong>mute</strong> / <strong>unfollow</strong> someone</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ VOCAB EXPANSION: CYBERSECURITY ═══ -->
+  <div class="tab-section" id="vocab-cyber">
+    <div class="tab-header">
+      <span class="tab-badge vocab">VOCABULARY</span>
+      <h2 class="tab-title">Cybersecurity &amp; online safety — words you need to know</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <p>The social media story between Priya and Jade touches on real risks that exist online — privacy, public exposure, and the permanence of digital content. This section extends your vocabulary into the broader world of online safety and cyber-awareness. These terms appear in the news, in workplaces, and in everyday conversation.</p>
+    </div>
+
+    <div class="grammar-box">
+      <h3>Cybersecurity &amp; digital safety — core terms</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <span class="word">cyberbullying</span><span class="pos">noun</span>
+          <div class="pron">/ˈsaɪbəˌbʊliɪŋ/</div>
+          <div class="def">repeated aggressive behaviour directed at someone through digital devices — messages, posts, or public humiliation online</div>
+          <div class="ex">"The school launched a campaign against cyberbullying after several students had reported incidents."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">doxxing</span><span class="pos">noun / verb</span>
+          <div class="pron">/ˈdɒksɪŋ/</div>
+          <div class="def">publishing someone's private personal information (address, workplace, phone number) online without their consent, usually to cause harm</div>
+          <div class="ex">"After the post went viral, she became a victim of doxxing — strangers had published her home address."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">phishing</span><span class="pos">noun</span>
+          <div class="pron">/ˈfɪʃɪŋ/</div>
+          <div class="def">a scam in which someone disguises themselves as a trustworthy source to steal personal information, passwords, or money</div>
+          <div class="ex">"She had clicked a link in a fake email — a classic phishing attack."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">data breach</span><span class="pos">noun phrase</span>
+          <div class="pron">/ˈdeɪtə briːtʃ/</div>
+          <div class="def">an incident in which private or confidential data is accessed, stolen, or exposed without authorisation</div>
+          <div class="ex">"Millions of users' passwords had been exposed in the data breach."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">catfishing</span><span class="pos">noun / verb</span>
+          <div class="pron">/ˈkætfɪʃɪŋ/</div>
+          <div class="def">creating a fake online identity to deceive someone, usually to form a romantic or emotional relationship</div>
+          <div class="ex">"She had been talking to someone online for months before realising she had been catfished."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">trolling</span><span class="pos">noun / verb</span>
+          <div class="pron">/ˈtrəʊlɪŋ/</div>
+          <div class="def">deliberately posting provocative, offensive, or inflammatory content online to upset people or cause conflict</div>
+          <div class="ex">"The comment section had been flooded with trolling before the moderators deleted the post."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">cancel culture</span><span class="pos">noun phrase</span>
+          <div class="pron">/ˈkænsəl ˌkʌltʃə/</div>
+          <div class="def">the practice of withdrawing support from public figures or companies after they have said or done something considered offensive, often organised through social media</div>
+          <div class="ex">"After the leaked messages, he became a target of cancel culture overnight."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">online harassment</span><span class="pos">noun phrase</span>
+          <div class="pron">/ˌɒnlaɪn həˈræsmənt/</div>
+          <div class="def">persistent, unwanted contact or abusive behaviour directed at someone through digital channels</div>
+          <div class="ex">"She had reported the online harassment to the platform three times before anything was done."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">misinformation</span><span class="pos">noun</span>
+          <div class="pron">/ˌmɪsɪnfəˈmeɪʃən/</div>
+          <div class="def">false or inaccurate information spread online, not necessarily with intent to deceive (cf. <em>disinformation</em> = spread deliberately)</div>
+          <div class="ex">"The post had spread misinformation about the event before anyone could correct it."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to hack (into)</span><span class="pos">verb</span>
+          <div class="pron">/hæk/</div>
+          <div class="def">to gain unauthorised access to a computer system, account, or network</div>
+          <div class="ex">"Someone had hacked into her account and posted from it without her knowledge."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">two-factor authentication</span><span class="pos">noun phrase</span>
+          <div class="pron">/tuː ˈfæktər ɔːˌθentɪˈkeɪʃən/</div>
+          <div class="def">a security method requiring two forms of verification to access an account (e.g. password + SMS code). Often abbreviated: 2FA.</div>
+          <div class="ex">"She hadn't enabled two-factor authentication, which made her account easy to access."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">digital privacy</span><span class="pos">noun phrase</span>
+          <div class="pron">/ˈdɪdʒɪtl ˈprɪvəsi/</div>
+          <div class="def">the right to control what personal information is shared and who can access your online data</div>
+          <div class="ex">"The new settings let users manage their digital privacy more carefully."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grammar-box">
+      <h3>Internet culture — idioms &amp; informal expressions</h3>
+      <p class="grammar-sub">These expressions are widely used in online English — in memes, comment threads, social media posts, and informal writing. Knowing them helps you understand authentic online communication at B2+.</p>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <span class="word">to be called out</span><span class="pos">phrasal verb (passive)</span>
+          <div class="pron">/kɔːld aʊt/</div>
+          <div class="def">to be publicly criticised or exposed for bad behaviour, hypocrisy, or a mistake</div>
+          <div class="ex">"She had been called out online before she even had a chance to explain herself."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to be dragged</span><span class="pos">verb (informal)</span>
+          <div class="pron">/dræɡd/</div>
+          <div class="def">to be harshly criticised or mocked by many people online at once</div>
+          <div class="ex">"After the post went public, she was absolutely dragged in the comments."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to ratio (someone)</span><span class="pos">verb (internet slang)</span>
+          <div class="pron">/ˈreɪʃiəʊ/</div>
+          <div class="def">when a reply to a post gets far more likes or engagement than the original, signalling that the community disagrees with the original</div>
+          <div class="ex">"His response had been ratioed — the counter-argument had ten times more likes."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">hot take</span><span class="pos">noun (informal)</span>
+          <div class="pron">/hɒt teɪk/</div>
+          <div class="def">a controversial or provocative opinion shared quickly online, often without much reflection</div>
+          <div class="ex">"Her post had been just a hot take — she hadn't expected it to cause so much controversy."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to slide into someone's DMs</span><span class="pos">idiom</span>
+          <div class="pron">/slaɪd ɪntə ˈdiːemz/</div>
+          <div class="def">to send someone a private message directly, especially someone you don't know well, usually with romantic or social intent</div>
+          <div class="ex">"He had slid into her DMs after seeing her comment on a mutual friend's post."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to go off (online)</span><span class="pos">phrasal verb (informal)</span>
+          <div class="pron">/ɡəʊ ɒf/</div>
+          <div class="def">to post a long, emotionally charged rant or strong response about something online</div>
+          <div class="ex">"She had gone off in the comments — three paragraphs about what had really happened."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to be in someone's mentions</span><span class="pos">idiom</span>
+          <div class="pron">/ˈmenʃənz/</div>
+          <div class="def">to be tagged or referenced in many people's online posts, usually because something you did became controversial</div>
+          <div class="ex">"By morning, she was in everyone's mentions — the screenshot had been shared hundreds of times."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to air someone's dirty laundry</span><span class="pos">idiom</span>
+          <div class="pron">/eər ˈdɜːti ˈlɔːndri/</div>
+          <div class="def">to publicly reveal embarrassing or private information about someone else</div>
+          <div class="ex">"By sharing those screenshots, Kemal had effectively aired their dirty laundry online."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to throw someone under the bus</span><span class="pos">idiom</span>
+          <div class="pron">/θrəʊ ˈʌndə ðə bʌs/</div>
+          <div class="def">to betray or blame someone else in order to protect yourself, especially publicly</div>
+          <div class="ex">"In her post, she had thrown her former colleague under the bus to deflect criticism."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to sit on the fence</span><span class="pos">idiom</span>
+          <div class="pron">/sɪt ɒn ðə fens/</div>
+          <div class="def">to avoid taking a clear position on a controversial issue, especially online</div>
+          <div class="ex">"Their mutual friends had sat on the fence, unwilling to side with either Priya or Jade."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to blow up (online)</span><span class="pos">phrasal verb</span>
+          <div class="pron">/bləʊ ʌp/</div>
+          <div class="def">to suddenly become very popular or controversial online; to receive enormous attention very quickly</div>
+          <div class="ex">"The thread had blown up overnight — thousands of people were commenting by morning."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to have skin in the game</span><span class="pos">idiom</span>
+          <div class="pron">/skɪn ɪn ðə ɡeɪm/</div>
+          <div class="def">to have a personal stake in the outcome of a situation; to be personally affected by what happens</div>
+          <div class="ex">"She had skin in the game — it wasn't just an abstract debate for her."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grammar-box">
+      <h3>Online communication — phrases &amp; fixed expressions</h3>
+      <p class="grammar-sub">These are phrases you'll encounter in comment threads, news articles, and professional online communication. Some are formal; others are neutral or informal. All are high-frequency in authentic digital English.</p>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <span class="word">to set the record straight</span><span class="pos">idiom</span>
+          <div class="pron">/set ðə ˈrekəd streɪt/</div>
+          <div class="def">to publicly correct false information or misunderstandings about a situation</div>
+          <div class="ex">"She posted a long thread to set the record straight about what had really happened."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to take (something) out of context</span><span class="pos">idiom</span>
+          <div class="pron">/teɪk aʊt əv ˈkɒntekst/</div>
+          <div class="def">to share part of something (a quote, image, video) without the surrounding information, changing its apparent meaning</div>
+          <div class="ex">"The screenshot had been taken out of context — the message looked far worse without the conversation before it."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to go dark</span><span class="pos">phrasal verb</span>
+          <div class="pron">/ɡəʊ dɑːk/</div>
+          <div class="def">to suddenly stop all online activity and communication; to disappear from the internet temporarily</div>
+          <div class="ex">"After the incident, Jade had gone dark for two weeks — no posts, no replies."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to leave someone on read</span><span class="pos">idiom</span>
+          <div class="pron">/liːv ɒn red/</div>
+          <div class="def">to open and read someone's message but deliberately not reply — seen as a form of rejection or avoidance</div>
+          <div class="ex">"Priya had left Jade's last three messages on read before finally responding."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">a thread</span><span class="pos">noun</span>
+          <div class="pron">/θred/</div>
+          <div class="def">a series of connected social media posts or messages; also used for a series of linked tweets or forum replies</div>
+          <div class="ex">"She had written a twelve-post thread explaining the full backstory."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to ratio / to get ratioed</span><span class="pos">verb</span>
+          <div class="pron">/ˈreɪʃiəʊd/</div>
+          <div class="def">when a post receives far more negative replies than likes, signalling public disagreement</div>
+          <div class="ex">"Her initial post had been ratioed within an hour — the reply count was five times the like count."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">a pile-on</span><span class="pos">noun</span>
+          <div class="pron">/ˈpaɪl ɒn/</div>
+          <div class="def">when many people collectively attack or criticise one person online at the same time</div>
+          <div class="ex">"What started as one negative comment became a full pile-on by the next morning."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to deplatform</span><span class="pos">verb</span>
+          <div class="pron">/diːˈplætfɔːm/</div>
+          <div class="def">to remove someone from a social media platform or prevent them from using it, often after repeated violations</div>
+          <div class="ex">"After years of spreading misinformation, he had finally been deplatformed."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grammar-box">
+      <h3>More social media phrasal verbs</h3>
+      <p class="grammar-sub">Phrasal verbs are dense in digital English. These extend the set from the core section above.</p>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <span class="word">to call out</span><span class="pos">phrasal verb</span>
+          <div class="pron">/kɔːl aʊt/</div>
+          <div class="def">to publicly challenge or criticise someone's bad behaviour or hypocrisy</div>
+          <div class="ex">"She decided to call out the person who had shared her private messages."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to log off / sign off</span><span class="pos">phrasal verb</span>
+          <div class="pron">/lɒɡ ɒf/</div>
+          <div class="def">to close a session on a platform or device; also used metaphorically to mean disengaging from a conversation or controversy</div>
+          <div class="ex">"After the argument escalated, she logged off and didn't come back for three days."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to scroll through</span><span class="pos">phrasal verb</span>
+          <div class="pron">/skrəʊl θruː/</div>
+          <div class="def">to move through a feed, page, or set of messages by swiping or dragging</div>
+          <div class="ex">"She had been scrolling through the comments for an hour before she found the screenshot."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to come across (something)</span><span class="pos">phrasal verb</span>
+          <div class="pron">/kʌm əˈkrɒs/</div>
+          <div class="def">to find or encounter something unexpectedly while browsing online</div>
+          <div class="ex">"She had come across the post entirely by accident while looking at someone else's profile."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to back up / back down</span><span class="pos">phrasal verb</span>
+          <div class="pron">/bæk ʌp/ /bæk daʊn/</div>
+          <div class="def"><em>back up</em> = to support someone's position publicly; <em>back down</em> = to withdraw from an argument or confrontation</div>
+          <div class="ex">"None of their mutual friends had backed her up. Eventually, she backed down."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to put someone on blast</span><span class="pos">idiom</span>
+          <div class="pron">/pʊt ɒn blɑːst/</div>
+          <div class="def">to publicly criticise or expose someone's bad behaviour on social media; to call someone out very loudly and publicly</div>
+          <div class="ex">"Instead of DMing her directly, he had put her on blast in a public post."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to soft-launch</span><span class="pos">verb (informal)</span>
+          <div class="pron">/sɒft lɔːntʃ/</div>
+          <div class="def">to subtly introduce something new (a relationship, a project, a new look) online without making a direct announcement, often through carefully chosen background details in photos</div>
+          <div class="ex">"She had soft-launched her new boyfriend by including him at the edge of a photo."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to unpack (something)</span><span class="pos">verb (informal)</span>
+          <div class="pron">/ʌnˈpæk/</div>
+          <div class="def">to analyse or explain something complicated in detail, often used in comment threads and online discussion</div>
+          <div class="ex">"Let me unpack exactly what had happened before the post appeared."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grammar-box">
+      <h3>Extra word families</h3>
+      <p class="grammar-sub">These extend the COMMUNICATE family and add two new roots that appear across the week's vocabulary.</p>
+      <table class="word-family-table">
+        <tr><th>Verb</th><th>Noun</th><th>Adjective / Adverb</th><th>In context</th></tr>
+        <tr><td>harass</td><td>harassment, harasser</td><td>harassing</td><td><em>"She had been harassed online for weeks. The harassment had been reported to the platform."</em></td></tr>
+        <tr><td>expose</td><td>exposure, exposé</td><td>exposed, exposing</td><td><em>"The post had exposed private information. The exposure caused serious damage."</em></td></tr>
+        <tr><td>manipulate</td><td>manipulation, manipulator</td><td>manipulative, manipulated</td><td><em>"He had manipulated the situation. It was a calculated form of emotional manipulation."</em></td></tr>
+        <tr><td>publicise</td><td>publicity, publication</td><td>public, publicised</td><td><em>"She had publicised the argument without realising how much publicity it would attract."</em></td></tr>
+        <tr><td>deceive</td><td>deception, deceiver</td><td>deceptive, deceitful</td><td><em>"The catfish had deceived her completely. The deception lasted months."</em></td></tr>
+        <tr><td>verify</td><td>verification</td><td>verified, verifiable</td><td><em>"Always verify before you share. Two-factor verification is essential."</em></td></tr>
+      </table>
+    </div>
+
+    <div class="grammar-box">
+      <h3>Extended collocation set — online behaviour &amp; cyber-language</h3>
+      <p class="grammar-sub">More fixed pairings. When it comes to cyber and digital topics, English has very specific verb + noun preferences.</p>
+      <div class="chip-row">
+        <span class="chip"><strong>launch</strong> a cyberattack / a campaign</span>
+        <span class="chip"><strong>spread</strong> misinformation / rumours / a post</span>
+        <span class="chip"><strong>protect</strong> your privacy / your data / your account</span>
+        <span class="chip"><strong>report</strong> a post / a user / harassment</span>
+        <span class="chip"><strong>enable</strong> two-factor authentication / privacy settings</span>
+        <span class="chip"><strong>breach</strong> someone's privacy / security</span>
+        <span class="chip"><strong>steal</strong> someone's identity / data / passwords</span>
+        <span class="chip"><strong>take down</strong> a post / an account / content</span>
+        <span class="chip"><strong>restore</strong> an account / access / trust</span>
+        <span class="chip"><strong>fact-check</strong> a claim / a story / a post</span>
+        <span class="chip"><strong>amplify</strong> a message / misinformation / hate speech</span>
+        <span class="chip"><strong>expose</strong> someone's identity / private data</span>
+      </div>
+    </div>
+
+    <div class="grammar-box">
+      <h3>Register register: formal vs. informal online English</h3>
+      <p class="grammar-sub">Many online topics can be discussed formally (in journalism, reports, or professional contexts) or informally (in comment threads and chat). Knowing both registers is essential at B2+.</p>
+      <table class="rule-table">
+        <tr><th>Informal / slang</th><th>Neutral / formal equivalent</th><th>Context</th></tr>
+        <tr><td>to be dragged</td><td>to face heavy public criticism</td><td>online reaction to a controversial post</td></tr>
+        <tr><td>a hot take</td><td>a controversial or provocative opinion</td><td>quick, unreflective online commentary</td></tr>
+        <tr><td>to ghost someone</td><td>to cease all communication without explanation</td><td>cutting off contact abruptly</td></tr>
+        <tr><td>to put on blast</td><td>to publicly expose or criticise</td><td>calling out someone's behaviour publicly</td></tr>
+        <tr><td>to go off (online)</td><td>to post an extended, emotional response</td><td>losing composure in a public thread</td></tr>
+        <tr><td>to slide into DMs</td><td>to contact privately / to send a direct message</td><td>initiating private contact uninvited</td></tr>
+        <tr><td>to be cancelled</td><td>to face widespread public boycott or censure</td><td>social consequences for perceived wrongdoing</td></tr>
+        <tr><td>a pile-on</td><td>coordinated public criticism by many users</td><td>mass online attack on one person</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══ VOCAB PRACTICE ═══ -->
+  <div class="tab-section" id="vocab-practice">
+    <div class="tab-header">
+      <span class="tab-badge vocab">PRACTICE</span>
+      <h2 class="tab-title">Try it: social media vocabulary</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="exercise">
+      <span class="ex-label vocab">Exercise 5 &middot; Matching</span>
+      <h4>Click the word on the left that matches the definition on the right.</h4>
+      <div class="match-grid" id="matchGrid">
+        <div class="match-item" data-pair="1">to ghost</div>
+        <div class="match-item" data-pair="3">everything you've ever done online</div>
+        <div class="match-item" data-pair="2">accountability</div>
+        <div class="match-item" data-pair="4">hiding negativity behind vague posts</div>
+        <div class="match-item" data-pair="3">digital footprint</div>
+        <div class="match-item" data-pair="1">disappear without explanation</div>
+        <div class="match-item" data-pair="4">passive-aggressive</div>
+        <div class="match-item" data-pair="2">owning responsibility for your actions</div>
+      </div>
+      <div class="feedback" id="fb-match"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label vocab">Exercise 6 &middot; Gap-fill</span>
+      <h4>Use one word from the box per gap.</h4>
+      <p class="instr"><em>cryptic &nbsp;·&nbsp; reach out &nbsp;·&nbsp; mutual &nbsp;·&nbsp; overshare &nbsp;·&nbsp; reconcile &nbsp;·&nbsp; viral</em></p>
+      <div class="q-row">
+        <span class="q-num">1.</span>
+        <span class="q-text">The screenshot went ____________ — hundreds of strangers had shared it by morning.</span>
+        <input type="text" class="blank-input" data-answer="viral" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">2.</span>
+        <span class="q-text">The message was so ____________ that only Jade would have understood what it meant.</span>
+        <input type="text" class="blank-input" data-answer="cryptic" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">3.</span>
+        <span class="q-text">She tends to ____________ when she's anxious — she posts things she later regrets.</span>
+        <input type="text" class="blank-input" data-answer="overshare" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">4.</span>
+        <span class="q-text">Kemal was a ____________ friend, so neither Priya nor Jade wanted to put him in the middle.</span>
+        <input type="text" class="blank-input" data-answer="mutual" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">5.</span>
+        <span class="q-text">It took a month, but they eventually managed to ____________ after a long conversation.</span>
+        <input type="text" class="blank-input" data-answer="reconcile" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">6.</span>
+        <span class="q-text">I tried to ____________ twice, but she wasn't ready to talk.</span>
+        <input type="text" class="blank-input" data-answer="reach out" placeholder="your answer">
+      </div>
+      <button class="check-btn" onclick="checkFillIn('ex6', ['viral','cryptic','overshare','mutual','reconcile','reach out'])">Check my answers</button>
+      <div class="feedback" id="fb-ex6"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label vocab">Exercise 7 &middot; Cyber vocabulary — gap-fill</span>
+      <h4>Use the correct term from the box to complete each sentence.</h4>
+      <p class="instr"><em>cyberbullying &nbsp;·&nbsp; doxxing &nbsp;·&nbsp; phishing &nbsp;·&nbsp; data breach &nbsp;·&nbsp; pile-on &nbsp;·&nbsp; catfishing &nbsp;·&nbsp; cancel culture &nbsp;·&nbsp; trolling</em></p>
+      <div class="q-row">
+        <span class="q-num">1.</span>
+        <span class="q-text">The email had looked official, but it was a ____________ attempt — clicking the link had stolen her login details.</span>
+        <input type="text" class="blank-input" data-answer="phishing" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">2.</span>
+        <span class="q-text">One negative comment became a full ____________ — thirty people had joined in to criticise her within an hour.</span>
+        <input type="text" class="blank-input" data-answer="pile-on" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">3.</span>
+        <span class="q-text">She had been talking to "Alex" for months before she realised the person didn't exist — it was ____________.</span>
+        <input type="text" class="blank-input" data-answer="catfishing" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">4.</span>
+        <span class="q-text">The company announced that a ____________ had exposed the email addresses and passwords of two million users.</span>
+        <input type="text" class="blank-input" data-answer="data breach" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">5.</span>
+        <span class="q-text">After someone published her address and phone number online, she reported the ____________ to the police.</span>
+        <input type="text" class="blank-input" data-answer="doxxing" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">6.</span>
+        <span class="q-text">The comment section was full of ____________ — people posting offensive things just to upset others.</span>
+        <input type="text" class="blank-input" data-answer="trolling" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">7.</span>
+        <span class="q-text">Some argue that ____________ has gone too far — people lose their jobs over mistakes they made years ago.</span>
+        <input type="text" class="blank-input" data-answer="cancel culture" placeholder="your answer">
+      </div>
+      <button class="check-btn" onclick="checkFillIn('ex7', ['phishing','pile-on','catfishing','data breach','doxxing','trolling','cancel culture'])">Check my answers</button>
+      <div class="feedback" id="fb-ex7"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label vocab">Exercise 8 &middot; Register — formal vs. informal</span>
+      <h4>Rewrite each informal sentence using more formal language. Keep the same meaning.</h4>
+      <p class="instr">Use the register table in the Cybersecurity &amp; Idioms section to guide you. Write your answer in the space below each sentence.</p>
+      <div class="q-row">
+        <span class="q-num">1.</span>
+        <span class="q-text"><em>Informal: She was absolutely dragged after the post went viral.</em></span>
+      </div>
+      <div style="margin-left:32px; margin-bottom:16px;">
+        <input type="text" class="blank-input" style="width:100%;" data-answer="she faced heavy public criticism after the post went viral,she faced widespread public criticism" placeholder="Formal version...">
+      </div>
+      <div class="q-row">
+        <span class="q-num">2.</span>
+        <span class="q-text"><em>Informal: He went completely off in the thread.</em></span>
+      </div>
+      <div style="margin-left:32px; margin-bottom:16px;">
+        <input type="text" class="blank-input" style="width:100%;" data-answer="he posted an extended emotional response in the thread,he made an extended emotional post" placeholder="Formal version...">
+      </div>
+      <div class="q-row">
+        <span class="q-num">3.</span>
+        <span class="q-text"><em>Informal: After the incident, she ghosted everyone.</em></span>
+      </div>
+      <div style="margin-left:32px; margin-bottom:16px;">
+        <input type="text" class="blank-input" style="width:100%;" data-answer="she ceased all communication,after the incident she ceased all communication without explanation" placeholder="Formal version...">
+      </div>
+      <div class="q-row">
+        <span class="q-num">4.</span>
+        <span class="q-text"><em>Informal: He put her on blast instead of DMing her.</em></span>
+      </div>
+      <div style="margin-left:32px; margin-bottom:16px;">
+        <input type="text" class="blank-input" style="width:100%;" data-answer="he publicly exposed her instead of contacting her privately,he chose to publicly criticise her" placeholder="Formal version...">
+      </div>
+      <button class="check-btn" onclick="checkRegister()">Check my answers</button>
+      <div class="feedback" id="fb-ex8"></div>
+    </div>
+  </div>
+
+  <!-- ═══ PUTTING IT TOGETHER ═══ -->
+  <div class="tab-section" id="together">
+    <div class="tab-header">
+      <span class="tab-badge activate">PUTTING IT TOGETHER</span>
+      <h2 class="tab-title">Combine everything from this week</h2>
+    </div>
+    <hr class="tab-rule">
+    <div class="activate-box">
+      <h3>Mini-task: Priya's reply to the forum</h3>
+      <p>It's now one week later. Priya returns to the forum to update the community. Write her update (90&ndash;110 words) describing what had happened before she posted, what she decided to do, and how things are now.</p>
+      <p>Your update must include:</p>
+      <p>✓ At least <strong>two Past Perfect</strong> sentences to explain backstory<br>
+         ✓ At least <strong>two verb patterns</strong> (one to + infinitive, one -ing, one that-clause)<br>
+         ✓ At least <strong>two adjective + noun collocations</strong> from the word set<br>
+         ✓ At least <strong>three social media vocabulary</strong> items</p>
+      <p style="font-size:14px; margin-top:8px;"><em>Starter: "Update: By the time I saw your replies, I had already decided to… I found that… I suggest anyone in a similar situation to consider…"</em></p>
+      <textarea class="response-box" id="togetherBox" placeholder="Write your forum update here..."></textarea>
+      <div class="word-count" id="togetherCount">0 words</div>
+    </div>
+    <div class="card">
+      <h3>Bring this to class</h3>
+      <p>Save or copy your update. In Session 1, a partner will play the role of a forum commenter responding to your post. The conversation will use Past Perfect for backstory and verb patterns for giving advice.</p>
+    </div>
+  </div>
+
+  <!-- ═══ EXPLORE ═══ -->
+  <div class="tab-section" id="explore">
+    <div class="tab-header">
+      <span class="tab-badge explore">EXPLORE ON YOUR OWN</span>
+      <h2 class="tab-title">Go further — independent research tasks</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="explore-card">
+      <span class="explore-tag">Grammar extension</span>
+      <h3>Hunt for Past Perfect in a real story</h3>
+      <p>Read any short article or personal essay online (a blog post, a Reddit story, a news feature in the past tense). Find at least 3 examples of Past Perfect used to sequence past events or provide backstory. Note:</p>
+      <ul>
+        <li>The full sentence containing the Past Perfect</li>
+        <li>What the "later" event is (the Simple Past in the same sentence or nearby)</li>
+        <li>Why the writer chose Past Perfect at that point</li>
+      </ul>
+      <span class="link-sug">Try: r/tifu (short personal stories)</span>
+      <span class="link-sug">Try: The Guardian — first-person essays</span>
+    </div>
+
+    <div class="explore-card">
+      <span class="explore-tag">Vocabulary extension</span>
+      <h3>Build your verb pattern reference list</h3>
+      <p>Choose 8 verbs you commonly use (suggest, decide, avoid, enjoy, recommend, agree, consider, manage). For each one, look it up in a learner's grammar reference and note: does it take to + infinitive, -ing, or a that-clause (or multiple patterns)? Write one example sentence for each.</p>
+      <ul>
+        <li>Bring your list to class — we'll compare and build a shared reference.</li>
+      </ul>
+      <span class="link-sug">Try: Cambridge Grammar in Use (intermediate or upper)</span>
+      <span class="link-sug">Try: BBC Learning English — Grammar Reference</span>
+    </div>
+
+    <div class="explore-card">
+      <span class="explore-tag">Cultural research</span>
+      <h3>Social media conflict across cultures</h3>
+      <p>How are online apologies and social media conflicts handled differently across cultures? Choose two countries and find one real example of a public online apology in each. Note:</p>
+      <ul>
+        <li>What language did the apology use? Direct or indirect?</li>
+        <li>Was accountability taken clearly or hedged?</li>
+        <li>Write 3–4 sentences comparing the two, using at least one Past Perfect and one verb pattern.</li>
+      </ul>
+    </div>
+
+    <div class="explore-card">
+      <span class="explore-tag">Autonomy task</span>
+      <h3>Bring one question to class</h3>
+      <p>After doing the exercises, write one genuine question about the material — something about the try -ing vs. try to difference, when Past Perfect is optional vs. required, or a collocation you weren't sure about. We open Session 1 with a question box.</p>
+    </div>
+  </div>
+
+  <!-- ═══ REFERENCE ═══ -->
+  <div class="tab-section" id="reference">
+    <div class="tab-header">
+      <span class="tab-badge reference">QUICK REFERENCE</span>
+      <h2 class="tab-title">Everything from this week on one page</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="ref-table-wrap">
+      <table class="ref-table">
+        <tr><th>Item</th><th>Form</th><th>Use when…</th><th>From this week</th></tr>
+        <tr><td><strong>Past Perfect</strong></td><td>had + past participle</td><td>Marking the earlier of two past events; providing backstory before a narrative past event</td><td><em>Jade had already deleted the post by the time Priya saw it.</em></td></tr>
+        <tr><td><strong>Past Perfect Negative</strong></td><td>hadn't + past participle</td><td>Explaining what hadn't happened yet — context for a reaction or decision</td><td><em>I hadn't meant to hurt you. You hadn't told me.</em></td></tr>
+        <tr><td><strong>Verb + -ing</strong></td><td>suggest / avoid / keep / consider / recommend + gerund</td><td>These specific verbs must take -ing</td><td><em>I suggest giving her space. Avoid sending multiple messages.</em></td></tr>
+        <tr><td><strong>Verb + to + inf.</strong></td><td>decide / want / need / hope + to + infinitive</td><td>These specific verbs take infinitive</td><td><em>She decided to send a voice message. I need to think.</em></td></tr>
+        <tr><td><strong>Verb + that-clause</strong></td><td>admit / believe / find / notice + that + sentence</td><td>For reporting thoughts, perceptions, and findings</td><td><em>I admit that I handled it badly.</em></td></tr>
+        <tr><td><strong>Adj + Noun collocations</strong></td><td>strong opinion / close friend / heavy criticism / mutual friend / genuine apology</td><td>Fixed pairings — the wrong adjective sounds unnatural</td><td><em>They had a strong bond. He made a genuine apology.</em></td></tr>
+      </table>
+    </div>
+
+    <div class="card" style="margin-top:18px;">
+      <h3>Key vocabulary to know before Session 1</h3>
+      <div class="chip-row">
+        <span class="chip">screenshot</span><span class="chip">post / delete</span><span class="chip">online fallout</span>
+        <span class="chip">reach out</span><span class="chip">ghost (someone)</span><span class="chip">cryptic post</span>
+        <span class="chip">passive-aggressive</span><span class="chip">digital footprint</span><span class="chip">to overshare</span>
+        <span class="chip">accountability</span><span class="chip">reconcile / reconciliation</span><span class="chip">mutual friend</span>
+        <span class="chip">genuine apology</span><span class="chip">strong opinion</span><span class="chip">close relationship</span>
+        <span class="chip">direct message</span><span class="chip">public post</span><span class="chip">heavy criticism</span>
+        <span class="chip">cyberbullying</span><span class="chip">doxxing</span><span class="chip">phishing</span>
+        <span class="chip">data breach</span><span class="chip">catfishing</span><span class="chip">trolling</span>
+        <span class="chip">cancel culture</span><span class="chip">online harassment</span><span class="chip">misinformation</span>
+        <span class="chip">to be called out</span><span class="chip">hot take</span><span class="chip">a pile-on</span>
+        <span class="chip">to blow up (online)</span><span class="chip">to leave on read</span><span class="chip">to go dark</span>
+        <span class="chip">to air dirty laundry</span><span class="chip">to sit on the fence</span><span class="chip">to set the record straight</span>
+        <span class="chip">to take out of context</span><span class="chip">to put on blast</span><span class="chip">a thread</span>
+        <span class="chip">to deplatform</span><span class="chip">two-factor authentication</span><span class="chip">digital privacy</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ANSWER KEY ═══ -->
+  <div class="answer-key" id="answer-key">
+    <div class="ak-title">Answer Key</div>
+    <p class="ak-sub">Try every exercise first. Free-writing tasks (Exercise 4 sentence writing, Putting It Together) are reviewed in class.</p>
+
+    <div class="ak-section">
+      <h4>Exercise 1 — Past Perfect sequencing</h4>
+      <div class="ak-item"><span class="an">1a.</span><span class="av">saw</span><span class="anote">Simple Past — the later event (Priya's seeing).</span></div>
+      <div class="ak-item"><span class="an">1b.</span><span class="av">had already liked</span><span class="anote">Past Perfect — happened first, before Priya saw the post.</span></div>
+      <div class="ak-item"><span class="an">2a.</span><span class="av">hadn't realised</span><span class="anote">Past Perfect negative — prior state before the action of pressing "share."</span></div>
+      <div class="ak-item"><span class="an">2b.</span><span class="av">pressed</span><span class="anote">Simple Past — the action itself.</span></div>
+      <div class="ak-item"><span class="an">3a.</span><span class="av">checked</span><span class="anote">Simple Past — the moment of discovery.</span></div>
+      <div class="ak-item"><span class="an">3b.</span><span class="av">had already left</span><span class="anote">Past Perfect — the voicemails existed before the phone check.</span></div>
+      <div class="ak-item"><span class="an">4a.</span><span class="av">had screenshotted</span><span class="anote">Past Perfect — screenshot happened before the deletion attempt.</span></div>
+      <div class="ak-item"><span class="an">4b.</span><span class="av">had</span><span class="anote">Simple Past — the natural form in "had a chance to."</span></div>
+    </div>
+
+    <div class="ak-section">
+      <h4>Exercise 2 — Error spot</h4>
+      <div class="ak-item"><span class="an">A.</span><span class="av">(b) is correct</span><span class="anote">"Still was upset" is incorrect word order. "Was still upset" is the natural English order (adverb before adjective/verb).</span></div>
+      <div class="ak-item"><span class="an">B.</span><span class="av">(b) is correct</span><span class="anote">In (a), "which had caused the argument" incorrectly makes the posting a further-back event. The posting itself caused the argument — Simple Past is correct for the relative clause.</span></div>
+    </div>
+
+    <div class="ak-section">
+      <h4>Exercise 3 — Verb patterns</h4>
+      <div class="ak-item"><span class="an">1.</span><span class="av">checking</span><span class="anote">"Avoid" always takes -ing.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">to send</span><span class="anote">"Decide" takes to + infinitive.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">giving</span><span class="anote">"Suggest" takes -ing (also accepts that-clause: "I suggest that you give").</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">that she hadn't handled the situation</span><span class="anote">"Admit" takes a that-clause for full propositions.</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">to know</span><span class="anote">"Want + object + to + infinitive" pattern.</span></div>
+      <div class="ak-item"><span class="an">6.</span><span class="av">re-reading</span><span class="anote">"Keep" takes -ing.</span></div>
+    </div>
+
+    <div class="ak-section">
+      <h4>Exercise 4 — Collocations</h4>
+      <div class="ak-item"><span class="an">1.</span><span class="av">public</span><span class="anote">"Public apology" — the key is that it's on social media, visible to all.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">strong</span><span class="anote">"Strong bond" — not "big bond" or "heavy bond."</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">heavy</span><span class="anote">"Heavy criticism" — the standard collocation in English.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">mutual</span><span class="anote">"Mutual friend" — shared by two parties. "Joint" is for projects/ventures, not people.</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">direct</span><span class="anote">"Direct message" (DM) — also "direct approach." Not "straight message."</span></div>
+    </div>
+
+    <div class="ak-section">
+      <h4>Exercise 5 — Matching</h4>
+      <div class="ak-item"><span class="an">1.</span><span class="av">to ghost → disappear without explanation</span><span class="anote">Informal but very common in B2+ digital English.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">accountability → owning responsibility</span><span class="anote">Note: "accountability" is uncountable in English — no "an accountability."</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">digital footprint → everything you've done online</span><span class="anote">Used in both professional and everyday digital wellbeing contexts.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">passive-aggressive → hiding negativity behind vague posts</span><span class="anote">The hyphen is important in written English — "passive aggressive" (no hyphen) is also accepted.</span></div>
+    </div>
+
+    <div class="ak-section">
+      <h4>Exercise 6 — Gap-fill vocabulary</h4>
+      <div class="ak-item"><span class="an">1.</span><span class="av">viral</span><span class="anote">"Go viral" is a fixed phrase — don't say "went popular."</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">cryptic</span><span class="anote">Means deliberately obscure or hidden — often used of posts or messages.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">overshare</span><span class="anote">To overshare = to share too much personal information, typically online.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">mutual</span><span class="anote">"Mutual friend" — someone both parties know.</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">reconcile</span><span class="anote">Intransitive here: "to reconcile" = to make peace. Transitive: "to reconcile the two sides."</span></div>
+      <div class="ak-item"><span class="an">6.</span><span class="av">reach out</span><span class="anote">Two words as a phrasal verb; "reach out to someone" = make contact.</span></div>
+    </div>
+
+    <div class="ak-section">
+      <h4>Exercise 7 — Cyber vocabulary gap-fill</h4>
+      <div class="ak-item"><span class="an">1.</span><span class="av">phishing</span><span class="anote">A phishing attempt mimics a trusted source to steal credentials. Common signal: urgency + suspicious link.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">pile-on</span><span class="anote">A pile-on = mass simultaneous criticism. Different from cyberbullying (which is repeated targeting of one person).</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">catfishing</span><span class="anote">Catfishing = fake identity, usually for emotional manipulation. From the 2010 documentary "Catfish."</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">data breach</span><span class="anote">Two-word noun phrase. Not "data leak" (informal) or "data hack" — "breach" is the standard formal term.</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">doxxing</span><span class="anote">From "dropping dox" (documents). Publishing someone's address, phone number, or employer without consent.</span></div>
+      <div class="ak-item"><span class="an">6.</span><span class="av">trolling</span><span class="anote">Trolling = provocative posts to upset people. Distinguished from harassment (which is targeted) — trolling is often indiscriminate.</span></div>
+      <div class="ak-item"><span class="an">7.</span><span class="av">cancel culture</span><span class="anote">Contested term — some see it as accountability, others as disproportionate punishment. Good debate topic.</span></div>
+    </div>
+
+    <div class="ak-section">
+      <h4>Exercise 8 — Register rewrite (suggested formal versions)</h4>
+      <div class="ak-item"><span class="an">1.</span><span class="av">She faced heavy public criticism after the post went viral.</span><span class="anote">"Face criticism" is the formal collocate. "Heavy" = formal adjective for intense criticism.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">He posted an extended, emotional response in the thread.</span><span class="anote">"Extended emotional response" replaces "went off." Neutral and factual.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">After the incident, she ceased all communication without explanation.</span><span class="anote">"Cease communication" = formal. "Without explanation" captures the ghost element.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">He chose to publicly criticise / expose her rather than contacting her privately.</span><span class="anote">Multiple formal versions are acceptable. Key: the public vs. private contrast must be preserved.</span></div>
+    </div>
+  </div>
+
+  <div class="wrapup">
+    <h3>Before Session 1, make sure you can&hellip;</h3>
+    <ul>
+      <li>Use Past Perfect to sequence two past events and explain which happened first</li>
+      <li>Use Past Perfect negative to set up backstory and context</li>
+      <li>Give the correct pattern for at least 8 verbs: suggest, avoid, decide, keep, recommend, admit, want + object, believe</li>
+      <li>Produce the correct adjective for: strong _______, heavy _______, mutual _______, genuine _______</li>
+      <li>Use at least 5 core social media vocabulary items correctly in context (screenshot, ghost, reach out, cryptic, passive-aggressive)</li>
+      <li>Define and distinguish: cyberbullying vs. trolling vs. online harassment vs. doxxing</li>
+      <li>Explain at least 3 internet culture idioms in your own words (e.g. hot take, pile-on, to be called out)</li>
+      <li>Translate one informal expression into formal English (e.g. "was dragged" → "faced heavy public criticism")</li>
+      <li>Have your forum update (Putting It Together) ready to share</li>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    document.getElementById('progressFill').style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+  });
+
+  let pollDone = false;
+  document.querySelectorAll('.poll-opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (pollDone) return;
+      pollDone = true;
+      document.querySelectorAll('.poll-opt').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      const r = document.getElementById('pollResult');
+      r.style.display = 'block';
+      r.textContent = "Good choice — bring your reasoning to class. We'll open with a comparison of everyone's answers.";
+    });
+  });
+
+  function checkFillIn(exId, answers) {
+    const fb = document.getElementById('fb-' + exId);
+    const rows = fb.closest('.exercise').querySelectorAll('.blank-input');
+    let correct = 0;
+    rows.forEach((input, i) => {
+      const accepted = answers[i].split(',').map(a => a.trim().toLowerCase());
+      const val = input.value.trim().toLowerCase();
+      if (accepted.includes(val)) { correct++; input.style.borderColor = '#4A5196'; }
+      else { input.style.borderColor = '#C1466B'; }
+    });
+    fb.classList.add('show');
+    if (correct === rows.length) { fb.classList.remove('bad'); fb.classList.add('good'); fb.textContent = 'All ' + rows.length + ' correct!'; }
+    else { fb.classList.remove('good'); fb.classList.add('bad'); fb.textContent = correct + ' of ' + rows.length + ' correct. Check red borders.'; }
+  }
+
+  function checkPairs() {
+    const inputs = [
+      {el: document.getElementById('e1a'), ans: ['saw']},
+      {el: document.getElementById('e1b'), ans: ['had already liked']},
+      {el: document.getElementById('e1c'), ans: ["hadn't realised","had not realised","hadn't realized","had not realized"]},
+      {el: document.getElementById('e1d'), ans: ['pressed']},
+      {el: document.getElementById('e1e'), ans: ['checked']},
+      {el: document.getElementById('e1f'), ans: ['had already left','had left']},
+      {el: document.getElementById('e1g'), ans: ['had screenshotted','had screenshot']},
+      {el: document.getElementById('e1h'), ans: ['had']},
+    ];
+    let correct = 0;
+    inputs.forEach(({el, ans}) => {
+      if (!el) return;
+      if (ans.includes(el.value.trim().toLowerCase())) { correct++; el.style.borderColor = '#4A5196'; }
+      else { el.style.borderColor = '#C1466B'; }
+    });
+    const fb = document.getElementById('fb-ex1');
+    fb.classList.add('show');
+    if (correct === inputs.length) { fb.classList.remove('bad'); fb.classList.add('good'); fb.textContent = 'All 8 correct! Excellent work.'; }
+    else { fb.classList.remove('good'); fb.classList.add('bad'); fb.textContent = correct + ' of 8 correct. Red borders need reviewing.'; }
+  }
+
+  function setupMC(name, correctVal, fbId, okMsg, errMsg) {
+    document.querySelectorAll(`input[name="${name}"]`).forEach(r => {
+      r.addEventListener('change', () => {
+        document.querySelectorAll(`input[name="${name}"]`).forEach(x => x.closest('.mc-opt').classList.remove('correct-flash','wrong-flash'));
+        const fb = document.getElementById(fbId);
+        fb.classList.add('show');
+        if (r.value === correctVal) { r.closest('.mc-opt').classList.add('correct-flash'); fb.classList.remove('bad'); fb.classList.add('good'); fb.textContent = okMsg; }
+        else { r.closest('.mc-opt').classList.add('wrong-flash'); fb.classList.remove('good'); fb.classList.add('bad'); fb.textContent = errMsg; }
+      });
+    });
+  }
+  setupMC('mc-a','right','fb-mca','Correct! "Was still upset" — adverb before adjective in standard English.','Not quite. The word order in (a) is wrong: "still was upset" → "was still upset."');
+  setupMC('mc-b','right','fb-mcb','Correct! The relative clause "which caused the argument" describes the result of posting, which happened next — Simple Past is right.','Not quite. In (a), "had caused" implies the argument happened even further back, which isn\'t the intended meaning.');
+
+  let firstSel = null, matchCount = 0;
+  document.querySelectorAll('.match-item').forEach(item => {
+    item.addEventListener('click', () => {
+      if (item.classList.contains('matched')) return;
+      if (!firstSel) { firstSel = item; item.classList.add('selected'); }
+      else if (firstSel === item) { firstSel.classList.remove('selected'); firstSel = null; }
+      else if (firstSel.dataset.pair === item.dataset.pair) {
+        [firstSel, item].forEach(el => { el.classList.remove('selected'); el.classList.add('matched'); });
+        matchCount++; firstSel = null;
+        const fb = document.getElementById('fb-match');
+        fb.classList.add('show'); fb.classList.remove('bad'); fb.classList.add('good');
+        fb.textContent = matchCount === 4 ? 'All 4 matched!' : matchCount + ' of 4 — keep going!';
+      } else {
+        item.classList.add('wrong-flash');
+        setTimeout(() => { firstSel.classList.remove('selected'); item.classList.remove('wrong-flash'); firstSel = null; }, 500);
+      }
+    });
+  });
+
+  const box = document.getElementById('togetherBox');
+  const cnt = document.getElementById('togetherCount');
+  if (box && cnt) box.addEventListener('input', () => {
+    const w = box.value.trim().split(/\s+/).filter(x => x.length > 0);
+    cnt.textContent = (box.value.trim() === '' ? 0 : w.length) + ' words';
+  });
+
+  function checkRegister() {
+    const inputs = document.getElementById('fb-ex8').closest('.exercise').querySelectorAll('.blank-input');
+    let filled = 0;
+    inputs.forEach(inp => {
+      if (inp.value.trim().length > 4) { filled++; inp.style.borderColor = '#4A5196'; }
+      else { inp.style.borderColor = '#C1466B'; }
+    });
+    const fb = document.getElementById('fb-ex8');
+    fb.classList.add('show');
+    if (filled === inputs.length) {
+      fb.classList.remove('bad'); fb.classList.add('good');
+      fb.textContent = 'Good — check your versions against the suggested formal rewrites in the Answer Key. There is more than one acceptable answer for each sentence.';
+    } else {
+      fb.classList.remove('good'); fb.classList.add('bad');
+      fb.textContent = 'Some boxes look empty — try writing a formal version for each sentence first.';
+    }
+  }
+</script>
+</body>
+</html>

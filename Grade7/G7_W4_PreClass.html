@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 7 · Week 4 — Relative Clauses, Whose, Supposed To & Discourse Coherence</title>
+<style>
+  :root {
+    --ink: #28344A;
+    --ink-soft: #4A5775;
+    --paper: #F7F3E8;
+    --paper-line: #E3DCC8;
+    --chalk-green: #1F3A2E;
+    --chalk-green-light: #2E5240;
+    --chalk-yellow: #E8B84B;
+    --chalk-yellow-deep: #C99423;
+    --coral: #D8694F;
+    --coral-deep: #B14B34;
+    --blue: #3D6E8C;
+    --blue-deep: #285067;
+    --teal: #1A6B5C;
+    --teal-light: #E3F2EF;
+    --amber: #8B5E1A;
+    --amber-light: #FFF3E0;
+    --white: #FFFFFF;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper);
+    background-image: repeating-linear-gradient(transparent, transparent 35px, var(--paper-line) 35px, var(--paper-line) 36px);
+    color: var(--ink); font-family: Calibri, "Segoe UI", Arial, sans-serif; font-size: 17px; line-height: 1.65;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px 80px; }
+
+  .masthead { background: var(--teal); color: var(--paper); margin: 0 -24px 0; padding: 38px 24px 30px; position: relative; overflow: hidden; }
+  .masthead::before { content: ""; position: absolute; right: -50px; top: -50px; width: 230px; height: 230px; border-radius: 50%; background: #155A4C; opacity: 0.5; }
+  .masthead::after  { content: ""; position: absolute; left: 58%; bottom: -40px; width: 170px; height: 170px; border-radius: 50%; background: #155A4C; opacity: 0.35; }
+  .masthead-inner { max-width: 872px; margin: 0 auto; position: relative; z-index: 1; }
+  .eyebrow { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--chalk-yellow); margin: 0 0 10px; }
+  h1.title { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 34px; line-height: 1.2; margin: 0 0 14px; max-width: 720px; }
+  .masthead-meta { display: flex; gap: 24px; flex-wrap: wrap; font-size: 14px; color: #B5D9D0; margin-top: 16px; }
+  .masthead-meta span { font-weight: bold; color: var(--paper); }
+
+  .toc { background: var(--white); border-radius: 10px; margin-top: -18px; padding: 20px 26px; box-shadow: 0 4px 16px rgba(40,52,74,0.12); position: relative; z-index: 2; }
+  .toc h2 { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 16px; margin: 0 0 10px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; }
+  .toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 30px; font-size: 14px; }
+  .toc li { margin-bottom: 6px; }
+  .toc a { color: var(--coral-deep); text-decoration: none; font-weight: bold; }
+  .toc a:hover { text-decoration: underline; }
+
+  .tab-section { margin-top: 46px; }
+  .tab-header { display: flex; align-items: center; gap: 14px; margin-bottom: 4px; flex-wrap: wrap; }
+  .tab-num { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 14px; font-weight: bold; color: var(--white); background: var(--teal); border-radius: 6px; padding: 6px 14px; white-space: nowrap; }
+  .tab-header.study  .tab-num { background: var(--coral-deep); }
+  .tab-header.activate .tab-num { background: var(--chalk-yellow-deep); color: var(--ink); }
+  .tab-header.vocab  .tab-num { background: var(--blue-deep); }
+  .tab-header.autonomy .tab-num { background: var(--teal); }
+  h2.tab-title { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 24px; margin: 0; color: var(--ink); }
+  .tab-rule { border: none; border-top: 2px solid var(--paper-line); margin: 14px 0 22px; }
+
+  .card { background: var(--white); border-radius: 10px; padding: 22px 26px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(40,52,74,0.08); }
+  .card h3 { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 19px; margin: 0 0 10px; color: var(--teal); }
+  .card p { margin: 0 0 10px; }
+  .card p:last-child { margin-bottom: 0; }
+
+  /* Engage: Fix-the-festival */
+  .broken-text { background: var(--white); border-radius: 10px; border: 2px dashed var(--coral-deep); padding: 22px 26px; margin-bottom: 18px; position: relative; }
+  .broken-text h3 { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 18px; color: var(--coral-deep); margin: 0 0 12px; }
+  .error-span { background: #FBEDE9; color: var(--coral-deep); border-bottom: 2px solid var(--coral-deep); padding: 1px 4px; cursor: pointer; border-radius: 2px; position: relative; }
+  .error-span.revealed { background: #E3F0E5; color: var(--chalk-green); border-bottom-color: var(--chalk-green); }
+  .fix-count { font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
+  .fix-btn { background: var(--coral-deep); color: var(--white); border: none; border-radius: 6px; padding: 8px 18px; font-size: 14px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+  .fix-btn:hover { background: var(--coral); }
+  .fix-legend { display: none; margin-top: 16px; background: #EFF5F1; border-radius: 8px; padding: 14px 18px; }
+  .fix-legend.show { display: block; }
+  .fix-legend p { margin: 0 0 8px; font-size: 14px; }
+  .fix-legend p:last-child { margin: 0; }
+
+  /* Article */
+  .article-block { background: var(--white); border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 16px rgba(40,52,74,0.12); overflow: hidden; border: 1px solid var(--paper-line); }
+  .article-header { background: var(--teal); color: var(--white); padding: 14px 26px; display: flex; align-items: center; gap: 12px; }
+  .art-tag { font-size: 11px; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; background: var(--chalk-yellow); color: var(--ink); border-radius: 4px; padding: 3px 9px; }
+  .art-title { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 17px; }
+  .article-body { padding: 26px 30px; line-height: 1.8; }
+  .article-body p { margin: 0 0 16px; }
+  .article-body p:last-child { margin-bottom: 0; }
+  .byline { font-size: 12.5px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 20px !important; }
+
+  /* Incident report */
+  .report-block { background: var(--white); border-radius: 10px; margin-bottom: 20px; overflow: hidden; border: 2px solid var(--paper-line); }
+  .report-header { background: var(--ink); color: var(--white); padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .report-title-txt { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 16px; }
+  .report-ref { font-size: 12px; color: #90A0B8; }
+  .report-body { padding: 20px 26px; }
+  .report-body p { margin: 0 0 14px; font-size: 15.5px; line-height: 1.72; }
+  .report-body p:last-child { margin: 0; }
+
+  /* Highlight targets */
+  .t1 { background: #FBEDE9; color: var(--coral-deep); padding: 1px 5px; border-radius: 3px; font-weight: bold; } /* defining RC */
+  .t2 { background: var(--teal-light); color: var(--teal); padding: 1px 5px; border-radius: 3px; font-weight: bold; } /* non-defining RC */
+  .t3 { background: #E9F0F5; color: var(--blue-deep); padding: 1px 5px; border-radius: 3px; font-weight: bold; } /* whose */
+  .t4 { background: #FFF3E0; color: var(--amber); padding: 1px 5px; border-radius: 3px; font-weight: bold; } /* supposed to */
+  .t5 { background: #F2EBF7; color: #6B4C8A; padding: 1px 5px; border-radius: 3px; font-weight: bold; } /* discourse connectors */
+
+  .notice-box { background: #FFF8E8; border: 2px dashed var(--chalk-yellow-deep); border-radius: 10px; padding: 20px 26px; margin-bottom: 20px; }
+  .notice-box h3 { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 18px; margin: 0 0 12px; color: var(--chalk-yellow-deep); }
+  .notice-q { margin-bottom: 14px; padding-left: 28px; position: relative; }
+  .notice-q::before { content: "?"; position: absolute; left: 0; top: -2px; width: 20px; height: 20px; border-radius: 50%; background: var(--chalk-yellow-deep); color: var(--white); font-size: 13px; font-weight: bold; text-align: center; line-height: 20px; }
+  .reveal-btn { background: none; border: 1px solid var(--chalk-yellow-deep); color: var(--chalk-yellow-deep); border-radius: 5px; padding: 3px 10px; font-size: 12px; cursor: pointer; margin-top: 4px; }
+  .reveal-btn:hover { background: var(--chalk-yellow-deep); color: var(--white); }
+  .notice-reveal { margin-top: 6px; font-size: 14px; color: var(--ink-soft); font-style: italic; border-left: 3px solid var(--chalk-yellow-deep); padding-left: 10px; display: none; }
+
+  .grammar-box { background: var(--white); border-radius: 10px; padding: 24px 28px; margin-bottom: 22px; box-shadow: 0 2px 10px rgba(40,52,74,0.08); }
+  .grammar-box h3 { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 21px; margin: 0 0 6px; color: var(--coral-deep); }
+  .grammar-sub { font-size: 14px; color: var(--ink-soft); margin: 0 0 18px; font-style: italic; }
+  .example-row { display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start; margin-bottom: 10px; padding: 10px 14px; background: var(--paper); border-radius: 8px; }
+  .example-row .mark { font-weight: bold; color: var(--coral-deep); font-size: 18px; }
+  .example-row .gloss { display: block; font-size: 13px; color: var(--ink-soft); margin-top: 2px; font-style: italic; }
+  .example-row .src { display: block; font-size: 12px; color: var(--blue-deep); margin-top: 4px; }
+  .rule-pill { display: inline-block; background: var(--chalk-yellow); color: var(--ink); font-weight: bold; font-size: 13px; border-radius: 6px; padding: 4px 10px; margin: 4px 6px 4px 0; }
+
+  /* Relative clause comparison table */
+  .rc-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: 10px; overflow: hidden; margin: 16px 0; border: 1px solid var(--paper-line); }
+  .rc-col { padding: 18px 20px; }
+  .rc-col.def { background: #FBEDE9; }
+  .rc-col.non { background: var(--teal-light); }
+  .rc-col h4 { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 16px; margin: 0 0 10px; }
+  .rc-col.def h4 { color: var(--coral-deep); }
+  .rc-col.non h4 { color: var(--teal); }
+  .rc-col p { margin: 0 0 8px; font-size: 14.5px; }
+  .rc-col p:last-child { margin-bottom: 0; }
+
+  table.conj-table { width: 100%; border-collapse: collapse; margin: 14px 0 6px; font-size: 15px; }
+  table.conj-table th { background: var(--teal); color: var(--paper); padding: 8px 12px; text-align: left; font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 14px; }
+  table.conj-table td { padding: 8px 12px; border-bottom: 1px solid var(--paper-line); vertical-align: top; }
+  table.conj-table tr:nth-child(even) td { background: var(--paper); }
+
+  .connector-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+  .connector-card { background: var(--paper); border-radius: 8px; padding: 14px 16px; }
+  .connector-card .word { font-weight: bold; color: #6B4C8A; font-size: 16px; }
+  .connector-card .type { font-size: 11px; color: var(--ink-soft); text-transform: uppercase; margin-left: 6px; }
+  .connector-card .usage { font-size: 13px; color: var(--ink-soft); margin-top: 4px; font-style: italic; }
+  .connector-card .ex { font-size: 13.5px; margin-top: 6px; border-left: 3px solid var(--chalk-yellow-deep); padding-left: 10px; }
+
+  .vocab-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 14px 0; }
+  .vocab-card { background: var(--paper); border-radius: 8px; padding: 14px 16px; }
+  .vocab-card .word { font-weight: bold; color: var(--blue-deep); font-size: 16px; }
+  .vocab-card .pos { font-size: 11px; color: var(--ink-soft); text-transform: uppercase; margin-left: 6px; }
+  .vocab-card .def { font-size: 14px; margin-top: 4px; }
+  .vocab-card .ex { font-size: 13px; color: var(--ink-soft); margin-top: 4px; font-style: italic; }
+
+  /* Dialogue */
+  .dlg-block { background: var(--white); border-radius: 10px; overflow: hidden; border: 1px solid var(--paper-line); margin-bottom: 20px; }
+  .dlg-header { background: var(--teal); color: var(--white); padding: 12px 22px; display: flex; align-items: center; gap: 10px; }
+  .dlg-tag { font-size: 11px; font-weight: bold; letter-spacing: 0.07em; text-transform: uppercase; background: var(--chalk-yellow); color: var(--ink); border-radius: 4px; padding: 2px 8px; }
+  .dlg-turn { display: grid; grid-template-columns: 44px 1fr; gap: 12px; padding: 14px 22px; border-bottom: 1px solid var(--paper-line); }
+  .dlg-turn:last-child { border-bottom: none; }
+  .dlg-turn:nth-child(even) { background: var(--paper); }
+  .dlg-avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px; color: var(--white); flex-shrink: 0; }
+  .dlg-name { font-weight: bold; font-size: 13.5px; color: var(--ink); margin-bottom: 4px; }
+  .dlg-text { font-size: 15.5px; line-height: 1.65; margin: 0; }
+
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+  .chip { background: var(--paper); border: 1px solid var(--paper-line); border-radius: 999px; padding: 6px 14px; font-size: 14px; color: var(--ink); }
+
+  .exercise { background: var(--white); border-radius: 10px; padding: 22px 26px; margin-bottom: 18px; box-shadow: 0 2px 10px rgba(40,52,74,0.08); }
+  .exercise-label { display: inline-block; font-size: 12px; font-weight: bold; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white); background: var(--teal); border-radius: 5px; padding: 3px 10px; margin-bottom: 10px; }
+  .exercise h4 { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 17px; margin: 0 0 12px; color: var(--ink); }
+  .q-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+  .q-num { font-weight: bold; color: var(--coral-deep); min-width: 22px; }
+  .blank-input { border: none; border-bottom: 2px solid var(--chalk-yellow-deep); background: var(--paper); font-family: Calibri, sans-serif; font-size: 15px; padding: 4px 8px; width: 220px; color: var(--ink); }
+  .blank-input:focus { outline: none; border-color: var(--coral-deep); }
+  .check-btn { background: var(--chalk-yellow); color: var(--ink); border: none; border-radius: 6px; padding: 9px 20px; font-weight: bold; font-size: 14px; cursor: pointer; margin-top: 8px; }
+  .check-btn:hover { background: var(--chalk-yellow-deep); }
+  .feedback { margin-top: 12px; font-size: 14px; border-radius: 6px; padding: 10px 14px; display: none; }
+  .feedback.show { display: block; }
+  .feedback.good { background: #E3F0E5; color: var(--teal); }
+  .feedback.bad  { background: #F8E4DE; color: var(--coral-deep); }
+  .mc-opt { display: block; background: var(--paper); border: 2px solid var(--paper-line); border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; cursor: pointer; font-size: 15px; transition: border-color 0.15s ease; }
+  .mc-opt:hover { border-color: var(--chalk-yellow-deep); }
+  .mc-opt.correct-flash { border-color: var(--teal); background: var(--teal-light); }
+  .mc-opt.wrong-flash   { border-color: var(--coral-deep); background: #F8E4DE; }
+  .match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0; }
+  .match-item { background: var(--paper); border-radius: 8px; padding: 10px 14px; font-size: 14.5px; cursor: pointer; border: 2px solid transparent; transition: all 0.15s ease; }
+  .match-item:hover   { border-color: var(--chalk-yellow-deep); }
+  .match-item.selected{ border-color: var(--chalk-yellow-deep); background: #FFF8E0; }
+  .match-item.matched { border-color: var(--teal); background: var(--teal-light); cursor: default; }
+  .match-item.wrong-flash { border-color: var(--coral-deep); background: #F8E4DE; }
+
+  .activate-box { background: var(--chalk-yellow); border-radius: 10px; padding: 26px 28px; margin-bottom: 20px; }
+  .activate-box h3 { font-family: "Bookman Old Style", Cambria, Georgia, serif; margin: 0 0 12px; color: var(--ink); font-size: 19px; }
+  textarea.response-box { width: 100%; min-height: 120px; border-radius: 8px; border: 2px solid var(--chalk-yellow-deep); padding: 12px 14px; font-family: Calibri, sans-serif; font-size: 15px; resize: vertical; background: var(--white); color: var(--ink); }
+  textarea.response-box:focus { outline: none; border-color: var(--coral-deep); }
+  .word-count { font-size: 12px; color: var(--ink-soft); margin-top: 6px; text-align: right; }
+
+  .research-card { background: var(--teal-light); border-radius: 10px; padding: 22px 26px; margin-bottom: 18px; border: 1px solid #9DD4CC; }
+  .research-card h3 { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 18px; margin: 0 0 10px; color: var(--teal); }
+  .research-tag { display: inline-block; font-size: 11px; font-weight: bold; letter-spacing: 0.05em; text-transform: uppercase; background: var(--teal); color: var(--white); border-radius: 4px; padding: 3px 9px; margin-bottom: 10px; }
+  .link-suggestion { display: inline-block; background: var(--white); border: 1px solid #9DD4CC; border-radius: 6px; padding: 6px 12px; font-size: 13px; margin: 4px 6px 4px 0; color: var(--teal); }
+
+  table.ref-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 14px 0; overflow-x: auto; display: block; }
+  table.ref-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 13.5px; white-space: nowrap; }
+  table.ref-table td { padding: 10px 14px; border-bottom: 1px solid var(--paper-line); vertical-align: top; }
+  table.ref-table tr:nth-child(even) td { background: var(--paper); }
+
+  .wrapup { background: var(--ink); color: var(--paper); border-radius: 10px; padding: 24px 28px; margin-top: 40px; }
+  .wrapup h3 { font-family: "Bookman Old Style", Cambria, Georgia, serif; color: var(--chalk-yellow); margin: 0 0 10px; font-size: 18px; }
+  .wrapup li { margin-bottom: 6px; }
+
+  .progress-track { position: sticky; top: 0; height: 5px; background: var(--paper-line); z-index: 50; }
+  .progress-fill  { height: 100%; width: 0%; background: var(--teal); transition: width 0.1s ease; }
+
+  @media (max-width: 600px) {
+    h1.title { font-size: 25px; }
+    .rc-compare, .vocab-grid, .match-grid, .connector-grid { grid-template-columns: 1fr; }
+    .toc ol { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="masthead">
+  <div class="masthead-inner">
+    <p class="eyebrow">Grade 7 &middot; Week 4 &middot; Complete Reference &amp; Pre-Class Material</p>
+    <h1 class="title">Relative Clauses, Whose, Supposed To &amp; Discourse Coherence</h1>
+    <div class="masthead-meta">
+      <div>Level: <span>B2</span></div>
+      <div>Theme: <span>Festivities &amp; Accidents</span></div>
+      <div>Function: <span>Expressing Responsibilities &amp; Linking Ideas</span></div>
+      <div>Est. time: <span>65&ndash;75 min</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="toc">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#engage">1. Engage &mdash; fix the festival</a></li>
+      <li><a href="#context1">2. Context: the festival article</a></li>
+      <li><a href="#notice1">3. Notice &amp; discover (relative clauses)</a></li>
+      <li><a href="#study1">4. Study: defining relative clauses</a></li>
+      <li><a href="#study2">5. Study: non-defining relative clauses</a></li>
+      <li><a href="#study3">6. Study: whose</a></li>
+      <li><a href="#study4">7. Study: supposed to</a></li>
+      <li><a href="#context2">8. Context: the incident report</a></li>
+      <li><a href="#notice2">9. Notice &amp; discover (coherence)</a></li>
+      <li><a href="#study5">10. Study: discourse coherence devices</a></li>
+      <li><a href="#dialogue">11. Dialogue: at the festival</a></li>
+      <li><a href="#pronunciation">12. Pronunciation focus</a></li>
+      <li><a href="#vocab">13. Vocabulary: festivals &amp; accidents</a></li>
+      <li><a href="#exercises">14. Practice exercises</a></li>
+      <li><a href="#autonomy">15. Explore on your own</a></li>
+      <li><a href="#activate">16. A taste of Activate</a></li>
+      <li><a href="#reference">17. Quick-reference summary</a></li>
+    </ol>
+  </div>
+
+  <!-- ============ ENGAGE ============ -->
+  <div class="tab-section" id="engage">
+    <div class="tab-header">
+      <span class="tab-num">ENGAGE</span>
+      <h2 class="tab-title">Fix the festival announcement</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <h3>Before any grammar: something is wrong</h3>
+      <p>The text below is a fictional festival announcement that has been deliberately written with <strong>five errors</strong> &mdash; mostly in the relative clauses and connective language. Click each underlined phrase you think is wrong, then click <strong>Reveal all fixes</strong> to see the corrections. Don&rsquo;t worry if you&rsquo;re not sure yet &mdash; this is a discovery task, not a test.</p>
+    </div>
+
+    <div class="broken-text">
+      <h3>Harrowfield Festival &mdash; Volunteer Briefing</h3>
+      <p style="font-size:15.5px; line-height:1.8;">
+        Welcome to Harrowfield Summer Festival, <span class="error-span" data-fix="which is one of the largest outdoor events in the region">that is one of the largest outdoor events in the region</span>. You are volunteering this weekend as part of a team <span class="error-span" data-fix="whose members have all been trained in crowd management">who's members have all been trained in crowd management</span>.<br><br>
+        The main stage, <span class="error-span" data-fix="which was built only three years ago">that was built only three years ago</span>, is supposed to open at 6pm. There will be a safety briefing for volunteers, <span class="error-span" data-fix="which will be held in Tent B at 5pm">which it will be held in Tent B at 5pm</span>. The festival organisers, <span class="error-span" data-fix="who have arranged events like this for over a decade">which have arranged events like this for over a decade</span>, ask that all team members arrive by 4:30.<br><br>
+        Food vendors are <em>supposed to</em> keep their areas clean at all times. As a result, any vendor whose area is found untidy will receive a formal warning.
+      </p>
+      <p class="fix-count" id="fixCount">Click the underlined phrases you think are wrong.</p>
+      <button class="fix-btn" onclick="revealFixes()">Reveal all fixes</button>
+      <div class="fix-legend" id="fixLegend">
+        <p><strong>Error 1:</strong> <em>&ldquo;that is one of the largest&rdquo;</em> &rarr; <strong>&ldquo;which is one of the largest&rdquo;</strong> — non-defining relative clauses use <em>which</em>, never <em>that</em>.</p>
+        <p><strong>Error 2:</strong> <em>&ldquo;who&rsquo;s members&rdquo;</em> &rarr; <strong>&ldquo;whose members&rdquo;</strong> — <em>who&rsquo;s = who is</em>; possessive relative pronoun is <em>whose</em>.</p>
+        <p><strong>Error 3:</strong> <em>&ldquo;that was built&rdquo;</em> &rarr; <strong>&ldquo;which was built&rdquo;</strong> — same rule: non-defining clauses need <em>which</em>.</p>
+        <p><strong>Error 4:</strong> <em>&ldquo;which it will be held&rdquo;</em> &rarr; <strong>&ldquo;which will be held&rdquo;</strong> — the relative pronoun is already the subject; don&rsquo;t add a second subject pronoun.</p>
+        <p><strong>Error 5:</strong> <em>&ldquo;which have arranged&rdquo;</em> &rarr; <strong>&ldquo;who have arranged&rdquo;</strong> — use <em>who</em> for people, <em>which</em> for things.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>What this tells us</h3>
+      <p>The five errors above cover the key confusions in relative clauses at B2 level: <em>that</em> vs <em>which</em> in non-defining clauses, <em>who&rsquo;s</em> vs <em>whose</em>, <em>who</em> vs <em>which</em> for people vs things, and the doubled-subject trap. These are exactly what you&rsquo;ll study this week.</p>
+    </div>
+  </div>
+
+  <!-- ============ CONTEXT 1: FESTIVAL ARTICLE ============ -->
+  <div class="tab-section" id="context1">
+    <div class="tab-header study">
+      <span class="tab-num">CONTEXT</span>
+      <h2 class="tab-title">Read first: the festival article</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <p>Read this fictional arts journalism piece. Don&rsquo;t analyse the grammar yet &mdash; just answer: <strong>what made Harrowfield Festival controversial this year, and how did the organisers respond?</strong></p>
+    </div>
+
+    <div class="article-block">
+      <div class="article-header">
+        <span class="art-tag">Arts &amp; Culture</span>
+        <span class="art-title">The Regional Press &mdash; &ldquo;Harrowfield at Twenty: Bigger, Louder, and More Complicated&rdquo;</span>
+      </div>
+      <div class="article-body">
+        <p class="byline">By Clara Voss &middot; Arts correspondent</p>
+
+        <p>Harrowfield Summer Festival, <span class="t2">which celebrated its twentieth anniversary this year</span>, drew a record crowd of 45,000 visitors over three days. The event, <span class="t2">which was founded by two local musicians in a field outside the town</span>, has grown into one of the most anticipated weekends in the regional calendar.</p>
+
+        <p>The festival features a main stage <span class="t1">that can accommodate up to 12,000 standing spectators</span>, a cinema tent <span class="t1">where short films from emerging directors are screened throughout the day</span>, and a craft market <span class="t1">that has become a major draw in its own right</span>. This year&rsquo;s headliner, <span class="t3">whose recent album has spent six weeks at number one</span>, performed a ninety-minute set described by the crowd as genuinely electric.</p>
+
+        <p>But the weekend was not without incident. A local food vendor <span class="t3">whose stall was located near the east entrance</span> was asked to leave on Saturday afternoon after health inspectors found conditions <span class="t1">that did not meet the required standards</span>. The vendor, <span class="t2">who denied all allegations</span>, said he had not been properly briefed. &ldquo;I was <span class="t4">supposed to receive</span> a written copy of the hygiene checklist,&rdquo; he said. &ldquo;It was never sent.&rdquo;</p>
+
+        <p>Festival director Ama Osei, <span class="t2">whose background is in event management rather than music</span>, said the organisation had taken full responsibility. &ldquo;All vendors <span class="t4">were supposed to be briefed</span> by noon on Friday. There was a failure in our communication chain.&rdquo; <span class="t5">As a result</span>, the festival has announced a new vendor onboarding process for next year. <span class="t5">In contrast</span> to previous years, vendors will now attend a mandatory training session before the event begins.</p>
+
+        <p>Local residents, <span class="t2">who had previously complained about noise levels</span>, were more supportive this year. <span class="t5">On the other hand</span>, the increase in visitor numbers has raised new concerns about traffic and public transport. The council, <span class="t3">whose transport committee met last week</span>, is <span class="t4">supposed to publish</span> a new traffic management plan before December. <span class="t5">Consequently</span>, several local campaign groups are watching the situation closely.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Quick meaning check</h3>
+      <p>1. What was the original setting for Harrowfield Festival when it began?</p>
+      <p>2. What did the food vendor claim had never happened?</p>
+      <p>3. What specific change has the festival announced for next year?</p>
+    </div>
+  </div>
+
+  <!-- ============ NOTICE 1 ============ -->
+  <div class="tab-section" id="notice1">
+    <div class="tab-header study">
+      <span class="tab-num">NOTICE &amp; DISCOVER</span>
+      <h2 class="tab-title">Four types of clause &mdash; what do you notice?</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="notice-box">
+      <h3>Detective work: commas and clauses</h3>
+
+      <div class="notice-q">
+        Compare: <em>&ldquo;a main stage <strong>that can accommodate up to 12,000 spectators</strong>&rdquo;</em> vs <em>&ldquo;The event, <strong>which was founded by two musicians</strong>, has grown into&hellip;&rdquo;</em> Both are relative clauses, but only one has commas. What is different about what each clause does in the sentence? Could you remove either clause without losing the core meaning?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">The first clause (<em>that can accommodate</em>) tells you <em>which</em> stage — without it, you don't know which one. It is essential and cannot be removed. The second clause (<em>which was founded</em>) adds extra information about something already identified. Remove it and the sentence still works: "The event has grown into…" The commas signal the clause is optional extra information. This is the defining/non-defining distinction.</p>
+      </div>
+
+      <div class="notice-q">
+        The article uses three different relative pronouns: <em>that, which, who,</em> and <em>whose</em>. Look at what each one refers to. Can you identify the pattern for when each pronoun is used?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal"><em>Who</em> refers to people. <em>Which</em> refers to things, organisations, or events. <em>That</em> can refer to both — but only in defining clauses (no commas). <em>Whose</em> shows possession — it replaces "his/her/its/their" in the clause and can refer to people or things.</p>
+      </div>
+
+      <div class="notice-q">
+        The director says: <em>&ldquo;All vendors were supposed to be briefed by noon.&rdquo;</em> The vendor says: <em>&ldquo;I was supposed to receive a written copy.&rdquo;</em> Neither briefing happened. What does <em>supposed to</em> communicate here that <em>should</em> or <em>was expected to</em> doesn&rsquo;t fully capture?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal"><em>Supposed to</em> implies a specific obligation or arrangement that was <em>planned but not fulfilled</em>. "Was supposed to" always implies something didn't happen — there's a sense of failure or unmet expectation. "Should have" also implies this, but "was supposed to" specifically references a pre-existing plan or agreement, not just general moral duty.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ STUDY 1: DEFINING RC ============ -->
+  <div class="tab-section" id="study1">
+    <div class="tab-header study">
+      <span class="tab-num">STUDY</span>
+      <h2 class="tab-title">1. Defining relative clauses</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>Defining relative clauses: essential information</h3>
+      <p class="grammar-sub">A defining clause identifies <em>which</em> person or thing is being talked about. Remove it and the sentence loses its precise meaning. No commas.</p>
+
+      <div class="rc-compare">
+        <div class="rc-col def">
+          <h4>Defining &mdash; no commas</h4>
+          <p>The stage <strong>that can hold 12,000 people</strong> opens at 6pm.</p>
+          <p><em>Remove the clause: &ldquo;The stage opens at 6pm.&rdquo; — Which stage? We don&rsquo;t know.</em></p>
+          <p>The vendor <strong>who was found in violation</strong> was asked to leave.</p>
+          <p><em>The clause identifies which vendor specifically.</em></p>
+        </div>
+        <div class="rc-col non">
+          <h4>Non-defining — always has commas</h4>
+          <p>The festival, <strong>which celebrated its twentieth year</strong>, drew 45,000 visitors.</p>
+          <p><em>Remove: &ldquo;The festival drew 45,000 visitors.&rdquo; — still makes complete sense.</em></p>
+          <p>Ama Osei, <strong>who founded the event</strong>, took responsibility.</p>
+          <p><em>Ama is already named — the clause adds extra, non-essential detail.</em></p>
+        </div>
+      </div>
+
+      <table class="conj-table" style="margin-top:16px;">
+        <tr><th>Refers to</th><th>Defining pronoun</th><th>Example</th></tr>
+        <tr><td>A person</td><td>who / that</td><td>The volunteer <strong>who arrived late</strong> missed the briefing.</td></tr>
+        <tr><td>A thing / event / organisation</td><td>which / that</td><td>The tent <strong>that collapsed</strong> has been removed.</td></tr>
+        <tr><td>A place</td><td>where</td><td>The field <strong>where the market is held</strong> can hold 500 stalls.</td></tr>
+        <tr><td>A time</td><td>when</td><td>Friday <strong>when the gates open</strong> is usually the quietest day.</td></tr>
+      </table>
+
+      <p style="margin-top:14px; font-weight:bold; color:var(--teal);">Object relative clauses: the pronoun can be omitted</p>
+      <p>When the relative pronoun is the <em>object</em> of the clause (not the subject), it can be dropped in informal English:</p>
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt">The singer <strong>that the crowd loved most</strong> was the last act. <em>(pronoun = object, can drop)</em>
+          <span class="gloss">→ "The singer the crowd loved most" is also correct.</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt">The singer <strong>who performed last</strong> received a standing ovation. <em>(pronoun = subject, cannot drop)</em>
+          <span class="gloss">→ "The singer performed last" loses the relative clause entirely — wrong.</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ STUDY 2: NON-DEFINING RC ============ -->
+  <div class="tab-section" id="study2">
+    <div class="tab-header study">
+      <span class="tab-num">STUDY</span>
+      <h2 class="tab-title">2. Non-defining relative clauses</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>Non-defining relative clauses: extra information</h3>
+      <p class="grammar-sub">Adds background information about something already identified. Always enclosed in commas. <strong>Never uses <em>that</em></strong> &mdash; only <em>who, which, whose, where, when</em>.</p>
+
+      <span class="rule-pill">Always use commas</span>
+      <span class="rule-pill">Never use that</span>
+      <span class="rule-pill">Use who (people) / which (things)</span>
+      <span class="rule-pill">Can refer to a whole preceding clause</span>
+
+      <div class="example-row" style="margin-top:14px;">
+        <span class="mark">✓</span>
+        <span class="txt">The headliner, <strong>who played for ninety minutes</strong>, was the highlight of the festival.
+          <span class="gloss">Non-defining — the headliner is already identified. Commas essential.</span>
+          <span class="src">Found in: article, paragraph 2</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt">The festival sold out in three hours, <strong>which surprised even the organisers</strong>.
+          <span class="gloss"><em>Which</em> can refer to the entire previous clause, not just a noun.</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✗</span>
+        <span class="txt"><em>The festival, <strong>that</strong> celebrates its twentieth year, drew record crowds.</em>
+          <span class="gloss">Non-defining clauses never use <em>that</em>. Correct: <strong>which</strong> celebrates its twentieth year.</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✗</span>
+        <span class="txt"><em>Ama Osei, <strong>who it took responsibility</strong>, apologised publicly.</em>
+          <span class="gloss">Don&rsquo;t add a second subject pronoun (<em>it</em>). The relative pronoun <em>who</em> is already the subject.</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ STUDY 3: WHOSE ============ -->
+  <div class="tab-section" id="study3">
+    <div class="tab-header study">
+      <span class="tab-num">STUDY</span>
+      <h2 class="tab-title">3. Whose — the possessive relative</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>Whose: showing possession in relative clauses</h3>
+      <p class="grammar-sub"><em>Whose</em> is the possessive relative pronoun — it replaces <em>his / her / its / their</em> in the relative clause. It can refer to people <em>and</em> things. It is one of the most avoided and most misused structures at B2 level.</p>
+
+      <div class="rc-compare" style="margin-top:14px;">
+        <div class="rc-col def" style="background:#E9F0F5;">
+          <h4 style="color:var(--blue-deep);">Two sentences &rarr; one with <em>whose</em></h4>
+          <p>The headliner performed a long set. <strong>Her</strong> album is at number one.</p>
+          <p style="color:var(--teal); font-weight:bold;">→ The headliner, <strong>whose</strong> album is at number one, performed a long set.</p>
+          <p style="margin-top:10px;">The vendor was asked to leave. <strong>His</strong> stall was near the east entrance.</p>
+          <p style="color:var(--teal); font-weight:bold;">→ The vendor <strong>whose</strong> stall was near the east entrance was asked to leave.</p>
+        </div>
+        <div class="rc-col non" style="background:#FBEDE9;">
+          <h4 style="color:var(--coral-deep);">⚠ <em>whose</em> vs <em>who&rsquo;s</em></h4>
+          <p><strong>Whose</strong> = possessive relative pronoun</p>
+          <p><em>The team <strong>whose</strong> equipment failed was not at fault.</em></p>
+          <p style="margin-top:10px;"><strong>Who&rsquo;s</strong> = <strong>who is</strong> (contraction)</p>
+          <p><em>The volunteer <strong>who&rsquo;s</strong> running late needs to call ahead.</em></p>
+          <p style="margin-top:10px; font-size:13px; font-style:italic; color:var(--coral-deep);">These sound identical in speech — context and grammar decide the spelling.</p>
+        </div>
+      </div>
+
+      <p style="margin-top:16px; font-weight:bold; color:var(--teal);">Whose for things (often overlooked)</p>
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt">The council, <strong>whose transport committee met last week</strong>, will publish a report.
+          <span class="gloss"><em>Whose</em> refers to the council (an organisation/thing), not a person. This is perfectly correct.</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt">The tent, <strong>whose roof had been damaged in the storm</strong>, had to be closed.
+          <span class="gloss"><em>Whose</em> replaces <em>its</em> — referring to the tent. Correct and natural.</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">!</span>
+        <span class="txt"><em>The tent of which the roof had been damaged</em> had to be closed.
+          <span class="gloss">This is the formal/written alternative to <em>whose</em> for things. You may see it in formal documents but <em>whose</em> is more common and preferred in most B2 writing.</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ STUDY 4: SUPPOSED TO ============ -->
+  <div class="tab-section" id="study4">
+    <div class="tab-header study">
+      <span class="tab-num">STUDY</span>
+      <h2 class="tab-title">4. Supposed to: obligation, expectation &amp; failure</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>Supposed to: three uses</h3>
+      <p class="grammar-sub"><em>Supposed to</em> is one of the most useful and natural ways to express obligation, expectation, or the fact that something was planned but didn&rsquo;t happen. It often implies a degree of responsibility or accountability.</p>
+
+      <table class="conj-table">
+        <tr><th>Use</th><th>Form</th><th>What it means</th><th>Example</th></tr>
+        <tr>
+          <td><strong>Current obligation/expectation</strong></td>
+          <td>is/are supposed to + base verb</td>
+          <td>There is a rule, plan, or expectation that this should happen</td>
+          <td>Vendors <strong>are supposed to</strong> keep their areas clean.</td>
+        </tr>
+        <tr>
+          <td><strong>Prohibition</strong></td>
+          <td>is/are not supposed to + base verb</td>
+          <td>It is against the rules or expectation</td>
+          <td>Volunteers <strong>are not supposed to</strong> handle cash directly.</td>
+        </tr>
+        <tr>
+          <td><strong>Past failure / unmet plan</strong></td>
+          <td>was/were supposed to + base verb</td>
+          <td>Something was planned or expected but did NOT happen</td>
+          <td>I <strong>was supposed to receive</strong> the checklist. (But I didn&rsquo;t.)</td>
+        </tr>
+      </table>
+
+      <div class="example-row" style="margin-top:14px;">
+        <span class="mark">✓</span>
+        <span class="txt">The gates <strong>were supposed to open</strong> at 5pm, but there was a delay.
+          <span class="gloss">Past plan not fulfilled — the gates didn&rsquo;t open at 5pm.</span>
+          <span class="src">Found in: article, paragraph 3 (adapted)</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt">You <strong>are not supposed to</strong> bring glass bottles into the festival site.
+          <span class="gloss">Clear prohibition — it&rsquo;s against the rules.</span>
+        </span>
+      </div>
+
+      <div style="background:#FFF3E0; border-radius:8px; padding:14px 18px; margin-top:14px;">
+        <p style="font-weight:bold; color:var(--amber); margin:0 0 8px;">Supposed to vs Should: the key difference</p>
+        <p style="margin:0 0 8px; font-size:14.5px;"><em>Should</em> expresses the speaker&rsquo;s opinion about what is right or ideal. <em>Supposed to</em> refers to an external rule, plan, or arrangement — what was agreed, expected, or required.</p>
+        <p style="margin:0; font-size:14.5px;"><em>You <strong>should</strong> arrive early</em> = it would be a good idea (my opinion). <em>You <strong>are supposed to</strong> arrive by 4:30</em> = the organisers require it (external rule).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CONTEXT 2: INCIDENT REPORT ============ -->
+  <div class="tab-section" id="context2">
+    <div class="tab-header study">
+      <span class="tab-num">CONTEXT</span>
+      <h2 class="tab-title">Read next: the incident report</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <p>This is a fictional internal incident report from the festival. Read for meaning: <strong>what were the two distinct problems that led to the incident, and who was responsible for each?</strong></p>
+    </div>
+
+    <div class="report-block">
+      <div class="report-header">
+        <span class="report-title-txt">HARROWFIELD FESTIVAL &mdash; Internal Incident Report</span>
+        <span class="report-ref">Ref: HF-2024-08 &middot; Confidential</span>
+      </div>
+      <div class="report-body">
+        <p><strong>Incident summary:</strong> A crowd barrier in the east zone collapsed at approximately 21:40 on Saturday. Three attendees sustained minor injuries. No hospitalisations occurred.</p>
+
+        <p><strong>Contributing factors:</strong> The barriers, <span class="t3">whose structural integrity had not been assessed since the previous festival</span>, were found to be below the required load standard. <span class="t5">As a result</span>, the weight of the crowd in the east zone exceeded what the barriers were rated for.</p>
+
+        <p>The safety officer <span class="t1">who was responsible for equipment checks</span> confirmed that an inspection was scheduled for Friday morning. <span class="t5">On the other hand</span>, documentary evidence suggests the inspection was recorded as complete at a time <span class="t1">when the officer was confirmed to be off-site</span>. This represents a serious record-keeping failure.</p>
+
+        <p>The barriers <span class="t1">that were removed after the incident</span> will not be used at future events. Replacements, <span class="t2">which have already been ordered from a certified supplier</span>, will arrive within six weeks. <span class="t5">In contrast</span> to the previous procurement process, all new equipment will require a third-party inspection certificate before installation.</p>
+
+        <p>The festival team <span class="t3">whose communication with contractors was found to be inadequate</span> has been asked to review its protocols. <span class="t5">Consequently</span>, a new line of reporting has been established between the safety officer and the festival director. All future equipment suppliers <span class="t4">are supposed to</span> provide a full structural report no later than four weeks before the event. Suppliers <span class="t4">are not supposed to</span> begin installation until the report has been reviewed and signed off.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Quick meaning check</h3>
+      <p>1. What was wrong with the barriers, according to the report?</p>
+      <p>2. What is suspicious about the inspection record?</p>
+      <p>3. What new rule applies to all future equipment suppliers?</p>
+    </div>
+  </div>
+
+  <!-- ============ NOTICE 2 ============ -->
+  <div class="tab-section" id="notice2">
+    <div class="tab-header study">
+      <span class="tab-num">NOTICE &amp; DISCOVER</span>
+      <h2 class="tab-title">Discourse connectors &mdash; cause, contrast, and consequence</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="notice-box">
+      <h3>Detective work: what job does each connector do?</h3>
+
+      <div class="notice-q">
+        The report contains: <em>&ldquo;the barriers were below standard. <strong>As a result</strong>, the crowd weight exceeded the rating.&rdquo;</em> And: <em>&ldquo;a new line of reporting has been established. <strong>Consequently</strong>, all suppliers must provide a structural report.&rdquo;</em> Both connect two ideas. Are they expressing the same relationship? Could you swap them without any change in meaning?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">Yes — <em>as a result</em> and <em>consequently</em> both express consequence (cause → effect). They are largely interchangeable in meaning, though <em>consequently</em> is slightly more formal. Both come at the start of the new sentence and are followed by a comma.</p>
+      </div>
+
+      <div class="notice-q">
+        The report also says: <em>&ldquo;<strong>On the other hand</strong>, evidence suggests the inspection was false.&rdquo;</em> And: <em>&ldquo;<strong>In contrast</strong> to the previous procurement process, all new equipment will require certification.&rdquo;</em> These both express contrast — but what grammatical difference follows each one?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal"><em>On the other hand</em> is followed by a full clause (subject + verb). It presents a second perspective or counterpoint. <em>In contrast</em> can also be followed by a full clause — but it frequently introduces a prepositional phrase (<em>In contrast to the previous process</em>) before the main clause. The key difference is that <em>in contrast to</em> directly compares two specific things, while <em>on the other hand</em> simply shifts to a second viewpoint.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ STUDY 5: DISCOURSE COHERENCE ============ -->
+  <div class="tab-section" id="study5">
+    <div class="tab-header study">
+      <span class="tab-num">STUDY</span>
+      <h2 class="tab-title">5. Discourse coherence devices</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>Linking ideas across sentences and paragraphs</h3>
+      <p class="grammar-sub">These connectors signal the logical relationship between ideas. They are essential in formal writing &mdash; corpus research confirms B2 learners who use them correctly are rated as significantly more coherent writers.</p>
+
+      <div class="connector-grid">
+        <div class="connector-card">
+          <span class="word">as a result</span><span class="type">consequence</span>
+          <div class="usage">Starts a new sentence or clause. Signals that what follows is caused by what came before.</div>
+          <div class="ex">The inspection was missed. <strong>As a result</strong>, safety was compromised.</div>
+        </div>
+        <div class="connector-card">
+          <span class="word">consequently</span><span class="type">consequence (formal)</span>
+          <div class="usage">Slightly more formal than <em>as a result</em>. Often used in reports, official documents, and academic writing.</div>
+          <div class="ex">The record was falsified. <strong>Consequently</strong>, the officer has been suspended.</div>
+        </div>
+        <div class="connector-card">
+          <span class="word">on the other hand</span><span class="type">contrast / counterpoint</span>
+          <div class="usage">Presents a second, contrasting perspective or argument. Always followed by a full clause.</div>
+          <div class="ex">Visitor numbers were up. <strong>On the other hand</strong>, traffic problems have worsened.</div>
+        </div>
+        <div class="connector-card">
+          <span class="word">in contrast (to)</span><span class="type">contrast / comparison</span>
+          <div class="usage">Directly compares two specific things. Can be followed by a noun phrase (<em>in contrast to last year</em>) or a clause.</div>
+          <div class="ex"><strong>In contrast to</strong> last year&rsquo;s event, this festival was tightly managed.</div>
+        </div>
+      </div>
+
+      <p style="margin-top:16px; font-weight:bold; color:var(--teal);">Common placement errors</p>
+      <div class="example-row">
+        <span class="mark">✗</span>
+        <span class="txt"><em>The festival was successful, as a result the organisers were pleased.</em>
+          <span class="gloss">These connectors join separate sentences, not clauses within one sentence. Fix: <strong>The festival was successful. As a result, the organisers were pleased.</strong> Or use <em>so</em> within a single sentence.</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✗</span>
+        <span class="txt"><em>In contrast, last year's event was chaotic.</em> <em>(when no specific contrast has been established)</em>
+          <span class="gloss"><em>In contrast</em> must refer to something specific that came before. Make the comparison explicit: <em>This year was smoothly run. <strong>In contrast</strong>, last year&rsquo;s event was chaotic.</em></span>
+        </span>
+      </div>
+
+      <div style="background:var(--teal-light); border-radius:8px; padding:14px 18px; margin-top:14px;">
+        <p style="font-weight:bold; color:var(--teal); margin:0 0 8px;">How they fit together</p>
+        <p style="margin:0; font-size:14.5px;">Think of these four devices in two pairs: <strong>as a result / consequently</strong> = cause-and-effect; <strong>on the other hand / in contrast (to)</strong> = contrast. Knowing which pair to reach for — and then choosing between the two in each pair based on register — is what moves writing from B1 to B2.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ DIALOGUE ============ -->
+  <div class="tab-section" id="dialogue">
+    <div class="tab-header study">
+      <span class="tab-num">DIALOGUE</span>
+      <h2 class="tab-title">Hear it in conversation</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <p>Two festival volunteers talk at the end of their shift. Notice how naturally relative clauses, <em>whose</em>, <em>supposed to</em>, and discourse connectors appear in everyday speech.</p>
+    </div>
+
+    <div class="dlg-block">
+      <div class="dlg-header">
+        <span class="dlg-tag">Dialogue</span>
+        <span style="font-family:'Bookman Old Style',serif; font-size:16px; color:var(--white);">Two volunteers after their shift &mdash; Harrowfield Festival</span>
+      </div>
+
+      <div class="dlg-turn">
+        <div class="dlg-avatar" style="background:var(--coral-deep);">SA</div>
+        <div><div class="dlg-name">Sara</div>
+        <p class="dlg-text">What a day. Did you hear about the barrier thing?</p></div>
+      </div>
+
+      <div class="dlg-turn">
+        <div class="dlg-avatar" style="background:var(--blue-deep);">MI</div>
+        <div><div class="dlg-name">Miguel</div>
+        <p class="dlg-text">Yeah, one of the guys in my zone <span class="t1">who was working near the east entrance</span> told me. Apparently the barriers, <span class="t2">which weren&rsquo;t checked properly</span>, gave way. Three people got hurt.</p></div>
+      </div>
+
+      <div class="dlg-turn">
+        <div class="dlg-avatar" style="background:var(--coral-deep);">SA</div>
+        <div><div class="dlg-name">Sara</div>
+        <p class="dlg-text">That&rsquo;s awful. The safety officer <span class="t3">whose job it was to check those</span> is going to be in serious trouble. He <span class="t4">was supposed to sign off</span> the whole inspection by noon.</p></div>
+      </div>
+
+      <div class="dlg-turn">
+        <div class="dlg-avatar" style="background:var(--blue-deep);">MI</div>
+        <div><div class="dlg-name">Miguel</div>
+        <p class="dlg-text">To be fair, he <span class="t4">was supposed to have a full team</span> for that, but two people didn&rsquo;t show up. <span class="t5">On the other hand</span>, that doesn&rsquo;t explain how the inspection got recorded as complete when he was apparently off-site.</p></div>
+      </div>
+
+      <div class="dlg-turn">
+        <div class="dlg-avatar" style="background:var(--coral-deep);">SA</div>
+        <div><div class="dlg-name">Sara</div>
+        <p class="dlg-text">Exactly. <span class="t5">As a result</span> of all this, they&rsquo;ve already announced changes for next year. Suppliers <span class="t4">are supposed to</span> send a structural report four weeks before the event now.</p></div>
+      </div>
+
+      <div class="dlg-turn">
+        <div class="dlg-avatar" style="background:var(--blue-deep);">MI</div>
+        <div><div class="dlg-name">Miguel</div>
+        <p class="dlg-text">That&rsquo;s a good change. The people <span class="t1">who make these decisions</span> really <span class="t4">are not supposed to</span> wait until something goes wrong before they act. <span class="t5">In contrast to</span> the way they handled last year&rsquo;s issues, though, at least they&rsquo;re being transparent about it now.</p></div>
+      </div>
+    </div>
+
+    <div style="background:#FFF8E8; border-radius:8px; padding:14px 18px; margin-top:14px;">
+      <p style="font-weight:bold; color:var(--chalk-yellow-deep); margin:0 0 8px; font-size:14.5px;">Dialogue analysis &mdash; what to notice:</p>
+      <ul style="margin:0; padding-left:20px; font-size:14px; line-height:1.8;">
+        <li><em>Defining RC</em>: &ldquo;the guy <strong>who was working</strong> near the entrance&rdquo; — identifies which person (no commas).</li>
+        <li><em>Non-defining RC</em>: &ldquo;the barriers, <strong>which weren&rsquo;t checked</strong>, gave way&rdquo; — commas, adds information about barriers already identified.</li>
+        <li><em>Whose</em>: &ldquo;the officer <strong>whose job it was</strong> to check&rdquo; — possessive, replaces &ldquo;his job.&rdquo;</li>
+        <li><em>Supposed to</em> appears in three forms: past failure (<em>was supposed to sign off</em>), obligation (<em>are supposed to send</em>), prohibition (<em>are not supposed to wait</em>).</li>
+        <li>Discourse connectors in natural speech: <em>on the other hand</em> introduces a counterpoint; <em>as a result</em> connects cause to effect; <em>in contrast to</em> directly compares this year to last.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============ PRONUNCIATION ============ -->
+  <div class="tab-section" id="pronunciation">
+    <div class="tab-header study">
+      <span class="tab-num">PRONUNCIATION</span>
+      <h2 class="tab-title">Reducing relative clauses in speech</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>Spoken English: two reduction patterns</h3>
+      <p class="grammar-sub">In fast connected speech, relative clauses often sound very different from their written form. Two patterns are worth knowing.</p>
+      <table class="conj-table">
+        <tr><th>Written form</th><th>Natural spoken form</th><th>What reduces</th></tr>
+        <tr><td>the barrier that was checked</td><td>the barrier <strong>checked</strong> <span style="font-size:12px; color:var(--ink-soft);">/ðə ˈbæriə tʃɛkt/</span></td><td>Reduced relative: <em>that was</em> dropped entirely</td></tr>
+        <tr><td>the person who is responsible</td><td>the person <strong>responsible</strong></td><td>Adjective phrase replaces relative clause</td></tr>
+        <tr><td>supposed to</td><td><span style="font-family:Courier New;">/səˈpəʊstə/</span> — &ldquo;suh-pohz-tuh&rdquo;</td><td><em>to</em> reduces to /tə/; final /d/ in &ldquo;supposed&rdquo; merges with /t/</td></tr>
+      </table>
+      <p style="margin-top:12px; font-size:14.5px;">The third pattern is the most important: learners often say <em>/səˈpəʊzd tuː/</em> (both syllables full) — but native speakers say <em>/səˈpəʊstə/</em> in normal pace. Practise the reduced form.</p>
+    </div>
+  </div>
+
+  <!-- ============ VOCABULARY ============ -->
+  <div class="tab-section" id="vocab">
+    <div class="tab-header vocab">
+      <span class="tab-num">VOCABULARY</span>
+      <h2 class="tab-title">Festivals &amp; accident-related vocabulary</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <h3>1. Festivals &amp; events</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card"><span class="word">a vendor</span><span class="pos">noun</span><div class="def">a person or company that sells goods or food, typically at a public event</div><div class="ex">"The vendors whose stalls were near the stage had the most foot traffic."</div></div>
+        <div class="vocab-card"><span class="word">a spectator</span><span class="pos">noun</span><div class="def">a person who watches an event without participating</div><div class="ex">"The main stage can accommodate 12,000 spectators."</div></div>
+        <div class="vocab-card"><span class="word">a headliner</span><span class="pos">noun</span><div class="def">the main or most prominent performer at an event</div><div class="ex">"The headliner, whose album went to number one, closed the festival."</div></div>
+        <div class="vocab-card"><span class="word">crowd management</span><span class="pos">noun phrase</span><div class="def">the planning and control of large groups of people at public events for safety</div><div class="ex">"Volunteers whose training included crowd management were assigned to the busiest zones."</div></div>
+        <div class="vocab-card"><span class="word">to draw (a crowd)</span><span class="pos">verb</span><div class="def">to attract people; an event that draws large numbers is very popular</div><div class="ex">"The craft market, which started small, now draws thousands of visitors."</div></div>
+        <div class="vocab-card"><span class="word">anticipated</span><span class="pos">adjective</span><div class="def">looked forward to; expected with excitement</div><div class="ex">"The festival is one of the most anticipated events in the regional calendar."</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>2. Accidents &amp; incidents</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card"><span class="word">to sustain an injury</span><span class="pos">phrase</span><div class="def">to suffer a physical injury; a formal/written alternative to "get hurt"</div><div class="ex">"Three attendees sustained minor injuries when the barrier collapsed."</div></div>
+        <div class="vocab-card"><span class="word">a barrier</span><span class="pos">noun</span><div class="def">a fence, wall, or obstacle placed to control crowds or separate areas</div><div class="ex">"The barriers whose structural integrity had not been assessed were found defective."</div></div>
+        <div class="vocab-card"><span class="word">structural integrity</span><span class="pos">noun phrase</span><div class="def">the strength and stability of a physical structure; whether it will hold safely</div><div class="ex">"As a result of the inspection failure, the structural integrity of the barriers was unknown."</div></div>
+        <div class="vocab-card"><span class="word">to investigate</span><span class="pos">verb</span><div class="def">to carry out a formal inquiry to find out what happened</div><div class="ex">"The council whose safety committee investigated the incident published its report last week."</div></div>
+        <div class="vocab-card"><span class="word">negligence</span><span class="pos">noun</span><div class="def">a failure to take proper care or follow required procedures</div><div class="ex">"The report concluded that negligence, not equipment failure, was the primary cause."</div></div>
+        <div class="vocab-card"><span class="word">a protocol</span><span class="pos">noun</span><div class="def">an established set of rules or procedures for a specific situation</div><div class="ex">"Consequently, a new safety protocol has been introduced for all future events."</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>3. Responsibilities &amp; obligations</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card"><span class="word">accountable</span><span class="pos">adjective</span><div class="def">required to justify or explain your actions to others; responsible</div><div class="ex">"The officer whose records were falsified will be held accountable."</div></div>
+        <div class="vocab-card"><span class="word">to comply (with)</span><span class="pos">verb</span><div class="def">to act in accordance with rules, instructions, or a request</div><div class="ex">"Suppliers are supposed to comply with safety standards before installation."</div></div>
+        <div class="vocab-card"><span class="word">mandatory</span><span class="pos">adjective</span><div class="def">required by law or rules; not optional</div><div class="ex">"In contrast to before, training is now mandatory for all food vendors."</div></div>
+        <div class="vocab-card"><span class="word">a briefing</span><span class="pos">noun</span><div class="def">a meeting or document that gives people the information they need before an event or task</div><div class="ex">"Volunteers were supposed to receive a safety briefing on arrival."</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ EXERCISES ============ -->
+  <div class="tab-section" id="exercises">
+    <div class="tab-header study">
+      <span class="tab-num">PRACTICE</span>
+      <h2 class="tab-title">Now practise what you&rsquo;ve discovered</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 1 &middot; Relative pronouns</span>
+      <h4>Fill the gap with who, which, whose, where, or that (more than one answer may be possible).</h4>
+      <div class="q-row"><span class="q-num">1.</span><span class="q-text">The vendor ______ stall failed the inspection was asked to leave immediately.</span><input type="text" class="blank-input" data-answer="whose" placeholder="who / which / whose"></div>
+      <div class="q-row"><span class="q-num">2.</span><span class="q-text">The festival, ______ started twenty years ago, now attracts 45,000 visitors.</span><input type="text" class="blank-input" data-answer="which" placeholder="who / which / that"></div>
+      <div class="q-row"><span class="q-num">3.</span><span class="q-text">The field ______ the market is held can accommodate over 500 stalls.</span><input type="text" class="blank-input" data-answer="where" placeholder="who / which / where"></div>
+      <div class="q-row"><span class="q-num">4.</span><span class="q-text">The barriers ______ were removed after the incident will not be used again.</span><input type="text" class="blank-input" data-answer="that,which" placeholder="who / which / that"></div>
+      <button class="check-btn" onclick="checkExercise(1)">Check my answers</button>
+      <div class="feedback" id="feedback1"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 2 &middot; Defining vs non-defining</span>
+      <h4>Add commas where needed. If no commas are needed, write "no change".</h4>
+      <div class="q-row"><span class="q-num">1.</span><span class="q-text">The safety officer who had been working at the festival for five years resigned the following week.</span><input type="text" class="blank-input" data-answer="the safety officer, who had been working at the festival for five years, resigned the following week." placeholder="add commas or 'no change'"></div>
+      <div class="q-row"><span class="q-num">2.</span><span class="q-text">The barrier that collapsed had not been checked for two years.</span><input type="text" class="blank-input" data-answer="no change" placeholder="add commas or 'no change'"></div>
+      <div class="q-row"><span class="q-num">3.</span><span class="q-text">Harrowfield Festival which was founded in 2004 has grown significantly.</span><input type="text" class="blank-input" data-answer="harrowfield festival, which was founded in 2004, has grown significantly." placeholder="add commas or 'no change'"></div>
+      <button class="check-btn" onclick="checkExercise(2)">Check my answers</button>
+      <div class="feedback" id="feedback2"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 3 &middot; Supposed to</span>
+      <h4>Complete with the correct form of <em>supposed to</em>. Choose from: is / are / was / were / not supposed to.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span class="q-text">The council ______ publish its transport report by December. (current obligation)</span><input type="text" class="blank-input" data-answer="is supposed to" placeholder="your answer"></div>
+      <div class="q-row"><span class="q-num">2.</span><span class="q-text">Volunteers ______ handle cash payments directly. (prohibition)</span><input type="text" class="blank-input" data-answer="are not supposed to" placeholder="your answer"></div>
+      <div class="q-row"><span class="q-num">3.</span><span class="q-text">I ______ receive the checklist by email, but it was never sent. (past failure)</span><input type="text" class="blank-input" data-answer="was supposed to" placeholder="your answer"></div>
+      <button class="check-btn" onclick="checkExercise(3)">Check my answers</button>
+      <div class="feedback" id="feedback3"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 4 &middot; Discourse connectors</span>
+      <h4>Choose the best connector for each gap: <em>as a result, consequently, on the other hand, in contrast to</em>.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span class="q-text">The inspection was falsified. ______, the barriers were installed without proper certification.</span><input type="text" class="blank-input" data-answer="as a result,consequently" placeholder="your answer"></div>
+      <div class="q-row"><span class="q-num">2.</span><span class="q-text">The crowd figures were record-breaking. ______, traffic and parking were catastrophic.</span><input type="text" class="blank-input" data-answer="on the other hand" placeholder="your answer"></div>
+      <div class="q-row"><span class="q-num">3.</span><span class="q-text">______ previous years, all new vendors must now attend a mandatory training session.</span><input type="text" class="blank-input" data-answer="in contrast to" placeholder="your answer"></div>
+      <button class="check-btn" onclick="checkExercise(4)">Check my answers</button>
+      <div class="feedback" id="feedback4"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 5 &middot; Vocabulary matching</span>
+      <h4>Click a word, then its matching definition.</h4>
+      <div class="match-grid" id="matchGrid">
+        <div class="match-item" data-pair="1">a vendor</div>
+        <div class="match-item" data-pair="3">failure to follow required procedures</div>
+        <div class="match-item" data-pair="2">mandatory</div>
+        <div class="match-item" data-pair="4">an established set of rules for a situation</div>
+        <div class="match-item" data-pair="3">negligence</div>
+        <div class="match-item" data-pair="1">a person who sells goods at an event</div>
+        <div class="match-item" data-pair="4">a protocol</div>
+        <div class="match-item" data-pair="2">required by rules; not optional</div>
+      </div>
+      <div class="feedback" id="feedback5"></div>
+    </div>
+  </div>
+
+  <!-- ============ AUTONOMY ============ -->
+  <div class="tab-section" id="autonomy">
+    <div class="tab-header autonomy">
+      <span class="tab-num">EXPLORE ON YOUR OWN</span>
+      <h2 class="tab-title">Go further: research tasks</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="research-card">
+      <span class="research-tag">Language in the wild</span>
+      <h3>Find 3 relative clauses in an English news article</h3>
+      <p>Find a news article (any topic) and locate three relative clauses. For each one:</p>
+      <ul>
+        <li>Decide: defining or non-defining? How do you know?</li>
+        <li>Identify the relative pronoun and what it refers to.</li>
+        <li>Could it be rewritten as two separate sentences? What would be lost?</li>
+      </ul>
+      <span class="link-suggestion">Try: BBC News, The Guardian, or Reuters — their reporting is rich in relative clauses</span>
+    </div>
+
+    <div class="research-card">
+      <span class="research-tag">Writing extension</span>
+      <h3>Write a short paragraph about a public event using all four structures</h3>
+      <p>Think of any real or imagined public event (festival, match, ceremony, parade). Write 5&ndash;6 sentences using at least one defining RC, one non-defining RC with <em>whose</em>, one <em>supposed to</em>, and one discourse connector.</p>
+      <span class="link-suggestion">Bring your paragraph to class — it will be the starting point for peer marking in Session 2</span>
+    </div>
+  </div>
+
+  <!-- ============ LIGHT ACTIVATE ============ -->
+  <div class="tab-section" id="activate">
+    <div class="tab-header activate">
+      <span class="tab-num">A TASTE OF ACTIVATE</span>
+      <h2 class="tab-title">Try it yourself &mdash; before class</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="activate-box">
+      <h3>Mini-task: the responsible thing to do</h3>
+      <p>Think of a real or fictional organisation (a company, a school, a city council, a festival). Write <strong>5&ndash;6 sentences</strong> describing what it is and what went wrong, using at least:</p>
+      <ul style="margin:10px 0 14px; padding-left:20px;">
+        <li>one defining relative clause</li>
+        <li>one non-defining relative clause (with commas)</li>
+        <li>one <em>whose</em> clause</li>
+        <li>one <em>supposed to / was supposed to</em> sentence</li>
+        <li>one discourse connector (<em>as a result / consequently / on the other hand / in contrast to</em>)</li>
+      </ul>
+      <textarea class="response-box" id="freeWriting" placeholder="Write your 5–6 sentences here..."></textarea>
+      <div class="word-count" id="wordCount">0 words</div>
+    </div>
+
+    <div class="card">
+      <h3>Bring this to class</h3>
+      <p>You&rsquo;ll share this in Session 2, where your partner will check all five structures are present and correctly used before giving feedback.</p>
+    </div>
+  </div>
+
+  <!-- ============ QUICK REFERENCE ============ -->
+  <div class="tab-section" id="reference">
+    <div class="tab-header vocab">
+      <span class="tab-num">QUICK REFERENCE</span>
+      <h2 class="tab-title">Everything from this week, on one page</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <table class="ref-table">
+        <tr><th>Structure</th><th>Form</th><th>Key rules</th><th>Example</th></tr>
+        <tr><td><strong>Defining RC</strong></td><td>who / which / that / where / when + clause</td><td>No commas; that is allowed; pronoun can be dropped if object</td><td>The tent that collapsed has been removed.</td></tr>
+        <tr><td><strong>Non-defining RC</strong></td><td>, who / , which / , whose + clause ,</td><td>Always commas; never that; who=people, which=things</td><td>The festival, which started in 2004, drew 45,000 visitors.</td></tr>
+        <tr><td><strong>Whose</strong></td><td>noun + whose + noun</td><td>Possessive relative; replaces his/her/its/their; used for people AND things</td><td>The officer whose records were falsified resigned.</td></tr>
+        <tr><td><strong>Supposed to</strong></td><td>is/are/was/were (not) supposed to + base verb</td><td>Obligation (present); prohibition (not); past failure (was/were)</td><td>She was supposed to arrive at 5pm.</td></tr>
+        <tr><td><strong>As a result / Consequently</strong></td><td>Sentence. Connector, new clause.</td><td>Consequence: cause → effect; consequently is more formal</td><td>The barriers failed. As a result, the zone was closed.</td></tr>
+        <tr><td><strong>On the other hand</strong></td><td>Sentence. On the other hand, clause.</td><td>Contrast: second viewpoint or counterpoint</td><td>Attendance was up. On the other hand, traffic was terrible.</td></tr>
+        <tr><td><strong>In contrast (to)</strong></td><td>In contrast to + noun phrase, clause.</td><td>Direct comparison between two specific things</td><td>In contrast to last year, this event was tightly controlled.</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Vocabulary you should now recognise</h3>
+      <div class="chip-row">
+        <span class="chip">vendor</span><span class="chip">spectator</span><span class="chip">headliner</span>
+        <span class="chip">crowd management</span><span class="chip">draw (a crowd)</span><span class="chip">anticipated</span>
+        <span class="chip">sustain an injury</span><span class="chip">barrier</span><span class="chip">structural integrity</span>
+        <span class="chip">investigate</span><span class="chip">negligence</span><span class="chip">protocol</span>
+        <span class="chip">accountable</span><span class="chip">comply</span><span class="chip">mandatory</span><span class="chip">briefing</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapup">
+    <h3>Before Session 1, make sure you can&hellip;</h3>
+    <ul>
+      <li>Explain the difference between defining and non-defining relative clauses</li>
+      <li>Know which pronouns are allowed in each type (including: <em>that</em> is not allowed in non-defining clauses)</li>
+      <li>Use <em>whose</em> correctly for both people and things</li>
+      <li>Distinguish <em>whose</em> from <em>who&rsquo;s</em> in writing</li>
+      <li>Use <em>supposed to</em> for obligation, prohibition, and past failure</li>
+      <li>Choose correctly between <em>as a result</em> and <em>consequently</em> (when to use each register)</li>
+      <li>Distinguish <em>on the other hand</em> (contrast/counterpoint) from <em>in contrast to</em> (direct comparison)</li>
+      <li>Pronounce <em>supposed to</em> naturally as /səˈpəʊstə/</li>
+      <li>Have your 5&ndash;6 sentence mini-task ready to share</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    document.getElementById('progressFill').style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+  });
+
+  // Fix-the-festival engage
+  let clickedCount = 0;
+  document.querySelectorAll('.error-span').forEach(span => {
+    span.addEventListener('click', () => {
+      if (!span.classList.contains('revealed')) {
+        clickedCount++;
+        span.classList.add('selected-err');
+        document.getElementById('fixCount').textContent = `You've flagged ${clickedCount} error${clickedCount !== 1 ? 's' : ''}. There are 5 in total.`;
+      }
+    });
+  });
+  function revealFixes() {
+    document.querySelectorAll('.error-span').forEach(span => {
+      span.classList.add('revealed');
+      span.textContent = span.dataset.fix;
+    });
+    document.getElementById('fixLegend').classList.add('show');
+    document.getElementById('fixCount').textContent = 'All 5 errors revealed. Read the explanations below.';
+  }
+
+  // Exercises
+  function checkExercise(num) {
+    const ex = [...document.querySelectorAll('.exercise')].find(e => {
+      const btn = e.querySelector('.check-btn');
+      return btn && (btn.getAttribute('onclick') === `checkExercise(${num})` || btn.getAttribute('onclick') === `checkExercise('${num}')`);
+    });
+    const inputs = ex.querySelectorAll('.blank-input');
+    let correct = 0;
+    inputs.forEach(input => {
+      const answers = input.dataset.answer.split(',').map(a => a.trim().toLowerCase());
+      const val = input.value.trim().toLowerCase();
+      if (answers.includes(val)) {
+        correct++; input.style.borderColor = '#1A6B5C';
+      } else { input.style.borderColor = '#B14B34'; }
+    });
+    const fb = document.getElementById('feedback' + num);
+    fb.classList.add('show');
+    if (correct === inputs.length) {
+      fb.classList.remove('bad'); fb.classList.add('good');
+      fb.textContent = `All ${inputs.length} correct! Great work.`;
+    } else {
+      fb.classList.remove('good'); fb.classList.add('bad');
+      fb.textContent = `${correct} of ${inputs.length} correct. Check the red-bordered answers and try again.`;
+    }
+  }
+
+  function setupMatching(gridId, pairAttr, feedbackId, total) {
+    let first = null, count = 0;
+    document.getElementById(gridId).querySelectorAll('.match-item').forEach(item => {
+      item.addEventListener('click', () => {
+        if (item.classList.contains('matched')) return;
+        if (!first) { first = item; item.classList.add('selected'); }
+        else if (first === item) { first.classList.remove('selected'); first = null; }
+        else {
+          if (first.dataset[pairAttr] === item.dataset[pairAttr]) {
+            first.classList.remove('selected'); first.classList.add('matched');
+            item.classList.add('matched'); count++; first = null;
+            const fb = document.getElementById(feedbackId);
+            fb.classList.add('show'); fb.classList.remove('bad'); fb.classList.add('good');
+            fb.textContent = count === total ? 'All matched! Excellent vocabulary work.' : `${count} of ${total} matched. Keep going!`;
+          } else {
+            const w = item;
+            w.classList.add('wrong-flash');
+            setTimeout(() => { first.classList.remove('selected'); w.classList.remove('wrong-flash'); first = null; }, 500);
+          }
+        }
+      });
+    });
+  }
+  setupMatching('matchGrid', 'pair', 'feedback5', 4);
+
+  document.getElementById('freeWriting').addEventListener('input', e => {
+    const words = e.target.value.trim().split(/\s+/).filter(w => w.length > 0);
+    document.getElementById('wordCount').textContent = (e.target.value.trim() === '' ? 0 : words.length) + ' words';
+  });
+</script>
+</body>
+</html>

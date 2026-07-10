@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 5 · Week 1 · Going to, Future Plans & Movies</title>
+<style>
+  :root {
+    --ink: #28344A;
+    --ink-soft: #4A5775;
+    --paper: #F7F3E8;
+    --paper-line: #E3DCC8;
+    --chalk-green: #1F3A2E;
+    --chalk-green-light: #2E5240;
+    --chalk-yellow: #E8B84B;
+    --chalk-yellow-deep: #C99423;
+    --coral: #D8694F;
+    --coral-deep: #B14B34;
+    --blue: #3D6E8C;
+    --blue-deep: #285067;
+    --purple: #6B4C8A;
+    --purple-light: #F2EBF7;
+    --white: #FFFFFF;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper);
+    background-image: repeating-linear-gradient(transparent, transparent 35px, var(--paper-line) 35px, var(--paper-line) 36px);
+    color: var(--ink); font-family: Calibri, "Segoe UI", Arial, sans-serif; font-size: 17px; line-height: 1.65;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px 80px; }
+
+  /* PROGRESS */
+  .progress-track { position: sticky; top: 0; height: 5px; background: var(--paper-line); z-index: 50; }
+  .progress-fill { height: 100%; width: 0%; background: var(--coral); transition: width 0.1s ease; }
+
+  /* MASTHEAD */
+  .masthead { background: var(--chalk-green); color: var(--paper); margin: 0 -24px 0; padding: 38px 24px 30px; position: relative; overflow: hidden; }
+  .masthead::after { content: ""; position: absolute; right: -60px; top: -60px; width: 220px; height: 220px; border-radius: 50%; background: var(--chalk-green-light); opacity: 0.5; }
+  .masthead::before { content: "Going to"; position: absolute; right: 40px; bottom: -10px; font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 110px; font-weight: bold; color: rgba(255,255,255,0.04); white-space: nowrap; pointer-events: none; }
+  .masthead-inner { max-width: 872px; margin: 0 auto; position: relative; z-index: 1; }
+  .eyebrow { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--chalk-yellow); margin: 0 0 10px; }
+  h1.title { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 36px; line-height: 1.2; margin: 0 0 14px; max-width: 640px; }
+  .masthead-meta { display: flex; gap: 24px; flex-wrap: wrap; font-size: 14px; color: #D9E5DC; margin-top: 16px; }
+  .masthead-meta span { font-weight: bold; color: var(--paper); }
+
+  /* TOC */
+  .toc { background: var(--white); border-radius: 10px; margin-top: -18px; padding: 20px 26px; box-shadow: 0 4px 16px rgba(40,52,74,0.12); position: relative; z-index: 2; }
+  .toc h2 { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 16px; margin: 0 0 10px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; }
+  .toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 30px; font-size: 14px; }
+  .toc li { margin-bottom: 6px; }
+  .toc a { color: var(--coral-deep); text-decoration: none; font-weight: bold; }
+  .toc a:hover { text-decoration: underline; }
+
+  /* TAB SECTIONS */
+  .tab-section { margin-top: 46px; }
+  .tab-header { display: flex; align-items: center; gap: 14px; margin-bottom: 4px; flex-wrap: wrap; }
+  .tab-num { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 14px; font-weight: bold; color: var(--white); background: var(--chalk-green); border-radius: 6px; padding: 6px 14px; white-space: nowrap; }
+  .tab-header.study .tab-num { background: var(--coral-deep); }
+  .tab-header.vocab .tab-num { background: var(--blue-deep); }
+  .tab-header.exercise .tab-num { background: var(--chalk-yellow-deep); color: var(--ink); }
+  .tab-header.autonomy .tab-num { background: var(--purple); }
+  .tab-header.activate .tab-num { background: #2A5040; }
+  h2.tab-title { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 24px; margin: 0; color: var(--ink); }
+  .tab-rule { border: none; border-top: 2px solid var(--paper-line); margin: 14px 0 22px; }
+
+  /* CARDS */
+  .card { background: var(--white); border-radius: 10px; padding: 22px 26px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(40,52,74,0.08); }
+  .card h3 { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 19px; margin: 0 0 10px; color: var(--chalk-green); }
+  .card p { margin: 0 0 10px; } .card p:last-child { margin-bottom: 0; }
+
+  /* HOOK BOX */
+  .hook-box { background: var(--chalk-green); color: var(--paper); border-radius: 10px; padding: 26px 28px; margin-bottom: 20px; }
+  .hook-box h3 { font-family: "Bookman Old Style", Cambria, Georgia, serif; margin: 0 0 12px; color: var(--chalk-yellow); font-size: 19px; }
+  .hook-box p { margin: 0 0 10px; color: #E7EFE9; font-size: 16px; }
+  .hook-box p:last-child { margin-bottom: 0; }
+
+  /* T/F */
+  .tf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+  .tf-card { background: var(--chalk-green-light); border-radius: 8px; padding: 16px 18px; }
+  .tf-statement { margin: 0 0 12px; font-size: 14.5px; color: var(--paper); }
+  .tf-buttons { display: flex; gap: 10px; }
+  .tf-btn { flex: 1; border: 2px solid var(--chalk-yellow); color: var(--chalk-yellow); background: transparent; border-radius: 6px; padding: 7px 0; font-size: 13px; font-weight: bold; cursor: pointer; transition: all 0.15s ease; font-family: Calibri, sans-serif; }
+  .tf-btn:hover { background: var(--chalk-yellow); color: var(--chalk-green); }
+  .tf-btn.correct-guess { background: #4F7A5E; border-color: #4F7A5E; color: var(--white); }
+  .tf-btn.wrong-guess { background: var(--coral); border-color: var(--coral); color: var(--white); }
+  .tf-card.answered .tf-btn { cursor: default; pointer-events: none; }
+  .tf-reveal { display: none; margin: 10px 0 0; font-size: 13px; color: #D9E5DC; font-style: italic; border-left: 3px solid var(--chalk-yellow); padding-left: 10px; }
+  .tf-card.answered .tf-reveal { display: block; }
+
+  /* REALIA */
+  .realia { background: var(--white); border-radius: 10px; padding: 0; margin-bottom: 20px; box-shadow: 0 4px 16px rgba(40,52,74,0.12); overflow: hidden; border: 1px solid var(--paper-line); }
+  .realia-header { background: var(--blue-deep); color: var(--white); padding: 14px 26px; display: flex; align-items: center; gap: 12px; }
+  .realia-header.green-hd { background: var(--chalk-green); }
+  .realia-header.coral-hd { background: var(--coral-deep); }
+  .realia-header.yellow-hd { background: var(--chalk-yellow-deep); }
+  .realia-header .doctype { font-size: 11px; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; background: rgba(255,255,255,0.2); border-radius: 4px; padding: 3px 9px; }
+  .realia-header .docname { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 17px; }
+  .realia-body { padding: 22px 28px; font-size: 15.5px; line-height: 1.75; }
+  .realia-body p { margin: 0 0 12px; } .realia-body p:last-child { margin-bottom: 0; }
+
+  /* CHAT THREAD */
+  .chat-thread { padding: 0; }
+  .chat-msg { padding: 12px 24px; display: flex; gap: 12px; border-bottom: 1px solid var(--paper-line); align-items: flex-start; }
+  .chat-msg:last-child { border-bottom: none; }
+  .chat-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--chalk-yellow); color: var(--ink); display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+  .chat-msg.b .chat-avatar { background: var(--blue-deep); color: var(--white); }
+  .chat-msg.c .chat-avatar { background: var(--coral-deep); color: var(--white); }
+  .chat-msg.d .chat-avatar { background: var(--purple); color: var(--white); }
+  .chat-name { font-weight: bold; font-size: 13.5px; color: var(--ink); }
+  .chat-time { font-size: 11px; color: var(--ink-soft); margin-left: 6px; }
+  .chat-text { margin-top: 3px; font-size: 15.5px; line-height: 1.6; }
+  .hl1 { background: #FBEDE9; color: var(--coral-deep); padding: 1px 4px; border-radius: 3px; font-weight: bold; }
+  .hl2 { background: #E9F0F5; color: var(--blue-deep); padding: 1px 4px; border-radius: 3px; font-weight: bold; }
+  .hl3 { background: #FDF4E0; color: var(--chalk-yellow-deep); padding: 1px 4px; border-radius: 3px; font-weight: bold; }
+
+  /* NOTICE BOX */
+  .notice-box { background: #FFF8E8; border: 2px dashed var(--chalk-yellow-deep); border-radius: 10px; padding: 20px 26px; margin-bottom: 20px; }
+  .notice-box h3 { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 18px; margin: 0 0 12px; color: var(--chalk-yellow-deep); }
+  .notice-q { margin-bottom: 14px; padding-left: 30px; position: relative; }
+  .notice-q::before { content: "?"; position: absolute; left: 0; top: -2px; width: 20px; height: 20px; border-radius: 50%; background: var(--chalk-yellow-deep); color: var(--white); font-size: 13px; font-weight: bold; text-align: center; line-height: 20px; }
+  .notice-reveal { margin-top: 6px; font-size: 14px; color: var(--ink-soft); font-style: italic; border-left: 3px solid var(--chalk-yellow-deep); padding-left: 10px; display: none; }
+  .reveal-btn { background: none; border: 1px solid var(--chalk-yellow-deep); color: var(--chalk-yellow-deep); border-radius: 5px; padding: 3px 10px; font-size: 12px; cursor: pointer; margin-top: 4px; font-family: Calibri, sans-serif; }
+  .reveal-btn:hover { background: var(--chalk-yellow-deep); color: var(--white); }
+
+  /* GRAMMAR BOX */
+  .grammar-box { background: var(--white); border-radius: 10px; padding: 24px 28px; margin-bottom: 22px; box-shadow: 0 2px 10px rgba(40,52,74,0.08); }
+  .grammar-box h3 { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 21px; margin: 0 0 6px; color: var(--coral-deep); }
+  .grammar-sub { font-size: 14px; color: var(--ink-soft); margin: 0 0 18px; font-style: italic; }
+
+  /* FORM FORMULA BOX */
+  .formula-box { background: var(--chalk-green); color: var(--paper); border-radius: 8px; padding: 18px 22px; margin: 16px 0; font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 16px; }
+  .formula-box .f-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--chalk-yellow); margin-bottom: 8px; font-family: Calibri, sans-serif; font-weight: bold; }
+  .formula-box .f-line { margin-bottom: 6px; }
+  .formula-box .f-slot { color: var(--chalk-yellow); font-weight: bold; }
+  .formula-box .f-ex { font-size: 14px; color: #D9E5DC; font-style: italic; margin-top: 10px; font-family: Calibri, sans-serif; }
+
+  /* EXAMPLE ROWS */
+  .example-row { display: grid; grid-template-columns: 24px 1fr; gap: 10px; align-items: start; margin-bottom: 10px; padding: 10px 14px; background: var(--paper); border-radius: 8px; }
+  .example-row .mark { font-weight: bold; color: var(--coral-deep); font-size: 17px; }
+  .example-row .txt strong { color: var(--chalk-green); }
+  .example-row .gloss { display: block; font-size: 13px; color: var(--ink-soft); margin-top: 3px; }
+
+  /* RULE PILLS */
+  .rule-pill { display: inline-block; background: var(--chalk-yellow); color: var(--ink); font-weight: bold; font-size: 13px; border-radius: 6px; padding: 4px 10px; margin: 3px 5px 3px 0; }
+  .rule-pill.blue { background: var(--blue-deep); color: var(--white); }
+  .rule-pill.coral { background: var(--coral-deep); color: var(--white); }
+  .rule-pill.green { background: var(--chalk-green); color: var(--paper); }
+
+  /* TABLES */
+  table.conj-table { width: 100%; border-collapse: collapse; margin: 14px 0 6px; font-size: 15px; }
+  table.conj-table th { background: var(--chalk-green); color: var(--paper); padding: 9px 12px; text-align: left; font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 14px; }
+  table.conj-table td { padding: 9px 12px; border-bottom: 1px solid var(--paper-line); }
+  table.conj-table tr:nth-child(even) td { background: var(--paper); }
+  .ref-table-wrap { overflow-x: auto; margin: 14px 0; }
+  table.ref-table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+  table.ref-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 13.5px; }
+  table.ref-table td { padding: 10px 14px; border-bottom: 1px solid var(--paper-line); vertical-align: top; }
+  table.ref-table tr:nth-child(even) td { background: var(--paper); }
+  table.ref-table .ok { color: var(--chalk-green); font-weight: bold; }
+  table.ref-table .bad { color: var(--coral-deep); font-weight: bold; }
+
+  /* CALLOUT */
+  .callout { border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 15px; border-left: 4px solid; }
+  .callout.yellow { background: #FDF4E0; border-color: var(--chalk-yellow-deep); }
+  .callout.blue { background: #E9F0F5; border-color: var(--blue-deep); }
+  .callout.coral { background: #FBEDE9; border-color: var(--coral-deep); }
+  .callout.green { background: #E3F0E5; border-color: var(--chalk-green); }
+  .callout strong { display: block; margin-bottom: 4px; font-size: 14px; }
+
+  /* VOCAB */
+  .vocab-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 14px 0; }
+  .vocab-card { background: var(--paper); border-radius: 8px; padding: 14px 16px; border: 1px solid var(--paper-line); }
+  .vocab-card .word { font-weight: bold; color: var(--blue-deep); font-size: 16px; }
+  .vocab-card .pron { font-family: "Courier New", monospace; font-size: 12px; background: var(--ink); color: var(--paper); border-radius: 3px; padding: 1px 7px; margin-left: 6px; }
+  .vocab-card .pos { font-size: 11px; color: var(--ink-soft); text-transform: uppercase; margin-left: 6px; }
+  .vocab-card .def { font-size: 14px; margin-top: 5px; color: var(--ink); }
+  .vocab-card .ex { font-size: 13px; color: var(--ink-soft); margin-top: 5px; font-style: italic; border-left: 2px solid var(--chalk-yellow-deep); padding-left: 8px; }
+  .vocab-card .collocations { font-size: 12px; color: var(--blue-deep); margin-top: 5px; }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+  .chip { background: var(--paper); border: 1px solid var(--paper-line); border-radius: 999px; padding: 6px 14px; font-size: 14px; color: var(--ink); }
+  .chip strong { color: var(--coral-deep); }
+
+  /* EXERCISES */
+  .exercise { background: var(--white); border-radius: 10px; padding: 22px 26px; margin-bottom: 18px; box-shadow: 0 2px 10px rgba(40,52,74,0.08); }
+  .exercise-label { display: inline-block; font-size: 12px; font-weight: bold; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white); background: var(--chalk-green); border-radius: 5px; padding: 3px 10px; margin-bottom: 10px; }
+  .exercise h4 { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 17px; margin: 0 0 6px; color: var(--ink); }
+  .exercise .instr { font-size: 14px; color: var(--ink-soft); margin-bottom: 14px; font-style: italic; }
+  .q-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+  .q-num { font-weight: bold; color: var(--coral-deep); min-width: 22px; }
+  .q-text { flex: 1; min-width: 220px; }
+  .blank-input { border: none; border-bottom: 2px solid var(--chalk-yellow-deep); background: var(--paper); font-family: Calibri, sans-serif; font-size: 15px; padding: 4px 8px; width: 180px; color: var(--ink); }
+  .blank-input:focus { outline: none; border-color: var(--coral-deep); }
+  .check-btn { background: var(--chalk-yellow); color: var(--ink); border: none; border-radius: 6px; padding: 9px 20px; font-weight: bold; font-size: 14px; cursor: pointer; margin-top: 8px; font-family: Calibri, sans-serif; }
+  .check-btn:hover { background: var(--chalk-yellow-deep); }
+  .feedback { margin-top: 12px; font-size: 14px; border-radius: 6px; padding: 10px 14px; display: none; }
+  .feedback.show { display: block; }
+  .feedback.good { background: #E3F0E5; color: var(--chalk-green); }
+  .feedback.bad { background: #F8E4DE; color: var(--coral-deep); }
+  .mc-opt { display: block; background: var(--paper); border: 2px solid var(--paper-line); border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; cursor: pointer; font-size: 15px; transition: border-color 0.15s ease; width: 100%; text-align: left; font-family: Calibri, sans-serif; }
+  .mc-opt:hover { border-color: var(--chalk-yellow-deep); }
+  .mc-opt.correct-flash { border-color: var(--chalk-green); background: #E3F0E5; }
+  .mc-opt.wrong-flash { border-color: var(--coral-deep); background: #F8E4DE; }
+  .match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0; }
+  .match-item { background: var(--paper); border-radius: 8px; padding: 10px 14px; font-size: 14.5px; cursor: pointer; border: 2px solid transparent; transition: all 0.15s ease; user-select: none; }
+  .match-item:hover { border-color: var(--chalk-yellow-deep); }
+  .match-item.selected { border-color: var(--chalk-yellow-deep); background: #FDF4E0; }
+  .match-item.matched { border-color: var(--chalk-green); background: #E3F0E5; pointer-events: none; }
+  .match-item.wrong-flash { border-color: var(--coral-deep); background: #F8E4DE; }
+
+  /* ACTIVATE */
+  .activate-box { background: var(--chalk-yellow); border-radius: 10px; padding: 26px 28px; margin-bottom: 20px; }
+  .activate-box h3 { font-family: "Bookman Old Style", Cambria, Georgia, serif; margin: 0 0 12px; color: var(--ink); font-size: 19px; }
+  .activate-box p { color: var(--ink); margin: 0 0 10px; }
+  textarea.response-box { width: 100%; min-height: 110px; border-radius: 8px; border: 2px solid var(--chalk-yellow-deep); padding: 12px 14px; font-family: Calibri, sans-serif; font-size: 15px; resize: vertical; background: var(--white); color: var(--ink); }
+  textarea.response-box:focus { outline: none; border-color: var(--coral-deep); }
+  .word-count { font-size: 12px; color: var(--ink-soft); margin-top: 6px; text-align: right; }
+
+  /* RESEARCH / AUTONOMY */
+  .research-card { background: var(--purple-light); border-radius: 10px; padding: 22px 26px; margin-bottom: 18px; border: 1px solid #DCC8EA; }
+  .research-card h3 { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 18px; margin: 0 0 10px; color: var(--purple); }
+  .research-card p { margin: 0 0 8px; font-size: 15px; }
+  .research-card ul { margin: 8px 0; padding-left: 22px; }
+  .research-card li { margin-bottom: 6px; font-size: 15px; }
+  .research-tag { display: inline-block; font-size: 11px; font-weight: bold; letter-spacing: 0.05em; text-transform: uppercase; background: var(--purple); color: var(--white); border-radius: 4px; padding: 3px 9px; margin-bottom: 10px; }
+  .link-suggestion { display: inline-block; background: var(--white); border: 1px solid #DCC8EA; border-radius: 6px; padding: 6px 12px; font-size: 13px; margin: 4px 6px 4px 0; color: var(--purple); text-decoration: none; }
+  .link-suggestion:hover { background: var(--purple); color: var(--white); }
+
+  /* WRAP UP */
+  .wrapup { background: var(--ink); color: var(--paper); border-radius: 10px; padding: 24px 28px; margin-top: 40px; }
+  .wrapup h3 { font-family: "Bookman Old Style", Cambria, Georgia, serif; color: var(--chalk-yellow); margin: 0 0 10px; font-size: 18px; }
+  .wrapup ul { margin: 0; padding-left: 20px; }
+  .wrapup li { margin-bottom: 7px; font-size: 15px; }
+
+  /* VISUAL AIDS */
+  .timeline-visual { margin: 18px 0; padding: 20px 22px; background: var(--white); border-radius: 10px; box-shadow: 0 2px 10px rgba(40,52,74,0.08); }
+  .timeline-visual h4 { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 15px; color: var(--ink-soft); margin: 0 0 16px; text-align: center; }
+  .tl-track { display: flex; align-items: center; gap: 0; position: relative; padding: 0 10px; }
+  .tl-line { flex: 1; height: 3px; background: var(--paper-line); }
+  .tl-line.filled { background: var(--chalk-green); }
+  .tl-point { display: flex; flex-direction: column; align-items: center; min-width: 80px; }
+  .tl-dot { width: 16px; height: 16px; border-radius: 50%; background: var(--chalk-yellow); border: 3px solid var(--chalk-green); flex-shrink: 0; }
+  .tl-dot.now { background: var(--coral-deep); border-color: var(--coral-deep); width: 20px; height: 20px; }
+  .tl-dot.future { background: var(--white); border-color: var(--chalk-green); }
+  .tl-label { font-size: 12px; color: var(--ink-soft); text-align: center; margin-top: 8px; max-width: 80px; line-height: 1.3; }
+  .tl-tag { font-size: 11px; background: var(--chalk-green); color: var(--paper); border-radius: 4px; padding: 2px 7px; margin-top: 4px; white-space: nowrap; }
+
+  /* COMPARE BOX */
+  .compare-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 14px 0; }
+  .compare-col { padding: 16px 18px; border-radius: 8px; }
+  .compare-col.go { background: #E9F0F5; border: 1px solid #C8DAE5; }
+  .compare-col.will { background: #FBEDE9; border: 1px solid #F0CABA; }
+  .compare-col h4 { margin: 0 0 10px; font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 15px; }
+  .compare-col.go h4 { color: var(--blue-deep); }
+  .compare-col.will h4 { color: var(--coral-deep); }
+  .compare-col ul { margin: 0; padding-left: 18px; font-size: 14.5px; }
+  .compare-col li { margin-bottom: 7px; line-height: 1.5; }
+
+  /* ERROR CLINIC */
+  .error-row { display: grid; grid-template-columns: 24px 1fr; gap: 10px; padding: 10px 14px; margin-bottom: 8px; background: var(--paper); border-radius: 8px; border-left: 3px solid; }
+  .error-row.wrong { border-color: var(--coral-deep); }
+  .error-row.right { border-color: var(--chalk-green); }
+  .error-icon { font-weight: bold; font-size: 16px; }
+  .error-row.wrong .error-icon { color: var(--coral-deep); }
+  .error-row.right .error-icon { color: var(--chalk-green); }
+  .error-explain { font-size: 13px; color: var(--ink-soft); margin-top: 3px; font-style: italic; }
+
+  /* SUGGESTION LANGUAGE TABLE */
+  .suggestion-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14.5px; }
+  .suggestion-table th { background: var(--blue-deep); color: var(--white); padding: 9px 14px; text-align: left; font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 13.5px; }
+  .suggestion-table td { padding: 9px 14px; border-bottom: 1px solid var(--paper-line); vertical-align: top; }
+  .suggestion-table tr:nth-child(even) td { background: var(--paper); }
+  .suggestion-table .fn { font-size: 12px; color: var(--ink-soft); font-style: italic; display: block; margin-top: 3px; }
+
+  /* GENRE BADGE */
+  .genre-badge { display: inline-block; font-size: 11px; font-weight: bold; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 4px; padding: 3px 9px; margin-right: 8px; }
+  .genre-badge.formal { background: var(--blue-deep); color: var(--white); }
+  .genre-badge.informal { background: var(--chalk-yellow-deep); color: var(--ink); }
+  .genre-badge.neutral { background: var(--chalk-green); color: var(--paper); }
+
+  @media (max-width: 600px) {
+    h1.title { font-size: 26px; }
+    .card, .grammar-box, .exercise, .hook-box, .activate-box, .research-card { padding: 16px 18px; }
+    .vocab-grid, .match-grid, .compare-cols, .tf-grid { grid-template-columns: 1fr; }
+    .toc ol { columns: 1; }
+    .tl-track { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="masthead">
+  <div class="masthead-inner">
+    <p class="eyebrow">Grade 5 &middot; Week 1 &middot; Complete Reference &amp; Pre-Class Material</p>
+    <h1 class="title">Going to &mdash; Plans, Predictions &amp; the Movies</h1>
+    <div class="masthead-meta">
+      <div>Level: <span>B1</span></div>
+      <div>Theme: <span>Movies &amp; Entertainment</span></div>
+      <div>Grammar: <span>Going to &middot; Future plans &middot; Making suggestions</span></div>
+      <div>Est. pre-class time: <span>60&ndash;75 min</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="toc">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#engage">1. Engage &mdash; weekend plans gone wrong</a></li>
+      <li><a href="#context1">2. Context: a group chat about the cinema</a></li>
+      <li><a href="#notice1">3. Notice &amp; discover</a></li>
+      <li><a href="#study1">4. Study: going to &mdash; form &amp; meaning</a></li>
+      <li><a href="#study2">5. Study: going to vs will &mdash; first look</a></li>
+      <li><a href="#study3">6. Study: making suggestions &amp; arranging plans</a></li>
+      <li><a href="#context2">7. Context: planning a weekend trip</a></li>
+      <li><a href="#study4">8. Study: going to for predictions</a></li>
+      <li><a href="#pronunciation">9. Pronunciation &mdash; gonna &amp; the weak form</a></li>
+      <li><a href="#vocab">10. Vocabulary: movies &amp; entertainment</a></li>
+      <li><a href="#vocab2">11. Vocabulary: planning &amp; arranging</a></li>
+      <li><a href="#exercises">12. Practice exercises</a></li>
+      <li><a href="#activate">13. A taste of activate &mdash; try it now</a></li>
+      <li><a href="#autonomy">14. Explore on your own</a></li>
+      <li><a href="#summary">15. Quick-reference summary</a></li>
+    </ol>
+  </div>
+
+  <!-- ========== ENGAGE ========== -->
+  <div class="tab-section" id="engage">
+    <div class="tab-header">
+      <span class="tab-num">ENGAGE</span>
+      <h2 class="tab-title">Before we start &mdash; your weekend plans</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="hook-box">
+      <h3>Think about this weekend.</h3>
+      <p>Imagine it is Friday afternoon. You have just finished work or class. You open your phone and there is a message from a friend: <em>"We're all going to the cinema tomorrow evening &mdash; are you free?"</em></p>
+      <p>Before you read on, answer these three questions in your head:</p>
+      <ol style="color:#E7EFE9;font-size:16px;padding-left:22px;margin:0;">
+        <li style="margin-bottom:8px;">Have you already decided what you are doing tomorrow?</li>
+        <li style="margin-bottom:8px;">How do you tell someone about a plan you have already made?</li>
+        <li>How is saying "I'm going to the gym tomorrow" different from "I'll go to the gym tomorrow"?</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3>Why does this week matter?</h3>
+      <p>By the end of this week, you will be able to talk about your plans, intentions, and predictions in a natural, fluent way. You have probably seen <em>going to</em> before &mdash; possibly in Grade 3. This week we go deeper: we study the full meaning, the right moment to use it, how it sounds in real speech, and how it differs from <em>will</em>.</p>
+      <p>We are also studying the language of <strong>making suggestions</strong> and <strong>arranging plans</strong> &mdash; because real conversations about the future almost always involve both: <em>"Are you free on Saturday? Shall we go? Let's meet at 7."</em></p>
+    </div>
+  </div>
+
+  <!-- ========== CONTEXT 1: GROUP CHAT ========== -->
+    <!-- BRIDGE: engage → context1 -->
+  <div style="background:var(--white);border-left:4px solid var(--blue);padding:14px 20px;margin-bottom:24px;border-radius:0 8px 8px 0;font-size:15px;color:var(--ink-soft);">
+    <strong style="color:var(--blue);">&#8599; Read before you study.</strong>
+    Below is the friends&rsquo; group chat exactly as it happened. Read it naturally — don&rsquo;t analyse anything yet. Just get the story. You will zoom in on the language in the next section.
+  </div>
+<div class="tab-section" id="context1">
+    <div class="tab-header">
+      <span class="tab-num">CONTEXT</span>
+      <h2 class="tab-title">A group chat about the cinema</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <p>Four friends &mdash; Rasha, Marco, Yuna, and Tom &mdash; are making plans for Saturday evening. Read their messages carefully. Pay attention to <span class="hl1">highlighted phrases in red</span> (they involve <em>going to</em>), <span class="hl2">blue phrases</span> (suggestions and arrangements), and <span class="hl3">yellow phrases</span> (expressions of certainty about the future).</p>
+      <p style="font-size:13px;color:var(--ink-soft);">You do not need to understand every word yet. Just read for the general meaning first.</p>
+    </div>
+
+    <div class="realia">
+      <div class="realia-header green-hd">
+        <span class="doctype">Group Chat</span>
+        <span class="docname">Saturday plans 🎬</span>
+      </div>
+      <div class="chat-thread">
+        <div class="chat-msg">
+          <div class="chat-avatar">R</div>
+          <div>
+            <div><span class="chat-name">Rasha</span><span class="chat-time">14:32</span></div>
+            <div class="chat-text">Hey everyone! <span class="hl1">I'm going to see</span> that new film tonight &mdash; the one everyone's talking about. Anyone want to come?</div>
+          </div>
+        </div>
+        <div class="chat-msg b">
+          <div class="chat-avatar">M</div>
+          <div>
+            <div><span class="chat-name">Marco</span><span class="chat-time">14:35</span></div>
+            <div class="chat-text">Tonight I can't &mdash; <span class="hl1">I'm going to have</span> dinner with my parents. But Saturday? I'm definitely free. <span class="hl2">What if we go</span> to the late showing?</div>
+          </div>
+        </div>
+        <div class="chat-msg c">
+          <div class="chat-avatar">Y</div>
+          <div>
+            <div><span class="chat-name">Yuna</span><span class="chat-time">14:38</span></div>
+            <div class="chat-text">Saturday works! <span class="hl2">Shall we meet</span> at the cinema or somewhere nearby first? <span class="hl3">It's going to be</span> really cold in the evening &mdash; maybe get coffee first?</div>
+          </div>
+        </div>
+        <div class="chat-msg d">
+          <div class="chat-avatar">T</div>
+          <div>
+            <div><span class="chat-name">Tom</span><span class="chat-time">14:41</span></div>
+            <div class="chat-text"><span class="hl2">Let's meet</span> at the café on King Street at 6:30 and walk over together. <span class="hl1">I'm going to book</span> the tickets now before they sell out. How many?</div>
+          </div>
+        </div>
+        <div class="chat-msg">
+          <div class="chat-avatar">R</div>
+          <div>
+            <div><span class="chat-name">Rasha</span><span class="chat-time">14:43</span></div>
+            <div class="chat-text">Four! Perfect. Oh &mdash; <span class="hl1">I'm going to be</span> a bit late. My meeting runs until 6. <span class="hl3">That film's going to be</span> sold out by Sunday, by the way. Everyone at work is talking about it.</div>
+          </div>
+        </div>
+        <div class="chat-msg b">
+          <div class="chat-avatar">M</div>
+          <div>
+            <div><span class="chat-name">Marco</span><span class="chat-time">14:45</span></div>
+            <div class="chat-text">No problem. <span class="hl2">Why don't we</span> just order food at the café then? More time. <span class="hl1">Tom, are you going to get</span> the 7:15 showing or the 9:30?</div>
+          </div>
+        </div>
+        <div class="chat-msg d">
+          <div class="chat-avatar">T</div>
+          <div>
+            <div><span class="chat-name">Tom</span><span class="chat-time">14:46</span></div>
+            <div class="chat-text">7:15 &mdash; done. Booked! Four seats, row F. <span class="hl3">It's going to be</span> a great evening 🎬</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Quick comprehension check</h3>
+      <p>Answer these before moving to the Notice section. You do not need full sentences yet.</p>
+      <ol style="font-size:15px;padding-left:22px;margin:0;">
+        <li style="margin-bottom:8px;">What is the group planning to do on Saturday?</li>
+        <li style="margin-bottom:8px;">Why can't Marco go tonight?</li>
+        <li style="margin-bottom:8px;">Who books the tickets, and what exactly do they book?</li>
+        <li style="margin-bottom:8px;">What does Rasha say about being late?</li>
+        <li>Count the red phrases. How many are there? Do they all mean the same thing?</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ========== NOTICE 1 ========== -->
+    <!-- BRIDGE: context1 → notice1 -->
+  <div style="background:var(--white);border-left:4px solid var(--chalk-green);padding:14px 20px;margin-bottom:24px;border-radius:0 8px 8px 0;font-size:15px;color:var(--ink-soft);">
+    <strong style="color:var(--chalk-green);">&#8599; Now look more closely.</strong>
+    You read the chat as a story. Now read it as a language learner. The highlighted phrases below are the key ones — before you read any rules, notice what they have in common and try to answer the questions.
+  </div>
+<div class="tab-section" id="notice1">
+    <div class="tab-header">
+      <span class="tab-num">NOTICE &amp; DISCOVER</span>
+      <h2 class="tab-title">What did you notice in the chat?</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="notice-box">
+      <h3>Work through these questions before you look at the grammar</h3>
+      <p style="font-size:14px;color:var(--ink-soft);margin-bottom:14px;">Try to answer from the context of the chat. Reveal the answer only after you have thought about it.</p>
+
+      <div class="notice-q">
+        Tom says: <em>"I'm going to book the tickets now."</em> Has he booked them yet? How do you know?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal">No &mdash; he hasn't booked them yet when he says this. <em>Going to</em> here expresses an <strong>intention or plan</strong> he has decided at that moment (or just before). Shortly after, he says "Booked!" &mdash; that's the completed action.</p>
+      </div>
+
+      <div class="notice-q">
+        Rasha says <em>"I'm going to be a bit late."</em> and also <em>"That film's going to be sold out by Sunday."</em> Are both uses the same? What is different?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal">The first is a <strong>personal plan / warning</strong> based on what she knows (her meeting). The second is a <strong>prediction based on evidence</strong> (everyone at work is talking about it). Both use <em>going to</em> but for slightly different reasons. This is the key to understanding the grammar &mdash; it can express both plans AND evidence-based predictions.</p>
+      </div>
+
+      <div class="notice-q">
+        Look at the blue phrases: <em>"Shall we meet…", "Let's meet…", "What if we go…", "Why don't we…"</em> What are they all doing? What do they have in common?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal">They are all making <strong>suggestions</strong> &mdash; inviting the others to agree on a shared plan. None of them use <em>going to</em>. Each one is a different structure for the same function. You will study all of these in the Suggestions section.</p>
+      </div>
+
+      <div class="notice-q">
+        Look at how <em>going to</em> is written and try saying it out loud: <em>"I'm going to book."</em> How does it sound when you say it quickly in a natural sentence?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal">In natural, informal speech, <em>going to</em> is almost always reduced to <em>"gonna"</em>: /ˈɡɒnə/. The <em>g</em> stays, but the <em>-ing to</em> collapses. You will practise this in the Pronunciation section. It is not a mistake &mdash; it is how native speakers actually talk.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== STUDY 1: FORM & MEANING ========== -->
+    <!-- BRIDGE: notice1 → study1 -->
+  <div style="background:var(--white);border-left:4px solid var(--chalk-yellow);padding:14px 20px;margin-bottom:24px;border-radius:0 8px 8px 0;font-size:15px;color:var(--ink-soft);">
+    <strong style="color:#8A6A00;">&#8599; From noticing to naming.</strong>
+    You spotted the pattern in the chat. Now we give it a name and show you exactly how it works — form, meaning, and the typical mistakes to avoid. Keep the chat in mind as you read each rule.
+  </div>
+<div class="tab-section" id="study1">
+    <div class="tab-header study">
+      <span class="tab-num">STUDY</span>
+      <h2 class="tab-title">Going to &mdash; form, meaning &amp; use</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>1. The form</h3>
+      <p class="grammar-sub">Going to is built from three pieces: the verb <em>be</em> + <em>going to</em> + a base verb. Because it uses <em>be</em>, it must agree with the subject in every tense.</p>
+
+      <div class="formula-box">
+        <div class="f-label">Positive</div>
+        <div class="f-line"><span class="f-slot">Subject</span> + <span class="f-slot">am / is / are</span> + going to + <span class="f-slot">base verb</span></div>
+        <div class="f-ex">I am going to book the tickets. &nbsp;·&nbsp; She is going to be late. &nbsp;·&nbsp; They are going to watch a film.</div>
+      </div>
+
+      <div class="formula-box" style="background:var(--coral-deep);margin-top:10px;">
+        <div class="f-label">Negative</div>
+        <div class="f-line"><span class="f-slot">Subject</span> + <span class="f-slot">am not / isn't / aren't</span> + going to + <span class="f-slot">base verb</span></div>
+        <div class="f-ex">I'm not going to be late. &nbsp;·&nbsp; He isn't going to come. &nbsp;·&nbsp; We aren't going to book online.</div>
+      </div>
+
+      <div class="formula-box" style="background:var(--blue-deep);margin-top:10px;">
+        <div class="f-label">Question</div>
+        <div class="f-line"><span class="f-slot">Am / Is / Are</span> + <span class="f-slot">subject</span> + going to + <span class="f-slot">base verb</span>?</div>
+        <div class="f-ex">Are you going to get the 7:15? &nbsp;·&nbsp; Is she going to be late? &nbsp;·&nbsp; What are they going to watch?</div>
+      </div>
+
+      <h3 style="margin-top:24px;">2. Full conjugation table</h3>
+      <div class="ref-table-wrap">
+        <table class="conj-table">
+          <thead><tr><th>Subject</th><th>Positive</th><th>Negative</th><th>Question</th></tr></thead>
+          <tbody>
+            <tr><td>I</td><td>I <strong>am going to</strong> see it</td><td>I <strong>am not going to</strong> see it</td><td><strong>Am</strong> I <strong>going to</strong> see it?</td></tr>
+            <tr><td>You</td><td>You <strong>are going to</strong> see it</td><td>You <strong>aren't going to</strong> see it</td><td><strong>Are</strong> you <strong>going to</strong> see it?</td></tr>
+            <tr><td>He / She / It</td><td>She <strong>is going to</strong> be late</td><td>She <strong>isn't going to</strong> be late</td><td><strong>Is</strong> she <strong>going to</strong> be late?</td></tr>
+            <tr><td>We</td><td>We <strong>are going to</strong> book</td><td>We <strong>aren't going to</strong> book</td><td><strong>Are</strong> we <strong>going to</strong> book?</td></tr>
+            <tr><td>They</td><td>They <strong>are going to</strong> come</td><td>They <strong>aren't going to</strong> come</td><td><strong>Are</strong> they <strong>going to</strong> come?</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:13px;color:var(--ink-soft);">In everyday speech, contractions are standard: <em>I'm / you're / she's / we're / they're going to…</em></p>
+
+      <h3 style="margin-top:24px;">3. The two main meanings</h3>
+      <p class="grammar-sub">This is where most learners get confused. Going to has two closely related but distinct uses. The context usually makes it clear which one you mean.</p>
+
+      <div class="compare-cols">
+        <div class="compare-col go">
+          <h4>Meaning A &mdash; Plans &amp; intentions</h4>
+          <p style="font-size:14px;">You have decided something <em>before</em> the moment you speak. It is already in your head as a plan or intention.</p>
+          <div class="example-row">
+            <span class="mark">✓</span>
+            <span class="txt"><strong>"I'm going to book the tickets now."</strong><span class="gloss">Tom decided to do this moments ago. It's his intention.</span></span>
+          </div>
+          <div class="example-row">
+            <span class="mark">✓</span>
+            <span class="txt"><strong>"We're going to meet at the café."</strong><span class="gloss">The group has agreed. This is their plan.</span></span>
+          </div>
+          <div class="example-row">
+            <span class="mark">✓</span>
+            <span class="txt"><strong>"I'm not going to go &mdash; I have work."</strong><span class="gloss">She has already made this decision.</span></span>
+          </div>
+        </div>
+        <div class="compare-col will">
+          <h4>Meaning B &mdash; Predictions with evidence</h4>
+          <p style="font-size:14px;">You can see, feel, or know something now that tells you what is going to happen. There is visible or logical evidence.</p>
+          <div class="example-row">
+            <span class="mark">✓</span>
+            <span class="txt"><strong>"It's going to be cold tonight."</strong><span class="gloss">Yuna can see the weather forecast / feel the temperature.</span></span>
+          </div>
+          <div class="example-row">
+            <span class="mark">✓</span>
+            <span class="txt"><strong>"That film's going to be sold out."</strong><span class="gloss">Everyone at work is talking about it — evidence.</span></span>
+          </div>
+          <div class="example-row">
+            <span class="mark">✓</span>
+            <span class="txt"><strong>"Look at those clouds — it's going to rain!"</strong><span class="gloss">The evidence (clouds) is visible right now.</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout yellow" style="margin-top:10px;">
+        <strong>&#128204; Corpus note (COCA / BNC)</strong>
+        In spoken English, <em>going to</em> for plans is far more frequent than <em>will</em> for the same situations. When people talk about what they have <em>already decided</em>, they almost always use <em>going to</em>, not <em>will</em>. <em>Will</em> is preferred for in-the-moment decisions and promises &mdash; you will study that contrast in Week 3.
+      </div>
+    </div>
+
+    <div class="timeline-visual">
+      <h4>How <em>going to</em> sits on the timeline</h4>
+      <div class="tl-track">
+        <div class="tl-point">
+          <div class="tl-dot"></div>
+          <div class="tl-label">Decision made</div>
+          <div class="tl-tag">past</div>
+        </div>
+        <div class="tl-line filled"></div>
+        <div class="tl-point">
+          <div class="tl-dot now"></div>
+          <div class="tl-label">NOW<br>(speaking moment)</div>
+          <div class="tl-tag" style="background:var(--coral-deep);">NOW</div>
+        </div>
+        <div class="tl-line"></div>
+        <div class="tl-point">
+          <div class="tl-dot future"></div>
+          <div class="tl-label">The action happens</div>
+          <div class="tl-tag" style="background:var(--blue-deep);">future</div>
+        </div>
+      </div>
+      <p style="font-size:13px;color:var(--ink-soft);text-align:center;margin-top:14px;">The decision or intention already exists (past of NOW). We use <em>going to</em> to report that existing plan at the speaking moment.</p>
+    </div>
+  </div>
+
+  <!-- ========== STUDY 2: GOING TO vs WILL ========== -->
+    <!-- BRIDGE: study1 → study2 -->
+  <div style="background:var(--white);border-left:4px solid var(--coral);padding:14px 20px;margin-bottom:24px;border-radius:0 8px 8px 0;font-size:15px;color:var(--ink-soft);">
+    <strong style="color:var(--coral);">&#8599; Same structure, different meaning.</strong>
+    You now know how <em>going to</em> is formed. But it carries two distinct meanings — and confusing them is a very common B1 mistake. The next section shows you the difference between a <em>plan</em> and an <em>evidence-based prediction</em>.
+  </div>
+<div class="tab-section" id="study2">
+    <div class="tab-header study">
+      <span class="tab-num">STUDY</span>
+      <h2 class="tab-title">Going to vs Will &mdash; a first look</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>Why this comparison matters</h3>
+      <p class="grammar-sub">This is the most common confusion at B1 level. You do not need to master the full contrast yet &mdash; that comes in Week 3. But you need to understand the core difference now so you don't confuse them in your plans and predictions.</p>
+
+      <div class="ref-table-wrap">
+        <table class="ref-table">
+          <thead>
+            <tr><th style="width:22%">Feature</th><th style="width:39%">Going to</th><th style="width:39%">Will</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Plans &amp; intentions</strong></td>
+              <td class="ok">✓ Pre-decided plans<br><em>"I'm going to see that film tonight."</em><br><span style="font-size:12px;color:var(--ink-soft)">(I decided this before now)</span></td>
+              <td class="bad">✗ Not standard for pre-decided plans</td>
+            </tr>
+            <tr>
+              <td><strong>Spontaneous decisions</strong></td>
+              <td class="bad">✗ Not standard</td>
+              <td class="ok">✓ Decision made at this moment<br><em>"I'll come too!"</em><br><span style="font-size:12px;color:var(--ink-soft)">(you decide as you speak)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Predictions with evidence</strong></td>
+              <td class="ok">✓ Evidence-based predictions<br><em>"Look at the queue &mdash; it's going to take forever."</em></td>
+              <td><em>Possible for general predictions</em><br><em>"That film will win an Oscar."</em><br><span style="font-size:12px;color:var(--ink-soft)">(no specific evidence, just opinion)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Promises &amp; offers</strong></td>
+              <td class="bad">✗ Unusual</td>
+              <td class="ok">✓ Natural for promises/offers<br><em>"I'll help you."&nbsp; "I'll get the tickets."</em></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:22px;">The simplest test</h3>
+      <p>Ask yourself: <strong>Was this decision already made?</strong></p>
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt"><strong>Going to:</strong> "I'm going to study tonight." <span class="gloss">→ You decided this earlier. It's already in your plan.</span></span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt"><strong>Will:</strong> "Oh, the café is closed. I'll find another one." <span class="gloss">→ You just found this out. You decide now.</span></span>
+      </div>
+
+      <div class="callout coral">
+        <strong>&#9888; Common error at B1</strong>
+        ✗ <em>"I will meet my friends tomorrow evening."</em> (sounds like a promise or announcement)<br>
+        ✓ <em>"I'm going to meet my friends tomorrow evening."</em> (you've already arranged it — this is natural)<br><br>
+        When talking about plans you have <em>already made</em>, use <em>going to</em>. Reserve <em>will</em> for the moment of decision.
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== STUDY 3: SUGGESTIONS ========== -->
+    <!-- BRIDGE: study2 → study3 -->
+  <div style="background:var(--white);border-left:4px solid var(--blue);padding:14px 20px;margin-bottom:24px;border-radius:0 8px 8px 0;font-size:15px;color:var(--ink-soft);">
+    <strong style="color:var(--blue);">&#8599; And what about <em>will</em>?</strong>
+    Now that you are confident with <em>going to</em>, it is time to put it next to <em>will</em>. These two forms are often confused — but they are not interchangeable. The comparison below shows you exactly when to use which.
+  </div>
+<div class="tab-section" id="study3">
+    <div class="tab-header study">
+      <span class="tab-num">STUDY</span>
+      <h2 class="tab-title">Making suggestions &amp; arranging plans</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>The language of suggestions</h3>
+      <p class="grammar-sub">When you arrange plans with other people, you need more than <em>going to</em>. You need the language of <strong>suggestions</strong>, <strong>agreement</strong>, and <strong>counter-proposals</strong>. All of these appeared in the group chat.</p>
+
+      <div class="ref-table-wrap">
+        <table class="suggestion-table">
+          <thead>
+            <tr><th>Structure</th><th>Example from the chat</th><th>Register</th><th>Grammar note</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Let's + base verb</strong></td>
+              <td><em>"Let's meet at the café on King Street."</em></td>
+              <td><span class="genre-badge informal">Informal</span></td>
+              <td class="fn">Short for <em>Let us</em>. Very common in spoken English. Includes the speaker in the plan.</td>
+            </tr>
+            <tr>
+              <td><strong>Shall we + base verb?</strong></td>
+              <td><em>"Shall we meet at the cinema first?"</em></td>
+              <td><span class="genre-badge neutral">Neutral</span></td>
+              <td class="fn">Invites agreement from the group. Common in British English. Question form only.</td>
+            </tr>
+            <tr>
+              <td><strong>Why don't we + base verb?</strong></td>
+              <td><em>"Why don't we order food at the café?"</em></td>
+              <td><span class="genre-badge informal">Informal</span></td>
+              <td class="fn">Softer suggestion; implies a reason the listener may not have considered.</td>
+            </tr>
+            <tr>
+              <td><strong>What if we + past simple?</strong></td>
+              <td><em>"What if we go to the late showing?"</em></td>
+              <td><span class="genre-badge informal">Informal</span></td>
+              <td class="fn">Introduces a possibility more tentatively; useful when you're not sure the others will agree.</td>
+            </tr>
+            <tr>
+              <td><strong>How about + -ing?</strong></td>
+              <td><em>"How about getting coffee first?"</em></td>
+              <td><span class="genre-badge informal">Informal</span></td>
+              <td class="fn">Always followed by a gerund (-ing form). <em>How about to get</em> is wrong.</td>
+            </tr>
+            <tr>
+              <td><strong>What about + -ing?</strong></td>
+              <td><em>"What about booking the 9:30?"</em></td>
+              <td><span class="genre-badge informal">Informal</span></td>
+              <td class="fn">Same structure as <em>How about</em>. Gerund (-ing) required after both.</td>
+            </tr>
+            <tr>
+              <td><strong>We could + base verb</strong></td>
+              <td><em>"We could meet at 7 instead."</em></td>
+              <td><span class="genre-badge neutral">Neutral</span></td>
+              <td class="fn">Softest form &mdash; presents a possibility without committing. Polite in any context.</td>
+            </tr>
+            <tr>
+              <td><strong>Why not + base verb?</strong></td>
+              <td><em>"Why not take the bus?"</em></td>
+              <td><span class="genre-badge informal">Informal</span></td>
+              <td class="fn">Quick, casual. Base verb (not -ing) after <em>Why not</em>.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:22px;">Responding to suggestions</h3>
+      <p class="grammar-sub">Suggestions only work if people can respond. Here are the most natural ways to agree, reject, or counter a suggestion:</p>
+
+      <div class="ref-table-wrap">
+        <table class="ref-table">
+          <thead><tr><th>Agreeing</th><th>Partially agreeing / adjusting</th><th>Declining / offering alternative</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>That sounds great!<br>Perfect. / Done.<br>I'm in.<br>Good idea.<br>Works for me.<br>Let's do it.</td>
+              <td>How about 7:30 instead?<br>That works, but could we…?<br>Fine by me, as long as…<br>Almost &mdash; what if we…?</td>
+              <td>I can't make that time.<br>Actually, I'd rather…<br>What if we did something else?<br>Could we do it another night?<br>I'm not sure &mdash; maybe…</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout green">
+        <strong>&#128204; Corpus note</strong>
+        COCA spoken data shows that <em>Let's</em> and <em>Shall we</em> are used for group activities where the speaker is included. <em>Why don't you</em> (note: YOU, not WE) is used when you suggest something for the <em>other person</em> only. This distinction is often lost in textbooks but is consistent in real speech.
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== CONTEXT 2: PLANNING A TRIP ========== -->
+    <!-- BRIDGE: study3 → context2 -->
+  <div style="background:var(--white);border-left:4px solid var(--chalk-green);padding:14px 20px;margin-bottom:24px;border-radius:0 8px 8px 0;font-size:15px;color:var(--ink-soft);">
+    <strong style="color:var(--chalk-green);">&#8599; Back to context — see it in the wild.</strong>
+    You have studied the rules. Now meet the same language in a new situation: Monday morning messages. Read them naturally first, then notice how each future form is being used differently.
+  </div>
+<div class="tab-section" id="context2">
+    <div class="tab-header">
+      <span class="tab-num">CONTEXT</span>
+      <h2 class="tab-title">Planning a weekend trip &mdash; a different kind of future talk</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <p>Now read a short text message exchange from Monday morning. The cinema trip went well. Now Rasha and Marco are looking out of a window at grey clouds, talking about the coming weekend. Notice how <em>going to</em> works differently here &mdash; not for plans already arranged, but for things they can see happening.</p>
+    </div>
+
+    <div class="realia">
+      <div class="realia-header coral-hd">
+        <span class="doctype">Messages</span>
+        <span class="docname">Rasha &amp; Marco — Monday 09:14</span>
+      </div>
+      <div class="chat-thread">
+        <div class="chat-msg">
+          <div class="chat-avatar">R</div>
+          <div>
+            <div><span class="chat-name">Rasha</span><span class="chat-time">09:14</span></div>
+            <div class="chat-text">Have you seen the sky? <span class="hl1">It's going to rain</span> all day. I knew it.</div>
+          </div>
+        </div>
+        <div class="chat-msg b">
+          <div class="chat-avatar">M</div>
+          <div>
+            <div><span class="chat-name">Marco</span><span class="chat-time">09:16</span></div>
+            <div class="chat-text">Yeah. <span class="hl1">The whole week's going to be</span> like this apparently. Still want to do the trip on Saturday?</div>
+          </div>
+        </div>
+        <div class="chat-msg">
+          <div class="chat-avatar">R</div>
+          <div>
+            <div><span class="chat-name">Rasha</span><span class="chat-time">09:18</span></div>
+            <div class="chat-text">Yes! I checked the forecast and Saturday looks okay. <span class="hl1">I'm going to pack</span> light though &mdash; and bring a jacket just in case.</div>
+          </div>
+        </div>
+        <div class="chat-msg b">
+          <div class="chat-avatar">M</div>
+          <div>
+            <div><span class="chat-name">Marco</span><span class="chat-time">09:21</span></div>
+            <div class="chat-text">Smart. <span class="hl1">I'm going to look up</span> train times tonight. <span class="hl3">The early train's going to be</span> packed &mdash; it always is on weekends.</div>
+          </div>
+        </div>
+        <div class="chat-msg">
+          <div class="chat-avatar">R</div>
+          <div>
+            <div><span class="chat-name">Rasha</span><span class="chat-time">09:23</span></div>
+            <div class="chat-text">Good thinking. <span class="hl2">What if we get</span> the 9:45 instead of the 8:00? More relaxed. And <span class="hl2">how about having</span> breakfast here before we leave?</div>
+          </div>
+        </div>
+        <div class="chat-msg b">
+          <div class="chat-avatar">M</div>
+          <div>
+            <div><span class="chat-name">Marco</span><span class="chat-time">09:25</span></div>
+            <div class="chat-text">Perfect. <span class="hl1">We're going to have</span> a great weekend 😎</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="notice-box">
+      <h3>Look more carefully at these phrases</h3>
+      <div class="notice-q">
+        <em>"It's going to rain all day."</em> Has Marco checked a forecast or made a plan to rain? What is he doing?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal">He is making a <strong>prediction based on visible evidence</strong> (the sky). He can see the evidence right now. There is no plan here &mdash; you cannot plan rain. This is <em>going to</em> for evidence-based predictions.</p>
+      </div>
+      <div class="notice-q">
+        <em>"I'm going to pack light."</em> and <em>"I'm going to look up train times tonight."</em> &mdash; Which use is this?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal">These are <strong>plans / intentions</strong>. Rasha and Marco have already decided to do these things. They are reporting a decision they have made (or are making right now, in this conversation).</p>
+      </div>
+      <div class="notice-q">
+        <em>"The early train's going to be packed."</em> &mdash; Marco says this with confidence. What is his evidence?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal">Past experience: <em>"it always is on weekends."</em> He is predicting based on what he knows from experience &mdash; which counts as evidence. This is still the evidence-based use of <em>going to</em>, just with a different kind of evidence (past pattern, not visible sign).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== STUDY 4: PREDICTIONS ========== -->
+    <!-- BRIDGE: context2 → study4 -->
+  <div style="background:var(--white);border-left:4px solid var(--purple);padding:14px 20px;margin-bottom:24px;border-radius:0 8px 8px 0;font-size:15px;color:var(--ink-soft);">
+    <strong style="color:var(--purple);">&#8599; Add making suggestions.</strong>
+    Planning a cinema trip is not just about <em>going to</em> — it also means making, accepting and declining suggestions. These eight high-frequency structures will turn your plans into real conversation.
+  </div>
+<div class="tab-section" id="study4">
+    <div class="tab-header study">
+      <span class="tab-num">STUDY</span>
+      <h2 class="tab-title">Going to for predictions &mdash; reading the signs</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>When the evidence is speaking</h3>
+      <p class="grammar-sub">English grammar distinguishes between two types of predictions. The type you use depends on whether you have evidence right now, or whether you are just expressing a general opinion about the future.</p>
+
+      <div class="compare-cols">
+        <div class="compare-col go">
+          <h4>Going to — evidence is present</h4>
+          <p style="font-size:14px;margin-bottom:10px;">Use when you can point to a specific reason, sign, or piece of evidence <em>right now</em>.</p>
+          <div class="example-row">
+            <span class="mark">✓</span>
+            <span class="txt"><strong>"Look at those clouds &mdash; it's going to rain."</strong><span class="gloss">Evidence: the clouds you can see.</span></span>
+          </div>
+          <div class="example-row">
+            <span class="mark">✓</span>
+            <span class="txt"><strong>"He's driving too fast &mdash; he's going to crash."</strong><span class="gloss">Evidence: his speed right now.</span></span>
+          </div>
+          <div class="example-row">
+            <span class="mark">✓</span>
+            <span class="txt"><strong>"The queue is huge &mdash; we're going to miss the start."</strong><span class="gloss">Evidence: visible queue length.</span></span>
+          </div>
+        </div>
+        <div class="compare-col will">
+          <h4>Will — general opinion / guess</h4>
+          <p style="font-size:14px;margin-bottom:10px;">Use when you believe something will happen but you have no specific evidence at this moment.</p>
+          <div class="example-row">
+            <span class="mark">✓</span>
+            <span class="txt"><strong>"I think that film will win an Oscar."</strong><span class="gloss">Opinion, not evidence. You don't know.</span></span>
+          </div>
+          <div class="example-row">
+            <span class="mark">✓</span>
+            <span class="txt"><strong>"I think technology will change everything."</strong><span class="gloss">General future opinion.</span></span>
+          </div>
+          <div class="example-row">
+            <span class="mark">✓</span>
+            <span class="txt"><strong>"It'll probably rain at some point this week."</strong><span class="gloss">Vague future; no specific evidence right now.</span></span>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:22px;">Types of evidence for <em>going to</em> predictions</h3>
+      <div class="ref-table-wrap">
+        <table class="ref-table">
+          <thead><tr><th>Type of evidence</th><th>Example</th><th>What you're seeing/knowing</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Visual sign</strong></td><td><em>"Look at those clouds — it's going to rain."</em></td><td>You can see the clouds right now</td></tr>
+            <tr><td><strong>Physical sensation</strong></td><td><em>"I feel terrible — I'm going to be sick."</em></td><td>You feel it in your body now</td></tr>
+            <tr><td><strong>Current situation</strong></td><td><em>"We're late — we're going to miss the bus."</em></td><td>The time and the situation are clear</td></tr>
+            <tr><td><strong>Known pattern / data</strong></td><td><em>"The early train's going to be packed &mdash; it always is."</em></td><td>Past experience counts as evidence</td></tr>
+            <tr><td><strong>Something you've read/seen</strong></td><td><em>"The forecast says it's going to snow."</em></td><td>You have just read the information</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout yellow">
+        <strong>&#128204; Key rule to remember</strong>
+        The simplest test for predictions: <strong>Can I point to the evidence right now?</strong> Yes → <em>going to</em>. No, just an opinion or guess → <em>will / think + will</em>.
+      </div>
+
+      <h3 style="margin-top:22px;">Error clinic &mdash; common B1 mistakes with predictions</h3>
+      <div class="error-row wrong">
+        <span class="error-icon">✗</span>
+        <div>
+          <div>"Look at that car &mdash; <strong>it will crash!</strong>"</div>
+          <div class="error-explain">You have visible evidence (the car's speed/direction). Use <em>going to</em> for immediate evidence-based predictions.</div>
+        </div>
+      </div>
+      <div class="error-row right">
+        <span class="error-icon">✓</span>
+        <div>"Look at that car &mdash; <strong>it's going to crash!</strong>"</div>
+      </div>
+      <div class="error-row wrong">
+        <span class="error-icon">✗</span>
+        <div>
+          <div>"I going to watch a film tonight."</div>
+          <div class="error-explain">Missing the verb <em>be</em>. <em>Going to</em> needs: subject + <em>am/is/are</em> + going to.</div>
+        </div>
+      </div>
+      <div class="error-row right">
+        <span class="error-icon">✓</span>
+        <div>"I <strong>am going to</strong> / <strong>I'm going to</strong> watch a film tonight."</div>
+      </div>
+      <div class="error-row wrong">
+        <span class="error-icon">✗</span>
+        <div>
+          <div>"She is going to <strong>watched</strong> the film."</div>
+          <div class="error-explain">After <em>going to</em>, always use the base verb (infinitive without <em>to</em>), never past or -ing.</div>
+        </div>
+      </div>
+      <div class="error-row right">
+        <span class="error-icon">✓</span>
+        <div>"She is going to <strong>watch</strong> the film."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== PRONUNCIATION ========== -->
+    <!-- BRIDGE: study4 → pronunciation -->
+  <div style="background:var(--white);border-left:4px solid var(--coral);padding:14px 20px;margin-bottom:24px;border-radius:0 8px 8px 0;font-size:15px;color:var(--ink-soft);">
+    <strong style="color:var(--coral);">&#8599; From writing to speaking.</strong>
+    You have studied the grammar and the phrases. But how do you actually <em>say</em> them? Native speakers almost never say /ˈɡəʊɪŋ tuː/ in fast speech. This section shows you the natural spoken form — and why it matters.
+  </div>
+<div class="tab-section" id="pronunciation">
+    <div class="tab-header">
+      <span class="tab-num">PRONUNCIATION</span>
+      <h2 class="tab-title">Gonna &mdash; how <em>going to</em> really sounds</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>The weak form in real speech</h3>
+      <p class="grammar-sub">In formal written English, you write <em>going to</em>. But in natural spoken English &mdash; in conversations, films, podcasts, and real-life interactions &mdash; almost everyone says <em>gonna</em>. This is not a mistake. It is how the language actually sounds.</p>
+
+      <div class="callout blue">
+        <strong>Full form → Natural spoken form</strong>
+        <em>going to</em> → <strong>gonna</strong> &nbsp;/ˈɡɒnə/<br>
+        The <em>g</em> sound stays. The <em>-ing to</em> collapses into a quick, unstressed /ə/ sound.
+      </div>
+
+      <h3 style="margin-top:20px;">Listen for these reductions</h3>
+      <div class="ref-table-wrap">
+        <table class="ref-table">
+          <thead><tr><th>Written form</th><th>Spoken form</th><th>Phonetic</th><th>Example sentence (spoken)</th></tr></thead>
+          <tbody>
+            <tr><td><em>I am going to</em></td><td><strong>I'm gonna</strong></td><td>/aɪm ˈɡɒnə/</td><td><em>"I'm gonna book the tickets."</em></td></tr>
+            <tr><td><em>She is going to</em></td><td><strong>She's gonna</strong></td><td>/ʃiːz ˈɡɒnə/</td><td><em>"She's gonna be late."</em></td></tr>
+            <tr><td><em>We are going to</em></td><td><strong>We're gonna</strong></td><td>/wɪə ˈɡɒnə/</td><td><em>"We're gonna miss the start."</em></td></tr>
+            <tr><td><em>It is going to</em></td><td><strong>It's gonna</strong></td><td>/ɪts ˈɡɒnə/</td><td><em>"It's gonna rain all day."</em></td></tr>
+            <tr><td><em>Are you going to</em></td><td><strong>You gonna?</strong></td><td>/juː ˈɡɒnə/</td><td><em>"You gonna get the late showing?"</em></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:20px;">When to use each form</h3>
+      <div class="compare-cols">
+        <div class="compare-col go">
+          <h4>Write: <em>going to</em></h4>
+          <ul>
+            <li>Essays and formal writing</li>
+            <li>Emails to colleagues or teachers</li>
+            <li>Professional messages</li>
+            <li>Formal presentations</li>
+          </ul>
+        </div>
+        <div class="compare-col will">
+          <h4>Say: <em>gonna</em></h4>
+          <ul>
+            <li>Everyday conversation</li>
+            <li>Text messages with friends</li>
+            <li>Informal emails</li>
+            <li>Any relaxed spoken context</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout yellow">
+        <strong>&#128204; Important</strong>
+        <em>Gonna</em> only replaces <em>going to</em> + base verb (the future structure). It does not replace <em>going to</em> when it means physical movement: <em>"I'm going to the cinema"</em> (I am going there) ≠ <em>"I'm going to see a film"</em> (future plan). The first does NOT reduce to <em>gonna</em>; the second does.
+      </div>
+
+      <h3 style="margin-top:20px;">Practise out loud</h3>
+      <p>Say these sentences naturally, reducing <em>going to</em> to <em>gonna</em>:</p>
+      <div class="chip-row">
+        <span class="chip">I'm gonna watch something tonight.</span>
+        <span class="chip">She's gonna love this film.</span>
+        <span class="chip">We're gonna be late if we don't leave now.</span>
+        <span class="chip">It's gonna be a great weekend.</span>
+        <span class="chip">Are you gonna come with us?</span>
+        <span class="chip">He's not gonna like that ending.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== VOCABULARY 1: MOVIES ========== -->
+    <!-- BRIDGE: pronunciation → vocab -->
+  <div style="background:var(--white);border-left:4px solid var(--blue);padding:14px 20px;margin-bottom:24px;border-radius:0 8px 8px 0;font-size:15px;color:var(--ink-soft);">
+    <strong style="color:var(--blue);">&#8599; Build your cinema vocabulary.</strong>
+    Grammar in your pocket — now fill it with words. The vocabulary below covers everything you need to talk about films, cinema trips, and entertainment plans. You will need this for the speaking tasks in class.
+  </div>
+<div class="tab-section" id="vocab">
+    <div class="tab-header vocab">
+      <span class="tab-num">VOCABULARY</span>
+      <h2 class="tab-title">Movies &amp; entertainment &mdash; the complete set</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <h3>Why vocabulary matters here</h3>
+      <p>You cannot talk about film plans convincingly if you only know the word <em>"film"</em>. This section gives you the vocabulary to discuss films in detail: genres, opinions, the cinema experience, and how to recommend (or warn against) a film. These words come up constantly in real B1 conversations.</p>
+    </div>
+
+    <div class="grammar-box">
+      <h3>Film genres &mdash; the essential list</h3>
+      <p class="grammar-sub">Corpus data shows that genre labels are among the most frequent film-related words in spoken English. You need these to make plans and recommendations.</p>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div><span class="word">action film</span><span class="pron">ˈækʃən fɪlm</span></div>
+          <div class="def">A fast-paced film with exciting stunts, fights, and chases.</div>
+          <div class="ex">"Are you going to see the new action film? The car chase scenes look incredible."</div>
+          <div class="collocations">Collocates: <em>action-packed, blockbuster action film, Hollywood action</em></div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">thriller</span><span class="pron">ˈθrɪlər</span></div>
+          <div class="def">A suspenseful film designed to excite and create tension.</div>
+          <div class="ex">"I'm going to watch that thriller — everyone says you don't see the ending coming."</div>
+          <div class="collocations">Collocates: <em>psychological thriller, gripping, tense, nail-biting</em></div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">romantic comedy <span class="pos">n (informal: rom-com)</span></span></div>
+          <div class="def">A light film combining romance and humour, usually with a happy ending.</div>
+          <div class="ex">"She said she wasn't going to watch another rom-com, but here we are."</div>
+          <div class="collocations">Collocates: <em>classic rom-com, feel-good, predictable but charming</em></div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">documentary</span><span class="pron">ˌdɒkjuˈmentri</span></div>
+          <div class="def">A non-fiction film presenting real people, events, or issues.</div>
+          <div class="ex">"We're going to watch that climate documentary everyone's been talking about."</div>
+          <div class="collocations">Collocates: <em>powerful documentary, eye-opening, award-winning, stream a documentary</em></div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">science fiction <span class="pos">n (informal: sci-fi)</span></span></div>
+          <div class="def">A film set in the future or an imaginary world, often involving technology or space.</div>
+          <div class="ex">"I'm not going to understand the plot — sci-fi always goes over my head."</div>
+          <div class="collocations">Collocates: <em>sci-fi blockbuster, dystopian, futuristic, special effects</em></div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">horror</span><span class="pron">ˈhɒrər</span></div>
+          <div class="def">A film designed to frighten the audience through suspense, monsters, or violence.</div>
+          <div class="ex">"I'm not going to sleep if we watch that — horror films terrify me."</div>
+          <div class="collocations">Collocates: <em>slasher horror, psychological horror, terrifying, jump scares</em></div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">animated film</span></div>
+          <div class="def">A film produced using animation (drawn or computer-generated characters).</div>
+          <div class="ex">"Animated films aren't just for kids — some of the best storytelling is animated."</div>
+          <div class="collocations">Collocates: <em>Pixar, Studio Ghibli, CGI, visually stunning</em></div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">period drama</span></div>
+          <div class="def">A film set in a specific historical era, usually with elaborate costumes and settings.</div>
+          <div class="ex">"She's going to love that period drama — it's set in 1920s Vienna."</div>
+          <div class="collocations">Collocates: <em>historical epic, lavish, costume drama, critically acclaimed</em></div>
+        </div>
+
+        <!-- NEW GENRES ROW 2 -->
+        <div class="vocab-card">
+          <div><span class="word">crime film</span><span class="pron">kraɪm fɪlm</span></div>
+          <div class="def">A film centred on criminal acts, investigations, or the world of organised crime.</div>
+          <div class="ex">"We're going to watch that new crime film — it's based on a real heist from the 1970s."</div>
+          <div class="collocations">Collocates: <em>heist film, crime thriller, gritty, detective, mob movie</em></div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">cartoon</span><span class="pron">kɑːˈtuːn</span></div>
+          <div class="def">An animated film or TV show, typically humorous and aimed at a broad audience.</div>
+          <div class="ex">"Don't judge me — I'm going to spend Sunday morning watching old cartoons."</div>
+          <div class="collocations">Collocates: <em>Saturday morning cartoon, classic cartoon, slapstick, animated series</em></div>
+          <div class="collocations" style="margin-top:6px;color:#555;font-size:12.5px;">⚠ <em>Cartoon</em> usually means 2D hand-drawn animation. <em>Animated film</em> is the broader term (includes CGI like Pixar).</div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">soap opera <span class="pos">n (informal: soap)</span></span><span class="pron">səʊp ˈɒp.ər.ə</span></div>
+          <div class="def">A long-running TV drama serial with melodramatic storylines about everyday characters. Not a film genre — a TV format.</div>
+          <div class="ex">"My mum isn't going to miss an episode — she's been watching that soap for twenty years."</div>
+          <div class="collocations">Collocates: <em>daytime soap, long-running, dramatic, cliffhanger, serialised</em></div>
+          <div class="collocations" style="margin-top:6px;color:#555;font-size:12.5px;">📺 TV genre, not cinema. British soaps: <em>EastEnders, Coronation Street</em>. US soaps: <em>Days of Our Lives</em>.</div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">rom-com <span class="pos">n (= romantic comedy)</span></span><span class="pron">rɒm kɒm</span></div>
+          <div class="def">A light-hearted film where two people fall in love despite various comic obstacles. (Already listed above — this card focuses on register and use.)</div>
+          <div class="ex">"I know it's a total rom-com but I'm going to cry anyway — I always do."</div>
+          <div class="collocations">Collocates: <em>feel-good, predictable, charming, guilty pleasure, cheesy</em></div>
+          <div class="collocations" style="margin-top:6px;color:#555;font-size:12.5px;">💬 <em>Rom-com</em> is informal/spoken; use <em>romantic comedy</em> in writing.</div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">sitcom <span class="pos">n (= situation comedy)</span></span><span class="pron">ˈsɪt.kɒm</span></div>
+          <div class="def">A TV comedy series where the same characters face new comic situations each episode. A TV format, not a cinema genre.</div>
+          <div class="ex">"We were going to go out, but then someone put on a sitcom and we didn't move for three hours."</div>
+          <div class="collocations">Collocates: <em>laugh track, ensemble cast, spin-off, binge-watch, classic sitcom</em></div>
+          <div class="collocations" style="margin-top:6px;color:#555;font-size:12.5px;">📺 Famous sitcoms: <em>Friends, The Office, Fawlty Towers, Brooklyn Nine-Nine, Seinfeld</em>.</div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">chick flick <span class="pos">n (informal, sometimes considered dated)</span></span></div>
+          <div class="def">An informal term for a film marketed primarily at women, typically combining romance, friendship, and emotion.</div>
+          <div class="ex">"He said he wasn't going to enjoy it, but he was crying by the end — it was a total chick flick."</div>
+          <div class="collocations">Collocates: <em>guilty pleasure, tear-jerker, girly film, emotional, feel-good</em></div>
+          <div class="collocations" style="margin-top:6px;color:#555;font-size:12.5px;">⚠ This term can be considered dismissive. Use it with awareness — many speakers prefer <em>romantic drama</em> or <em>feel-good film</em>.</div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">fantasy</span><span class="pron">ˈfæntəsi</span></div>
+          <div class="def">A film set in an imaginary world with magic, mythical creatures, or supernatural powers.</div>
+          <div class="ex">"I'm going to re-watch the whole fantasy series this weekend — all twelve hours of it."</div>
+          <div class="collocations">Collocates: <em>epic fantasy, dark fantasy, fantasy world, magic system, world-building</em></div>
+          <div class="collocations" style="margin-top:6px;color:#555;font-size:12.5px;">🔎 Compare: <em>fantasy</em> (magic/mythical) vs <em>sci-fi</em> (technology/science). <em>Lord of the Rings</em> = fantasy; <em>Interstellar</em> = sci-fi.</div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">superhero film</span></div>
+          <div class="def">A film featuring characters with extraordinary powers, typically based on comic books.</div>
+          <div class="ex">"They're going to release three superhero films this summer — I can't keep up."</div>
+          <div class="collocations">Collocates: <em>Marvel, DC, franchise, sequel, origin story, box-office hit</em></div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">musical</span><span class="pron">ˈmjuːzɪkəl</span></div>
+          <div class="def">A film where characters regularly break into song and dance to express emotion or advance the plot.</div>
+          <div class="ex">"Are you going to see it? The choreography in that musical has won every award going."</div>
+          <div class="collocations">Collocates: <em>Broadway musical, show-stopper, choreography, soundtrack, sing-along</em></div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">war film</span></div>
+          <div class="def">A film set during armed conflict, focusing on combat, strategy, or the human cost of war.</div>
+          <div class="ex">"He's going to find it hard to watch — war films can be very intense."</div>
+          <div class="collocations">Collocates: <em>anti-war, harrowing, based on true events, epic battle, gritty realism</em></div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">indie film <span class="pos">n (= independent film)</span></span><span class="pron">ˈɪndi fɪlm</span></div>
+          <div class="def">A low-budget film made outside the major Hollywood studio system, often experimental or character-driven.</div>
+          <div class="ex">"It's not going to be at every cinema — indie films usually only show at arthouse venues."</div>
+          <div class="collocations">Collocates: <em>arthouse, low-budget, Sundance, quirky, character-driven, festival circuit</em></div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">biographical film <span class="pos">n (informal: biopic)</span></span><span class="pron">ˈbaɪəʊpɪk</span></div>
+          <div class="def">A film dramatising the life of a real person, usually a famous historical or contemporary figure.</div>
+          <div class="ex">"I'm going to see that biopic about the jazz musician — the reviews say it's extraordinary."</div>
+          <div class="collocations">Collocates: <em>award-winning biopic, based on a true story, portrayal, compelling, Oscar-bait</em></div>
+        </div>
+      </div>
+
+      <!-- REGISTER NOTE BOX -->
+      <div style="background:#EEF6F0;border:1px solid #A8D0B8;border-radius:8px;padding:16px 20px;margin-top:20px;">
+        <strong style="color:#2E5240;">📋 Film vs. movie vs. TV show — register guide</strong>
+        <table style="width:100%;border-collapse:collapse;margin-top:12px;font-size:14px;">
+          <tr style="background:#2E5240;color:#F7F3E8;">
+            <th style="padding:8px 12px;text-align:left;border-radius:4px 0 0 0;">Term</th>
+            <th style="padding:8px 12px;text-align:left;">Used for</th>
+            <th style="padding:8px 12px;text-align:left;border-radius:0 4px 0 0;">Register</th>
+          </tr>
+          <tr style="background:#fff;">
+            <td style="padding:8px 12px;border-bottom:1px solid #ddd;"><em>film</em></td>
+            <td style="padding:8px 12px;border-bottom:1px solid #ddd;">Cinema / streaming — British English preference</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #ddd;">Neutral / slightly formal</td>
+          </tr>
+          <tr style="background:#F7F3E8;">
+            <td style="padding:8px 12px;border-bottom:1px solid #ddd;"><em>movie</em></td>
+            <td style="padding:8px 12px;border-bottom:1px solid #ddd;">Cinema / streaming — American English preference</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #ddd;">Informal / everyday</td>
+          </tr>
+          <tr style="background:#fff;">
+            <td style="padding:8px 12px;border-bottom:1px solid #ddd;"><em>TV show / series</em></td>
+            <td style="padding:8px 12px;border-bottom:1px solid #ddd;">Soap operas, sitcoms, dramas on TV or streaming</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #ddd;">Informal</td>
+          </tr>
+          <tr style="background:#F7F3E8;">
+            <td style="padding:8px 12px;"><em>production</em></td>
+            <td style="padding:8px 12px;">Theatre or formal contexts</td>
+            <td style="padding:8px 12px;">Formal / written</td>
+          </tr>
+        </table>
+      </div>
+
+      <h3 style="margin-top:24px;">The cinema experience &mdash; key vocabulary</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div><span class="word">showing</span><span class="pos">n</span></div>
+          <div class="def">A particular time when a film is being screened.</div>
+          <div class="ex">"Are you going to the 7:15 showing or the 9:30?"</div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">sell out</span><span class="pos">phrasal verb</span></div>
+          <div class="def">When all tickets for an event are sold; no seats are left.</div>
+          <div class="ex">"That film's going to sell out by Sunday &mdash; book now."</div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">subtitles</span><span class="pos">n pl.</span></div>
+          <div class="def">Text at the bottom of the screen translating or transcribing dialogue.</div>
+          <div class="ex">"I'm going to need subtitles &mdash; it's in Spanish."</div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">trailer</span><span class="pos">n</span></div>
+          <div class="def">A short preview clip that promotes an upcoming film.</div>
+          <div class="ex">"I saw the trailer and I'm definitely going to watch it."</div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">review</span><span class="pos">n / v</span></div>
+          <div class="def">A critical assessment of a film; to write or give such an assessment.</div>
+          <div class="ex">"The reviews are amazing &mdash; it's going to be a big hit."</div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">plot</span><span class="pos">n</span></div>
+          <div class="def">The sequence of events in a film's story.</div>
+          <div class="ex">"Don't tell me the plot &mdash; I'm going to watch it this week."</div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">lead actor / lead actress</span></div>
+          <div class="def">The main performer in a film.</div>
+          <div class="ex">"The lead actor is going to win an award for this performance."</div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">box office</span><span class="pos">n</span></div>
+          <div class="def">The place where tickets are sold; also used to describe a film's commercial success.</div>
+          <div class="ex">"That film's going to break box office records this weekend."</div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:24px;">Recommending (and warning against) a film</h3>
+      <p class="grammar-sub">These phrases are the ones you actually use to talk about films with other people. Notice how many of them naturally combine with <em>going to</em>.</p>
+      <div class="chip-row">
+        <span class="chip"><strong>You've got to see it</strong> &mdash; strongest recommendation</span>
+        <span class="chip"><strong>I'd highly recommend it</strong> &mdash; formal-neutral</span>
+        <span class="chip"><strong>It's worth seeing</strong> &mdash; positive, not over-the-top</span>
+        <span class="chip"><strong>It's a bit slow</strong> &mdash; gentle warning</span>
+        <span class="chip"><strong>It's not really my kind of film</strong> &mdash; polite dislike</span>
+        <span class="chip"><strong>I wouldn't bother</strong> &mdash; strong negative</span>
+        <span class="chip"><strong>The ending is a bit disappointing</strong></span>
+        <span class="chip"><strong>The special effects are incredible</strong></span>
+        <span class="chip"><strong>The acting is outstanding</strong></span>
+        <span class="chip"><strong>It's going to keep you guessing</strong></span>
+        <span class="chip"><strong>It's going to make you cry</strong></span>
+        <span class="chip"><strong>Don't watch the trailer first</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== VOCABULARY 2: PLANNING ========== -->
+    <!-- BRIDGE: vocab → vocab2 -->
+  <div style="background:var(--white);border-left:4px solid var(--chalk-green);padding:14px 20px;margin-bottom:24px;border-radius:0 8px 8px 0;font-size:15px;color:var(--ink-soft);">
+    <strong style="color:var(--chalk-green);">&#8599; And the planning language.</strong>
+    Talking about films is one skill — <em>arranging</em> to see one is another. Below are the key verbs and phrases for making plans, confirming times, and organising meetings. These overlap directly with <em>going to</em> and suggestions.
+  </div>
+<div class="tab-section" id="vocab2">
+    <div class="tab-header vocab">
+      <span class="tab-num">VOCABULARY</span>
+      <h2 class="tab-title">Planning &amp; arranging &mdash; the language of making things happen</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>Verbs for making and changing plans</h3>
+      <p class="grammar-sub">These are the verbs that native speakers actually use when talking about future plans. They all collocate naturally with <em>going to</em>.</p>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div><span class="word">arrange</span><span class="pos">v</span></div>
+          <div class="def">To make plans and preparations for something to happen.</div>
+          <div class="ex">"We're going to arrange everything by Friday."</div>
+          <div class="collocations">Collocates: <em>arrange a meeting, arrange transport, arrange for someone to do something</em></div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">confirm</span><span class="pos">v</span></div>
+          <div class="def">To make something definite; to say it is definitely happening.</div>
+          <div class="ex">"Are you going to confirm by tomorrow? I need to book."</div>
+          <div class="collocations">Collocates: <em>confirm a booking, confirm your attendance, confirm details</em></div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">cancel</span><span class="pos">v</span></div>
+          <div class="def">To decide that a planned event will not happen.</div>
+          <div class="ex">"If it rains, are we going to cancel or still go?"</div>
+          <div class="collocations">Collocates: <em>cancel a reservation, cancel at the last minute, cancel plans</em></div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">reschedule</span><span class="pos">v</span></div>
+          <div class="def">To move a plan to a different time or date.</div>
+          <div class="ex">"We're going to reschedule the dinner to next week."</div>
+          <div class="collocations">Collocates: <em>reschedule a meeting, reschedule for another day</em></div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">sort out</span><span class="pos">phrasal verb</span></div>
+          <div class="def">(informal) To deal with and organise something.</div>
+          <div class="ex">"I'm going to sort out the train tickets tonight."</div>
+          <div class="collocations">Collocates: <em>sort out the details, sort out who pays, sort it out</em></div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">meet up</span><span class="pos">phrasal verb</span></div>
+          <div class="def">(informal) To meet someone, usually by arrangement.</div>
+          <div class="ex">"Are you going to meet up with us before the film?"</div>
+          <div class="collocations">Collocates: <em>meet up with friends, meet up later, meet up somewhere</em></div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">available</span><span class="pos">adj</span></div>
+          <div class="def">Free to do something; not busy.</div>
+          <div class="ex">"Are you going to be available on Saturday afternoon?"</div>
+          <div class="collocations">Collocates: <em>available to meet, widely available, available online</em></div>
+        </div>
+        <div class="vocab-card">
+          <div><span class="word">commitment</span><span class="pos">n</span></div>
+          <div class="def">Something you have already agreed to do and cannot easily cancel.</div>
+          <div class="ex">"I can't come &mdash; I've got a prior commitment that evening."</div>
+          <div class="collocations">Collocates: <em>prior commitment, previous commitment, make a commitment</em></div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:22px;">Useful expressions for arranging &amp; declining</h3>
+      <div class="ref-table-wrap">
+        <table class="ref-table">
+          <thead><tr><th>Function</th><th>Formal-neutral</th><th>Informal</th></tr></thead>
+          <tbody>
+            <tr><td>Saying you're free</td><td><em>I'm available on Saturday.</em></td><td><em>I'm free Saturday!</em> / <em>Saturday works for me.</em></td></tr>
+            <tr><td>Saying you're busy</td><td><em>I have a prior commitment.</em></td><td><em>I can't make it.</em> / <em>I'm tied up that day.</em></td></tr>
+            <tr><td>Asking if someone is free</td><td><em>Are you available on Saturday?</em></td><td><em>Are you free Saturday?</em> / <em>You around Saturday?</em></td></tr>
+            <tr><td>Confirming a time</td><td><em>Shall we say 7 o'clock?</em></td><td><em>Let's say 7.</em> / <em>7 works?</em></td></tr>
+            <tr><td>Suggesting a change</td><td><em>Could we make it 7:30 instead?</em></td><td><em>What if we push it to 7:30?</em></td></tr>
+            <tr><td>Confirming attendance</td><td><em>I'll confirm by Friday.</em></td><td><em>I'll let you know by Friday.</em></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== EXERCISES ========== -->
+    <!-- BRIDGE: vocab2 → exercises -->
+  <div style="background:var(--white);border-left:4px solid var(--chalk-yellow);padding:14px 20px;margin-bottom:24px;border-radius:0 8px 8px 0;font-size:15px;color:var(--ink-soft);">
+    <strong style="color:#8A6A00;">&#8599; From study to practice.</strong>
+    You have read every grammar rule and vocabulary set. Now test yourself. Complete each exercise independently before you reveal the answers — that effort is what makes the knowledge stick.
+  </div>
+<div class="tab-section" id="exercises">
+    <div class="tab-header exercise">
+      <span class="tab-num">EXERCISES</span>
+      <h2 class="tab-title">Practice &mdash; complete before class</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <p>Complete all exercises independently before attending class. Use the grammar and vocabulary from this file. Do not check answers until you have made a genuine attempt at each one.</p>
+    </div>
+
+    <!-- EX 1: GAP FILL — FORM -->
+    <div class="exercise" id="ex1block">
+      <span class="exercise-label">Exercise 1</span>
+      <h4>Going to &mdash; complete the sentences</h4>
+      <p class="instr">Write the correct form of <em>going to</em> + the verb in brackets. Use contractions where natural.</p>
+      <div class="q-row"><span class="q-num">1.</span><span class="q-text">We <input class="blank-input" data-answer="are going to watch,we're going to watch" placeholder="___________"> (watch) a film tonight. Want to join?</span></div>
+      <div class="q-row"><span class="q-num">2.</span><span class="q-text">Look at the queue! We <input class="blank-input" data-answer="are going to miss,we're going to miss" placeholder="___________"> (miss) the beginning.</span></div>
+      <div class="q-row"><span class="q-num">3.</span><span class="q-text">Marco <input class="blank-input" data-answer="is going to book,he's going to book,'s going to book" placeholder="___________"> (book) the tickets online before they sell out.</span></div>
+      <div class="q-row"><span class="q-num">4.</span><span class="q-text"><input class="blank-input" data-answer="Are you going to" placeholder="___________"> (you / come) to the late showing on Saturday?</span></div>
+      <div class="q-row"><span class="q-num">5.</span><span class="q-text">I <input class="blank-input" data-answer="am not going to,i'm not going to" placeholder="___________"> (not / go) &mdash; I have to work early on Sunday.</span></div>
+      <div class="q-row"><span class="q-num">6.</span><span class="q-text">The film has amazing reviews. It <input class="blank-input" data-answer="is going to be,it's going to be,'s going to be" placeholder="___________"> (be) a huge hit.</span></div>
+      <div class="q-row"><span class="q-num">7.</span><span class="q-text">What time <input class="blank-input" data-answer="are you going to" placeholder="___________"> (you / meet) us at the café?</span></div>
+      <div class="q-row"><span class="q-num">8.</span><span class="q-text">Those dark clouds are moving fast. It <input class="blank-input" data-answer="is going to rain,it's going to rain,'s going to rain" placeholder="___________"> (rain) any minute.</span></div>
+      <button class="check-btn" onclick="checkExercise(1)">Check answers</button>
+      <div class="feedback" id="feedback1"></div>
+    </div>
+
+    <!-- EX 2: GOING TO or WILL -->
+    <div class="exercise" id="ex2block">
+      <span class="exercise-label">Exercise 2</span>
+      <h4>Going to or will? Choose the best option.</h4>
+      <p class="instr">Read the situation in brackets carefully. Choose the sentence that fits best and click it. Only one answer is correct.</p>
+
+      <div style="margin-bottom:18px;">
+        <p style="font-size:14px;color:var(--ink-soft);margin-bottom:8px;"><strong>Situation 1:</strong> You checked the forecast this morning. The weather app says rain for tomorrow.</p>
+        <button class="mc-opt" onclick="mcCheck(this,'A')">A) It's going to rain tomorrow.</button>
+        <button class="mc-opt" onclick="mcCheck(this,'A')">B) It will rain tomorrow.</button>
+        <div class="feedback" id="mcfb1" style="margin-top:6px;"></div>
+      </div>
+
+      <div style="margin-bottom:18px;">
+        <p style="font-size:14px;color:var(--ink-soft);margin-bottom:8px;"><strong>Situation 2:</strong> Your phone rings. You see it's your friend. You decide to answer right now.</p>
+        <button class="mc-opt" onclick="mcCheck2(this,'B')">A) I'm going to answer it.</button>
+        <button class="mc-opt" onclick="mcCheck2(this,'B')">B) I'll answer it.</button>
+        <div class="feedback" id="mcfb2" style="margin-top:6px;"></div>
+      </div>
+
+      <div style="margin-bottom:18px;">
+        <p style="font-size:14px;color:var(--ink-soft);margin-bottom:8px;"><strong>Situation 3:</strong> Last week you decided to join a gym. You tell a friend your decision.</p>
+        <button class="mc-opt" onclick="mcCheck3(this,'A')">A) I'm going to join a gym.</button>
+        <button class="mc-opt" onclick="mcCheck3(this,'A')">B) I will join a gym.</button>
+        <div class="feedback" id="mcfb3" style="margin-top:6px;"></div>
+      </div>
+
+      <div style="margin-bottom:18px;">
+        <p style="font-size:14px;color:var(--ink-soft);margin-bottom:8px;"><strong>Situation 4:</strong> You see a child running towards a busy road. You shout a warning.</p>
+        <button class="mc-opt" onclick="mcCheck4(this,'A')">A) That car's going to hit her!</button>
+        <button class="mc-opt" onclick="mcCheck4(this,'A')">B) That car will hit her!</button>
+        <div class="feedback" id="mcfb4" style="margin-top:6px;"></div>
+      </div>
+
+      <div style="margin-bottom:8px;">
+        <p style="font-size:14px;color:var(--ink-soft);margin-bottom:8px;"><strong>Situation 5:</strong> Someone asks your opinion about artificial intelligence in 50 years.</p>
+        <button class="mc-opt" onclick="mcCheck5(this,'B')">A) AI's going to replace most jobs.</button>
+        <button class="mc-opt" onclick="mcCheck5(this,'B')">B) I think AI will change how we work, but it won't replace everything.</button>
+        <div class="feedback" id="mcfb5" style="margin-top:6px;"></div>
+      </div>
+    </div>
+
+    <!-- EX 3: SUGGESTIONS MATCH -->
+    <div class="exercise" id="matchblock">
+      <span class="exercise-label">Exercise 3</span>
+      <h4>Suggestions &mdash; match the structure to its function</h4>
+      <p class="instr">Click a suggestion (left column), then click its description (right column). If correct, both turn green.</p>
+      <div class="match-grid" id="matchGrid">
+        <div class="match-item" data-pair="a">"Let's get coffee before the film."</div>
+        <div class="match-item" data-pair="d">Softest option &mdash; presents a possibility without committing</div>
+        <div class="match-item" data-pair="b">"Shall we meet at 7?"</div>
+        <div class="match-item" data-pair="a">Invites everyone to do something together; speaker included</div>
+        <div class="match-item" data-pair="c">"Why don't we book in advance?"</div>
+        <div class="match-item" data-pair="f">Used when you're not sure others will agree; introduces a tentative option</div>
+        <div class="match-item" data-pair="d">"We could take the 9:30 train."</div>
+        <div class="match-item" data-pair="b">Common in British English; invites group agreement; question form</div>
+        <div class="match-item" data-pair="e">"How about having dinner first?"</div>
+        <div class="match-item" data-pair="c">Implies a reason or benefit the listener may not have considered</div>
+        <div class="match-item" data-pair="f">"What if we go on Sunday instead?"</div>
+        <div class="match-item" data-pair="e">Always followed by -ing form; casual suggestion</div>
+      </div>
+      <div class="feedback" id="matchFeedback" style="margin-top:10px;"></div>
+    </div>
+
+    <!-- EX 4: ERROR CORRECTION -->
+    <div class="exercise" id="ex4block">
+      <span class="exercise-label">Exercise 4</span>
+      <h4>Error correction &mdash; find and fix the mistake</h4>
+      <p class="instr">Each sentence has one mistake with <em>going to</em> or the suggestion structures. Write the corrected version, then reveal the answer. One sentence is already correct &mdash; identify it.</p>
+
+      <div class="q-row"><span class="q-num">1.</span><span class="q-text">"She going to be late &mdash; her meeting doesn't finish until 7."<br>
+        <input class="blank-input" style="width:100%;max-width:440px;" data-answer="she is going to be late,she's going to be late" placeholder="Write the correct version…">
+        <button class="reveal-btn" style="margin-left:8px;" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <span class="notice-reveal"><strong>Missing <em>is</em>:</strong> "She <em>is</em> going to be late." Going to always needs a form of <em>be</em>.</span>
+      </span></div>
+
+      <div class="q-row"><span class="q-num">2.</span><span class="q-text">"I'm going to booked the tickets online."<br>
+        <input class="blank-input" style="width:100%;max-width:440px;" data-answer="i'm going to book,i am going to book" placeholder="Write the correct version…">
+        <button class="reveal-btn" style="margin-left:8px;" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <span class="notice-reveal"><strong>Wrong verb form:</strong> After <em>going to</em>, use the base verb: "I'm going to <em>book</em>" not "booked."</span>
+      </span></div>
+
+      <div class="q-row"><span class="q-num">3.</span><span class="q-text">"How about to get coffee before the film?"<br>
+        <input class="blank-input" style="width:100%;max-width:440px;" data-answer="how about getting coffee" placeholder="Write the correct version…">
+        <button class="reveal-btn" style="margin-left:8px;" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <span class="notice-reveal"><strong>Wrong form after <em>how about</em>:</strong> <em>How about</em> requires the -ing form. "How about <em>getting</em> coffee?"</span>
+      </span></div>
+
+      <div class="q-row"><span class="q-num">4.</span><span class="q-text">"Look at that ice on the road &mdash; it will be really dangerous tonight."<br>
+        <input class="blank-input" style="width:100%;max-width:440px;" data-answer="it's going to be,it is going to be" placeholder="Write the correct version…">
+        <button class="reveal-btn" style="margin-left:8px;" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <span class="notice-reveal"><strong>Wrong future form:</strong> You can see the ice right now — this is a prediction based on visible evidence. Use <em>going to</em>: "it's going to be really dangerous."</span>
+      </span></div>
+
+      <div class="q-row"><span class="q-num">5.</span><span class="q-text">"Are you going to see that new film at the weekend?" <span style="font-size:13px;color:var(--blue-deep);">(This sentence is correct &mdash; explain why below)</span><br>
+        <input class="blank-input" style="width:100%;max-width:440px;" data-answer="correct,already correct" placeholder="Write 'correct' and explain…">
+        <button class="reveal-btn" style="margin-left:8px;" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <span class="notice-reveal"><strong>Correct!</strong> Correct question form: <em>Are</em> + subject + <em>going to</em> + base verb. The context (a pre-arranged future activity at the weekend) makes <em>going to</em> the natural choice, not <em>will</em>.</span>
+      </span></div>
+    </div>
+
+    <!-- EX 5: VOCABULARY GAP FILL -->
+    <div class="exercise" id="ex5block">
+      <span class="exercise-label">Exercise 5</span>
+      <h4>Vocabulary in context &mdash; films and plans</h4>
+      <p class="instr">Choose the correct word or phrase from the box to complete each sentence.</p>
+      <div class="callout blue" style="margin-bottom:14px;">
+        <strong>Word bank:</strong> <em>sell out &nbsp;·&nbsp; subtitles &nbsp;·&nbsp; trailer &nbsp;·&nbsp; showing &nbsp;·&nbsp; plot &nbsp;·&nbsp; box office &nbsp;·&nbsp; commitment &nbsp;·&nbsp; reschedule &nbsp;·&nbsp; available &nbsp;·&nbsp; sort out</em>
+      </div>
+      <div class="q-row"><span class="q-num">1.</span><span class="q-text">The film is in French with English <input class="blank-input" data-answer="subtitles" placeholder="_____">. I was glad they had them.</span></div>
+      <div class="q-row"><span class="q-num">2.</span><span class="q-text">I'm going to <input class="blank-input" data-answer="sort out" placeholder="_____"> the hotel booking this evening &mdash; I keep forgetting.</span></div>
+      <div class="q-row"><span class="q-num">3.</span><span class="q-text">The 8pm <input class="blank-input" data-answer="showing" placeholder="_____"> is already full. We're going to try the 10:30 instead.</span></div>
+      <div class="q-row"><span class="q-num">4.</span><span class="q-text">Don't tell me the <input class="blank-input" data-answer="plot" placeholder="_____"> &mdash; I'm going to watch it tonight!</span></div>
+      <div class="q-row"><span class="q-num">5.</span><span class="q-text">That concert is going to <input class="blank-input" data-answer="sell out" placeholder="_____"> within hours. Buy tickets now.</span></div>
+      <div class="q-row"><span class="q-num">6.</span><span class="q-text">I'm sorry &mdash; I can't come on Friday. I have a prior <input class="blank-input" data-answer="commitment" placeholder="_____"> I can't cancel.</span></div>
+      <div class="q-row"><span class="q-num">7.</span><span class="q-text">I saw the <input class="blank-input" data-answer="trailer" placeholder="_____"> last week and now I can't stop thinking about the film.</span></div>
+      <div class="q-row"><span class="q-num">8.</span><span class="q-text">The film broke <input class="blank-input" data-answer="box office" placeholder="_____"> records in its first weekend &mdash; everyone went to see it.</span></div>
+      <button class="check-btn" onclick="checkExercise(5)">Check answers</button>
+      <div class="feedback" id="feedback5"></div>
+    </div>
+
+    <!-- EX 6: FREE WRITING -->
+    <div class="exercise">
+      <span class="exercise-label">Exercise 6</span>
+      <h4>Free writing &mdash; your real plans</h4>
+      <p class="instr">Write 8&ndash;10 sentences about your actual plans for this week or weekend. Use <em>going to</em> at least four times (two for plans, two for predictions). Include at least one suggestion using the structures from Study 3, and use at least three vocabulary items from this file. Aim for 80&ndash;120 words.</p>
+      <textarea class="response-box" id="freeWrite" placeholder="Write your plans here… e.g. 'I'm going to meet a friend on Saturday. We're going to…'" oninput="updateWordCount()"></textarea>
+      <div class="word-count">Word count: <strong id="wordCount">0</strong></div>
+    </div>
+  </div>
+
+  <!-- ========== ACTIVATE ========== -->
+    <!-- BRIDGE: exercises → activate -->
+  <div style="background:var(--white);border-left:4px solid var(--coral);padding:14px 20px;margin-bottom:24px;border-radius:0 8px 8px 0;font-size:15px;color:var(--ink-soft);">
+    <strong style="color:var(--coral);">&#8599; From controlled practice to free use.</strong>
+    Exercises test recall. The Activate task below asks you to <em>use</em> the language freely and creatively — as the characters themselves. This is how language becomes yours.
+  </div>
+<div class="tab-section" id="activate">
+    <div class="tab-header activate">
+      <span class="tab-num">ACTIVATE</span>
+      <h2 class="tab-title">A taste of the class session &mdash; try it now</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="activate-box">
+      <h3>&#127916; You are Rasha, Marco, Yuna, or Tom.</h3>
+      <p>Choose one of the four friends from the group chat. Write their next message to the group &mdash; it is Sunday morning after the cinema trip. They are suggesting a plan for the following weekend.</p>
+      <p>Your message must include:</p>
+      <ul style="margin-bottom:12px;padding-left:22px;">
+        <li>At least <strong>two uses of <em>going to</em></strong> (one plan, one prediction or evidence-based comment)</li>
+        <li><strong>One suggestion structure</strong> (e.g. <em>Shall we…, Let's…, Why don't we…, How about…</em>)</li>
+        <li><strong>One film recommendation</strong> or comment using vocabulary from this file</li>
+        <li>A natural, realistic message length (3&ndash;6 sentences)</li>
+      </ul>
+      <textarea class="response-box" id="activateWrite" placeholder="[Your character's name, e.g. Rasha]: ..." oninput="updateActivateCount()"></textarea>
+      <div class="word-count">Word count: <strong id="activateCount">0</strong></div>
+    </div>
+
+    <div class="card">
+      <h3>&#128172; Discussion questions &mdash; bring your answers to class</h3>
+      <ol style="font-size:15px;padding-left:22px;margin:0;">
+        <li style="margin-bottom:10px;">Think about the last film you saw (at the cinema, at home, or streaming). Would you recommend it? Use at least two phrases from the recommendation list and at least one <em>going to</em> sentence.</li>
+        <li style="margin-bottom:10px;">Make two real predictions about the world in 10 years using <em>going to</em> (with evidence) and two using <em>will / I think</em> (opinions).</li>
+        <li>Arrange a real or imaginary plan with a partner: decide on an activity, a time, and a meeting point. Use at least three different suggestion structures in the conversation.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ========== AUTONOMY ========== -->
+    <!-- BRIDGE: activate → autonomy -->
+  <div style="background:var(--white);border-left:4px solid var(--purple);padding:14px 20px;margin-bottom:24px;border-radius:0 8px 8px 0;font-size:15px;color:var(--ink-soft);">
+    <strong style="color:var(--purple);">&#8599; Go beyond the classroom.</strong>
+    The cards below are invitations — not assignments. Choose one or two that genuinely interest you and explore independently. Autonomous learners progress faster than learners who only work inside the syllabus.
+  </div>
+<div class="tab-section" id="autonomy">
+    <div class="tab-header autonomy">
+      <span class="tab-num">EXPLORE ON YOUR OWN</span>
+      <h2 class="tab-title">Independent learning &mdash; go further</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="research-card">
+      <span class="research-tag">&#127916; Film research</span>
+      <h3>Find a current film &mdash; in English</h3>
+      <p>Go to <a class="link-suggestion" href="https://www.imdb.com" target="_blank">imdb.com</a> or <a class="link-suggestion" href="https://www.rottentomatoes.com" target="_blank">rottentomatoes.com</a>. Choose a film currently in cinemas or trending on streaming services. Write a short description (5&ndash;7 sentences) that includes:</p>
+      <ul>
+        <li>What the film is about (plot summary)</li>
+        <li>Whether you are going to watch it &mdash; and why</li>
+        <li>A prediction about whether it will be successful</li>
+        <li>A recommendation (positive or negative) using phrases from the vocabulary section</li>
+      </ul>
+      <p>Bring your paragraph to class and be ready to share it with a partner.</p>
+    </div>
+
+    <div class="research-card">
+      <span class="research-tag">&#128250; Corpus listening</span>
+      <h3>Listen for <em>gonna</em> in real English</h3>
+      <p>Find any English-language interview, podcast, or film scene on YouTube. Your task: every time you hear <em>gonna</em>, pause and write down the full sentence. After 5 minutes, look at your sentences and ask yourself:</p>
+      <ul>
+        <li>Was each use a <em>plan</em> or a <em>prediction with evidence</em>?</li>
+        <li>Did you hear any formal contexts where the speaker used <em>going to</em> instead of <em>gonna</em>?</li>
+        <li>How fast does the speaker say <em>gonna</em>? Can you imitate the rhythm?</li>
+      </ul>
+      <p>Suggested search terms: "English interview podcast", "film behind the scenes", "talk show English".</p>
+    </div>
+
+    <div class="research-card">
+      <span class="research-tag">&#128218; Corpus exploration</span>
+      <h3>Explore <em>going to</em> in real English text</h3>
+      <p>Go to <a class="link-suggestion" href="https://www.english-corpora.org/coca/" target="_blank">COCA corpus</a>. Search for the phrase <em>"going to"</em> in the <em>spoken</em> section. Look at 20 examples. For each one, decide: is it a <em>plan</em> or a <em>prediction</em>? Are there any that surprise you? Write 3&ndash;4 sentences about what you notice.</p>
+    </div>
+
+    <div class="research-card">
+      <span class="research-tag">&#128172; Speaking challenge</span>
+      <h3>Record yourself making plans</h3>
+      <p>Use your phone's voice recorder. Imagine you are leaving a voicemail for a friend, explaining your plans for this weekend. Your voicemail must last 60&ndash;90 seconds and include:</p>
+      <ul>
+        <li>At least <strong>4 uses of <em>going to</em></strong></li>
+        <li>At least <strong>one suggestion</strong> (e.g. <em>"Shall we…?"</em>)</li>
+        <li>At least <strong>one prediction based on evidence</strong></li>
+        <li>Natural use of <em>gonna</em> in informal moments</li>
+      </ul>
+      <p>Listen back to your recording. Does it sound natural? Would you be happy with the rhythm? Bring it to class if you want feedback.</p>
+    </div>
+
+    <div class="research-card">
+      <span class="research-tag">&#128221; Vocabulary expansion</span>
+      <h3>Build your film-review vocabulary</h3>
+      <p>Find a film review in English &mdash; in a newspaper, on Rotten Tomatoes, or on Letterboxd. Write down 10 words or phrases you do not know. Use a dictionary to find their meaning, pronunciation, and one example sentence of your own. Bonus: find the review's positive and negative collocations (e.g. <em>stunning cinematography, formulaic plot, stellar performance</em>).</p>
+      <p>Useful review sites:</p>
+      <a class="link-suggestion" href="https://www.theguardian.com/film" target="_blank">The Guardian Film</a>
+      <a class="link-suggestion" href="https://letterboxd.com" target="_blank">Letterboxd</a>
+      <a class="link-suggestion" href="https://www.rogerebert.com" target="_blank">RogerEbert.com</a>
+    </div>
+
+    <div class="research-card">
+      <span class="research-tag">&#127775; Go deeper: grammar</span>
+      <h3>Investigate <em>going to</em> vs <em>will</em> in different contexts</h3>
+      <p>This week you had a first look at the difference. For further reading and practice:</p>
+      <ul>
+        <li>Read the <em>English Grammar Profile</em> entry for B1 future forms &mdash; search "English Grammar Profile going to B1"</li>
+        <li>Try the <a class="link-suggestion" href="https://www.perfect-english-grammar.com/future-going-to.html" target="_blank">Perfect English Grammar</a> exercises on going to</li>
+        <li>Read this BBC Learning English article: search "BBC Learning English going to future"</li>
+      </ul>
+      <p>Note: the full contrast between <em>going to</em> and <em>will</em> comes in Week 3. This is preparation, not the final answer.</p>
+    </div>
+  </div>
+
+  <!-- ========== SUMMARY ========== -->
+    <!-- BRIDGE: autonomy → summary -->
+  <div style="background:var(--white);border-left:4px solid var(--chalk-green);padding:14px 20px;margin-bottom:24px;border-radius:0 8px 8px 0;font-size:15px;color:var(--ink-soft);">
+    <strong style="color:var(--chalk-green);">&#8599; Bring it all together.</strong>
+    You have covered the full week. The summary below gives you a one-page reference — every key rule and phrase on a single screen. Use the self-check to see what you are confident about before class.
+  </div>
+<div class="tab-section" id="summary">
+    <div class="tab-header">
+      <span class="tab-num">SUMMARY</span>
+      <h2 class="tab-title">Quick-reference summary</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="ref-table-wrap">
+      <table class="ref-table">
+        <thead><tr><th colspan="3">Going to &mdash; complete reference</th></tr></thead>
+        <tbody>
+          <tr>
+            <td style="width:20%;font-weight:bold;">Form (+)</td>
+            <td colspan="2">Subject + <strong>am/is/are going to</strong> + base verb<br><em>I'm going to see it. &nbsp; She's going to be late. &nbsp; We're going to book.</em></td>
+          </tr>
+          <tr>
+            <td style="font-weight:bold;">Form (−)</td>
+            <td colspan="2">Subject + <strong>am not / isn't / aren't going to</strong> + base verb<br><em>He isn't going to come. &nbsp; I'm not going to be ready.</em></td>
+          </tr>
+          <tr>
+            <td style="font-weight:bold;">Form (?)</td>
+            <td colspan="2"><strong>Am/Is/Are</strong> + subject + <strong>going to</strong> + base verb?<br><em>Are you going to join us? &nbsp; Is it going to rain?</em></td>
+          </tr>
+          <tr>
+            <td style="font-weight:bold;">Use 1</td>
+            <td colspan="2"><strong>Plans &amp; intentions</strong> &mdash; already decided before the moment of speaking<br><em>"I'm going to book the tickets now."</em> (Tom has already decided)</td>
+          </tr>
+          <tr>
+            <td style="font-weight:bold;">Use 2</td>
+            <td colspan="2"><strong>Evidence-based predictions</strong> &mdash; visible or known evidence points to a future event<br><em>"It's going to rain."</em> (you can see the clouds) &nbsp; <em>"The train's going to be packed."</em> (you know from experience)</td>
+          </tr>
+          <tr>
+            <td style="font-weight:bold;">vs Will</td>
+            <td colspan="2"><em>Going to</em> for pre-decided plans and evidence-based predictions.<br><em>Will</em> for spontaneous decisions, general opinions, promises, and offers.</td>
+          </tr>
+          <tr>
+            <td style="font-weight:bold;">Pronunciation</td>
+            <td colspan="2">In natural speech: <em>going to</em> → <strong>gonna</strong> /ˈɡɒnə/<br>Only in writing and formal spoken contexts: full form <em>going to</em>.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ref-table-wrap" style="margin-top:20px;">
+      <table class="ref-table">
+        <thead><tr><th colspan="3">Suggestions &mdash; complete reference</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Let's + base verb</strong></td><td><em>"Let's meet at 7."</em></td><td>Informal; speaker included; both agree to do it</td></tr>
+          <tr><td><strong>Shall we + base verb?</strong></td><td><em>"Shall we go together?"</em></td><td>Neutral; invitation to group; question form</td></tr>
+          <tr><td><strong>Why don't we + base verb?</strong></td><td><em>"Why don't we try the late showing?"</em></td><td>Implies a reason; informal</td></tr>
+          <tr><td><strong>How about / What about + -ing?</strong></td><td><em>"How about getting coffee first?"</em></td><td>Informal; always -ing after <em>about</em></td></tr>
+          <tr><td><strong>We could + base verb</strong></td><td><em>"We could take the earlier train."</em></td><td>Softest; no commitment; polite</td></tr>
+          <tr><td><strong>What if we + past simple?</strong></td><td><em>"What if we went on Sunday?"</em></td><td>Tentative; useful when uncertain</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="wrapup">
+      <h3>Before Session 1, make sure you can&hellip;</h3>
+      <ul>
+        <li>Form <em>going to</em> correctly for all persons in positive, negative, and question forms without hesitation</li>
+        <li>Explain (in English) the difference between <em>going to for plans</em> and <em>going to for predictions</em>, with an example of each</li>
+        <li>Decide when to use <em>going to</em> vs <em>will</em> by asking yourself: <em>"Was this decision already made?"</em></li>
+        <li>Say five sentences using <em>gonna</em> naturally out loud without pausing</li>
+        <li>Use at least four different suggestion structures in a single short conversation</li>
+        <li>Name six film genres and give a short description of each</li>
+        <li>Use at least three film recommendation phrases in genuine sentences about a film you know</li>
+        <li>Name three words from the planning vocabulary section and use each in a sentence about your own life</li>
+        <li>Complete all six exercises and have your free writing (Exercise 6) ready to share</li>
+        <li>Bring one finding from your independent research to share with a partner</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- end .wrap -->
+
+<script>
+  // Progress bar
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    document.getElementById('progressFill').style.width = scrolled + '%';
+  });
+
+  // Gap-fill checker
+  function checkExercise(num) {
+    const exerciseEl = document.getElementById('ex' + num + 'block');
+    const inputs = exerciseEl ? exerciseEl.querySelectorAll('.blank-input') : document.querySelectorAll('#ex' + num + 'block .blank-input');
+    let correct = 0;
+    inputs.forEach(input => {
+      const answers = input.dataset.answer.split(',').map(a => a.trim().toLowerCase());
+      const userVal = input.value.trim().toLowerCase();
+      if (answers.some(a => userVal.includes(a) || a.includes(userVal) && userVal.length > 3)) {
+        correct++;
+        input.style.borderColor = '#1F3A2E';
+      } else if (answers.includes(userVal)) {
+        correct++;
+        input.style.borderColor = '#1F3A2E';
+      } else {
+        input.style.borderColor = '#B14B34';
+      }
+    });
+    const fb = document.getElementById('feedback' + num);
+    if (!fb) return;
+    fb.classList.add('show');
+    if (correct === inputs.length) {
+      fb.classList.remove('bad'); fb.classList.add('good');
+      fb.textContent = 'All ' + inputs.length + ' correct! Well done.';
+    } else {
+      fb.classList.remove('good'); fb.classList.add('bad');
+      fb.textContent = correct + ' of ' + inputs.length + ' correct. Check the red items and try again.';
+    }
+  }
+
+  // Multiple choice handlers
+  function mcHandle(btn, correctLetter, fbId) {
+    const parent = btn.parentElement;
+    const opts = parent.querySelectorAll('.mc-opt');
+    opts.forEach(o => { o.style.pointerEvents = 'none'; });
+    const chosen = btn.textContent.trim().charAt(0);
+    const fb = document.getElementById(fbId);
+    fb.classList.add('show');
+    if (chosen === correctLetter) {
+      btn.classList.add('correct-flash');
+      fb.classList.add('good'); fb.classList.remove('bad');
+      fb.textContent = 'Correct! ' + (fbId === 'mcfb1' ? 'You have just seen the forecast — specific evidence. Going to is the natural choice.' : fbId === 'mcfb2' ? 'Correct! This is a spontaneous decision made at the moment — will is natural here.' : fbId === 'mcfb3' ? 'Correct! You decided last week — this is a pre-existing plan. Going to is the right choice.' : fbId === 'mcfb4' ? 'Correct! You can see the situation unfolding right now — immediate evidence. Going to.' : 'Correct! This is a general opinion about the future with no specific evidence. Will (+ I think) is natural here.');
+    } else {
+      btn.classList.add('wrong-flash');
+      fb.classList.add('bad'); fb.classList.remove('good');
+      const correctBtn = [...opts].find(o => o.textContent.trim().charAt(0) === correctLetter);
+      if (correctBtn) correctBtn.classList.add('correct-flash');
+      fb.textContent = 'Not quite. ' + (fbId === 'mcfb1' ? 'You have evidence (the forecast you just checked). Use going to, not will.' : fbId === 'mcfb2' ? 'This is a decision made at this exact moment. Will is the natural choice for spontaneous decisions.' : fbId === 'mcfb3' ? 'You already decided last week. That makes it a pre-existing plan — going to is natural.' : fbId === 'mcfb4' ? 'You can see what is happening right now — this needs going to for immediate evidence-based predictions.' : 'This is a general opinion, not a prediction with specific evidence. Will (+ I think) fits better.');
+    }
+  }
+  function mcCheck(b,c){ mcHandle(b,c,'mcfb1'); }
+  function mcCheck2(b,c){ mcHandle(b,c,'mcfb2'); }
+  function mcCheck3(b,c){ mcHandle(b,c,'mcfb3'); }
+  function mcCheck4(b,c){ mcHandle(b,c,'mcfb4'); }
+  function mcCheck5(b,c){ mcHandle(b,c,'mcfb5'); }
+
+  // Match game
+  let firstMatch = null;
+  let matchCount = 0;
+  document.querySelectorAll('.match-item').forEach(item => {
+    item.addEventListener('click', () => {
+      if (item.classList.contains('matched')) return;
+      if (!firstMatch) {
+        firstMatch = item;
+        item.classList.add('selected');
+      } else if (firstMatch === item) {
+        firstMatch.classList.remove('selected');
+        firstMatch = null;
+      } else {
+        if (firstMatch.dataset.pair === item.dataset.pair) {
+          firstMatch.classList.remove('selected');
+          firstMatch.classList.add('matched');
+          item.classList.add('matched');
+          matchCount++;
+          const fb = document.getElementById('matchFeedback');
+          if (matchCount >= 6) {
+            fb.className = 'feedback show good';
+            fb.textContent = 'All 6 matched! Excellent work.';
+          } else {
+            fb.className = 'feedback show good';
+            fb.textContent = matchCount + ' of 6 matched. Keep going!';
+          }
+          firstMatch = null;
+        } else {
+          item.classList.add('wrong-flash');
+          setTimeout(() => {
+            firstMatch.classList.remove('selected');
+            item.classList.remove('wrong-flash');
+            firstMatch = null;
+          }, 600);
+        }
+      }
+    });
+  });
+
+  // Word counters
+  function updateWordCount() {
+    const text = document.getElementById('freeWrite').value.trim();
+    const count = text ? text.split(/\s+/).filter(w => w).length : 0;
+    document.getElementById('wordCount').textContent = count;
+  }
+  function updateActivateCount() {
+    const text = document.getElementById('activateWrite').value.trim();
+    const count = text ? text.split(/\s+/).filter(w => w).length : 0;
+    document.getElementById('activateCount').textContent = count;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 3 · Week 2 — Abilities & Polite Requests: The Climbing Wall</title>
+<style>
+  :root{
+    --paper:#f7f3ea;
+    --paper-line:#e4dcc8;
+    --ink:#2b2620;
+    --ink-soft:#5c5346;
+    --green:#1d3557;
+    --green-soft:#dbe6f0;
+    --orange:#b8483a;
+    --orange-soft:#f2ddd8;
+    --blue:#2a6f6f;
+    --blue-soft:#dcecec;
+    --plum:#6b4226;
+    --plum-soft:#ece0d5;
+    --gold:#a67c1e;
+    --gold-soft:#f0e6c8;
+    --card-shadow: 0 2px 0 rgba(43,38,32,0.06), 0 8px 18px rgba(43,38,32,0.08);
+  }
+  *{box-sizing:border-box;}
+  h1,h2,h3,h4,h5{font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(ellipse at top left, rgba(29,53,87,0.05), transparent 40%),
+      radial-gradient(ellipse at bottom right, rgba(184,72,58,0.05), transparent 40%),
+      var(--paper);
+    color:var(--ink);
+    font-family:Calibri,"Segoe UI",Arial,sans-serif;
+    line-height:1.6;
+    padding-bottom:80px;
+  }
+  #progress-wrap{position:fixed;top:0;left:0;width:100%;height:6px;background:var(--paper-line);z-index:999;}
+  #progress-bar{height:100%;width:0%;background:linear-gradient(90deg,var(--green),var(--orange));transition:width .1s;}
+
+  .wrap{max-width:920px;margin:0 auto;padding:34px 22px 10px;}
+
+  header.hero{
+    background:linear-gradient(135deg, var(--green) 0%, #0d1f33 100%);
+    color:#fbf8f0;
+    padding:38px 30px 30px;
+    border-radius:14px;
+    margin:26px auto 0;
+    max-width:920px;
+    box-shadow:var(--card-shadow);
+  }
+  header.hero .eyebrow{
+    font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;
+    text-transform:uppercase;letter-spacing:2px;font-size:12.5px;color:#cdd9e6;font-weight:bold;
+  }
+  header.hero h1{font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;font-size:32px;margin:8px 0 6px;line-height:1.25;}
+  header.hero p.sub{color:#e6ecf2;font-size:16px;margin:0 0 4px;font-style:italic;}
+  header.hero .storyline{
+    margin-top:16px;padding:12px 16px;background:rgba(255,255,255,0.09);border-radius:10px;font-size:14.5px;color:#f2ede0;
+  }
+
+  section{max-width:920px;margin:26px auto;padding:0 22px;}
+
+  .box{
+    background:#fffdf8;
+    border:1px solid var(--paper-line);
+    border-radius:12px;
+    padding:22px 24px;
+    box-shadow:var(--card-shadow);
+  }
+
+  h2.sec-title{
+    display:flex;align-items:center;gap:12px;
+    font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;
+    font-size:23px;margin:0 0 16px;color:var(--ink);
+  }
+  .tab-num{
+    flex:0 0 auto;width:38px;height:38px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;
+    color:#fff;font-weight:bold;font-size:16px;box-shadow:0 2px 4px rgba(0,0,0,0.15);
+  }
+  .c1 .tab-num{background:var(--green);} .c2 .tab-num{background:var(--orange);}
+  .c3 .tab-num{background:var(--blue);} .c4 .tab-num{background:var(--plum);}
+  .c5 .tab-num{background:var(--gold);} .c6 .tab-num{background:var(--green);}
+  .c7 .tab-num{background:var(--orange);} .c8 .tab-num{background:var(--blue);}
+  .c9 .tab-num{background:var(--plum);}
+
+  .overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px;}
+  .overview-grid .item{
+    background:var(--green-soft);border-radius:10px;padding:14px 16px;font-size:14.5px;
+  }
+  .overview-grid .item b{font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;display:block;color:var(--green);font-size:13px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;}
+
+  .toc-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;
+  }
+  .toc-grid a{
+    display:flex;align-items:center;gap:10px;
+    text-decoration:none;color:var(--ink);font-size:15px;padding:8px 10px;border-radius:8px;
+    transition:background .15s;
+  }
+  .toc-grid a:hover{background:var(--paper-line);}
+  .toc-num{
+    flex:0 0 auto;width:26px;height:26px;border-radius:50%;color:#fff;font-size:12.5px;font-weight:bold;
+    font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .toc-grid a:nth-child(1) .toc-num{background:var(--green);}
+  .toc-grid a:nth-child(2) .toc-num{background:var(--orange);}
+  .toc-grid a:nth-child(3) .toc-num{background:var(--blue);}
+  .toc-grid a:nth-child(4) .toc-num{background:var(--plum);}
+  .toc-grid a:nth-child(5) .toc-num{background:var(--gold);}
+  .toc-grid a:nth-child(6) .toc-num{background:var(--green);}
+  .toc-grid a:nth-child(7) .toc-num{background:var(--orange);}
+  .toc-grid a:nth-child(8) .toc-num{background:var(--blue);}
+  .toc-grid a:nth-child(9) .toc-num{background:var(--plum);}
+  .toc-grid a:nth-child(10) .toc-num{background:var(--gold);}
+
+  .realia{
+    border:1px solid var(--paper-line);
+    border-radius:10px;
+    background:#fffefb;
+    padding:18px 20px;
+    margin:16px 0;
+    position:relative;
+  }
+  .realia .doc-tag{
+    position:absolute;top:-11px;left:16px;background:var(--blue);color:#fff;font-size:11.5px;
+    font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;
+    padding:3px 10px;border-radius:20px;letter-spacing:0.5px;text-transform:uppercase;font-weight:bold;
+  }
+  .blogpost h4{font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;margin:6px 0 2px;color:var(--green);font-size:19px;}
+  .blogpost .byline{font-size:12.5px;color:var(--ink-soft);margin-bottom:10px;font-style:italic;}
+  .blogpost ul{margin:8px 0;padding-left:20px;}
+
+  .chat{background:#fbf9f2;border-radius:10px;padding:14px 16px 6px;}
+  .chat .bubble{max-width:80%;padding:9px 14px;border-radius:14px;margin-bottom:10px;font-size:14.5px;}
+  .chat .left{background:#eee7d6;border-bottom-left-radius:2px;}
+  .chat .right{background:var(--green-soft);border-bottom-right-radius:2px;margin-left:auto;}
+  .chat .name{font-size:11.5px;font-weight:bold;color:var(--ink-soft);margin-bottom:2px;}
+
+  .highlight{background:#fce9c9;padding:0 3px;border-radius:3px;font-weight:bold;}
+  .highlight2{background:#d7e9f0;padding:0 3px;border-radius:3px;font-weight:bold;}
+
+  .notice-q{background:var(--gold-soft);border-radius:10px;padding:14px 18px;margin:10px 0;font-size:15px;}
+  .notice-q b{color:var(--gold);}
+
+  table.rules{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px;}
+  table.rules th{background:var(--blue);color:#fff;padding:9px 12px;text-align:left;}
+  table.rules td{padding:9px 12px;border-bottom:1px solid var(--paper-line);}
+  table.rules tr:nth-child(even) td{background:#faf7ee;}
+
+  .error-box{background:var(--plum-soft);border-radius:10px;padding:16px 20px;margin:16px 0;}
+  .error-box h4{font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;color:var(--plum);margin:0 0 8px;}
+
+  .vocab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:10px;}
+  .vocab-card{background:var(--orange-soft);border-radius:10px;padding:12px 15px;font-size:14.5px;display:flex;gap:10px;align-items:flex-start;}
+  .vocab-card .emoji{font-size:22px;line-height:1;}
+  .vocab-card b{font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;color:var(--orange);display:block;font-size:15.5px;}
+
+  .collo-row{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0;}
+  .collo-chip{background:var(--blue-soft);color:var(--blue);padding:6px 14px;border-radius:20px;font-size:14px;font-weight:bold;}
+
+  .tl-diagram{background:#fffefb;border:1px solid var(--paper-line);border-radius:12px;padding:14px 16px 10px;margin:16px 0;text-align:center;box-shadow:var(--card-shadow);}
+  .tl-diagram svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+  .tl-caption{font-size:13px;color:var(--ink-soft);margin-top:6px;font-style:italic;}
+  .tl-diagram-title{font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;font-size:14.5px;color:var(--ink);text-align:left;margin:0 0 6px;font-weight:bold;}
+
+  .quiz-item{background:#fffefb;border:1px solid var(--paper-line);border-radius:10px;padding:14px 18px;margin:10px 0;}
+  .quiz-item .q-text{font-size:15px;margin-bottom:10px;}
+  .tf-btns button, .mc-btns button{
+    font-family:inherit;font-size:14px;padding:7px 16px;margin-right:8px;border-radius:20px;border:2px solid var(--ink-soft);
+    background:#fff;cursor:pointer;transition:.15s;
+  }
+  .tf-btns button:hover, .mc-btns button:hover{background:var(--green-soft);}
+  .feedback{display:none;margin-top:8px;font-size:14px;font-weight:bold;padding:6px 12px;border-radius:8px;}
+  .feedback.correct{background:#dbe9db;color:var(--green);}
+  .feedback.incorrect{background:#f5d8d8;color:#8c2c2c;}
+
+  .reveal-btn{
+    display:inline-block;margin-top:8px;font-size:13.5px;background:var(--gold);color:#fff;border:none;
+    padding:6px 14px;border-radius:20px;cursor:pointer;font-family:inherit;
+  }
+  .reveal-content{display:none;margin-top:10px;background:var(--gold-soft);border-radius:8px;padding:10px 14px;font-size:14px;}
+
+  .match-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:12px;}
+  .match-col .match-item{
+    background:#fff;border:2px solid var(--paper-line);border-radius:8px;padding:8px 12px;margin-bottom:8px;
+    cursor:pointer;font-size:14px;transition:.15s;
+  }
+  .match-col .match-item.selected{border-color:var(--blue);background:var(--blue-soft);}
+  .match-col .match-item.matched{border-color:var(--green);background:var(--green-soft);cursor:default;}
+
+  .fill-blank input{
+    font-family:inherit;font-size:14px;border:none;border-bottom:2px solid var(--ink-soft);
+    background:transparent;width:150px;text-align:center;padding:2px 4px;
+  }
+  .fill-blank input:focus{outline:none;border-color:var(--green);}
+
+  textarea.writing-area{
+    width:100%;min-height:160px;font-family:inherit;font-size:14.5px;padding:14px;border-radius:10px;
+    border:1px solid var(--paper-line);resize:vertical;
+  }
+  .word-count{font-size:13px;color:var(--ink-soft);margin-top:6px;}
+
+  .score-track{font-size:13.5px;color:var(--ink-soft);margin-top:4px;}
+
+  .research-list{list-style:none;padding:0;margin:10px 0;}
+  .research-list li{
+    background:#fffefb;border:1px solid var(--paper-line);border-radius:10px;
+    padding:12px 16px;margin-bottom:10px;font-size:14.5px;
+  }
+  .research-list li b{color:var(--green);}
+
+  .summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px;}
+  .summary-card{
+    background:#fffefb;border-radius:10px;padding:16px;text-align:center;border:1px solid var(--paper-line);
+    box-shadow:var(--card-shadow);
+  }
+  .summary-card .icon{font-size:28px;margin-bottom:6px;}
+  .summary-card h5{font-family:"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;margin:4px 0;color:var(--green);font-size:14.5px;}
+  .summary-card p{font-size:12.5px;color:var(--ink-soft);margin:0;}
+
+  .checklist{list-style:none;padding:0;}
+  .checklist li{padding:8px 4px;font-size:14.5px;display:flex;gap:10px;align-items:flex-start;}
+  .checklist input{margin-top:3px;}
+
+  footer{text-align:center;font-size:12.5px;color:var(--ink-soft);margin-top:50px;padding:0 22px;}
+
+  @media(max-width:640px){
+    .toc-grid, .overview-grid, .vocab-grid, .match-grid, .summary-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div id="progress-wrap"><div id="progress-bar"></div></div>
+
+<header class="hero">
+  <div class="eyebrow">Grade 3 · Week 2 · Abilities &amp; Requests</div>
+  <h1>The Climbing Wall: Can You Reach It?</h1>
+  <p class="sub">Can / can't / could · polite requests · body parts &amp; ability vocabulary</p>
+  <div class="storyline">📍 <b>This week's story:</b> Tom and Maya are having so much fun that they decide to try the Riverside Community Centre's "Taster Day" together. First stop: the indoor climbing wall. Neither of them has climbed before, so they need to talk about what they can and can't do — and ask each other, and the instructor, for help. Read what happens at the wall before we name any grammar.</div>
+</header>
+
+<div class="wrap">
+
+<section class="box" id="overview">
+  <h2 class="sec-title"><span class="tab-num" style="background:var(--green)">★</span>What You'll Master This Week</h2>
+  <div class="overview-grid">
+    <div class="item"><b>Grammar</b>Can / can't for ability and permission, and could for polite requests.</div>
+    <div class="item"><b>Vocabulary</b>Body parts and words for describing physical abilities.</div>
+    <div class="item"><b>Function</b>Talking about what you can and can't do, and asking politely for help.</div>
+    <div class="item"><b>Skills</b>Reading a taster-day poster, listening, pronunciation, describing abilities.</div>
+  </div>
+</section>
+
+<section id="toc">
+  <div class="box">
+    <h2 class="sec-title"><span class="tab-num" style="background:var(--orange)">≡</span>On This Page</h2>
+    <div class="toc-grid">
+      <a href="#context"><span class="toc-num">1</span>Context: At the Climbing Wall</a>
+      <a href="#notice"><span class="toc-num">2</span>Notice the Language</a>
+      <a href="#grammar"><span class="toc-num">3</span>Grammar Focus</a>
+      <a href="#vocab"><span class="toc-num">4</span>Vocabulary: Body &amp; Ability</a>
+      <a href="#practice"><span class="toc-num">5</span>Practice Zone</a>
+      <a href="#errorclinic"><span class="toc-num">6</span>Error Clinic</a>
+      <a href="#writing"><span class="toc-num">7</span>Your Turn: Writing Task</a>
+      <a href="#research"><span class="toc-num">8</span>Explore More (Autonomy)</a>
+      <a href="#summary"><span class="toc-num">9</span>Summary &amp; Self-Check</a>
+    </div>
+  </div>
+</section>
+
+<!-- 1: CONTEXT -->
+<section id="context" class="c1">
+  <h2 class="sec-title"><span class="tab-num">1</span>Context First: Read Before Any Rule</h2>
+  <p>Read the Taster Day poster, then the conversation between Tom, Maya and their instructor at the climbing wall. Just try to understand what is happening — the grammar comes later.</p>
+
+  <div class="realia blogpost">
+    <span class="doc-tag">Poster</span>
+    <h4>Riverside Community Centre — Taster Day!</h4>
+    <p class="byline">Saturday, all activities free for first-time visitors</p>
+    <p>Come and try something new this Saturday. No experience needed — our instructors will help you every step of the way.</p>
+    <ul>
+      <li><b>Climbing Wall</b> — You <span class="highlight">can</span> try all levels, from beginner to advanced. Comfortable shoes required.</li>
+      <li><b>Dance Studio</b> — Beginners <span class="highlight">can</span> join the 11 a.m. class; no partner needed.</li>
+      <li><b>First Aid Workshop</b> — Learn simple skills for everyday emergencies.</li>
+    </ul>
+    <p>Visitors <span class="highlight">can't</span> bring outside food into the centre, but there is a café on site.</p>
+  </div>
+
+  <div class="realia">
+    <span class="doc-tag">Conversation</span>
+    <div class="chat">
+      <div class="bubble left"><div class="name">Instructor</div>OK, Maya, put your foot on that yellow hold. <span class="highlight2">Can</span> you reach it?</div>
+      <div class="bubble right"><div class="name">Maya</div>Yes, I <span class="highlight2">can</span>! But I <span class="highlight2">can't</span> reach the next one — my arms are too short!</div>
+      <div class="bubble left"><div class="name">Instructor</div>No problem. <span class="highlight2">Could</span> you try the hold on the left instead?</div>
+      <div class="bubble right"><div class="name">Maya</div>OK... yes, that's better!</div>
+      <div class="bubble left"><div class="name">Tom</div>Maya, <span class="highlight2">could</span> you pass me the chalk bag, please? My hands are sweating.</div>
+      <div class="bubble right"><div class="name">Maya</div>Sure! Here you go.</div>
+      <div class="bubble left"><div class="name">Tom</div>Thanks. I <span class="highlight2">can</span> climb quite well, actually — I used to do it a lot as a teenager.</div>
+      <div class="bubble left"><div class="name">Instructor</div>Great! Tom, <span class="highlight2">could</span> you help Maya find her next foothold? She <span class="highlight2">can't</span> quite see it from there.</div>
+    </div>
+  </div>
+
+  <p><em>Notice:</em> "can" and "can't" talk about ability — what someone is able or unable to do. "Could" is used differently here — it makes a request sound more polite. All three words appear naturally, side by side, in this one short conversation.</p>
+</section>
+
+<!-- 2: NOTICE -->
+<section id="notice" class="c2">
+  <h2 class="sec-title"><span class="tab-num">2</span>Notice the Language (Before Any Rule)</h2>
+  <p>Look again at the highlighted words. Talk to a partner about these questions.</p>
+  <div class="notice-q"><b>Q1.</b> When Maya says "Yes, I can!" and "I can't reach the next one", is she talking about ability (being able to do something) or making a request?</div>
+  <div class="notice-q"><b>Q2.</b> When the instructor says "Could you try the hold on the left instead?", is this a real question about ability, or is it a polite way of asking Maya to do something?</div>
+  <div class="notice-q"><b>Q3.</b> Compare "Can you reach it?" and "Could you pass me the chalk bag, please?". Which one sounds a little more polite? Do you think we could swap "can" and "could" in both sentences without changing the politeness level?</div>
+  <div class="notice-q"><b>Q4.</b> Find every body part word in the conversation (foot, arms, hands...). How many can you find?</div>
+  <p style="font-size:14px;color:var(--ink-soft);">Discuss your answers before you move to Section 3.</p>
+</section>
+
+<!-- 3: GRAMMAR -->
+<section id="grammar" class="c3">
+  <h2 class="sec-title"><span class="tab-num">3</span>Grammar Focus</h2>
+
+  <h3 style="color:var(--blue);">3.1 — Can / Can't: Form &amp; Use (Ability)</h3>
+  <table class="rules">
+    <tr><th>Form</th><th>Example</th></tr>
+    <tr><td>subject + <b>can</b> + verb (no "to")</td><td>I <b>can</b> climb quite well.</td></tr>
+    <tr><td>subject + <b>can't</b> + verb</td><td>I <b>can't</b> reach the next hold.</td></tr>
+    <tr><td>question: <b>Can</b> + subject + verb?</td><td><b>Can</b> you reach it?</td></tr>
+  </table>
+  <p>We use <b>can</b> to say that someone has the ability to do something, and <b>can't</b> to say they do not have that ability. The form never changes — no "-s" for he/she/it, and never add "to" after can/can't.</p>
+
+  <div class="error-box">
+    <h4>⚠️ Important: Modal Verbs Never Change Form</h4>
+    <table class="rules">
+      <tr><th>❌ Incorrect</th><th>✅ Correct</th></tr>
+      <tr><td>She cans climb well.</td><td>She <b>can</b> climb well.</td></tr>
+      <tr><td>I can to reach it.</td><td>I <b>can reach</b> it. (no "to")</td></tr>
+    </table>
+  </div>
+
+  <h3 style="color:var(--blue);">3.2 — Could: A Polite Way to Ask</h3>
+  <p>In the conversation, "could" is not about ability or the past — it is simply a <b>more polite</b> way of asking someone to do something. Compare these two ways of asking the same thing:</p>
+  <table class="rules">
+    <tr><th>Direct request</th><th>More polite request</th></tr>
+    <tr><td><b>Can</b> you pass me the chalk bag?</td><td><b>Could</b> you pass me the chalk bag, please?</td></tr>
+    <tr><td><b>Can</b> you help me?</td><td><b>Could</b> you help me, please?</td></tr>
+  </table>
+
+  <div class="tl-diagram">
+    <div class="tl-diagram-title">The politeness scale: Can → Could</div>
+    <svg viewBox="0 0 680 150" xmlns="http://www.w3.org/2000/svg">
+      <rect x="30" y="60" width="620" height="18" rx="9" fill="url(#g1)"/>
+      <defs>
+        <linearGradient id="g1" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#b8483a"/>
+          <stop offset="100%" stop-color="#1d3557"/>
+        </linearGradient>
+      </defs>
+      <circle cx="120" cy="69" r="11" fill="#b8483a" stroke="#fff" stroke-width="3"/>
+      <text x="120" y="45" font-size="15" fill="#b8483a" font-family="Calibri" font-weight="bold" text-anchor="middle">CAN</text>
+      <text x="120" y="105" font-size="12.5" fill="#5c5346" font-family="Calibri" text-anchor="middle">"Can you help me?"</text>
+      <text x="120" y="122" font-size="11.5" fill="#5c5346" font-family="Calibri" font-style="italic" text-anchor="middle">direct, informal, friends</text>
+      <circle cx="560" cy="69" r="11" fill="#1d3557" stroke="#fff" stroke-width="3"/>
+      <text x="560" y="45" font-size="15" fill="#1d3557" font-family="Calibri" font-weight="bold" text-anchor="middle">COULD</text>
+      <text x="560" y="105" font-size="12.5" fill="#5c5346" font-family="Calibri" text-anchor="middle">"Could you help me, please?"</text>
+      <text x="560" y="122" font-size="11.5" fill="#5c5346" font-family="Calibri" font-style="italic" text-anchor="middle">more polite, strangers, formal situations</text>
+    </svg>
+    <div class="tl-caption">Both are correct and common. "Could" simply sounds softer and more polite — useful with an instructor, a stranger, or someone older than you.</div>
+  </div>
+
+  <table class="rules">
+    <tr><th>Use</th><th>Example</th></tr>
+    <tr><td>Polite request</td><td><b>Could</b> you help Maya find her foothold?</td></tr>
+    <tr><td>Ability (present)</td><td>I <b>can</b> climb quite well.</td></tr>
+    <tr><td>Inability (present)</td><td>She <b>can't</b> quite see it from there.</td></tr>
+  </table>
+  <p style="font-size:14px;">You may also see "could" used for <b>past ability</b> (e.g. "When I was a teenager, I <b>could</b> climb trees easily"). This is a different use from the polite request above — we will look at this more closely in a later grade. For now, focus on <b>could</b> as a polite request word.</p>
+</section>
+
+<!-- 4: VOCAB -->
+<section id="vocab" class="c4">
+  <h2 class="sec-title"><span class="tab-num">4</span>Vocabulary: Body Parts &amp; Abilities</h2>
+
+  <h3 style="color:var(--plum);">4.1 — Body Parts</h3>
+  <div class="tl-diagram">
+    <div class="tl-diagram-title">Labelled body diagram</div>
+    <svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="200" cy="55" r="32" fill="#e8c9a0"/>
+      <rect x="185" y="87" width="30" height="20" fill="#e8c9a0"/>
+      <rect x="150" y="107" width="100" height="120" rx="20" fill="#dbe6f0"/>
+      <rect x="108" y="112" width="30" height="105" rx="14" fill="#dbe6f0"/>
+      <rect x="262" y="112" width="30" height="105" rx="14" fill="#dbe6f0"/>
+      <rect x="98" y="205" width="26" height="26" rx="8" fill="#e8c9a0"/>
+      <rect x="276" y="205" width="26" height="26" rx="8" fill="#e8c9a0"/>
+      <rect x="163" y="222" width="30" height="115" fill="#2b2620"/>
+      <rect x="207" y="222" width="30" height="115" fill="#2b2620"/>
+      <rect x="158" y="330" width="40" height="24" rx="8" fill="#e8c9a0"/>
+      <rect x="202" y="330" width="40" height="24" rx="8" fill="#e8c9a0"/>
+
+      <line x1="200" y1="30" x2="90" y2="20" stroke="#5c5346" stroke-width="1.5"/>
+      <text x="20" y="24" font-size="15" fill="#1d3557" font-family="Calibri" font-weight="bold">head</text>
+
+      <line x1="197" y1="92" x2="90" y2="92" stroke="#5c5346" stroke-width="1.5"/>
+      <text x="20" y="96" font-size="15" fill="#1d3557" font-family="Calibri" font-weight="bold">neck</text>
+
+      <line x1="155" y1="112" x2="80" y2="130" stroke="#5c5346" stroke-width="1.5"/>
+      <text x="15" y="135" font-size="15" fill="#b8483a" font-family="Calibri" font-weight="bold">shoulder</text>
+
+      <line x1="200" y1="150" x2="90" y2="165" stroke="#5c5346" stroke-width="1.5"/>
+      <text x="20" y="169" font-size="15" fill="#1d3557" font-family="Calibri" font-weight="bold">chest</text>
+
+      <line x1="118" y1="165" x2="330" y2="70" stroke="#5c5346" stroke-width="1.5"/>
+      <text x="335" y="74" font-size="15" fill="#b8483a" font-family="Calibri" font-weight="bold">arm</text>
+
+      <line x1="123" y1="215" x2="330" y2="140" stroke="#5c5346" stroke-width="1.5"/>
+      <text x="335" y="144" font-size="15" fill="#b8483a" font-family="Calibri" font-weight="bold">elbow</text>
+
+      <line x1="111" y1="218" x2="330" y2="210" stroke="#5c5346" stroke-width="1.5"/>
+      <text x="335" y="214" font-size="15" fill="#1d3557" font-family="Calibri" font-weight="bold">hand</text>
+
+      <line x1="200" y1="230" x2="90" y2="260" stroke="#5c5346" stroke-width="1.5"/>
+      <text x="15" y="264" font-size="15" fill="#1d3557" font-family="Calibri" font-weight="bold">back</text>
+
+      <line x1="178" y1="280" x2="330" y2="280" stroke="#5c5346" stroke-width="1.5"/>
+      <text x="335" y="284" font-size="15" fill="#b8483a" font-family="Calibri" font-weight="bold">leg</text>
+
+      <line x1="200" y1="330" x2="90" y2="330" stroke="#5c5346" stroke-width="1.5"/>
+      <text x="20" y="334" font-size="15" fill="#1d3557" font-family="Calibri" font-weight="bold">knee</text>
+
+      <line x1="220" y1="340" x2="330" y2="360" stroke="#5c5346" stroke-width="1.5"/>
+      <text x="335" y="364" font-size="15" fill="#b8483a" font-family="Calibri" font-weight="bold">foot</text>
+    </svg>
+    <div class="tl-caption">Labels alternate sides for readability only — every part exists on both sides of the body.</div>
+  </div>
+  <div class="collo-row">
+    <span class="collo-chip">finger · thumb · wrist · ankle · toe · thigh · hip · stomach · eye · ear</span>
+  </div>
+
+  <h3 style="color:var(--plum);">4.2 — Ability &amp; Movement Verbs</h3>
+  <div class="vocab-grid">
+    <div class="vocab-card"><span class="emoji">🧗</span><div><b>to climb</b>to move up something using your hands and feet</div></div>
+    <div class="vocab-card"><span class="emoji">🤲</span><div><b>to reach</b>to stretch out your arm/hand to touch something</div></div>
+    <div class="vocab-card"><span class="emoji">🤸</span><div><b>to stretch</b>to extend your body or a body part</div></div>
+    <div class="vocab-card"><span class="emoji">🧍</span><div><b>to balance</b>to keep steady without falling</div></div>
+    <div class="vocab-card"><span class="emoji">✊</span><div><b>to hold on</b>to keep gripping something firmly</div></div>
+    <div class="vocab-card"><span class="emoji">🙆</span><div><b>to bend</b>to move a joint so a body part is not straight</div></div>
+  </div>
+
+  <h3 style="color:var(--plum);">4.3 — Describing Ability &amp; Physical Condition</h3>
+  <div class="collo-row">
+    <span class="collo-chip">fit</span>
+    <span class="collo-chip">flexible</span>
+    <span class="collo-chip">strong</span>
+    <span class="collo-chip">weak</span>
+    <span class="collo-chip">sore</span>
+    <span class="collo-chip">injured</span>
+    <span class="collo-chip">exhausted</span>
+  </div>
+
+  <h3 style="color:var(--plum);">4.4 — More Related Vocabulary to Recognise</h3>
+  <p style="font-size:14.5px;">grip · foothold / handhold · harness · rope · beginner / advanced level · warm-up · to twist · to lift · to push · to pull · to spot (someone) — to support a climbing partner for safety.</p>
+</section>
+
+<!-- 5: PRACTICE -->
+<section id="practice" class="c5">
+  <h2 class="sec-title"><span class="tab-num">5</span>Practice Zone</h2>
+
+  <h3 style="color:var(--gold);">5.1 — True or False: Comprehension Check</h3>
+  <div id="tf-quiz"></div>
+  <div class="score-track" id="tf-score"></div>
+
+  <h3 style="color:var(--gold);">5.2 — Match the Word to Its Meaning</h3>
+  <div class="match-grid" id="match-game"></div>
+  <div class="score-track" id="match-score"></div>
+
+  <h3 style="color:var(--gold);">5.3 — Multiple Choice: Grammar Check</h3>
+  <div id="mc-quiz"></div>
+
+  <h3 style="color:var(--gold);">5.4 — Fill in the Blank</h3>
+  <p style="font-size:14px;">Complete each sentence with can, can't, or could. Then click "Check answers".</p>
+  <div class="box" style="padding:16px 20px;">
+    <p>1. Maya <span class="fill-blank"><input data-answer="can't" placeholder="can/can't"></span> reach the next hold — her arms are too short.</p>
+    <p>2. <span class="fill-blank"><input data-answer="Could" placeholder="Can/Could"></span> you pass me the chalk bag, please? (more polite)</p>
+    <p>3. Tom <span class="fill-blank"><input data-answer="can" placeholder="can/can't"></span> climb quite well.</p>
+    <p>4. <span class="fill-blank"><input data-answer="Could" placeholder="Can/Could"></span> you help Maya find her foothold, please? (more polite, to an instructor)</p>
+    <p>5. She <span class="fill-blank"><input data-answer="can't" placeholder="can/can't"></span> quite see the next hold from there.</p>
+    <button class="reveal-btn" onclick="checkFillBlanks()">Check answers</button>
+    <div id="fill-feedback" class="score-track"></div>
+  </div>
+</section>
+
+<!-- 6: ERROR CLINIC -->
+<section id="errorclinic" class="c6">
+  <h2 class="sec-title"><span class="tab-num">6</span>Error Clinic</h2>
+  <p>Read each sentence. Some have mistakes — fix them. <b>One sentence is already correct — do not "fix" it if it isn't broken.</b></p>
+  <div class="box" style="padding:16px 20px;">
+    <ol style="font-size:14.5px;">
+      <li>"She cans climb very well." <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button><div class="reveal-content">Incorrect — modal verbs never take "-s": "She <b>can</b> climb very well."</div></li>
+      <li>"I can to reach the top." <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button><div class="reveal-content">Incorrect — never add "to" after can/can't: "I <b>can reach</b> the top."</div></li>
+      <li>"Could you help me with this knot, please?" <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button><div class="reveal-content"><b>This sentence is already correct — no error here.</b> "Could" here is a polite request, correctly formed with the subject after it. Resist the urge to change anything.</div></li>
+      <li>"You can help me?" <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button><div class="reveal-content">Incorrect word order for a question — the modal comes before the subject: "<b>Can you</b> help me?"</div></li>
+      <li>"He can't to see the hold from there." <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button><div class="reveal-content">Incorrect — no "to" after can't: "He <b>can't see</b> the hold from there."</div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 7: WRITING -->
+<section id="writing" class="c7">
+  <h2 class="sec-title"><span class="tab-num">7</span>Your Turn: Writing Task</h2>
+  <p>Write a short message (<b>60–90 words</b>) describing three things you can do well, one thing you can't do (yet!), and two polite requests you might make to a partner, friend, or instructor using "could". Use at least one body-part word.</p>
+  <textarea class="writing-area" id="writing-box" placeholder="Start writing here..."></textarea>
+  <div class="word-count" id="word-count">0 words</div>
+  <div class="notice-q" style="margin-top:14px;"><b>Self-check before you submit:</b> Did you avoid "to" after can/can't/could? Did you put the modal before the subject in your questions? Did you use "could" for polite requests, not just "can" everywhere?</div>
+</section>
+
+<!-- 8: RESEARCH -->
+<section id="research" class="c8">
+  <h2 class="sec-title"><span class="tab-num">8</span>Explore More: Build Your Own Independence</h2>
+  <p>Use these tasks to notice this week's language in real English before your next class.</p>
+  <ul class="research-list">
+    <li><b>Body idioms:</b> Search online for 5 English idioms that use body parts (for example, "cost an arm and a leg", "break a leg", "keep an eye on"). Write down what each one means.</li>
+    <li><b>Politeness check:</b> Watch a short customer-service video in English (a hotel check-in, a café order). Count how many times staff use "could" instead of "can" — what does that tell you about formal service language?</li>
+    <li><b>Real taster days:</b> Search for a real community centre, gym, or sports club near you online. Find an activity you could try, and write 2 sentences about what you can and can't currently do in that activity.</li>
+    <li><b>Listening hunt:</b> Watch a 1-2 minute video of a climbing, dance, or sports lesson in English. Note down two examples of "can/can't" for ability and one polite request with "could".</li>
+    <li><b>Speaking challenge:</b> Practise asking a friend or family member for something using "could" instead of your usual way of asking. Notice how it changes the tone.</li>
+  </ul>
+</section>
+
+<section id="summary" class="c9">
+  <h2 class="sec-title"><span class="tab-num">✓</span>Summary &amp; Self-Check</h2>
+  <div class="summary-grid">
+    <div class="summary-card"><div class="icon">💪</div><h5>Can / Can't</h5><p>ability and inability — no "to" after them</p></div>
+    <div class="summary-card"><div class="icon">🙏</div><h5>Could</h5><p>a more polite way to make a request</p></div>
+    <div class="summary-card"><div class="icon">📏</div><h5>Politeness Scale</h5><p>can = direct, could = more polite</p></div>
+    <div class="summary-card"><div class="icon">🦵</div><h5>Body Parts</h5><p>arm, hand, leg, foot, knee, shoulder...</p></div>
+    <div class="summary-card"><div class="icon">🧗</div><h5>Ability Verbs</h5><p>climb, reach, stretch, balance, hold on</p></div>
+    <div class="summary-card"><div class="icon">🩹</div><h5>Condition Words</h5><p>fit, flexible, strong, sore, injured</p></div>
+  </div>
+
+  <h3 style="color:var(--green);margin-top:26px;">Before Next Class — Checklist</h3>
+  <ul class="checklist">
+    <li><input type="checkbox"> I can use can/can't correctly for ability, with no "to" after them.</li>
+    <li><input type="checkbox"> I can form can/could questions with the correct word order (modal before subject).</li>
+    <li><input type="checkbox"> I can use "could" to make a request sound more polite.</li>
+    <li><input type="checkbox"> I can name at least 10 body parts and 5 ability verbs.</li>
+    <li><input type="checkbox"> I completed the writing task (60–90 words) with the required grammar.</li>
+    <li><input type="checkbox"> I completed at least one "Explore More" task and can talk about it in class.</li>
+  </ul>
+</section>
+
+</div>
+
+<footer>Grade 3 · Week 2 · Abilities &amp; Requests — Flipped Learning Reference · Study this page fully before your next class.</footer>
+
+<script>
+window.addEventListener('scroll', function(){
+  var h = document.documentElement;
+  var scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  document.getElementById('progress-bar').style.width = scrolled + '%';
+});
+
+var tfData = [
+  {q:"Visitors can bring outside food into the centre.", a:false, exp:"False — the poster says visitors CAN'T bring outside food, but there is a café."},
+  {q:"Maya can reach the first hold, but not the second one.", a:true, exp:"True — she says 'Yes, I can!' then 'I can't reach the next one.'"},
+  {q:"Tom has never climbed before in his life.", a:false, exp:"False — he says he used to climb a lot as a teenager."},
+  {q:"The instructor asks Tom to help Maya using 'could', to be polite.", a:true, exp:"True — 'Tom, could you help Maya find her next foothold?'"},
+  {q:"The dance class requires a partner.", a:false, exp:"False — the poster says 'no partner needed.'"}
+];
+var tfContainer = document.getElementById('tf-quiz');
+var tfCorrectCount = 0, tfAnswered = 0;
+tfData.forEach(function(item, i){
+  var div = document.createElement('div');
+  div.className = 'quiz-item';
+  div.innerHTML = '<div class="q-text">' + (i+1) + '. ' + item.q + '</div>' +
+    '<div class="tf-btns"><button data-val="true">True</button><button data-val="false">False</button></div>' +
+    '<div class="feedback"></div>';
+  tfContainer.appendChild(div);
+  var buttons = div.querySelectorAll('.tf-btns button');
+  var fb = div.querySelector('.feedback');
+  var done = false;
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if(done) return;
+      done = true; tfAnswered++;
+      var val = (btn.getAttribute('data-val') === 'true');
+      if(val === item.a){
+        fb.className = 'feedback correct'; fb.textContent = '✔ Correct! ' + item.exp; tfCorrectCount++;
+      } else {
+        fb.className = 'feedback incorrect'; fb.textContent = '✘ Not quite. ' + item.exp;
+      }
+      fb.style.display = 'block';
+      document.getElementById('tf-score').textContent = 'Score: ' + tfCorrectCount + ' / ' + tfData.length + ' (answered ' + tfAnswered + ')';
+    });
+  });
+});
+
+var matchPairs = [
+  {word:"to reach", def:"to stretch out your arm/hand to touch something"},
+  {word:"to hold on", def:"to keep gripping something firmly"},
+  {word:"foothold", def:"a small place to put your foot while climbing"},
+  {word:"flexible", def:"able to bend and move your body easily"},
+  {word:"sore", def:"painful, especially after exercise"}
+];
+function shuffle(arr){ return arr.map(function(v){return [Math.random(), v];}).sort(function(a,b){return a[0]-b[0];}).map(function(v){return v[1];}); }
+var wordsShuffled = shuffle(matchPairs.map(function(p){return p.word;}));
+var defsShuffled = shuffle(matchPairs.map(function(p){return p.def;}));
+var matchContainer = document.getElementById('match-game');
+var colWords = document.createElement('div'); colWords.className = 'match-col';
+var colDefs = document.createElement('div'); colDefs.className = 'match-col';
+wordsShuffled.forEach(function(w){
+  var d = document.createElement('div'); d.className = 'match-item'; d.textContent = w; d.setAttribute('data-word', w);
+  colWords.appendChild(d);
+});
+defsShuffled.forEach(function(def){
+  var d = document.createElement('div'); d.className = 'match-item'; d.textContent = def; d.setAttribute('data-def', def);
+  colDefs.appendChild(d);
+});
+matchContainer.appendChild(colWords); matchContainer.appendChild(colDefs);
+var selectedWord = null, selectedDef = null, matchCount = 0;
+function checkMatch(){
+  if(selectedWord && selectedDef){
+    var w = selectedWord.getAttribute('data-word');
+    var pair = matchPairs.find(function(p){return p.word === w;});
+    if(pair && pair.def === selectedDef.getAttribute('data-def')){
+      selectedWord.classList.add('matched'); selectedDef.classList.add('matched');
+      selectedWord.classList.remove('selected'); selectedDef.classList.remove('selected');
+      matchCount++;
+      document.getElementById('match-score').textContent = 'Matched: ' + matchCount + ' / ' + matchPairs.length;
+    } else {
+      selectedWord.classList.remove('selected'); selectedDef.classList.remove('selected');
+    }
+    selectedWord = null; selectedDef = null;
+  }
+}
+colWords.querySelectorAll('.match-item').forEach(function(item){
+  item.addEventListener('click', function(){
+    if(item.classList.contains('matched')) return;
+    colWords.querySelectorAll('.match-item').forEach(function(i){ if(i!==item) i.classList.remove('selected'); });
+    item.classList.toggle('selected');
+    selectedWord = item.classList.contains('selected') ? item : null;
+    checkMatch();
+  });
+});
+colDefs.querySelectorAll('.match-item').forEach(function(item){
+  item.addEventListener('click', function(){
+    if(item.classList.contains('matched')) return;
+    colDefs.querySelectorAll('.match-item').forEach(function(i){ if(i!==item) i.classList.remove('selected'); });
+    item.classList.toggle('selected');
+    selectedDef = item.classList.contains('selected') ? item : null;
+    checkMatch();
+  });
+});
+
+var mcData = [
+  {q:"Choose the correct sentence:", options:["She cans swim.","She can swim.","She can to swim."], correct:1},
+  {q:"Which is the MORE POLITE way to ask a stranger for help?", options:["Can you help me?","Could you help me, please?","Help me!"], correct:1},
+  {q:"Choose the correct question word order:", options:["You can help me?","Can you help me?","Can help you me?"], correct:1},
+  {q:"\"I can't ___ the top shelf.\"", options:["to reach","reach","reaching"], correct:1}
+];
+var mcContainer = document.getElementById('mc-quiz');
+mcData.forEach(function(item, i){
+  var div = document.createElement('div'); div.className = 'quiz-item';
+  var btnsHtml = item.options.map(function(opt, idx){ return '<button data-idx="'+idx+'">'+opt+'</button>'; }).join('');
+  div.innerHTML = '<div class="q-text">' + (i+1) + '. ' + item.q + '</div><div class="mc-btns">' + btnsHtml + '</div><div class="feedback"></div>';
+  mcContainer.appendChild(div);
+  var fb = div.querySelector('.feedback');
+  var done = false;
+  div.querySelectorAll('.mc-btns button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if(done) return; done = true;
+      var idx = parseInt(btn.getAttribute('data-idx'));
+      if(idx === item.correct){ fb.className='feedback correct'; fb.textContent = '✔ Correct!'; }
+      else { fb.className='feedback incorrect'; fb.textContent = '✘ The correct answer was: ' + item.options[item.correct]; }
+      fb.style.display = 'block';
+    });
+  });
+});
+
+function checkFillBlanks(){
+  var inputs = document.querySelectorAll('.fill-blank input');
+  var correct = 0;
+  inputs.forEach(function(inp){
+    var val = inp.value.trim().toLowerCase();
+    var ans = inp.getAttribute('data-answer').toLowerCase();
+    if(val === ans){ inp.style.borderColor = '#1d3557'; inp.style.color = '#1d3557'; correct++; }
+    else { inp.style.borderColor = '#8c2c2c'; inp.style.color = '#8c2c2c'; }
+  });
+  document.getElementById('fill-feedback').textContent = correct + ' / ' + inputs.length + ' correct. (Correct answers shown in blue, check spelling on red ones.)';
+}
+
+document.getElementById('writing-box').addEventListener('input', function(){
+  var text = this.value.trim();
+  var count = text.length ? text.split(/\s+/).length : 0;
+  var el = document.getElementById('word-count');
+  el.textContent = count + ' words';
+  el.style.color = (count >= 60 && count <= 90) ? '#1d3557' : '#5c5346';
+});
+</script>
+
+</body>
+</html>

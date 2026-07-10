@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 6 · Week 4 — Possessives, Compounds & Collocations | Full Reference</title>
+<style>
+  :root {
+    --ink: #28344A;
+    --ink-soft: #4A5775;
+    --paper: #F7F3E8;
+    --paper-line: #E3DCC8;
+    --chalk-green: #1F3A2E;
+    --chalk-green-light: #2E5240;
+    --chalk-yellow: #E8B84B;
+    --chalk-yellow-deep: #C99423;
+    --coral: #D8694F;
+    --coral-deep: #B14B34;
+    --blue: #3D6E8C;
+    --blue-deep: #285067;
+    --white: #FFFFFF;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper);
+    background-image: repeating-linear-gradient(transparent, transparent 35px, var(--paper-line) 35px, var(--paper-line) 36px);
+    color: var(--ink); font-family: Calibri, "Segoe UI", Arial, sans-serif; font-size: 17px; line-height: 1.65;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px 80px; }
+
+  .masthead { background: var(--chalk-green); color: var(--paper); margin: 0 -24px 0; padding: 38px 24px 30px; position: relative; overflow: hidden; }
+  .masthead::after { content: ""; position: absolute; right: -60px; top: -60px; width: 220px; height: 220px; border-radius: 50%; background: var(--chalk-green-light); opacity: 0.5; }
+  .masthead-inner { max-width: 872px; margin: 0 auto; position: relative; z-index: 1; }
+  .eyebrow { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--chalk-yellow); margin: 0 0 10px; }
+  h1.title { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 36px; line-height: 1.2; margin: 0 0 14px; max-width: 640px; }
+  .masthead-meta { display: flex; gap: 24px; flex-wrap: wrap; font-size: 14px; color: #D9E5DC; margin-top: 16px; }
+  .masthead-meta span { font-weight: bold; color: var(--paper); }
+
+  .toc { background: var(--white); border-radius: 10px; margin-top: -18px; padding: 20px 26px; box-shadow: 0 4px 16px rgba(40,52,74,0.12); position: relative; z-index: 2; }
+  .toc h2 { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 16px; margin: 0 0 10px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; }
+  .toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 30px; font-size: 14px; }
+  .toc li { margin-bottom: 6px; }
+  .toc a { color: var(--coral-deep); text-decoration: none; font-weight: bold; }
+  .toc a:hover { text-decoration: underline; }
+
+  .tab-section { margin-top: 46px; }
+  .tab-header { display: flex; align-items: center; gap: 14px; margin-bottom: 4px; flex-wrap: wrap; }
+  .tab-num { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 14px; font-weight: bold; color: var(--white); background: var(--chalk-green); border-radius: 6px; padding: 6px 14px; white-space: nowrap; }
+  .tab-header.study .tab-num { background: var(--coral-deep); }
+  .tab-header.activate .tab-num { background: var(--chalk-yellow-deep); color: var(--ink); }
+  .tab-header.vocab .tab-num { background: var(--blue-deep); }
+  .tab-header.autonomy .tab-num { background: #6B4C8A; }
+  h2.tab-title { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 24px; margin: 0; color: var(--ink); }
+  .tab-rule { border: none; border-top: 2px solid var(--paper-line); margin: 14px 0 22px; }
+
+  .card { background: var(--white); border-radius: 10px; padding: 22px 26px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(40,52,74,0.08); }
+  .card h3 { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 19px; margin: 0 0 10px; color: var(--chalk-green); }
+  .card p { margin: 0 0 10px; }
+  .card p:last-child { margin-bottom: 0; }
+
+  .hook-box { background: var(--chalk-green); color: var(--paper); border-radius: 10px; padding: 26px 28px; margin-bottom: 20px; }
+  .hook-box h3 { font-family: "Bookman Old Style", Cambria, Georgia, serif; margin: 0 0 12px; color: var(--chalk-yellow); font-size: 19px; }
+  .hook-box p { margin: 0 0 10px; color: #E7EFE9; }
+
+  .trait-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; }
+  .trait-card { background: var(--chalk-green-light); border: 2px solid transparent; border-radius: 8px; padding: 12px 10px; text-align: center; cursor: pointer; transition: all 0.15s ease; }
+  .trait-card:hover { border-color: var(--chalk-yellow); }
+  .trait-card.picked { border-color: var(--chalk-yellow); background: #3A5C46; }
+  .trait-card .trait-word { font-weight: bold; font-size: 14.5px; color: var(--paper); }
+  .trait-pick-note { margin-top: 14px; font-size: 14px; color: #C7D6CB; display: none; }
+  .trait-pick-note.show { display: block; }
+
+  .realia { background: var(--white); border-radius: 10px; padding: 0; margin-bottom: 20px; box-shadow: 0 4px 16px rgba(40,52,74,0.12); overflow: hidden; border: 1px solid var(--paper-line); }
+  .realia-header { background: var(--blue-deep); color: var(--white); padding: 16px 26px; display: flex; align-items: center; gap: 12px; }
+  .realia-header .doctype { font-size: 11px; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; background: var(--white); color: var(--blue-deep); border-radius: 4px; padding: 3px 9px; }
+  .realia-header .docname { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 18px; }
+  .realia-body { padding: 24px 28px; }
+  .realia-body p { margin: 0 0 14px; }
+  .realia-body .signoff { font-style: italic; color: var(--ink-soft); margin-top: 18px; }
+
+  .target-1 { background: #FBEDE9; color: var(--coral-deep); padding: 1px 4px; border-radius: 3px; font-weight: bold; }
+  .target-2 { background: #E9F0F5; color: var(--blue-deep); padding: 1px 4px; border-radius: 3px; font-weight: bold; }
+  .target-3 { background: #F2EBF7; color: #6B4C8A; padding: 1px 4px; border-radius: 3px; font-weight: bold; }
+
+  .chat-thread { padding: 0; }
+  .chat-msg { padding: 14px 28px; display: flex; gap: 14px; border-bottom: 1px solid var(--paper-line); }
+  .chat-msg:last-child { border-bottom: none; }
+  .chat-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--chalk-yellow); color: var(--ink); display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 13px; flex-shrink: 0; }
+  .chat-msg.agent .chat-avatar { background: var(--blue-deep); color: var(--white); }
+  .chat-name { font-weight: bold; font-size: 14px; color: var(--ink); }
+  .chat-time { font-size: 12px; color: var(--ink-soft); margin-left: 8px; font-weight: normal; }
+  .chat-text { margin-top: 4px; font-size: 15.5px; }
+
+  .notice-box { background: #FFF8E8; border: 2px dashed var(--chalk-yellow-deep); border-radius: 10px; padding: 20px 26px; margin-bottom: 20px; }
+  .notice-box h3 { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 18px; margin: 0 0 12px; color: var(--chalk-yellow-deep); }
+  .notice-q { margin-bottom: 12px; padding-left: 28px; position: relative; }
+  .notice-q::before { content: "?"; position: absolute; left: 0; top: -2px; width: 20px; height: 20px; border-radius: 50%; background: var(--chalk-yellow-deep); color: var(--white); font-size: 13px; font-weight: bold; text-align: center; line-height: 20px; }
+  .notice-reveal { margin-top: 6px; font-size: 14px; color: var(--ink-soft); font-style: italic; border-left: 3px solid var(--chalk-yellow-deep); padding-left: 10px; display: none; }
+  .reveal-btn { background: none; border: 1px solid var(--chalk-yellow-deep); color: var(--chalk-yellow-deep); border-radius: 5px; padding: 3px 10px; font-size: 12px; cursor: pointer; margin-top: 4px; }
+  .reveal-btn:hover { background: var(--chalk-yellow-deep); color: var(--white); }
+
+  .grammar-box { background: var(--white); border-radius: 10px; padding: 24px 28px; margin-bottom: 22px; box-shadow: 0 2px 10px rgba(40,52,74,0.08); }
+  .grammar-box h3 { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 21px; margin: 0 0 6px; color: var(--coral-deep); }
+  .grammar-sub { font-size: 14px; color: var(--ink-soft); margin: 0 0 18px; font-style: italic; }
+
+  .example-row { display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start; margin-bottom: 10px; padding: 10px 14px; background: var(--paper); border-radius: 8px; }
+  .example-row .mark { font-weight: bold; color: var(--coral-deep); font-size: 18px; }
+  .example-row .txt strong { color: var(--chalk-green); }
+  .example-row .gloss { display: block; font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
+  .example-row .src { display: block; font-size: 12px; color: var(--blue-deep); margin-top: 4px; }
+
+  .rule-pill { display: inline-block; background: var(--chalk-yellow); color: var(--ink); font-weight: bold; font-size: 13px; border-radius: 6px; padding: 4px 10px; margin: 4px 6px 4px 0; }
+
+  table.conj-table { width: 100%; border-collapse: collapse; margin: 14px 0 6px; font-size: 15px; }
+  table.conj-table th { background: var(--chalk-green); color: var(--paper); padding: 8px 12px; text-align: left; font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 14px; }
+  table.conj-table td { padding: 8px 12px; border-bottom: 1px solid var(--paper-line); }
+  table.conj-table tr:nth-child(even) td { background: var(--paper); }
+
+  .pronunciation-tag { display: inline-block; font-family: "Courier New", monospace; font-size: 13px; background: var(--ink); color: var(--paper); border-radius: 4px; padding: 2px 8px; margin-left: 6px; }
+
+  .compound-visual { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 18px 0; padding: 20px; background: var(--paper); border-radius: 8px; flex-wrap: wrap; }
+  .compound-part { background: var(--white); border: 2px solid var(--blue-deep); border-radius: 8px; padding: 12px 18px; font-weight: bold; color: var(--blue-deep); font-size: 16px; }
+  .compound-plus { font-size: 20px; color: var(--ink-soft); font-weight: bold; }
+  .compound-equals { font-size: 20px; color: var(--ink-soft); font-weight: bold; }
+  .compound-result { background: var(--chalk-green); color: var(--paper); border-radius: 8px; padding: 12px 18px; font-weight: bold; font-size: 16px; }
+
+  .vocab-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 14px 0; }
+  .vocab-card { background: var(--paper); border-radius: 8px; padding: 14px 16px; }
+  .vocab-card .word { font-weight: bold; color: var(--blue-deep); font-size: 16px; }
+  .vocab-card .pos { font-size: 11px; color: var(--ink-soft); text-transform: uppercase; margin-left: 6px; }
+  .vocab-card .def { font-size: 14px; margin-top: 4px; }
+  .vocab-card .ex { font-size: 13px; color: var(--ink-soft); margin-top: 4px; font-style: italic; }
+
+  .word-family-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+  .word-family-table th { background: var(--blue-deep); color: var(--white); padding: 8px 12px; text-align: left; font-size: 13px; }
+  .word-family-table td { padding: 8px 12px; border-bottom: 1px solid var(--paper-line); }
+  .word-family-table tr:nth-child(even) td { background: var(--paper); }
+
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+  .chip { background: var(--paper); border: 1px solid var(--paper-line); border-radius: 999px; padding: 6px 14px; font-size: 14px; color: var(--ink); }
+  .chip strong { color: var(--coral-deep); }
+  .chip.no { text-decoration: line-through; opacity: 0.55; }
+
+  .collocation-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 14px 0; }
+
+  .compare-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 14px 0; }
+  .compare-col { padding: 16px 18px; border-radius: 8px; }
+  .compare-col.direct { background: #FBEDE9; }
+  .compare-col.indirect { background: #E3F0E5; }
+  .compare-col h4 { margin: 0 0 8px; font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 15px; }
+  .compare-col.direct h4 { color: var(--coral-deep); }
+  .compare-col.indirect h4 { color: var(--chalk-green); }
+  .collocation-col { padding: 16px 18px; border-radius: 8px; }
+  .collocation-col.make { background: #FBEDE9; }
+  .collocation-col.do { background: #E3F0E5; }
+  .collocation-col h4 { margin: 0 0 10px; font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 17px; }
+  .collocation-col.make h4 { color: var(--coral-deep); }
+  .collocation-col.do h4 { color: var(--chalk-green); }
+  .collocation-col ul { margin: 0; padding-left: 20px; font-size: 14.5px; }
+  .collocation-col li { margin-bottom: 6px; }
+
+  .idiom-showcase { display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
+  .idiom-pair { display: grid; grid-template-columns: 1fr auto 1fr; gap: 14px; align-items: center; background: var(--paper); border-radius: 8px; padding: 14px 16px; }
+  .idiom-literal, .idiom-figurative { padding: 4px 0; }
+  .idiom-literal p, .idiom-figurative p { margin: 4px 0 0; font-size: 14px; color: var(--ink); }
+  .idiom-tag { display: inline-block; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.04em; padding: 2px 8px; border-radius: 4px; }
+  .idiom-literal .idiom-tag { background: #E9F0F5; color: var(--blue-deep); }
+  .idiom-figurative .idiom-tag { background: #F2EBF7; color: #6B4C8A; }
+  .idiom-arrow { font-weight: bold; color: var(--coral-deep); font-size: 14px; text-align: center; white-space: nowrap; }
+
+  .romance-timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 16px; }
+  .romance-step { background: var(--paper); border-radius: 8px; padding: 16px 14px; position: relative; border-top: 3px solid var(--coral); }
+  .romance-num { position: absolute; top: -14px; left: 14px; width: 28px; height: 28px; border-radius: 50%; background: var(--coral); color: var(--white); font-weight: bold; font-size: 14px; display: flex; align-items: center; justify-content: center; }
+  .romance-word { font-weight: bold; color: var(--blue-deep); font-size: 15px; margin-top: 10px; }
+  .romance-def { font-size: 13px; color: var(--ink-soft); margin-top: 6px; }
+
+  .exercise { background: var(--white); border-radius: 10px; padding: 22px 26px; margin-bottom: 18px; box-shadow: 0 2px 10px rgba(40,52,74,0.08); }
+  .exercise-label { display: inline-block; font-size: 12px; font-weight: bold; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white); background: var(--chalk-green); border-radius: 5px; padding: 3px 10px; margin-bottom: 10px; }
+  .exercise h4 { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 17px; margin: 0 0 12px; color: var(--ink); }
+  .q-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+  .q-num { font-weight: bold; color: var(--coral-deep); min-width: 22px; }
+  .q-text { flex: 1; min-width: 220px; }
+  .blank-input { border: none; border-bottom: 2px solid var(--chalk-yellow-deep); background: var(--paper); font-family: Calibri, sans-serif; font-size: 15px; padding: 4px 8px; width: 170px; color: var(--ink); }
+  .blank-input:focus { outline: none; border-color: var(--coral-deep); }
+
+  .check-btn { background: var(--chalk-yellow); color: var(--ink); border: none; border-radius: 6px; padding: 9px 20px; font-weight: bold; font-size: 14px; cursor: pointer; margin-top: 8px; }
+  .check-btn:hover { background: var(--chalk-yellow-deep); }
+
+  .feedback { margin-top: 12px; font-size: 14px; border-radius: 6px; padding: 10px 14px; display: none; }
+  .feedback.show { display: block; }
+  .feedback.good { background: #E3F0E5; color: var(--chalk-green); }
+  .feedback.bad { background: #F8E4DE; color: var(--coral-deep); }
+
+  .mc-opt { display: block; background: var(--paper); border: 2px solid var(--paper-line); border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; cursor: pointer; font-size: 15px; transition: border-color 0.15s ease; }
+  .mc-opt:hover { border-color: var(--chalk-yellow-deep); }
+  .mc-opt.correct-flash { border-color: var(--chalk-green); background: #E3F0E5; }
+  .mc-opt.wrong-flash { border-color: var(--coral-deep); background: #F8E4DE; }
+  .mc-opt input { margin-right: 10px; }
+
+  .match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0; }
+  .match-item { background: var(--paper); border-radius: 8px; padding: 10px 14px; font-size: 14.5px; cursor: pointer; border: 2px solid transparent; transition: all 0.15s ease; }
+  .match-item.selected { border-color: var(--chalk-yellow-deep); }
+  .match-item.matched { border-color: var(--chalk-green); background: #E3F0E5; }
+
+  .order-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 14px 0; }
+  .order-item { background: var(--paper); border-radius: 8px; padding: 12px 14px; font-size: 14.5px; cursor: pointer; border: 2px solid transparent; transition: all 0.15s ease; text-align: center; position: relative; }
+  .order-item:hover { border-color: var(--chalk-yellow-deep); }
+  .order-item.chosen { background: var(--coral); color: var(--white); border-color: var(--coral-deep); }
+  .order-item.chosen::before { content: attr(data-order-label); position: absolute; top: -10px; left: -10px; width: 24px; height: 24px; border-radius: 50%; background: var(--chalk-green); color: var(--white); font-size: 12px; font-weight: bold; display: flex; align-items: center; justify-content: center; }
+
+  .activate-box { background: var(--chalk-yellow); border-radius: 10px; padding: 26px 28px; margin-bottom: 20px; }
+  .activate-box h3 { font-family: "Bookman Old Style", Cambria, Georgia, serif; margin: 0 0 12px; color: var(--ink); font-size: 19px; }
+  .activate-box p { color: var(--ink); margin: 0 0 10px; }
+  textarea.response-box { width: 100%; min-height: 110px; border-radius: 8px; border: 2px solid var(--chalk-yellow-deep); padding: 12px 14px; font-family: Calibri, sans-serif; font-size: 15px; resize: vertical; background: var(--white); color: var(--ink); }
+  textarea.response-box:focus { outline: none; border-color: var(--coral-deep); }
+  .word-count { font-size: 12px; color: var(--ink-soft); margin-top: 6px; text-align: right; }
+
+  .research-card { background: #F2EBF7; border-radius: 10px; padding: 22px 26px; margin-bottom: 18px; border: 1px solid #DCC8EA; }
+  .research-card h3 { font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 18px; margin: 0 0 10px; color: #6B4C8A; }
+  .research-card ul { margin: 10px 0; padding-left: 22px; }
+  .research-card li { margin-bottom: 6px; }
+  .research-tag { display: inline-block; font-size: 11px; font-weight: bold; letter-spacing: 0.05em; text-transform: uppercase; background: #6B4C8A; color: var(--white); border-radius: 4px; padding: 3px 9px; margin-bottom: 10px; }
+  .link-suggestion { display: inline-block; background: var(--white); border: 1px solid #DCC8EA; border-radius: 6px; padding: 6px 12px; font-size: 13px; margin: 4px 6px 4px 0; color: #6B4C8A; }
+
+  .ref-table-wrap { overflow-x: auto; }
+  table.ref-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 14px 0; }
+  table.ref-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-family: "Bookman Old Style", Cambria, Georgia, serif; font-size: 13.5px; }
+  table.ref-table td { padding: 10px 14px; border-bottom: 1px solid var(--paper-line); vertical-align: top; }
+  table.ref-table tr:nth-child(even) td { background: var(--paper); }
+
+  .wrapup { background: var(--ink); color: var(--paper); border-radius: 10px; padding: 24px 28px; margin-top: 40px; }
+  .wrapup h3 { font-family: "Bookman Old Style", Cambria, Georgia, serif; color: var(--chalk-yellow); margin: 0 0 10px; font-size: 18px; }
+  .wrapup ul { margin: 0; padding-left: 20px; }
+  .wrapup li { margin-bottom: 6px; }
+
+  .progress-track { position: sticky; top: 0; height: 5px; background: var(--paper-line); z-index: 50; }
+  .progress-fill { height: 100%; width: 0%; background: var(--coral); transition: width 0.1s ease; }
+
+  @media (max-width: 600px) {
+    h1.title { font-size: 26px; }
+    .card, .grammar-box, .exercise, .hook-box, .activate-box, .research-card { padding: 18px 18px; }
+    .vocab-grid, .match-grid, .collocation-cols, .compare-cols, .romance-timeline, .order-grid { grid-template-columns: 1fr; }
+    .idiom-pair { grid-template-columns: 1fr; }
+    .idiom-arrow { text-align: left; }
+    .trait-grid { grid-template-columns: repeat(2, 1fr); }
+    .toc ol { columns: 1; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="masthead">
+  <div class="masthead-inner">
+    <p class="eyebrow">Grade 6 &middot; Week 4 &middot; Complete Reference &amp; Pre-Class Material</p>
+    <h1 class="title">Possessives, Compounds &amp; Collocations</h1>
+    <div class="masthead-meta">
+      <div>Level: <span>B1&ndash;B2</span></div>
+      <div>Theme: <span>Personality &amp; Relationships</span></div>
+      <div>Est. time: <span>55&ndash;65 min</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="toc">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#engage">1. Engage &mdash; the hook</a></li>
+      <li><a href="#context1">2. Context: the advice column</a></li>
+      <li><a href="#notice1">3. Notice &amp; discover (possessives)</a></li>
+      <li><a href="#study1">4. Study: possessive forms</a></li>
+      <li><a href="#context2">5. Context: the catch-up messages</a></li>
+      <li><a href="#notice2">6. Notice &amp; discover (compound words)</a></li>
+      <li><a href="#study2">7. Study: compound words</a></li>
+      <li><a href="#pronunciation">8. Pronunciation focus</a></li>
+      <li><a href="#vocab">9. Vocabulary &amp; collocations</a></li>
+      <li><a href="#exercises">10. Practice exercises</a></li>
+      <li><a href="#autonomy">11. Explore on your own</a></li>
+      <li><a href="#activate">12. A taste of Activate</a></li>
+      <li><a href="#reference">13. Quick-reference summary</a></li>
+    </ol>
+  </div>
+
+  <!-- ============ ENGAGE ============ -->
+  <div class="tab-section" id="engage">
+    <div class="tab-header">
+      <span class="tab-num">ENGAGE</span>
+      <h2 class="tab-title">Which trait describes you best?</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="hook-box">
+      <h3>Before we start &mdash; pick yourself</h3>
+      <p>We're spending this week describing personalities and relationships. Before any grammar at all, click the one word below that you think describes you best in close relationships &mdash; just for yourself, no one else will see your choice.</p>
+      <div class="trait-grid" id="traitGrid">
+        <div class="trait-card" data-trait="loyal"><span class="trait-word">Loyal</span></div>
+        <div class="trait-card" data-trait="easygoing"><span class="trait-word">Easygoing</span></div>
+        <div class="trait-card" data-trait="stubborn"><span class="trait-word">Stubborn</span></div>
+        <div class="trait-card" data-trait="generous"><span class="trait-word">Generous</span></div>
+        <div class="trait-card" data-trait="reserved"><span class="trait-word">Reserved</span></div>
+        <div class="trait-card" data-trait="outgoing"><span class="trait-word">Outgoing</span></div>
+      </div>
+      <p class="trait-pick-note" id="traitNote"></p>
+    </div>
+
+    <div class="card">
+      <h3>Where we're going this week</h3>
+      <p>You're going to read two real-feeling texts about relationships: an advice column about friendship compatibility, and a casual message thread between two old friends catching up. Read for meaning first &mdash; the grammar explanations come after, and they'll point straight back at sentences you've already read.</p>
+    </div>
+  </div>
+
+  <!-- ============ CONTEXT 1: ADVICE COLUMN ============ -->
+  <div class="tab-section" id="context1">
+    <div class="tab-header study">
+      <span class="tab-num">CONTEXT</span>
+      <h2 class="tab-title">Read first: the advice column</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <p>Read this short advice column about friendship. Don't worry about the underlined words yet &mdash; just answer this first: <strong>what's the columnist's main piece of advice?</strong></p>
+    </div>
+
+    <div class="realia">
+      <div class="realia-header">
+        <span class="doctype">Advice column</span>
+        <span class="docname">"Ask Maya" &mdash; Friendship Compatibility</span>
+      </div>
+      <div class="realia-body">
+        <p><strong>Dear Maya,</strong> my closest friend and I are total opposites &mdash; she's outgoing, I'm reserved &mdash; and lately I've been wondering if <span class="target-1">our</span> friendship can really last. Is compatibility about being similar, or something else?</p>
+        <p><strong>Maya's answer:</strong> Opposite personalities can absolutely work. Think about <span class="target-1">your friend's</span> strengths and <span class="target-1">your own</span> &mdash; an outgoing person often brings out a quieter friend's confidence, while a reserved person gives an outgoing friend space to slow down. That balance is often <span class="target-2">a relationship's</span> greatest strength, not a weakness.</p>
+        <p>What actually predicts whether <span class="target-1">a friendship's</span> foundation is solid isn't shared personality traits at all &mdash; it's shared values. Ask yourself: do you trust <span class="target-1">her</span> judgment? Does she respect <span class="target-1">yours</span>? <span class="target-3">My sister's husband</span> and I are nothing alike, yet he's become one of my closest confidants, because we both value honesty above comfort.</p>
+        <p>One last thought: don't confuse a quiet friend's silence for disinterest. <span class="target-1">My best friend's</span> way of showing she cares looks completely different from mine, and learning to read that difference, rather than judging it, transformed our entire friendship.</p>
+        <p class="signoff">&mdash; Maya</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Quick meaning check (no grammar terms yet!)</h3>
+      <p>1. According to Maya, what actually predicts whether a friendship lasts?</p>
+      <p>2. What does Maya say a quiet friend's silence might mean, and what shouldn't you assume it means?</p>
+      <p>3. Find the phrase "my sister's husband." Whose husband is being described?</p>
+    </div>
+  </div>
+
+  <!-- ============ NOTICE 1 ============ -->
+  <div class="tab-section" id="notice1">
+    <div class="tab-header study">
+      <span class="tab-num">NOTICE &amp; DISCOVER</span>
+      <h2 class="tab-title">Look back at the highlighted phrases</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="notice-box">
+      <h3>Detective work: who owns what?</h3>
+
+      <div class="notice-q">
+        Look at the coral words: <em>"our," "your friend's," "your own," "her," "yours," "my best friend's."</em> Some of these have an apostrophe and "s" attached to a noun, others are standalone words with no noun attached at all. Sort them into those two groups.
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">Apostrophe + noun: "your friend's," "my best friend's." Standalone words: "our," "your own," "her," "yours." The second group are possessive pronouns/determiners; they never take an apostrophe.</p>
+      </div>
+
+      <div class="notice-q">
+        Compare "your friend's strengths" with "yours" in "does she respect yours?" Both show possession, but one is followed directly by a noun and one stands completely alone. What do you think "yours" actually means here, in full?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">"Yours" = "your judgment" &mdash; it replaces the noun entirely so it isn't repeated. This is exactly like "mine," "his," "hers," "ours," "theirs."</p>
+      </div>
+
+      <div class="notice-q">
+        Look at the blue phrase "a relationship's greatest strength" and the purple phrase "my sister's husband." Both use apostrophe-s on a singular noun. Now imagine the noun were plural instead &mdash; "my two sisters" &mdash; where do you think the apostrophe would move?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">After the "s": "my two sisters' husbands" &mdash; the apostrophe moves to the end of the existing plural "-s," rather than adding a new one.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ STUDY 1 ============ -->
+  <div class="tab-section" id="study1">
+    <div class="tab-header study">
+      <span class="tab-num">STUDY</span>
+      <h2 class="tab-title">Now let's name it: possessive forms</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>1. Apostrophe-S vs. Possessive Pronouns</h3>
+      <p class="grammar-sub">Two different ways to show ownership &mdash; you already sorted them yourself above.</p>
+
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt"><strong>Singular noun + 's:</strong> my best friend's way of showing she cares
+          <span class="gloss">One friend, so apostrophe before the "s."</span>
+          <span class="src">Found in: advice column, paragraph 4</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt"><strong>Plural noun ending in -s + ':</strong> my two sisters' husbands
+          <span class="gloss">More than one sister, so the apostrophe goes after the existing "s," with no extra "s" added.</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt"><strong>Possessive pronoun (stands alone):</strong> Does she respect yours?
+          <span class="gloss">Replaces "your judgment" entirely &mdash; never takes an apostrophe.</span>
+          <span class="src">Found in: advice column, paragraph 3</span>
+        </span>
+      </div>
+
+      <table class="conj-table">
+        <tr><th>Possessive determiner (+ noun)</th><th>Possessive pronoun (stands alone)</th></tr>
+        <tr><td>my friend</td><td>mine</td></tr>
+        <tr><td>your judgment</td><td>yours</td></tr>
+        <tr><td>her silence</td><td>hers</td></tr>
+        <tr><td>our friendship</td><td>ours</td></tr>
+        <tr><td>their values</td><td>theirs</td></tr>
+      </table>
+
+      <p style="margin-top:16px;"><span class="rule-pill">singular noun</span> add 's (the dog's owner)</p>
+      <p><span class="rule-pill">plural noun ending in -s</span> add only ' (the dogs' owner)</p>
+      <p><span class="rule-pill">irregular plural (no -s)</span> add 's as normal (the children's toys)</p>
+      <p><span class="rule-pill">possessive pronoun</span> never an apostrophe (it's hers, not her's)</p>
+
+      <div class="example-row">
+        <span class="mark">✗</span>
+        <span class="txt"><em>This book is her's.</em>
+          <span class="gloss">Wrong &mdash; possessive pronouns never take an apostrophe: <strong>This book is hers.</strong></span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✗</span>
+        <span class="txt"><em>Its a great friendship.</em>
+          <span class="gloss">Classic confusion &mdash; "it's" (with apostrophe) means "it is." The possessive form has no apostrophe: <strong>Its foundation is solid.</strong></span>
+        </span>
+      </div>
+
+      <h3 style="margin-top:28px;">1b. The "double possessive": a friend of mine</h3>
+      <p class="grammar-sub">A third pattern, used specifically to introduce one of several &mdash; very common in spoken English about relationships.</p>
+
+      <div class="compare-cols">
+        <div class="compare-col direct">
+          <h4>Plain possessive</h4>
+          <p style="margin:0; font-size:15px;">My friend called me yesterday.</p>
+          <p style="margin:8px 0 0; font-size:13px; color:var(--ink-soft);">Sounds like your only friend, or at least a specific one the listener should already know.</p>
+        </div>
+        <div class="compare-col indirect">
+          <h4>Double possessive</h4>
+          <p style="margin:0; font-size:15px;">A friend of mine called me yesterday.</p>
+          <p style="margin:8px 0 0; font-size:13px; color:var(--ink-soft);">Clearly just one of several friends &mdash; new information, not someone already known to the listener.</p>
+        </div>
+      </div>
+
+      <table class="conj-table">
+        <tr><th>Pattern</th><th>Example</th><th>Use it when...</th></tr>
+        <tr><td>a/an + noun + of + possessive pronoun</td><td>a colleague of hers, a cousin of ours</td><td>Introducing one member of a group, for the first time</td></tr>
+        <tr><td>this/that + noun + of + possessive pronoun</td><td>that habit of his, this idea of yours</td><td>Often adds emotional color (affection, irritation, admiration)</td></tr>
+      </table>
+
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt"><strong>a friend of mine</strong> is getting married next month.
+          <span class="gloss">Equivalent in meaning to "one of my friends," but more natural in spoken introductions.</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt">That stubbornness <strong>of his</strong> drives me crazy, but I love him for it.
+          <span class="gloss">The double possessive here adds a warm, slightly exasperated tone &mdash; common when describing a familiar trait.</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✗</span>
+        <span class="txt"><em>A friend of me is getting married.</em>
+          <span class="gloss">Wrong &mdash; the second half must be a possessive pronoun (mine/yours/his/hers/ours/theirs), never an object pronoun: <strong>a friend of mine</strong>.</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CONTEXT 2: CATCH-UP MESSAGES ============ -->
+  <div class="tab-section" id="context2">
+    <div class="tab-header study">
+      <span class="tab-num">CONTEXT</span>
+      <h2 class="tab-title">Read next: catching up with an old friend</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <p>This is a (fictional) message thread between two old friends catching up after a while apart. Read for meaning first: <strong>what's the main news each person shares?</strong></p>
+    </div>
+
+    <div class="realia">
+      <div class="realia-header">
+        <span class="doctype">Messages</span>
+        <span class="docname">Priya &amp; Tom &mdash; "It's been ages!"</span>
+      </div>
+      <div class="chat-thread">
+        <div class="chat-msg">
+          <div class="chat-avatar">PR</div>
+          <div>
+            <span class="chat-name">Priya</span><span class="chat-time">Tuesday, 18:42</span>
+            <p class="chat-text">It's been ages! How's everyone? Last I heard your <span class="target-2">brother-in-law</span> was starting a new job?</p>
+          </div>
+        </div>
+        <div class="chat-msg agent">
+          <div class="chat-avatar">TM</div>
+          <div>
+            <span class="chat-name">Tom</span><span class="chat-time">Tuesday, 19:05</span>
+            <p class="chat-text">Ha, good memory! Yes, he's settled in well. Honestly things have been hectic &mdash; we just became <span class="target-2">grandparents</span>, if you can believe it.</p>
+          </div>
+        </div>
+        <div class="chat-msg">
+          <div class="chat-avatar">PR</div>
+          <div>
+            <span class="chat-name">Priya</span><span class="chat-time">Tuesday, 19:07</span>
+            <p class="chat-text">No way, congratulations! That's huge. You'll have to <span class="target-1">make time</span> to send photos. How's your <span class="target-2">best friend</span> Dani doing, is she still your <span class="target-2">go-to</span> person for advice?</p>
+          </div>
+        </div>
+        <div class="chat-msg agent">
+          <div class="chat-avatar">TM</div>
+          <div>
+            <span class="chat-name">Tom</span><span class="chat-time">Tuesday, 19:10</span>
+            <p class="chat-text">Always! She's still my <span class="target-2">soulmate</span> in the friendship sense &mdash; we don't talk every week, but when we do, it's like no time passed. She really helped me <span class="target-1">do</span> some serious thinking last year.</p>
+          </div>
+        </div>
+        <div class="chat-msg">
+          <div class="chat-avatar">PR</div>
+          <div>
+            <span class="chat-name">Priya</span><span class="chat-time">Tuesday, 19:13</span>
+            <p class="chat-text">That's what real friendship looks like. I should <span class="target-1">make an effort</span> to visit before the year ends &mdash; we always say we will and never <span class="target-1">do it</span>!</p>
+          </div>
+        </div>
+        <div class="chat-msg agent">
+          <div class="chat-avatar">TM</div>
+          <div>
+            <span class="chat-name">Tom</span><span class="chat-time">Tuesday, 19:15</span>
+            <p class="chat-text">Please do! It would mean a lot. Let's not <span class="target-1">make</span> empty promises this time &mdash; I'll check flights this weekend.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Quick meaning check</h3>
+      <p>1. What two pieces of big news does Tom share?</p>
+      <p>2. Who is Dani, and what role does she play in Tom's life?</p>
+      <p>3. Find every word that's made of two smaller words joined together (like "brother-in-law"). How many can you spot?</p>
+    </div>
+  </div>
+
+  <!-- ============ NOTICE 2 ============ -->
+  <div class="tab-section" id="notice2">
+    <div class="tab-header study">
+      <span class="tab-num">NOTICE &amp; DISCOVER</span>
+      <h2 class="tab-title">Two words, one idea</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="notice-box">
+      <h3>Detective work: building a compound word</h3>
+
+      <div class="notice-q">
+        Look at: <em>brother-in-law, best friend, go-to, soulmate, grandparents.</em> Some have a hyphen, some are written as two separate words, and one is written as a single fused word. Without checking a dictionary, can you guess which spelling rule is most reliable for a new word you're unsure about?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">There isn't a fully reliable rule &mdash; compound spelling is genuinely inconsistent in English and changes over time (many fused words like "soulmate" started as two words). When unsure, a dictionary check is the only sure way.</p>
+      </div>
+
+      <div class="notice-q">
+        Look at "best friend" (two separate words) and "soulmate" (one fused word). Both describe a similarly close relationship. Does the spelling style change the meaning at all, or just the convention?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">Just the convention &mdash; meaning isn't affected by spacing or hyphenation. This is exactly why compounds are a vocabulary-memorization challenge rather than a grammar rule to apply.</p>
+      </div>
+
+      <div class="notice-q">
+        "Brother-in-law" and "go-to" both use hyphens. What part of speech is "go-to" functioning as in "is she still your go-to person"?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">An adjective, describing "person" &mdash; even though "go" and "to" are normally a verb and preposition. Compounding can shift a phrase into an entirely different word class.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ STUDY 2 ============ -->
+  <div class="tab-section" id="study2">
+    <div class="tab-header study">
+      <span class="tab-num">STUDY</span>
+      <h2 class="tab-title">Now let's name it: compound words</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>2. Compound Words</h3>
+      <p class="grammar-sub">Two (or more) words combined to express a single idea &mdash; with three possible spelling styles.</p>
+
+      <div class="compound-visual">
+        <span class="compound-part">brother</span>
+        <span class="compound-plus">+</span>
+        <span class="compound-part">in</span>
+        <span class="compound-plus">+</span>
+        <span class="compound-part">law</span>
+        <span class="compound-equals">=</span>
+        <span class="compound-result">brother-in-law</span>
+      </div>
+      <div class="compound-visual">
+        <span class="compound-part">soul</span>
+        <span class="compound-plus">+</span>
+        <span class="compound-part">mate</span>
+        <span class="compound-equals">=</span>
+        <span class="compound-result">soulmate</span>
+      </div>
+      <div class="compound-visual">
+        <span class="compound-part">best</span>
+        <span class="compound-plus">+</span>
+        <span class="compound-part">friend</span>
+        <span class="compound-equals">=</span>
+        <span class="compound-result">best friend</span>
+      </div>
+
+      <table class="conj-table">
+        <tr><th>Style</th><th>Example</th><th>Notes</th></tr>
+        <tr><td>Open (two words)</td><td>best friend, close friend</td><td>Most common for newer or descriptive compounds</td></tr>
+        <tr><td>Hyphenated</td><td>brother-in-law, go-to</td><td>Common for family terms and compound adjectives</td></tr>
+        <tr><td>Closed (one word)</td><td>soulmate, grandparent</td><td>Often older, well-established compounds</td></tr>
+      </table>
+
+      <p style="margin-top:16px;"><span class="rule-pill">noun + noun</span> best friend, soulmate, grandparent</p>
+      <p><span class="rule-pill">adjective + noun</span> close-knit (family), best man</p>
+      <p><span class="rule-pill">verb/preposition combos</span> go-to, get-together</p>
+
+      <div class="example-row">
+        <span class="mark">✗</span>
+        <span class="txt"><em>He is my brotherinlaw.</em>
+          <span class="gloss">Wrong &mdash; "brother-in-law" always keeps its hyphens; it never fuses into one word. When in doubt about a specific compound's spelling, check a dictionary rather than guessing.</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PRONUNCIATION ============ -->
+  <div class="tab-section" id="pronunciation">
+    <div class="tab-header study">
+      <span class="tab-num">PRONUNCIATION</span>
+      <h2 class="tab-title">Stress tells you it's one idea, not two</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>Compound nouns usually stress the FIRST word</h3>
+      <p class="grammar-sub">This is one of the most useful, underused pronunciation patterns in English.</p>
+      <p>Compare these two phrases, which are spelled almost the same but mean something completely different:</p>
+      <p style="font-size:18px; text-align:center; margin:18px 0;">
+        <strong style="color:var(--chalk-green);">GREEN</strong>house <span class="pronunciation-tag">/ˈɡriːn.haʊs/ &mdash; a glass building for plants</span>
+      </p>
+      <p style="font-size:18px; text-align:center; margin:18px 0;">
+        green <strong style="color:var(--coral-deep);">HOUSE</strong> <span class="pronunciation-tag">/ɡriːn ˈhaʊs/ &mdash; a house that is painted green</span>
+      </p>
+      <p>The compound noun ("greenhouse," one idea, a specific type of structure) stresses the first part. The adjective + noun phrase ("green house," just a house that happens to be green) stresses the noun instead, as usual. Try saying "BEST friend" out loud &mdash; the stress on "best" signals it's a fixed relationship term, not just any friend who happens to be good.</p>
+    </div>
+
+    <div class="grammar-box">
+      <h3>Compound adjectives usually stress the SECOND word</h3>
+      <p class="grammar-sub">This is the opposite pattern from compound nouns &mdash; worth contrasting directly.</p>
+      <p>Many personality adjectives in English are themselves compounds &mdash; and they typically stress the second part, not the first:</p>
+      <p style="font-size:18px; text-align:center; margin:18px 0;">
+        close-<strong style="color:var(--chalk-green);">KNIT</strong> <span class="pronunciation-tag">/ˌkloʊs ˈnɪt/ &mdash; tightly bonded (family, group)</span>
+      </p>
+      <p style="font-size:18px; text-align:center; margin:18px 0;">
+        easy<strong style="color:var(--chalk-green);">GOING</strong> <span class="pronunciation-tag">/ˌiːzi ˈɡoʊɪŋ/ &mdash; relaxed, hard to upset</span>
+      </p>
+      <p style="font-size:18px; text-align:center; margin:18px 0;">
+        good-<strong style="color:var(--chalk-green);">LOOKING</strong> <span class="pronunciation-tag">/ˌɡʊd ˈlʊkɪŋ/ &mdash; physically attractive</span>
+      </p>
+      <p>Compare that to compound nouns like <strong>BEST</strong>friend or <strong>GREEN</strong>house, which stress the first part instead. A rough rule of thumb: compound <em>nouns</em> &rarr; stress first; compound <em>adjectives</em> &rarr; stress second. It's not airtight, but it will get you the right rhythm most of the time, and a wrong stress pattern here is one of the most common ways learners sound less fluent than they actually are.</p>
+    </div>
+  </div>
+
+  <!-- ============ VOCABULARY & COLLOCATIONS ============ -->
+  <div class="tab-section" id="vocab">
+    <div class="tab-header vocab">
+      <span class="tab-num">VOCABULARY &amp; COLLOCATIONS</span>
+      <h2 class="tab-title">Personality, relationships &amp; your first collocations</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <h3>3. Make or Do? Your first collocation pair</h3>
+      <p>This is the beginning of a new strand you'll build on for the rest of the course: certain verbs simply "go with" certain nouns, with no logical reason &mdash; you just have to learn the pair. <strong>Make</strong> and <strong>do</strong> are the most common confusion at this level.</p>
+      <div class="collocation-cols">
+        <div class="collocation-col make">
+          <h4>MAKE</h4>
+          <ul>
+            <li>make an effort</li>
+            <li>make a promise</li>
+            <li>make friends</li>
+            <li>make time (for someone)</li>
+            <li>make a decision</li>
+          </ul>
+        </div>
+        <div class="collocation-col do">
+          <h4>DO</h4>
+          <ul>
+            <li>do a favor</li>
+            <li>do your best</li>
+            <li>do some thinking</li>
+            <li>do the dishes</li>
+            <li>do well (in a relationship)</li>
+          </ul>
+        </div>
+      </div>
+      <p style="font-size:14px; color:var(--ink-soft);">Rough pattern (not a strict rule): "make" often relates to creating or producing something new; "do" often relates to performing an activity or task. The pattern breaks down often enough that memorizing common pairs is more reliable than applying logic.</p>
+    </div>
+
+    <div class="card">
+      <h3>Word family: TRUST</h3>
+      <table class="word-family-table">
+        <tr><th>Noun</th><th>Verb</th><th>Adjective</th><th>Example</th></tr>
+        <tr><td>trust</td><td>trust</td><td>trustworthy / trusting</td><td>Do you trust her judgment completely?</td></tr>
+        <tr><td>loyalty</td><td>&mdash;</td><td>loyal / disloyal</td><td>Loyalty matters more than similarity.</td></tr>
+        <tr><td>confidence</td><td>confide</td><td>confident</td><td>He's become one of my closest confidants.</td></tr>
+        <tr><td>compatibility</td><td>&mdash;</td><td>compatible / incompatible</td><td>Compatibility isn't about being identical.</td></tr>
+        <tr><td>support</td><td>support</td><td>supportive</td><td>A supportive friend gives you space to grow.</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>More vocabulary from this week's topic</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <span class="word">easygoing</span><span class="pos">adjective</span>
+          <div class="def">relaxed, not easily worried or annoyed</div>
+          <div class="ex">"She's easygoing about most things except punctuality."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">stubborn</span><span class="pos">adjective</span>
+          <div class="def">unwilling to change your mind or position</div>
+          <div class="ex">"He's stubborn, but it makes him reliable too."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">close-knit</span><span class="pos">adjective</span>
+          <div class="def">very united, with strong relationships between members</div>
+          <div class="ex">"They come from a close-knit family."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to grow apart</span><span class="pos">phrasal verb</span>
+          <div class="def">to gradually become less close over time</div>
+          <div class="ex">"Old friends sometimes grow apart, and that's normal."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">a confidant(e)</span><span class="pos">noun</span>
+          <div class="def">someone you trust with private thoughts or secrets</div>
+          <div class="ex">"My sister's husband became a real confidant."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">reserved</span><span class="pos">adjective</span>
+          <div class="def">quiet, slow to share feelings or opinions openly</div>
+          <div class="ex">"He seems reserved at first, but he warms up."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to bring out (a quality)</span><span class="pos">phrasal verb</span>
+          <div class="def">to cause a particular trait in someone to become visible</div>
+          <div class="ex">"She brings out the best in her friends."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">a get-together</span><span class="pos">noun (compound)</span>
+          <div class="def">an informal social gathering</div>
+          <div class="ex">"We're planning a small get-together this weekend."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to hit it off</span><span class="pos">phrasal verb</span>
+          <div class="def">to immediately like someone and get along well</div>
+          <div class="ex">"We hit it off the moment we met at the conference."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to see eye to eye</span><span class="pos">idiom</span>
+          <div class="def">to agree completely, share the same view</div>
+          <div class="ex">"We don't always see eye to eye, but we respect each other."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">a soft spot (for someone)</span><span class="pos">idiom</span>
+          <div class="def">a feeling of particular fondness or affection</div>
+          <div class="ex">"She's always had a soft spot for her younger brother."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to go way back</span><span class="pos">idiom</span>
+          <div class="def">to have known each other for a very long time</div>
+          <div class="ex">"Tom and I go way back &mdash; we met in primary school."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to patch things up</span><span class="pos">phrasal verb</span>
+          <div class="def">to repair a relationship after a disagreement</div>
+          <div class="ex">"They argued for weeks but finally patched things up."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to drift apart</span><span class="pos">phrasal verb</span>
+          <div class="def">to slowly become less close, often without conflict</div>
+          <div class="ex">"After university, a lot of friends drift apart."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">a kindred spirit</span><span class="pos">idiom</span>
+          <div class="def">someone whose attitudes and interests closely match yours</div>
+          <div class="ex">"I found a kindred spirit in my new colleague."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to read someone like a book</span><span class="pos">idiom</span>
+          <div class="def">to understand someone's feelings or intentions easily</div>
+          <div class="ex">"After 20 years of marriage, she reads him like a book."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Idiom showcase: literal vs. figurative</h3>
+      <p>English relationship idioms often started as literal physical actions before becoming figurative. Seeing both meanings side by side makes them far easier to remember.</p>
+      <div class="idiom-showcase">
+        <div class="idiom-pair">
+          <div class="idiom-literal">
+            <span class="idiom-tag">literally</span>
+            <p>To physically strike something with force.</p>
+          </div>
+          <div class="idiom-arrow">"to hit it off" &rarr;</div>
+          <div class="idiom-figurative">
+            <span class="idiom-tag">figuratively</span>
+            <p>To instantly click with someone you've just met.</p>
+          </div>
+        </div>
+        <div class="idiom-pair">
+          <div class="idiom-literal">
+            <span class="idiom-tag">literally</span>
+            <p>Two people's eyes meeting at exactly the same height.</p>
+          </div>
+          <div class="idiom-arrow">"to see eye to eye" &rarr;</div>
+          <div class="idiom-figurative">
+            <span class="idiom-tag">figuratively</span>
+            <p>To fully agree with someone's opinion or outlook.</p>
+          </div>
+        </div>
+        <div class="idiom-pair">
+          <div class="idiom-literal">
+            <span class="idiom-tag">literally</span>
+            <p>A spot on fruit or fabric that's softer than the rest.</p>
+          </div>
+          <div class="idiom-arrow">"a soft spot for" &rarr;</div>
+          <div class="idiom-figurative">
+            <span class="idiom-tag">figuratively</span>
+            <p>A particular, hard-to-resist fondness for someone.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>4. Informal phrases for romantic relationships</h3>
+      <p>These phrasal verbs and idioms are everyday, informal English &mdash; the kind you'd hear in conversation or in a TV show, not in a formal letter. They tend to follow a rough real-life order, from first noticing someone to a long-term commitment.</p>
+      <div class="romance-timeline">
+        <div class="romance-step">
+          <div class="romance-num">1</div>
+          <div class="romance-word">to flirt (with someone)</div>
+          <div class="romance-def">to behave playfully in a way that signals romantic interest</div>
+        </div>
+        <div class="romance-step">
+          <div class="romance-num">2</div>
+          <div class="romance-word">to hit on someone</div>
+          <div class="romance-def">to approach someone directly with romantic/sexual interest</div>
+        </div>
+        <div class="romance-step">
+          <div class="romance-num">3</div>
+          <div class="romance-word">to ask someone out</div>
+          <div class="romance-def">to invite someone on a date</div>
+        </div>
+        <div class="romance-step">
+          <div class="romance-num">4</div>
+          <div class="romance-word">to fall for someone</div>
+          <div class="romance-def">to start developing strong romantic feelings</div>
+        </div>
+        <div class="romance-step">
+          <div class="romance-num">5</div>
+          <div class="romance-word">to fall in love</div>
+          <div class="romance-def">to reach a deep, established state of love</div>
+        </div>
+        <div class="romance-step">
+          <div class="romance-num">6</div>
+          <div class="romance-word">to settle down</div>
+          <div class="romance-def">to commit to a stable, long-term relationship</div>
+        </div>
+      </div>
+      <p style="font-size:14px; color:var(--ink-soft); margin-top:14px;">Two more worth knowing: <strong>to have a crush on someone</strong> (a strong but often short-lived infatuation, common among teenagers but used at any age) and <strong>to break up</strong> (to end a romantic relationship) &mdash; the realistic opposite ending to this timeline.</p>
+    </div>
+  </div>
+
+  <!-- ============ EXERCISES ============ -->
+  <div class="tab-section" id="exercises">
+    <div class="tab-header study">
+      <span class="tab-num">PRACTICE</span>
+      <h2 class="tab-title">Now practise what you've discovered</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 1 &middot; Controlled Practice</span>
+      <h4>Apostrophe-s or possessive pronoun? Type the correct possessive form.</h4>
+
+      <div class="q-row">
+        <span class="q-num">1.</span>
+        <span class="q-text">That's not my coat &mdash; I think it's ______. <em>(belongs to her)</em></span>
+        <input type="text" class="blank-input" data-answer="hers" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">2.</span>
+        <span class="q-text">______ honesty is what I admire most about him. <em>(belonging to my friend, singular)</em></span>
+        <input type="text" class="blank-input" data-answer="my friend's" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">3.</span>
+        <span class="q-text">Both of ______ parents came to the wedding. <em>(belonging to my two sisters)</em></span>
+        <input type="text" class="blank-input" data-answer="my sisters'" placeholder="your answer">
+      </div>
+      <button class="check-btn" onclick="checkExercise(1)">Check my answers</button>
+      <div class="feedback" id="feedback1"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 1b &middot; Controlled Practice</span>
+      <h4>Double possessive: rewrite each sentence using "a/that ___ of ___."</h4>
+
+      <div class="q-row">
+        <span class="q-num">1.</span>
+        <span class="q-text">One of my colleagues called to congratulate me. &rarr; ______ called to congratulate me.</span>
+        <input type="text" class="blank-input" data-answer="a colleague of mine" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">2.</span>
+        <span class="q-text">I really admire that patience that belongs to her. &rarr; I really admire ______.</span>
+        <input type="text" class="blank-input" data-answer="that patience of hers" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">3.</span>
+        <span class="q-text">One of our cousins is getting married in June. &rarr; ______ is getting married in June.</span>
+        <input type="text" class="blank-input" data-answer="a cousin of ours" placeholder="your answer">
+      </div>
+      <button class="check-btn" onclick="checkExercise('1b')">Check my answers</button>
+      <div class="feedback" id="feedback1b"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 2 &middot; Controlled Practice</span>
+      <h4>Make or do? Type the correct verb.</h4>
+
+      <div class="q-row">
+        <span class="q-num">1.</span>
+        <span class="q-text">Could you ______ me a favor and pick up the tickets?</span>
+        <input type="text" class="blank-input" data-answer="do" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">2.</span>
+        <span class="q-text">I really need to ______ time to call my grandparents this week.</span>
+        <input type="text" class="blank-input" data-answer="make" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">3.</span>
+        <span class="q-text">She always ______ her best, even when things are difficult.</span>
+        <input type="text" class="blank-input" data-answer="does" placeholder="your answer">
+      </div>
+      <button class="check-btn" onclick="checkExercise(2)">Check my answers</button>
+      <div class="feedback" id="feedback2"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 3 &middot; Multiple Choice</span>
+      <h4>Which sentence uses the compound noun correctly?</h4>
+      <label class="mc-opt"><input type="radio" name="mc3" value="wrong"> She is my best-friend since childhood.</label>
+      <label class="mc-opt"><input type="radio" name="mc3" value="right"> She is my best friend since childhood.</label>
+      <label class="mc-opt"><input type="radio" name="mc3" value="wrong2"> She is my bestfriend since childhood.</label>
+      <div class="feedback" id="feedback3"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 4 &middot; Vocabulary Matching</span>
+      <h4>Click a word on the left, then its matching definition on the right.</h4>
+      <div class="match-grid" id="matchGrid">
+        <div class="match-item" data-pair="1">close-knit</div>
+        <div class="match-item" data-pair="3">someone you trust with secrets</div>
+        <div class="match-item" data-pair="2">to grow apart</div>
+        <div class="match-item" data-pair="4">unwilling to change your mind</div>
+        <div class="match-item" data-pair="3">confidant</div>
+        <div class="match-item" data-pair="1">very united, with strong bonds</div>
+        <div class="match-item" data-pair="4">stubborn</div>
+        <div class="match-item" data-pair="2">to gradually become less close</div>
+      </div>
+      <div class="feedback" id="feedback4"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 5 &middot; Idiom Matching</span>
+      <h4>Click an idiom on the left, then its matching meaning on the right.</h4>
+      <div class="match-grid" id="matchGrid2">
+        <div class="match-item" data-pair2="1">to hit it off</div>
+        <div class="match-item" data-pair2="3">a feeling of fondness for someone</div>
+        <div class="match-item" data-pair2="2">to see eye to eye</div>
+        <div class="match-item" data-pair2="4">to have known someone a long time</div>
+        <div class="match-item" data-pair2="3">a soft spot for</div>
+        <div class="match-item" data-pair2="1">to instantly like someone you've met</div>
+        <div class="match-item" data-pair2="4">to go way back</div>
+        <div class="match-item" data-pair2="2">to fully agree with someone</div>
+      </div>
+      <div class="feedback" id="feedback5"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 6 &middot; Put in Order</span>
+      <h4>Click the romantic-relationship phrases in the order they usually happen, from first to last.</h4>
+      <div class="order-grid" id="orderGrid">
+        <div class="order-item" data-correct-pos="4">to fall for someone</div>
+        <div class="order-item" data-correct-pos="1">to flirt</div>
+        <div class="order-item" data-correct-pos="6">to settle down</div>
+        <div class="order-item" data-correct-pos="2">to hit on someone</div>
+        <div class="order-item" data-correct-pos="5">to fall in love</div>
+        <div class="order-item" data-correct-pos="3">to ask someone out</div>
+      </div>
+      <p style="font-size:13px; color:var(--ink-soft); margin-top:10px;">Your order so far: <span id="orderSequence">(click to begin)</span></p>
+      <button class="check-btn" onclick="checkOrder()">Check my order</button>
+      <div class="feedback" id="feedback6"></div>
+    </div>
+  </div>
+
+  <!-- ============ AUTONOMY / RESEARCH ============ -->
+  <div class="tab-section" id="autonomy">
+    <div class="tab-header autonomy">
+      <span class="tab-num">EXPLORE ON YOUR OWN</span>
+      <h2 class="tab-title">Go further: research tasks</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="research-card">
+      <span class="research-tag">Vocabulary extension</span>
+      <h3>Find 5 more make/do collocations</h3>
+      <p>You've learned make an effort/a promise/friends/time/a decision and do a favor/your best/some thinking/the dishes/well. Search online and find five more common collocations with "make" or "do."</p>
+      <ul>
+        <li>Write each one in a full sentence about a relationship or personality trait.</li>
+        <li>Bring your five to class &mdash; we'll build a shared class collocation wall together.</li>
+      </ul>
+      <span class="link-suggestion">Try: Ozdic.com (free collocation dictionary)</span>
+      <span class="link-suggestion">Try: Cambridge Dictionary + "make vs do"</span>
+    </div>
+
+    <div class="research-card">
+      <span class="research-tag">Compound word hunt</span>
+      <h3>Find 3 more relationship compound words</h3>
+      <p>Search online for family or relationship vocabulary in English (try "family relationship vocabulary English") and find three compound words you haven't seen before &mdash; they can be open, hyphenated, or closed.</p>
+      <ul>
+        <li>Check a dictionary to confirm the correct spelling style for each.</li>
+        <li>Be ready to share your three at the start of Session 1, with an example sentence for each.</li>
+      </ul>
+      <span class="link-suggestion">Try searching: "family relationship vocabulary English"</span>
+      <span class="link-suggestion">Try: Merriam-Webster or Cambridge Dictionary to verify spelling</span>
+    </div>
+
+    <div class="card">
+      <h3>Why this matters</h3>
+      <p>Collocations and compound spelling are exactly the kind of thing no grammar rule can fully predict &mdash; native speakers learn them through repeated exposure, not logic. Building the habit of checking a dictionary or collocation tool now, rather than guessing, is what will keep your vocabulary accurate as it grows.</p>
+    </div>
+  </div>
+
+  <!-- ============ LIGHT ACTIVATE ============ -->
+  <div class="tab-section" id="activate">
+    <div class="tab-header activate">
+      <span class="tab-num">A TASTE OF ACTIVATE</span>
+      <h2 class="tab-title">Try it yourself &mdash; before class</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="activate-box">
+      <h3>Mini-task: Describe a relationship in your life</h3>
+      <p>Write 3&ndash;4 sentences describing a real (or invented) friendship or family relationship. Use at least <strong>one possessive form</strong> (apostrophe-s or a possessive pronoun) and <strong>one make/do collocation</strong> somewhere in your writing.</p>
+      <p style="font-size:14px;"><em>Example starter: "My brother's sense of humor always... We make time every week to..."</em></p>
+      <textarea class="response-box" id="freeWriting" placeholder="Type your 3-4 sentences here..."></textarea>
+      <div class="word-count" id="wordCount">0 words</div>
+    </div>
+
+    <div class="card">
+      <h3>Bring this to class</h3>
+      <p>Save or screenshot what you wrote &mdash; we'll use it as the starting point for a speaking activity in Session 1, where you'll describe relationships to classmates using this week's grammar and vocabulary.</p>
+    </div>
+  </div>
+
+  <!-- ============ REFERENCE SUMMARY ============ -->
+  <div class="tab-section" id="reference">
+    <div class="tab-header vocab">
+      <span class="tab-num">QUICK REFERENCE</span>
+      <h2 class="tab-title">Everything from this week, on one page</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="ref-table-wrap">
+      <table class="ref-table">
+        <tr><th>Item</th><th>Form</th><th>Use it when...</th><th>Example</th></tr>
+        <tr><td>Apostrophe-s</td><td>singular noun + 's / plural noun + '</td><td>Showing ownership with a noun present</td><td>my best friend's honesty / my sisters' husbands</td></tr>
+        <tr><td>Possessive pronoun</td><td>mine/yours/hers/his/ours/theirs</td><td>Replacing the noun entirely, standing alone</td><td>Does she respect yours?</td></tr>
+        <tr><td>Double possessive</td><td>a/that + noun + of + possessive pronoun</td><td>Introducing one of several, for the first time</td><td>a friend of mine / that stubbornness of his</td></tr>
+        <tr><td>Compound word</td><td>open / hyphenated / closed</td><td>Two words expressing one fixed idea</td><td>best friend / brother-in-law / soulmate</td></tr>
+        <tr><td>Make / Do</td><td>fixed collocation, memorize the pair</td><td>Talking about effort, promises, favors, tasks</td><td>make an effort / do a favor</td></tr>
+        <tr><td>Romantic phrasal verbs</td><td>fixed informal expressions</td><td>Talking casually about romantic relationships</td><td>hit on, fall for, settle down</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Vocabulary you should now recognise</h3>
+      <div class="chip-row">
+        <span class="chip">easygoing</span><span class="chip">stubborn</span><span class="chip">close-knit</span>
+        <span class="chip">grow apart</span><span class="chip">confidant</span><span class="chip">reserved</span>
+        <span class="chip">bring out (a quality)</span><span class="chip">get-together</span><span class="chip">make an effort</span>
+        <span class="chip">make time</span><span class="chip">do a favor</span><span class="chip">do your best</span>
+        <span class="chip">trustworthy</span><span class="chip">compatibility</span><span class="chip">supportive</span>
+        <span class="chip">hit it off</span><span class="chip">see eye to eye</span><span class="chip">a soft spot for</span>
+        <span class="chip">go way back</span><span class="chip">patch things up</span><span class="chip">drift apart</span>
+        <span class="chip">a kindred spirit</span><span class="chip">read someone like a book</span><span class="chip">a friend of mine</span>
+        <span class="chip">flirt</span><span class="chip">hit on someone</span><span class="chip">ask someone out</span>
+        <span class="chip">fall for someone</span><span class="chip">fall in love</span><span class="chip">settle down</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapup">
+    <h3>Before Session 1, make sure you can&hellip;</h3>
+    <ul>
+      <li>Explain the difference between apostrophe-s and a possessive pronoun, using an example from the advice column</li>
+      <li>Form the possessive correctly for both singular and plural nouns</li>
+      <li>Use the double possessive ("a friend of mine") correctly in a sentence</li>
+      <li>Identify at least 3 compound words from the message thread, in any spelling style</li>
+      <li>Choose correctly between "make" and "do" for at least 4 common collocations</li>
+      <li>Say "BEST friend" (compound noun) and "close-KNIT" (compound adjective) out loud and explain the stress difference</li>
+      <li>Recognise at least 4 of this week's relationship idioms, and 3 of the romantic phrasal verbs</li>
+      <li>Have your 3&ndash;4 sentence mini-task ready to share</li>
+      <li>Bring one research finding (collocations or compound words) to share with a partner</li>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    document.getElementById('progressFill').style.width = scrolled + '%';
+  });
+
+  let traitPicked = false;
+  document.querySelectorAll('.trait-card').forEach(card => {
+    card.addEventListener('click', () => {
+      if (traitPicked) return;
+      traitPicked = true;
+      document.querySelectorAll('.trait-card').forEach(c => c.classList.remove('picked'));
+      card.classList.add('picked');
+      const note = document.getElementById('traitNote');
+      note.classList.add('show');
+      note.textContent = "Good — keep that word in mind. You'll describe it to a partner later this week, using this week's grammar.";
+    });
+  });
+
+  function checkExercise(num) {
+    const exerciseEl = [...document.querySelectorAll('.exercise')].find(ex => {
+      const btn = ex.querySelector('.check-btn');
+      if (!btn) return false;
+      const onclickAttr = btn.getAttribute('onclick') || '';
+      return onclickAttr === `checkExercise(${num})` || onclickAttr === `checkExercise('${num}')`;
+    });
+    const inputs = exerciseEl.querySelectorAll('.blank-input');
+    let correct = 0;
+    inputs.forEach(input => {
+      const answers = input.dataset.answer.split(',').map(a => a.trim().toLowerCase());
+      const userVal = input.value.trim().toLowerCase();
+      if (answers.includes(userVal)) {
+        correct++;
+        input.style.borderColor = '#1F3A2E';
+      } else {
+        input.style.borderColor = '#B14B34';
+      }
+    });
+    const fb = document.getElementById('feedback' + num);
+    fb.classList.add('show');
+    if (correct === inputs.length) {
+      fb.classList.remove('bad'); fb.classList.add('good');
+      fb.textContent = `All ${inputs.length} correct! Great work.`;
+    } else {
+      fb.classList.remove('good'); fb.classList.add('bad');
+      fb.textContent = `${correct} of ${inputs.length} correct. Check the red-bordered answers and try again.`;
+    }
+  }
+
+  document.querySelectorAll('input[name="mc3"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      document.querySelectorAll('input[name="mc3"]').forEach(r => {
+        r.closest('.mc-opt').classList.remove('correct-flash', 'wrong-flash');
+      });
+      const fb = document.getElementById('feedback3');
+      fb.classList.add('show');
+      if (radio.value === 'right') {
+        radio.closest('.mc-opt').classList.add('correct-flash');
+        fb.classList.remove('bad'); fb.classList.add('good');
+        fb.textContent = 'Correct! "Best friend" stays as two open words — no hyphen, no fusing.';
+      } else {
+        radio.closest('.mc-opt').classList.add('wrong-flash');
+        fb.classList.remove('good'); fb.classList.add('bad');
+        fb.textContent = 'Not quite. "Best friend" is an open compound — written as two separate words with no hyphen.';
+      }
+    });
+  });
+
+  function setupMatching(gridId, pairAttr, feedbackId, totalPairs) {
+    let firstSelection = null;
+    let matchedCount = 0;
+    const grid = document.getElementById(gridId);
+    if (!grid) return;
+    grid.querySelectorAll('.match-item').forEach(item => {
+      item.addEventListener('click', () => {
+        if (item.classList.contains('matched')) return;
+        if (!firstSelection) {
+          firstSelection = item;
+          item.classList.add('selected');
+        } else if (firstSelection === item) {
+          firstSelection.classList.remove('selected');
+          firstSelection = null;
+        } else {
+          if (firstSelection.dataset[pairAttr] === item.dataset[pairAttr]) {
+            firstSelection.classList.remove('selected');
+            firstSelection.classList.add('matched');
+            item.classList.add('matched');
+            matchedCount++;
+            firstSelection = null;
+            const fb = document.getElementById(feedbackId);
+            fb.classList.add('show'); fb.classList.remove('bad'); fb.classList.add('good');
+            if (matchedCount === totalPairs) {
+              fb.textContent = 'All matched! Great vocabulary work.';
+            } else {
+              fb.textContent = `${matchedCount} of ${totalPairs} pairs matched. Keep going!`;
+            }
+          } else {
+            item.classList.add('wrong-flash');
+            setTimeout(() => {
+              firstSelection.classList.remove('selected');
+              item.classList.remove('wrong-flash');
+              firstSelection = null;
+            }, 500);
+          }
+        }
+      });
+    });
+  }
+  setupMatching('matchGrid', 'pair', 'feedback4', 4);
+  setupMatching('matchGrid2', 'pair2', 'feedback5', 4);
+
+  let orderSequence = [];
+  document.querySelectorAll('.order-item').forEach(item => {
+    item.addEventListener('click', () => {
+      if (item.classList.contains('chosen')) {
+        const removedLabel = parseInt(item.getAttribute('data-order-label'));
+        orderSequence = orderSequence.filter(el => el !== item);
+        item.classList.remove('chosen');
+        item.removeAttribute('data-order-label');
+        document.querySelectorAll('.order-item.chosen').forEach(el => {
+          const lbl = parseInt(el.getAttribute('data-order-label'));
+          if (lbl > removedLabel) el.setAttribute('data-order-label', lbl - 1);
+        });
+      } else {
+        orderSequence.push(item);
+        item.classList.add('chosen');
+        item.setAttribute('data-order-label', orderSequence.length);
+      }
+      const seqText = orderSequence.length === 0 ? '(click to begin)' : orderSequence.map(el => el.textContent).join(' \u2192 ');
+      document.getElementById('orderSequence').textContent = seqText;
+    });
+  });
+
+  function checkOrder() {
+    const fb = document.getElementById('feedback6');
+    fb.classList.add('show');
+    if (orderSequence.length < 6) {
+      fb.classList.remove('good'); fb.classList.add('bad');
+      fb.textContent = `Select all 6 phrases first (you've chosen ${orderSequence.length} so far).`;
+      return;
+    }
+    const isCorrect = orderSequence.every((el, idx) => parseInt(el.dataset.correctPos) === idx + 1);
+    if (isCorrect) {
+      fb.classList.remove('bad'); fb.classList.add('good');
+      fb.textContent = 'Correct order! That\'s the typical progression from first noticing someone to settling down.';
+    } else {
+      fb.classList.remove('good'); fb.classList.add('bad');
+      fb.textContent = 'Not quite the usual order yet. Click items to remove them and try again.';
+    }
+  }
+
+  document.getElementById('freeWriting').addEventListener('input', (e) => {
+    const words = e.target.value.trim().split(/\s+/).filter(w => w.length > 0);
+    document.getElementById('wordCount').textContent = (e.target.value.trim() === '' ? 0 : words.length) + ' words';
+  });
+</script>
+
+</body>
+</html>

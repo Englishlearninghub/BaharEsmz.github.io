@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 8 · Week 1 — What's Been Going On? | Full Reference</title>
+<style>
+  :root {
+    --teal:        #0D5C63;
+    --teal-mid:    #1A7A83;
+    --teal-light:  #E0F2F4;
+    --teal-pale:   #F0F9FA;
+    --coral:       #E07A5F;
+    --coral-deep:  #C0563D;
+    --amber:       #E8A838;
+    --amber-deep:  #C48820;
+    --slate:       #3D405B;
+    --slate-soft:  #6B6F8A;
+    --paper:       #F4F8F7;
+    --paper-line:  #DDE8E6;
+    --white:       #FFFFFF;
+    --ink:         #1C2826;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 16.5px;
+    line-height: 1.75;
+  }
+
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px 80px; }
+
+  /* ── PROGRESS BAR ── */
+  .progress-track { position: sticky; top: 0; height: 4px; background: var(--paper-line); z-index: 100; }
+  .progress-fill  { height: 100%; width: 0; background: var(--coral); transition: width 0.1s; }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--teal);
+    margin: 0 -24px;
+    padding: 44px 24px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead::before {
+    content: '+';
+    position: absolute; right: 40px; top: 20px;
+    font-size: 160px; font-weight: 900; color: var(--teal-mid);
+    line-height: 1; font-family: Arial, sans-serif;
+    user-select: none; pointer-events: none;
+  }
+  .masthead::after {
+    content: '+';
+    position: absolute; right: 120px; bottom: -10px;
+    font-size: 80px; font-weight: 900; color: var(--teal-mid);
+    line-height: 1; font-family: Arial, sans-serif;
+    user-select: none; pointer-events: none;
+  }
+  .masthead-inner { max-width: 872px; margin: 0 auto; position: relative; z-index: 1; }
+  .eyebrow {
+    font-family: Arial, sans-serif;
+    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--amber); margin: 0 0 12px; font-weight: bold;
+  }
+  h1.title {
+    font-family: Georgia, serif;
+    font-size: 38px; line-height: 1.15; color: var(--white); margin: 0 0 16px; max-width: 620px;
+  }
+  .masthead-meta {
+    display: flex; gap: 28px; flex-wrap: wrap;
+    font-family: Arial, sans-serif; font-size: 13px; color: #A8CDD0; margin-top: 14px;
+  }
+  .masthead-meta span { color: var(--white); font-weight: bold; }
+
+  /* ── TOC ── */
+  .toc {
+    background: var(--white); border-radius: 10px; margin-top: -20px;
+    padding: 22px 28px; box-shadow: 0 4px 20px rgba(13,92,99,0.13); position: relative; z-index: 2;
+  }
+  .toc h2 {
+    font-family: Arial, sans-serif; font-size: 11px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--slate-soft); margin: 0 0 12px;
+  }
+  .toc ol { margin: 0; padding-left: 18px; columns: 2; column-gap: 32px; font-size: 14px; line-height: 1.6; }
+  .toc li { margin-bottom: 5px; }
+  .toc a { color: var(--teal); text-decoration: none; font-weight: bold; font-family: Arial, sans-serif; }
+  .toc a:hover { text-decoration: underline; }
+
+  /* ── SECTION HEADERS ── */
+  .tab-section { margin-top: 48px; }
+  .tab-header { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; flex-wrap: wrap; }
+  .tab-badge {
+    font-family: Arial, sans-serif; font-size: 11px; font-weight: bold;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    background: var(--teal); color: var(--white);
+    border-radius: 5px; padding: 5px 12px; white-space: nowrap;
+  }
+  .tab-badge.context  { background: var(--slate); }
+  .tab-badge.study    { background: var(--coral-deep); }
+  .tab-badge.vocab    { background: var(--teal-mid); }
+  .tab-badge.practice { background: var(--slate); }
+  .tab-badge.activate { background: var(--amber-deep); color: var(--ink); }
+  .tab-badge.explore  { background: #5C3D8A; }
+  .tab-badge.reference{ background: var(--teal); }
+  h2.tab-title {
+    font-family: Georgia, serif; font-size: 23px; color: var(--ink);
+  }
+  .tab-rule { border: none; border-top: 1.5px solid var(--paper-line); margin: 12px 0 22px; }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--white); border-radius: 10px; padding: 22px 26px; margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(13,92,99,0.07);
+  }
+  .card h3 { font-family: Georgia, serif; font-size: 18px; margin: 0 0 10px; color: var(--teal); }
+  .card p  { margin: 0 0 10px; }
+  .card p:last-child { margin-bottom: 0; }
+
+  /* ── HOOK BOX ── */
+  .hook-box {
+    background: var(--teal); color: var(--white); border-radius: 10px;
+    padding: 28px 30px; margin-bottom: 20px;
+  }
+  .hook-box h3 { font-family: Georgia, serif; font-size: 19px; color: var(--amber); margin: 0 0 12px; }
+  .hook-box p  { color: #C8E4E6; margin: 0 0 10px; }
+  .poll { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+  .poll-opt {
+    border: 2px solid var(--amber); color: var(--amber); border-radius: 999px;
+    padding: 8px 18px; font-size: 13px; font-weight: bold; cursor: pointer;
+    background: transparent; font-family: Arial, sans-serif; transition: all 0.15s;
+  }
+  .poll-opt:hover, .poll-opt.selected { background: var(--amber); color: var(--teal); }
+  .poll-result { margin-top: 12px; font-size: 13.5px; color: #A8CDD0; display: none; font-family: Arial, sans-serif; }
+
+  /* ── REALIA (medical record / pharmacy) ── */
+  .realia {
+    background: var(--white); border-radius: 10px; margin-bottom: 22px;
+    box-shadow: 0 4px 16px rgba(13,92,99,0.1); overflow: hidden;
+    border: 1px solid var(--paper-line);
+  }
+  .realia-header {
+    background: var(--slate); color: var(--white);
+    padding: 14px 26px; display: flex; align-items: center; gap: 12px;
+    font-family: Arial, sans-serif;
+  }
+  .realia-doctype {
+    font-size: 10px; font-weight: bold; letter-spacing: 0.1em; text-transform: uppercase;
+    background: var(--amber); color: var(--ink); border-radius: 3px; padding: 3px 8px;
+  }
+  .realia-docname { font-size: 17px; font-family: Georgia, serif; color: var(--white); }
+  .realia-body { padding: 24px 28px; }
+  .realia-body p { margin: 0 0 13px; }
+  .realia-field {
+    display: grid; grid-template-columns: 160px 1fr; gap: 6px 16px;
+    font-family: Arial, sans-serif; font-size: 14px; margin-bottom: 14px;
+    border-bottom: 1px solid var(--paper-line); padding-bottom: 14px;
+  }
+  .realia-field .label { font-weight: bold; color: var(--slate-soft); text-transform: uppercase; font-size: 11px; letter-spacing: 0.05em; padding-top: 2px; }
+  .realia-field .value { color: var(--ink); }
+  .realia-body .signoff { font-style: italic; color: var(--slate-soft); margin-top: 16px; border-top: 1px solid var(--paper-line); padding-top: 14px; font-size: 14px; font-family: Arial, sans-serif; }
+
+  /* highlight classes */
+  .hl-coral  { background: #FCEAE5; color: var(--coral-deep); padding: 1px 5px; border-radius: 3px; font-weight: bold; }
+  .hl-teal   { background: var(--teal-light); color: var(--teal); padding: 1px 5px; border-radius: 3px; font-weight: bold; }
+
+  /* ── FORUM ── */
+  .forum-post {
+    border-bottom: 1px solid var(--paper-line);
+    padding: 16px 28px; display: flex; gap: 14px;
+  }
+  .forum-post:last-child { border-bottom: none; }
+  .forum-avatar {
+    width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: Arial, sans-serif; font-weight: bold; font-size: 13px;
+    background: var(--amber); color: var(--ink);
+  }
+  .forum-avatar.op { background: var(--coral); color: var(--white); }
+  .forum-avatar.green { background: var(--teal-mid); color: var(--white); }
+  .forum-name { font-family: Arial, sans-serif; font-weight: bold; font-size: 13.5px; }
+  .forum-time { font-family: Arial, sans-serif; font-size: 12px; color: var(--slate-soft); margin-left: 8px; }
+  .forum-text { font-size: 15px; margin-top: 4px; }
+
+  /* ── NOTICE & DISCOVER ── */
+  .notice-box {
+    background: #FFF8E8; border: 2px dashed var(--amber-deep);
+    border-radius: 10px; padding: 22px 26px; margin-bottom: 20px;
+  }
+  .notice-box h3 { font-family: Georgia, serif; font-size: 18px; color: var(--amber-deep); margin: 0 0 14px; }
+  .notice-q { margin-bottom: 14px; padding-left: 30px; position: relative; font-size: 15.5px; }
+  .notice-q::before {
+    content: '?'; position: absolute; left: 0; top: 0;
+    width: 20px; height: 20px; border-radius: 50%; background: var(--amber-deep);
+    color: var(--white); font-size: 13px; font-weight: bold; text-align: center;
+    line-height: 20px; font-family: Arial, sans-serif;
+  }
+  .reveal-btn {
+    display: inline-block; margin-top: 6px;
+    background: none; border: 1px solid var(--amber-deep); color: var(--amber-deep);
+    border-radius: 5px; padding: 3px 10px; font-size: 12px; cursor: pointer;
+    font-family: Arial, sans-serif; transition: all 0.15s;
+  }
+  .reveal-btn:hover { background: var(--amber-deep); color: var(--white); }
+  .notice-reveal {
+    margin-top: 8px; font-size: 14px; color: var(--slate);
+    font-style: italic; border-left: 3px solid var(--amber-deep);
+    padding-left: 10px; display: none;
+  }
+
+  /* ── GRAMMAR BOXES ── */
+  .grammar-box {
+    background: var(--white); border-radius: 10px; padding: 26px 30px;
+    margin-bottom: 24px; box-shadow: 0 2px 10px rgba(13,92,99,0.07);
+  }
+  .grammar-box h3 { font-family: Georgia, serif; font-size: 21px; color: var(--coral-deep); margin: 0 0 6px; }
+  .grammar-sub { font-family: Arial, sans-serif; font-size: 14px; color: var(--slate-soft); margin: 0 0 18px; font-style: italic; }
+
+  .example-row {
+    display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start;
+    margin-bottom: 10px; padding: 10px 14px; background: var(--paper); border-radius: 8px;
+  }
+  .example-row .mark { font-weight: bold; font-size: 18px; }
+  .example-row .mark.ok  { color: var(--teal-mid); }
+  .example-row .mark.bad { color: var(--coral-deep); }
+  .example-row .txt strong { color: var(--teal); }
+  .example-row .gloss { display: block; font-family: Arial, sans-serif; font-size: 13px; color: var(--slate-soft); margin-top: 3px; }
+  .example-row .note  { display: block; font-family: Arial, sans-serif; font-size: 12.5px; color: var(--coral-deep); margin-top: 3px; font-weight: bold; }
+
+  table.rule-table { width: 100%; border-collapse: collapse; margin: 16px 0 8px; font-size: 14.5px; font-family: Arial, sans-serif; }
+  table.rule-table th { background: var(--teal); color: var(--white); padding: 9px 13px; text-align: left; font-size: 13px; }
+  table.rule-table td { padding: 9px 13px; border-bottom: 1px solid var(--paper-line); vertical-align: top; }
+  table.rule-table tr:nth-child(even) td { background: var(--teal-pale); }
+
+  .rule-pill {
+    display: inline-block; background: var(--amber); color: var(--ink);
+    font-family: Arial, sans-serif; font-weight: bold; font-size: 12.5px;
+    border-radius: 5px; padding: 3px 10px; margin: 3px 5px 3px 0;
+  }
+  .rule-pill.red { background: #FCEAE5; color: var(--coral-deep); }
+
+  /* ── STATIVE VERB VISUAL ── */
+  .stative-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0;
+  }
+  .stative-col {
+    border-radius: 8px; padding: 14px 18px;
+    font-family: Arial, sans-serif; font-size: 14px;
+  }
+  .stative-col.no  { background: #FCEAE5; border: 1.5px solid var(--coral); }
+  .stative-col.yes { background: var(--teal-light); border: 1.5px solid var(--teal-mid); }
+  .stative-col h4 { font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 10px; }
+  .stative-col.no h4  { color: var(--coral-deep); }
+  .stative-col.yes h4 { color: var(--teal); }
+  .stative-col ul { padding-left: 16px; margin: 0; }
+  .stative-col li { margin-bottom: 5px; }
+
+  /* ── TIMELINE ── */
+  .timeline-wrap { margin: 18px 0 10px; }
+  .timeline-label { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; color: var(--slate-soft); margin-bottom: 7px; }
+  .timeline-bar {
+    position: relative; height: 80px; background: var(--paper);
+    border-radius: 8px; padding: 14px 20px 0; display: flex; align-items: flex-start;
+  }
+  .tl-line { position: absolute; left: 20px; right: 20px; top: 21px; height: 3px; background: var(--slate-soft); }
+  .tl-line.dashed {
+    background: none;
+    border-top: 3px dashed var(--slate-soft);
+  }
+  .tl-point { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
+  .tl-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--coral-deep); margin-top: 0; }
+  .tl-dot.now { background: var(--teal); width: 18px; height: 18px; margin-top: -2px; }
+  .tl-dot.span { background: var(--teal-mid); }
+  .tl-tag { font-family: Arial, sans-serif; font-size: 11px; margin-top: 8px; color: var(--slate-soft); white-space: nowrap; text-align: center; }
+  .tl-bridge {
+    position: absolute; left: 56px; right: 56px; top: 14px;
+    height: 14px; background: rgba(26,122,131,0.2);
+    border-radius: 7px; border: 2px solid var(--teal-mid);
+  }
+
+  /* ── CONNECTORS (while/even though) ── */
+  .connector-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-family: Arial, sans-serif; font-size: 14.5px; }
+  .connector-table th { background: var(--slate); color: var(--white); padding: 10px 14px; text-align: left; font-size: 13px; }
+  .connector-table td { padding: 10px 14px; border-bottom: 1px solid var(--paper-line); vertical-align: top; }
+  .connector-table tr:nth-child(even) td { background: var(--paper); }
+
+  /* ── VOCAB ── */
+  .vocab-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 14px 0; }
+  .vocab-card {
+    background: var(--white); border-radius: 8px; padding: 14px 16px;
+    border: 1px solid var(--paper-line);
+  }
+  .vocab-card .word { font-family: Georgia, serif; font-weight: bold; color: var(--teal); font-size: 16px; }
+  .vocab-card .pos  { font-family: Arial, sans-serif; font-size: 11px; color: var(--slate-soft); text-transform: uppercase; margin-left: 6px; }
+  .vocab-card .pron { font-family: Arial, sans-serif; font-size: 13px; color: var(--slate-soft); margin-top: 3px; }
+  .vocab-card .def  { font-size: 14px; margin-top: 5px; }
+  .vocab-card .ex   { font-family: Arial, sans-serif; font-size: 13px; color: var(--slate-soft); margin-top: 5px; font-style: italic; }
+
+  .spectrum { display: flex; border-radius: 8px; overflow: hidden; margin: 14px 0; }
+  .spectrum > div { flex: 1; padding: 10px 6px; text-align: center; color: var(--white); font-family: Arial, sans-serif; font-weight: bold; font-size: 12px; }
+
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+  .chip {
+    background: var(--paper); border: 1px solid var(--paper-line);
+    border-radius: 999px; padding: 5px 14px; font-family: Arial, sans-serif;
+    font-size: 13.5px; color: var(--ink);
+  }
+  .chip strong { color: var(--coral-deep); }
+
+  .word-family-table { width: 100%; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 14px; margin: 12px 0; }
+  .word-family-table th { background: var(--teal-mid); color: var(--white); padding: 8px 12px; text-align: left; font-size: 12.5px; }
+  .word-family-table td { padding: 8px 12px; border-bottom: 1px solid var(--paper-line); }
+  .word-family-table tr:nth-child(even) td { background: var(--teal-pale); }
+
+  /* ── PHARMACY INTERACTION ── */
+  .pharm-exchange {
+    background: var(--white); border-radius: 10px; overflow: hidden;
+    border: 1px solid var(--paper-line); margin-bottom: 20px;
+  }
+  .pharm-header {
+    background: var(--teal-mid); color: var(--white); padding: 12px 22px;
+    font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; letter-spacing: 0.06em;
+  }
+  .pharm-line { display: flex; gap: 12px; padding: 12px 22px; border-bottom: 1px solid var(--paper-line); align-items: flex-start; font-size: 15px; }
+  .pharm-line:last-child { border-bottom: none; }
+  .pharm-speaker { font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.06em; min-width: 80px; padding-top: 3px; }
+  .pharm-speaker.pharm { color: var(--teal); }
+  .pharm-speaker.patient { color: var(--coral-deep); }
+
+  /* ── EXERCISES ── */
+  .exercise {
+    background: var(--white); border-radius: 10px; padding: 22px 26px;
+    margin-bottom: 18px; box-shadow: 0 2px 10px rgba(13,92,99,0.07);
+  }
+  .ex-label {
+    display: inline-block; font-family: Arial, sans-serif; font-size: 11px;
+    font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase;
+    background: var(--teal); color: var(--white); border-radius: 4px; padding: 3px 10px; margin-bottom: 10px;
+  }
+  .ex-label.vocab { background: var(--teal-mid); }
+  .exercise h4 { font-family: Georgia, serif; font-size: 17px; margin: 0 0 12px; color: var(--ink); }
+  .exercise .instr { font-family: Arial, sans-serif; font-size: 13.5px; color: var(--slate-soft); margin-bottom: 14px; font-style: italic; }
+
+  .q-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 11px; flex-wrap: wrap; }
+  .q-num { font-family: Arial, sans-serif; font-weight: bold; color: var(--coral-deep); min-width: 22px; }
+  .q-text { flex: 1; min-width: 220px; }
+  .blank-input {
+    border: none; border-bottom: 2px solid var(--amber-deep);
+    background: var(--paper); font-family: Georgia, serif; font-size: 15px;
+    padding: 3px 8px; width: 180px; color: var(--ink);
+  }
+  .blank-input:focus { outline: none; border-color: var(--coral-deep); }
+
+  .mc-opt {
+    display: block; background: var(--paper); border: 2px solid var(--paper-line);
+    border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; cursor: pointer;
+    font-size: 15px; transition: border-color 0.15s; font-family: Georgia, serif;
+  }
+  .mc-opt:hover { border-color: var(--amber-deep); }
+  .mc-opt input { margin-right: 10px; }
+  .mc-opt.correct-flash { border-color: var(--teal); background: var(--teal-light); }
+  .mc-opt.wrong-flash   { border-color: var(--coral-deep); background: #FCEAE5; }
+
+  .match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0; }
+  .match-item {
+    background: var(--paper); border-radius: 8px; padding: 10px 14px;
+    font-family: Arial, sans-serif; font-size: 14px; cursor: pointer;
+    border: 2px solid transparent; transition: all 0.15s;
+  }
+  .match-item.selected { border-color: var(--amber-deep); }
+  .match-item.matched  { border-color: var(--teal-mid); background: var(--teal-light); }
+
+  .check-btn {
+    background: var(--amber); color: var(--ink); border: none; border-radius: 6px;
+    padding: 9px 22px; font-family: Arial, sans-serif; font-weight: bold;
+    font-size: 14px; cursor: pointer; margin-top: 10px; transition: background 0.15s;
+  }
+  .check-btn:hover { background: var(--amber-deep); color: var(--white); }
+  .feedback {
+    margin-top: 12px; font-family: Arial, sans-serif; font-size: 14px;
+    border-radius: 6px; padding: 10px 14px; display: none;
+  }
+  .feedback.show { display: block; }
+  .feedback.good { background: var(--teal-light); color: var(--teal); }
+  .feedback.bad  { background: #FCEAE5; color: var(--coral-deep); }
+
+  textarea.response-box {
+    width: 100%; min-height: 110px; border-radius: 8px;
+    border: 2px solid var(--paper-line); padding: 12px 14px;
+    font-family: Georgia, serif; font-size: 15px; resize: vertical;
+    background: var(--white); color: var(--ink); line-height: 1.65;
+  }
+  textarea.response-box:focus { outline: none; border-color: var(--teal-mid); }
+  .word-count { font-family: Arial, sans-serif; font-size: 12px; color: var(--slate-soft); margin-top: 5px; text-align: right; }
+
+  /* ── ACTIVATE ── */
+  .activate-box {
+    background: var(--amber); border-radius: 10px; padding: 26px 30px; margin-bottom: 20px;
+  }
+  .activate-box h3 { font-family: Georgia, serif; font-size: 19px; color: var(--ink); margin: 0 0 12px; }
+  .activate-box p  { color: var(--ink); margin: 0 0 10px; font-size: 15.5px; }
+
+  /* ── EXPLORE ── */
+  .explore-card {
+    background: #F3EDF8; border: 1px solid #D5C0E8; border-radius: 10px;
+    padding: 22px 26px; margin-bottom: 18px;
+  }
+  .explore-card h3 { font-family: Georgia, serif; font-size: 17px; color: #5C3D8A; margin: 0 0 10px; }
+  .explore-tag {
+    display: inline-block; font-family: Arial, sans-serif; font-size: 11px; font-weight: bold;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    background: #5C3D8A; color: var(--white); border-radius: 4px; padding: 3px 9px; margin-bottom: 10px;
+  }
+  .explore-card ul { padding-left: 20px; margin: 10px 0 0; font-size: 15px; }
+  .explore-card li { margin-bottom: 7px; }
+  .link-sug {
+    display: inline-block; background: var(--white); border: 1px solid #D5C0E8;
+    border-radius: 6px; padding: 5px 12px; font-family: Arial, sans-serif;
+    font-size: 12.5px; color: #5C3D8A; margin: 6px 6px 0 0;
+  }
+
+  /* ── ANSWER KEY ── */
+  .answer-key {
+    background: var(--white); border-radius: 10px; padding: 26px 30px; margin-top: 48px;
+    border: 2px solid var(--teal-mid); box-shadow: 0 4px 16px rgba(13,92,99,0.1);
+  }
+  .ak-title { font-family: Georgia, serif; font-size: 22px; color: var(--teal); margin: 0 0 6px; }
+  .ak-sub   { font-family: Arial, sans-serif; font-size: 13.5px; color: var(--slate-soft); margin: 0 0 20px; font-style: italic; }
+  .ak-section { margin-bottom: 20px; }
+  .ak-section h4 { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; letter-spacing: 0.07em; text-transform: uppercase; color: var(--teal-mid); margin: 0 0 10px; border-bottom: 1px solid var(--paper-line); padding-bottom: 6px; }
+  .ak-item { display: grid; grid-template-columns: 28px 1fr 1fr; gap: 8px; padding: 8px 4px; border-bottom: 1px solid var(--paper-line); font-size: 14px; }
+  .ak-item:last-child { border-bottom: none; }
+  .an { font-family: Arial, sans-serif; font-weight: bold; color: var(--coral-deep); }
+  .av { font-weight: bold; color: var(--teal); }
+  .anote { font-family: Arial, sans-serif; font-size: 13px; color: var(--slate-soft); font-style: italic; }
+
+  /* ── REF TABLE ── */
+  .ref-table-wrap { overflow-x: auto; }
+  table.ref-table { width: 100%; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 14px; }
+  table.ref-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-size: 13px; }
+  table.ref-table td { padding: 10px 14px; border-bottom: 1px solid var(--paper-line); vertical-align: top; }
+  table.ref-table tr:nth-child(even) td { background: var(--paper); }
+
+  /* ── WRAPUP ── */
+  .wrapup { background: var(--slate); color: var(--white); border-radius: 10px; padding: 26px 30px; margin-top: 40px; }
+  .wrapup h3 { font-family: Georgia, serif; color: var(--amber); margin: 0 0 12px; font-size: 18px; }
+  .wrapup ul { padding-left: 20px; margin: 0; }
+  .wrapup li { margin-bottom: 7px; font-size: 15px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    h1.title { font-size: 27px; }
+    .vocab-grid, .match-grid, .stative-grid { grid-template-columns: 1fr; }
+    .toc ol { columns: 1; }
+    .realia-field { grid-template-columns: 1fr; }
+    .ak-item { grid-template-columns: 28px 1fr; }
+    .ak-item .anote { grid-column: 2; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="masthead">
+  <div class="masthead-inner">
+    <p class="eyebrow">Grade 8 &middot; Week 1 &middot; Complete Reference &amp; Pre-Class Material</p>
+    <h1 class="title">What's Been Going On? — Health, Duration &amp; Contrast</h1>
+    <div class="masthead-meta">
+      <div>Level: <span>B2+</span></div>
+      <div>Theme: <span>Health Issues</span></div>
+      <div>Grammar: <span>Present Perfect Progressive &middot; While &amp; Even Though</span></div>
+      <div>Est. time: <span>60&ndash;70 min</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="toc">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#engage">1. Engage — the hook</a></li>
+      <li><a href="#context1">2. Context: the patient record</a></li>
+      <li><a href="#notice1">3. Notice &amp; discover (PPP)</a></li>
+      <li><a href="#study1">4. Study: Present Perfect Progressive</a></li>
+      <li><a href="#practice1">5. Practice: PPP</a></li>
+      <li><a href="#context2">6. Context: the pharmacy conversation</a></li>
+      <li><a href="#notice2">7. Notice &amp; discover (connectors)</a></li>
+      <li><a href="#study2">8. Study: While &amp; Even Though</a></li>
+      <li><a href="#practice2">9. Practice: While &amp; Even Though</a></li>
+      <li><a href="#vocab">10. Vocabulary: medical conditions</a></li>
+      <li><a href="#vocab-practice">11. Practice: vocabulary</a></li>
+      <li><a href="#together">12. Putting it together</a></li>
+      <li><a href="#explore">13. Explore on your own</a></li>
+      <li><a href="#reference">14. Quick-reference summary</a></li>
+      <li><a href="#answer-key">15. Answer key</a></li>
+    </ol>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 1: ENGAGE
+  ════════════════════════════════════════════════════════════ -->
+  <div class="tab-section" id="engage">
+    <div class="tab-header">
+      <span class="tab-badge">ENGAGE</span>
+      <h2 class="tab-title">How do you describe feeling unwell in English?</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="hook-box">
+      <h3>Before we start &mdash; a quick scenario</h3>
+      <p>Imagine this: a colleague looks exhausted on a Monday morning. You ask "Are you okay?" and she says: <em>"Yeah, I've been having headaches."</em></p>
+      <p>That sentence is doing something very specific. It's not saying "I have a headache right now." It's not saying "I had headaches in 2019." It's saying something about a period of time leading up to this moment &mdash; an ongoing, repeated experience.</p>
+      <p><strong>Which of these situations would you most want to describe using that kind of language?</strong></p>
+      <div class="poll" id="pollBox">
+        <button class="poll-opt" data-opt="a">Explaining to a doctor why you came in</button>
+        <button class="poll-opt" data-opt="b">Updating a friend you haven't seen in a while</button>
+        <button class="poll-opt" data-opt="c">Writing a sick-leave message to your manager</button>
+        <button class="poll-opt" data-opt="d">Asking a pharmacist for advice</button>
+      </div>
+      <p class="poll-result" id="pollResult"></p>
+    </div>
+
+    <div class="card">
+      <h3>What we're doing this week</h3>
+      <p>You're going to read two documents: a patient consultation record from a GP's surgery and a transcript of a pharmacy counter conversation. Both contain the same people &mdash; Maya and her pharmacist, Reza. Read for meaning first. Grammar labels come after. Everything in the grammar sections will point back at sentences you've already read.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 2: CONTEXT 1 — PATIENT RECORD
+  ════════════════════════════════════════════════════════════ -->
+  <div class="tab-section" id="context1">
+    <div class="tab-header">
+      <span class="tab-badge context">CONTEXT</span>
+      <h2 class="tab-title">Read first: the GP consultation notes</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <p>Read these consultation notes from Dr. Ferrara's surgery. Before thinking about grammar, answer: <strong>How long has Maya been experiencing these symptoms? Does she seem to be getting better or worse?</strong></p>
+      <p style="font-size:14px; color:var(--slate-soft);">The <span class="hl-coral">coral-highlighted</span> phrases are the ones we'll study first. The <span class="hl-teal">teal-highlighted</span> phrases come later. Just notice them for now.</p>
+    </div>
+
+    <div class="realia">
+      <div class="realia-header">
+        <span class="realia-doctype">GP Record</span>
+        <span class="realia-docname">Consultation Notes — Dr. N. Ferrara, Sycamore Lane Surgery</span>
+      </div>
+      <div class="realia-body">
+        <div class="realia-field">
+          <span class="label">Patient</span><span class="value">Maya Okonkwo, 34</span>
+          <span class="label">Date</span><span class="value">14 March — 11:20 am</span>
+          <span class="label">Visit type</span><span class="value">Follow-up (3rd visit this month)</span>
+        </div>
+        <p><strong>Presenting complaint (in patient's own words):</strong><br>
+        "I <span class="hl-coral">have been waking up</span> every night this week with chest tightness. I <span class="hl-coral">have been taking</span> the antihistamines you prescribed, but they don't seem to be working. Also, my colleague says I <span class="hl-coral">have been coughing</span> a lot during meetings, <span class="hl-teal">even though</span> I don't notice it myself."</p>
+        <p><strong>History:</strong><br>
+        Patient reports she <span class="hl-coral">has been feeling</span> run-down since the start of February. She <span class="hl-coral">has been sleeping</span> fewer than five hours a night, <span class="hl-teal">while</span> maintaining a full-time workload. This is her third consultation in three weeks. She has not travelled abroad recently.</p>
+        <p><strong>Notes (Dr. Ferrara):</strong><br>
+        Maya <span class="hl-coral">has been experiencing</span> a cluster of symptoms consistent with allergic rhinitis complicated by sleep deprivation. <span class="hl-teal">While</span> her antihistamine dosage is correct, it may need to be supplemented with a nasal corticosteroid. <span class="hl-teal">Even though</span> the symptoms are manageable, her quality of sleep remains a concern.</p>
+        <p><strong>Action:</strong><br>
+        Referring to Sycamore Lane Pharmacy. Prescription: Fluticasone nasal spray + sleep hygiene review. Next appointment: 3 weeks.</p>
+        <p class="signoff">Dr. N. Ferrara, MBBS &mdash; Sycamore Lane Surgery</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Meaning check &mdash; no grammar terms yet</h3>
+      <p>1. How many nights has Maya been waking up with chest tightness?</p>
+      <p>2. What is Maya doing despite feeling run-down? (Look for the teal-highlighted word.)</p>
+      <p>3. Dr. Ferrara says the symptoms are manageable &mdash; what is she still concerned about?</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 3: NOTICE & DISCOVER — PPP
+  ════════════════════════════════════════════════════════════ -->
+  <div class="tab-section" id="notice1">
+    <div class="tab-header">
+      <span class="tab-badge study">NOTICE &amp; DISCOVER</span>
+      <h2 class="tab-title">Look at the coral phrases — find the pattern</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="notice-box">
+      <h3>Detective work: figure it out before we name it</h3>
+
+      <div class="notice-q">
+        Look at the coral phrases: <em>"have been waking up," "have been taking," "have been coughing," "has been feeling," "has been sleeping," "has been experiencing."</em> All of them describe health symptoms. What do they have in common about time — do they describe something that happened once, something finished, or something that started before now and has been continuing?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">They all describe an activity that started some time before now and has been happening repeatedly or continuously up to the moment of the consultation. None of them are finished — that's why Dr. Ferrara is still treating Maya.</p>
+      </div>
+
+      <div class="notice-q">
+        Compare these two sentences from the notes. What's the difference in what they mean?<br>
+        <em>a) "I have woken up every night."</em>&nbsp;&nbsp;&nbsp;<em>b) "I have been waking up every night."</em>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">Both are grammatically correct at this level. (a) emphasises the count or result — how many times it happened. (b) emphasises the activity itself as an ongoing process — the experience of it happening again and again. In a medical context, (b) sounds more natural because we care about the ongoing experience, not just the number.</p>
+      </div>
+
+      <div class="notice-q">
+        Now notice what's NOT in the notes: you won't find "I have been knowing something," "she has been needing the prescription," or "I have been wanting to feel better." Why do you think those verbs can't take this form?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">Know, need, want, and similar verbs describe states — how you permanently or semi-permanently feel or think — not activities you actively perform. You can't "be in the process of knowing" something. This is the key restriction, and we'll study it in detail in the next section.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 4: STUDY — PRESENT PERFECT PROGRESSIVE
+  ════════════════════════════════════════════════════════════ -->
+  <div class="tab-section" id="study1">
+    <div class="tab-header">
+      <span class="tab-badge study">STUDY</span>
+      <h2 class="tab-title">Present Perfect Progressive — the rule behind what you found</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>1. Present Perfect Progressive</h3>
+      <p class="grammar-sub">You already noticed the pattern in Dr. Ferrara's notes. Here is the full rule.</p>
+
+      <p><strong>Form:</strong></p>
+      <table class="rule-table">
+        <tr><th>Subject</th><th>Auxiliary</th><th>Main verb (-ing)</th><th>Example from the notes</th></tr>
+        <tr><td>I / you / we / they</td><td>have been</td><td>waking, taking, coughing…</td><td>I <strong>have been waking up</strong> every night.</td></tr>
+        <tr><td>he / she / it / Maya</td><td>has been</td><td>feeling, sleeping, experiencing…</td><td>She <strong>has been feeling</strong> run-down since February.</td></tr>
+      </table>
+
+      <p style="margin-top: 16px;"><strong>What it means — three uses:</strong></p>
+      <div class="example-row">
+        <span class="mark ok">1</span>
+        <span class="txt"><strong>Duration:</strong> an activity that started in the past and is still continuing now.<br>
+          <em class="hl-coral">She has been sleeping fewer than five hours a night.</em>
+          <span class="gloss">She started doing this in the past and is still doing it. It isn't over.</span>
+          <span class="note">Key time signals: since, for, all week, lately, recently</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark ok">2</span>
+        <span class="txt"><strong>Recent continuous activity with visible result:</strong> explains why something is the way it is now.<br>
+          <em>"You look exhausted." — "I know. I've been working 12-hour days."</em>
+          <span class="gloss">The explanation (working) has been happening continuously; the result (exhaustion) is visible now.</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark ok">3</span>
+        <span class="txt"><strong>Repeated activity up to now:</strong> something happening again and again, not just once.<br>
+          <em class="hl-coral">I have been waking up every night this week.</em>
+          <span class="gloss">Not a single event — a repeated pattern leading up to today.</span>
+        </span>
+      </div>
+
+      <div class="timeline-wrap">
+        <p class="timeline-label">Present Perfect Progressive — an unbroken activity from past to now</p>
+        <div class="timeline-bar">
+          <div class="tl-line"></div>
+          <div class="tl-bridge"></div>
+          <div class="tl-point" style="margin-right:auto;">
+            <div class="tl-dot span"></div>
+            <div class="tl-tag">start of February<br>"has been feeling"</div>
+          </div>
+          <div class="tl-point" style="margin-left:auto;">
+            <div class="tl-dot now"></div>
+            <div class="tl-tag">now (the consultation)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- THE STATIVE VERB RESTRICTION -->
+    <div class="grammar-box">
+      <h3>⚠ The most important restriction: stative verbs</h3>
+      <p class="grammar-sub">This is the most commonly made mistake at B2+ and the key corpus teaching point for this week.</p>
+
+      <p>Some verbs describe <strong>states</strong> — mental states, emotions, senses, or possession. These verbs cannot take the progressive form in standard English — not in the present progressive, past progressive, <em>or</em> the present perfect progressive.</p>
+
+      <div class="stative-grid">
+        <div class="stative-col no">
+          <h4>❌ Stative — NOT used in progressive forms</h4>
+          <ul>
+            <li><strong>Thinking/knowing:</strong> know, believe, understand, think (= opinion), mean, remember, forget</li>
+            <li><strong>Feelings/emotions:</strong> love, hate, like, prefer, want, need, wish</li>
+            <li><strong>Senses (involuntary):</strong> see, hear, smell, taste, feel (= seem)</li>
+            <li><strong>Possession/being:</strong> have (= possess), own, belong, seem, appear, contain</li>
+          </ul>
+        </div>
+        <div class="stative-col yes">
+          <h4>✓ Active/dynamic — CAN be used in progressive</h4>
+          <ul>
+            <li><strong>Physical actions:</strong> run, walk, work, sleep, wake, breathe, cough</li>
+            <li><strong>Medical activities:</strong> take (medicine), experience, feel (= physically feel), suffer, recover</li>
+            <li><strong>Mental actions (deliberate):</strong> think (= consider carefully), look (= search), listen</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="example-row">
+        <span class="mark bad">✗</span>
+        <span class="txt"><em>I have been knowing about this allergy for years.</em>
+          <span class="note">WRONG — "know" is stative. → Correct: I have known about this allergy for years.</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark bad">✗</span>
+        <span class="txt"><em>She has been needing the spray since March.</em>
+          <span class="note">WRONG — "need" is stative. → Correct: She has needed the spray since March.</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark ok">✓</span>
+        <span class="txt"><em class="hl-coral">She has been taking the antihistamines.</em>
+          <span class="gloss">CORRECT — "take" is an action/activity. She is actively performing the action of taking medicine.</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark ok">✓</span>
+        <span class="txt"><em class="hl-coral">Maya has been experiencing chest tightness.</em>
+          <span class="gloss">CORRECT — "experience" is used as a dynamic verb (an active process of going through something).</span>
+        </span>
+      </div>
+
+      <p style="margin-top:16px;"><span class="rule-pill">Activity verb + been + -ing</span> = correct<span class="rule-pill red">Stative verb + been + -ing</span> = always wrong in standard English</p>
+
+      <p style="margin-top:10px; font-size:14px; color:var(--slate-soft);">⚠ Note: some verbs can be both stative and dynamic, but with different meanings. <em>"I think she's right"</em> (stative — opinion) vs. <em>"I've been thinking about your advice"</em> (dynamic — deliberate mental process). Context decides.</p>
+    </div>
+
+    <!-- PPP vs PP comparison table -->
+    <div class="grammar-box">
+      <h3>Present Perfect vs. Present Perfect Progressive — when to choose which</h3>
+      <p class="grammar-sub">Both describe a connection between past and present. The difference is emphasis.</p>
+      <table class="rule-table">
+        <tr><th>Tense</th><th>Emphasis</th><th>Example</th><th>Likely context</th></tr>
+        <tr>
+          <td><strong>Present Perfect</strong><br><em>have/has + past participle</em></td>
+          <td>Completion, result, count, or experience</td>
+          <td>"I have taken three courses of antibiotics."</td>
+          <td>Focused on how many / whether it's done</td>
+        </tr>
+        <tr>
+          <td><strong>Pres. Perfect Progressive</strong><br><em>have/has been + -ing</em></td>
+          <td>Duration, repetition, ongoing process</td>
+          <td>"I have been taking antihistamines for weeks."</td>
+          <td>Focused on the ongoing activity itself</td>
+        </tr>
+      </table>
+      <p style="font-size:14px; color:var(--slate-soft); margin-top:10px;">With stative verbs, only Present Perfect is possible: <em>"I have known Dr. Ferrara for five years"</em> — never <em>"I have been knowing."</em></p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 5: PRACTICE — PPP
+  ════════════════════════════════════════════════════════════ -->
+  <div class="tab-section" id="practice1">
+    <div class="tab-header">
+      <span class="tab-badge practice">PRACTICE</span>
+      <h2 class="tab-title">Try it: Present Perfect Progressive</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="exercise">
+      <span class="ex-label">Exercise 1 &middot; Controlled</span>
+      <h4>Write the correct form. Use Present Perfect Progressive — or explain why it's not possible.</h4>
+      <p class="instr">Use the verb in brackets. If the verb is stative, use Present Perfect simple instead and note why.</p>
+      <div class="q-row">
+        <span class="q-num">1.</span>
+        <span class="q-text">Maya <em>(cough)</em> so much lately that her throat is sore.</span>
+        <input type="text" class="blank-input" data-answer="has been coughing" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">2.</span>
+        <span class="q-text">Dr. Ferrara <em>(know)</em> about Maya's condition since February.</span>
+        <input type="text" class="blank-input" data-answer="has known" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">3.</span>
+        <span class="q-text">I <em>(wait)</em> in this waiting room for 40 minutes. When will the doctor see me?</span>
+        <input type="text" class="blank-input" data-answer="have been waiting" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">4.</span>
+        <span class="q-text">Reza <em>(work)</em> at this pharmacy for six years.</span>
+        <input type="text" class="blank-input" data-answer="has been working" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">5.</span>
+        <span class="q-text">She <em>(want)</em> to change her GP for a while now.</span>
+        <input type="text" class="blank-input" data-answer="has wanted,has been wanting" placeholder="your answer">
+      </div>
+      <button class="check-btn" onclick="checkFillIn('ex1', ['has been coughing','has known','have been waiting','has been working','has wanted,has been wanting'])">Check my answers</button>
+      <div class="feedback" id="fb-ex1"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label">Exercise 2 &middot; Error correction</span>
+      <h4>One sentence in each pair is correct. Identify which and explain the mistake in the other.</h4>
+      <p class="instr">Click the sentence you believe is correct. Feedback will appear.</p>
+
+      <p style="font-size:14.5px; margin-bottom:8px;"><strong>Pair A:</strong></p>
+      <label class="mc-opt"><input type="radio" name="mc-a" value="wrong"> a) She has been understanding the diagnosis since the first visit.</label>
+      <label class="mc-opt"><input type="radio" name="mc-a" value="right"> b) She has understood the diagnosis since the first visit.</label>
+      <div class="feedback" id="fb-mca"></div>
+
+      <p style="font-size:14.5px; margin: 16px 0 8px;"><strong>Pair B:</strong></p>
+      <label class="mc-opt"><input type="radio" name="mc-b" value="right"> a) I've been taking this medication for three weeks and I feel worse.</label>
+      <label class="mc-opt"><input type="radio" name="mc-b" value="wrong"> b) I've been needing a prescription for this for weeks — why didn't you tell me?</label>
+      <div class="feedback" id="fb-mcb"></div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 6: CONTEXT 2 — PHARMACY
+  ════════════════════════════════════════════════════════════ -->
+  <div class="tab-section" id="context2">
+    <div class="tab-header">
+      <span class="tab-badge context">CONTEXT</span>
+      <h2 class="tab-title">Read next: the pharmacy conversation</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <p>Later that day, Maya visits Sycamore Lane Pharmacy. Read the conversation. Before thinking about grammar, answer: <strong>What two things does Reza contrast in his advice?</strong></p>
+      <p style="font-size:14px; color:var(--slate-soft);">The <span class="hl-teal">teal-highlighted</span> phrases are the connectors we'll study in the next section.</p>
+    </div>
+
+    <div class="pharm-exchange">
+      <div class="pharm-header">🏥 SYCAMORE LANE PHARMACY — Counter conversation, 14 March, 2:45 pm</div>
+      <div class="pharm-line">
+        <span class="pharm-speaker patient">Maya</span>
+        <span>Hi, I've got a prescription from Dr. Ferrara &mdash; Fluticasone nasal spray? I've been coming here for years but I've never used this one before.</span>
+      </div>
+      <div class="pharm-line">
+        <span class="pharm-speaker pharm">Reza</span>
+        <span>Of course, Maya. So, <span class="hl-teal">while</span> this spray works differently from your antihistamines, it's very safe for long-term use. You'll feel the full effect after about a week.</span>
+      </div>
+      <div class="pharm-line">
+        <span class="pharm-speaker patient">Maya</span>
+        <span>A week? <span class="hl-teal">Even though</span> I've been feeling this bad for two months, is that really long enough?</span>
+      </div>
+      <div class="pharm-line">
+        <span class="pharm-speaker pharm">Reza</span>
+        <span><span class="hl-teal">Even though</span> it feels slow, corticosteroids need time to build up in the system. <span class="hl-teal">While</span> the antihistamines deal with your immediate symptoms, this spray targets the underlying inflammation. Think of them as working on two different problems at the same time.</span>
+      </div>
+      <div class="pharm-line">
+        <span class="pharm-speaker patient">Maya</span>
+        <span>That makes sense. <span class="hl-teal">Even though</span> I've been taking the antihistamines correctly, they haven't really helped much. So I need both?</span>
+      </div>
+      <div class="pharm-line">
+        <span class="pharm-speaker pharm">Reza</span>
+        <span>Exactly. <span class="hl-teal">While</span> you're using the spray every morning, keep taking the antihistamine in the evening. And get some sleep &mdash; <span class="hl-teal">even though</span> the medication helps, sleep deprivation will slow any recovery.</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Meaning check</h3>
+      <p>1. What is the difference between what the antihistamines do and what the nasal spray does?</p>
+      <p>2. Why does Reza say Maya needs both medications?</p>
+      <p>3. What does Reza warn will slow her recovery even with the medication?</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 7: NOTICE & DISCOVER — CONNECTORS
+  ════════════════════════════════════════════════════════════ -->
+  <div class="tab-section" id="notice2">
+    <div class="tab-header">
+      <span class="tab-badge study">NOTICE &amp; DISCOVER</span>
+      <h2 class="tab-title">Look at the teal connectors — what is each one doing?</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="notice-box">
+      <h3>Detective work: while vs. even though</h3>
+
+      <div class="notice-q">
+        Look at Reza's sentence: <em>"While this spray works differently from your antihistamines, it's very safe."</em> He's making two points about the same medication at the same time. Is he saying the two ideas are opposite/surprising, or is he saying they happen simultaneously / in parallel?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">Simultaneously / in parallel — the spray working differently AND being safe are both just true at the same time. "While" here is like saying "at the same time as / alongside the fact that." It doesn't mean they're surprising together; they just coexist.</p>
+      </div>
+
+      <div class="notice-q">
+        Now look at Maya's sentence: <em>"Even though I've been feeling this bad for two months, is a week really long enough?"</em> Is she making two parallel points, or is she highlighting a contrast — something surprising or unexpected?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">A surprising contrast — she's saying "I've suffered for two months, so it seems strange/surprising that one week of treatment would fix it." Even though always introduces something that makes the main clause feel unexpected or counter-intuitive.</p>
+      </div>
+
+      <div class="notice-q">
+        Look at both together: <em>"While the antihistamines deal with symptoms, this spray targets inflammation."</em> and <em>"Even though I've been taking them correctly, they haven't helped."</em> Can you identify a rule about which connector shows "two things happening in parallel" and which shows "a result that seems to contradict the situation"?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">While = two things that are true at the same time (can also contrast, but the contrast is not surprising — just two coexisting facts). Even though = one thing that you'd expect to prevent or change the other, but doesn't. The main clause is surprising given what the even-though clause says.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 8: STUDY — WHILE & EVEN THOUGH
+  ════════════════════════════════════════════════════════════ -->
+  <div class="tab-section" id="study2">
+    <div class="tab-header">
+      <span class="tab-badge study">STUDY</span>
+      <h2 class="tab-title">While &amp; Even Though — the rule behind the contrast</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>2. While &amp; Even Though</h3>
+      <p class="grammar-sub">Both are subordinating conjunctions — they connect a subordinate clause to a main clause. The difference is what kind of relationship they create.</p>
+
+      <table class="connector-table">
+        <tr><th>Connector</th><th>Relationship</th><th>Feel of the sentence</th><th>From the conversation</th></tr>
+        <tr>
+          <td><strong>while</strong></td>
+          <td>Simultaneous / parallel (or mild contrast)</td>
+          <td>"These two things are both true at the same time" — not surprising, just coexisting</td>
+          <td><em>While the antihistamines deal with symptoms, this spray targets inflammation.</em></td>
+        </tr>
+        <tr>
+          <td><strong>even though</strong></td>
+          <td>Concession (strong contrast)</td>
+          <td>"This is true despite what you'd expect" — the result is surprising given the condition</td>
+          <td><em>Even though I've been taking them correctly, they haven't helped much.</em></td>
+        </tr>
+      </table>
+
+      <p style="margin-top: 16px;"><strong>Position in the sentence:</strong></p>
+      <div class="example-row">
+        <span class="mark ok">✓</span>
+        <span class="txt"><strong>Connector clause first</strong> (comma required after the subordinate clause):<br>
+          <em>While the spray works slowly, it's very effective long-term.</em>
+          <span class="gloss">Connector clause → comma → main clause</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark ok">✓</span>
+        <span class="txt"><strong>Main clause first</strong> (no comma):<br>
+          <em>The spray is very effective long-term while working slowly.</em>
+          <span class="gloss">Main clause → connector clause, no comma needed</span>
+        </span>
+      </div>
+
+      <p style="margin-top: 16px;"><strong>Common confusion: "while" has two meanings</strong></p>
+      <div class="example-row">
+        <span class="mark ok">1</span>
+        <span class="txt"><strong>While = at the same time (temporal):</strong><br>
+          <em>While you're using the spray every morning, keep taking the antihistamine in the evening.</em>
+          <span class="gloss">Both things happen during the same time period.</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark ok">2</span>
+        <span class="txt"><strong>While = although / parallel contrast (concessive):</strong><br>
+          <em>While this spray works differently, it is safe for long-term use.</em>
+          <span class="gloss">Two facts that both exist — not temporally, but as parallel truths. Less strong contrast than "even though."</span>
+        </span>
+      </div>
+
+      <p style="margin-top: 16px;"><strong>The contrast spectrum — from weakest to strongest:</strong></p>
+      <div class="spectrum">
+        <div style="background:#1A7A83;">while<br><span style="font-size:10px; font-weight:normal;">(parallel / mild)</span></div>
+        <div style="background:#3D6A5E;">although<br><span style="font-size:10px; font-weight:normal;">(contrast)</span></div>
+        <div style="background:#7A5E3D;">though<br><span style="font-size:10px; font-weight:normal;">(informal contrast)</span></div>
+        <div style="background:#C0563D;">even though<br><span style="font-size:10px; font-weight:normal;">(strong concession)</span></div>
+      </div>
+      <p style="font-family:Arial,sans-serif; font-size:13px; color:var(--slate-soft); margin-top:6px;">→ Weakest contrast (simple parallelism) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Strongest concession →</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 9: PRACTICE — WHILE & EVEN THOUGH
+  ════════════════════════════════════════════════════════════ -->
+  <div class="tab-section" id="practice2">
+    <div class="tab-header">
+      <span class="tab-badge practice">PRACTICE</span>
+      <h2 class="tab-title">Try it: While &amp; Even Though</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="exercise">
+      <span class="ex-label">Exercise 3 &middot; Controlled</span>
+      <h4>Choose the correct connector: <em>while</em> or <em>even though</em>.</h4>
+      <p class="instr">Read the meaning carefully — is the relationship parallel/simultaneous, or a surprising contrast?</p>
+
+      <div class="q-row">
+        <span class="q-num">1.</span>
+        <span class="q-text">____________ the nasal spray takes a week to work, the antihistamine provides faster relief.</span>
+        <input type="text" class="blank-input" data-answer="while,even though" placeholder="while / even though">
+      </div>
+      <div class="q-row">
+        <span class="q-num">2.</span>
+        <span class="q-text">____________ Maya followed the prescription exactly, her symptoms didn't improve.</span>
+        <input type="text" class="blank-input" data-answer="even though,although" placeholder="while / even though">
+      </div>
+      <div class="q-row">
+        <span class="q-num">3.</span>
+        <span class="q-text">____________ one medication targets symptoms, the other targets the cause.</span>
+        <input type="text" class="blank-input" data-answer="while" placeholder="while / even though">
+      </div>
+      <div class="q-row">
+        <span class="q-num">4.</span>
+        <span class="q-text">Reza gave clear advice ____________ he was very busy with other customers.</span>
+        <input type="text" class="blank-input" data-answer="even though,although" placeholder="while / even though">
+      </div>
+      <button class="check-btn" onclick="checkFillIn('ex3', ['while,even though','even though,although','while','even though,although'])">Check my answers</button>
+      <div class="feedback" id="fb-ex3"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label">Exercise 4 &middot; Freer practice</span>
+      <h4>Join the two ideas using <em>while</em> or <em>even though</em>. Both may work for some — note the difference in meaning.</h4>
+      <p class="instr">Write complete sentences. Think about whether the ideas are parallel or surprising contrasts.</p>
+
+      <div class="q-row">
+        <span class="q-num">1.</span>
+        <span class="q-text"><em>The pharmacy was understaffed.</em> / <em>The pharmacist took time to explain everything.</em></span>
+      </div>
+      <div style="margin-left:32px; margin-bottom:14px;">
+        <div style="border-bottom:1.5px solid var(--paper-line); margin-bottom:26px; height:22px;"></div>
+        <div style="border-bottom:1.5px solid var(--paper-line); height:22px;"></div>
+      </div>
+      <div class="q-row">
+        <span class="q-num">2.</span>
+        <span class="q-text"><em>One drug is a spray.</em> / <em>The other drug is a tablet.</em></span>
+      </div>
+      <div style="margin-left:32px; margin-bottom:14px;">
+        <div style="border-bottom:1.5px solid var(--paper-line); margin-bottom:26px; height:22px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 10: VOCABULARY
+  ════════════════════════════════════════════════════════════ -->
+  <div class="tab-section" id="vocab">
+    <div class="tab-header">
+      <span class="tab-badge vocab">VOCABULARY</span>
+      <h2 class="tab-title">Medical conditions — from context to full word set</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <h3>First: words from the consultation record</h3>
+      <p>The following words all appeared in the texts above. You may have guessed their meaning from context. Let's confirm and extend them.</p>
+    </div>
+
+    <div class="grammar-box">
+      <h3>Key medical vocabulary from this week's context</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <span class="word">symptom</span><span class="pos">noun</span>
+          <div class="pron">/ˈsɪmptəm/</div>
+          <div class="def">a physical or mental sign that a condition exists</div>
+          <div class="ex">"Maya's symptoms include chest tightness and coughing." (from the record)</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">prescription</span><span class="pos">noun</span>
+          <div class="pron">/prɪˈskrɪpʃən/</div>
+          <div class="def">a doctor's written instruction for medicine; the medicine itself</div>
+          <div class="ex">"She took her prescription to Sycamore Lane Pharmacy."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">allergic rhinitis</span><span class="pos">noun phrase</span>
+          <div class="pron">/əˈlɜːdʒɪk raɪˈnaɪtɪs/</div>
+          <div class="def">inflammation of the nose caused by an allergic reaction (hay fever is a common form)</div>
+          <div class="ex">"Dr. Ferrara diagnosed allergic rhinitis."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">antihistamine</span><span class="pos">noun</span>
+          <div class="pron">/ˌæntiˈhɪstəmiːn/</div>
+          <div class="def">medicine that reduces the body's allergic reaction</div>
+          <div class="ex">"She has been taking antihistamines for weeks."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">corticosteroid</span><span class="pos">noun</span>
+          <div class="pron">/ˌkɔːtɪkəʊˈstɪərɔɪd/</div>
+          <div class="def">a type of anti-inflammatory medication; commonly used for respiratory and skin conditions</div>
+          <div class="ex">"Reza explained that corticosteroids need time to build up."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">inflammation</span><span class="pos">noun</span>
+          <div class="pron">/ˌɪnfləˈmeɪʃən/</div>
+          <div class="def">swelling and irritation in body tissue, often caused by infection or allergy</div>
+          <div class="ex">"The spray targets the underlying inflammation."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">sleep deprivation</span><span class="pos">noun phrase</span>
+          <div class="pron">/ˈsliːp ˌdeprɪˈveɪʃən/</div>
+          <div class="def">the condition of not getting enough sleep, with negative health effects</div>
+          <div class="ex">"Sleep deprivation will slow any recovery."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">run-down</span><span class="pos">adjective</span>
+          <div class="pron">/ˈrʌn daʊn/</div>
+          <div class="def">physically exhausted and weakened, especially from stress or illness</div>
+          <div class="ex">"She has been feeling run-down since February."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXTENDED VOCAB — BEYOND THE MINIMUM -->
+    <div class="grammar-box">
+      <h3>Extended vocabulary: describing conditions &amp; symptoms</h3>
+      <p class="grammar-sub">These are words you'll need in real situations — at a pharmacy, calling in sick, or talking to a doctor.</p>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <span class="word">chronic</span><span class="pos">adjective</span>
+          <div class="pron">/ˈkrɒnɪk/</div>
+          <div class="def">persisting for a long time; long-term (opposite: <em>acute</em>)</div>
+          <div class="ex">"Chronic allergies require long-term management."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">acute</span><span class="pos">adjective</span>
+          <div class="pron">/əˈkjuːt/</div>
+          <div class="def">severe and sudden in onset; short-term (medical)</div>
+          <div class="ex">"The acute phase of the allergy lasted three days."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">flare-up</span><span class="pos">noun</span>
+          <div class="pron">/ˈfleər ʌp/</div>
+          <div class="def">a sudden worsening of a chronic condition</div>
+          <div class="ex">"She's been having flare-ups every spring."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to aggravate</span><span class="pos">verb</span>
+          <div class="pron">/ˈæɡrəveɪt/</div>
+          <div class="def">to make a condition worse</div>
+          <div class="ex">"Dust has been aggravating her rhinitis."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">side effect</span><span class="pos">noun phrase</span>
+          <div class="pron">/ˈsaɪd ɪfekt/</div>
+          <div class="def">an unintended effect of a medication, often negative</div>
+          <div class="ex">"Have you been experiencing any side effects?"</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">dosage</span><span class="pos">noun</span>
+          <div class="pron">/ˈdəʊsɪdʒ/</div>
+          <div class="def">the prescribed amount and frequency of a medication</div>
+          <div class="ex">"Your dosage is correct — the problem is timing."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to recover (from)</span><span class="pos">verb</span>
+          <div class="pron">/rɪˈkʌvər/</div>
+          <div class="def">to return to health after illness or injury</div>
+          <div class="ex">"She's been recovering from the infection slowly."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">follow-up</span><span class="pos">noun / adjective</span>
+          <div class="pron">/ˈfɒləʊ ʌp/</div>
+          <div class="def">a subsequent visit or appointment to check progress</div>
+          <div class="ex">"This is her third follow-up appointment this month."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORD FAMILY TABLE -->
+    <div class="card">
+      <h3>Word family: PRESCRIBE</h3>
+      <table class="word-family-table">
+        <tr><th>Verb</th><th>Noun</th><th>Adjective</th><th>Example</th></tr>
+        <tr><td>prescribe</td><td>prescription</td><td>prescribed</td><td>Dr. Ferrara prescribed a nasal spray. The prescribed dosage is one puff per nostril.</td></tr>
+        <tr><td>diagnose</td><td>diagnosis</td><td>diagnostic</td><td>He has been waiting for a diagnosis for weeks.</td></tr>
+        <tr><td>treat</td><td>treatment</td><td>treatable</td><td>The condition is treatable. Treatment takes time.</td></tr>
+        <tr><td>recover</td><td>recovery</td><td>recovering</td><td>She has been recovering slowly. Her recovery is on track.</td></tr>
+        <tr><td>react (to)</td><td>reaction / allergy</td><td>allergic</td><td>She has been reacting badly to dust. She is allergic to pollen.</td></tr>
+      </table>
+    </div>
+
+    <!-- COLLOCATION CHIPS -->
+    <div class="card">
+      <h3>Collocations with medical vocabulary</h3>
+      <p style="font-size:14.5px; margin-bottom:12px;">These verb + noun pairings are the most natural in English. Mixing them up is a common B2+ error.</p>
+      <div class="chip-row">
+        <span class="chip"><strong>take</strong> medicine / tablets / a prescription</span>
+        <span class="chip"><strong>have</strong> a symptom / an allergy / a condition</span>
+        <span class="chip"><strong>experience</strong> side effects / pain / symptoms</span>
+        <span class="chip"><strong>suffer from</strong> a condition / an illness</span>
+        <span class="chip"><strong>prescribe</strong> medication / a drug / a treatment</span>
+        <span class="chip"><strong>make</strong> a diagnosis / an appointment</span>
+        <span class="chip"><strong>run</strong> some tests / a check-up</span>
+        <span class="chip"><strong>develop</strong> a condition / an allergy / symptoms</span>
+      </div>
+    </div>
+
+    <!-- SEVERITY SPECTRUM -->
+    <div class="card">
+      <h3>Describing severity: a spectrum</h3>
+      <div class="spectrum">
+        <div style="background:#2E7D32;">mild</div>
+        <div style="background:#558B2F;">moderate</div>
+        <div style="background:#9E6B00;">significant</div>
+        <div style="background:#C0563D;">severe</div>
+        <div style="background:#8C1B1B;">critical</div>
+      </div>
+      <p style="font-family:Arial,sans-serif; font-size:13px; color:var(--slate-soft); margin-top:6px;">Use these as modifiers: <em>a mild reaction, moderate inflammation, severe sleep deprivation, a significant flare-up</em></p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 11: VOCABULARY PRACTICE
+  ════════════════════════════════════════════════════════════ -->
+  <div class="tab-section" id="vocab-practice">
+    <div class="tab-header">
+      <span class="tab-badge vocab">PRACTICE</span>
+      <h2 class="tab-title">Try it: medical vocabulary</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="exercise">
+      <span class="ex-label vocab">Exercise 5 &middot; Collocation matching</span>
+      <h4>Click the verb on the left that matches its correct medical collocate on the right.</h4>
+      <div class="match-grid" id="matchGrid">
+        <div class="match-item" data-pair="1">prescribe</div>
+        <div class="match-item" data-pair="3">a flare-up</div>
+        <div class="match-item" data-pair="2">suffer from</div>
+        <div class="match-item" data-pair="4">some tests</div>
+        <div class="match-item" data-pair="3">experience</div>
+        <div class="match-item" data-pair="1">a medication</div>
+        <div class="match-item" data-pair="4">run</div>
+        <div class="match-item" data-pair="2">a chronic condition</div>
+      </div>
+      <div class="feedback" id="fb-match"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label vocab">Exercise 6 &middot; Gap-fill</span>
+      <h4>Use the correct word from the box to complete each sentence.</h4>
+      <p class="instr"><em>chronic &nbsp;·&nbsp; side effects &nbsp;·&nbsp; flare-up &nbsp;·&nbsp; dosage &nbsp;·&nbsp; follow-up &nbsp;·&nbsp; run-down</em></p>
+      <div class="q-row">
+        <span class="q-num">1.</span>
+        <span class="q-text">Maya has been feeling ____________ for weeks — she's exhausted all the time.</span>
+        <input type="text" class="blank-input" data-answer="run-down" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">2.</span>
+        <span class="q-text">Her allergies are ____________ — she has had them every spring for fifteen years.</span>
+        <input type="text" class="blank-input" data-answer="chronic" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">3.</span>
+        <span class="q-text">Reza checked the ____________ — she should be taking two puffs per nostril, not one.</span>
+        <input type="text" class="blank-input" data-answer="dosage" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">4.</span>
+        <span class="q-text">The cold weather always triggers a ____________ of her respiratory symptoms.</span>
+        <input type="text" class="blank-input" data-answer="flare-up" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">5.</span>
+        <span class="q-text">The nasal spray has some minor ____________ such as nosebleeds and headaches.</span>
+        <input type="text" class="blank-input" data-answer="side effects" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">6.</span>
+        <span class="q-text">Dr. Ferrara booked a ____________ appointment for three weeks' time.</span>
+        <input type="text" class="blank-input" data-answer="follow-up" placeholder="your answer">
+      </div>
+      <button class="check-btn" onclick="checkFillIn('ex6', ['run-down','chronic','dosage','flare-up','side effects','follow-up'])">Check my answers</button>
+      <div class="feedback" id="fb-ex6"></div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 12: PUTTING IT TOGETHER
+  ════════════════════════════════════════════════════════════ -->
+  <div class="tab-section" id="together">
+    <div class="tab-header">
+      <span class="tab-badge activate">PUTTING IT TOGETHER</span>
+      <h2 class="tab-title">Combine everything from this week</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="activate-box">
+      <h3>Mini-task: A message to your doctor</h3>
+      <p>Write a short message (80&ndash;100 words) to your doctor explaining how you have been feeling lately. Use a real or imaginary health situation.</p>
+      <p>Your message must include:</p>
+      <p>✓ At least <strong>two Present Perfect Progressive</strong> sentences about your symptoms (remember: activity verbs only)<br>
+         ✓ At least <strong>one sentence with <em>while</em></strong> and <strong>one with <em>even though</em></strong><br>
+         ✓ At least <strong>three vocabulary items</strong> from the word set above</p>
+      <p style="font-size:14px; margin-top:8px;"><em>Starter: "Dear Dr. [name], I have been experiencing… While my [symptom] has improved slightly, I have also been…"</em></p>
+      <textarea class="response-box" id="togetherBox" placeholder="Write your message here..."></textarea>
+      <div class="word-count" id="togetherCount">0 words</div>
+    </div>
+
+    <div class="card">
+      <h3>Bring this to class</h3>
+      <p>Save or copy what you wrote &mdash; in Session 1, you'll swap messages with a partner who will play the role of the doctor responding. They'll use Present Perfect Progressive to confirm what they've understood, and the conversation will continue from there.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 13: EXPLORE MORE
+  ════════════════════════════════════════════════════════════ -->
+  <div class="tab-section" id="explore">
+    <div class="tab-header">
+      <span class="tab-badge explore">EXPLORE ON YOUR OWN</span>
+      <h2 class="tab-title">Go further: independent research tasks</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="explore-card">
+      <span class="explore-tag">Grammar extension</span>
+      <h3>Hunt for stative vs. dynamic uses in the wild</h3>
+      <p>Find a 2–3 minute video in English (a vlog, news clip, podcast snippet, or YouTube interview) and listen for any use of the present perfect progressive. Make note of:</p>
+      <ul>
+        <li>Every time you hear "have/has been + -ing" — write down the verb used.</li>
+        <li>Are there any stative verbs mistakenly used in this form? (Native speakers sometimes do this informally — note if you hear it.)</li>
+        <li>Bring your list to class and explain the meaning of each example you found.</li>
+      </ul>
+      <span class="link-sug">Try: BBC Learning English YouTube</span>
+      <span class="link-sug">Try: TED Talk clips (short ones)</span>
+      <span class="link-sug">Try: A podcast episode on health or wellbeing</span>
+    </div>
+
+    <div class="explore-card">
+      <span class="explore-tag">Vocabulary extension</span>
+      <h3>Map your personal health vocabulary</h3>
+      <p>Think about a health issue you've experienced yourself (even something minor, like a cold). Write a "vocabulary map" — a set of 8&ndash;10 words specific to that experience in English. Use a learner's dictionary to find collocations.</p>
+      <ul>
+        <li>Include: the condition name, at least two symptoms, the treatment, and one doctor/pharmacy vocabulary word.</li>
+        <li>Write two sentences using your new words and the Present Perfect Progressive.</li>
+        <li>Bring your vocabulary map to class — we'll compile a shared glossary.</li>
+      </ul>
+      <span class="link-sug">Try: Cambridge Dictionary (search + collocations tab)</span>
+      <span class="link-sug">Try: Macmillan Medical Dictionary online (free)</span>
+    </div>
+
+    <div class="explore-card">
+      <span class="explore-tag">Cultural research</span>
+      <h3>Compare healthcare language across cultures</h3>
+      <p>In your country, how do people typically describe symptoms to a doctor? Is the language more or less formal than the patient notes in this week's context? Search in English for "how to describe symptoms to a doctor in English" and compare what you find to how you'd naturally describe it in your first language.</p>
+      <ul>
+        <li>Write 3–4 sentences noting any differences you found — use <em>while</em> or <em>even though</em> to connect your comparisons.</li>
+        <li>Be ready to share your most interesting finding at the start of Session 2.</li>
+      </ul>
+    </div>
+
+    <div class="explore-card">
+      <span class="explore-tag">Grammar self-test</span>
+      <h3>Test yourself on stative verbs</h3>
+      <p>Search online for a stative verbs quiz (search "stative verbs quiz B2 English"). Take one quiz and note your score. Then write down the three verbs you found most confusing, look up each one in a grammar reference, and bring your notes to class.</p>
+      <ul>
+        <li>Good question to bring: "What is the difference between 'I think it's true' (stative) and 'I've been thinking about it' (dynamic)?" — be ready to explain this to a partner.</li>
+      </ul>
+      <span class="link-sug">Try: British Council Learn English grammar</span>
+      <span class="link-sug">Try: Perfect English Grammar (stative verbs page)</span>
+    </div>
+
+    <div class="explore-card">
+      <span class="explore-tag">Autonomy task</span>
+      <h3>Bring one question to class</h3>
+      <p>After reading this material and doing the exercises, write down one genuine question you still have — something about the stative verb rule, the difference between <em>while</em> and <em>although</em>, or a medical vocabulary item you weren't sure about. We'll open Session 1 with a 5-minute question box.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 14: QUICK REFERENCE
+  ════════════════════════════════════════════════════════════ -->
+  <div class="tab-section" id="reference">
+    <div class="tab-header">
+      <span class="tab-badge reference">QUICK REFERENCE</span>
+      <h2 class="tab-title">Everything from this week on one page</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="ref-table-wrap">
+      <table class="ref-table">
+        <tr><th>Item</th><th>Form</th><th>Use when…</th><th>From this week</th></tr>
+        <tr>
+          <td><strong>Present Perfect Progressive</strong></td>
+          <td>have/has been + verb-ing</td>
+          <td>An ongoing or repeated activity from the past that continues up to now; or explains a visible present result</td>
+          <td><em>Maya has been waking up every night this week.</em></td>
+        </tr>
+        <tr>
+          <td><strong>⚠ Stative verb restriction</strong></td>
+          <td>Use Present Perfect simple instead</td>
+          <td>The verb is stative (know, want, need, believe, own, love, seem…)</td>
+          <td><em>Dr. Ferrara has known about this since February.</em> (not "has been knowing")</td>
+        </tr>
+        <tr>
+          <td><strong>while</strong></td>
+          <td>While + clause, + main clause<br>OR main clause + while + clause</td>
+          <td>Two things are simultaneously true (parallel); also used for mild contrast</td>
+          <td><em>While the antihistamines deal with symptoms, the spray targets inflammation.</em></td>
+        </tr>
+        <tr>
+          <td><strong>even though</strong></td>
+          <td>Even though + clause, + main clause<br>OR main clause + even though + clause</td>
+          <td>The main clause is surprising or unexpected given what the even-though clause says</td>
+          <td><em>Even though Maya followed the prescription exactly, the symptoms didn't improve.</em></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card" style="margin-top:18px;">
+      <h3>Key vocabulary to know before Session 1</h3>
+      <div class="chip-row">
+        <span class="chip">symptom</span><span class="chip">prescription</span><span class="chip">antihistamine</span>
+        <span class="chip">inflammation</span><span class="chip">chronic</span><span class="chip">acute</span>
+        <span class="chip">flare-up</span><span class="chip">side effect</span><span class="chip">dosage</span>
+        <span class="chip">run-down</span><span class="chip">follow-up</span><span class="chip">sleep deprivation</span>
+        <span class="chip">diagnose / diagnosis</span><span class="chip">prescribe / prescription</span>
+        <span class="chip">treat / treatment</span><span class="chip">recover / recovery</span>
+        <span class="chip">experience a flare-up</span><span class="chip">take medication</span>
+        <span class="chip">suffer from a condition</span><span class="chip">run some tests</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 15: ANSWER KEY
+  ════════════════════════════════════════════════════════════ -->
+  <div class="answer-key" id="answer-key">
+    <div class="ak-title">Answer Key</div>
+    <p class="ak-sub">Try every exercise before looking here. Answers for free-writing tasks (Exercise 4, Putting It Together) are not included — bring those to class.</p>
+
+    <div class="ak-section">
+      <h4>Exercise 1 — PPP or PP simple?</h4>
+      <div class="ak-item"><span class="an">1.</span><span class="av">has been coughing</span><span class="anote">Activity verb — "cough" is dynamic, so PPP is correct.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">has known</span><span class="anote">"Know" is stative — no progressive form. PP simple required.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">have been waiting</span><span class="anote">Activity verb — waiting is a dynamic, ongoing process.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">has been working</span><span class="anote">Activity verb — a continuous, ongoing situation over 6 years.</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">has wanted</span><span class="anote">"Want" is typically stative. PP simple is the standard form. (Some native speakers use "has been wanting" in informal speech — note this, but use the simple form in formal writing.)</span></div>
+    </div>
+
+    <div class="ak-section">
+      <h4>Exercise 2 — Error correction</h4>
+      <div class="ak-item"><span class="an">A.</span><span class="av">Sentence (b) is correct</span><span class="anote">"Understand" is stative — cannot take progressive. "Has understood" is the only correct form.</span></div>
+      <div class="ak-item"><span class="an">B.</span><span class="av">Sentence (a) is correct</span><span class="anote">"Taking" is an activity verb — fine in PPP. "Needing" in (b) is stative — must use "has needed."</span></div>
+    </div>
+
+    <div class="ak-section">
+      <h4>Exercise 3 — While or Even Though?</h4>
+      <div class="ak-item"><span class="an">1.</span><span class="av">while / even though</span><span class="anote">Both work but with different meanings: "while" = parallel facts (they coexist); "even though" = surprising contrast (you'd expect a slow spray to be less good, but it isn't).</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">even though / although</span><span class="anote">Strong concession — following the prescription should lead to improvement, but it didn't.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">while</span><span class="anote">Parallel contrast — two simultaneous truths about the two medications. "Even though" doesn't fit as well here because neither fact is surprising given the other.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">even though / although</span><span class="anote">Concession — being busy would typically prevent someone from giving good advice. The clear advice is surprising.</span></div>
+    </div>
+
+    <div class="ak-section">
+      <h4>Exercise 5 — Collocation matching</h4>
+      <div class="ak-item"><span class="an">1.</span><span class="av">prescribe → a medication</span><span class="anote">You prescribe medicine; you don't "give" or "make" a medication in formal medical English.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">suffer from → a chronic condition</span><span class="anote">"Suffer from" collocates with conditions and illnesses, not symptoms (which you "experience" or "have").</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">experience → a flare-up</span><span class="anote">"Experience" is the natural verb for symptoms and episodes.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">run → some tests</span><span class="anote">"Run" a test is the standard medical/professional collocation — not "do" or "make."</span></div>
+    </div>
+
+    <div class="ak-section">
+      <h4>Exercise 6 — Gap-fill vocabulary</h4>
+      <div class="ak-item"><span class="an">1.</span><span class="av">run-down</span><span class="anote">Describes a state of general exhaustion from illness/overwork.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">chronic</span><span class="anote">Long-term, recurring — the opposite of acute.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">dosage</span><span class="anote">The prescribed amount — not "dose" (which is one instance) or "prescription" (which is the document/medicine).</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">flare-up</span><span class="anote">A sudden worsening of a recurring condition.</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">side effects</span><span class="anote">Always plural in standard usage ("side effects," not "a side effect" when listing more than one).</span></div>
+      <div class="ak-item"><span class="an">6.</span><span class="av">follow-up</span><span class="anote">Can be used as a noun (a follow-up) or adjective (a follow-up appointment).</span></div>
+    </div>
+
+    <p style="font-family:Arial,sans-serif; font-size:13px; color:var(--slate-soft); margin-top:16px; font-style:italic;">
+      Exercises 4 (sentence writing) and Putting It Together (the doctor's message) do not have fixed answers — review your own work and bring it to class.
+    </p>
+  </div>
+
+  <div class="wrapup">
+    <h3>Before Session 1, make sure you can&hellip;</h3>
+    <ul>
+      <li>Build a Present Perfect Progressive sentence about an activity that's been happening recently</li>
+      <li>Identify at least 5 stative verbs and explain why they don't take the progressive form</li>
+      <li>Write a sentence using <em>while</em> (parallel) and one using <em>even though</em> (concession) — and explain the difference</li>
+      <li>Use at least 5 new medical vocabulary items correctly in context</li>
+      <li>Have your doctor's message (Putting It Together) ready to share</li>
+      <li>Bring one research finding or one question from the Explore section</li>
+    </ul>
+  </div>
+
+</div><!-- /.wrap -->
+
+<script>
+  /* ── Progress bar ── */
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const pct = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
+    document.getElementById('progressFill').style.width = pct + '%';
+  });
+
+  /* ── Poll ── */
+  let pollDone = false;
+  document.querySelectorAll('.poll-opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (pollDone) return;
+      pollDone = true;
+      document.querySelectorAll('.poll-opt').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      const r = document.getElementById('pollResult');
+      r.style.display = 'block';
+      r.textContent = 'Good choice! Bring your reasoning to class — we\'ll open Session 1 comparing everyone\'s answers.';
+    });
+  });
+
+  /* ── Fill-in checker ── */
+  function checkFillIn(exId, answers) {
+    const rows = document.querySelectorAll(`#fb-${exId}`)[0].closest('.exercise').querySelectorAll('.blank-input');
+    let correct = 0;
+    rows.forEach((input, i) => {
+      const accepted = answers[i].split(',').map(a => a.trim().toLowerCase());
+      const val = input.value.trim().toLowerCase();
+      if (accepted.includes(val)) {
+        correct++;
+        input.style.borderColor = '#1A7A83';
+      } else {
+        input.style.borderColor = '#C0563D';
+      }
+    });
+    const fb = document.getElementById('fb-' + exId);
+    fb.classList.add('show');
+    if (correct === rows.length) {
+      fb.classList.remove('bad'); fb.classList.add('good');
+      fb.textContent = 'All ' + rows.length + ' correct! Great work.';
+    } else {
+      fb.classList.remove('good'); fb.classList.add('bad');
+      fb.textContent = correct + ' of ' + rows.length + ' correct. Red-bordered items need reviewing.';
+    }
+  }
+
+  /* ── MC options (Pair A, Pair B) ── */
+  function setupMC(name, correctVal, fbId, correctMsg, wrongMsg) {
+    document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+      radio.addEventListener('change', () => {
+        document.querySelectorAll(`input[name="${name}"]`).forEach(r => {
+          r.closest('.mc-opt').classList.remove('correct-flash', 'wrong-flash');
+        });
+        const fb = document.getElementById(fbId);
+        fb.classList.add('show');
+        if (radio.value === correctVal) {
+          radio.closest('.mc-opt').classList.add('correct-flash');
+          fb.classList.remove('bad'); fb.classList.add('good');
+          fb.textContent = correctMsg;
+        } else {
+          radio.closest('.mc-opt').classList.add('wrong-flash');
+          fb.classList.remove('good'); fb.classList.add('bad');
+          fb.textContent = wrongMsg;
+        }
+      });
+    });
+  }
+  setupMC('mc-a', 'right', 'fb-mca',
+    'Correct! "Understand" is stative — use Present Perfect simple: "has understood."',
+    'Not quite. "Understand" is a stative verb. It cannot take the progressive form. Use "has understood."'
+  );
+  setupMC('mc-b', 'right', 'fb-mcb',
+    'Correct! "Take" is an activity verb — Present Perfect Progressive is fine here.',
+    'Not quite. "Need" is stative. Sentence (a) is correct because "take" is an activity verb.'
+  );
+
+  /* ── Matching exercise ── */
+  let firstSel = null, matchedCount = 0;
+  const totalPairs = 4;
+  document.querySelectorAll('.match-item').forEach(item => {
+    item.addEventListener('click', () => {
+      if (item.classList.contains('matched')) return;
+      if (!firstSel) {
+        firstSel = item; item.classList.add('selected');
+      } else if (firstSel === item) {
+        firstSel.classList.remove('selected'); firstSel = null;
+      } else {
+        if (firstSel.dataset.pair === item.dataset.pair) {
+          firstSel.classList.remove('selected');
+          [firstSel, item].forEach(el => el.classList.add('matched'));
+          matchedCount++;
+          firstSel = null;
+          const fb = document.getElementById('fb-match');
+          fb.classList.add('show'); fb.classList.remove('bad'); fb.classList.add('good');
+          fb.textContent = matchedCount === totalPairs
+            ? 'All 4 pairs matched! Well done.'
+            : matchedCount + ' of ' + totalPairs + ' matched — keep going!';
+        } else {
+          item.classList.add('wrong-flash');
+          setTimeout(() => { firstSel.classList.remove('selected'); item.classList.remove('wrong-flash'); firstSel = null; }, 500);
+        }
+      }
+    });
+  });
+
+  /* ── Word counters ── */
+  function makeCounter(boxId, countId) {
+    const box = document.getElementById(boxId);
+    const cnt = document.getElementById(countId);
+    if (box && cnt) {
+      box.addEventListener('input', () => {
+        const w = box.value.trim().split(/\s+/).filter(x => x.length > 0);
+        cnt.textContent = (box.value.trim() === '' ? 0 : w.length) + ' words';
+      });
+    }
+  }
+  makeCounter('togetherBox', 'togetherCount');
+</script>
+
+</body>
+</html>
