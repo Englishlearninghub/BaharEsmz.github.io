@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet">
+<title>Grade 8 · Week 3 — The Road Not Taken | Full Reference</title>
+<style>
+  :root {
+    --forest:      #1B4332;
+    --forest-mid:  #2D6A4F;
+    --forest-light:#D8F3DC;
+    --forest-pale: #F0FAF2;
+    --amber:       #C2652A;
+    --amber-deep:  #9A4B1C;
+    --amber-light: #FAE8DC;
+    --gold:        #E9C46A;
+    --gold-deep:   #C9A74A;
+    --slate:       #3D405B;
+    --slate-soft:  #6B6F8A;
+    --sand:        #F5F0E8;
+    --sand-line:   #E2D9CC;
+    --white:       #FFFFFF;
+    --ink:         #1A1C14;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--sand); color: var(--ink); font-family:'Inter',Arial,sans-serif; font-size: 16.5px; line-height: 1.75; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px 80px; }
+  .progress-track { position: sticky; top: 0; height: 4px; background: var(--sand-line); z-index: 100; }
+  .progress-fill  { height: 100%; width: 0; background: var(--amber); transition: width 0.1s; }
+  .masthead { background: var(--forest); margin: 0 -24px; padding: 44px 24px 36px; position: relative; overflow: hidden; }
+  .masthead-inner { max-width: 872px; margin: 0 auto; position: relative; z-index: 1; }
+  .eyebrow { font-family:'Inter',Arial,sans-serif; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin: 0 0 12px; font-weight: bold; }
+  h1.title { font-family:'Playfair Display',Cambria,Georgia,serif; font-size: 36px; line-height: 1.15; color: var(--white); margin: 0 0 16px; max-width: 640px; }
+  .masthead-meta { display: flex; gap: 28px; flex-wrap: wrap; font-family:'Inter',Arial,sans-serif; font-size: 13px; color: #A8C5AE; margin-top: 14px; }
+  .masthead-meta span { color: var(--white); font-weight: bold; }
+  .toc { background: var(--white); border-radius: 10px; margin-top: -20px; padding: 22px 28px; box-shadow: 0 4px 20px rgba(27,67,50,0.13); position: relative; z-index: 2; }
+  .toc h2 { font-family:'Inter',Arial,sans-serif; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate-soft); margin: 0 0 12px; }
+  .toc ol { margin: 0; padding-left: 18px; columns: 2; column-gap: 32px; font-size: 14px; line-height: 1.6; }
+  .toc li { margin-bottom: 5px; }
+  .toc a { color: var(--forest-mid); text-decoration: none; font-weight: bold; font-family:'Inter',Arial,sans-serif; }
+  .toc a:hover { text-decoration: underline; }
+  .tab-section { margin-top: 48px; }
+  .tab-header { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; flex-wrap: wrap; }
+  .tab-badge { font-family:'Inter',Arial,sans-serif; font-size: 11px; font-weight: bold; letter-spacing: 0.1em; text-transform: uppercase; background: var(--forest); color: var(--white); border-radius: 5px; padding: 5px 12px; white-space: nowrap; }
+  .tab-badge.context  { background: var(--slate); }
+  .tab-badge.study    { background: var(--amber-deep); }
+  .tab-badge.vocab    { background: var(--forest-mid); }
+  .tab-badge.practice { background: var(--slate); }
+  .tab-badge.activate { background: var(--gold-deep); color: var(--ink); }
+  .tab-badge.explore  { background: #5C3D8A; }
+  .tab-badge.reference{ background: var(--forest); }
+  h2.tab-title { font-family:'Playfair Display',Cambria,Georgia,serif; font-size: 23px; color: var(--ink); }
+  .tab-rule { border: none; border-top: 1.5px solid var(--sand-line); margin: 12px 0 22px; }
+  .card { background: var(--white); border-radius: 10px; padding: 22px 26px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(27,67,50,0.07); }
+  .card h3 { font-family:'Playfair Display',Cambria,serif; font-size: 18px; margin: 0 0 10px; color: var(--forest); }
+  .card p  { margin: 0 0 10px; }
+  .card p:last-child { margin-bottom: 0; }
+  .hook-box { background: var(--forest); color: var(--white); border-radius: 10px; padding: 28px 30px; margin-bottom: 20px; }
+  .hook-box h3 { font-family:'Playfair Display',Cambria,serif; font-size: 19px; color: var(--gold); margin: 0 0 12px; }
+  .hook-box p  { color: #A8C5AE; margin: 0 0 10px; }
+  .poll { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+  .poll-opt { border: 2px solid var(--gold); color: var(--gold); border-radius: 999px; padding: 8px 18px; font-size: 13px; font-weight: bold; cursor: pointer; background: transparent; font-family:'Inter',Arial,sans-serif; transition: all 0.15s; }
+  .poll-opt:hover, .poll-opt.selected { background: var(--gold); color: var(--forest); }
+  .poll-result { margin-top: 12px; font-size: 13.5px; color: #7FA88A; display: none; font-family:'Inter',Arial,sans-serif; }
+  .realia { background: var(--white); border-radius: 10px; overflow: hidden; border: 1px solid var(--sand-line); margin-bottom: 22px; box-shadow: 0 4px 16px rgba(27,67,50,0.09); }
+  .realia-header { background: var(--slate); color: var(--white); padding: 12px 22px; font-family:'Inter',Arial,sans-serif; font-size: 13px; font-weight: bold; letter-spacing: 0.05em; display: flex; align-items: center; gap: 10px; }
+  .realia-doctype { font-size: 10px; font-weight: bold; letter-spacing: 0.1em; text-transform: uppercase; background: var(--amber); color: var(--white); border-radius: 3px; padding: 3px 8px; }
+  .realia-body { padding: 24px 28px; }
+  .realia-body p { margin: 0 0 13px; }
+  .realia-body p:last-child { margin: 0; }
+  .realia-body .signoff { font-style: italic; color: var(--slate-soft); margin-top: 16px; border-top: 1px solid var(--sand-line); padding-top: 14px; font-size: 14px; font-family:'Inter',Arial,sans-serif; }
+  .hl-amber  { background: var(--amber-light); color: var(--amber-deep); padding: 1px 5px; border-radius: 3px; font-weight: bold; }
+  .hl-forest { background: var(--forest-light); color: var(--forest); padding: 1px 5px; border-radius: 3px; font-weight: bold; }
+  .hl-gold   { background: #FDF3D8; color: var(--gold-deep); padding: 1px 5px; border-radius: 3px; font-weight: bold; }
+  .notice-box { background: #FFF8E8; border: 2px dashed var(--gold-deep); border-radius: 10px; padding: 22px 26px; margin-bottom: 20px; }
+  .notice-box h3 { font-family:'Playfair Display',Cambria,serif; font-size: 18px; color: var(--gold-deep); margin: 0 0 14px; }
+  .notice-q { margin-bottom: 14px; padding-left: 30px; position: relative; font-size: 15.5px; }
+  .notice-q::before { content: '?'; position: absolute; left: 0; top: 0; width: 20px; height: 20px; border-radius: 50%; background: var(--gold-deep); color: var(--white); font-size: 13px; font-weight: bold; text-align: center; line-height: 20px; font-family:'Inter',Arial,sans-serif; }
+  .reveal-btn { display: inline-block; margin-top: 6px; background: none; border: 1px solid var(--gold-deep); color: var(--gold-deep); border-radius: 5px; padding: 3px 10px; font-size: 12px; cursor: pointer; font-family:'Inter',Arial,sans-serif; transition: all 0.15s; }
+  .reveal-btn:hover { background: var(--gold-deep); color: var(--white); }
+  .notice-reveal { margin-top: 8px; font-size: 14px; color: var(--slate); font-style: italic; border-left: 3px solid var(--gold-deep); padding-left: 10px; display: none; }
+  .grammar-box { background: var(--white); border-radius: 10px; padding: 26px 30px; margin-bottom: 24px; box-shadow: 0 2px 10px rgba(27,67,50,0.07); }
+  .grammar-box h3 { font-family:'Playfair Display',Cambria,serif; font-size: 21px; color: var(--amber-deep); margin: 0 0 6px; }
+  .grammar-sub { font-family:'Inter',Arial,sans-serif; font-size: 14px; color: var(--slate-soft); margin: 0 0 18px; font-style: italic; }
+  .example-row { display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start; margin-bottom: 10px; padding: 10px 14px; background: var(--sand); border-radius: 8px; }
+  .example-row .mark { font-weight: bold; font-size: 18px; }
+  .example-row .mark.ok  { color: var(--forest-mid); }
+  .example-row .mark.bad { color: var(--amber-deep); }
+  .example-row .gloss { display: block; font-family:'Inter',Arial,sans-serif; font-size: 13px; color: var(--slate-soft); margin-top: 3px; }
+  .example-row .note  { display: block; font-family:'Inter',Arial,sans-serif; font-size: 12.5px; color: var(--amber-deep); margin-top: 3px; font-weight: bold; }
+  table.rule-table { width: 100%; border-collapse: collapse; margin: 16px 0 8px; font-size: 14.5px; font-family:'Inter',Arial,sans-serif; }
+  table.rule-table th { background: var(--forest); color: var(--white); padding: 9px 13px; text-align: left; font-size: 13px; }
+  table.rule-table td { padding: 9px 13px; border-bottom: 1px solid var(--sand-line); vertical-align: top; }
+  table.rule-table tr:nth-child(even) td { background: var(--forest-pale); }
+  .rule-pill { display: inline-block; background: var(--amber-light); color: var(--amber-deep); font-family:'Inter',Arial,sans-serif; font-weight: bold; font-size: 12.5px; border-radius: 5px; padding: 3px 10px; margin: 3px 5px 3px 0; }
+  .rule-pill.green { background: var(--forest-light); color: var(--forest); }
+  .wish-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+  .wish-card { background: var(--sand); border-radius: 8px; padding: 14px 18px; border: 1px solid var(--sand-line); }
+  .wish-card h4 { font-family:'Inter',Arial,sans-serif; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.07em; color: var(--forest-mid); margin: 0 0 8px; }
+  .wish-card ul { padding-left: 16px; font-family:'Inter',Arial,sans-serif; font-size: 14px; margin: 0; }
+  .wish-card li { margin-bottom: 5px; }
+  .wish-card .ex { font-size: 13px; font-style: italic; color: var(--slate-soft); margin-top: 6px; border-top: 1px solid var(--sand-line); padding-top: 6px; }
+  .hedge-row { display: flex; gap: 12px; margin-bottom: 14px; align-items: flex-start; }
+  .hedge-pill { background: var(--forest); color: var(--white); border-radius: 6px; padding: 4px 12px; font-family:'Inter',Arial,sans-serif; font-weight: bold; font-size: 13px; white-space: nowrap; flex-shrink: 0; min-width: 130px; }
+  .hedge-def { font-family:'Inter',Arial,sans-serif; font-size: 13.5px; color: var(--slate); }
+  .hedge-ex  { font-family:'Inter',Arial,sans-serif; font-size: 13.5px; font-style: italic; color: var(--amber-deep); margin-top: 3px; }
+  .vocab-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 14px 0; }
+  .vocab-card { background: var(--white); border-radius: 8px; padding: 14px 16px; border: 1px solid var(--sand-line); }
+  .vocab-card .word { font-family:'Playfair Display',Cambria,serif; font-weight: bold; color: var(--forest); font-size: 16px; }
+  .vocab-card .pos  { font-family:'Inter',Arial,sans-serif; font-size: 11px; color: var(--slate-soft); text-transform: uppercase; margin-left: 6px; }
+  .vocab-card .pron { font-family:'Inter',Arial,sans-serif; font-size: 13px; color: var(--slate-soft); margin-top: 3px; }
+  .vocab-card .def  { font-size: 14px; margin-top: 5px; }
+  .vocab-card .ex   { font-family:'Inter',Arial,sans-serif; font-size: 13px; color: var(--slate-soft); margin-top: 5px; font-style: italic; }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+  .chip { background: var(--sand); border: 1px solid var(--sand-line); border-radius: 999px; padding: 5px 14px; font-family:'Inter',Arial,sans-serif; font-size: 13.5px; color: var(--ink); }
+  .chip strong { color: var(--amber-deep); }
+  .word-family-table { width: 100%; border-collapse: collapse; font-family:'Inter',Arial,sans-serif; font-size: 14px; margin: 12px 0; }
+  .word-family-table th { background: var(--forest-mid); color: var(--white); padding: 8px 12px; text-align: left; font-size: 12.5px; }
+  .word-family-table td { padding: 8px 12px; border-bottom: 1px solid var(--sand-line); }
+  .word-family-table tr:nth-child(even) td { background: var(--forest-pale); }
+  .exercise { background: var(--white); border-radius: 10px; padding: 22px 26px; margin-bottom: 18px; box-shadow: 0 2px 10px rgba(27,67,50,0.07); }
+  .ex-label { display: inline-block; font-family:'Inter',Arial,sans-serif; font-size: 11px; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; background: var(--forest); color: var(--white); border-radius: 4px; padding: 3px 10px; margin-bottom: 10px; }
+  .ex-label.vocab { background: var(--forest-mid); }
+  .exercise h4 { font-family:'Playfair Display',Cambria,serif; font-size: 17px; margin: 0 0 12px; color: var(--ink); }
+  .exercise .instr { font-family:'Inter',Arial,sans-serif; font-size: 13.5px; color: var(--slate-soft); margin-bottom: 14px; font-style: italic; }
+  .q-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 11px; flex-wrap: wrap; }
+  .q-num { font-family:'Inter',Arial,sans-serif; font-weight: bold; color: var(--amber-deep); min-width: 22px; }
+  .blank-input { border: none; border-bottom: 2px solid var(--gold-deep); background: var(--sand); font-family:'Playfair Display',Georgia,serif; font-size: 15px; padding: 3px 8px; width: 200px; color: var(--ink); }
+  .blank-input:focus { outline: none; border-color: var(--amber-deep); }
+  .wide-input { width: 100%; margin-top: 6px; }
+  .match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0; }
+  .match-item { background: var(--sand); border-radius: 8px; padding: 10px 14px; font-family:'Inter',Arial,sans-serif; font-size: 14px; cursor: pointer; border: 2px solid transparent; transition: all 0.15s; }
+  .match-item.selected { border-color: var(--gold-deep); }
+  .match-item.matched  { border-color: var(--forest-mid); background: var(--forest-light); }
+  .match-item.wrong-flash { border-color: var(--amber-deep); background: var(--amber-light); }
+  .check-btn { background: var(--amber); color: var(--white); border: none; border-radius: 6px; padding: 9px 22px; font-family:'Inter',Arial,sans-serif; font-weight: bold; font-size: 14px; cursor: pointer; margin-top: 10px; transition: background 0.15s; }
+  .check-btn:hover { background: var(--amber-deep); }
+  .feedback { margin-top: 12px; font-family:'Inter',Arial,sans-serif; font-size: 14px; border-radius: 6px; padding: 10px 14px; display: none; }
+  .feedback.show { display: block; }
+  .feedback.good { background: var(--forest-light); color: var(--forest); }
+  .feedback.bad  { background: var(--amber-light); color: var(--amber-deep); }
+  textarea.response-box { width: 100%; min-height: 110px; border-radius: 8px; border: 2px solid var(--sand-line); padding: 12px 14px; font-family:'Playfair Display',Georgia,serif; font-size: 15px; resize: vertical; background: var(--white); color: var(--ink); line-height: 1.65; }
+  textarea.response-box:focus { outline: none; border-color: var(--forest-mid); }
+  .word-count { font-family:'Inter',Arial,sans-serif; font-size: 12px; color: var(--slate-soft); margin-top: 5px; text-align: right; }
+  .activate-box { background: var(--amber); border-radius: 10px; padding: 26px 30px; margin-bottom: 20px; }
+  .activate-box h3 { font-family:'Playfair Display',Cambria,serif; font-size: 19px; color: var(--white); margin: 0 0 12px; }
+  .activate-box p  { color: var(--white); margin: 0 0 10px; font-size: 15.5px; }
+  .explore-card { background: #F3EDF8; border: 1px solid #D5C0E8; border-radius: 10px; padding: 22px 26px; margin-bottom: 18px; }
+  .explore-card h3 { font-family:'Playfair Display',Cambria,serif; font-size: 17px; color: #5C3D8A; margin: 0 0 10px; }
+  .explore-tag { display: inline-block; font-family:'Inter',Arial,sans-serif; font-size: 11px; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; background: #5C3D8A; color: var(--white); border-radius: 4px; padding: 3px 9px; margin-bottom: 10px; }
+  .explore-card ul { padding-left: 20px; margin: 10px 0 0; font-size: 15px; }
+  .explore-card li { margin-bottom: 7px; }
+  .answer-key { background: var(--white); border-radius: 10px; padding: 26px 30px; margin-top: 48px; border: 2px solid var(--forest-mid); box-shadow: 0 4px 16px rgba(27,67,50,0.10); }
+  .ak-title { font-family:'Playfair Display',Cambria,serif; font-size: 22px; color: var(--forest); margin: 0 0 6px; }
+  .ak-sub   { font-family:'Inter',Arial,sans-serif; font-size: 13.5px; color: var(--slate-soft); margin: 0 0 20px; font-style: italic; }
+  .ak-section { margin-bottom: 20px; }
+  .ak-section h4 { font-family:'Inter',Arial,sans-serif; font-size: 13px; font-weight: bold; letter-spacing: 0.07em; text-transform: uppercase; color: var(--forest-mid); margin: 0 0 10px; border-bottom: 1px solid var(--sand-line); padding-bottom: 6px; }
+  .ak-item { display: grid; grid-template-columns: 28px 1fr 1fr; gap: 8px; padding: 8px 4px; border-bottom: 1px solid var(--sand-line); font-size: 14px; }
+  .ak-item:last-child { border-bottom: none; }
+  .an { font-family:'Inter',Arial,sans-serif; font-weight: bold; color: var(--amber-deep); }
+  .av { font-weight: bold; color: var(--forest); }
+  .anote { font-family:'Inter',Arial,sans-serif; font-size: 13px; color: var(--slate-soft); font-style: italic; }
+  .ref-table-wrap { overflow-x: auto; }
+  table.ref-table { width: 100%; border-collapse: collapse; font-family:'Inter',Arial,sans-serif; font-size: 14px; }
+  table.ref-table th { background: var(--ink); color: var(--sand); padding: 10px 14px; text-align: left; font-size: 13px; }
+  table.ref-table td { padding: 10px 14px; border-bottom: 1px solid var(--sand-line); vertical-align: top; }
+  table.ref-table tr:nth-child(even) td { background: var(--sand); }
+  .wrapup { background: var(--slate); color: var(--white); border-radius: 10px; padding: 26px 30px; margin-top: 40px; }
+  .wrapup h3 { font-family:'Playfair Display',Cambria,serif; color: var(--gold); margin: 0 0 12px; font-size: 18px; }
+  .wrapup ul { padding-left: 20px; margin: 0; }
+  .wrapup li { margin-bottom: 7px; font-size: 15px; }
+  @media (max-width: 600px) { h1.title { font-size: 26px; } .vocab-grid, .wish-grid { grid-template-columns: 1fr; } .toc ol { columns: 1; } .ak-item { grid-template-columns: 28px 1fr; } .ak-item .anote { grid-column: 2; } }
+
+/* ============================================================
+   SITE FRAME (added): fixed top nav + progress bar, slide-out
+   contents panel with creator branding, sticky section headers,
+   responsive & overflow fixes, footer, speaking/listening cards
+   ============================================================ */
+:root{--navh:52px;}
+html{scroll-behavior:smooth;}
+body{overflow-x:hidden;padding-top:calc(var(--navh) + 4px);}
+[id]{scroll-margin-top:calc(var(--navh) + 20px);}
+img,svg,table{max-width:100%;}
+.wrap p,.wrap li,.wrap td,.wrap th,.wrap h1,.wrap h2,.wrap h3{overflow-wrap:break-word;word-break:break-word;}
+.masthead{margin-left:0;margin-right:0;}
+.debate-band{margin-left:0;margin-right:0;}
+
+/* Progress bar: fixed, always visible below the nav */
+.progress-track{position:fixed;top:var(--navh);left:0;right:0;height:4px;z-index:120;}
+
+/* Top navigation bar */
+.nav-bar{position:fixed;top:0;left:0;right:0;height:var(--navh);background:var(--forest);color:#FFFFFF;display:flex;align-items:center;gap:10px;padding:0 12px;z-index:130;box-shadow:0 2px 12px rgba(0,0,0,.20);}
+.nav-btn{min-width:44px;min-height:44px;background:transparent;border:none;color:#FFFFFF;font-size:20px;cursor:pointer;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',Arial,sans-serif;transition:background .15s;}
+.nav-btn:hover{background:rgba(255,255,255,.14);}
+.nav-top{font-size:13px;font-weight:700;letter-spacing:.03em;white-space:nowrap;padding:0 10px;}
+.nav-brand{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.25;}
+.nav-brand-week{font-family:'Inter',Arial,sans-serif;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;opacity:.75;}
+.nav-brand-title{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+/* Slide-out contents panel */
+.nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .25s;z-index:135;}
+.nav-overlay.open{opacity:1;pointer-events:auto;}
+.nav-panel{position:fixed;top:0;bottom:0;left:0;width:min(330px,88vw);background:#FFFFFF;z-index:140;transform:translateX(-103%);transition:transform .28s ease;display:flex;flex-direction:column;box-shadow:6px 0 28px rgba(0,0,0,.22);}
+.nav-panel.open{transform:translateX(0);}
+.nav-panel-head{display:flex;align-items:center;justify-content:space-between;padding:8px 10px 8px 20px;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--slate-soft);border-bottom:1px solid var(--sand-line);}
+.nav-panel-head .nav-btn{color:var(--ink);font-size:16px;}
+.nav-panel-links{flex:1;overflow-y:auto;padding:10px 8px;}
+.nav-panel-links a{display:flex;align-items:center;min-height:44px;padding:6px 14px;border-radius:8px;text-decoration:none;color:var(--ink);font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:600;line-height:1.4;}
+.nav-panel-links a:hover{background:var(--sand);color:var(--amber);}
+/* Branding zone: visually separated from navigation */
+.nav-panel-brand{border-top:2px solid var(--sand-line);background:var(--sand);padding:16px 20px 18px;}
+.nav-panel-brand .brand-name{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.nav-panel-brand .brand-line{font-family:'Inter',Arial,sans-serif;font-size:12.5px;color:var(--slate-soft);margin-bottom:10px;line-height:1.55;}
+.nav-panel-brand a{display:flex;align-items:center;min-height:40px;font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--amber);text-decoration:none;font-weight:600;}
+.nav-panel-brand a:hover{text-decoration:underline;}
+.nav-panel-brand .brand-copy{margin-top:10px;font-family:'Inter',Arial,sans-serif;font-size:11.5px;color:var(--slate-soft);}
+
+/* Sticky section headers: current section title stays visible */
+.tab-header{position:sticky;top:calc(var(--navh) + 4px);z-index:60;background:var(--sand);padding:10px 0 8px;}
+
+/* Scrollable table wrapper with mobile hint */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;}
+.table-scroll table{max-width:none;}
+.table-scroll.has-overflow{background:linear-gradient(to left,rgba(0,0,0,.12),rgba(0,0,0,0) 26px) right center / 26px 100% no-repeat;}
+.table-scroll.has-overflow::before{content:'scroll \2192';display:block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--slate-soft);text-align:right;padding:0 6px 4px;}
+
+/* Speaking & Listening sections */
+.tb-speak{background:var(--forest-mid);color:#FFFFFF;}
+.tb-listen{background:var(--amber-deep);color:#FFFFFF;}
+.section-intro{font-family:'Inter',Arial,sans-serif;font-size:14.5px;color:var(--slate-soft);margin:0 0 18px;line-height:1.65;}
+.speak-card{background:#FFFFFF;border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.07);border-left:4px solid var(--forest-mid);}
+.speak-type{display:inline-block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--forest-mid);margin-bottom:8px;}
+.speak-card h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0 0 10px;color:var(--ink);}
+.speak-card p{margin:0 0 10px;}
+.speak-card ul{margin:0 0 10px 20px;padding:0;}
+.speak-card li{margin-bottom:6px;}
+.speak-how{background:var(--sand);border-radius:8px;padding:12px 16px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;line-height:1.65;margin-top:12px;}
+.media-card{background:#FFFFFF;border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.07);border-left:4px solid var(--amber-deep);}
+.media-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px;}
+.media-head h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0;color:var(--ink);}
+.media-platform{font-family:'Inter',Arial,sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--amber-deep);}
+.media-card p{margin:0 0 10px;}
+.media-task{border-left:3px solid var(--amber-deep);background:var(--sand);padding:10px 14px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;line-height:1.65;margin-top:10px;border-radius:0 8px 8px 0;}
+.tip-box{border:2px dashed var(--forest-mid);border-radius:10px;padding:18px 22px;background:#FFFFFF;margin-top:6px;}
+.tip-box h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:16px;margin:0 0 10px;color:var(--forest-mid);}
+.tip-box ul{margin:0 0 0 20px;padding:0;}
+.tip-box li{margin-bottom:6px;font-size:14.5px;}
+
+/* Footer */
+.site-footer{background:var(--forest);color:#FFFFFF;margin-top:56px;padding:34px 24px 40px;}
+.site-footer-inner{max-width:920px;margin:0 auto;text-align:center;}
+.footer-copy{font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:700;margin:0 0 6px;}
+.footer-line{font-family:'Playfair Display',Cambria,Georgia,serif;font-style:italic;font-size:14.5px;opacity:.88;margin:0 0 12px;}
+.footer-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 10px;}
+.footer-links a{color:#FFFFFF;font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding:8px 2px;min-height:44px;display:inline-flex;align-items:center;}
+.footer-links a:hover{border-bottom-color:#FFFFFF;}
+.footer-dot{opacity:.5;}
+.footer-note{font-family:'Inter',Arial,sans-serif;font-size:12.5px;opacity:.72;margin:0;}
+
+/* Mobile refinements (375px-safe) */
+@media(max-width:600px){
+  .wrap{padding-left:18px;padding-right:18px;}
+  .masthead{padding:34px 20px 28px;}
+  .grammar-box,.card{padding:20px 18px;}
+  .oped-body{padding:20px 18px;}
+  .speak-card,.media-card{padding:18px 16px;}
+  .check-btn,.reveal-btn,.rev-btn,.poll-opt{min-height:44px;}
+  .vs-table{grid-template-columns:1fr;}
+  .vs-divider{display:none;}
+  table.rule-table{font-size:13.5px;}
+  .nav-top{font-size:12px;}
+  .site-footer{padding:28px 18px 34px;}
+}
+
+@media(max-width:600px){.chk-btn,.mc-opt,.ak-toggle,.toc a{min-height:44px;}.mc-opt{display:flex;align-items:center;}}
+
+
+/* INLINE ANSWER PANELS */
+.ak-inline{margin-top:12px;}
+.ak-toggle{font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:bold;color:var(--amber-deep);background:transparent;border:1.5px solid var(--amber-deep);border-radius:6px;padding:9px 16px;cursor:pointer;min-height:40px;}
+.ak-toggle:hover{background:var(--amber-deep);color:var(--white);}
+.ak-panel{margin-top:10px;background:var(--white);border:1.5px solid var(--amber-deep);border-radius:8px;padding:12px 16px;}
+.ak-panel .ak-item{font-size:14px;}
+</style>
+</head>
+<body>
+
+<!-- SECTION: Top Navigation Bar -->
+<header class="nav-bar" id="navBar">
+  <button class="nav-btn nav-hamburger" id="navHamburger" aria-label="Open contents menu" aria-expanded="false">&#9776;</button>
+  <div class="nav-brand">
+    <span class="nav-brand-week">Grade 8 · Week 3</span>
+    <span class="nav-brand-title">The Road Not Taken</span>
+  </div>
+  <button class="nav-btn nav-top" id="navTopBtn" aria-label="Back to top">&#8593; Top</button>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+<aside class="nav-panel" id="navPanel" aria-hidden="true">
+  <div class="nav-panel-head"><span>On this page</span><button class="nav-btn nav-close" id="navClose" aria-label="Close menu">&#10005;</button></div>
+  <nav class="nav-panel-links" id="navPanelLinks"></nav>
+  <!-- Creator & branding section of the menu -->
+  <div class="nav-panel-brand">
+    <div class="brand-name">Bahar Esmaeelzadeh</div>
+    <div class="brand-line">Designed and created for English learners by Bahar Esmaeelzadeh.</div>
+    <a href="mailto:bahar.esmz.en@gmail.com">&#128231; bahar.esmz.en@gmail.com</a>
+    <a href="https://www.linkedin.com/in/bahar-esmaeelzadeh-650b98198" target="_blank" rel="noopener">&#128188; LinkedIn &mdash; Bahar Esmaeelzadeh</a>
+    <div class="brand-copy">&copy; 2026 Bahar Esmaeelzadeh &middot; All rights reserved</div>
+  </div>
+</aside>
+
+<div class="progress-track"><div class="progress-fill" id="pf"></div></div>
+
+<!-- SECTION: Masthead / Header -->
+<div class="masthead">
+  <div class="masthead-inner">
+    <p class="eyebrow">Grade 8 &middot; Week 3 &middot; Complete Reference &amp; Pre-Class Material</p>
+    <h1 class="title">The Road Not Taken — Wishes, Regrets &amp; What Might Have Been</h1>
+    <div class="masthead-meta">
+      <div>Level: <span>B2+</span></div>
+      <div>Theme: <span>Wishes &amp; Regrets</span></div>
+      <div>Grammar: <span>Third Conditional &middot; Wish &amp; Hope &middot; Hedging Language</span></div>
+      <div>Est. time: <span>65&ndash;75 min</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <!-- SECTION: Table of Contents -->
+  <div class="toc">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#engage">1. Engage</a></li>
+      <li><a href="#ctx1">2. Context: the letter</a></li>
+      <li><a href="#nd1">3. Notice &amp; discover (3rd cond.)</a></li>
+      <li><a href="#s1">4. Study: Third Conditional</a></li>
+      <li><a href="#p1">5. Practice: Third Conditional</a></li>
+      <li><a href="#ctx2">6. Context: the journal</a></li>
+      <li><a href="#nd2">7. Notice &amp; discover (wish/hope)</a></li>
+      <li><a href="#s2">8. Study: Wish &amp; Hope</a></li>
+      <li><a href="#s3">9. Study: Hedging Language</a></li>
+      <li><a href="#p2">10. Practice: wish, hope &amp; hedging</a></li>
+      <li><a href="#vocab">11. Vocabulary: hopes &amp; regrets</a></li>
+      <li><a href="#vp">12. Practice: vocabulary</a></li>
+      <li><a href="#speaking">13. Speaking practice</a></li>
+      <li><a href="#together">14. Putting it together</a></li>
+      <li><a href="#listening">15. Listening &amp; watching</a></li>
+      <li><a href="#explore">16. Explore on your own</a></li>
+      <li><a href="#ref">17. Quick reference</a></li>
+    </ol>
+  </div>
+
+  <!-- SECTION: What would you change — if you could? -->
+  <div class="tab-section" id="engage">
+    <div class="tab-header"><span class="tab-badge">ENGAGE</span><h2 class="tab-title">What would you change — if you could?</h2></div>
+    <hr class="tab-rule">
+    <div class="hook-box">
+      <h3>Before we start &mdash; a question about regret</h3>
+      <p>Robert Frost's 1916 poem describes a traveller at a fork in a forest path. He chooses one road without knowing where the other leads — and imagines how he might feel about that choice much later.</p>
+      <p>This week's grammar is the grammar of that moment. Third conditionals, <em>wish</em>, and hedging language are tools for talking about things that didn't happen and what might have been.</p>
+      <p><strong>Which of these would you most want to revisit if you could?</strong></p>
+      <div class="poll" id="pollBox">
+        <button class="poll-opt" data-opt="a">A career decision you made — or didn't make</button>
+        <button class="poll-opt" data-opt="b">A relationship you let go of</button>
+        <button class="poll-opt" data-opt="c">Something you said that hurt someone</button>
+        <button class="poll-opt" data-opt="d">A chance you didn't take</button>
+      </div>
+      <p class="poll-result" id="pollResult"></p>
+    </div>
+    <div class="card">
+      <h3>What you're going to read</h3>
+      <p>You'll read a letter from a man named Elias writing to his estranged brother Marco, and a journal entry Marco wrote the same night he received it. Both are loaded with third conditionals, wish structures, and hedging phrases. Read for meaning and emotion first — grammar labels come after.</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Read first: Elias's letter -->
+  <div class="tab-section" id="ctx1">
+    <div class="tab-header"><span class="tab-badge context">CONTEXT</span><h2 class="tab-title">Read first: Elias's letter</h2></div>
+    <hr class="tab-rule">
+    <div class="card">
+      <p>Elias hasn't spoken to his brother Marco in four years. He writes after their father's funeral. <strong>Before thinking about grammar: what does Elias most regret? What is he hoping for now?</strong></p>
+      <p style="font-size:14px; color:var(--slate-soft);"><span class="hl-amber">Amber</span> = Third Conditional. <span class="hl-forest">Forest green</span> = Wish &amp; Hope. <span class="hl-gold">Gold</span> = Hedging language.</p>
+    </div>
+    <div class="realia">
+      <div class="realia-header"><span class="realia-doctype">Personal Letter</span><span style="font-family:'Playfair Display',Georgia,serif;font-size:17px;color:#fff;">Elias to Marco — 14 March</span></div>
+      <div class="realia-body">
+        <p>Dear Marco,</p>
+        <p>I know you didn't expect to hear from me. <span class="hl-gold">It seems</span> like there's never a right time for this letter — but <span class="hl-gold">apparently</span> it took losing Dad to make me write it.</p>
+        <p><span class="hl-gold">It appears</span> we both handled the last four years badly. I've been thinking about it for months. <span class="hl-amber">If I had called you after the argument, things would have been different.</span> I know that now. <span class="hl-amber">If we hadn't let so much time pass, we might have seen Dad together before the end.</span> That is the one I can't let go of.</p>
+        <p><span class="hl-forest">I wish I had picked up the phone years ago.</span> I've replayed that night in my head so many times. <span class="hl-amber">If I hadn't said what I said, you wouldn't have walked out.</span> And <span class="hl-amber">if you hadn't walked out, none of this would have happened</span> — but <span class="hl-gold">presumably</span> neither of us was ready to hear what the other needed to say.</p>
+        <p><span class="hl-forest">I hope we can try again.</span> Not to pretend it didn't happen — but to find a way through it. <span class="hl-forest">I wish things were different between us right now</span>, and <span class="hl-gold">it seems to me</span> that we've both been waiting for the other person to move first.</p>
+        <p>So I'm moving first. <span class="hl-gold">Apparently</span> that's what it takes.</p>
+        <p class="signoff">Your brother,<br>Elias</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Meaning check — no grammar terms yet</h3>
+      <p>1. What specific event does Elias say he wishes he could change?</p>
+      <p>2. What does Elias say both brothers have been waiting for?</p>
+      <p>3. The word "presumably" softens a statement. What does it add — more certainty or less? Why might Elias use it here?</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Look at the amber phrases — find the pattern -->
+  <div class="tab-section" id="nd1">
+    <div class="tab-header"><span class="tab-badge study">NOTICE &amp; DISCOVER</span><h2 class="tab-title">Look at the amber phrases — find the pattern</h2></div>
+    <hr class="tab-rule">
+    <div class="notice-box">
+      <h3>Detective work: the grammar of "what might have been"</h3>
+      <div class="notice-q">Did Elias call Marco? What time period does <em>"If I had called you, things would have been different"</em> describe?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">No — he didn't call. The sentence describes a past event that <em>didn't happen</em> and imagines the outcome if it had. Both the condition and the result are imaginary past events.</p>
+      </div>
+      <div class="notice-q">Look at all four amber sentences. Can you find two parts in each — the "if" part and the "result"? What verb forms appear in each?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">IF part: always <em>had + past participle</em> (past perfect). RESULT part: always <em>would/might/could + have + past participle</em>. This formula is fixed — every third conditional follows it.</p>
+      </div>
+      <div class="notice-q">Compare: <em>"If it rained, I'd stay home"</em> (2nd conditional) with <em>"If I had called you, things would have been different"</em> (3rd conditional). What is different about the time and the reality?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">2nd = imaginary present/future (might happen). 3rd = imaginary PAST that definitely did NOT happen. The past is fixed — that's what makes the third conditional feel heavy with regret or relief.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Third Conditional — the complete rule -->
+  <div class="tab-section" id="s1">
+    <div class="tab-header"><span class="tab-badge study">STUDY</span><h2 class="tab-title">Third Conditional — the complete rule</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3>1. Third Conditional</h3>
+      <p class="grammar-sub">Imaginary past situations — things that didn't happen — and their imaginary results.</p>
+      <div class="table-scroll"><table class="rule-table">
+        <tr><th>Part</th><th>Structure</th><th>From the letter</th></tr>
+        <tr><td><strong>If-clause</strong></td><td>if + subject + <em>had + past participle</em></td><td><em>"If I had called you…"</em></td></tr>
+        <tr><td><strong>Result clause</strong></td><td>subject + <em>would have + past participle</em></td><td><em>"…things would have been different."</em></td></tr>
+        <tr><td><strong>Negative condition</strong></td><td>if + hadn't + past participle</td><td><em>"If we hadn't let so much time pass…"</em></td></tr>
+        <tr><td><strong>Softer result</strong></td><td>might / could have instead of would have</td><td><em>"We might have seen Dad together."</em></td></tr>
+      </table></div>
+      <p style="margin-top:16px;"><strong>Three uses — same form, different emotional colour:</strong></p>
+      <div class="example-row"><span class="mark ok">1</span><span class="txt"><strong>Regret:</strong> something happened (or didn't) and you wish it had been different.<br><em class="hl-amber">"If I hadn't said what I said, you wouldn't have walked out."</em><span class="gloss">Elias said something → regrets it → third conditional expresses that regret.</span></span></div>
+      <div class="example-row"><span class="mark ok">2</span><span class="txt"><strong>Relief:</strong> something bad didn't happen and you're glad it didn't.<br><em>"If I hadn't left when I did, I would have missed the whole thing."</em><span class="gloss">Same structure — the speaker is relieved, not regretful.</span></span></div>
+      <div class="example-row"><span class="mark ok">3</span><span class="txt"><strong>Blame or criticism:</strong> implies someone else made the wrong choice.<br><em>"If you had listened to me, this wouldn't have happened."</em><span class="gloss">Same form — the implication shifts responsibility to the other person.</span></span></div>
+      <p style="margin-top:16px;"><strong>⚠ The two most common errors:</strong></p>
+      <div class="example-row"><span class="mark bad">✗</span><span class="txt"><em>If I would have called you, things would have been different.</em><span class="note">WRONG — "would have" cannot go in the if-clause. Only "had + past participle."</span></span></div>
+      <div class="example-row"><span class="mark bad">✗</span><span class="txt"><em>If I had called you, things were different.</em><span class="note">WRONG — result clause needs "would have been different," not simple past.</span></span></div>
+      <div class="example-row"><span class="mark ok">✓</span><span class="txt"><em class="hl-amber">If we hadn't let so much time pass, we might have seen Dad together.</em><span class="gloss">Correct — "might have" is a valid softer alternative to "would have."</span></span></div>
+      <p style="margin-top:14px;"><span class="rule-pill">if + had/hadn't + PP</span> → <span class="rule-pill green">would / might / could + have + PP</span></p>
+      <p style="font-size:14px;color:var(--slate-soft);margin-top:8px;">Clause order can swap: "Things would have been different if I had called." — no comma when the if-clause comes second.</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Try it: Third Conditional -->
+  <div class="tab-section" id="p1">
+    <div class="tab-header"><span class="tab-badge practice">PRACTICE</span><h2 class="tab-title">Try it: Third Conditional</h2></div>
+    <hr class="tab-rule">
+    <div class="exercise">
+      <span class="ex-label">Exercise 1 &middot; Controlled</span>
+      <h4>Complete each Third Conditional. Use the correct form of the verbs in brackets.</h4>
+      <p class="instr">If-clause: had + PP. Result: would/might/could + have + PP.</p>
+      <div class="q-row">
+        <span class="q-num">1.</span>
+        <span class="q-text">If Elias <span style="font-style:italic">(call)</span> earlier, Marco <span style="font-style:italic">(not/feel)</span> so abandoned.</span>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin: 0 0 12px 32px;">
+        <input type="text" class="blank-input" id="e1a" data-answer="had called" placeholder="call →">
+        <input type="text" class="blank-input" id="e1b" data-answer="wouldn't have felt|would not have felt|might not have felt" placeholder="not/feel →">
+      </div>
+      <div class="q-row">
+        <span class="q-num">2.</span>
+        <span class="q-text">They <span style="font-style:italic">(see)</span> their father before the end if they <span style="font-style:italic">(reconcile)</span> sooner.</span>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin: 0 0 12px 32px;">
+        <input type="text" class="blank-input" id="e1c" data-answer="might have seen|could have seen|would have seen" placeholder="see →">
+        <input type="text" class="blank-input" id="e1d" data-answer="had reconciled" placeholder="reconcile →">
+      </div>
+      <div class="q-row">
+        <span class="q-num">3.</span>
+        <span class="q-text">If Marco <span style="font-style:italic">(not/walk out)</span> that night, Elias <span style="font-style:italic">(have)</span> a chance to explain.</span>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin: 0 0 12px 32px;">
+        <input type="text" class="blank-input" id="e1e" data-answer="hadn't walked out|had not walked out" placeholder="not/walk out →">
+        <input type="text" class="blank-input" id="e1f" data-answer="would have had|might have had|could have had" placeholder="have →">
+      </div>
+      <div class="q-row">
+        <span class="q-num">4.</span>
+        <span class="q-text">Marco <span style="font-style:italic">(reply)</span> sooner if he <span style="font-style:italic">(know)</span> how ill their father was.</span>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin: 0 0 12px 32px;">
+        <input type="text" class="blank-input" id="e1g" data-answer="would have replied|might have replied|could have replied" placeholder="reply →">
+        <input type="text" class="blank-input" id="e1h" data-answer="had known" placeholder="know →">
+      </div>
+      <button class="check-btn" onclick="checkEx1()">Check my answers</button>
+      <div class="feedback" id="fb-ex1"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">had called / wouldn't have felt</span><span class="anote">"Might not have felt" also correct — softer, implies less certainty.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">might have seen / had reconciled</span><span class="anote">"Would have seen" also correct. Note inverted order: result first, if-clause second.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">hadn't walked out / would have had</span><span class="anote">Negative condition → hadn't. "Might have had" also correct.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">would have replied / had known</span><span class="anote">Result first, if-clause second — no comma when if-clause comes last.</span></div>
+    
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label">Exercise 2 &middot; Error correction</span>
+      <h4>Each sentence has one error. Write the correct version.</h4>
+      <p class="instr">Errors are structural — wrong tense in the wrong clause, or wrong word form.</p>
+      <div class="q-row"><span class="q-num">1.</span><span class="q-text">If Elias would have written sooner, Marco might have come to the funeral.</span></div>
+      <input type="text" class="blank-input wide-input" id="e2a" data-answer="if elias had written sooner, marco might have come to the funeral|if elias had written sooner marco might have come to the funeral" placeholder="Correct version...">
+      <div class="q-row" style="margin-top:10px;"><span class="q-num">2.</span><span class="q-text">Things were different if we had talked it through at the time.</span></div>
+      <input type="text" class="blank-input wide-input" id="e2b" data-answer="things would have been different if we had talked it through at the time" placeholder="Correct version...">
+      <div class="q-row" style="margin-top:10px;"><span class="q-num">3.</span><span class="q-text">If I hadn't said what I said, you had not walked out.</span></div>
+      <input type="text" class="blank-input wide-input" id="e2c" data-answer="if i hadn't said what i said, you wouldn't have walked out|if i hadn't said what i said you wouldn't have walked out" placeholder="Correct version...">
+      <button class="check-btn" onclick="checkEx2()">Check my answers</button>
+      <div class="feedback" id="fb-ex2"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">If Elias had written sooner, Marco might have come.</span><span class="anote">"Would have written" in the if-clause is the error — must be "had written."</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">Things would have been different if we had talked it through.</span><span class="anote">"Were different" → must be "would have been different" in the result.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">If I hadn't said what I said, you wouldn't have walked out.</span><span class="anote">"Had not walked out" is wrong in the result clause — must be "wouldn't have."</span></div>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Read next: Marco's journal -->
+  <div class="tab-section" id="ctx2">
+    <div class="tab-header"><span class="tab-badge context">CONTEXT</span><h2 class="tab-title">Read next: Marco's journal</h2></div>
+    <hr class="tab-rule">
+    <div class="card">
+      <p>The same night he receives the letter, Marco writes in his journal. <strong>What does Marco wish were different? What does he hope for?</strong></p>
+      <p style="font-size:14px;color:var(--slate-soft);"><span class="hl-forest">Forest green</span> = Wish &amp; Hope. <span class="hl-gold">Gold</span> = Hedging language.</p>
+    </div>
+    <div class="realia">
+      <div class="realia-header"><span class="realia-doctype">Journal</span><span style="font-family:'Playfair Display',Georgia,serif;font-size:17px;color:#fff;">Marco's journal — 14 March, late evening</span></div>
+      <div class="realia-body">
+        <p>I re-read the letter three times. <span class="hl-gold">It seems</span> genuine — or <span class="hl-gold">apparently</span> that's what I want to believe.</p>
+        <p><span class="hl-forest">I wish I had handled things differently.</span> That night, that argument — <span class="hl-forest">I wish I hadn't walked out.</span> I've told myself for four years that I was right to. But sitting here reading Elias's words, <span class="hl-gold">it appears</span> I've been telling myself a very comfortable story.</p>
+        <p><span class="hl-forest">I wish things were simpler.</span> I wish we were the kind of family that talked about things before they exploded. But we're not, and <span class="hl-gold">presumably</span> we never were.</p>
+        <p><span class="hl-forest">I hope he means it.</span> <span class="hl-forest">I hope we can actually repair this</span> — not just exchange polite letters for the next ten years. <span class="hl-gold">It seems to me</span> that both of us have been grieving this relationship almost as much as we've been grieving Dad.</p>
+        <p><span class="hl-forest">I wish I could say yes immediately.</span> But I need time. <span class="hl-gold">Apparently</span> even the first step is hard.</p>
+        <p class="signoff">— M.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Meaning check</h3>
+      <p>1. What "comfortable story" has Marco been telling himself?</p>
+      <p>2. What is the difference between Marco's <em>wishes</em> and his <em>hopes</em> — which are about the past, which about the present, which about the future?</p>
+      <p>3. Find a hedging phrase Marco uses when he isn't certain about something. What does it add?</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Look at the green and gold phrases — two sets of rules -->
+  <div class="tab-section" id="nd2">
+    <div class="tab-header"><span class="tab-badge study">NOTICE &amp; DISCOVER</span><h2 class="tab-title">Look at the green and gold phrases — two sets of rules</h2></div>
+    <hr class="tab-rule">
+    <div class="notice-box">
+      <h3>Detective work: wish vs. hope, and hedging</h3>
+      <div class="notice-q">Look at <em>"I wish I had handled things differently"</em> and <em>"I wish things were simpler."</em> Which is about the past? Which about the present? What verb forms follow <em>wish</em> in each?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">"Wish I had handled" = past regret → wish + past perfect. "Wish things were simpler" = present impossible wish → wish + past simple. Wish always uses a tense one step back from reality.</p>
+      </div>
+      <div class="notice-q">Compare <em>"I wish I could say yes"</em> and <em>"I hope we can actually repair this."</em> Can both things happen? What's the key difference between <em>wish</em> and <em>hope</em>?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">Wish = the speaker believes it's impossible or contrary-to-fact right now. Hope = the speaker thinks it could actually happen. Marco CAN'T say yes immediately (impossible) → wish + could. But repairing the relationship IS possible → hope + can.</p>
+      </div>
+      <div class="notice-q">Look at the gold phrases: <em>it seems, apparently, it appears, presumably, it seems to me.</em> What do they all signal about certainty? Why use them in a private journal?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">All signal that the speaker is NOT fully certain — they soften a claim, making it provisional rather than absolute. Marco uses them because he's processing things he genuinely isn't sure about. In formal contexts, hedging also protects against being held to absolute statements.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Wish & Hope — the complete system -->
+  <div class="tab-section" id="s2">
+    <div class="tab-header"><span class="tab-badge study">STUDY</span><h2 class="tab-title">Wish &amp; Hope — the complete system</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3>2. Wish &amp; Hope</h3>
+      <p class="grammar-sub">Key rule: <em>wish</em> = impossible or contrary-to-fact. <em>Hope</em> = possible, speaker believes it can happen.</p>
+      <div class="wish-grid">
+        <div class="wish-card">
+          <h4>Wish + past simple → present impossible</h4>
+          <ul><li>The situation is NOT true now</li><li>Speaker wants it to be different</li></ul>
+          <p class="ex">"I wish things <em>were</em> simpler." (They aren't.)<br>"I wish we <em>lived</em> closer." (We don't.)<br>"She wishes he <em>understood</em>." (He doesn't.)</p>
+        </div>
+        <div class="wish-card">
+          <h4>Wish + past perfect → past regret</h4>
+          <ul><li>The action didn't happen in the past</li><li>Speaker regrets it</li></ul>
+          <p class="ex">"I wish I <em>had called</em>." (I didn't.)<br>"I wish he <em>hadn't left</em>." (He did.)<br>"She wishes she <em>had said</em> something." (She didn't.)</p>
+        </div>
+        <div class="wish-card">
+          <h4>Wish + could → impossible ability</h4>
+          <ul><li>The speaker is unable to do something</li><li>They want to be able to</li></ul>
+          <p class="ex">"I wish I <em>could</em> say yes." (I can't.)<br>"He wishes he <em>could</em> turn back time." (Impossible.)<br>"She wishes she <em>could</em> explain." (She can't.)</p>
+        </div>
+        <div class="wish-card">
+          <h4>Hope + present/future → genuinely possible</h4>
+          <ul><li>Speaker believes it can happen</li><li>They want it to</li></ul>
+          <p class="ex">"I <em>hope</em> we can repair this." (Possible.)<br>"I <em>hope</em> he means it." (Plausible.)<br>"She <em>hopes</em> they will talk." (Could happen.)</p>
+        </div>
+      </div>
+      <p style="margin-top:16px;"><strong>⚠ Common errors:</strong></p>
+      <div class="example-row"><span class="mark bad">✗</span><span class="txt"><em>I wish things are simpler.</em><span class="note">WRONG — wish does not take present simple. Use past simple: "I wish things were simpler."</span></span></div>
+      <div class="example-row"><span class="mark bad">✗</span><span class="txt"><em>I wish I would have called.</em><span class="note">WRONG — "would have" cannot follow wish for past regret. Use past perfect: "I wish I had called."</span></span></div>
+      <div class="example-row"><span class="mark ok">✓</span><span class="txt"><em class="hl-forest">I wish I hadn't walked out.</em><span class="gloss">Correct past regret — wish + past perfect (hadn't + past participle).</span></span></div>
+      <p style="margin-top:14px;font-size:14px;color:var(--slate-soft);">⚠ Note on <em>were</em>: "I wish I <em>were</em> there" (subjunctive) is preferred in formal writing. "I wish I <em>was</em>" is widely accepted in speech. Both are understood.</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Hedging Language — a key B2+ feature -->
+  <div class="tab-section" id="s3">
+    <div class="tab-header"><span class="tab-badge study">STUDY</span><h2 class="tab-title">Hedging Language — a key B2+ feature</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3>3. Hedging Language</h3>
+      <p class="grammar-sub">Corpus data shows that B2+ speakers who sound too certain are often perceived as less sophisticated — or even blunt. Hedging signals intellectual honesty, caution, and social awareness. It appears in academic writing, journalism, professional emails, and everyday speech.</p>
+
+      <div class="hedge-row">
+        <span class="hedge-pill">it seems (that)</span>
+        <div><div class="hedge-def">Introduces an observation that appears to be true, but isn't stated as absolute fact. Very common in speech and writing.</div><div class="hedge-ex">"It seems like there's never a right time." / "It seems genuine."</div></div>
+      </div>
+      <div class="hedge-row">
+        <span class="hedge-pill">it appears (that)</span>
+        <div><div class="hedge-def">Slightly more formal than "it seems." Suggests the conclusion is based on evidence rather than feeling.</div><div class="hedge-ex">"It appears we both handled the last four years badly."</div></div>
+      </div>
+      <div class="hedge-row">
+        <span class="hedge-pill">apparently</span>
+        <div><div class="hedge-def">Introduces something that seems true from what you've observed or been told — without fully vouching for it. Can suggest mild irony or surprise.</div><div class="hedge-ex">"Apparently that's what it takes." / "Apparently I've been lying to myself."</div></div>
+      </div>
+      <div class="hedge-row">
+        <span class="hedge-pill">presumably</span>
+        <div><div class="hedge-def">States the most logical assumption without claiming certainty. Slightly formal; used in both speech and writing.</div><div class="hedge-ex">"Presumably neither of us was ready." / "Presumably he'll reply eventually."</div></div>
+      </div>
+      <div class="hedge-row">
+        <span class="hedge-pill">it seems to me</span>
+        <div><div class="hedge-def">Adds a personal perspective — makes clear this is one person's view, not an objective fact. Softer than "I think" in formal contexts.</div><div class="hedge-ex">"It seems to me that both of us have been grieving this relationship."</div></div>
+      </div>
+
+      <p style="margin-top:18px;"><strong>Position in the sentence:</strong></p>
+      <div class="table-scroll"><table class="rule-table">
+        <tr><th>Hedge</th><th>Sentence-initial</th><th>Mid-sentence</th></tr>
+        <tr><td>it seems / it appears</td><td>"It seems we were both wrong."</td><td>Less common mid-sentence</td></tr>
+        <tr><td>apparently</td><td>"Apparently he never read the letter."</td><td>"He apparently never read it."</td></tr>
+        <tr><td>presumably</td><td>"Presumably she knew already."</td><td>"She presumably knew already."</td></tr>
+        <tr><td>it seems to me</td><td>"It seems to me that we've both changed."</td><td>Always sentence-initial</td></tr>
+      </table></div>
+
+      <p style="margin-top:14px;"><strong>Why this matters — compare:</strong></p>
+      <div class="example-row"><span class="mark bad">✗</span><span class="txt"><em>You were wrong and you know it.</em><span class="note">Aggressive and certain — leaves no room for dialogue. Sounds blunt, possibly rude.</span></span></div>
+      <div class="example-row"><span class="mark ok">✓</span><span class="txt"><em class="hl-gold">It seems to me that we may both have handled this badly.</em><span class="gloss">Softer, more honest, more open to dialogue. Note: "may have" adds a further layer of hedging.</span></span></div>
+    </div>
+  </div>
+
+  <!-- SECTION: Try it: Wish, Hope & Hedging -->
+  <div class="tab-section" id="p2">
+    <div class="tab-header"><span class="tab-badge practice">PRACTICE</span><h2 class="tab-title">Try it: Wish, Hope &amp; Hedging</h2></div>
+    <hr class="tab-rule">
+    <div class="exercise">
+      <span class="ex-label">Exercise 3 &middot; Wish or Hope?</span>
+      <h4>Complete each sentence with the correct form of wish or hope.</h4>
+      <p class="instr">Wish = impossible/contrary-to-fact. Hope = possible and wanted. Think: can this actually happen?</p>
+      <div class="q-row"><span class="q-num">1.</span><span class="q-text">Marco _____ (things / be) less complicated. (They are complicated now.)</span>
+        <input type="text" class="blank-input" id="e3a" data-answer="wishes things were" placeholder="wish/hope + form..."></div>
+      <div class="q-row"><span class="q-num">2.</span><span class="q-text">Elias _____ (Marco / reply) to the letter. (It's possible — he might.)</span>
+        <input type="text" class="blank-input" id="e3b" data-answer="hopes marco will reply|hopes marco replies|hopes that marco will reply" placeholder="wish/hope + form..."></div>
+      <div class="q-row"><span class="q-num">3.</span><span class="q-text">I _____ (not/say) those things that night. (I did say them.)</span>
+        <input type="text" class="blank-input" id="e3c" data-answer="wish i hadn't said|wish i had not said" placeholder="wish/hope + form..."></div>
+      <div class="q-row"><span class="q-num">4.</span><span class="q-text">She _____ (be able to attend) the funeral. (She couldn't — impossible past.)</span>
+        <input type="text" class="blank-input" id="e3d" data-answer="wishes she had been able to attend|wishes she could have attended|wished she had been able to attend" placeholder="wish/hope + form..."></div>
+      <div class="q-row"><span class="q-num">5.</span><span class="q-text">We _____ (reconcile) before it's too late. (Still possible.)</span>
+        <input type="text" class="blank-input" id="e3e" data-answer="hope we can reconcile|hope we will reconcile|hope to reconcile" placeholder="wish/hope + form..."></div>
+      <button class="check-btn" onclick="checkEx3()">Check my answers</button>
+      <div class="feedback" id="fb-ex3"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">wishes things were</span><span class="anote">Present impossible → wish + past simple. "Were" = subjunctive; "was" accepted in speech.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">hopes Marco will reply</span><span class="anote">Possible future → hope + will/can. "Hopes Marco replies" also natural.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">wish I hadn't said</span><span class="anote">Past regret → wish + past perfect.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">wishes she had been able to attend</span><span class="anote">Past impossibility → wish + past perfect. "Could have attended" also correct.</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">hope we can reconcile</span><span class="anote">Genuinely possible → hope + can/will.</span></div>
+    
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label">Exercise 4 &middot; Hedging rewrite</span>
+      <h4>Rewrite each sentence using the hedging expression given. Keep the meaning, but make it less direct.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span class="q-text">"Both brothers are equally to blame." → use <em>it seems</em></span></div>
+      <input type="text" class="blank-input wide-input" id="e4a" data-answer="it seems that both brothers are equally to blame|it seems both brothers are equally to blame|it seems (that) both brothers are equally to blame" placeholder="It seems...">
+      <div class="q-row" style="margin-top:10px;"><span class="q-num">2.</span><span class="q-text">"Marco was not ready to forgive." → use <em>apparently</em></span></div>
+      <input type="text" class="blank-input wide-input" id="e4b" data-answer="apparently marco was not ready to forgive|apparently, marco was not ready to forgive" placeholder="Apparently...">
+      <div class="q-row" style="margin-top:10px;"><span class="q-num">3.</span><span class="q-text">"Neither of them wanted to speak first." → use <em>presumably</em></span></div>
+      <input type="text" class="blank-input wide-input" id="e4c" data-answer="presumably neither of them wanted to speak first|presumably, neither of them wanted to speak first" placeholder="Presumably...">
+      <div class="q-row" style="margin-top:10px;"><span class="q-num">4.</span><span class="q-text">"They have both been suffering." → use <em>it appears</em></span></div>
+      <input type="text" class="blank-input wide-input" id="e4d" data-answer="it appears they have both been suffering|it appears that they have both been suffering" placeholder="It appears...">
+      <button class="check-btn" onclick="checkEx4()">Check my answers</button>
+      <div class="feedback" id="fb-ex4"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">It seems (that) both brothers are equally to blame.</span><span class="anote">"That" is optional after "it seems."</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">Apparently, Marco was not ready to forgive.</span><span class="anote">Comma after "apparently" at sentence start is recommended but optional.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">Presumably, neither of them wanted to speak first.</span><span class="anote">Mid-sentence position also acceptable: "Neither of them presumably wanted…"</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">It appears (that) they have both been suffering.</span><span class="anote">"It appears" = slightly more formal and evidence-based than "it seems."</span></div>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Hopes & Regrets — the full word set -->
+  <div class="tab-section" id="vocab">
+    <div class="tab-header"><span class="tab-badge vocab">VOCABULARY</span><h2 class="tab-title">Hopes &amp; Regrets — the full word set</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3>Core vocabulary from the texts</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card"><span class="word">to regret</span><span class="pos">v / n</span><div class="pron">/rɪˈɡret/</div><div class="def">to feel sadness about something that happened or didn't happen in the past</div><div class="ex">"Elias regrets not calling earlier. He has many regrets about the lost years."</div></div>
+        <div class="vocab-card"><span class="word">estranged</span><span class="pos">adj</span><div class="pron">/ɪˈstreɪndʒd/</div><div class="def">no longer in contact with a family member or close person after a disagreement</div><div class="ex">"They had been estranged for four years before the funeral."</div></div>
+        <div class="vocab-card"><span class="word">to reconcile</span><span class="pos">verb</span><div class="pron">/ˈrekənsaɪl/</div><div class="def">to restore a broken relationship; to make peace after conflict</div><div class="ex">"I hope we can reconcile before it's too late."</div></div>
+        <div class="vocab-card"><span class="word">to grieve</span><span class="pos">verb</span><div class="pron">/ɡriːv/</div><div class="def">to feel deep sorrow, especially after a loss of a person, relationship, or opportunity</div><div class="ex">"Both brothers had been grieving the relationship as much as their father."</div></div>
+        <div class="vocab-card"><span class="word">to let go (of)</span><span class="pos">phrasal v</span><div class="pron">/let ɡəʊ/</div><div class="def">to stop holding onto a negative feeling, grudge, or past event; to accept and move on</div><div class="ex">"That is the one I can't let go of," Elias wrote.</div></div>
+        <div class="vocab-card"><span class="word">to make amends</span><span class="pos">idiom</span><div class="pron">/meɪk əˈmendz/</div><div class="def">to do something to repair the harm you've caused by a past mistake</div><div class="ex">"He hoped the letter was his first step towards making amends."</div></div>
+        <div class="vocab-card"><span class="word">hindsight</span><span class="pos">noun</span><div class="pron">/ˈhaɪndsaɪt/</div><div class="def">understanding of a situation only after it has happened; looking back with new information</div><div class="ex">"In hindsight, I should have written years ago." — fixed collocation: <em>in hindsight</em></div></div>
+        <div class="vocab-card"><span class="word">a missed opportunity</span><span class="pos">noun phrase</span><div class="pron">/mɪst ˌɒpəˈtjuːnɪti/</div><div class="def">a chance that was available but not taken</div><div class="ex">"Not seeing their father together was the missed opportunity Elias couldn't forgive himself for."</div></div>
+      </div>
+    </div>
+
+    <div class="grammar-box">
+      <h3>Extended vocabulary: emotional complexity</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card"><span class="word">ambivalent</span><span class="pos">adj</span><div class="pron">/æmˈbɪvələnt/</div><div class="def">having mixed or contradictory feelings; unable to decide how you feel</div><div class="ex">"Marco felt ambivalent about the letter — relieved and resentful at the same time."</div></div>
+        <div class="vocab-card"><span class="word">resentment</span><span class="pos">noun</span><div class="pron">/rɪˈzentmənt/</div><div class="def">a feeling of bitterness about being treated unfairly or hurt in the past</div><div class="ex">"Years of resentment had built up on both sides."</div></div>
+        <div class="vocab-card"><span class="word">closure</span><span class="pos">noun</span><div class="pron">/ˈkləʊʒə/</div><div class="def">a sense of resolution or acceptance that allows you to move on from a difficult situation</div><div class="ex">"She hoped the conversation would bring some closure."</div></div>
+        <div class="vocab-card"><span class="word">to dwell on</span><span class="pos">phrasal v</span><div class="pron">/dwel ɒn/</div><div class="def">to think or talk about something painful for too long</div><div class="ex">"There's no point dwelling on what might have been."</div></div>
+        <div class="vocab-card"><span class="word">to come to terms with</span><span class="pos">idiom</span><div class="pron">/kʌm tə tɜːmz/</div><div class="def">to gradually accept a difficult situation or loss</div><div class="ex">"It took years to come to terms with how the relationship had ended."</div></div>
+        <div class="vocab-card"><span class="word">what might have been</span><span class="pos">fixed expr.</span><div class="pron">/wɒt maɪt həv biːn/</div><div class="def">the imagined alternative life or outcome that could have happened differently</div><div class="ex">"He spent too long thinking about what might have been."</div></div>
+        <div class="vocab-card"><span class="word">to brood (over)</span><span class="pos">verb</span><div class="pron">/bruːd/</div><div class="def">to think about something worrying or upsetting for a long time without resolving it</div><div class="ex">"He had been brooding over the argument for months."</div></div>
+        <div class="vocab-card"><span class="word">to harbour (a feeling)</span><span class="pos">verb</span><div class="pron">/ˈhɑːbə/</div><div class="def">to secretly hold onto a feeling — usually negative — over a long period</div><div class="ex">"She had harboured resentment for years without admitting it."</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Word family: REGRET</h3>
+      <div class="table-scroll"><table class="word-family-table">
+        <tr><th>Verb</th><th>Noun</th><th>Adjective</th><th>In context</th></tr>
+        <tr><td>regret</td><td>regret / regrets</td><td>regretful, regrettable</td><td><em>"She regrets it. It was a regrettable decision. He felt regretful."</em></td></tr>
+        <tr><td>grieve</td><td>grief / grievance</td><td>grief-stricken, grieving</td><td><em>"He is still grieving. The grief was overwhelming. She had grievances too."</em></td></tr>
+        <tr><td>reconcile</td><td>reconciliation</td><td>reconciled</td><td><em>"They reconciled. The reconciliation was difficult. They are now reconciled."</em></td></tr>
+        <tr><td>resent</td><td>resentment</td><td>resentful</td><td><em>"She resented the silence. The resentment grew. He felt resentful."</em></td></tr>
+        <tr><td>hope</td><td>hope / hopelessness</td><td>hopeful, hopeless</td><td><em>"She hopes they'll repair things. There is some hope. He feels hopeless."</em></td></tr>
+      </table></div>
+    </div>
+
+    <div class="card">
+      <h3>Collocations and idioms of regret &amp; hope</h3>
+      <div class="chip-row">
+        <span class="chip"><strong>express</strong> regret / hope / concern</span>
+        <span class="chip"><strong>harbour</strong> resentment / a grudge / hope</span>
+        <span class="chip"><strong>seek</strong> closure / reconciliation / forgiveness</span>
+        <span class="chip"><strong>come to terms with</strong> a loss / the past</span>
+        <span class="chip"><strong>let go of</strong> resentment / the past / anger</span>
+        <span class="chip"><strong>make</strong> amends / peace / a fresh start</span>
+        <span class="chip"><strong>in</strong> hindsight</span>
+        <span class="chip"><strong>no</strong> regrets</span>
+        <span class="chip"><strong>hold onto</strong> a grudge / resentment</span>
+        <span class="chip"><strong>reach</strong> a resolution / an understanding</span>
+      </div>
+      <br>
+      <p style="font-weight:bold; font-family:'Inter',Arial,sans-serif; font-size:14px; color:var(--forest); margin-bottom:10px;">Idioms:</p>
+      <div class="vocab-grid">
+        <div class="vocab-card"><span class="word">to burn bridges</span><div class="def">to permanently damage a relationship so it can't be recovered</div><div class="ex">"If I hadn't burned those bridges, things might have been different."</div></div>
+        <div class="vocab-card"><span class="word">to bury the hatchet</span><div class="def">to end a conflict and make peace after a long dispute</div><div class="ex">"After years of silence, Elias finally tried to bury the hatchet."</div></div>
+        <div class="vocab-card"><span class="word">better late than never</span><div class="def">it's better to do something late than not at all</div><div class="ex">"Better late than never — he finally wrote the letter."</div></div>
+        <div class="vocab-card"><span class="word">to turn over a new leaf</span><div class="def">to make a fresh start; to change your behaviour for the better</div><div class="ex">"She hoped they could turn over a new leaf together."</div></div>
+        <div class="vocab-card"><span class="word">water under the bridge</span><div class="def">past events that should be accepted and moved on from</div><div class="ex">"It's water under the bridge — what matters now is the future."</div></div>
+        <div class="vocab-card"><span class="word">to take something to heart</span><div class="def">to be deeply and personally affected by something said or done</div><div class="ex">"Marco took Elias's words to heart more than he expected."</div></div>
+        <div class="vocab-card"><span class="word">to have no regrets</span><div class="def">to feel at peace with all your past choices, even difficult ones</div><div class="ex">"She said she had no regrets — but her eyes suggested otherwise."</div></div>
+        <div class="vocab-card"><span class="word">a leopard can't change its spots</span><div class="def">people cannot fundamentally change their nature (used to express skepticism)</div><div class="ex">"She hoped he had changed, but her mother said a leopard can't change its spots."</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Try it: vocabulary -->
+  <div class="tab-section" id="vp">
+    <div class="tab-header"><span class="tab-badge vocab">PRACTICE</span><h2 class="tab-title">Try it: vocabulary</h2></div>
+    <hr class="tab-rule">
+    <div class="exercise">
+      <span class="ex-label vocab">Exercise 5 &middot; Meaning match</span>
+      <h4>Match each word to its definition by clicking left then right.</h4>
+      <div class="match-grid" id="matchGrid">
+        <div class="match-item" data-pair="1">estranged</div>
+        <div class="match-item" data-pair="3">resolution of painful feelings about the past</div>
+        <div class="match-item" data-pair="2">to brood over</div>
+        <div class="match-item" data-pair="4">quietly holding a negative feeling over time</div>
+        <div class="match-item" data-pair="3">closure</div>
+        <div class="match-item" data-pair="1">no longer in contact after a falling-out</div>
+        <div class="match-item" data-pair="4">to harbour</div>
+        <div class="match-item" data-pair="2">to dwell on something negative without resolving it</div>
+      </div>
+      <div class="feedback" id="fb-match"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">estranged → no longer in contact after a falling-out</span><span class="anote">Specifically implies a previously close relationship that has broken.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">to brood over → dwell on something negative without resolving it</span><span class="anote">Implies slow, internal preoccupation. Stronger and more negative than "think about."</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">closure → resolution of painful feelings about the past</span><span class="anote">"Closure" is widely used but sometimes criticised as vague — psychologists prefer "acceptance."</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">to harbour → quietly holding a negative feeling over time</span><span class="anote">Collocates with resentment, a grudge, doubt, suspicion — always something hidden and long-held.</span></div>
+    
+        </div>
+      </div>
+    </div>
+    <div class="exercise">
+      <span class="ex-label vocab">Exercise 6 &middot; Gap-fill</span>
+      <h4>Use the correct word or phrase from the box.</h4>
+      <p class="instr"><em>reconcile &nbsp;·&nbsp; in hindsight &nbsp;·&nbsp; ambivalent &nbsp;·&nbsp; make amends &nbsp;·&nbsp; bury the hatchet &nbsp;·&nbsp; water under the bridge</em></p>
+      <div class="q-row"><span class="q-num">1.</span><span class="q-text">____________, I should never have left things unresolved for so long.</span>
+        <input type="text" class="blank-input" id="e6a" data-answer="in hindsight" placeholder="your answer"></div>
+      <div class="q-row"><span class="q-num">2.</span><span class="q-text">Marco felt ____________ about the letter — hopeful but also wary.</span>
+        <input type="text" class="blank-input" id="e6b" data-answer="ambivalent" placeholder="your answer"></div>
+      <div class="q-row"><span class="q-num">3.</span><span class="q-text">Elias knew he needed to ____________ for the pain he'd caused.</span>
+        <input type="text" class="blank-input" id="e6c" data-answer="make amends" placeholder="your answer"></div>
+      <div class="q-row"><span class="q-num">4.</span><span class="q-text">They decided the past was ____________ — what mattered now was the future.</span>
+        <input type="text" class="blank-input" id="e6d" data-answer="water under the bridge" placeholder="your answer"></div>
+      <div class="q-row"><span class="q-num">5.</span><span class="q-text">After years of silence, both brothers finally decided to ____________ and start fresh.</span>
+        <input type="text" class="blank-input" id="e6e" data-answer="bury the hatchet" placeholder="your answer"></div>
+      <div class="q-row"><span class="q-num">6.</span><span class="q-text">It took months, but they finally managed to ____________ and speak without bitterness.</span>
+        <input type="text" class="blank-input" id="e6f" data-answer="reconcile" placeholder="your answer"></div>
+      <button class="check-btn" onclick="checkEx6()">Check my answers</button>
+      <div class="feedback" id="fb-ex6"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">In hindsight</span><span class="anote">Fixed collocation: "in hindsight" — also "with the benefit of hindsight."</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">ambivalent</span><span class="anote">Genuinely two conflicting feelings simultaneously — not just uncertain.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">make amends</span><span class="anote">Always plural: "make amends" — never "make amend." Often followed by "for."</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">water under the bridge</span><span class="anote">Implies acceptance, not necessarily forgiveness.</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">bury the hatchet</span><span class="anote">From Native American tradition of literally burying a weapon as a peace gesture.</span></div>
+      <div class="ak-item"><span class="an">6.</span><span class="av">reconcile</span><span class="anote">Intransitive: "they reconciled." Transitive: "they reconciled their differences." Both correct.</span></div>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 13 PUTTING IT TOGETHER -->
+
+  <!-- SECTION: Speaking Practice -->
+  <div class="tab-section" id="speaking">
+    <div class="tab-header"><span class="tab-badge tb-speak">SPEAKING PRACTICE</span><h2 class="tab-title">Regret, hope &mdash; spoken</h2></div>
+    <hr class="tab-rule">
+    <p class="section-intro">Elias's letter says out loud what most people only think: what would have happened if things had gone differently. Saying it &mdash; fluently, with the grammar intact &mdash; is this week's spoken challenge. Voice memo app ready.</p>
+
+    <div class="speak-card">
+      <span class="speak-type">Timed monologue</span>
+      <h3>The fork in the road</h3>
+      <p>Set a timer for <strong>2 minutes</strong>. Speak without stopping about <em>a decision in your life that could have gone the other way</em> &mdash; a course, a move, a job, a conversation you did or didn't have. What would have happened if you had chosen differently? Nothing too painful &mdash; pick something you can talk about comfortably.</p>
+      <p>Aim for at least three full Third Conditionals: <em>"If I had taken that job, I would have moved to&hellip;"</em></p>
+      <div class="speak-how"><strong>How:</strong> Record it; don't stop to self-correct. <strong>When you listen back, check the machinery:</strong> <em>if + had + past participle</em> in one clause, <em>would have + past participle</em> in the other. The most common B2 slip is <em>"if I would have"</em> &mdash; hunt for it.</div>
+    </div>
+
+    <div class="speak-card">
+      <span class="speak-type">Opinion card</span>
+      <h3>Agree or disagree?</h3>
+      <p><em>"Regret is a useful emotion &mdash; people who say they have no regrets simply haven't learned anything."</em></p>
+      <p>Speak for <strong>90 seconds</strong>. Use at least three items from this week's vocabulary (<em>hindsight, closure, to dwell on, to come to terms with, a missed opportunity&hellip;</em>) and soften at least two claims with hedging language from the Study section (<em>it seems to me, perhaps, I tend to think</em>).</p>
+      <div class="speak-how"><strong>How:</strong> One take, recorded. <strong>When you listen back, check the hedges:</strong> a B2 speaker who states everything as absolute fact sounds less convincing, not more. Did you leave room for the other side?</div>
+    </div>
+
+    <div class="speak-card">
+      <span class="speak-type">Shadowing drill</span>
+      <h3>Reading Elias aloud</h3>
+      <p>Go back to Elias's letter in the Context section and take four sentences that carry the most feeling &mdash; including at least one Third Conditional and one <em>I wish</em> sentence. Read them aloud <strong>three times</strong>:</p>
+      <ul>
+        <li>Once slowly, every word deliberate;</li>
+        <li>once at normal reading-aloud pace;</li>
+        <li>once as if you were Elias &mdash; quiet, but sure of every word.</li>
+      </ul>
+      <div class="speak-how"><strong>How:</strong> Record the third read. <strong>When you listen back, check:</strong> in natural speech, <em>would have</em> compresses to <em>would've</em> and <em>had</em> to <em>'d</em>. If you can hear every full syllable, do a fourth read &mdash; softer and faster.</div>
+    </div>
+
+    <div class="tip-box">
+      <h3>Technique: heavy grammar, light delivery</h3>
+      <ul>
+        <li>The Third Conditional is long. Native speakers survive it by compressing: <em>"If I'd known, I would've called."</em> Practise the compressed version until it's one smooth shape, not six words.</li>
+        <li><em>Wish</em> + past for the present, <em>wish</em> + past perfect for the past. Before you speak, decide which one your regret is &mdash; the tense follows automatically.</li>
+        <li>Pausing before <em>if</em>-clauses is natural; pausing inside them isn't. Keep each clause in one breath.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION: Combine everything from this week -->
+  <div class="tab-section" id="together">
+    <div class="tab-header"><span class="tab-badge activate">PUTTING IT TOGETHER</span><h2 class="tab-title">Combine everything from this week</h2></div>
+    <hr class="tab-rule">
+    <div class="activate-box">
+      <h3>Mini-task: Marco writes back</h3>
+      <p>Two weeks after receiving Elias's letter, Marco writes his reply. Write the reply (90–110 words) in Marco's voice.</p>
+      <p>Your reply must include:<br>
+        ✓ At least <strong>two Third Conditional</strong> sentences (regret or counterfactual)<br>
+        ✓ At least <strong>one <em>wish</em></strong> sentence and <strong>one <em>hope</em></strong> sentence<br>
+        ✓ At least <strong>two hedging expressions</strong> (it seems / apparently / presumably / it appears…)<br>
+        ✓ At least <strong>three vocabulary items</strong> from this week's word set</p>
+      <p style="font-size:14px;margin-top:8px;color:rgba(255,255,255,0.85);"><em>Starter: "Dear Elias, It seems it takes longer than I thought to find the right words. If I had replied immediately, I might have said something I didn't mean…"</em></p>
+      <textarea class="response-box" id="togetherBox" placeholder="Write Marco's reply here..."></textarea>
+      <div class="word-count" id="togetherCount">0 words</div>
+    </div>
+    <div class="card">
+      <h3>Bring this to class</h3>
+      <p>In Session 1, you'll share your letter with a partner who has written Elias's original. Together you'll read the exchange aloud and discuss: does it feel emotionally real? Are the grammar structures used naturally, or do they feel forced?</p>
+    </div>
+  </div>
+
+  <!-- 14 EXPLORE -->
+
+  <!-- SECTION: Listening & Watching -->
+  <div class="tab-section" id="listening">
+    <div class="tab-header"><span class="tab-badge tb-listen">LISTENING &amp; WATCHING</span><h2 class="tab-title">Regret, choices &amp; what might have been</h2></div>
+    <hr class="tab-rule">
+    <p class="section-intro">Psychologists, teachers, and podcast hosts talk about regret constantly &mdash; and when they do, the Third Conditional and <em>wish</em> are everywhere. These B2-friendly sources come with specific tasks.</p>
+
+    <div class="media-card">
+      <div class="media-head"><h3>TED-Ed</h3><span class="media-platform">YouTube &middot; ed.ted.com</span></div>
+      <p><strong>Why this week:</strong> Animated explainers on decision-making, memory, and the psychology of choice &mdash; why we replay the past, and why hindsight feels so clear. Clear narration over animation keeps dense ideas at B2 reach.</p>
+      <div class="media-task"><strong>Your task:</strong> Watch one episode on decision-making or memory, once without subtitles, then with. Note 3 new words. Then record a 60-second summary using at least one Third Conditional: <em>"If the people in the study had known&hellip;"</em></div>
+    </div>
+
+    <div class="media-card">
+      <div class="media-head"><h3>Thinking in English</h3><span class="media-platform">Podcast &middot; Tom Wilkinson</span></div>
+      <p><strong>Why this week:</strong> Slow-but-natural discussions of big questions &mdash; happiness, choices, how we live &mdash; made for learners at exactly B1&ndash;C1. The host thinks out loud, hedging as he goes (<em>it seems, perhaps, arguably</em>): a live demonstration of this week's hedging language.</p>
+      <div class="media-task"><strong>Your task:</strong> Pick an episode on happiness, decisions, or regret. Write down every hedging phrase you hear in ten minutes of listening. Then re-record your Opinion Card answer from the Speaking section, borrowing two of those hedges.</div>
+    </div>
+
+    <div class="media-card">
+      <div class="media-head"><h3>All Ears English</h3><span class="media-platform">Podcast &middot; allearsenglish.com</span></div>
+      <p><strong>Why this week:</strong> Natural conversation between two hosts about real life &mdash; including episodes on apologising, reconnecting with people, and difficult conversations. Exactly the language Elias needed for his letter, at conversational speed.</p>
+      <div class="media-task"><strong>Your task:</strong> Find an episode about apologising or difficult conversations. Note one expression for making amends that you'd like to keep. Shadow the hosts for 30 seconds, copying their intonation &mdash; apology language lives or dies on tone.</div>
+    </div>
+  </div>
+
+  <!-- SECTION: Go further -->
+  <div class="tab-section" id="explore">
+    <div class="tab-header"><span class="tab-badge explore">EXPLORE ON YOUR OWN</span><h2 class="tab-title">Go further</h2></div>
+    <hr class="tab-rule">
+    <div class="explore-card">
+      <span class="explore-tag">Grammar extension</span>
+      <h3>Mixed conditionals — the next step</h3>
+      <p>A mixed conditional combines a 3rd conditional if-clause (past) with a 2nd conditional result (present): <em>"If I had taken that job, I would be living in Berlin now."</em></p>
+      <ul>
+        <li>Write two mixed conditionals about your own life — one expressing regret about a past choice affecting your present, one expressing relief.</li>
+        <li>Be ready to share in Session 2 — we'll discuss why mixed conditionals are powerful for personal storytelling.</li>
+      </ul>
+    </div>
+    <div class="explore-card">
+      <span class="explore-tag">Literature connection</span>
+      <h3>Read Robert Frost's "The Road Not Taken"</h3>
+      <p>Search for the poem online — it's out of copyright and freely available. Read it for feeling, then for language.</p>
+      <ul>
+        <li>Does the poem actually use a third conditional? Why or why not?</li>
+        <li>What does the word "sigh" in the final stanza suggest about regret vs. contentment?</li>
+        <li>The poem is often misread. Search for "The Road Not Taken misinterpretation" and bring your finding to class.</li>
+      </ul>
+    </div>
+    <div class="explore-card">
+      <span class="explore-tag">Hedging in the wild</span>
+      <h3>Find hedging in a news article</h3>
+      <p>Pick any English-language news article and find all hedging language — not just the four from this week, but also: <em>alleged, reportedly, it is understood that, sources suggest, may have, is thought to…</em></p>
+      <ul>
+        <li>List 5 hedging expressions and explain why the journalist used them (legal caution? Uncertainty? Fairness?)</li>
+        <li>Which sound natural in speech and which would sound strange in casual conversation?</li>
+      </ul>
+    </div>
+    <div class="explore-card">
+      <span class="explore-tag">Autonomy task</span>
+      <h3>Bring one question to class</h3>
+      <p>After doing the exercises, write one genuine question about this week's material — about the difference between wish and hope, when to use "would have" vs. "might have," or when hedging can sound evasive. We open Session 1 with a question box.</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Everything on one page -->
+  <div class="tab-section" id="ref">
+    <div class="tab-header"><span class="tab-badge reference">QUICK REFERENCE</span><h2 class="tab-title">Everything on one page</h2></div>
+    <hr class="tab-rule">
+    <div class="ref-table-wrap">
+      <div class="table-scroll"><table class="ref-table">
+        <tr><th>Item</th><th>Form</th><th>Use when…</th><th>From this week</th></tr>
+        <tr><td><strong>Third Conditional</strong></td><td>If + had/hadn't + PP → would/might/could + have + PP</td><td>Imaginary PAST — something that didn't happen and its imaginary result</td><td><em>"If I had called, things would have been different."</em></td></tr>
+        <tr><td><strong>Wish + past simple</strong></td><td>wish + subject + past simple</td><td>Present impossible — the situation isn't true and won't easily change</td><td><em>"I wish things were simpler."</em></td></tr>
+        <tr><td><strong>Wish + past perfect</strong></td><td>wish + subject + had/hadn't + PP</td><td>Past regret — something happened (or didn't) and the speaker wishes it were otherwise</td><td><em>"I wish I hadn't walked out."</em></td></tr>
+        <tr><td><strong>Wish + could</strong></td><td>wish + subject + could + verb</td><td>Impossible ability — the speaker is unable and wishes they could</td><td><em>"I wish I could say yes."</em></td></tr>
+        <tr><td><strong>Hope</strong></td><td>hope + subject + can/will + verb</td><td>Possible desired outcome — the speaker thinks it can actually happen</td><td><em>"I hope we can repair this."</em></td></tr>
+        <tr><td><strong>it seems (that)</strong></td><td>sentence-initial or main clause</td><td>Hedging an observation — appears true but speaker isn't certain</td><td><em>"It seems like there's never a right time."</em></td></tr>
+        <tr><td><strong>apparently</strong></td><td>adverb — sentence-initial or mid-sentence</td><td>Something seems true from evidence/hearsay; mild irony possible</td><td><em>"Apparently that's what it takes."</em></td></tr>
+        <tr><td><strong>presumably</strong></td><td>adverb — sentence-initial or mid-sentence</td><td>Most logical assumption; slightly formal</td><td><em>"Presumably neither of us was ready."</em></td></tr>
+        <tr><td><strong>it appears (that)</strong></td><td>sentence-initial; formal</td><td>Conclusion based on evidence; academic and journalistic contexts</td><td><em>"It appears we both handled this badly."</em></td></tr>
+      </table></div>
+    </div>
+    <div class="card" style="margin-top:18px;">
+      <h3>Key vocabulary — before Session 1</h3>
+      <div class="chip-row">
+        <span class="chip">regret</span><span class="chip">estranged</span><span class="chip">reconcile</span>
+        <span class="chip">grieve / grief</span><span class="chip">let go of</span><span class="chip">make amends</span>
+        <span class="chip">hindsight</span><span class="chip">missed opportunity</span><span class="chip">ambivalent</span>
+        <span class="chip">resentment</span><span class="chip">closure</span><span class="chip">dwell on</span>
+        <span class="chip">come to terms with</span><span class="chip">what might have been</span>
+        <span class="chip">brood over</span><span class="chip">harbour a feeling</span>
+        <span class="chip">burn bridges</span><span class="chip">bury the hatchet</span>
+        <span class="chip">better late than never</span><span class="chip">water under the bridge</span>
+        <span class="chip">turn over a new leaf</span><span class="chip">take to heart</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapup">
+    <h3>Before Session 1, make sure you can…</h3>
+    <ul>
+      <li>Build a Third Conditional sentence expressing regret and one expressing relief — and explain the emotional difference</li>
+      <li>Identify the error in "If she would have known, she would have come" and correct it</li>
+      <li>Use wish + past simple (present), wish + past perfect (past regret), and wish + could (ability) in three separate sentences</li>
+      <li>Explain in one sentence what hedging does and why it matters at B2+</li>
+      <li>Use apparently, presumably, it seems, and it appears correctly in four different sentences</li>
+      <li>Define: estranged, ambivalent, closure, resentment, in hindsight, make amends, harbour a feeling</li>
+      <li>Have Marco's reply (Putting It Together) ready to share</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- SECTION: Footer - Creator & Copyright -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p class="footer-copy">&copy; 2026 Bahar Esmaeelzadeh &middot; All rights reserved</p>
+    <p class="footer-line">Designed and created for English learners by Bahar Esmaeelzadeh.</p>
+    <p class="footer-links">
+      <a href="mailto:bahar.esmz.en@gmail.com">&#128231; bahar.esmz.en@gmail.com</a>
+      <span class="footer-dot">&middot;</span>
+      <a href="https://www.linkedin.com/in/bahar-esmaeelzadeh-650b98198" target="_blank" rel="noopener">&#128188; LinkedIn</a>
+    </p>
+    <p class="footer-note">If you found this helpful, feel free to get in touch.</p>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    document.getElementById('pf').style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+  });
+  let pollDone = false;
+  document.querySelectorAll('.poll-opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (pollDone) return; pollDone = true;
+      document.querySelectorAll('.poll-opt').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      document.getElementById('pollResult').style.display = 'block';
+      document.getElementById('pollResult').textContent = "Bring your reasoning to class — we'll open Session 1 comparing answers.";
+    });
+  });
+
+  function flexMatch(val, answers) {
+    const v = val.trim().toLowerCase();
+    return answers.split('|').some(a => {
+      a = a.trim().toLowerCase();
+      return v === a || (v.length > 6 && (v.includes(a) || a.includes(v)));
+    });
+  }
+
+  function checkEx1() {
+    const fields = [
+      {id:'e1a', ans:'had called'},
+      {id:'e1b', ans:"wouldn't have felt|would not have felt|might not have felt|could not have felt"},
+      {id:'e1c', ans:'might have seen|could have seen|would have seen'},
+      {id:'e1d', ans:'had reconciled'},
+      {id:'e1e', ans:"hadn't walked out|had not walked out"},
+      {id:'e1f', ans:'would have had|might have had|could have had'},
+      {id:'e1g', ans:'would have replied|might have replied|could have replied'},
+      {id:'e1h', ans:'had known'},
+    ];
+    let ok = 0;
+    fields.forEach(({id,ans}) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (flexMatch(el.value, ans)) { ok++; el.style.borderColor = '#2D6A4F'; }
+      else { el.style.borderColor = '#C2652A'; }
+    });
+    const fb = document.getElementById('fb-ex1');
+    fb.classList.add('show');
+    if (ok === fields.length) { fb.classList.remove('bad'); fb.classList.add('good'); fb.textContent = 'All 8 correct! Excellent.'; }
+    else { fb.classList.remove('good'); fb.classList.add('bad'); fb.textContent = ok + ' of 8 correct — check red borders.'; }
+  }
+
+  function checkEx2() {
+    const fields = [
+      {id:'e2a', ans:'if elias had written sooner, marco might have come to the funeral|if elias had written sooner marco might have come to the funeral'},
+      {id:'e2b', ans:'things would have been different if we had talked it through at the time|things would have been different if we had talked it through'},
+      {id:'e2c', ans:"if i hadn't said what i said, you wouldn't have walked out|if i hadn't said what i said you wouldn't have walked out"},
+    ];
+    let ok = 0;
+    fields.forEach(({id,ans}) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (flexMatch(el.value, ans)) { ok++; el.style.borderColor = '#2D6A4F'; }
+      else { el.style.borderColor = '#C2652A'; }
+    });
+    const fb = document.getElementById('fb-ex2');
+    fb.classList.add('show');
+    if (ok === 3) { fb.classList.remove('bad'); fb.classList.add('good'); fb.textContent = 'All 3 correct!'; }
+    else { fb.classList.remove('good'); fb.classList.add('bad'); fb.textContent = ok + ' of 3 correct.'; }
+  }
+
+  function checkEx3() {
+    const fields = [
+      {id:'e3a', ans:'wishes things were'},
+      {id:'e3b', ans:'hopes marco will reply|hopes marco replies|hopes that marco will reply'},
+      {id:'e3c', ans:"wish i hadn't said|wish i had not said"},
+      {id:'e3d', ans:'wishes she had been able to attend|wishes she could have attended|wished she had been able to attend'},
+      {id:'e3e', ans:'hope we can reconcile|hope we will reconcile|hope to reconcile'},
+    ];
+    let ok = 0;
+    fields.forEach(({id,ans}) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (flexMatch(el.value, ans)) { ok++; el.style.borderColor = '#2D6A4F'; }
+      else { el.style.borderColor = '#C2652A'; }
+    });
+    const fb = document.getElementById('fb-ex3');
+    fb.classList.add('show');
+    if (ok === 5) { fb.classList.remove('bad'); fb.classList.add('good'); fb.textContent = 'All 5 correct!'; }
+    else { fb.classList.remove('good'); fb.classList.add('bad'); fb.textContent = ok + ' of 5 correct.'; }
+  }
+
+  function checkEx4() {
+    const fields = [
+      {id:'e4a', ans:'it seems that both brothers are equally to blame|it seems both brothers are equally to blame'},
+      {id:'e4b', ans:'apparently marco was not ready to forgive|apparently, marco was not ready to forgive'},
+      {id:'e4c', ans:'presumably neither of them wanted to speak first|presumably, neither of them wanted to speak first'},
+      {id:'e4d', ans:'it appears they have both been suffering|it appears that they have both been suffering'},
+    ];
+    let ok = 0;
+    fields.forEach(({id,ans}) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (flexMatch(el.value, ans)) { ok++; el.style.borderColor = '#2D6A4F'; }
+      else { el.style.borderColor = '#C2652A'; }
+    });
+    const fb = document.getElementById('fb-ex4');
+    fb.classList.add('show');
+    if (ok === 4) { fb.classList.remove('bad'); fb.classList.add('good'); fb.textContent = 'All 4 correct!'; }
+    else { fb.classList.remove('good'); fb.classList.add('bad'); fb.textContent = ok + ' of 4 correct.'; }
+  }
+
+  function checkEx6() {
+    const fields = [
+      {id:'e6a', ans:'in hindsight'},{id:'e6b', ans:'ambivalent'},{id:'e6c', ans:'make amends'},
+      {id:'e6d', ans:'water under the bridge'},{id:'e6e', ans:'bury the hatchet'},{id:'e6f', ans:'reconcile'},
+    ];
+    let ok = 0;
+    fields.forEach(({id,ans}) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (flexMatch(el.value, ans)) { ok++; el.style.borderColor = '#2D6A4F'; }
+      else { el.style.borderColor = '#C2652A'; }
+    });
+    const fb = document.getElementById('fb-ex6');
+    fb.classList.add('show');
+    if (ok === 6) { fb.classList.remove('bad'); fb.classList.add('good'); fb.textContent = 'All 6 correct!'; }
+    else { fb.classList.remove('good'); fb.classList.add('bad'); fb.textContent = ok + ' of 6 correct.'; }
+  }
+
+  let firstSel = null, matchCount = 0;
+  document.querySelectorAll('.match-item').forEach(item => {
+    item.addEventListener('click', () => {
+      if (item.classList.contains('matched')) return;
+      if (!firstSel) { firstSel = item; item.classList.add('selected'); }
+      else if (firstSel === item) { firstSel.classList.remove('selected'); firstSel = null; }
+      else if (firstSel.dataset.pair === item.dataset.pair) {
+        [firstSel, item].forEach(el => { el.classList.remove('selected'); el.classList.add('matched'); });
+        matchCount++;
+        firstSel = null;
+        const fb = document.getElementById('fb-match');
+        fb.classList.add('show'); fb.classList.remove('bad'); fb.classList.add('good');
+        fb.textContent = matchCount === 4 ? 'All 4 matched!' : matchCount + ' of 4 — keep going!';
+      } else {
+        item.classList.add('wrong-flash');
+        setTimeout(() => { firstSel.classList.remove('selected'); item.classList.remove('wrong-flash'); firstSel = null; }, 500);
+      }
+    });
+  });
+
+  const box = document.getElementById('togetherBox');
+  const cnt = document.getElementById('togetherCount');
+  if (box && cnt) box.addEventListener('input', () => {
+    const w = box.value.trim().split(/\s+/).filter(x => x.length > 0);
+    cnt.textContent = (box.value.trim() === '' ? 0 : w.length) + ' words';
+  });
+
+/* Site frame (added): contents panel, back-to-top, table scroll hints */
+(function(){
+  var panel=document.getElementById('navPanel'),ov=document.getElementById('navOverlay'),
+      ham=document.getElementById('navHamburger'),closeB=document.getElementById('navClose'),
+      links=document.getElementById('navPanelLinks');
+  document.querySelectorAll('.toc a').forEach(function(a){
+    var n=document.createElement('a');
+    n.href=a.getAttribute('href');
+    n.textContent=a.textContent.replace(/^\s*\d+[a-z]?\.\s*/,'');
+    links.appendChild(n);
+  });
+  function openP(){panel.classList.add('open');ov.classList.add('open');ham.setAttribute('aria-expanded','true');panel.setAttribute('aria-hidden','false');}
+  function closeP(){panel.classList.remove('open');ov.classList.remove('open');ham.setAttribute('aria-expanded','false');panel.setAttribute('aria-hidden','true');}
+  ham.addEventListener('click',function(){panel.classList.contains('open')?closeP():openP();});
+  closeB.addEventListener('click',closeP);
+  ov.addEventListener('click',closeP);
+  links.addEventListener('click',function(e){if(e.target.tagName==='A')closeP();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeP();});
+  document.getElementById('navTopBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  function hints(){document.querySelectorAll('.table-scroll').forEach(function(w){
+    if(w.scrollWidth>w.clientWidth+2){w.classList.add('has-overflow');}else{w.classList.remove('has-overflow');}
+  });}
+  window.addEventListener('resize',hints);window.addEventListener('load',hints);hints();
+  document.querySelectorAll('.table-scroll').forEach(function(w){
+    w.addEventListener('scroll',function(){if(w.scrollLeft>12)w.classList.remove('has-overflow');},{passive:true});
+  });
+})();
+
+
+function toggleAK(btn){var p=btn.nextElementSibling;if(p.hasAttribute('hidden')){p.removeAttribute('hidden');btn.setAttribute('aria-expanded','true');btn.textContent=btn.textContent.replace(/^Show/,'Hide');}else{p.setAttribute('hidden','');btn.setAttribute('aria-expanded','false');btn.textContent=btn.textContent.replace(/^Hide/,'Show');}}
+</script>
+</body>
+</html>

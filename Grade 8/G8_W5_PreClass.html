@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet">
+<title>Grade 8 · Week 5 — Crime Scene | Full Reference</title>
+<style>
+  :root {
+    --ink:       #1A1A1A;
+    --ink-mid:   #2C2C2C;
+    --ink-soft:  #3D3D3D;
+    --yellow:    #FFD60A;
+    --yellow-mid:#E6C100;
+    --yellow-lt: #FFFAE0;
+    --yellow-pl: #FFFDF0;
+    --blue:      #1D4ED8;
+    --blue-mid:  #2563EB;
+    --blue-lt:   #DBEAFE;
+    --blue-pale: #EFF6FF;
+    --grey:      #6B7280;
+    --grey-lt:   #F3F4F6;
+    --grey-line: #E5E7EB;
+    --green:     #166534;
+    --green-lt:  #DCFCE7;
+    --red:       #991B1B;
+    --red-lt:    #FEE2E2;
+    --paper:     #F9F8F4;
+    --white:     #FFFFFF;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;font-size:16.5px;line-height:1.78;}
+  .wrap{max-width:940px;margin:0 auto;padding:0 24px 80px;}
+  .pbar{position:sticky;top:0;height:4px;background:var(--grey-line);z-index:100;}
+  .pfill{height:100%;width:0;background:var(--yellow-mid);transition:width .1s;}
+
+  /* MASTHEAD */
+  .masthead{background:var(--ink);margin:0 -24px;padding:46px 24px 40px;position:relative;overflow:hidden;}
+  .tape-stripe{position:absolute;left:0;right:0;height:22px;display:flex;}
+  .tape-block{flex:1;background:var(--yellow);}
+  .tape-block.dark{background:var(--ink-mid);}
+  .masthead-inner{max-width:892px;margin:0 auto;position:relative;z-index:1;}
+  .eyebrow{font-family:'Inter',Arial,sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow);margin:0 0 14px;font-weight:bold;}
+  h1.title{font-family:'Playfair Display',Georgia,serif;font-size:38px;line-height:1.12;color:var(--white);margin:0 0 18px;max-width:680px;}
+  .masthead-meta{display:flex;gap:28px;flex-wrap:wrap;font-family:'Inter',Arial,sans-serif;font-size:13px;color:#888;}
+  .masthead-meta span{color:var(--white);font-weight:bold;}
+
+  /* TOC */
+  .toc{background:var(--white);border-radius:10px;margin-top:-18px;padding:22px 28px;box-shadow:0 4px 22px rgba(26,26,26,.14);position:relative;z-index:2;}
+  .toc h2{font-family:'Inter',Arial,sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--grey);margin:0 0 12px;}
+  .toc ol{margin:0;padding-left:18px;columns:2;column-gap:32px;font-size:14px;line-height:1.65;}
+  .toc li{margin-bottom:5px;}
+  .toc a{color:var(--blue);text-decoration:none;font-family:'Inter',Arial,sans-serif;font-weight:bold;}
+  .toc a:hover{text-decoration:underline;}
+
+  /* SECTIONS */
+  .tab-section{margin-top:52px;}
+  .tab-header{display:flex;align-items:center;gap:14px;margin-bottom:6px;flex-wrap:wrap;}
+  .tab-badge{font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:bold;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:var(--white);border-radius:5px;padding:5px 12px;white-space:nowrap;}
+  .tab-badge.context{background:var(--ink-soft);}
+  .tab-badge.study{background:var(--blue);}
+  .tab-badge.vocab{background:var(--ink-mid);}
+  .tab-badge.practice{background:var(--ink-soft);}
+  .tab-badge.activate{background:var(--yellow-mid);color:var(--ink);}
+  .tab-badge.explore{background:var(--green);}
+  .tab-badge.ref{background:var(--ink);}
+  h2.tab-title{font-family:'Playfair Display',Georgia,serif;font-size:23px;color:var(--ink);}
+  .tab-rule{border:none;border-top:1.5px solid var(--grey-line);margin:12px 0 22px;}
+
+  /* CARDS */
+  .card{background:var(--white);border-radius:10px;padding:22px 26px;margin-bottom:20px;box-shadow:0 2px 10px rgba(26,26,26,.07);}
+  .card h3{font-family:'Playfair Display',Georgia,serif;font-size:18px;margin:0 0 10px;color:var(--ink);}
+  .card p{margin:0 0 10px;}
+  .card p:last-child{margin-bottom:0;}
+
+  /* HOOK */
+  .hook-box{background:var(--ink);color:var(--white);border-radius:10px;padding:28px 30px;margin-bottom:20px;position:relative;overflow:hidden;}
+  .hook-tape{position:absolute;top:0;left:0;right:0;height:6px;background:repeating-linear-gradient(90deg,var(--yellow) 0,var(--yellow) 20px,var(--ink-mid) 20px,var(--ink-mid) 40px);}
+  .hook-box h3{font-family:'Playfair Display',Georgia,serif;font-size:19px;color:var(--yellow);margin:0 0 12px;}
+  .hook-box p{color:#AAA;margin:0 0 10px;}
+  .poll{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;}
+  .poll-opt{border:2px solid var(--yellow);color:var(--yellow);border-radius:999px;padding:8px 18px;font-size:13px;font-weight:bold;cursor:pointer;background:transparent;font-family:'Inter',Arial,sans-serif;transition:all .15s;}
+  .poll-opt:hover,.poll-opt.sel{background:var(--yellow);color:var(--ink);}
+  .poll-note{margin-top:12px;font-size:13.5px;color:#888;display:none;font-family:'Inter',Arial,sans-serif;}
+
+  /* REALIA */
+  .realia{background:var(--white);border-radius:10px;overflow:hidden;border:1px solid var(--grey-line);margin-bottom:22px;box-shadow:0 4px 16px rgba(26,26,26,.09);}
+  .realia-hdr{background:var(--ink-mid);color:var(--white);padding:12px 22px;font-family:'Inter',Arial,sans-serif;font-size:13px;font-weight:bold;letter-spacing:.05em;display:flex;align-items:center;gap:10px;}
+  .realia-tag{font-size:10px;font-weight:bold;letter-spacing:.1em;text-transform:uppercase;background:var(--yellow-mid);color:var(--ink);border-radius:3px;padding:3px 8px;}
+  .realia-tag.blue{background:var(--blue);color:var(--white);}
+  .realia-body{padding:24px 28px;}
+  .realia-body p{margin:0 0 13px;}
+  .realia-body p:last-child{margin:0;}
+  .byline{font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--grey);margin-bottom:16px;font-style:italic;}
+
+  /* HIGHLIGHTS */
+  .hl-y{background:var(--yellow-lt);color:#7A5F00;padding:1px 5px;border-radius:3px;font-weight:bold;}
+  .hl-b{background:var(--blue-lt);color:var(--blue);padding:1px 5px;border-radius:3px;font-weight:bold;}
+  .hl-g{background:var(--green-lt);color:var(--green);padding:1px 5px;border-radius:3px;font-weight:bold;}
+
+  /* TRANSCRIPT */
+  .transcript{background:var(--ink);border-radius:10px;padding:22px 28px;margin-bottom:22px;border-left:4px solid var(--yellow);}
+  .turn{margin-bottom:16px;}
+  .speaker{font-family:'Inter',Arial,sans-serif;font-size:12px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;color:var(--yellow);margin-bottom:4px;}
+  .transcript p{color:#C8C8C8;font-size:15px;line-height:1.7;}
+  .vague{color:var(--yellow);font-weight:bold;}
+  .like-use{color:#86EFAC;font-weight:bold;}
+
+  /* NOTICE */
+  .notice-box{background:var(--yellow-pl);border:2px dashed var(--yellow-mid);border-radius:10px;padding:22px 26px;margin-bottom:20px;}
+  .notice-box h3{font-family:'Playfair Display',Georgia,serif;font-size:18px;color:#7A5F00;margin:0 0 14px;}
+  .nq{margin-bottom:14px;padding-left:30px;position:relative;font-size:15.5px;}
+  .nq::before{content:'?';position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--yellow-mid);color:var(--ink);font-size:13px;font-weight:bold;text-align:center;line-height:20px;font-family:'Inter',Arial,sans-serif;}
+  .rev-btn{display:inline-block;margin-top:6px;background:none;border:1px solid var(--yellow-mid);color:#7A5F00;border-radius:5px;padding:3px 10px;font-size:12px;cursor:pointer;font-family:'Inter',Arial,sans-serif;transition:all .15s;}
+  .rev-btn:hover{background:var(--yellow-mid);color:var(--ink);}
+  .rev{margin-top:8px;font-size:14px;color:var(--ink-soft);font-style:italic;border-left:3px solid var(--yellow-mid);padding-left:10px;display:none;}
+
+  /* GRAMMAR */
+  .grammar-box{background:var(--white);border-radius:10px;padding:26px 30px;margin-bottom:24px;box-shadow:0 2px 10px rgba(26,26,26,.07);}
+  .grammar-box h3{font-family:'Playfair Display',Georgia,serif;font-size:21px;color:var(--blue);margin:0 0 6px;}
+  .grammar-sub{font-family:'Inter',Arial,sans-serif;font-size:14px;color:var(--grey);margin:0 0 18px;font-style:italic;}
+
+  .ex-row{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;margin-bottom:10px;padding:10px 14px;background:var(--paper);border-radius:8px;}
+  .ex-row .mk{font-weight:bold;font-size:18px;}
+  .ex-row .mk.ok{color:var(--blue);}
+  .ex-row .mk.bad{color:var(--red);}
+  .ex-row .gl{display:block;font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--grey);margin-top:3px;}
+  .ex-row .nt{display:block;font-family:'Inter',Arial,sans-serif;font-size:12.5px;color:var(--red);margin-top:3px;font-weight:bold;}
+
+  table.rt{width:100%;border-collapse:collapse;margin:16px 0 8px;font-size:14.5px;font-family:'Inter',Arial,sans-serif;}
+  table.rt th{background:var(--ink);color:var(--white);padding:9px 13px;text-align:left;font-size:13px;}
+  table.rt td{padding:9px 13px;border-bottom:1px solid var(--grey-line);vertical-align:top;}
+  table.rt tr:nth-child(even) td{background:var(--blue-pale);}
+
+  /* TIMELINE */
+  .timeline-wrap{position:relative;padding:18px 0 8px;margin:18px 0;}
+  .tl-line{position:absolute;top:46px;left:60px;right:40px;height:3px;background:var(--grey-line);}
+  .tl-yellow{position:absolute;top:46px;left:60px;width:55%;height:3px;background:var(--yellow-mid);}
+  .tl-events{display:flex;justify-content:space-between;position:relative;z-index:1;}
+  .tl-event{text-align:center;max-width:140px;}
+  .tl-dot{width:18px;height:18px;border-radius:50%;margin:0 auto 6px;border:3px solid var(--yellow-mid);}
+  .tl-dot.past{background:var(--yellow-mid);}
+  .tl-dot.ppp{background:var(--blue);border-color:var(--blue);}
+  .tl-dot.ref{background:var(--ink);border-color:var(--ink);}
+  .tl-label{font-family:'Inter',Arial,sans-serif;font-size:12px;font-weight:bold;color:var(--ink);}
+  .tl-sub{font-family:'Inter',Arial,sans-serif;font-size:11px;color:var(--grey);margin-top:2px;}
+
+  /* VAGUE LANGUAGE SPECTRUM */
+  .spectrum{background:var(--white);border-radius:10px;padding:20px 24px;margin:16px 0;box-shadow:0 2px 8px rgba(26,26,26,.06);}
+  .spectrum h4{font-family:'Inter',Arial,sans-serif;font-size:13px;font-weight:bold;text-transform:uppercase;letter-spacing:.08em;color:var(--grey);margin:0 0 14px;}
+  .spec-bar{display:flex;align-items:center;gap:0;height:36px;border-radius:6px;overflow:hidden;margin:10px 0;}
+  .spec-seg{flex:1;display:flex;align-items:center;justify-content:center;font-family:'Inter',Arial,sans-serif;font-size:12px;font-weight:bold;color:var(--white);}
+  .spec-label{display:flex;justify-content:space-between;font-family:'Inter',Arial,sans-serif;font-size:11px;color:var(--grey);margin-top:4px;}
+
+  /* CHIP ROW */
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;}
+  .chip{background:var(--paper);border:1px solid var(--grey-line);border-radius:999px;padding:5px 14px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;color:var(--ink);}
+  .chip.y{background:var(--yellow-lt);border-color:var(--yellow-mid);color:#7A5F00;font-weight:bold;}
+  .chip.b{background:var(--blue-lt);border-color:var(--blue-mid);color:var(--blue);font-weight:bold;}
+
+  /* VOCAB */
+  .vocab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:14px 0;}
+  .vocab-card{background:var(--white);border-radius:8px;padding:14px 16px;border:1px solid var(--grey-line);}
+  .vocab-card .wd{font-family:'Playfair Display',Georgia,serif;font-weight:bold;color:var(--ink);font-size:16px;}
+  .vocab-card .pos{font-family:'Inter',Arial,sans-serif;font-size:11px;color:var(--grey);text-transform:uppercase;margin-left:6px;}
+  .vocab-card .pn{font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--grey);margin-top:3px;}
+  .vocab-card .df{font-size:14px;margin-top:5px;}
+  .vocab-card .xm{font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--grey);margin-top:5px;font-style:italic;}
+
+  .word-fam{width:100%;border-collapse:collapse;font-family:'Inter',Arial,sans-serif;font-size:14px;margin:12px 0;}
+  .word-fam th{background:var(--ink-mid);color:var(--white);padding:8px 12px;text-align:left;font-size:12.5px;}
+  .word-fam td{padding:8px 12px;border-bottom:1px solid var(--grey-line);}
+  .word-fam tr:nth-child(even) td{background:var(--blue-pale);}
+
+  /* EXERCISES */
+  .exercise{background:var(--white);border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(26,26,26,.07);}
+  .ex-lbl{display:inline-block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:var(--white);border-radius:4px;padding:3px 10px;margin-bottom:10px;}
+  .ex-lbl.b{background:var(--blue);}
+  .ex-lbl.v{background:var(--ink-mid);}
+  .ex-lbl.y{background:var(--yellow-mid);color:var(--ink);}
+  .exercise h4{font-family:'Playfair Display',Georgia,serif;font-size:17px;margin:0 0 12px;color:var(--ink);}
+  .instr{font-family:'Inter',Arial,sans-serif;font-size:13.5px;color:var(--grey);margin-bottom:14px;font-style:italic;}
+  .qrow{display:flex;align-items:baseline;gap:10px;margin-bottom:11px;flex-wrap:wrap;}
+  .qnum{font-family:'Inter',Arial,sans-serif;font-weight:bold;color:var(--yellow-mid);min-width:22px;}
+  .blank{border:none;border-bottom:2px solid var(--yellow-mid);background:var(--paper);font-family:'Playfair Display',Georgia,serif;font-size:15px;padding:3px 8px;width:240px;color:var(--ink);}
+  .blank:focus{outline:none;border-color:var(--blue);}
+  .blank.wide{width:100%;margin-top:6px;}
+  .chk-btn{background:var(--blue);color:var(--white);border:none;border-radius:6px;padding:9px 22px;font-family:'Inter',Arial,sans-serif;font-weight:bold;font-size:14px;cursor:pointer;margin-top:10px;transition:background .15s;}
+  .chk-btn:hover{background:var(--ink);}
+  .fb{margin-top:12px;font-family:'Inter',Arial,sans-serif;font-size:14px;border-radius:6px;padding:10px 14px;display:none;}
+  .fb.show{display:block;}
+  .fb.good{background:var(--blue-lt);color:var(--blue);}
+  .fb.bad{background:var(--red-lt);color:var(--red);}
+  .tarea{width:100%;min-height:110px;border-radius:8px;border:2px solid var(--grey-line);padding:12px 14px;font-family:'Playfair Display',Georgia,serif;font-size:15px;resize:vertical;background:var(--white);color:var(--ink);line-height:1.65;}
+  .tarea:focus{outline:none;border-color:var(--blue);}
+  .wc{font-family:'Inter',Arial,sans-serif;font-size:12px;color:var(--grey);margin-top:5px;text-align:right;}
+
+  /* MATCH */
+  .match-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0;}
+  .match-item{background:var(--paper);border-radius:8px;padding:10px 14px;font-family:'Inter',Arial,sans-serif;font-size:14px;cursor:pointer;border:2px solid transparent;transition:all .15s;}
+  .match-item.sel{border-color:var(--yellow-mid);}
+  .match-item.matched{border-color:var(--blue);background:var(--blue-pale);}
+  .match-item.wrong{border-color:var(--red);background:var(--red-lt);}
+
+  /* ACTIVATE */
+  .activate-box{background:var(--ink);border-radius:10px;padding:26px 30px;margin-bottom:20px;position:relative;overflow:hidden;}
+  .activate-box::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:repeating-linear-gradient(90deg,var(--yellow) 0,var(--yellow) 16px,var(--ink-mid) 16px,var(--ink-mid) 32px);}
+  .activate-box h3{font-family:'Playfair Display',Georgia,serif;font-size:19px;color:var(--yellow);margin:0 0 12px;}
+  .activate-box p{color:#CCC;margin:0 0 10px;font-size:15.5px;}
+  .req-list{list-style:none;padding:0;margin:10px 0 0;}
+  .req-list li{color:#CCC;font-size:15px;padding:4px 0 4px 22px;position:relative;}
+  .req-list li::before{content:'✓';position:absolute;left:0;color:var(--yellow);font-weight:bold;}
+
+  /* EXPLORE */
+  .explore-card{background:var(--green-lt);border:1px solid #BBF7D0;border-radius:10px;padding:22px 26px;margin-bottom:18px;}
+  .explore-card h3{font-family:'Playfair Display',Georgia,serif;font-size:17px;color:var(--green);margin:0 0 10px;}
+  .explore-tag{display:inline-block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;background:var(--green);color:var(--white);border-radius:4px;padding:3px 9px;margin-bottom:10px;}
+  .explore-card ul{padding-left:20px;margin:10px 0 0;font-size:15px;}
+  .explore-card li{margin-bottom:7px;}
+
+  /* ANSWER KEY */
+  .answer-key{background:var(--white);border-radius:10px;padding:26px 30px;margin-top:48px;border:2px solid var(--yellow-mid);box-shadow:0 4px 16px rgba(26,26,26,.10);}
+  .ak-title{font-family:'Playfair Display',Georgia,serif;font-size:22px;color:var(--ink);margin:0 0 6px;}
+  .ak-sub{font-family:'Inter',Arial,sans-serif;font-size:13.5px;color:var(--grey);margin:0 0 20px;font-style:italic;}
+  .ak-sec{margin-bottom:20px;}
+  .ak-sec h4{font-family:'Inter',Arial,sans-serif;font-size:13px;font-weight:bold;letter-spacing:.07em;text-transform:uppercase;color:var(--blue);margin:0 0 10px;border-bottom:1px solid var(--grey-line);padding-bottom:6px;}
+  .ak-item{display:grid;grid-template-columns:28px 1fr 1fr;gap:8px;padding:8px 4px;border-bottom:1px solid var(--grey-line);font-size:14px;}
+  .ak-item:last-child{border-bottom:none;}
+  .an{font-family:'Inter',Arial,sans-serif;font-weight:bold;color:var(--yellow-mid);}
+  .av{font-weight:bold;color:var(--blue);}
+  .anote{font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--grey);font-style:italic;}
+
+  /* REF */
+  table.ref-t{width:100%;border-collapse:collapse;font-family:'Inter',Arial,sans-serif;font-size:14px;}
+  table.ref-t th{background:var(--ink);color:var(--white);padding:10px 14px;text-align:left;font-size:13px;}
+  table.ref-t td{padding:10px 14px;border-bottom:1px solid var(--grey-line);vertical-align:top;}
+  table.ref-t tr:nth-child(even) td{background:var(--paper);}
+
+  .wrapup{background:var(--ink);color:var(--white);border-radius:10px;padding:26px 30px;margin-top:40px;position:relative;overflow:hidden;}
+  .wrapup::before{content:'';position:absolute;bottom:0;left:0;right:0;height:5px;background:repeating-linear-gradient(90deg,var(--yellow) 0,var(--yellow) 16px,var(--ink-mid) 16px,var(--ink-mid) 32px);}
+  .wrapup h3{font-family:'Playfair Display',Georgia,serif;color:var(--yellow);margin:0 0 12px;font-size:18px;}
+  .wrapup ul{padding-left:20px;margin:0;}
+  .wrapup li{margin-bottom:7px;font-size:15px;color:#CCC;}
+
+  @media(max-width:600px){h1.title{font-size:26px;}.vocab-grid,.match-grid{grid-template-columns:1fr;}.toc ol{columns:1;}.ak-item{grid-template-columns:28px 1fr;}.ak-item .anote{grid-column:2;}}
+
+/* ============================================================
+   SITE FRAME (added): fixed top nav + progress bar, slide-out
+   contents panel with creator branding, sticky section headers,
+   responsive & overflow fixes, footer, speaking/listening cards
+   ============================================================ */
+:root{--navh:52px;}
+html{scroll-behavior:smooth;}
+body{overflow-x:hidden;padding-top:calc(var(--navh) + 4px);}
+[id]{scroll-margin-top:calc(var(--navh) + 20px);}
+img,svg,table{max-width:100%;}
+.wrap p,.wrap li,.wrap td,.wrap th,.wrap h1,.wrap h2,.wrap h3{overflow-wrap:break-word;word-break:break-word;}
+.masthead{margin-left:0;margin-right:0;}
+.debate-band{margin-left:0;margin-right:0;}
+
+/* Progress bar: fixed, always visible below the nav */
+.progress-track{position:fixed;top:var(--navh);left:0;right:0;height:4px;z-index:120;}
+
+/* Top navigation bar */
+.nav-bar{position:fixed;top:0;left:0;right:0;height:var(--navh);background:var(--ink);color:#FFFFFF;display:flex;align-items:center;gap:10px;padding:0 12px;z-index:130;box-shadow:0 2px 12px rgba(0,0,0,.20);}
+.nav-btn{min-width:44px;min-height:44px;background:transparent;border:none;color:#FFFFFF;font-size:20px;cursor:pointer;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',Arial,sans-serif;transition:background .15s;}
+.nav-btn:hover{background:rgba(255,255,255,.14);}
+.nav-top{font-size:13px;font-weight:700;letter-spacing:.03em;white-space:nowrap;padding:0 10px;}
+.nav-brand{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.25;}
+.nav-brand-week{font-family:'Inter',Arial,sans-serif;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;opacity:.75;}
+.nav-brand-title{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+/* Slide-out contents panel */
+.nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .25s;z-index:135;}
+.nav-overlay.open{opacity:1;pointer-events:auto;}
+.nav-panel{position:fixed;top:0;bottom:0;left:0;width:min(330px,88vw);background:#FFFFFF;z-index:140;transform:translateX(-103%);transition:transform .28s ease;display:flex;flex-direction:column;box-shadow:6px 0 28px rgba(0,0,0,.22);}
+.nav-panel.open{transform:translateX(0);}
+.nav-panel-head{display:flex;align-items:center;justify-content:space-between;padding:8px 10px 8px 20px;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);border-bottom:1px solid var(--grey-line);}
+.nav-panel-head .nav-btn{color:var(--ink);font-size:16px;}
+.nav-panel-links{flex:1;overflow-y:auto;padding:10px 8px;}
+.nav-panel-links a{display:flex;align-items:center;min-height:44px;padding:6px 14px;border-radius:8px;text-decoration:none;color:var(--ink);font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:600;line-height:1.4;}
+.nav-panel-links a:hover{background:var(--paper);color:var(--blue);}
+/* Branding zone: visually separated from navigation */
+.nav-panel-brand{border-top:2px solid var(--grey-line);background:var(--paper);padding:16px 20px 18px;}
+.nav-panel-brand .brand-name{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.nav-panel-brand .brand-line{font-family:'Inter',Arial,sans-serif;font-size:12.5px;color:var(--grey);margin-bottom:10px;line-height:1.55;}
+.nav-panel-brand a{display:flex;align-items:center;min-height:40px;font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--blue);text-decoration:none;font-weight:600;}
+.nav-panel-brand a:hover{text-decoration:underline;}
+.nav-panel-brand .brand-copy{margin-top:10px;font-family:'Inter',Arial,sans-serif;font-size:11.5px;color:var(--grey);}
+
+/* Sticky section headers: current section title stays visible */
+.tab-header{position:sticky;top:calc(var(--navh) + 4px);z-index:60;background:var(--paper);padding:10px 0 8px;}
+
+/* Scrollable table wrapper with mobile hint */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;}
+.table-scroll table{max-width:none;}
+.table-scroll.has-overflow{background:linear-gradient(to left,rgba(0,0,0,.12),rgba(0,0,0,0) 26px) right center / 26px 100% no-repeat;}
+.table-scroll.has-overflow::before{content:'scroll \2192';display:block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--grey);text-align:right;padding:0 6px 4px;}
+
+/* Speaking & Listening sections */
+.tb-speak{background:var(--blue);color:#FFFFFF;}
+.tb-listen{background:var(--green);color:#FFFFFF;}
+.section-intro{font-family:'Inter',Arial,sans-serif;font-size:14.5px;color:var(--grey);margin:0 0 18px;line-height:1.65;}
+.speak-card{background:#FFFFFF;border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.07);border-left:4px solid var(--blue);}
+.speak-type{display:inline-block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:8px;}
+.speak-card h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0 0 10px;color:var(--ink);}
+.speak-card p{margin:0 0 10px;}
+.speak-card ul{margin:0 0 10px 20px;padding:0;}
+.speak-card li{margin-bottom:6px;}
+.speak-how{background:var(--paper);border-radius:8px;padding:12px 16px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;line-height:1.65;margin-top:12px;}
+.media-card{background:#FFFFFF;border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.07);border-left:4px solid var(--green);}
+.media-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px;}
+.media-head h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0;color:var(--ink);}
+.media-platform{font-family:'Inter',Arial,sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--green);}
+.media-card p{margin:0 0 10px;}
+.media-task{border-left:3px solid var(--green);background:var(--paper);padding:10px 14px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;line-height:1.65;margin-top:10px;border-radius:0 8px 8px 0;}
+.tip-box{border:2px dashed var(--blue);border-radius:10px;padding:18px 22px;background:#FFFFFF;margin-top:6px;}
+.tip-box h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:16px;margin:0 0 10px;color:var(--blue);}
+.tip-box ul{margin:0 0 0 20px;padding:0;}
+.tip-box li{margin-bottom:6px;font-size:14.5px;}
+
+/* Footer */
+.site-footer{background:var(--ink);color:#FFFFFF;margin-top:56px;padding:34px 24px 40px;}
+.site-footer-inner{max-width:920px;margin:0 auto;text-align:center;}
+.footer-copy{font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:700;margin:0 0 6px;}
+.footer-line{font-family:'Playfair Display',Cambria,Georgia,serif;font-style:italic;font-size:14.5px;opacity:.88;margin:0 0 12px;}
+.footer-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 10px;}
+.footer-links a{color:#FFFFFF;font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding:8px 2px;min-height:44px;display:inline-flex;align-items:center;}
+.footer-links a:hover{border-bottom-color:#FFFFFF;}
+.footer-dot{opacity:.5;}
+.footer-note{font-family:'Inter',Arial,sans-serif;font-size:12.5px;opacity:.72;margin:0;}
+
+/* Mobile refinements (375px-safe) */
+@media(max-width:600px){
+  .wrap{padding-left:18px;padding-right:18px;}
+  .masthead{padding:34px 20px 28px;}
+  .grammar-box,.card{padding:20px 18px;}
+  .oped-body{padding:20px 18px;}
+  .speak-card,.media-card{padding:18px 16px;}
+  .check-btn,.reveal-btn,.rev-btn,.poll-opt{min-height:44px;}
+  .vs-table{grid-template-columns:1fr;}
+  .vs-divider{display:none;}
+  table.rule-table{font-size:13.5px;}
+  .nav-top{font-size:12px;}
+  .site-footer{padding:28px 18px 34px;}
+}
+
+@media(max-width:600px){.chk-btn,.mc-opt,.ak-toggle,.toc a{min-height:44px;}.mc-opt{display:flex;align-items:center;}}
+
+
+/* INLINE ANSWER PANELS */
+.ak-inline{margin-top:12px;}
+.ak-toggle{font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:bold;color:var(--blue);background:transparent;border:1.5px solid var(--blue);border-radius:6px;padding:9px 16px;cursor:pointer;min-height:40px;}
+.ak-toggle:hover{background:var(--blue);color:var(--white);}
+.ak-panel{margin-top:10px;background:var(--white);border:1.5px solid var(--blue);border-radius:8px;padding:12px 16px;}
+.ak-panel .ak-item{font-size:14px;}
+</style>
+</head>
+<body>
+
+<!-- SECTION: Top Navigation Bar -->
+<header class="nav-bar" id="navBar">
+  <button class="nav-btn nav-hamburger" id="navHamburger" aria-label="Open contents menu" aria-expanded="false">&#9776;</button>
+  <div class="nav-brand">
+    <span class="nav-brand-week">Grade 8 · Week 5</span>
+    <span class="nav-brand-title">Crime Scene</span>
+  </div>
+  <button class="nav-btn nav-top" id="navTopBtn" aria-label="Back to top">&#8593; Top</button>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+<aside class="nav-panel" id="navPanel" aria-hidden="true">
+  <div class="nav-panel-head"><span>On this page</span><button class="nav-btn nav-close" id="navClose" aria-label="Close menu">&#10005;</button></div>
+  <nav class="nav-panel-links" id="navPanelLinks"></nav>
+  <!-- Creator & branding section of the menu -->
+  <div class="nav-panel-brand">
+    <div class="brand-name">Bahar Esmaeelzadeh</div>
+    <div class="brand-line">Designed and created for English learners by Bahar Esmaeelzadeh.</div>
+    <a href="mailto:bahar.esmz.en@gmail.com">&#128231; bahar.esmz.en@gmail.com</a>
+    <a href="https://www.linkedin.com/in/bahar-esmaeelzadeh-650b98198" target="_blank" rel="noopener">&#128188; LinkedIn &mdash; Bahar Esmaeelzadeh</a>
+    <div class="brand-copy">&copy; 2026 Bahar Esmaeelzadeh &middot; All rights reserved</div>
+  </div>
+</aside>
+
+<div class="pbar"><div class="pfill" id="pf"></div></div>
+
+<!-- SECTION: Masthead / Header -->
+<div class="masthead">
+  <div class="tape-stripe" style="top:0;">
+    <div class="tape-block"></div><div class="tape-block dark"></div><div class="tape-block"></div><div class="tape-block dark"></div>
+    <div class="tape-block"></div><div class="tape-block dark"></div><div class="tape-block"></div><div class="tape-block dark"></div>
+    <div class="tape-block"></div><div class="tape-block dark"></div><div class="tape-block"></div><div class="tape-block dark"></div>
+  </div>
+  <div class="masthead-inner" style="margin-top:16px;">
+    <p class="eyebrow">Grade 8 &middot; Week 5 &middot; Complete Reference &amp; Pre-Class Material</p>
+    <h1 class="title">Crime Scene — Narrating the Past &amp; Speaking Vaguely</h1>
+    <div class="masthead-meta">
+      <div>Level: <span>B2+</span></div>
+      <div>Theme: <span>Crime &amp; Punishment</span></div>
+      <div>Grammar: <span>Past Perfect Progressive &middot; Vague Language &middot; Like in Speech</span></div>
+      <div>Est. time: <span>70&ndash;80 min</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <!-- SECTION: Table of Contents -->
+  <div class="toc">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#engage">1. Engage</a></li>
+      <li><a href="#ctx1">2. Context: the detective's notes</a></li>
+      <li><a href="#nd1">3. Notice &amp; discover (past perfect progressive)</a></li>
+      <li><a href="#s1">4. Study: Past Perfect Progressive — form</a></li>
+      <li><a href="#s2">5. Study: PPP vs Past Perfect</a></li>
+      <li><a href="#p1">6. Practice: PPP</a></li>
+      <li><a href="#ctx2">7. Context: Theo's witness statement</a></li>
+      <li><a href="#nd2">8. Notice &amp; discover (vague language)</a></li>
+      <li><a href="#s3">9. Study: Vague Language — types &amp; function</a></li>
+      <li><a href="#s4">10. Study: Like in speech — four uses</a></li>
+      <li><a href="#p2">11. Practice: vague language &amp; like</a></li>
+      <li><a href="#vocab">12. Vocabulary: crime &amp; investigation</a></li>
+      <li><a href="#vp">13. Practice: vocabulary</a></li>
+      <li><a href="#speaking">14. Speaking practice</a></li>
+      <li><a href="#together">15. Putting it together</a></li>
+      <li><a href="#listening">16. Listening &amp; watching</a></li>
+      <li><a href="#explore">17. Explore on your own</a></li>
+      <li><a href="#ref">18. Quick reference</a></li>
+    </ol>
+  </div>
+
+  <!-- SECTION: Before you start -->
+  <div class="tab-section" id="engage">
+    <div class="tab-header"><span class="tab-badge">ENGAGE</span><h2 class="tab-title">Before you start</h2></div>
+    <hr class="tab-rule">
+    <div class="hook-box">
+      <div class="hook-tape"></div>
+      <h3 style="margin-top:8px;">The park at 2 am</h3>
+      <p>A man is found unconscious in Riverside Park at 2 am. He had been lying there for some time before anyone noticed. There is one witness — a local named Theo, who had been walking his dog.</p>
+      <p>Detective Okafor asks Theo what he saw. Theo is nervous, not entirely sure what he observed, and his spoken account is hesitant, hedged, and full of vague expressions.</p>
+      <p>But the detective's written notes tell the story with precision.</p>
+      <p><strong>Have you ever had to describe something you weren't quite certain you saw or heard?</strong></p>
+      <div class="poll" id="pollBox">
+        <button class="poll-opt" data-v="a">Yes — as a witness to something</button>
+        <button class="poll-opt" data-v="b">Yes — in a formal or professional context</button>
+        <button class="poll-opt" data-v="c">Yes — just in everyday conversation</button>
+        <button class="poll-opt" data-v="d">Not really — I tend to be precise</button>
+      </div>
+      <p class="poll-note" id="pollNote">Bring your answer to class — we start Session 1 comparing responses.</p>
+    </div>
+    <div class="card">
+      <h3>Colour code for this week</h3>
+      <p><span class="hl-y">Yellow</span> = Past Perfect Progressive. <span class="hl-b">Blue</span> = Vague language items (kind of, sort of, like, stuff, etc.). <span class="hl-g">Green</span> = Using <em>like</em> as a discourse marker / quotative.</p>
+      <p>Notice these colours in both context texts. After you've read for meaning, go back and look at the patterns they highlight.</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Read first: Detective Okafor's notes -->
+  <div class="tab-section" id="ctx1">
+    <div class="tab-header"><span class="tab-badge context">CONTEXT</span><h2 class="tab-title">Read first: Detective Okafor's notes</h2></div>
+    <hr class="tab-rule">
+    <div class="card"><p><strong>Before looking at grammar:</strong> What had been happening in the park before the man was found? Who noticed him? Note the sequence of events.</p></div>
+    <div class="realia">
+      <div class="realia-hdr"><span class="realia-tag">Detective's Notes</span><span style="font-family:'Playfair Display',Georgia,serif;font-size:17px;color:#fff;">Case file 0471 — Riverside Park</span></div>
+      <div class="realia-body">
+        <p class="byline">Detective Okafor — interview summary, compiled 03:14 am</p>
+        <p>At approximately 01:50 am, a male subject, approx. 40 years old, was found unresponsive on the east footpath of Riverside Park. The subject <span class="hl-y">had been lying</span> in the same position for an estimated 45 minutes before witness Theo Brandt discovered him.</p>
+        <p>Brandt stated that he <span class="hl-y">had been walking</span> his dog, Rex, along the south perimeter for approximately 20 minutes before he noticed the figure. He reported that Rex <span class="hl-y">had been pulling</span> towards the east path for several minutes — Brandt initially assumed the dog <span class="hl-y">had been tracking</span> an animal scent.</p>
+        <p>A second witness, initially unnamed, reported that a vehicle <span class="hl-y">had been idling</span> at the park entrance for at least ten minutes prior to the incident. The vehicle — described as a dark estate car — departed before any officers arrived.</p>
+        <p>It is noted that the footpath lighting <span class="hl-y">had been malfunctioning</span> for several days prior to the incident, which may have contributed to the delay in the subject being noticed.</p>
+        <p>CCTV review is ongoing. The subject <span class="hl-y">had been breathing</span> when paramedics arrived and was transferred to Riverside General.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Meaning check — no grammar yet</h3>
+      <p>1. How long had the man been lying there before Theo found him?</p>
+      <p>2. Why did Rex (Theo's dog) keep pulling towards the east path?</p>
+      <p>3. What detail about the park might explain why nobody noticed the man sooner?</p>
+      <p>4. What happened to the vehicle before police arrived?</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Look at the yellow phrases -->
+  <div class="tab-section" id="nd1">
+    <div class="tab-header"><span class="tab-badge study">NOTICE &amp; DISCOVER</span><h2 class="tab-title">Look at the yellow phrases</h2></div>
+    <hr class="tab-rule">
+    <div class="notice-box">
+      <h3>Detective work: the yellow phrases</h3>
+      <div class="nq">All the yellow phrases share the same structure. What is it?
+        <button class="rev-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="rev">They all follow: had been + verb+ing. This is the Past Perfect Progressive (also called Past Perfect Continuous).</p>
+      </div>
+      <div class="nq">"The subject had been lying there for 45 minutes before Theo found him." — Which event came first, and which came second?
+        <button class="rev-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="rev">The man lying there came first (the ongoing background action). Theo finding him came second (the reference point). The PPP shows the action that was already in progress when the second event happened.</p>
+      </div>
+      <div class="nq">"The footpath lighting had been malfunctioning for several days." — Does this emphasise the single moment of malfunction, or the duration of an ongoing situation?
+        <button class="rev-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="rev">Duration — the PPP stresses that this wasn't a one-off event; it had been going on continuously for days. This is the core difference from the Past Perfect simple: PPP = duration/continuity of an activity up to a point in the past.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Past Perfect Progressive — Form & Use -->
+  <div class="tab-section" id="s1">
+    <div class="tab-header"><span class="tab-badge study">STUDY</span><h2 class="tab-title">Past Perfect Progressive — Form &amp; Use</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3>1. Past Perfect Progressive (PPP)</h3>
+      <p class="grammar-sub">Also called Past Perfect Continuous. Shows an ongoing or repeated activity that was in progress up to a past reference point — emphasising duration or continuity.</p>
+      <p><strong>Form:</strong></p>
+      <div style="background:var(--blue-pale);border-radius:8px;padding:14px 18px;margin:12px 0;font-family:'Inter',Arial,sans-serif;font-size:14px;">
+        Subject &nbsp;+&nbsp; <strong>had been</strong> &nbsp;+&nbsp; <strong>verb + -ing</strong>
+      </div>
+      <div class="table-scroll"><table class="rt">
+        <tr><th>Form</th><th>Example</th></tr>
+        <tr><td><strong>Positive</strong></td><td><em>The man <span class="hl-y">had been lying</span> there for 45 minutes.</em></td></tr>
+        <tr><td><strong>Negative</strong></td><td><em>Theo <span class="hl-y">hadn't been expecting</span> to find anyone in the park.</em></td></tr>
+        <tr><td><strong>Question</strong></td><td><em><span class="hl-y">Had</span> the vehicle <span class="hl-y">been idling</span> there for long?</em></td></tr>
+        <tr><td><strong>Short answer</strong></td><td><em>Yes, it had. / No, it hadn't.</em></td></tr>
+      </table></div>
+      <p style="margin-top:16px;"><strong>Signal words: often used with for, since, all night/day/morning, how long</strong></p>
+      <div class="chip-row">
+        <span class="chip y">for 45 minutes</span><span class="chip y">since midnight</span><span class="chip y">all evening</span>
+        <span class="chip y">for several days</span><span class="chip y">how long had he been…?</span>
+      </div>
+      <p style="margin-top:16px;"><strong>Three key uses:</strong></p>
+      <div class="ex-row"><span class="mk ok">1</span><span class="txt"><strong>Ongoing activity up to a past point</strong><br><em>He <span class="hl-y">had been working</span> the night shift for three months when the incident occurred.</em><span class="gl">Action in progress up to that reference point. Stresses continuous effort / duration.</span></span></div>
+      <div class="ex-row"><span class="mk ok">2</span><span class="txt"><strong>Cause of a past result</strong><br><em>His hands were cold — he <span class="hl-y">had been lying</span> on the damp path for nearly an hour.</em><span class="gl">The PPP explains why the past result came about. The evidence points back to the ongoing action.</span></span></div>
+      <div class="ex-row"><span class="mk ok">3</span><span class="txt"><strong>Repeated action in the past</strong><br><em>The dog <span class="hl-y">had been pulling</span> towards the east path for several minutes before Theo let him lead.</em><span class="gl">Not a single pull — repeated, persistent tugging. PPP captures the repeated, habitual quality.</span></span></div>
+    </div>
+  </div>
+
+  <!-- SECTION: PPP vs Past Perfect — the key distinction -->
+  <div class="tab-section" id="s2">
+    <div class="tab-header"><span class="tab-badge study">STUDY</span><h2 class="tab-title">PPP vs Past Perfect — the key distinction</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3>2. PPP vs Past Perfect Simple — when to choose</h3>
+      <p class="grammar-sub">Both refer to events before another past event. The difference is emphasis: duration &amp; continuity (PPP) vs completion (Past Perfect).</p>
+      <div class="table-scroll"><table class="rt">
+        <tr><th></th><th>Past Perfect Simple</th><th>Past Perfect Progressive</th></tr>
+        <tr><td><strong>Focus</strong></td><td>Completion of an action</td><td>Duration / continuity of an activity</td></tr>
+        <tr><td><strong>Asks</strong></td><td>"Did it finish?"</td><td>"How long was it going on?"</td></tr>
+        <tr><td><strong>Stative verbs?</strong></td><td>Yes — know, believe, own, want</td><td>No — stative verbs don't use -ing</td></tr>
+        <tr><td><strong>Result visible?</strong></td><td>Sometimes implied</td><td>Often explains a present/past result</td></tr>
+      </table></div>
+      <p style="margin-top:16px;"><strong>Compare these pairs — same event, different emphasis:</strong></p>
+      <div class="ex-row"><span class="mk ok">PP</span><span class="txt"><em>By the time paramedics arrived, the subject <span class="hl-y">had lain</span> there for nearly an hour.</em><span class="gl">Focus: the completed duration — it's now over. More formal.</span></span></div>
+      <div class="ex-row"><span class="mk ok">PPP</span><span class="txt"><em>The subject <span class="hl-y">had been lying</span> there for nearly an hour when paramedics arrived.</em><span class="gl">Focus: the ongoing nature of the action — it was still happening when they arrived.</span></span></div>
+      <div class="ex-row"><span class="mk ok">PP</span><span class="txt"><em>The dog <span class="hl-y">had pulled</span> Theo towards the path once — then he let him go.</em><span class="gl">One completed action, no duration implied.</span></span></div>
+      <div class="ex-row"><span class="mk ok">PPP</span><span class="txt"><em>The dog <span class="hl-y">had been pulling</span> Theo towards the path for several minutes.</em><span class="gl">Repeated/sustained action — the pulling kept happening.</span></span></div>
+      <p style="margin-top:16px;"><strong>⚠ Stative verbs — these do NOT use PPP:</strong></p>
+      <div class="ex-row"><span class="mk bad">✗</span><span class="txt"><em>Detective Okafor had been knowing about the lighting fault for days.</em><span class="nt">WRONG — "know" is stative. Use Past Perfect: "had known."</span></span></div>
+      <div class="ex-row"><span class="mk ok">✓</span><span class="txt"><em>Detective Okafor had known about the lighting fault for days.</em><span class="gl">Stative verbs (know, believe, want, own, seem, contain) use Past Perfect, not PPP.</span></span></div>
+
+      <!-- TIMELINE -->
+      <p style="margin-top:16px;"><strong>Timeline — how PPP fits in:</strong></p>
+      <div class="timeline-wrap">
+        <div class="tl-line"></div>
+        <div class="tl-yellow"></div>
+        <div class="tl-events">
+          <div class="tl-event"><div class="tl-dot past"></div><div class="tl-label">~1:05 am</div><div class="tl-sub">Man collapses (start of PPP)</div></div>
+          <div class="tl-event"><div class="tl-dot ppp"></div><div class="tl-label">~1:30–1:50</div><div class="tl-sub">← PPP in progress: had been lying →</div></div>
+          <div class="tl-event"><div class="tl-dot ref"></div><div class="tl-label">1:50 am</div><div class="tl-sub">Theo finds him (reference point)</div></div>
+          <div class="tl-event"><div class="tl-dot" style="background:var(--grey);border-color:var(--grey);"></div><div class="tl-label">2:10 am</div><div class="tl-sub">Paramedics arrive (simple past)</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Try it: Past Perfect Progressive -->
+  <div class="tab-section" id="p1">
+    <div class="tab-header"><span class="tab-badge practice">PRACTICE</span><h2 class="tab-title">Try it: Past Perfect Progressive</h2></div>
+    <hr class="tab-rule">
+    <div class="exercise">
+      <span class="ex-lbl b">Exercise 1 · Form: positive & negative</span>
+      <h4>Write the PPP form. Some are positive, some negative — check the context.</h4>
+      <p class="instr">Use: had been + verb+ing. For negatives: hadn't been + verb+ing.</p>
+      <div class="qrow"><span class="qnum">1.</span><span>Theo __________ (walk) Rex along the south perimeter for about 20 minutes.</span></div>
+      <input class="blank wide" id="e1a" data-ans="had been walking" placeholder="had been…">
+      <div class="qrow"><span class="qnum">2.</span><span>The vehicle __________ (idle) at the entrance for ten minutes before it left.</span></div>
+      <input class="blank wide" id="e1b" data-ans="had been idling" placeholder="had been…">
+      <div class="qrow"><span class="qnum">3.</span><span>The footpath lights __________ (malfunction) for several days — nobody had reported it.</span></div>
+      <input class="blank wide" id="e1c" data-ans="had been malfunctioning" placeholder="had been…">
+      <div class="qrow"><span class="qnum">4.</span><span>Detective Okafor __________ (sleep) when her phone rang at 2 am. (she was asleep)</span></div>
+      <input class="blank wide" id="e1d" data-ans="had been sleeping" placeholder="had been…">
+      <div class="qrow"><span class="qnum">5.</span><span>Theo __________ (plan) to stay long — he just took Rex for a short walk. (negative)</span></div>
+      <input class="blank wide" id="e1e" data-ans="hadn't been planning" placeholder="hadn't been…">
+      <button class="chk-btn" onclick="checkEx('e1a,e1b,e1c,e1d,e1e','fb1')">Check</button>
+      <div class="fb" id="fb1"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">had been walking</span><span class="anote">Positive PPP. Ongoing action: 20 minutes on the south path before finding the man.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">had been idling</span><span class="anote">Positive PPP. Sustained: engine running, not moving, for 10+ minutes.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">had been malfunctioning</span><span class="anote">Positive PPP. Several days = duration up to reference point (night of incident).</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">had been sleeping</span><span class="anote">Positive PPP. Ongoing state (sleeping) when reference event (phone rings) occurred.</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">hadn't been planning</span><span class="anote">Negative PPP. The planning was NOT in progress — he didn't intend to stay.</span></div>
+    
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-lbl b">Exercise 2 · PPP or Past Perfect Simple?</span>
+      <h4>Choose the better option. Think: duration/continuity or completion?</h4>
+      <p class="instr">Write the full form of the more appropriate tense and explain your choice briefly.</p>
+      <div class="qrow"><span class="qnum">1.</span><span>When the paramedics arrived, the man __________ (lie) on the path. [choose PPP or PP]</span></div>
+      <input class="blank wide" id="e2a" data-ans="had been lying" placeholder="PPP or PP?…">
+      <div class="qrow"><span class="qnum">2.</span><span>The detective __________ (read) the CCTV report twice before she identified the vehicle. [one completed action]</span></div>
+      <input class="blank wide" id="e2b" data-ans="had read" placeholder="PPP or PP?…">
+      <div class="qrow"><span class="qnum">3.</span><span>Rex __________ (know) something was wrong long before Theo did. [stative]</span></div>
+      <input class="blank wide" id="e2c" data-ans="had known" placeholder="PPP or PP?…">
+      <div class="qrow"><span class="qnum">4.</span><span>The second witness __________ (wait) near the entrance for over an hour before she came forward. [duration]</span></div>
+      <input class="blank wide" id="e2d" data-ans="had been waiting" placeholder="PPP or PP?…">
+      <div class="qrow"><span class="qnum">5.</span><span>The detective __________ (write) three pages of notes by the time the second witness arrived. [completion — count of pages]</span></div>
+      <input class="blank wide" id="e2e" data-ans="had written" placeholder="PPP or PP?…">
+      <button class="chk-btn" onclick="checkEx('e2a,e2b,e2c,e2d,e2e','fb2')">Check</button>
+      <div class="fb" id="fb2"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">had been lying (PPP)</span><span class="anote">Duration — still in progress when paramedics arrived. PPP is clearly better.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">had read (PP)</span><span class="anote">Completed action counted ("twice") before a next event. PP = completion.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">had known (PP)</span><span class="anote">"Know" is stative — never uses PPP. Past Perfect only.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">had been waiting (PPP)</span><span class="anote">Duration explicitly signalled ("over an hour"). PPP emphasises the ongoing wait.</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">had written (PP)</span><span class="anote">Count ("three pages") signals a measurable completed result. PP for completion.</span></div>
+    
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-lbl b">Exercise 3 · Error correction</span>
+      <h4>Find and fix the one error in each sentence.</h4>
+      <div class="qrow"><span class="qnum">1.</span><span>The suspect had been know about the park's blind spot for months.</span></div>
+      <input class="blank wide" id="e3a" data-ans="the suspect had known about the park's blind spot for months" placeholder="Corrected sentence…">
+      <div class="qrow"><span class="qnum">2.</span><span>The dog has been pulling at the lead for minutes when it finally broke free.</span></div>
+      <input class="blank wide" id="e3b" data-ans="the dog had been pulling at the lead for minutes when it finally broke free" placeholder="Corrected sentence…">
+      <div class="qrow"><span class="qnum">3.</span><span>The lighting been malfunctioning since the storm last Tuesday.</span></div>
+      <input class="blank wide" id="e3c" data-ans="the lighting had been malfunctioning since the storm last tuesday" placeholder="Corrected sentence…">
+      <div class="qrow"><span class="qnum">4.</span><span>Had the vehicle idled there when the second witness arrived?</span></div>
+      <input class="blank wide" id="e3d" data-ans="had the vehicle been idling there when the second witness arrived" placeholder="Corrected sentence…">
+      <button class="chk-btn" onclick="checkEx('e3a,e3b,e3c,e3d','fb3')">Check</button>
+      <div class="fb" id="fb3"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">The suspect had known about the park's blind spot for months.</span><span class="anote">"Know" is stative — cannot use "had been knowing." Past Perfect: "had known."</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">The dog had been pulling at the lead for minutes when it finally broke free.</span><span class="anote">"Has been pulling" = Present Perfect Progressive — wrong tense. Must be past: "had been pulling."</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">The lighting had been malfunctioning since the storm last Tuesday.</span><span class="anote">Missing "had" — "been malfunctioning" alone is not a complete verb phrase. Needs "had been."</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">Had the vehicle been idling there when the second witness arrived?</span><span class="anote">"Had idled" = Past Perfect (one completed event) — but the question asks about an ongoing process. PPP question: "Had…been idling?"</span></div>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Read next: Theo's spoken witness statement -->
+  <div class="tab-section" id="ctx2">
+    <div class="tab-header"><span class="tab-badge context">CONTEXT</span><h2 class="tab-title">Read next: Theo's spoken witness statement</h2></div>
+    <hr class="tab-rule">
+    <div class="card"><p><strong>Before looking at the language:</strong> Theo and Detective Okafor are describing the same events. What is different about how each person speaks? Note at least three differences in style, vocabulary, and structure.</p></div>
+    <div class="transcript">
+      <div class="turn">
+        <div class="speaker">Detective Okafor</div>
+        <p>Mr Brandt, can you take me through what you saw this evening?</p>
+      </div>
+      <div class="turn">
+        <div class="speaker">Theo Brandt (witness)</div>
+        <p>Yeah, so, I was just, <span class="like-use">like</span>, walking Rex — that's my dog — along the path. The south one. And Rex was being <span class="vague">kind of</span> weird, <span class="like-use">like</span>, he kept pulling towards the other path. The east one. And I was <span class="like-use">like</span>, <span class="like-use">"Rex, come on,"</span> but he wouldn't stop. And so I followed him and there was this guy just… lying there. On the ground. It was <span class="vague">sort of</span> hard to see because the lights are broken <span class="vague">or whatever</span>.</p>
+      </div>
+      <div class="turn">
+        <div class="speaker">Detective Okafor</div>
+        <p>How long do you think he'd been there?</p>
+      </div>
+      <div class="turn">
+        <div class="speaker">Theo Brandt</div>
+        <p>I don't know, it was… <span class="vague">like</span>, a while? There was <span class="vague">stuff</span> around him — a bag and <span class="vague">things</span> — so maybe he'd fallen. I wasn't sure if he was… <span class="vague">like</span>, asleep or <span class="vague">whatever</span>. Rex was definitely pulling, <span class="vague">kind of</span> urgently, for ages before I let him lead.</p>
+      </div>
+      <div class="turn">
+        <div class="speaker">Detective Okafor</div>
+        <p>Did you notice any vehicles near the park entrance?</p>
+      </div>
+      <div class="turn">
+        <div class="speaker">Theo Brandt</div>
+        <p>Yeah, there was a car. Dark blue, <span class="vague">kind of</span>. <span class="vague">Sort of</span> estate-ish. It was just… sitting there with the engine running. It's <span class="vague">like</span>… I don't know, it felt <span class="vague">kind of</span> off. And I was <span class="like-use">like</span>, <span class="like-use">"Why is this car here at this time?"</span> But then it drove off.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Meaning check</h3>
+      <p>1. What was Rex doing that was unusual?</p>
+      <p>2. What does Theo notice about the man when he finds him?</p>
+      <p>3. What details does Theo give about the car?</p>
+      <p>4. Theo uses "like" in two very different ways in his account. Can you find both?</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Look at the blue and green phrases -->
+  <div class="tab-section" id="nd2">
+    <div class="tab-header"><span class="tab-badge study">NOTICE &amp; DISCOVER</span><h2 class="tab-title">Look at the blue and green phrases</h2></div>
+    <hr class="tab-rule">
+    <div class="notice-box">
+      <h3>Detective work: hedging and like</h3>
+      <div class="nq">Theo says: "Rex was being <em>kind of</em> weird." What does "kind of" add that just "weird" wouldn't?
+        <button class="rev-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="rev">"Kind of" hedges the adjective — Theo isn't fully committing to the word "weird." It signals: approximately weird / somewhat weird / I'm not certain "weird" is exactly right. This is vague language: speakers use it to avoid sounding too confident about something they're not sure of, or to soften a statement.</p>
+      </div>
+      <div class="nq">Theo says: "There was <em>stuff</em> around him — a bag and <em>things</em>." What is Theo doing with "stuff" and "things"?
+        <button class="rev-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="rev">He can't or doesn't want to name the specific items. "Stuff" and "things" are vague approximators — they signal that a more exact list exists but Theo either doesn't know it or doesn't feel it's important to specify. Very common in spoken English; less common in formal written English.</p>
+      </div>
+      <div class="nq">Theo says: "I was like, 'Rex, come on'" AND "I was like, a while?" — are these two uses of "like" doing the same job?
+        <button class="rev-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="rev">No — two different jobs. "I was like, 'Rex, come on'" = quotative like — introducing what someone said or thought (a very common spoken English feature). "It was like, a while?" = approximator like — meaning "approximately" or "about." Both are common in informal speech; neither is appropriate in formal writing.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Vague Language — types, function, register -->
+  <div class="tab-section" id="s3">
+    <div class="tab-header"><span class="tab-badge study">STUDY</span><h2 class="tab-title">Vague Language — types, function, register</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3>3. Vague Language — what it is and why it exists</h3>
+      <p class="grammar-sub">COCA spoken corpus data confirms: kind of, sort of, like, stuff, things, and whatever are among the most frequent words in spoken English. Learning vague language is not learning to be imprecise — it is learning to sound natural.</p>
+      <p><strong>Why do speakers use vague language?</strong></p>
+      <div class="chip-row">
+        <span class="chip">They genuinely don't know</span>
+        <span class="chip">They don't want to over-commit</span>
+        <span class="chip">They're being polite / indirect</span>
+        <span class="chip">They're managing their certainty</span>
+        <span class="chip">They're summarising rather than listing</span>
+        <span class="chip">They want to sound less formal</span>
+      </div>
+      <p style="margin-top:16px;"><strong>The main types:</strong></p>
+      <div class="table-scroll"><table class="rt">
+        <tr><th>Type</th><th>Examples</th><th>What it does</th></tr>
+        <tr><td><strong>Approximators</strong><br><em>(hedging adjectives / adverbs)</em></td><td><span class="hl-b">kind of</span>, <span class="hl-b">sort of</span>, <span class="hl-b">like</span>, <span class="hl-b">a bit</span>, <span class="hl-b">roughly</span>, <span class="hl-b">pretty</span></td><td>Softens or approximates a description. "Kind of dark." "Sort of urgent."</td></tr>
+        <tr><td><strong>General extenders</strong><br><em>(catch-all nouns)</em></td><td><span class="hl-b">stuff</span>, <span class="hl-b">things</span>, <span class="hl-b">everything</span>, <span class="hl-b">people</span></td><td>Stands in for items the speaker can't or doesn't want to name: "a bag and stuff."</td></tr>
+        <tr><td><strong>Set completers</strong><br><em>(end-of-list signals)</em></td><td><span class="hl-b">or whatever</span>, <span class="hl-b">or something</span>, <span class="hl-b">etc.</span>, <span class="hl-b">and that</span></td><td>Signals a list is incomplete or the rest is obvious: "asleep or whatever."</td></tr>
+        <tr><td><strong>Discourse markers</strong><br><em>(structuring / stalling)</em></td><td><span class="hl-b">like</span>, <span class="hl-b">sort of</span>, <span class="hl-b">kind of</span>, <span class="hl-b">you know</span></td><td>Buys time while thinking, or signals transition: "And I was like, walking…"</td></tr>
+      </table></div>
+
+      <!-- REGISTER SPECTRUM -->
+      <p style="margin-top:18px;"><strong>Register — when vague language is appropriate:</strong></p>
+      <div class="spectrum">
+        <h4>Formal ←→ Informal spectrum</h4>
+        <div class="spec-bar">
+          <div class="spec-seg" style="background:#1A1A1A;flex:1;">Legal report</div>
+          <div class="spec-seg" style="background:#2C2C3A;flex:1;">Journalism</div>
+          <div class="spec-seg" style="background:#2563EB;flex:1;">Academic</div>
+          <div class="spec-seg" style="background:#7A5F00;flex:1;">Email</div>
+          <div class="spec-seg" style="background:#B45309;flex:1;">Chat</div>
+          <div class="spec-seg" style="background:#FFD60A;color:#1A1A1A;flex:1.3;">Casual conversation</div>
+        </div>
+        <div class="spec-label"><span>No vague language</span><span>Most vague language</span></div>
+      </div>
+      <div class="ex-row" style="margin-top:14px;"><span class="mk ok">✓</span><span class="txt"><em>"The vehicle was <span class="hl-b">sort of</span> estate-ish."</em><span class="gl">Witness statement (spoken) — appropriate. Theo is approximating because he's uncertain.</span></span></div>
+      <div class="ex-row"><span class="mk bad">✗</span><span class="txt"><em>"The suspect's vehicle was sort of a dark estate-type car or whatever."</em><span class="nt">Police formal report — inappropriate register. Should be: "The vehicle was described as a dark estate car."</span></span></div>
+    </div>
+  </div>
+
+  <!-- 10. STUDY 4: LIKE -->
+  <div class="tab-section" id="s4">
+    <div class="tab-header"><span class="tab-badge study">STUDY</span><h2 class="tab-title">Using <em>like</em> in speech — four functions</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3>4. <em>Like</em> in spoken English — four functions</h3>
+      <p class="grammar-sub">The word <em>like</em> does far more in spoken English than "similar to." Understanding its functions is key to sounding natural and to understanding native speakers.</p>
+      <div class="table-scroll"><table class="rt">
+        <tr><th>#</th><th>Function</th><th>Example from Theo</th><th>What it signals</th></tr>
+        <tr><td><strong>1</strong></td><td><strong>Preposition / comparison</strong><br><em>(traditional meaning)</em></td><td><em>"It smelled <span class="hl-g">like</span> the park usually does."</em></td><td>Similar to. Standard meaning — fine in all registers.</td></tr>
+        <tr><td><strong>2</strong></td><td><strong>Approximator</strong><br><em>(hedging)</em></td><td><em>"It was <span class="hl-b">like</span>, a while ago."</em></td><td>Approximately / around / about. Softens a number or description. Very frequent in spoken English.</td></tr>
+        <tr><td><strong>3</strong></td><td><strong>Quotative</strong><br><em>(introducing speech/thought)</em></td><td><em>"I was <span class="hl-g">like</span>, 'Rex, come on.'"<br>"I was <span class="hl-g">like</span>, why is this car here?"</em></td><td>Introduces what someone said, thought, or felt. Can replace "said" or "thought" in informal speech. Very frequent in young adults' speech but spreading across age groups.</td></tr>
+        <tr><td><strong>4</strong></td><td><strong>Discourse marker / filler</strong><br><em>(structuring / hesitation)</em></td><td><em>"And I was, <span class="hl-b">like</span>, walking Rex…"</em></td><td>Signals the speaker is thinking, keeps the floor, or introduces a new piece of information. Not meaningful in itself — functions like "um" with more purpose.</td></tr>
+      </table></div>
+      <p style="margin-top:14px;"><strong>Register note:</strong> Functions 2, 3, and 4 are informal spoken features. They appear naturally in casual speech and are widely understood — but should not appear in formal written English (academic essays, legal documents, journalism). Understanding them is essential for listening comprehension.</p>
+      <p style="margin-top:10px;"><strong>Pronunciation note:</strong> In natural speech, <em>like</em> as a filler/approximator is typically unstressed and quick — /lɪk/ rather than /laɪk/. Listen for this when you watch English-language TV.</p>
+    </div>
+  </div>
+
+  <!-- 11. PRACTICE 2: VAGUE + LIKE -->
+  <div class="tab-section" id="p2">
+    <div class="tab-header"><span class="tab-badge practice">PRACTICE</span><h2 class="tab-title">Try it: vague language &amp; <em>like</em></h2></div>
+    <hr class="tab-rule">
+    <div class="exercise">
+      <span class="ex-lbl y">Exercise 4 · Identify the function</span>
+      <h4>Say which function of <em>like</em> is being used in each sentence (comparison / approximator / quotative / discourse marker).</h4>
+      <div class="qrow"><span class="qnum">1.</span><span>"It's, like, two in the morning — what are you doing here?"</span>
+        <input class="blank" id="e4a" data-ans="approximator" placeholder="function…"></div>
+      <div class="qrow"><span class="qnum">2.</span><span>"And she was like, 'I don't even know what happened.'"</span>
+        <input class="blank" id="e4b" data-ans="quotative" placeholder="function…"></div>
+      <div class="qrow"><span class="qnum">3.</span><span>"The park was dark, like, I couldn't see more than a metre ahead."</span>
+        <input class="blank" id="e4c" data-ans="discourse marker" placeholder="function…"></div>
+      <div class="qrow"><span class="qnum">4.</span><span>"Rex ran towards him like an arrow — straight and fast."</span>
+        <input class="blank" id="e4d" data-ans="comparison" placeholder="function…"></div>
+      <div class="qrow"><span class="qnum">5.</span><span>"I was like, should I call the police or should I wait?"</span>
+        <input class="blank" id="e4e" data-ans="quotative" placeholder="function…"></div>
+      <button class="chk-btn" onclick="checkEx('e4a,e4b,e4c,e4d,e4e','fb4')">Check</button>
+      <div class="fb" id="fb4"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">approximator</span><span class="anote">"Like, two in the morning" = approximately 2 am. Hedging a time.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">quotative</span><span class="anote">"She was like, 'I don't even know'" = introduces what someone said/thought.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">discourse marker</span><span class="anote">"The park was dark, like, I couldn't see" — "like" here is a structuring filler introducing an elaboration.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">comparison (preposition)</span><span class="anote">"Like an arrow" = traditional preposition: in the manner of, similar to.</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">quotative</span><span class="anote">"I was like, should I call the police" = introduces an internal thought / reported inner speech.</span></div>
+    
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-lbl y">Exercise 5 · Formal ↔ informal rewriting</span>
+      <h4>Rewrite the formal police report sentence as Theo's informal speech — add appropriate vague language. Then rewrite the informal sentence as formal detective's notes — remove all vague language.</h4>
+      <p class="instr">There is no single correct answer. Aim for natural-sounding informal speech and precise formal writing.</p>
+      <div class="qrow"><span class="qnum">1. Formal →</span></div>
+      <p style="margin-left:26px;font-style:italic;margin-bottom:6px;">"The vehicle departed the premises at approximately 01:52."</p>
+      <p style="margin-left:26px;font-size:13.5px;color:var(--grey);">Rewrite as Theo's informal speech:</p>
+      <textarea class="tarea" id="e5a" placeholder="Yeah, so the car just, like, drove off or whatever…"></textarea>
+      <div class="qrow" style="margin-top:12px;"><span class="qnum">2. Informal →</span></div>
+      <p style="margin-left:26px;font-style:italic;margin-bottom:6px;">"It was sort of dark blue, kind of estate-ish, and it was just like sitting there with the engine running or whatever."</p>
+      <p style="margin-left:26px;font-size:13.5px;color:var(--grey);">Rewrite as Detective Okafor's formal note:</p>
+      <textarea class="tarea" id="e5b" placeholder="The vehicle was described as a dark blue estate car, stationary with the engine running."></textarea>
+      <p style="font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--grey);margin-top:8px;font-style:italic;">Bring both rewrites to class for comparison.</p>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-lbl y">Exercise 6 · Vague language gap-fill</span>
+      <h4>Fill the gap with an appropriate vague language item from the box.</h4>
+      <p class="instr"><em>kind of · sort of · stuff · things · or whatever · like</em></p>
+      <div class="qrow"><span class="qnum">1.</span><span>There was a bag and __________ on the ground near him.</span>
+        <input class="blank" id="e6a" data-ans="stuff|things" placeholder="…"></div>
+      <div class="qrow"><span class="qnum">2.</span><span>Rex was __________ urgently pulling — not his usual curious sniffing.</span>
+        <input class="blank" id="e6b" data-ans="kind of|sort of|like" placeholder="…"></div>
+      <div class="qrow"><span class="qnum">3.</span><span>I wasn't sure if he was asleep, injured, __________ .</span>
+        <input class="blank" id="e6c" data-ans="or whatever" placeholder="…"></div>
+      <div class="qrow"><span class="qnum">4.</span><span>The lights were broken __________ it was really hard to see properly.</span>
+        <input class="blank" id="e6d" data-ans="kind of|sort of|like" placeholder="…"></div>
+      <div class="qrow"><span class="qnum">5.</span><span>And I was __________, why would a car be here at this time of night?</span>
+        <input class="blank" id="e6e" data-ans="like" placeholder="…"></div>
+      <button class="chk-btn" onclick="checkEx('e6a,e6b,e6c,e6d,e6e','fb6')">Check</button>
+      <div class="fb" id="fb6"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">stuff / things</span><span class="anote">General extender — stands in for unspecified items. Both natural here.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">kind of / sort of</span><span class="anote">Approximator modifying "urgently." Like also acceptable.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">or whatever</span><span class="anote">Set completer — signals the list of possibilities is open-ended.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">kind of / sort of / like</span><span class="anote">Any approximator works — modifying the whole clause.</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">like</span><span class="anote">Quotative like — introducing inner thought. "Kind of/sort of" don't work here.</span></div>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Crime & Investigation — the word set -->
+  <div class="tab-section" id="vocab">
+    <div class="tab-header"><span class="tab-badge vocab">VOCABULARY</span><h2 class="tab-title">Crime &amp; Investigation — the word set</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3>Core vocabulary: the investigation</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card"><span class="wd">unresponsive</span><span class="pos">adj</span><div class="pn">/ˌʌnrɪˈspɒnsɪv/</div><div class="df">not reacting to stimuli — used medically for unconscious / not reacting to questions</div><div class="xm">"The subject was found unresponsive on the east footpath."</div></div>
+        <div class="vocab-card"><span class="wd">to idle</span><span class="pos">verb</span><div class="pn">/ˈaɪdl/</div><div class="df">(of an engine/vehicle) to run at low speed without moving forward; to be parked with the engine running</div><div class="xm">"A dark vehicle had been idling at the park entrance."</div></div>
+        <div class="vocab-card"><span class="wd">to come forward</span><span class="pos">phrasal v</span><div class="pn">/kʌm ˈfɔːwəd/</div><div class="df">to voluntarily offer yourself as a witness or source of information to police</div><div class="xm">"The second witness waited over an hour before she came forward."</div></div>
+        <div class="vocab-card"><span class="wd">a perimeter</span><span class="pos">noun</span><div class="pn">/pəˈrɪmɪtə/</div><div class="df">the outer edge or boundary of an area; the path around the outside of it</div><div class="xm">"Theo had been walking along the south perimeter."</div></div>
+        <div class="vocab-card"><span class="wd">to malfunction</span><span class="pos">verb</span><div class="pn">/ˌmælˈfʌŋkʃən/</div><div class="df">to fail to work correctly; to develop a fault</div><div class="xm">"The footpath lighting had been malfunctioning for several days."</div></div>
+        <div class="vocab-card"><span class="wd">to transfer</span><span class="pos">verb</span><div class="pn">/trænsˈfɜː/</div><div class="df">to move a patient from one location to another; in crime: to move a suspect into custody</div><div class="xm">"The subject was transferred to Riverside General."</div></div>
+        <div class="vocab-card"><span class="wd">a suspect</span><span class="pos">noun</span><div class="pn">/ˈsʌspekt/</div><div class="df">a person believed to be possibly guilty of a crime but not yet charged</div><div class="xm">"The vehicle owner became the primary suspect."</div></div>
+        <div class="vocab-card"><span class="wd">to be remanded</span><span class="pos">passive v</span><div class="pn">/rɪˈmɑːndɪd/</div><div class="df">to be sent back into custody while awaiting trial — "remanded in custody" = held until trial</div><div class="xm">"He was remanded in custody pending further investigation."</div></div>
+      </div>
+    </div>
+
+    <div class="grammar-box">
+      <h3>Extended vocabulary: crime &amp; punishment</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card"><span class="wd">motive</span><span class="pos">noun</span><div class="pn">/ˈməʊtɪv/</div><div class="df">the reason or cause behind a criminal act — why someone committed a crime</div><div class="xm">"Detective Okafor was still trying to establish a motive."</div></div>
+        <div class="vocab-card"><span class="wd">to apprehend</span><span class="pos">verb</span><div class="pn">/ˌæprɪˈhend/</div><div class="df">to arrest or capture a suspect; formal/literary equivalent of "to catch"</div><div class="xm">"The driver was apprehended three days later."</div></div>
+        <div class="vocab-card"><span class="wd">to corroborate</span><span class="pos">verb</span><div class="pn">/kəˈrɒbəreɪt/</div><div class="df">to confirm or support a claim with additional evidence or testimony</div><div class="xm">"The CCTV footage corroborated Theo's account."</div></div>
+        <div class="vocab-card"><span class="wd">a discrepancy</span><span class="pos">noun</span><div class="pn">/dɪˈskrepənsi/</div><div class="df">a difference between two accounts or pieces of information that should match</div><div class="xm">"There were discrepancies between the two witness statements."</div></div>
+        <div class="vocab-card"><span class="wd">circumstantial</span><span class="pos">adj</span><div class="pn">/ˌsɜːkəmˈstænʃl/</div><div class="df">based on circumstances rather than direct proof — suggestive but not conclusive</div><div class="xm">"The evidence was circumstantial — no direct proof linked him to the scene."</div></div>
+        <div class="vocab-card"><span class="wd">forensic</span><span class="pos">adj</span><div class="pn">/fəˈrensɪk/</div><div class="df">relating to the use of scientific methods to investigate crimes</div><div class="xm">"The forensic team found footprints near the east entrance."</div></div>
+        <div class="vocab-card"><span class="wd">to acquit</span><span class="pos">verb</span><div class="pn">/əˈkwɪt/</div><div class="df">to officially find someone not guilty of a crime after trial</div><div class="xm">"He was acquitted due to insufficient evidence."</div></div>
+        <div class="vocab-card"><span class="wd">a verdict</span><span class="pos">noun</span><div class="pn">/ˈvɜːdɪkt/</div><div class="df">the official decision of a court — "guilty" or "not guilty"</div><div class="xm">"The jury took three days to reach a verdict."</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Crime &amp; investigation collocations</h3>
+      <div class="chip-row">
+        <span class="chip">establish a motive</span><span class="chip">gather / collect evidence</span><span class="chip">take a statement</span>
+        <span class="chip">carry out / conduct an investigation</span><span class="chip">reach a verdict</span><span class="chip">corroborate testimony</span>
+        <span class="chip">be remanded in custody</span><span class="chip">be acquitted of charges</span><span class="chip">circumstantial evidence</span>
+        <span class="chip">forensic analysis</span><span class="chip">apprehend a suspect</span><span class="chip">come forward as a witness</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>INVESTIGATE word family</h3>
+      <div class="table-scroll"><table class="word-fam">
+        <tr><th>Noun</th><th>Verb</th><th>Adjective</th><th>Adverb</th></tr>
+        <tr><td>investigation</td><td>investigate</td><td>investigative</td><td>—</td></tr>
+        <tr><td>investigator</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td>suspicion</td><td>suspect</td><td>suspicious / suspect</td><td>suspiciously</td></tr>
+        <tr><td>evidence</td><td>—</td><td>evident / evidential</td><td>evidently</td></tr>
+        <tr><td>verdict</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td>acquittal</td><td>acquit</td><td>—</td><td>—</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <!-- SECTION: Try it: vocabulary -->
+  <div class="tab-section" id="vp">
+    <div class="tab-header"><span class="tab-badge vocab">PRACTICE</span><h2 class="tab-title">Try it: vocabulary</h2></div>
+    <hr class="tab-rule">
+    <div class="exercise">
+      <span class="ex-lbl v">Exercise 7 · Meaning match</span>
+      <h4>Match each term to its definition.</h4>
+      <div class="match-grid" id="matchGrid">
+        <div class="match-item" data-pair="1">to corroborate</div>
+        <div class="match-item" data-pair="3">not reacting — unconscious or non-responsive</div>
+        <div class="match-item" data-pair="2">circumstantial</div>
+        <div class="match-item" data-pair="4">the reason behind a criminal act</div>
+        <div class="match-item" data-pair="3">unresponsive</div>
+        <div class="match-item" data-pair="1">to confirm with supporting evidence</div>
+        <div class="match-item" data-pair="4">motive</div>
+        <div class="match-item" data-pair="2">suggestive but not conclusively proven</div>
+      </div>
+      <div class="fb" id="fb-match"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-lbl v">Exercise 8 · Collocation gap-fill</span>
+      <h4>Complete with the correct verb: <em>establish · corroborate · reach · conduct · gather · apprehend</em></h4>
+      <div class="qrow"><span class="qnum">1.</span><span>The team spent three days trying to __________ a motive for the attack.</span>
+        <input class="blank" id="e8a" data-ans="establish" placeholder="verb…"></div>
+      <div class="qrow"><span class="qnum">2.</span><span>Police continued to __________ evidence from the scene throughout the night.</span>
+        <input class="blank" id="e8b" data-ans="gather" placeholder="verb…"></div>
+      <div class="qrow"><span class="qnum">3.</span><span>The second witness's account helped to __________ Theo's original statement.</span>
+        <input class="blank" id="e8c" data-ans="corroborate" placeholder="verb…"></div>
+      <div class="qrow"><span class="qnum">4.</span><span>Officers __________ the suspect outside his home three days after the incident.</span>
+        <input class="blank" id="e8d" data-ans="apprehended" placeholder="verb…"></div>
+      <div class="qrow"><span class="qnum">5.</span><span>The jury took four hours to __________ a verdict.</span>
+        <input class="blank" id="e8e" data-ans="reach" placeholder="verb…"></div>
+      <button class="chk-btn" onclick="checkEx('e8a,e8b,e8c,e8d,e8e','fb8')">Check</button>
+      <div class="fb" id="fb8"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">establish</span><span class="anote">"Establish a motive" — fixed collocation. Discover/find a motive are less standard.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">gather</span><span class="anote">"Gather evidence" — also "collect evidence." Both acceptable.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">corroborate</span><span class="anote">"Corroborate a statement/account" — confirm with additional evidence.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">apprehended</span><span class="anote">"Apprehend a suspect" — formal. Past tense here: "apprehended."</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">reach</span><span class="anote">"Reach a verdict" — fixed collocation. "Achieve" and "make" don't collocate naturally.</span></div>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 14. PUTTING IT TOGETHER -->
+
+  <!-- SECTION: Speaking Practice -->
+  <div class="tab-section" id="speaking">
+    <div class="tab-header"><span class="tab-badge tb-speak">SPEAKING PRACTICE</span><h2 class="tab-title">Precision and vagueness &mdash; spoken</h2></div>
+    <hr class="tab-rule">
+    <p class="section-intro">Detective Okafor writes with precision; Theo speaks with hedges, fillers, and <em>like</em>. Both are correct English &mdash; for their setting. This week's speaking work is learning to move between the two on purpose. Voice memo app ready.</p>
+
+    <div class="speak-card">
+      <span class="speak-type">Describe &amp; compare</span>
+      <h3>One event, two voices</h3>
+      <p>Take one small real event from your week &mdash; a delay, a strange phone call, something you noticed on the street. Describe it aloud <strong>twice, 45 seconds each</strong>:</p>
+      <ul>
+        <li><strong>Version 1 &mdash; the witness:</strong> informal and naturally vague: <em>"It was, like, around eightish? There were a couple of people, sort of standing about&hellip;"</em></li>
+        <li><strong>Version 2 &mdash; the report:</strong> formal and precise, like Okafor's notes: <em>"At approximately 20:00, two individuals were observed&hellip;"</em></li>
+      </ul>
+      <div class="speak-how"><strong>How:</strong> Record both back to back. <strong>When you listen back, check:</strong> Version 1 should contain at least four vague-language items; Version 2 should contain none. If vagueness leaked into Version 2, that's the exact skill to drill.</div>
+    </div>
+
+    <div class="speak-card">
+      <span class="speak-type">Shadowing drill</span>
+      <h3>Speaking like Theo</h3>
+      <p>Go back to Theo's witness statement in the Context section and take 3&ndash;5 of his most natural lines &mdash; the ones full of <em>like</em>, <em>sort of</em>, and <em>-ish</em>. Read them aloud <strong>three times</strong>:</p>
+      <ul>
+        <li>Once slowly, noticing where each hedge sits;</li>
+        <li>once at normal speaking pace;</li>
+        <li>once as naturally as you can &mdash; hesitations included, as if remembering while talking.</li>
+      </ul>
+      <div class="speak-how"><strong>How:</strong> Record the third read. <strong>When you listen back, check:</strong> vague language should sound casual, not careful. If your <em>like</em>s sound planned, go again &mdash; faster, looser.</div>
+    </div>
+
+    <div class="speak-card">
+      <span class="speak-type">Sentence challenge</span>
+      <h3>Six terms, sixty seconds each</h3>
+      <p>Use each of these items from this week's investigation vocabulary in a spoken sentence &mdash; about this week's case or any real case you know of. <strong>60 seconds per item</strong>:</p>
+      <ul>
+        <li><em>to corroborate</em></li>
+        <li><em>a discrepancy</em></li>
+        <li><em>circumstantial</em></li>
+        <li><em>forensic</em></li>
+        <li><em>to come forward</em></li>
+        <li><em>a verdict</em></li>
+      </ul>
+      <div class="speak-how"><strong>How:</strong> One continuous recording, timer on. <strong>When you listen back, check:</strong> stress placement &mdash; <em>disCREPancy, corROBorate, forENsic</em>. Say any misplaced one five times correctly before moving on.</div>
+    </div>
+
+    <div class="tip-box">
+      <h3>Technique: vagueness is a register, not a mistake</h3>
+      <ul>
+        <li>B2 speakers often sound <em>too</em> precise in casual talk. <em>"There were approximately twenty people"</em> is odd at a party; <em>"about twenty, twenty-fiveish"</em> is native. Match the room.</li>
+        <li>Every use of <em>like</em> has a job &mdash; comparison, approximator, quotative, or filler. If you use it, know which one you're using.</li>
+        <li>Past Perfect Progressive sets the scene before the event: <em>"He'd been sitting there for hours before anyone noticed."</em> One per story is usually enough &mdash; it's a spotlight, not a floodlight.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION: Two voices, one event -->
+  <div class="tab-section" id="together">
+    <div class="tab-header"><span class="tab-badge activate">PUTTING IT TOGETHER</span><h2 class="tab-title">Two voices, one event</h2></div>
+    <hr class="tab-rule">
+    <div class="activate-box">
+      <h3>Writing task: Theo's account &amp; the Detective's notes</h3>
+      <p>Three days after the incident, Detective Okafor writes up a formal scene narrative — and also re-reads Theo's informal statement. You have two writing tasks:</p>
+      <p><strong>Task A (60–80 words) — formal:</strong> Write Detective Okafor's scene narrative paragraph. Use Past Perfect Progressive for background actions, formal vocabulary from this week, and no vague language.</p>
+      <p><strong>Task B (60–80 words) — informal:</strong> Write what Theo later tells his friend about that night. Use vague language naturally (kind of, sort of, stuff, like as quotative). Include at least one Past Perfect Progressive sentence embedded in his account.</p>
+      <ul class="req-list">
+        <li>Both tasks: at least 2 PPP sentences</li>
+        <li>Task A: at least 3 crime/investigation vocabulary items</li>
+        <li>Task B: at least 4 vague language items including one quotative <em>like</em></li>
+        <li>Bring both to class — you'll compare with a partner</li>
+      </ul>
+    </div>
+    <textarea class="tarea" id="tgtherA" placeholder="Task A — Detective Okafor's formal narrative…" style="margin-bottom:8px;"></textarea>
+    <div class="wc" id="wcA">0 words</div>
+    <textarea class="tarea" id="tgtherB" placeholder="Task B — Theo telling his friend…" style="margin-top:14px;margin-bottom:8px;"></textarea>
+    <div class="wc" id="wcB">0 words</div>
+  </div>
+
+  <!-- 15. EXPLORE -->
+
+  <!-- SECTION: Listening & Watching -->
+  <div class="tab-section" id="listening">
+    <div class="tab-header"><span class="tab-badge tb-listen">LISTENING &amp; WATCHING</span><h2 class="tab-title">Real speech, real vagueness</h2></div>
+    <hr class="tab-rule">
+    <p class="section-intro">Textbooks clean speech up; real speakers hedge, approximate, and say <em>like</em> constantly. To master this week's vague language you need to hear it live. These B2 sources come with specific tasks.</p>
+
+    <div class="media-card">
+      <div class="media-head"><h3>All Ears English</h3><span class="media-platform">Podcast &middot; allearsenglish.com</span></div>
+      <p><strong>Why this week:</strong> Two hosts in genuine, unscripted American conversation &mdash; which means live vague language in every episode: <em>kind of, sort of, stuff like that, -ish</em>, and all four uses of <em>like</em>. This is Theo's register, at full natural speed.</p>
+      <div class="media-task"><strong>Your task:</strong> Pick any episode. For ten minutes, tally every vague-language item you hear, in categories: approximators (<em>about, around, -ish</em>), softeners (<em>kind of, sort of</em>), list completers (<em>and stuff, or something</em>), and <em>like</em>. Which category won? Then record 30 seconds of your own speech using the top two naturally.</div>
+    </div>
+
+    <div class="media-card">
+      <div class="media-head"><h3>TED-Ed</h3><span class="media-platform">YouTube &middot; ed.ted.com</span></div>
+      <p><strong>Why this week:</strong> Animated explainers on forensic science &mdash; how fingerprints, DNA, and crime-scene evidence actually work. The precise, formal register of Okafor's notes, with the animation carrying the technical load for B2 viewers.</p>
+      <div class="media-task"><strong>Your task:</strong> Watch one episode on forensics, once without subtitles, once with. Note 3 new words. Then summarise it aloud in 2&ndash;3 sentences using at least three items from this week's vocabulary (<em>forensic, corroborate, circumstantial&hellip;</em>) &mdash; in the formal register, zero vague language.</div>
+    </div>
+
+    <div class="media-card">
+      <div class="media-head"><h3>BBC 6 Minute English</h3><span class="media-platform">Podcast &middot; YouTube &middot; bbc.co.uk/learningenglish</span></div>
+      <p><strong>Why this week:</strong> Episodes on crime, policing, and justice at a measured natural pace, with transcripts &mdash; plus hosts who move constantly between scripted precision and unscripted chat. Both of this week's registers, side by side in six minutes.</p>
+      <div class="media-task"><strong>Your task:</strong> Choose an episode on crime or justice. Listen once without the transcript. Mark two moments where a host switches from formal (reading a definition) to informal (reacting to it). Shadow one informal reaction for 30 seconds &mdash; rhythm and intonation exactly.</div>
+    </div>
+  </div>
+
+  <!-- SECTION: Go further -->
+  <div class="tab-section" id="explore">
+    <div class="tab-header"><span class="tab-badge explore">EXPLORE ON YOUR OWN</span><h2 class="tab-title">Go further</h2></div>
+    <hr class="tab-rule">
+    <div class="explore-card">
+      <span class="explore-tag">Corpus research</span>
+      <h3>COCA: vague language in real speech</h3>
+      <p>Go to <strong>corpus.byu.edu/coca</strong> (or any spoken corpus you have access to). Search for "kind of" in the SPOKEN section. What are the five most common adjectives or nouns it appears with? Does the data confirm that it functions mainly as a hedge?</p>
+      <ul>
+        <li>Try the same with "sort of" — are the results different?</li>
+        <li>Find one example where "like" is clearly quotative and one where it's an approximator. Screenshot both.</li>
+        <li>Bring your findings to class.</li>
+      </ul>
+    </div>
+    <div class="explore-card">
+      <span class="explore-tag">Listening task</span>
+      <h3>Vague language in the wild</h3>
+      <p>Watch 5–10 minutes of any informal English-language interview, podcast, or reality TV programme. Count how many times you hear: <em>kind of, sort of, like, stuff, things, or whatever</em>.</p>
+      <ul>
+        <li>Which was most frequent?</li>
+        <li>Did any speaker use quotative "like"? How many times?</li>
+        <li>Did the speaker's register (formal vs informal) affect how much vague language they used?</li>
+        <li>Write 3–4 sentences reporting what you found — using appropriate reported speech from Week 4.</li>
+      </ul>
+    </div>
+    <div class="explore-card">
+      <span class="explore-tag">Grammar extension</span>
+      <h3>Past Perfect Progressive vs Present Perfect Progressive</h3>
+      <p>You've studied PPP (had been + -ing). There's a parallel tense: Present Perfect Progressive (have/has been + -ing). Compare these two:</p>
+      <ul>
+        <li><em>"She has been investigating the case for three weeks."</em> (still ongoing now)</li>
+        <li><em>"She had been investigating the case for three weeks when the suspect was found."</em> (up to a past point)</li>
+        <li>Write two sentences about the Riverside Park case — one in each tense. Be ready to explain the difference.</li>
+      </ul>
+    </div>
+    <div class="explore-card">
+      <span class="explore-tag">Writing extension</span>
+      <h3>The second witness</h3>
+      <p>Detective Okafor's notes mention "a second witness, initially unnamed." Write this witness's spoken account — 80–100 words. She had been standing near the park entrance and noticed the vehicle. Use vague language throughout (she too is nervous and uncertain), embed at least 2 PPP sentences, and include one moment of quotative <em>like</em>.</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Everything on one page -->
+  <div class="tab-section" id="ref">
+    <div class="tab-header"><span class="tab-badge ref">QUICK REFERENCE</span><h2 class="tab-title">Everything on one page</h2></div>
+    <hr class="tab-rule">
+    <div style="overflow-x:auto;">
+      <div class="table-scroll"><table class="ref-t">
+        <tr><th>Item</th><th>Form</th><th>Key rule</th><th>Example</th></tr>
+        <tr><td><strong>PPP positive</strong></td><td>had been + verb+ing</td><td>Ongoing action before a past reference point; stresses duration</td><td><em>"He had been lying there for 45 minutes."</em></td></tr>
+        <tr><td><strong>PPP negative</strong></td><td>hadn't been + verb+ing</td><td>Action was NOT in progress; same structure, add not</td><td><em>"Theo hadn't been planning to stay long."</em></td></tr>
+        <tr><td><strong>PPP question</strong></td><td>Had + subject + been + verb+ing?</td><td>Inversion — had comes first</td><td><em>"Had the vehicle been idling long?"</em></td></tr>
+        <tr><td><strong>PPP vs PP</strong></td><td>PP = had + past participle</td><td>PP = completion; PPP = duration. Stative verbs = PP only</td><td><em>"She had read it" vs "she had been reading it"</em></td></tr>
+        <tr><td><strong>Approximators</strong></td><td>kind of / sort of / like / a bit</td><td>Softens adjectives/adverbs. Informal spoken; not formal written</td><td><em>"Sort of dark blue." "Kind of urgent."</em></td></tr>
+        <tr><td><strong>General extenders</strong></td><td>stuff / things / everything</td><td>Stands in for items not specified. Informal spoken register</td><td><em>"A bag and stuff."</em></td></tr>
+        <tr><td><strong>Set completers</strong></td><td>or whatever / or something</td><td>Signals list is incomplete or open. Very informal</td><td><em>"Asleep or whatever."</em></td></tr>
+        <tr><td><strong>Quotative like</strong></td><td>I/she/he was like + speech/thought</td><td>Introduces what was said/thought. Informal only. Very frequent</td><td><em>"I was like, 'Rex, stop.'"</em></td></tr>
+      </table></div>
+    </div>
+    <div class="card" style="margin-top:18px;">
+      <h3>Key vocabulary — before Session 1</h3>
+      <div class="chip-row">
+        <span class="chip">unresponsive</span><span class="chip">to idle</span><span class="chip">perimeter</span><span class="chip">malfunction</span>
+        <span class="chip">suspect</span><span class="chip">motive</span><span class="chip">to corroborate</span><span class="chip">discrepancy</span>
+        <span class="chip">circumstantial</span><span class="chip">forensic</span><span class="chip">to acquit</span><span class="chip">verdict</span>
+        <span class="chip">to apprehend</span><span class="chip">to be remanded</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapup">
+    <h3>Before Session 1, make sure you can…</h3>
+    <ul>
+      <li>Form the PPP correctly: had been + verb+ing (positive, negative, question)</li>
+      <li>Explain when to use PPP over Past Perfect Simple (duration vs completion; stative verbs)</li>
+      <li>Name at least 4 types of vague language and give an example of each</li>
+      <li>Identify all four functions of "like" in spoken English</li>
+      <li>Explain when vague language is appropriate — and when it isn't</li>
+      <li>Have both Task A and Task B written and ready to share</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- SECTION: Footer - Creator & Copyright -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p class="footer-copy">&copy; 2026 Bahar Esmaeelzadeh &middot; All rights reserved</p>
+    <p class="footer-line">Designed and created for English learners by Bahar Esmaeelzadeh.</p>
+    <p class="footer-links">
+      <a href="mailto:bahar.esmz.en@gmail.com">&#128231; bahar.esmz.en@gmail.com</a>
+      <span class="footer-dot">&middot;</span>
+      <a href="https://www.linkedin.com/in/bahar-esmaeelzadeh-650b98198" target="_blank" rel="noopener">&#128188; LinkedIn</a>
+    </p>
+    <p class="footer-note">If you found this helpful, feel free to get in touch.</p>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  document.getElementById('pf').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+});
+let pollDone=false;
+document.querySelectorAll('.poll-opt').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    if(pollDone)return; pollDone=true;
+    document.querySelectorAll('.poll-opt').forEach(b=>b.classList.remove('sel'));
+    btn.classList.add('sel');
+    document.getElementById('pollNote').style.display='block';
+  });
+});
+document.querySelectorAll('.rev-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{ btn.nextElementSibling.style.display='block'; });
+});
+
+function norm(s){return s.trim().toLowerCase().replace(/['']/g,"'").replace(/\s+/g,' ');}
+function checkEx(ids,fbId){
+  const idArr=ids.split(',');
+  let ok=0;
+  idArr.forEach(id=>{
+    const el=document.getElementById(id);
+    if(!el)return;
+    const ans=el.dataset.ans||'';
+    if(ans==='open'){el.style.borderColor='var(--blue)';ok++;return;}
+    const v=norm(el.value);
+    const correct=ans.split('|').some(a=>v===norm(a)||v.includes(norm(a).substring(0,Math.min(norm(a).length,18)))||norm(a).includes(v.substring(0,Math.min(v.length,18))));
+    if(correct){ok++;el.style.borderColor='var(--blue)';}
+    else el.style.borderColor='var(--red)';
+  });
+  const fb=document.getElementById(fbId);
+  fb.classList.add('show');
+  if(ok===idArr.length){fb.classList.remove('bad');fb.classList.add('good');fb.textContent='All '+idArr.length+' correct!';}
+  else{fb.classList.remove('good');fb.classList.add('bad');fb.textContent=ok+' of '+idArr.length+' correct — check red borders.';}
+}
+
+let firstSel=null,matchCount=0;
+document.querySelectorAll('.match-item').forEach(item=>{
+  item.addEventListener('click',()=>{
+    if(item.classList.contains('matched'))return;
+    if(!firstSel){firstSel=item;item.classList.add('sel');}
+    else if(firstSel===item){firstSel.classList.remove('sel');firstSel=null;}
+    else if(firstSel.dataset.pair===item.dataset.pair){
+      [firstSel,item].forEach(el=>{el.classList.remove('sel');el.classList.add('matched');});
+      matchCount++;
+      firstSel=null;
+      const fb=document.getElementById('fb-match');
+      fb.classList.add('show','good');
+      fb.textContent=matchCount===4?'All 4 matched!':matchCount+' of 4 — keep going!';
+    } else {
+      item.classList.add('wrong');
+      setTimeout(()=>{firstSel.classList.remove('sel');item.classList.remove('wrong');firstSel=null;},500);
+    }
+  });
+});
+
+function wc(ta,el){
+  const w=ta.value.trim().split(/\s+/).filter(x=>x.length>0);
+  el.textContent=(ta.value.trim()===''?0:w.length)+' words';
+}
+const taA=document.getElementById('tgtherA'),taB=document.getElementById('tgtherB');
+const wcA=document.getElementById('wcA'),wcB=document.getElementById('wcB');
+if(taA)taA.addEventListener('input',()=>wc(taA,wcA));
+if(taB)taB.addEventListener('input',()=>wc(taB,wcB));
+
+/* Site frame (added): contents panel, back-to-top, table scroll hints */
+(function(){
+  var panel=document.getElementById('navPanel'),ov=document.getElementById('navOverlay'),
+      ham=document.getElementById('navHamburger'),closeB=document.getElementById('navClose'),
+      links=document.getElementById('navPanelLinks');
+  document.querySelectorAll('.toc a').forEach(function(a){
+    var n=document.createElement('a');
+    n.href=a.getAttribute('href');
+    n.textContent=a.textContent.replace(/^\s*\d+[a-z]?\.\s*/,'');
+    links.appendChild(n);
+  });
+  function openP(){panel.classList.add('open');ov.classList.add('open');ham.setAttribute('aria-expanded','true');panel.setAttribute('aria-hidden','false');}
+  function closeP(){panel.classList.remove('open');ov.classList.remove('open');ham.setAttribute('aria-expanded','false');panel.setAttribute('aria-hidden','true');}
+  ham.addEventListener('click',function(){panel.classList.contains('open')?closeP():openP();});
+  closeB.addEventListener('click',closeP);
+  ov.addEventListener('click',closeP);
+  links.addEventListener('click',function(e){if(e.target.tagName==='A')closeP();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeP();});
+  document.getElementById('navTopBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  function hints(){document.querySelectorAll('.table-scroll').forEach(function(w){
+    if(w.scrollWidth>w.clientWidth+2){w.classList.add('has-overflow');}else{w.classList.remove('has-overflow');}
+  });}
+  window.addEventListener('resize',hints);window.addEventListener('load',hints);hints();
+  document.querySelectorAll('.table-scroll').forEach(function(w){
+    w.addEventListener('scroll',function(){if(w.scrollLeft>12)w.classList.remove('has-overflow');},{passive:true});
+  });
+})();
+
+
+function toggleAK(btn){var p=btn.nextElementSibling;if(p.hasAttribute('hidden')){p.removeAttribute('hidden');btn.setAttribute('aria-expanded','true');btn.textContent=btn.textContent.replace(/^Show/,'Hide');}else{p.setAttribute('hidden','');btn.setAttribute('aria-expanded','false');btn.textContent=btn.textContent.replace(/^Hide/,'Show');}}
+</script>
+</body>
+</html>
