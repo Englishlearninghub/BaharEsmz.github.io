@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet">
+<title>Grade 4 · Week 2 — A Walk Through Vienna</title>
+<style>
+  :root{
+    --paper:#f6ecd9;
+    --paper2:#f0e2c6;
+    --ink:#3a2a1a;
+    --ink-soft:#6b5642;
+    --coffee:#6f4518;
+    --coffee-dark:#4f3010;
+    --concrete:#7a6a58;
+    --gold:#c48a3f;
+    --gold-dark:#9c6a26;
+    --teal:#3f8079;
+    --teal-dark:#2a5b55;
+    --card:#fffaf0;
+    --line:#dfc9a0;
+    --danger:#a3261c;
+    --good:#2f6b3a;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',Calibri,Arial,sans-serif;
+    color:var(--ink);
+    background:
+      repeating-linear-gradient(0deg, rgba(0,0,0,0.015) 0px, rgba(0,0,0,0.015) 1px, transparent 1px, transparent 3px),
+      radial-gradient(circle at 15% 8%, #fbf3e2 0%, var(--paper) 45%, var(--paper2) 100%);
+    line-height:1.65;
+    font-size:16.5px;
+    padding-bottom:60px;
+  }
+  #progress{
+    position:fixed; top:0; left:0; height:6px; width:0%;
+    background:linear-gradient(90deg,var(--coffee),var(--teal));
+    z-index:999; transition:width .1s ease-out;
+  }
+  header.hero{
+    padding:56px 8vw 40px;
+    background:
+      linear-gradient(135deg, rgba(79,48,16,0.94), rgba(42,91,85,0.90)),
+      repeating-linear-gradient(45deg, rgba(255,255,255,0.04) 0 10px, transparent 10px 20px);
+    color:#f6ecd9;
+    border-bottom:6px solid var(--gold);
+  }
+  header.hero .eyebrow{
+    font-family:'Inter',Arial,Helvetica,sans-serif;
+    text-transform:uppercase; letter-spacing:3px; font-size:12.5px;
+    color:#e7c98a; font-weight:700;
+  }
+  header.hero h1{ font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size:clamp(28px,4vw,44px); margin:10px 0 6px; }
+  header.hero p.lead{ font-size:18px; max-width:760px; color:#efe2c9; }
+  .badge-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .pill{
+    font-family:'Inter',Arial,sans-serif; font-size:13px; font-weight:700;
+    padding:7px 14px; border-radius:20px; background:rgba(255,255,255,0.14);
+    border:1px solid rgba(255,255,255,0.32); color:#fff;
+  }
+  main{ max-width:960px; margin:0 auto; padding:0 6vw; }
+
+  nav.toc{
+    background:var(--card); border:2px solid var(--line); border-radius:6px;
+    margin:-28px auto 40px; padding:26px 30px; max-width:900px;
+    box-shadow:0 6px 18px rgba(60,40,10,0.12);
+  }
+  nav.toc h2{ margin-top:0; font-size:20px; color:var(--coffee-dark); font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; }
+  nav.toc ol{
+    columns:2; column-gap:34px; list-style:none; padding:0; margin:0; counter-reset:tocnum;
+  }
+  nav.toc li{ break-inside:avoid; margin-bottom:9px; }
+  nav.toc a{
+    text-decoration:none; color:var(--ink); font-size:15px; display:flex; gap:10px; align-items:baseline;
+  }
+  nav.toc a:hover{ color:var(--coffee); }
+  nav.toc .n{
+    font-family:'Inter',Arial,sans-serif; font-weight:800; font-size:12px; color:#fff;
+    background:var(--concrete); border-radius:50%; min-width:22px; height:22px;
+    display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  nav.toc li:nth-child(4n+1) .n{background:var(--coffee);}
+  nav.toc li:nth-child(4n+2) .n{background:var(--gold-dark);}
+  nav.toc li:nth-child(4n+3) .n{background:var(--teal-dark);}
+  nav.toc li:nth-child(4n+4) .n{background:var(--concrete);}
+
+  section{ margin-bottom:56px; scroll-margin-top:20px; }
+  .sec-head{ display:flex; align-items:center; gap:14px; margin-bottom:18px; }
+  .sec-num{
+    font-family:'Inter',Arial,sans-serif; font-weight:800; color:#fff; background:var(--coffee);
+    width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    flex-shrink:0; font-size:17px;
+  }
+  h2{ font-size:26px; margin:0; color:var(--coffee-dark); font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; }
+  h3{ color:var(--teal-dark); font-size:20px; font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; }
+  .tag{
+    font-family:'Inter',Arial,sans-serif; font-size:11.5px; text-transform:uppercase; letter-spacing:1.5px;
+    font-weight:700; color:var(--ink-soft);
+  }
+
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:6px;
+    padding:22px 26px; margin-bottom:18px; box-shadow:0 3px 10px rgba(60,40,10,0.06);
+  }
+
+  /* Realia documents */
+  .doc{
+    background:#fffdf7; border:1px solid #ddc9a0; border-radius:3px; padding:20px 24px; margin-bottom:20px;
+    position:relative; box-shadow:2px 3px 0 rgba(0,0,0,0.05);
+  }
+  .doc::before{
+    content:attr(data-doctype); position:absolute; top:-11px; left:18px; background:var(--gold);
+    color:#3a2a1a; font-family:'Inter',Arial,sans-serif; font-size:11px; font-weight:800; letter-spacing:1px;
+    padding:3px 10px; border-radius:3px; text-transform:uppercase;
+  }
+  .doc .doc-meta{ font-family:'Inter',Arial,sans-serif; font-size:12.5px; color:var(--ink-soft); margin-bottom:10px; }
+  .doc.chat{ background:#eef3f2; }
+  .chat-bubble{ max-width:75%; padding:9px 14px; border-radius:14px; margin:6px 0; font-family:'Inter',Arial,sans-serif; font-size:14.5px; }
+  .chat-bubble.me{ background:#dcefe0; margin-left:auto; border-bottom-right-radius:3px; }
+  .chat-bubble.them{ background:#fff; border:1px solid #ddd; border-bottom-left-radius:3px; }
+  .chat-name{ font-size:11px; color:var(--ink-soft); margin:8px 0 2px; font-family:'Inter',Arial,sans-serif; }
+
+  mark.hl{ background:#f7d98f; padding:1px 4px; border-radius:3px; }
+  mark.hl2{ background:#c9e0dd; padding:1px 4px; border-radius:3px; }
+
+  .notice-box{
+    border-left:5px solid var(--teal-dark); background:#eef4f3; padding:16px 20px; border-radius:0 4px 4px 0;
+    margin:16px 0;
+  }
+  .notice-box p{ margin:6px 0; }
+
+  table{ width:100%; border-collapse:collapse; margin:16px 0; font-family:'Inter',Arial,sans-serif; font-size:14.5px; }
+  th, td{ border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; }
+  th{ background:var(--coffee); color:#fff; font-size:13px; text-transform:uppercase; letter-spacing:.5px; }
+  tr:nth-child(even) td{ background:#faf1dd; }
+
+  .rule-box{
+    background:#fdf1dd; border:2px dashed var(--gold-dark); border-radius:6px; padding:18px 22px; margin:16px 0;
+  }
+  .rule-box h4{ margin-top:0; color:var(--coffee-dark); font-family:'Inter',Arial,sans-serif; }
+
+  button.reveal{
+    font-family:'Inter',Arial,sans-serif; font-weight:700; font-size:13.5px; color:#fff; background:var(--teal-dark);
+    border:none; border-radius:20px; padding:8px 18px; cursor:pointer; margin-top:8px;
+  }
+  button.reveal:hover{ background:var(--teal); }
+  .answer{ display:none; background:#eef4f3; border-left:4px solid var(--teal-dark); padding:10px 16px; margin-top:8px; border-radius:0 4px 4px 0; font-size:14.5px; }
+  .answer.show{ display:block; }
+
+  .quiz-item{ background:var(--card); border:1px solid var(--line); border-radius:6px; padding:16px 20px; margin-bottom:12px; }
+  .quiz-item p.q{ font-weight:700; margin:0 0 10px; }
+  .tf-buttons button, .mc-options button{
+    font-family:'Inter',Arial,sans-serif; font-size:13.5px; font-weight:700; padding:7px 16px; margin-right:8px;
+    border:2px solid var(--concrete); background:#fff; border-radius:5px; cursor:pointer; color:var(--ink);
+  }
+  .mc-options{ display:flex; flex-direction:column; gap:6px; align-items:flex-start; }
+  .tf-buttons button:hover, .mc-options button:hover{ background:#f1ece0; }
+  button.correct{ background:var(--good)!important; color:#fff!important; border-color:var(--good)!important; }
+  button.wrong{ background:var(--danger)!important; color:#fff!important; border-color:var(--danger)!important; }
+  .feedback{ font-family:'Inter',Arial,sans-serif; font-size:13.5px; margin-top:8px; font-weight:700; }
+
+  .match-wrap{ display:grid; grid-template-columns:1fr 1fr; gap:30px; }
+  .match-col button{
+    display:block; width:100%; text-align:left; margin-bottom:8px; padding:10px 14px; border-radius:5px;
+    border:2px solid var(--line); background:#fff; font-family:'Inter',Arial,sans-serif; font-size:14px; cursor:pointer;
+  }
+  .match-col button.selected{ border-color:var(--gold-dark); background:#fdf1dd; }
+  .match-col button.paired-correct{ border-color:var(--good); background:#e4f2e6; color:var(--good); font-weight:700;}
+  .match-col button.paired-wrong{ border-color:var(--danger); background:#fbe6e4; }
+  #matchScore{ font-family:'Inter',Arial,sans-serif; font-weight:700; margin-top:10px; }
+
+  textarea#writingBox{
+    width:100%; min-height:160px; font-family:Calibri,Arial,sans-serif; font-size:15px; padding:14px;
+    border:2px solid var(--line); border-radius:6px; resize:vertical;
+  }
+  #wordCount{ font-family:'Inter',Arial,sans-serif; font-size:13.5px; margin-top:6px; color:var(--ink-soft); }
+  #wordCount.ok{ color:var(--good); font-weight:700; }
+  #wordCount.low{ color:var(--danger); font-weight:700; }
+
+  .vocab-cols{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; margin:16px 0; }
+  .vocab-entry{ background:var(--card); border:1px solid var(--line); border-radius:6px; padding:16px 20px; }
+  .vocab-entry .headword{ font-family:'Inter',Arial,sans-serif; }
+  .vocab-entry .word{ font-weight:800; font-size:16px; color:var(--coffee-dark); }
+  .vocab-entry .pron{ font-family:"Courier New",monospace; font-size:11px; background:var(--ink); color:var(--paper); border-radius:3px; padding:1px 7px; margin-left:8px; }
+  .vocab-entry .pos{ font-family:'Inter',Arial,sans-serif; font-size:10.5px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.5px; margin-left:8px; }
+  .vocab-entry .def{ margin-top:7px; font-size:14.5px; }
+  .vocab-entry .ex{ margin-top:7px; font-size:13.5px; font-style:italic; color:var(--ink-soft); border-left:3px solid var(--gold); padding-left:10px; }
+  .vocab-entry .colloc{ margin-top:7px; font-size:12.5px; color:var(--teal-dark); font-family:'Inter',Arial,sans-serif; }
+  .vocab-more{ background:#fbf3e0; border:1px dashed var(--line); border-radius:6px; padding:14px 20px; margin-top:6px; font-size:14px; }
+  .vocab-more h5{ margin:0 0 8px; font-family:'Inter',Arial,sans-serif; font-size:13px; text-transform:uppercase; letter-spacing:.5px; color:var(--ink-soft); }
+
+  .doc.dialogue{ background:#fdfaf2; }
+  .dialogue-line{ margin:9px 0; font-family:'Inter',Arial,sans-serif; font-size:14.5px; line-height:1.55; }
+  .dialogue-line .speaker{ font-weight:800; margin-right:6px; }
+  .speaker.julia{ color:var(--coffee-dark); }
+  .speaker.sofia{ color:var(--teal-dark); }
+  .speaker.daniel{ color:var(--gold-dark); }
+  .speaker.mei{ color:#8a4a6b; }
+  .speaker.local{ color:#3a5a3a; }
+
+  .fill-input{ font-family:'Inter',Arial,sans-serif; font-size:14px; border:none; border-bottom:2px solid var(--gold-dark); background:transparent; width:90px; text-align:center; padding:2px 4px; }
+  .fill-input:focus{ outline:none; border-bottom-color:var(--coffee-dark); }
+  .fill-line{ margin-bottom:14px; font-family:'Inter',Arial,sans-serif; font-size:15px; }
+
+  .explore-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+  .explore-card{
+    background:linear-gradient(160deg,#f1e6cc,#e9d8b3); border:1px solid var(--line); border-radius:8px;
+    padding:18px 20px;
+  }
+  .explore-card h5{ margin-top:0; color:var(--teal-dark); font-family:'Inter',Arial,sans-serif; }
+  .explore-card a{ color:var(--coffee-dark); font-weight:700; }
+
+  .summary-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:16px; }
+  .summary-card{
+    background:var(--card); border:1px solid var(--line); border-radius:8px; padding:18px;
+    text-align:center;
+  }
+  .summary-card .icon{ font-size:30px; margin-bottom:8px; display:block; }
+  .summary-card h5{ margin:6px 0; color:var(--coffee-dark); font-family:'Inter',Arial,sans-serif; }
+
+  .checklist label{ display:flex; gap:10px; align-items:flex-start; margin-bottom:10px; font-size:15px; cursor:pointer; }
+  .checklist input{ margin-top:4px; }
+
+  footer{ text-align:center; font-family:'Inter',Arial,sans-serif; font-size:12.5px; color:var(--ink-soft); padding:30px 0 10px; }
+
+  .bridge{
+    background:#fff; border-left:5px solid var(--gold-dark); border-radius:0 6px 6px 0;
+    padding:14px 20px; margin:-30px 0 40px; font-family:'Inter',Arial,sans-serif; font-size:14.5px;
+    color:var(--ink-soft); box-shadow:0 2px 8px rgba(60,40,10,0.07);
+  }
+  .bridge strong.arrow{ color:var(--coffee-dark); font-weight:800; }
+  .bridge.study{ border-left-color:var(--teal-dark); }
+  .bridge.study strong.arrow{ color:var(--teal-dark); }
+  .bridge.practice{ border-left-color:var(--gold-dark); }
+  .bridge.skills{ border-left-color:var(--coffee); }
+  .bridge.skills strong.arrow{ color:var(--coffee); }
+  .step-hint{
+    font-family:'Inter',Arial,sans-serif; font-size:13px; color:var(--ink-soft); font-style:italic;
+    background:#fbf3e0; border-radius:4px; padding:8px 14px; margin-bottom:14px; display:inline-block;
+  }
+
+  .map-svg-wrap{ background:#fffdf7; border:1px solid var(--line); border-radius:8px; padding:16px; margin:16px 0; }
+
+  ::selection{ background:#f7d98f; }
+  @media(max-width:640px){
+    nav.toc ol{ columns:1; }
+    .match-wrap{ grid-template-columns:1fr; }
+  }
+
+/* ============================================================
+   SITE FRAME (added): fixed top nav + progress bar, slide-out
+   contents panel with creator branding, sticky section headers,
+   responsive & overflow fixes, footer, speaking/listening cards
+   ============================================================ */
+:root{--navh:52px;}
+html{scroll-behavior:smooth;}
+body{overflow-x:hidden;padding-top:calc(var(--navh) + 4px);}
+[id]{scroll-margin-top:calc(var(--navh) + 20px);}
+img,svg,table{max-width:100%;}
+.wrap p,.wrap li,.wrap td,.wrap th,.wrap h1,.wrap h2,.wrap h3{overflow-wrap:break-word;word-break:break-word;}
+.masthead{margin-left:0;margin-right:0;}
+.debate-band{margin-left:0;margin-right:0;}
+
+/* Progress bar: fixed, always visible below the nav */
+.progress-track{position:fixed;top:var(--navh);left:0;right:0;height:4px;z-index:120;}
+
+/* Top navigation bar */
+.nav-bar{position:fixed;top:0;left:0;right:0;height:var(--navh);background:var(--coffee-dark);color:#FFFFFF;display:flex;align-items:center;gap:10px;padding:0 12px;z-index:130;box-shadow:0 2px 12px rgba(0,0,0,.20);}
+.nav-btn{min-width:44px;min-height:44px;background:transparent;border:none;color:#FFFFFF;font-size:20px;cursor:pointer;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',Arial,sans-serif;transition:background .15s;}
+.nav-btn:hover{background:rgba(255,255,255,.14);}
+.nav-top{font-size:13px;font-weight:700;letter-spacing:.03em;white-space:nowrap;padding:0 10px;}
+.nav-brand{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.25;}
+.nav-brand-week{font-family:'Inter',Arial,sans-serif;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;opacity:.75;}
+.nav-brand-title{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+/* Slide-out contents panel */
+.nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .25s;z-index:135;}
+.nav-overlay.open{opacity:1;pointer-events:auto;}
+.nav-panel{position:fixed;top:0;bottom:0;left:0;width:min(330px,88vw);background:#FFFFFF;z-index:140;transform:translateX(-103%);transition:transform .28s ease;display:flex;flex-direction:column;box-shadow:6px 0 28px rgba(0,0,0,.22);}
+.nav-panel.open{transform:translateX(0);}
+.nav-panel-head{display:flex;align-items:center;justify-content:space-between;padding:8px 10px 8px 20px;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);border-bottom:1px solid var(--paper2);}
+.nav-panel-head .nav-btn{color:var(--ink);font-size:16px;}
+.nav-panel-links{flex:1;overflow-y:auto;padding:10px 8px;}
+.nav-panel-links a{display:flex;align-items:center;min-height:44px;padding:6px 14px;border-radius:8px;text-decoration:none;color:var(--ink);font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:600;line-height:1.4;}
+.nav-panel-links a:hover{background:var(--paper);color:var(--teal-dark);}
+/* Branding zone: visually separated from navigation */
+.nav-panel-brand{border-top:2px solid var(--paper2);background:var(--paper);padding:16px 20px 18px;}
+.nav-panel-brand .brand-name{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.nav-panel-brand .brand-line{font-family:'Inter',Arial,sans-serif;font-size:12.5px;color:var(--ink-soft);margin-bottom:10px;line-height:1.55;}
+.nav-panel-brand a{display:flex;align-items:center;min-height:40px;font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--teal-dark);text-decoration:none;font-weight:600;}
+.nav-panel-brand a:hover{text-decoration:underline;}
+.nav-panel-brand .brand-copy{margin-top:10px;font-family:'Inter',Arial,sans-serif;font-size:11.5px;color:var(--ink-soft);}
+
+/* Sticky section headers: current section title stays visible */
+.tab-header{position:sticky;top:calc(var(--navh) + 4px);z-index:60;background:var(--paper);padding:10px 0 8px;}
+
+/* Scrollable table wrapper with mobile hint */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;}
+.table-scroll table{max-width:none;}
+.table-scroll.has-overflow{background:linear-gradient(to left,rgba(0,0,0,.12),rgba(0,0,0,0) 26px) right center / 26px 100% no-repeat;}
+.table-scroll.has-overflow::before{content:'scroll \2192';display:block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--ink-soft);text-align:right;padding:0 6px 4px;}
+
+/* Speaking & Listening sections */
+.tb-speak{background:var(--teal-dark);color:#FFFFFF;}
+.tb-listen{background:var(--gold-dark);color:#FFFFFF;}
+.section-intro{font-family:'Inter',Arial,sans-serif;font-size:14.5px;color:var(--ink-soft);margin:0 0 18px;line-height:1.65;}
+.speak-card{background:#FFFFFF;border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.07);border-left:4px solid var(--teal-dark);}
+.speak-type{display:inline-block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:8px;}
+.speak-card h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0 0 10px;color:var(--ink);}
+.speak-card p{margin:0 0 10px;}
+.speak-card ul{margin:0 0 10px 20px;padding:0;}
+.speak-card li{margin-bottom:6px;}
+.speak-how{background:var(--paper);border-radius:8px;padding:12px 16px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;line-height:1.65;margin-top:12px;}
+.media-card{background:#FFFFFF;border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.07);border-left:4px solid var(--gold-dark);}
+.media-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px;}
+.media-head h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0;color:var(--ink);}
+.media-platform{font-family:'Inter',Arial,sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--gold-dark);}
+.media-card p{margin:0 0 10px;}
+.media-task{border-left:3px solid var(--gold-dark);background:var(--paper);padding:10px 14px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;line-height:1.65;margin-top:10px;border-radius:0 8px 8px 0;}
+.tip-box{border:2px dashed var(--teal-dark);border-radius:10px;padding:18px 22px;background:#FFFFFF;margin-top:6px;}
+.tip-box h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:16px;margin:0 0 10px;color:var(--teal-dark);}
+.tip-box ul{margin:0 0 0 20px;padding:0;}
+.tip-box li{margin-bottom:6px;font-size:14.5px;}
+
+/* Footer */
+.site-footer{background:var(--coffee-dark);color:#FFFFFF;margin-top:56px;padding:34px 24px 40px;}
+.site-footer-inner{max-width:920px;margin:0 auto;text-align:center;}
+.footer-copy{font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:700;margin:0 0 6px;}
+.footer-line{font-family:'Playfair Display',Cambria,Georgia,serif;font-style:italic;font-size:14.5px;opacity:.88;margin:0 0 12px;}
+.footer-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 10px;}
+.footer-links a{color:#FFFFFF;font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding:8px 2px;min-height:44px;display:inline-flex;align-items:center;}
+.footer-links a:hover{border-bottom-color:#FFFFFF;}
+.footer-dot{opacity:.5;}
+.footer-note{font-family:'Inter',Arial,sans-serif;font-size:12.5px;opacity:.72;margin:0;}
+
+/* Mobile refinements (375px-safe) */
+@media(max-width:600px){
+  .wrap{padding-left:18px;padding-right:18px;}
+  .masthead{padding:34px 20px 28px;}
+  .grammar-box,.card{padding:20px 18px;}
+  .oped-body{padding:20px 18px;}
+  .speak-card,.media-card{padding:18px 16px;}
+  .check-btn,.reveal-btn,.rev-btn,.poll-opt{min-height:44px;}
+  .vs-table{grid-template-columns:1fr;}
+  .vs-divider{display:none;}
+  table.rule-table{font-size:13.5px;}
+  .nav-top{font-size:12px;}
+  .site-footer{padding:28px 18px 34px;}
+}
+
+/* Hero-skeleton frame adjustments */
+#progress{top:var(--navh);}
+h1,h2,h3{font-family:'Playfair Display',"Bookman Old Style","Century Schoolbook",Georgia,serif;}
+.sec-num{font-family:'Inter',Calibri,Arial,sans-serif;}
+.sec-head{position:sticky;top:calc(var(--navh) + 6px);background:var(--paper);z-index:60;padding:6px 0;}
+section{scroll-margin-top:calc(var(--navh) + 20px);}
+main p,main li,main td,main th{overflow-wrap:break-word;word-break:break-word;}
+.method-note{max-width:960px;margin:30px auto 0;padding:0 6vw;font-size:12.5px;
+  color:var(--ink-soft);text-align:center;font-family:'Inter',Calibri,Arial,sans-serif;}
+@media(max-width:600px){.reveal,.fill-input{min-height:44px;}}
+
+</style>
+</head>
+<body>
+
+<!-- SECTION: Top Navigation Bar -->
+<header class="nav-bar" id="navBar">
+  <button class="nav-btn nav-hamburger" id="navHamburger" aria-label="Open contents menu" aria-expanded="false">&#9776;</button>
+  <div class="nav-brand">
+    <span class="nav-brand-week">Grade 4 · Week 2</span>
+    <span class="nav-brand-title">A Walk Through Vienna</span>
+  </div>
+  <button class="nav-btn nav-top" id="navTopBtn" aria-label="Back to top">&#8593; Top</button>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+<aside class="nav-panel" id="navPanel" aria-hidden="true">
+  <div class="nav-panel-head"><span>On this page</span><button class="nav-btn nav-close" id="navClose" aria-label="Close menu">&#10005;</button></div>
+  <nav class="nav-panel-links" id="navPanelLinks"></nav>
+  <!-- Creator & branding section of the menu -->
+  <div class="nav-panel-brand">
+    <div class="brand-name">Bahar Esmaeelzadeh</div>
+    <div class="brand-line">Designed and created for English learners by Bahar Esmaeelzadeh.</div>
+    <a href="mailto:bahar.esmz.en@gmail.com">&#128231; bahar.esmz.en@gmail.com</a>
+    <a href="https://www.linkedin.com/in/bahar-esmaeelzadeh-650b98198" target="_blank" rel="noopener">&#128188; LinkedIn &mdash; Bahar Esmaeelzadeh</a>
+    <div class="brand-copy">&copy; 2026 Bahar Esmaeelzadeh &middot; All rights reserved</div>
+  </div>
+</aside>
+
+<div id="progress"></div>
+
+<header class="hero">
+  <div class="eyebrow">Grade 4 · Week 2 · Towns &amp; Cities</div>
+  <h1>A Walk Through Vienna</h1>
+  <p class="lead">Last Saturday, Sofia, Daniel, Mei, and Julia finally explored the city together. They got a little lost, asked a stranger for help, and found a hidden café by the canal. This week, you'll learn how to tell that kind of story — and how to give directions yourself.</p>
+  <div class="badge-row">
+    <span class="pill">Simple Past — Regular Verbs</span>
+    <span class="pill">Adverbs of Manner</span>
+    <span class="pill">Vocabulary: Around the City &amp; Directions</span>
+    <span class="pill">Skills: Listening · Writing</span>
+  </div>
+</header>
+
+<main>
+
+<nav class="toc" aria-label="Table of contents">
+  <h2>On This Page</h2>
+  <ol>
+    <li><a href="#sec1"><span class="n">1</span> A Walk Through Vienna — Documents</a></li>
+    <li><a href="#sec2"><span class="n">2</span> Notice the Pattern</a></li>
+    <li><a href="#sec3"><span class="n">3</span> Grammar Focus — Simple Past (Regular Verbs)</a></li>
+    <li><a href="#sec4"><span class="n">4</span> Grammar Focus — Adverbs of Manner</a></li>
+    <li><a href="#sec5"><span class="n">5</span> Vocabulary — Around the City</a></li>
+    <li><a href="#sec6"><span class="n">6</span> Vocabulary — Giving Directions</a></li>
+    <li><a href="#sec7"><span class="n">7</span> Practice — Complete the Dialogue</a></li>
+    <li><a href="#sec8"><span class="n">8</span> Practice — True or False</a></li>
+    <li><a href="#sec9"><span class="n">9</span> Practice — Match the Collocations</a></li>
+    <li><a href="#sec10"><span class="n">10</span> Practice — Multiple Choice</a></li>
+    <li><a href="#sec11"><span class="n">11</span> Practice — Fix the Errors</a></li>
+    <li><a href="#speaking"><span class="n">12</span> Speaking Practice</a></li>
+    <li><a href="#sec12"><span class="n">13</span> Skills — Listening: Daniel's Voice Message</a></li>
+    <li><a href="#sec13"><span class="n">14</span> Skills — Writing: Tell the Story of a Walk</a></li>
+    <li><a href="#listening"><span class="n">15</span> Listening &amp; Watching</a></li>
+    <li><a href="#sec14"><span class="n">16</span> Explore More — Independent Learning</a></li>
+    <li><a href="#sec15"><span class="n">17</span> Week Summary</a></li>
+    <li><a href="#sec16"><span class="n">18</span> Self-Check</a></li>
+    <li><a href="#sec17"><span class="n">19</span> Before Next Class</a></li>
+  </ol>
+</nav>
+
+<!-- 1 -->
+<!-- SECTION: A Walk Through Vienna — Documents -->
+<section id="sec1">
+  <div class="sec-head"><div class="sec-num">1</div><h2>A Walk Through Vienna — Documents</h2></div>
+  <p class="tag">Read first. Don't worry about grammar yet — just find out what happened on Saturday.</p>
+
+  <div class="doc chat" data-doctype="WhatsApp — 'New in Vienna' group, Thursday">
+    <div class="doc-meta">Thursday, 18:40</div>
+    <div class="chat-name">Julia</div>
+    <div class="chat-bubble them">The weather looks great this Saturday. Do you want to explore the city together? I know a lovely hidden café with a great view.</div>
+    <div class="chat-name">Sofia</div>
+    <div class="chat-bubble me">Sounds perfect! Where do we meet?</div>
+    <div class="chat-name">Julia</div>
+    <div class="chat-bubble them">Let's meet at Stephansplatz at 10am. I'll show you the way from there.</div>
+    <div class="chat-name">Daniel</div>
+    <div class="chat-bubble them">Sounds good, see you there!</div>
+    <div class="chat-name">Mei</div>
+    <div class="chat-bubble me">I'll bring my camera 📷</div>
+  </div>
+
+  <div class="doc" data-doctype="Julia's Direction Note">
+    <div class="doc-meta">Sent to the group on Friday night, so nobody gets lost</div>
+    <p>"From Stephansplatz, walk straight ahead down Rotenturmstraße. Continue until you reach the Danube Canal. Turn right and walk along the canal, past the old bridge. Cross the street carefully at the traffic lights, then turn left. The café is on the corner, just opposite the small park. You can't miss it — it's next to a bright red door."</p>
+  </div>
+
+  <div class="doc dialogue" data-doctype="Full Transcript — Getting a Little Lost">
+    <div class="doc-meta">Saturday, near the old bridge, 10:35 am</div>
+    <div class="dialogue-line"><span class="speaker daniel">Daniel:</span> Wait, I think we passed it. This doesn't look right.</div>
+    <div class="dialogue-line"><span class="speaker sofia">Sofia:</span> Let's ask someone. Excuse me! Sorry to bother you.</div>
+    <div class="dialogue-line"><span class="speaker local">Local:</span> No problem at all. Are you looking for something?</div>
+    <div class="dialogue-line"><span class="speaker daniel">Daniel:</span> Yes, actually — we're trying to find a small café near the canal, close to a park.</div>
+    <div class="dialogue-line"><span class="speaker local">Local:</span> Ah, I know it! Go straight ahead until the end of this street, then turn left. Walk past the old bridge again, and the café is on the corner, opposite the small park.</div>
+    <div class="dialogue-line"><span class="speaker daniel">Daniel:</span> Thank you so much!</div>
+    <div class="dialogue-line"><span class="speaker local">Local:</span> You're welcome. It's only a five-minute walk from here.</div>
+    <div class="dialogue-line"><span class="speaker julia">Julia:</span> (later, at the café) Did you understand the directions, Daniel?</div>
+    <div class="dialogue-line"><span class="speaker daniel">Daniel:</span> Yes, I did! We followed them carefully, and we found it quite easily in the end.</div>
+    <div class="dialogue-line"><span class="speaker mei">Mei:</span> I photographed the whole street while we waited — it was actually a beautiful mistake.</div>
+  </div>
+
+  <div class="doc" data-doctype="Sofia's Blog — 'New in Vienna, One Walk at a Time'">
+    <div class="doc-meta">Posted Sunday morning</div>
+    <p>Last Saturday, the four of us finally explored Vienna together. We arrived punctually at Stephansplatz, and Julia guided us confidently through the narrow streets of the old town. We walked slowly along the canal and admired the view. Near the old bridge, we got a little lost — but Daniel asked politely for directions, and a kind local pointed us the right way. We crossed the street carefully at the traffic lights, and after a short walk, we finally spotted the hidden café, exactly opposite the small park. We arrived hungrily and ordered cake immediately! Mei photographed the view beautifully, and we chatted happily for almost two hours. It certainly wasn't a perfect walk — but it was a perfect Saturday.</p>
+  </div>
+</section>
+
+<div class="bridge study"><strong class="arrow">&#8599; Next: notice before naming.</strong> You've just read about Saturday's walk. Before any grammar rules, let's look closely at the exact words the group used — this is called <em>noticing</em>.</div>
+
+<!-- 2 -->
+<!-- SECTION: Notice the Pattern -->
+<section id="sec2">
+  <div class="sec-head"><div class="sec-num">2</div><h2>Notice the Pattern</h2></div>
+  <p>Before we give these patterns a grammar name, let's find them ourselves. This helps you remember the rule much better than just reading it.</p>
+  <p class="step-hint">Step 1: Scroll back up to Section 1 and re-read Sofia's blog post. Step 2: Come back here and read questions A and B. Step 3: Try to answer them yourself before clicking "Check your noticing."</p>
+  <div class="notice-box">
+    <p><strong>A. Simple Past.</strong> Find these words in Sofia's blog: "arrived," "guided," "walked," "asked," "crossed," "photographed," "chatted." What do almost all of these words end in? What's different about "got" and "found"?</p>
+    <p><strong>B. Adverbs of Manner.</strong> Find: "arrived <strong>punctually</strong>," "guided us <strong>confidently</strong>," "asked <strong>politely</strong>," "crossed the street <strong>carefully</strong>," "photographed the view <strong>beautifully</strong>," "chatted <strong>happily</strong>." What do all of these words end in? What do they tell us — WHAT happened, or HOW it happened?</p>
+  </div>
+  <button class="reveal" onclick="toggleAnswer('n1')">Check your noticing</button>
+  <div class="answer" id="n1">
+    <p><strong>A.</strong> Most of these words end in <strong>-ed</strong> — this is the Simple Past of regular verbs. "Got" and "found" don't end in -ed because they are <strong>irregular</strong> verbs (you'll study these fully in Grade 5) — for now, just notice that most verbs are regular and follow the -ed pattern.</p>
+    <p><strong>B.</strong> All of these words end in <strong>-ly</strong>. They describe <strong>HOW</strong> the action happened, not what happened. "Arrived punctually" doesn't just tell us Julia arrived — it tells us she arrived <em>on time</em>. These words are called <strong>adverbs of manner</strong>.</p>
+  </div>
+  <p>Well done — you've just found two real grammar patterns by yourself, with no rules given to you first. Sections 3 and 4 now explain each pattern fully, using the exact same examples you just looked at.</p>
+</section>
+
+<div class="bridge study"><strong class="arrow">&#8599; Next: name the first pattern.</strong> You noticed the -ed pattern. Now let's name it properly: the <strong>Simple Past of regular verbs</strong>.</div>
+
+<!-- 3 -->
+<!-- SECTION: Grammar Focus — Simple Past (Regular Verbs) -->
+<section id="sec3">
+  <div class="sec-head"><div class="sec-num">3</div><h2>Grammar Focus — Simple Past (Regular Verbs)</h2></div>
+  <p class="tag">Talking about finished actions in the past — this week, only regular (-ed) verbs</p>
+  <p>You noticed this pattern yourself in Section 2. Now let's look at it properly, rule by rule, with clear examples.</p>
+
+  <h3>3.0 Form — the three patterns</h3>
+  <div class="table-scroll"><table>
+    <tr><th>Form</th><th>Structure</th><th>Example</th></tr>
+    <tr><td><strong>Positive</strong></td><td>subject + verb <strong>+ -ed</strong></td><td>We <strong>walked</strong> along the canal.</td></tr>
+    <tr><td><strong>Negative</strong></td><td>subject + didn't + base verb</td><td>We <strong>didn't stop</strong> until we found the café.</td></tr>
+    <tr><td><strong>Question</strong></td><td>Did + subject + base verb?</td><td><strong>Did</strong> you <strong>enjoy</strong> the walk?</td></tr>
+  </table></div>
+
+  <h3>3.1 Spelling rules for -ed</h3>
+  <p style="font-size:14.5px;color:var(--ink-soft);">Read the table below slowly. For each row, cover the "Example" column and try to guess it first.</p>
+  <div class="table-scroll"><table>
+    <tr><th>Rule</th><th>Example</th></tr>
+    <tr><td>Most verbs: add -ed</td><td>walk → walk<strong>ed</strong>, ask → ask<strong>ed</strong></td></tr>
+    <tr><td>Verb ends in -e: add -d only</td><td>arrive → arrive<strong>d</strong>, guide → guide<strong>d</strong>, live → live<strong>d</strong></td></tr>
+    <tr><td>Consonant + y: change y → ied</td><td>study → stud<strong>ied</strong>, carry → carr<strong>ied</strong></td></tr>
+    <tr><td>Vowel + y: just add -ed</td><td>play → play<strong>ed</strong>, stay → stay<strong>ed</strong></td></tr>
+    <tr><td>Short verb, one vowel + one consonant: double the consonant</td><td>stop → stop<strong>ped</strong>, chat → chat<strong>ted</strong></td></tr>
+  </table></div>
+
+  <h3>3.2 Pronouncing -ed — three sounds</h3>
+  <p style="font-size:14.5px;color:var(--ink-soft);">This is the part most learners never get taught directly — but it makes a huge difference to how natural you sound.</p>
+  <div class="table-scroll"><table>
+    <tr><th>Sound</th><th>After these endings</th><th>Examples</th></tr>
+    <tr><td><strong>/t/</strong></td><td>voiceless sounds: k, p, s, ch, sh, f</td><td>walk<strong>ed</strong> /wɔːkt/, ask<strong>ed</strong> /ɑːskt/</td></tr>
+    <tr><td><strong>/d/</strong></td><td>most voiced sounds: b, g, v, l, m, n, r, and vowels</td><td>arriv<strong>ed</strong> /əˈraɪvd/, play<strong>ed</strong> /pleɪd/</td></tr>
+    <tr><td><strong>/ɪd/</strong></td><td>verbs ending in -t or -d</td><td>want<strong>ed</strong> /ˈwɒntɪd/, need<strong>ed</strong> /ˈniːdɪd/</td></tr>
+  </table></div>
+
+  <h3>3.3 A common learner error</h3>
+  <div class="rule-box">
+    <h4>Don't double the past</h4>
+    <p style="color:var(--danger);">✗ We didn't walked to the café.</p>
+    <p style="color:var(--good);">✓ We didn't walk to the café. (the -ed moves to "didn't"; the main verb stays base form)</p>
+    <p style="color:var(--danger);">✗ Did you enjoyed the walk?</p>
+    <p style="color:var(--good);">✓ Did you enjoy the walk?</p>
+  </div>
+
+  <p style="font-size:14.5px;color:var(--ink-soft);">Now test yourself. Write your answers on paper first, then click the button to check.</p>
+  <button class="reveal" onclick="toggleAnswer('g1')">Try it: complete with the correct form</button>
+  <div class="answer" id="g1">
+    <p>1. Julia <strong>guided</strong> us through the old town.<br>
+    2. We <strong>didn't stop</strong> until we reached the canal.<br>
+    3. <strong>Did</strong> Daniel <strong>ask</strong> for directions? Yes, he <strong>did</strong>.<br>
+    4. Mei <strong>photographed</strong> the street while they waited.</p>
+  </div>
+</section>
+
+<div class="bridge study"><strong class="arrow">&#8599; Next: the second pattern.</strong> You've reviewed the Simple Past. Now let's look at the -ly words you noticed in Section 2 — <strong>adverbs of manner</strong>.</div>
+
+<!-- 4 -->
+<!-- SECTION: Grammar Focus — Adverbs of Manner -->
+<section id="sec4">
+  <div class="sec-head"><div class="sec-num">4</div><h2>Grammar Focus — Adverbs of Manner</h2></div>
+  <p class="tag">Describing HOW an action happened</p>
+
+  <h3>4.0 Form — adjective to adverb</h3>
+  <div class="table-scroll"><table>
+    <tr><th>Rule</th><th>Example</th></tr>
+    <tr><td>Most adjectives: add -ly</td><td>quiet → quiet<strong>ly</strong>, quick → quick<strong>ly</strong>, polite → polite<strong>ly</strong></td></tr>
+    <tr><td>Adjective ends in -y: change y → ily</td><td>happy → happ<strong>ily</strong>, easy → eas<strong>ily</strong>, hungry → hungr<strong>ily</strong></td></tr>
+    <tr><td>Adjective ends in -le: change e → y</td><td>gentle → gent<strong>ly</strong>, simple → simp<strong>ly</strong></td></tr>
+    <tr><td>Adjective ends in -ic: add -ally</td><td>basic → basic<strong>ally</strong>, dramatic → dramatic<strong>ally</strong></td></tr>
+    <tr><td>Irregular — no -ly at all</td><td>good → <strong>well</strong>, fast → <strong>fast</strong>, hard → <strong>hard</strong></td></tr>
+  </table></div>
+
+  <h3>4.1 Where do adverbs of manner go?</h3>
+  <div class="table-scroll"><table>
+    <tr><th>Position</th><th>Example</th></tr>
+    <tr><td><strong>After the verb</strong> (most common)</td><td>Julia guided us <strong>confidently</strong>.</td></tr>
+    <tr><td><strong>After the object</strong>, if there is one</td><td>Mei photographed the view <strong>beautifully</strong>.</td></tr>
+    <tr><td><strong>Not between the verb and its object</strong></td><td style="color:var(--danger);">✗ Mei photographed beautifully the view.</td></tr>
+  </table></div>
+
+  <div class="rule-box">
+    <h4>Adjective or adverb? Don't mix them up</h4>
+    <p style="color:var(--danger);">✗ She sang beautiful.</p>
+    <p style="color:var(--good);">✓ She sang <strong>beautifully</strong>. (describes the verb "sang" — needs an adverb)</p>
+    <p style="color:var(--danger);">✗ He is a good singer, and he sings good too.</p>
+    <p style="color:var(--good);">✓ He is a good singer (adjective + noun), and he sings <strong>well</strong> too (adverb + verb).</p>
+  </div>
+
+  <button class="reveal" onclick="toggleAnswer('g2')">Try it: choose adjective or adverb</button>
+  <div class="answer" id="g2">
+    <p>1. Daniel asked the local <strong>politely</strong>. (adverb — describes "asked")<br>
+    2. It was a <strong>polite</strong> question. (adjective — describes "question")<br>
+    3. We crossed the street <strong>carefully</strong> at the lights.<br>
+    4. Julia is a <strong>confident</strong> guide, and she always guides us <strong>confidently</strong>.</p>
+  </div>
+</section>
+
+<div class="bridge study"><strong class="arrow">&#8599; Next: the vocabulary.</strong> Grammar first, now the words. Let's study the <strong>places around the city</strong> from the story in detail.</div>
+
+<!-- 5 -->
+<!-- SECTION: Vocabulary — Around the City -->
+<section id="sec5">
+  <div class="sec-head"><div class="sec-num">5</div><h2>Vocabulary — Around the City</h2></div>
+  <p class="tag">Every word below appeared in Section 1. Read the example from the story before the definition — try to guess the meaning first.</p>
+
+  <div class="vocab-cols">
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">square</span><span class="pron">skweər</span><span class="pos">n</span></div>
+      <div class="ex">"Let's meet at Stephans<strong>platz</strong>" — Platz is German for <strong>square</strong>, an open public space in a city.</div>
+      <div class="def">A large open space in a town or city, usually surrounded by buildings, where people meet or gather.</div>
+      <div class="colloc">Collocates: <em>the main square, a town square, meet in the square</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">canal</span><span class="pron">kəˈnæl</span><span class="pos">n</span></div>
+      <div class="ex">"We walked slowly along the <strong>canal</strong> and admired the view."</div>
+      <div class="def">A man-made waterway, similar to a river, often running through a city.</div>
+      <div class="colloc">Collocates: <em>along the canal, a canal boat, cross the canal</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">bridge</span><span class="pron">brɪdʒ</span><span class="pos">n</span></div>
+      <div class="ex">"Turn right and walk along the canal, past the old <strong>bridge</strong>."</div>
+      <div class="def">A structure built over a river, canal, or road so people can cross it.</div>
+      <div class="colloc">Collocates: <em>cross a bridge, an old/new bridge, under the bridge</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">traffic lights</span><span class="pos">n, plural</span></div>
+      <div class="ex">"We crossed the street carefully at the <strong>traffic lights</strong>."</div>
+      <div class="def">The red, yellow (amber), and green lights that control traffic and tell people when to cross the street.</div>
+      <div class="colloc">Collocates: <em>at the traffic lights, wait for the lights, the lights turn green</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">corner</span><span class="pron">ˈkɔːnər</span><span class="pos">n</span></div>
+      <div class="ex">"The café is <strong>on the corner</strong>, just opposite the small park."</div>
+      <div class="def">The point where two streets meet, or the edge where two sides of something join.</div>
+      <div class="colloc">Collocates: <em>on the corner, around the corner, turn the corner</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">old town</span><span class="pos">n phrase</span></div>
+      <div class="ex">"Julia guided us confidently through the narrow streets of the <strong>old town</strong>."</div>
+      <div class="def">The oldest, usually historic, central part of a city, often with narrow streets and old buildings.</div>
+      <div class="colloc">Collocates: <em>the historic old town, wander through the old town</em></div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:26px;">5.1 Places Around Town — A Comprehensive Reference</h3>
+  <p style="font-size:14.5px;color:var(--ink-soft);">This is probably your first time seeing a full list of city vocabulary in English. Don't try to memorise all of it today — use this as a reference to come back to.</p>
+  <div class="table-scroll"><table>
+    <tr><th>Category</th><th>Places &amp; Features</th></tr>
+    <tr><td><strong>Landmarks &amp; Open Spaces</strong></td><td>square, park, fountain, monument, cathedral, church, statue</td></tr>
+    <tr><td><strong>Shops &amp; Services</strong></td><td>bakery, supermarket, pharmacy, post office, bank, market, shopping centre</td></tr>
+    <tr><td><strong>Food &amp; Leisure</strong></td><td>café, restaurant, bar, cinema, museum, theatre, library</td></tr>
+    <tr><td><strong>Roads &amp; Traffic</strong></td><td>street, avenue, roundabout, crossroads, pedestrian crossing, one-way street, traffic lights</td></tr>
+    <tr><td><strong>Getting Around</strong></td><td>bus stop, train station, tram stop, taxi rank, car park, bike lane</td></tr>
+    <tr><td><strong>Water &amp; Nature</strong></td><td>river, canal, bridge, riverbank, park, garden</td></tr>
+    <tr><td><strong>Buildings</strong></td><td>town hall, block of flats, office building, hotel, school</td></tr>
+  </table></div>
+
+  <div class="vocab-more">
+    <h5>More City Words to Know</h5>
+    <p>neighbourhood (n) · district (n) · pedestrian (n) · pavement / sidewalk (n) · a busy street (adj phrase) · a quiet street (adj phrase) · get lost (v phrase) · a five-minute walk (n phrase)</p>
+  </div>
+</section>
+
+<div class="bridge study"><strong class="arrow">&#8599; Next: more vocabulary.</strong> Now the words for giving directions — the other half of what makes this story useful in real life.</div>
+
+<!-- 6 -->
+<!-- SECTION: Vocabulary — Giving Directions -->
+<section id="sec6">
+  <div class="sec-head"><div class="sec-num">6</div><h2>Vocabulary — Giving Directions</h2></div>
+  <p class="tag">These exact phrases came from the local's directions and Julia's note in Section 1.</p>
+
+  <div class="vocab-cols">
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">go straight ahead</span><span class="pos">v phrase</span></div>
+      <div class="ex">"From Stephansplatz, walk <strong>straight ahead</strong> down Rotenturmstraße."</div>
+      <div class="def">Continue forward, without turning left or right.</div>
+      <div class="colloc">Collocates: <em>go/walk straight ahead, straight ahead until you reach...</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">turn left / right</span><span class="pos">v phrase</span></div>
+      <div class="ex">"Turn right and walk along the canal." "Then turn left."</div>
+      <div class="def">Change direction to the left or right side.</div>
+      <div class="colloc">Collocates: <em>turn left at the corner, take the next left/right</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">past</span><span class="pron">pɑːst</span><span class="pos">preposition</span></div>
+      <div class="ex">"Walk along the canal, <strong>past</strong> the old bridge."</div>
+      <div class="def">Beyond or further than a place, continuing in the same direction.</div>
+      <div class="colloc">Collocates: <em>walk past, go past, past the church/bridge/shop</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">opposite</span><span class="pron">ˈɒpəzɪt</span><span class="pos">preposition</span></div>
+      <div class="ex">"The café is on the corner, just <strong>opposite</strong> the small park."</div>
+      <div class="def">Directly facing something, on the other side.</div>
+      <div class="colloc">Collocates: <em>opposite the park, directly opposite, sit opposite someone</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">next to</span><span class="pos">preposition phrase</span></div>
+      <div class="ex">"It's <strong>next to</strong> a bright red door."</div>
+      <div class="def">Right beside something, with nothing in between.</div>
+      <div class="colloc">Collocates: <em>right next to, next to the entrance</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">cross</span><span class="pron">krɒs</span><span class="pos">v</span></div>
+      <div class="ex">"We <strong>crossed</strong> the street carefully at the traffic lights."</div>
+      <div class="def">To go from one side of a street, road, or bridge to the other.</div>
+      <div class="colloc">Collocates: <em>cross the street/road, cross at the lights, a pedestrian crossing</em></div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:26px;">Language for Giving Directions — What to Say</h3>
+  <div class="table-scroll"><table>
+    <tr><th>Situation</th><th>Useful phrases</th></tr>
+    <tr><td><strong>Asking for directions</strong></td><td><em>Excuse me, are you looking for something? / We're trying to find... / Do you know where... is?</em></td></tr>
+    <tr><td><strong>Giving directions</strong></td><td><em>Go straight ahead until... / Turn left/right at... / Walk past the... / It's on the corner, opposite the...</em></td></tr>
+    <tr><td><strong>Checking distance</strong></td><td><em>It's only a five-minute walk. / It's not far from here. / It's quite close.</em></td></tr>
+    <tr><td><strong>Confirming understanding</strong></td><td><em>Did you understand the directions? / We followed them carefully. / We found it easily / with a little difficulty.</em></td></tr>
+  </table></div>
+</section>
+
+<div class="bridge practice"><strong class="arrow">&#8599; Next: your first practice task.</strong> Study is finished for now. Time to <strong>practise</strong>. Let's check your understanding of the real conversation near the old bridge.</div>
+
+<!-- 7 -->
+<!-- SECTION: Practice — Complete the Dialogue -->
+<section id="sec7">
+  <div class="sec-head"><div class="sec-num">7</div><h2>Practice — Complete the Dialogue</h2></div>
+  <p>Go back to the full transcript in Section 1 if you need to check. Fill each gap with the missing word from the real conversation, then click "Check my answers."</p>
+
+  <div class="card">
+    <div class="fill-line">1. "Wait, I think we <input class="fill-input" data-answer="passed" size="8"> it. This doesn't look right."</div>
+    <div class="fill-line">2. "Go straight ahead until the end of this street, then <input class="fill-input" data-answer="turn" size="8"> left."</div>
+    <div class="fill-line">3. "Walk <input class="fill-input" data-answer="past" size="8"> the old bridge again, and the café is on the corner."</div>
+    <div class="fill-line">4. "It's only a five-minute walk <input class="fill-input" data-answer="from" size="8"> here."</div>
+    <div class="fill-line">5. "Did you <input class="fill-input" data-answer="understand" size="12"> the directions, Daniel?"</div>
+    <div class="fill-line">6. "We followed them <input class="fill-input" data-answer="carefully" size="10">, and we found it quite easily in the end."</div>
+    <div class="fill-line">7. "I <input class="fill-input" data-answer="photographed" size="14"> the whole street while we waited."</div>
+    <button class="reveal" onclick="checkFill()">Check my answers</button>
+    <div class="feedback" id="fillFeedback"></div>
+  </div>
+</section>
+
+<div class="bridge practice"><strong class="arrow">&#8599; Next: a quick comprehension check.</strong> Let's test what you remember from the documents in Section 1 with some quick True / False statements.</div>
+
+<!-- 8 -->
+<!-- SECTION: Practice — True or False -->
+<section id="sec8">
+  <div class="sec-head"><div class="sec-num">8</div><h2>Practice — True or False</h2></div>
+  <p>Based on the documents in Section 1. Click <strong>True</strong> or <strong>False</strong> for each sentence — you'll see immediately whether you're right.</p>
+  <div class="quiz-item">
+    <p class="q">1. The group planned to meet at the canal at 10am.</p>
+    <div class="tf-buttons"><button onclick="tfCheck(this,false)">True</button><button onclick="tfCheck(this,true)">False</button></div>
+    <div class="feedback"></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">2. The group got a little lost near the old bridge.</p>
+    <div class="tf-buttons"><button onclick="tfCheck(this,true)">True</button><button onclick="tfCheck(this,false)">False</button></div>
+    <div class="feedback"></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">3. Daniel asked a local for directions, and the local was unhelpful.</p>
+    <div class="tf-buttons"><button onclick="tfCheck(this,false)">True</button><button onclick="tfCheck(this,true)">False</button></div>
+    <div class="feedback"></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">4. The café was on the corner, opposite a small park.</p>
+    <div class="tf-buttons"><button onclick="tfCheck(this,true)">True</button><button onclick="tfCheck(this,false)">False</button></div>
+    <div class="feedback"></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">5. According to Sofia's blog, the walk was a perfectly organised, problem-free day.</p>
+    <div class="tf-buttons"><button onclick="tfCheck(this,false)">True</button><button onclick="tfCheck(this,true)">False</button></div>
+    <div class="feedback"></div>
+  </div>
+</section>
+
+<div class="bridge practice"><strong class="arrow">&#8599; Next: practise word partnerships.</strong> Now let's practise the <strong>collocations</strong> (word partnerships) you just learned in Sections 5 and 6.</div>
+
+<!-- 9 -->
+<!-- SECTION: Practice — Match the Collocations -->
+<section id="sec9">
+  <div class="sec-head"><div class="sec-num">9</div><h2>Practice — Match the Collocations</h2></div>
+  <p>Click a word on the left, then click its partner on the right. If it's correct, both turn green and stay matched. If it's wrong, try a different pair.</p>
+  <div class="match-wrap">
+    <div class="match-col" id="matchLeft">
+      <button data-pair="1">turn</button>
+      <button data-pair="2">cross</button>
+      <button data-pair="3">go straight</button>
+      <button data-pair="4">on the</button>
+      <button data-pair="5">get</button>
+      <button data-pair="6">a five-minute</button>
+    </div>
+    <div class="match-col" id="matchRight">
+      <button data-pair="4">corner</button>
+      <button data-pair="1">left or right</button>
+      <button data-pair="6">walk</button>
+      <button data-pair="2">the street</button>
+      <button data-pair="3">ahead</button>
+      <button data-pair="5">lost</button>
+    </div>
+  </div>
+  <div id="matchScore">Matched: 0 / 6</div>
+</section>
+
+<div class="bridge practice"><strong class="arrow">&#8599; Next: one more check.</strong> One more check, this time multiple choice — mixing this week's grammar and vocabulary together.</div>
+
+<!-- 10 -->
+<!-- SECTION: Practice — Multiple Choice -->
+<section id="sec10">
+  <div class="sec-head"><div class="sec-num">10</div><h2>Practice — Multiple Choice</h2></div>
+  <p>Click the letter you think is correct. Wrong answers will show you the right one automatically, so you always learn the answer.</p>
+  <div class="quiz-item">
+    <p class="q">1. Julia ___ us confidently through the old town.</p>
+    <div class="mc-options">
+      <button onclick="mcCheck(this,false)">A) guide</button>
+      <button onclick="mcCheck(this,true)">B) guided</button>
+      <button onclick="mcCheck(this,false)">C) guides</button>
+    </div>
+    <div class="feedback"></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">2. We ___ stop until we reached the canal.</p>
+    <div class="mc-options">
+      <button onclick="mcCheck(this,false)">A) didn't stopped</button>
+      <button onclick="mcCheck(this,true)">B) didn't stop</button>
+      <button onclick="mcCheck(this,false)">C) not stopped</button>
+    </div>
+    <div class="feedback"></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">3. Mei photographed the view ___.</p>
+    <div class="mc-options">
+      <button onclick="mcCheck(this,false)">A) beautiful</button>
+      <button onclick="mcCheck(this,true)">B) beautifully</button>
+      <button onclick="mcCheck(this,false)">C) beauty</button>
+    </div>
+    <div class="feedback"></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">4. The café is on the corner, ___ the small park.</p>
+    <div class="mc-options">
+      <button onclick="mcCheck(this,false)">A) next</button>
+      <button onclick="mcCheck(this,true)">B) opposite</button>
+      <button onclick="mcCheck(this,false)">C) past</button>
+    </div>
+    <div class="feedback"></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">5. He is a good singer, and he sings ___ too.</p>
+    <div class="mc-options">
+      <button onclick="mcCheck(this,false)">A) good</button>
+      <button onclick="mcCheck(this,true)">B) well</button>
+      <button onclick="mcCheck(this,false)">C) goodly</button>
+    </div>
+    <div class="feedback"></div>
+  </div>
+</section>
+
+<div class="bridge practice"><strong class="arrow">&#8599; Next: find the errors.</strong> Now the trickiest part: finding real errors. Careful — <strong>one sentence needs no change at all.</strong></div>
+
+<!-- 11 -->
+<!-- SECTION: Practice — Fix the Errors -->
+<section id="sec11">
+  <div class="sec-head"><div class="sec-num">11</div><h2>Practice — Fix the Errors</h2></div>
+  <p>Five sentences below. <strong>One of them is already correct</strong> — don't "fix" a sentence that has nothing wrong with it. Write your corrections on paper first, then click "Reveal corrections" to check all five at once.</p>
+  <div class="quiz-item"><p class="q">1. We didn't walked to the café — we took the tram.</p></div>
+  <div class="quiz-item"><p class="q">2. Did you enjoyed the walk on Saturday?</p></div>
+  <div class="quiz-item"><p class="q">3. Julia guided us confidently through the old town.</p></div>
+  <div class="quiz-item"><p class="q">4. She sang beautiful at the café.</p></div>
+  <div class="quiz-item"><p class="q">5. Mei photographed beautifully the view.</p></div>
+  <button class="reveal" onclick="toggleAnswer('err1')">Reveal corrections</button>
+  <div class="answer" id="err1">
+    <p>1. We didn't <strong>walk</strong> to the café. (base verb after "didn't", not "walked")<br>
+    2. Did you <strong>enjoy</strong> the walk on Saturday? (base verb after "did", not "enjoyed")<br>
+    3. ✅ <strong>Correct as written.</strong><br>
+    4. She sang <strong>beautifully</strong> at the café. (adverb needed to describe "sang", not adjective "beautiful")<br>
+    5. Mei photographed the view <strong>beautifully</strong>. (adverb goes after the object, not between verb and object)</p>
+  </div>
+</section>
+
+<div class="bridge skills"><strong class="arrow">&#8599; Next: a different skill.</strong> You've read and practised. Let's shift to a different skill now — <strong>listening</strong> — using the same language.</div>
+
+<!-- 12 -->
+
+<!-- SECTION: Speaking Practice -->
+<section id="speaking">
+  <div class="sec-head"><div class="sec-num">12</div><h2>Speaking Practice</h2></div>
+  <p class="section-intro">Last Saturday the four friends walked through Vienna, got lost, and asked a stranger for help. Getting lost is one of the most useful speaking lessons there is. Voice memo app ready!</p>
+
+  <div class="speak-card">
+    <span class="speak-type">Roleplay scenario</span>
+    <h3>Excuse me, where is&hellip;?</h3>
+    <p><strong>Role A &mdash; Lost visitor:</strong> You are looking for the old town square. Stop a stranger politely: <em>"Excuse me, how do I get to&hellip;?"</em> Repeat the directions back to check you understood.</p>
+    <p><strong>Role B &mdash; Local person:</strong> Give clear directions with this week's phrases: <em>"Go straight ahead&hellip; turn left at the traffic lights&hellip; it's opposite the church, next to the caf&eacute;."</em></p>
+    <div class="speak-how"><strong>How:</strong> With a partner, or both roles yourself; record 2 minutes. <strong>When you listen back, check:</strong> did Role A repeat the directions? Repeating (<em>"So&hellip; left at the lights, then straight?"</em>) is what real people do &mdash; it saves you every time.</div>
+  </div>
+
+  <div class="speak-card">
+    <span class="speak-type">Retell task</span>
+    <h3>Tell the Saturday story</h3>
+    <p>Read the walk story again. Close it. Now tell it from memory in <strong>about 60 seconds</strong>, in the past: where they walked, how they got lost, who they asked, and what they found. Regular past verbs everywhere: <em>walked, crossed, turned, asked, discovered&hellip;</em></p>
+    <div class="speak-how"><strong>How:</strong> Record once, listen, record again a little smoother. <strong>When you listen back, check the <em>-ed</em> sounds:</strong> <em>walked</em> = /t/, <em>discovered</em> = /d/, <em>waited</em> = /&#618;d/. Only verbs ending in <em>t</em> or <em>d</em> get the extra syllable!</div>
+  </div>
+
+  <div class="speak-card">
+    <span class="speak-type">Shadowing drill</span>
+    <h3>Copy the dialogue</h3>
+    <p>Choose 4 lines from this week's dialogue &mdash; two questions and two answers with directions. Read them aloud <strong>three times</strong>:</p>
+    <ul>
+      <li>Slowly and clearly;</li>
+      <li>at normal speed;</li>
+      <li>as naturally as you can, like a real conversation.</li>
+    </ul>
+    <div class="speak-how"><strong>How:</strong> Record the third time. <strong>When you listen back, check:</strong> direction words carry the stress &mdash; <em>turn LEFT, go STRAIGHT, it's OPPOSITE the church.</em></div>
+  </div>
+
+  <div class="tip-box">
+    <h3>Tips: never really lost</h3>
+    <ul>
+      <li>Learn one polite opener by heart: <em>"Excuse me, could you help me? I'm looking for&hellip;"</em> It opens every door.</li>
+      <li>Directions come in pieces. Repeat each piece back &mdash; locals will happily wait.</li>
+      <li>The <em>-ed</em> ending is quiet in fast speech. Train your ear for it now; it pays forever.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SECTION: Skills — Listening: Daniel's Voice Message -->
+<section id="sec12">
+  <div class="sec-head"><div class="sec-num">13</div><h2>Skills — Listening: Daniel's Voice Message</h2></div>
+  <p class="tag">Transcript-based listening task — read aloud with a partner or record yourselves, then answer.</p>
+  <p class="step-hint">Step 1: Read (or listen to) the message once, just for the general idea. Step 2: Read the three questions below. Step 3: Read the message a second time, looking for the answers. Step 4: Click "Reveal" to check each one.</p>
+  <div class="doc" data-doctype="Voice message transcript">
+    <div class="doc-meta">From: Daniel → To: the "New in Vienna" group — Sunday, 11:20</div>
+    <p><em>"Hey everyone! I just wanted to say thanks for Saturday — that was such a fun afternoon, even with the little detour. I looked up the café online this morning, and it turns out it only opened last year. Anyway, I really enjoyed the walk. I walked home slowly afterwards and explored a few more streets near the canal — I found a really nice bakery, actually, just past the bridge. We should visit it together next time. Let me know if you're free this weekend!"</em></p>
+  </div>
+  <div class="quiz-item">
+    <p class="q">Listening check 1: What did Daniel discover about the café online?</p>
+    <button class="reveal" onclick="toggleAnswer('l1')">Reveal</button>
+    <div class="answer" id="l1"><p>He discovered that the café only opened last year.</p></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">Listening check 2: What did Daniel do after the walk?</p>
+    <button class="reveal" onclick="toggleAnswer('l2')">Reveal</button>
+    <div class="answer" id="l2"><p>He walked home slowly and explored a few more streets near the canal.</p></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">Listening check 3: What did he find, and where?</p>
+    <button class="reveal" onclick="toggleAnswer('l3')">Reveal</button>
+    <div class="answer" id="l3"><p>He found a nice bakery, just past the bridge.</p></div>
+  </div>
+</section>
+
+<div class="bridge skills"><strong class="arrow">&#8599; Next: now you produce language.</strong> You've listened. Now it's your turn to <strong>write</strong>. Use everything you've learned this week in one short message.</div>
+
+<!-- 13 -->
+<!-- SECTION: Skills — Writing: Tell the Story of a Walk -->
+<section id="sec13">
+  <div class="sec-head"><div class="sec-num">14</div><h2>Skills — Writing: Tell the Story of a Walk</h2></div>
+  <p>Imagine you are posting on the "New in Vienna" group blog. Write a short story (80–120 words) about a real or imaginary walk you took around a city. Use at least:</p>
+  <ul>
+    <li>four Simple Past regular verbs (e.g., walked, arrived, crossed, photographed)</li>
+    <li>three adverbs of manner (e.g., slowly, carefully, happily)</li>
+    <li>two direction phrases or city vocabulary words from Sections 5–6</li>
+  </ul>
+  <textarea id="writingBox" placeholder="Last weekend, I..."></textarea>
+  <div id="wordCount">0 words</div>
+</section>
+
+<div class="bridge skills"><strong class="arrow">&#8599; Next: keep learning on your own.</strong> Before you finish, here are ways to keep exploring this week's language by yourself, beyond this page.</div>
+
+<!-- 14 -->
+
+<!-- SECTION: Listening & Watching -->
+<section id="listening">
+  <div class="sec-head"><div class="sec-num">15</div><h2>Listening &amp; Watching</h2></div>
+  <p class="section-intro">Directions and past stories are everywhere in real English. These clear, slow sources come with one small task each.</p>
+
+  <div class="media-card">
+    <div class="media-head"><h3>Rachel's English</h3><span class="media-platform">YouTube</span></div>
+    <p><strong>Why this week:</strong> The clearest pronunciation teacher on YouTube &mdash; and she has videos on exactly this week's sound problem: the three ways to say <em>-ed</em> (<em>walked, discovered, waited</em>), with slow-motion mouth close-ups.</p>
+    <div class="media-task"><strong>Your task:</strong> Find her video on <em>-ed</em> endings. Watch it once, then repeat every example straight after her. Finish by saying five past verbs from this week's story aloud: <em>walked, crossed, turned, asked, waited.</em></div>
+  </div>
+
+  <div class="media-card">
+    <div class="media-head"><h3>English with Lucy</h3><span class="media-platform">YouTube</span></div>
+    <p><strong>Why this week:</strong> Clear lessons with words on screen &mdash; including lessons on giving directions and on the Simple Past. This week's exact language, spoken slowly and correctly.</p>
+    <div class="media-task"><strong>Your task:</strong> Find her lesson on giving directions. Watch once without subtitles, once with. Write down five direction phrases. Then give directions aloud from your home to the nearest shop &mdash; record it.</div>
+  </div>
+
+  <div class="media-card">
+    <div class="media-head"><h3>Culips ESL Podcast</h3><span class="media-platform">Podcast &middot; culips.com</span></div>
+    <p><strong>Why this week:</strong> Slow, friendly conversations for learners &mdash; the hosts often tell little stories about their day or their city, full of simple past verbs, and explain words as they go.</p>
+    <div class="media-task"><strong>Your task:</strong> Pick an episode about city life or a day out. Note 3 new words &mdash; and three past verbs you hear. Say each past verb in your own sentence about last weekend.</div>
+  </div>
+</section>
+
+<!-- SECTION: Explore More — Independent Learning -->
+<section id="sec14">
+  <div class="sec-head"><div class="sec-num">16</div><h2>Explore More — Independent Learning</h2></div>
+  <p>Choose at least two of these before next class and bring back one thing you discovered.</p>
+  <div class="explore-grid">
+    <div class="explore-card">
+      <h5>Watch</h5>
+      <p>Search YouTube for a short "walking tour" video of any city, in English. Note every Simple Past verb and every adverb of manner you hear in the narration.</p>
+    </div>
+    <div class="explore-card">
+      <h5>Read</h5>
+      <p>Find a short travel blog post in English about a city walk. Highlight every direction phrase and every -ly adverb you can find.</p>
+    </div>
+    <div class="explore-card">
+      <h5>Investigate</h5>
+      <p>Look up the <strong>Cambridge Dictionary</strong> or <strong>British Council</strong> pages on adverbs of manner. Find one example that surprises you.</p>
+    </div>
+    <div class="explore-card">
+      <h5>Talk</h5>
+      <p>Ask a friend or colleague for directions from their home to somewhere they know well. Write down exactly what they say, using this week's direction vocabulary.</p>
+    </div>
+    <div class="explore-card">
+      <h5>Reflect</h5>
+      <p>Think of a real walk you took recently — to work, to a shop, anywhere. Write five true Simple Past sentences about it, with at least two adverbs of manner.</p>
+    </div>
+    <div class="explore-card">
+      <h5>Corpus tool</h5>
+      <p>Try the free <strong>English-Corpora.org</strong> (COCA) search: type "walked" or "arrived" and see which adverbs appear most often right after them in real English.</p>
+    </div>
+  </div>
+</section>
+
+<div class="bridge"><strong class="arrow">&#8599; Next: see it all together.</strong> Let's bring everything from this week together in one visual summary.</div>
+
+<!-- 15 -->
+<!-- SECTION: Week Summary -->
+<section id="sec15">
+  <div class="sec-head"><div class="sec-num">17</div><h2>Week Summary</h2></div>
+  <div class="summary-grid">
+    <div class="summary-card"><span class="icon">🔁</span><h5>Simple Past — Form</h5><p>base verb + -ed for positive; didn't + base verb for negative; Did...? for questions.</p></div>
+    <div class="summary-card"><span class="icon">🔤</span><h5>-ed Spelling &amp; Sound</h5><p>walk/live/study/stop spelling patterns; /t/, /d/, /ɪd/ pronunciation.</p></div>
+    <div class="summary-card"><span class="icon">🎯</span><h5>Adverbs of Manner</h5><p>adjective + -ly, describing HOW something happened; position after verb/object.</p></div>
+    <div class="summary-card"><span class="icon">🏙️</span><h5>City Vocabulary</h5><p>square, canal, bridge, traffic lights, corner, old town, and more.</p></div>
+    <div class="summary-card"><span class="icon">🧭</span><h5>Giving Directions</h5><p>straight ahead, turn left/right, past, opposite, next to, cross.</p></div>
+    <div class="summary-card"><span class="icon">💬</span><h5>Real Conversation</h5><p>asking for and giving directions naturally, and checking understanding.</p></div>
+  </div>
+</section>
+
+<div class="bridge"><strong class="arrow">&#8599; Next: check your own progress.</strong> Now check your own progress, honestly and without judgement — this is for you, not for a grade.</div>
+
+<!-- 16 -->
+<!-- SECTION: Self-Check -->
+<section id="sec16">
+  <div class="sec-head"><div class="sec-num">18</div><h2>Self-Check</h2></div>
+  <p>Can you do the following? Be honest — this guides your own revision, not a grade.</p>
+  <div class="checklist">
+    <label><input type="checkbox"> I can form the Simple Past of regular verbs correctly, including spelling changes.</label>
+    <label><input type="checkbox"> I know the three pronunciations of -ed (/t/, /d/, /ɪd/) and can give an example of each.</label>
+    <label><input type="checkbox"> I can make negatives and questions with didn't/did without doubling the verb change.</label>
+    <label><input type="checkbox"> I can form adverbs of manner correctly, including irregular ones (good→well).</label>
+    <label><input type="checkbox"> I can place an adverb of manner correctly in a sentence with an object.</label>
+    <label><input type="checkbox"> I can use at least eight city or direction words — with their correct part of speech — in a sentence of my own.</label>
+    <label><input type="checkbox"> I completed the dialogue gap-fill (Section 7) without checking the transcript first.</label>
+    <label><input type="checkbox"> I completed at least two Explore More tasks.</label>
+  </div>
+</section>
+
+<div class="bridge"><strong class="arrow">&#8599; Finally: get ready for next class.</strong> Here is exactly what to prepare before we meet again.</div>
+
+<!-- 17 -->
+<!-- SECTION: Before Next Class -->
+<section id="sec17">
+  <div class="sec-head"><div class="sec-num">19</div><h2>Before Next Class</h2></div>
+  <div class="card">
+    <ul>
+      <li>Finish and save your walk story (Section 14) — bring it to class.</li>
+      <li>Complete at least two Explore More tasks (Section 16) and be ready to share one discovery.</li>
+      <li>Review the vocabulary cards in Sections 5–6; you'll need them for a speaking activity next class.</li>
+      <li>Think of real directions from your home to somewhere nearby — you'll give them in class using this week's grammar.</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<div class="method-note">Grade 4 · Week 2 · A Walk Through Vienna — Flipped-classroom reference (ESA / Post-method / Task-based / CLT)</div>
+
+<!-- SECTION: Footer - Creator & Copyright -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p class="footer-copy">&copy; 2026 Bahar Esmaeelzadeh &middot; All rights reserved</p>
+    <p class="footer-line">Designed and created for English learners by Bahar Esmaeelzadeh.</p>
+    <p class="footer-links">
+      <a href="mailto:bahar.esmz.en@gmail.com">&#128231; bahar.esmz.en@gmail.com</a>
+      <span class="footer-dot">&middot;</span>
+      <a href="https://www.linkedin.com/in/bahar-esmaeelzadeh-650b98198" target="_blank" rel="noopener">&#128188; LinkedIn</a>
+    </p>
+    <p class="footer-note">If you found this helpful, feel free to get in touch.</p>
+  </div>
+</footer>
+
+
+<script>
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    document.getElementById('progress').style.width = scrolled + '%';
+  });
+
+  function toggleAnswer(id){
+    document.getElementById(id).classList.toggle('show');
+  }
+
+  function tfCheck(btn, correctForThisButton){
+    const container = btn.closest('.quiz-item');
+    const buttons = container.querySelectorAll('.tf-buttons button');
+    buttons.forEach(b => b.disabled = true);
+    const fb = container.querySelector('.feedback');
+    if(correctForThisButton){
+      btn.classList.add('correct');
+      fb.textContent = 'Correct!';
+      fb.style.color = 'var(--good)';
+    } else {
+      btn.classList.add('wrong');
+      fb.textContent = 'Not quite — look again at the documents.';
+      fb.style.color = 'var(--danger)';
+    }
+  }
+
+  function mcCheck(btn, isCorrect){
+    const container = btn.closest('.quiz-item');
+    const buttons = container.querySelectorAll('.mc-options button');
+    buttons.forEach(b => b.disabled = true);
+    const fb = container.querySelector('.feedback');
+    if(isCorrect){
+      btn.classList.add('correct');
+      fb.textContent = 'Correct!';
+      fb.style.color = 'var(--good)';
+    } else {
+      btn.classList.add('wrong');
+      fb.textContent = 'Incorrect. The right answer is now highlighted.';
+      fb.style.color = 'var(--danger)';
+      buttons.forEach(b => { if(b.getAttribute('onclick').includes(',true)')) b.classList.add('correct'); });
+    }
+  }
+
+  let selectedLeft = null;
+  let matchedCount = 0;
+  document.querySelectorAll('#matchLeft button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      if(btn.classList.contains('paired-correct')) return;
+      document.querySelectorAll('#matchLeft button').forEach(b=>b.classList.remove('selected'));
+      btn.classList.add('selected');
+      selectedLeft = btn;
+    });
+  });
+  document.querySelectorAll('#matchRight button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      if(!selectedLeft || btn.classList.contains('paired-correct')) return;
+      if(selectedLeft.dataset.pair === btn.dataset.pair){
+        selectedLeft.classList.remove('selected');
+        selectedLeft.classList.add('paired-correct');
+        btn.classList.add('paired-correct');
+        matchedCount++;
+        document.getElementById('matchScore').textContent = 'Matched: ' + matchedCount + ' / 6';
+        selectedLeft = null;
+      } else {
+        btn.classList.add('paired-wrong');
+        setTimeout(()=>btn.classList.remove('paired-wrong'), 600);
+      }
+    });
+  });
+
+  function checkFill(){
+    const inputs = document.querySelectorAll('.fill-input');
+    let correct = 0;
+    inputs.forEach(inp=>{
+      const answers = inp.dataset.answer.split('|').map(a=>a.trim().toLowerCase());
+      const val = inp.value.trim().toLowerCase();
+      const ok = answers.includes(val);
+      inp.style.borderBottomColor = ok ? 'var(--good)' : 'var(--danger)';
+      if(ok) correct++;
+    });
+    const fb = document.getElementById('fillFeedback');
+    fb.textContent = correct + ' of ' + inputs.length + ' correct.';
+    fb.style.color = correct===inputs.length ? 'var(--good)' : 'var(--danger)';
+    fb.style.fontFamily = 'Arial,sans-serif';
+    fb.style.fontWeight = '700';
+    fb.style.marginTop = '10px';
+  }
+
+  const box = document.getElementById('writingBox');
+  const counter = document.getElementById('wordCount');
+  box.addEventListener('input', ()=>{
+    const words = box.value.trim().split(/\s+/).filter(Boolean).length;
+    counter.textContent = words + ' words (target: 80–120)';
+    counter.classList.remove('ok','low');
+    if(words >= 80 && words <= 130) counter.classList.add('ok');
+    else if(words > 0) counter.classList.add('low');
+  });
+
+/* Site frame (added): contents panel, back-to-top, table scroll hints */
+(function(){
+  var panel=document.getElementById('navPanel'),ov=document.getElementById('navOverlay'),
+      ham=document.getElementById('navHamburger'),closeB=document.getElementById('navClose'),
+      links=document.getElementById('navPanelLinks');
+  document.querySelectorAll('.toc a').forEach(function(a){
+    var n=document.createElement('a');
+    n.href=a.getAttribute('href');
+    n.textContent=a.textContent.replace(/^\s*\d+[a-z]?\.?\s+/,'');
+    links.appendChild(n);
+  });
+  function openP(){panel.classList.add('open');ov.classList.add('open');ham.setAttribute('aria-expanded','true');panel.setAttribute('aria-hidden','false');}
+  function closeP(){panel.classList.remove('open');ov.classList.remove('open');ham.setAttribute('aria-expanded','false');panel.setAttribute('aria-hidden','true');}
+  ham.addEventListener('click',function(){panel.classList.contains('open')?closeP():openP();});
+  closeB.addEventListener('click',closeP);
+  ov.addEventListener('click',closeP);
+  links.addEventListener('click',function(e){if(e.target.tagName==='A')closeP();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeP();});
+  document.getElementById('navTopBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  function hints(){document.querySelectorAll('.table-scroll').forEach(function(w){
+    if(w.scrollWidth>w.clientWidth+2){w.classList.add('has-overflow');}else{w.classList.remove('has-overflow');}
+  });}
+  window.addEventListener('resize',hints);window.addEventListener('load',hints);hints();
+  document.querySelectorAll('.table-scroll').forEach(function(w){
+    w.addEventListener('scroll',function(){if(w.scrollLeft>12)w.classList.remove('has-overflow');},{passive:true});
+  });
+})();
+
+</script>
+
+</body>
+</html>
