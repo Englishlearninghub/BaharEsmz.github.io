@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet">
+<title>Grade 5 · Week 5 — The Bank Appointment</title>
+<style>
+  :root{
+    --paper:#f4ecdd;
+    --paper2:#efe4cf;
+    --ink:#2c2417;
+    --ink-soft:#5b4f3d;
+    --brick:#a8461f;
+    --brick-dark:#7c3216;
+    --concrete:#6b7075;
+    --safety:#d98a1c;
+    --safety-dark:#b06e10;
+    --sage:#5c7a5e;
+    --sage-dark:#3f5a41;
+    --gold:#9c7a1f;
+    --gold-dark:#7a5f14;
+    --navy:#2c3e52;
+    --card:#fffaf0;
+    --line:#cbb894;
+    --danger:#a3261c;
+    --good:#2f6b3a;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',Calibri,Arial,sans-serif;
+    color:var(--ink);
+    background:
+      repeating-linear-gradient(0deg, rgba(0,0,0,0.015) 0px, rgba(0,0,0,0.015) 1px, transparent 1px, transparent 3px),
+      radial-gradient(circle at 15% 8%, #fbf3e2 0%, var(--paper) 45%, var(--paper2) 100%);
+    line-height:1.6;
+    padding-bottom:60px;
+  }
+  #progress{
+    position:fixed; top:0; left:0; height:6px; width:0%;
+    background:linear-gradient(90deg,var(--navy),var(--gold));
+    z-index:999; transition:width .1s ease-out;
+  }
+  header.hero{
+    padding:56px 8vw 40px;
+    background:
+      linear-gradient(135deg, rgba(44,62,82,0.94), rgba(30,42,56,0.94)),
+      repeating-linear-gradient(45deg, rgba(255,255,255,0.04) 0 10px, transparent 10px 20px);
+    color:#f2ede0;
+    border-bottom:6px solid var(--gold);
+  }
+  header.hero .eyebrow{
+    font-family:Arial,Helvetica,sans-serif;
+    text-transform:uppercase; letter-spacing:3px; font-size:12.5px;
+    color:#e3c877; font-weight:700;
+  }
+  header.hero h1{ font-size:clamp(28px,4vw,44px); margin:10px 0 6px; }
+  header.hero p.lead{ font-size:18px; max-width:760px; color:#e9e2d0; }
+  .badge-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .pill{
+    font-family:Arial,sans-serif; font-size:13px; font-weight:700;
+    padding:7px 14px; border-radius:20px; background:rgba(255,255,255,0.13);
+    border:1px solid rgba(255,255,255,0.32); color:#fff;
+  }
+  main{ max-width:960px; margin:0 auto; padding:0 6vw; }
+
+  nav.toc{
+    background:var(--card); border:2px solid var(--line); border-radius:6px;
+    margin:-28px auto 40px; padding:26px 30px; max-width:900px;
+    box-shadow:0 6px 18px rgba(60,40,10,0.12);
+  }
+  nav.toc h2{ margin-top:0; font-size:20px; color:var(--navy); }
+  nav.toc ol{
+    columns:2; column-gap:34px; list-style:none; padding:0; margin:0; counter-reset:tocnum;
+  }
+  nav.toc li{ break-inside:avoid; margin-bottom:9px; }
+  nav.toc a{
+    text-decoration:none; color:var(--ink); font-size:15px; display:flex; gap:10px; align-items:baseline;
+  }
+  nav.toc a:hover{ color:var(--brick); }
+  nav.toc .n{
+    font-family:Arial,sans-serif; font-weight:800; font-size:12px; color:#fff;
+    background:var(--concrete); border-radius:50%; min-width:22px; height:22px;
+    display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  nav.toc li:nth-child(4n+1) .n{background:var(--navy);}
+  nav.toc li:nth-child(4n+2) .n{background:var(--gold-dark);}
+  nav.toc li:nth-child(4n+3) .n{background:var(--sage-dark);}
+  nav.toc li:nth-child(4n+4) .n{background:var(--brick);}
+
+  section{ margin-bottom:56px; scroll-margin-top:20px; }
+  .sec-head{ display:flex; align-items:center; gap:14px; margin-bottom:18px; }
+  .sec-num{
+    font-family:Arial,sans-serif; font-weight:800; color:#fff; background:var(--navy);
+    width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    flex-shrink:0; font-size:17px;
+  }
+  h2{ font-size:26px; margin:0; color:var(--navy); }
+  h3{ color:var(--sage-dark); font-size:20px; }
+  .tag{
+    font-family:Arial,sans-serif; font-size:11.5px; text-transform:uppercase; letter-spacing:1.5px;
+    font-weight:700; color:var(--ink-soft);
+  }
+
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:6px;
+    padding:22px 26px; margin-bottom:18px; box-shadow:0 3px 10px rgba(60,40,10,0.06);
+  }
+  .card-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; }
+
+  /* Realia documents */
+  .doc{
+    background:#fffdf7; border:1px solid #d8c9a4; border-radius:3px; padding:20px 24px; margin-bottom:20px;
+    position:relative; box-shadow:2px 3px 0 rgba(0,0,0,0.05);
+  }
+  .doc::before{
+    content:attr(data-doctype); position:absolute; top:-11px; left:18px; background:var(--gold);
+    color:#2c2417; font-family:Arial,sans-serif; font-size:11px; font-weight:800; letter-spacing:1px;
+    padding:3px 10px; border-radius:3px; text-transform:uppercase;
+  }
+  .doc .doc-meta{ font-family:Arial,sans-serif; font-size:12.5px; color:var(--ink-soft); margin-bottom:10px; }
+  .doc.chat{ background:#eef4ee; }
+  .chat-bubble{ max-width:75%; padding:9px 14px; border-radius:14px; margin:6px 0; font-family:Arial,sans-serif; font-size:14.5px; }
+  .chat-bubble.me{ background:#dcefe0; margin-left:auto; border-bottom-right-radius:3px; }
+  .chat-bubble.them{ background:#fff; border:1px solid #ddd; border-bottom-left-radius:3px; }
+  .chat-name{ font-size:11px; color:var(--ink-soft); margin:8px 0 2px; font-family:Arial,sans-serif; }
+
+  mark.hl{ background:#f7d98f; padding:1px 4px; border-radius:3px; }
+  mark.hl2{ background:#c9e0cb; padding:1px 4px; border-radius:3px; }
+  mark.hl3{ background:#c9d8e6; padding:1px 4px; border-radius:3px; }
+
+  .notice-box{
+    border-left:5px solid var(--sage-dark); background:#f1f5ee; padding:16px 20px; border-radius:0 4px 4px 0;
+    margin:16px 0;
+  }
+  .notice-box p{ margin:6px 0; }
+
+  table{ width:100%; border-collapse:collapse; margin:16px 0; font-family:Arial,sans-serif; font-size:14.5px; }
+  th, td{ border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; }
+  th{ background:var(--navy); color:#fff; font-size:13px; text-transform:uppercase; letter-spacing:.5px; }
+  tr:nth-child(even) td{ background:#faf3e2; }
+
+  .timeline{ position:relative; margin:26px 0; padding-left:30px; border-left:3px solid var(--gold); }
+  .t-item{ position:relative; margin-bottom:22px; }
+  .t-item::before{
+    content:""; position:absolute; left:-38px; top:2px; width:15px; height:15px; border-radius:50%;
+    background:var(--navy); border:3px solid var(--paper);
+  }
+  .t-item .t-date{ font-family:Arial,sans-serif; font-weight:800; color:var(--navy); font-size:13px; }
+
+  .rule-box{
+    background:#fff3e0; border:2px dashed var(--gold-dark); border-radius:6px; padding:18px 22px; margin:16px 0;
+  }
+  .rule-box h4{ margin-top:0; color:var(--navy); font-family:Arial,sans-serif; }
+
+  button.reveal{
+    font-family:Arial,sans-serif; font-weight:700; font-size:13.5px; color:#fff; background:var(--sage-dark);
+    border:none; border-radius:20px; padding:8px 18px; cursor:pointer; margin-top:8px;
+  }
+  button.reveal:hover{ background:var(--sage); }
+  .answer{ display:none; background:#eef4ee; border-left:4px solid var(--sage-dark); padding:10px 16px; margin-top:8px; border-radius:0 4px 4px 0; font-size:14.5px; }
+  .answer.show{ display:block; }
+
+  .quiz-item{ background:var(--card); border:1px solid var(--line); border-radius:6px; padding:16px 20px; margin-bottom:12px; }
+  .quiz-item p.q{ font-weight:700; margin:0 0 10px; }
+  .tf-buttons button, .mc-options button{
+    font-family:Arial,sans-serif; font-size:13.5px; font-weight:700; padding:7px 16px; margin-right:8px;
+    border:2px solid var(--concrete); background:#fff; border-radius:5px; cursor:pointer; color:var(--ink);
+  }
+  .mc-options{ display:flex; flex-direction:column; gap:6px; align-items:flex-start; }
+  .tf-buttons button:hover, .mc-options button:hover{ background:#f1ece0; }
+  button.correct{ background:var(--good)!important; color:#fff!important; border-color:var(--good)!important; }
+  button.wrong{ background:var(--danger)!important; color:#fff!important; border-color:var(--danger)!important; }
+  .feedback{ font-family:Arial,sans-serif; font-size:13.5px; margin-top:8px; font-weight:700; }
+
+  .match-wrap{ display:grid; grid-template-columns:1fr 1fr; gap:30px; }
+  .match-col button{
+    display:block; width:100%; text-align:left; margin-bottom:8px; padding:10px 14px; border-radius:5px;
+    border:2px solid var(--line); background:#fff; font-family:Arial,sans-serif; font-size:14px; cursor:pointer;
+  }
+  .match-col button.selected{ border-color:var(--gold-dark); background:#fff3e0; }
+  .match-col button.paired-correct{ border-color:var(--good); background:#e4f2e6; color:var(--good); font-weight:700;}
+  .match-col button.paired-wrong{ border-color:var(--danger); background:#fbe6e4; }
+  #matchScore{ font-family:Arial,sans-serif; font-weight:700; margin-top:10px; }
+
+  textarea#writingBox{
+    width:100%; min-height:160px; font-family:"Bookman Old Style",serif; font-size:15px; padding:14px;
+    border:2px solid var(--line); border-radius:6px; resize:vertical;
+  }
+  #wordCount{ font-family:Arial,sans-serif; font-size:13.5px; margin-top:6px; color:var(--ink-soft); }
+  #wordCount.ok{ color:var(--good); font-weight:700; }
+  #wordCount.low{ color:var(--danger); font-weight:700; }
+
+  .vocab-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; }
+  .vocab-card{ background:var(--card); border:1px solid var(--line); border-radius:6px; padding:14px 18px; }
+  .vocab-card h5{ margin:0 0 6px; color:var(--navy); font-size:15.5px; }
+  .vocab-card ul{ margin:0; padding-left:18px; font-size:14.5px; }
+
+  /* Rich vocabulary entries: word + pronunciation + part of speech + definition + example + collocations */
+  .vocab-cols{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; margin:16px 0; }
+  .vocab-entry{ background:var(--card); border:1px solid var(--line); border-radius:6px; padding:16px 20px; }
+  .vocab-entry .headword{ font-family:Arial,sans-serif; }
+  .vocab-entry .word{ font-weight:800; font-size:16px; color:var(--navy); }
+  .vocab-entry .pron{ font-family:"Courier New",monospace; font-size:11px; background:var(--ink); color:var(--paper); border-radius:3px; padding:1px 7px; margin-left:8px; }
+  .vocab-entry .pos{ font-family:Arial,sans-serif; font-size:10.5px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.5px; margin-left:8px; }
+  .vocab-entry .def{ margin-top:7px; font-size:14.5px; }
+  .vocab-entry .ex{ margin-top:7px; font-size:13.5px; font-style:italic; color:var(--ink-soft); border-left:3px solid var(--gold); padding-left:10px; }
+  .vocab-entry .colloc{ margin-top:7px; font-size:12.5px; color:var(--sage-dark); font-family:Arial,sans-serif; }
+  .vocab-more{ background:#fbf6ea; border:1px dashed var(--line); border-radius:6px; padding:14px 20px; margin-top:6px; font-size:14px; }
+  .vocab-more h5{ margin:0 0 8px; font-family:Arial,sans-serif; font-size:13px; text-transform:uppercase; letter-spacing:.5px; color:var(--ink-soft); }
+
+  /* Dialogue transcript */
+  .doc.dialogue{ background:#fdfaf2; }
+  .dialogue-line{ margin:9px 0; font-family:Arial,sans-serif; font-size:14.5px; line-height:1.55; }
+  .dialogue-line .speaker{ font-weight:800; margin-right:6px; }
+  .speaker.huber{ color:var(--navy); }
+  .speaker.nora{ color:var(--sage-dark); }
+  .speaker.lukas{ color:var(--brick-dark, #7c3216); }
+
+  /* Fill-in inputs */
+  .fill-input{ font-family:Arial,sans-serif; font-size:14px; border:none; border-bottom:2px solid var(--gold-dark); background:transparent; width:90px; text-align:center; padding:2px 4px; }
+  .fill-input:focus{ outline:none; border-bottom-color:var(--navy); }
+  .fill-line{ margin-bottom:14px; font-family:Arial,sans-serif; font-size:15px; }
+
+  .explore-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+  .explore-card{
+    background:linear-gradient(160deg,#f1ece0,#e9dfc9); border:1px solid var(--line); border-radius:8px;
+    padding:18px 20px;
+  }
+  .explore-card h5{ margin-top:0; color:var(--sage-dark); font-family:Arial,sans-serif; }
+  .explore-card a{ color:var(--navy); font-weight:700; }
+
+  .summary-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:16px; }
+  .summary-card{
+    background:var(--card); border-top:none; border:1px solid var(--line); border-radius:8px; padding:18px;
+    text-align:center;
+  }
+  .summary-card .icon{ font-size:30px; margin-bottom:8px; display:block; }
+  .summary-card h5{ margin:6px 0; color:var(--navy); font-family:Arial,sans-serif; }
+
+  .checklist label{ display:flex; gap:10px; align-items:flex-start; margin-bottom:10px; font-size:15px; cursor:pointer; }
+  .checklist input{ margin-top:4px; }
+
+  footer{ text-align:center; font-family:Arial,sans-serif; font-size:12.5px; color:var(--ink-soft); padding:30px 0 10px; }
+
+  .direct-vs-reported{ display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:14px; margin:14px 0; }
+  .direct-vs-reported .arrow{ font-size:22px; color:var(--gold-dark); text-align:center; }
+  .dvr-box{ background:#fff; border:1px solid var(--line); border-radius:6px; padding:12px 16px; font-family:Arial,sans-serif; font-size:14px; }
+  .dvr-box.direct{ border-left:4px solid var(--navy); }
+  .dvr-box.reported{ border-left:4px solid var(--gold-dark); }
+
+  ::selection{ background:#f7d98f; }
+  @media(max-width:640px){
+    nav.toc ol{ columns:1; }
+    .match-wrap{ grid-template-columns:1fr; }
+    .direct-vs-reported{ grid-template-columns:1fr; }
+  }
+
+/* ============================================================
+   SITE FRAME (added): fixed top nav + progress bar, slide-out
+   contents panel with creator branding, sticky section headers,
+   responsive & overflow fixes, footer, speaking/listening cards
+   ============================================================ */
+:root{--navh:52px;}
+html{scroll-behavior:smooth;}
+body{overflow-x:hidden;padding-top:calc(var(--navh) + 4px);}
+[id]{scroll-margin-top:calc(var(--navh) + 20px);}
+img,svg,table{max-width:100%;}
+.wrap p,.wrap li,.wrap td,.wrap th,.wrap h1,.wrap h2,.wrap h3{overflow-wrap:break-word;word-break:break-word;}
+.masthead{margin-left:0;margin-right:0;}
+.debate-band{margin-left:0;margin-right:0;}
+
+/* Progress bar: fixed, always visible below the nav */
+.progress-track{position:fixed;top:var(--navh);left:0;right:0;height:4px;z-index:120;}
+
+/* Top navigation bar */
+.nav-bar{position:fixed;top:0;left:0;right:0;height:var(--navh);background:var(--navy);color:#FFFFFF;display:flex;align-items:center;gap:10px;padding:0 12px;z-index:130;box-shadow:0 2px 12px rgba(0,0,0,.20);}
+.nav-btn{min-width:44px;min-height:44px;background:transparent;border:none;color:#FFFFFF;font-size:20px;cursor:pointer;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',Arial,sans-serif;transition:background .15s;}
+.nav-btn:hover{background:rgba(255,255,255,.14);}
+.nav-top{font-size:13px;font-weight:700;letter-spacing:.03em;white-space:nowrap;padding:0 10px;}
+.nav-brand{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.25;}
+.nav-brand-week{font-family:'Inter',Arial,sans-serif;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;opacity:.75;}
+.nav-brand-title{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+/* Slide-out contents panel */
+.nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .25s;z-index:135;}
+.nav-overlay.open{opacity:1;pointer-events:auto;}
+.nav-panel{position:fixed;top:0;bottom:0;left:0;width:min(330px,88vw);background:#FFFFFF;z-index:140;transform:translateX(-103%);transition:transform .28s ease;display:flex;flex-direction:column;box-shadow:6px 0 28px rgba(0,0,0,.22);}
+.nav-panel.open{transform:translateX(0);}
+.nav-panel-head{display:flex;align-items:center;justify-content:space-between;padding:8px 10px 8px 20px;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);border-bottom:1px solid var(--line);}
+.nav-panel-head .nav-btn{color:var(--ink);font-size:16px;}
+.nav-panel-links{flex:1;overflow-y:auto;padding:10px 8px;}
+.nav-panel-links a{display:flex;align-items:center;min-height:44px;padding:6px 14px;border-radius:8px;text-decoration:none;color:var(--ink);font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:600;line-height:1.4;}
+.nav-panel-links a:hover{background:var(--paper);color:var(--gold-dark);}
+/* Branding zone: visually separated from navigation */
+.nav-panel-brand{border-top:2px solid var(--line);background:var(--paper);padding:16px 20px 18px;}
+.nav-panel-brand .brand-name{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.nav-panel-brand .brand-line{font-family:'Inter',Arial,sans-serif;font-size:12.5px;color:var(--ink-soft);margin-bottom:10px;line-height:1.55;}
+.nav-panel-brand a{display:flex;align-items:center;min-height:40px;font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--gold-dark);text-decoration:none;font-weight:600;}
+.nav-panel-brand a:hover{text-decoration:underline;}
+.nav-panel-brand .brand-copy{margin-top:10px;font-family:'Inter',Arial,sans-serif;font-size:11.5px;color:var(--ink-soft);}
+
+/* Sticky section headers: current section title stays visible */
+.tab-header{position:sticky;top:calc(var(--navh) + 4px);z-index:60;background:var(--paper);padding:10px 0 8px;}
+
+/* Scrollable table wrapper with mobile hint */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;}
+.table-scroll table{max-width:none;}
+.table-scroll.has-overflow{background:linear-gradient(to left,rgba(0,0,0,.12),rgba(0,0,0,0) 26px) right center / 26px 100% no-repeat;}
+.table-scroll.has-overflow::before{content:'scroll \2192';display:block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--ink-soft);text-align:right;padding:0 6px 4px;}
+
+/* Speaking & Listening sections */
+.tb-speak{background:var(--navy);color:#FFFFFF;}
+.tb-listen{background:var(--gold-dark);color:#FFFFFF;}
+.section-intro{font-family:'Inter',Arial,sans-serif;font-size:14.5px;color:var(--ink-soft);margin:0 0 18px;line-height:1.65;}
+.speak-card{background:#FFFFFF;border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.07);border-left:4px solid var(--navy);}
+.speak-type{display:inline-block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);margin-bottom:8px;}
+.speak-card h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0 0 10px;color:var(--ink);}
+.speak-card p{margin:0 0 10px;}
+.speak-card ul{margin:0 0 10px 20px;padding:0;}
+.speak-card li{margin-bottom:6px;}
+.speak-how{background:var(--paper);border-radius:8px;padding:12px 16px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;line-height:1.65;margin-top:12px;}
+.media-card{background:#FFFFFF;border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.07);border-left:4px solid var(--gold-dark);}
+.media-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px;}
+.media-head h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0;color:var(--ink);}
+.media-platform{font-family:'Inter',Arial,sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--gold-dark);}
+.media-card p{margin:0 0 10px;}
+.media-task{border-left:3px solid var(--gold-dark);background:var(--paper);padding:10px 14px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;line-height:1.65;margin-top:10px;border-radius:0 8px 8px 0;}
+.tip-box{border:2px dashed var(--navy);border-radius:10px;padding:18px 22px;background:#FFFFFF;margin-top:6px;}
+.tip-box h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:16px;margin:0 0 10px;color:var(--navy);}
+.tip-box ul{margin:0 0 0 20px;padding:0;}
+.tip-box li{margin-bottom:6px;font-size:14.5px;}
+
+/* Footer */
+.site-footer{background:var(--navy);color:#FFFFFF;margin-top:56px;padding:34px 24px 40px;}
+.site-footer-inner{max-width:920px;margin:0 auto;text-align:center;}
+.footer-copy{font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:700;margin:0 0 6px;}
+.footer-line{font-family:'Playfair Display',Cambria,Georgia,serif;font-style:italic;font-size:14.5px;opacity:.88;margin:0 0 12px;}
+.footer-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 10px;}
+.footer-links a{color:#FFFFFF;font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding:8px 2px;min-height:44px;display:inline-flex;align-items:center;}
+.footer-links a:hover{border-bottom-color:#FFFFFF;}
+.footer-dot{opacity:.5;}
+.footer-note{font-family:'Inter',Arial,sans-serif;font-size:12.5px;opacity:.72;margin:0;}
+
+/* Mobile refinements (375px-safe) */
+@media(max-width:600px){
+  .wrap{padding-left:18px;padding-right:18px;}
+  .masthead{padding:34px 20px 28px;}
+  .grammar-box,.card{padding:20px 18px;}
+  .oped-body{padding:20px 18px;}
+  .speak-card,.media-card{padding:18px 16px;}
+  .check-btn,.reveal-btn,.rev-btn,.poll-opt{min-height:44px;}
+  .vs-table{grid-template-columns:1fr;}
+  .vs-divider{display:none;}
+  table.rule-table{font-size:13.5px;}
+  .nav-top{font-size:12px;}
+  .site-footer{padding:28px 18px 34px;}
+}
+
+/* Hero-skeleton frame adjustments */
+#progress{top:var(--navh);}
+h1,h2,h3{font-family:'Playfair Display',"Bookman Old Style","Century Schoolbook",Georgia,serif;}
+.sec-num{font-family:'Inter',Calibri,Arial,sans-serif;}
+.sec-head{position:sticky;top:calc(var(--navh) + 6px);background:var(--paper);z-index:60;padding:6px 0;}
+section{scroll-margin-top:calc(var(--navh) + 20px);}
+main p,main li,main td,main th{overflow-wrap:break-word;word-break:break-word;}
+.method-note{max-width:960px;margin:30px auto 0;padding:0 6vw;font-size:12.5px;
+  color:var(--ink-soft);text-align:center;font-family:'Inter',Calibri,Arial,sans-serif;}
+@media(max-width:600px){.reveal,.fill-input{min-height:44px;}}
+
+</style>
+</head>
+<body>
+
+<!-- SECTION: Top Navigation Bar -->
+<header class="nav-bar" id="navBar">
+  <button class="nav-btn nav-hamburger" id="navHamburger" aria-label="Open contents menu" aria-expanded="false">&#9776;</button>
+  <div class="nav-brand">
+    <span class="nav-brand-week">Grade 5 · Week 5</span>
+    <span class="nav-brand-title">The Bank Appointment</span>
+  </div>
+  <button class="nav-btn nav-top" id="navTopBtn" aria-label="Back to top">&#8593; Top</button>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+<aside class="nav-panel" id="navPanel" aria-hidden="true">
+  <div class="nav-panel-head"><span>On this page</span><button class="nav-btn nav-close" id="navClose" aria-label="Close menu">&#10005;</button></div>
+  <nav class="nav-panel-links" id="navPanelLinks"></nav>
+  <!-- Creator & branding section of the menu -->
+  <div class="nav-panel-brand">
+    <div class="brand-name">Bahar Esmaeelzadeh</div>
+    <div class="brand-line">Designed and created for English learners by Bahar Esmaeelzadeh.</div>
+    <a href="mailto:bahar.esmz.en@gmail.com">&#128231; bahar.esmz.en@gmail.com</a>
+    <a href="https://www.linkedin.com/in/bahar-esmaeelzadeh-650b98198" target="_blank" rel="noopener">&#128188; LinkedIn &mdash; Bahar Esmaeelzadeh</a>
+    <div class="brand-copy">&copy; 2026 Bahar Esmaeelzadeh &middot; All rights reserved</div>
+  </div>
+</aside>
+
+<div id="progress"></div>
+
+<header class="hero">
+  <div class="eyebrow">Grade 5 · Week 5 · Bank — Advice</div>
+  <h1>The Bank Appointment</h1>
+  <p class="lead">The guesthouse renovation is nearly finished — but the budget isn't. Lukas and Nora need a loan, so they've booked an appointment at Alpen Bank Wien. What the advisor says, and how they report it to each other afterwards, is this week's classroom.</p>
+  <div class="badge-row">
+    <span class="pill">Prefer / Would Rather</span>
+    <span class="pill">Modal Verbs for Advice</span>
+    <span class="pill">As + Adjective + As</span>
+    <span class="pill">Reported Speech (Preview)</span>
+    <span class="pill">Vocabulary: Banking &amp; Reporting Verbs</span>
+  </div>
+</header>
+
+<main>
+
+<nav class="toc" aria-label="Table of contents">
+  <h2>On This Page</h2>
+  <ol>
+    <li><a href="#sec1"><span class="n">1</span> The Bank Appointment — Documents</a></li>
+    <li><a href="#sec2"><span class="n">2</span> Notice the Pattern</a></li>
+    <li><a href="#sec3"><span class="n">3</span> Grammar Focus — Prefer / Would Rather</a></li>
+    <li><a href="#sec4"><span class="n">4</span> Grammar Focus — Modal Verbs for Advice</a></li>
+    <li><a href="#sec5"><span class="n">5</span> Grammar Focus — As + Adjective + As</a></li>
+    <li><a href="#sec6"><span class="n">6</span> Grammar Focus — Reported Speech (Preview)</a></li>
+    <li><a href="#sec7"><span class="n">7</span> Vocabulary — At the Bank</a></li>
+    <li><a href="#sec8"><span class="n">8</span> Vocabulary — Reporting Verbs</a></li>
+    <li><a href="#sec9"><span class="n">9</span> Practice — Complete the Dialogue</a></li>
+    <li><a href="#sec10"><span class="n">10</span> Practice — True or False</a></li>
+    <li><a href="#sec11"><span class="n">11</span> Practice — Match the Collocations</a></li>
+    <li><a href="#sec12"><span class="n">12</span> Practice — Multiple Choice</a></li>
+    <li><a href="#sec13"><span class="n">13</span> Practice — Fix the Errors</a></li>
+    <li><a href="#speaking"><span class="n">14</span> Speaking Practice</a></li>
+    <li><a href="#sec14"><span class="n">15</span> Skills — Listening: The Bank's Voicemail</a></li>
+    <li><a href="#sec15"><span class="n">16</span> Skills — Writing: Report the Meeting</a></li>
+    <li><a href="#listening"><span class="n">17</span> Listening &amp; Watching</a></li>
+    <li><a href="#sec16"><span class="n">18</span> Explore More — Independent Learning</a></li>
+    <li><a href="#sec17"><span class="n">19</span> Week Summary</a></li>
+    <li><a href="#sec18"><span class="n">20</span> Self-Check</a></li>
+    <li><a href="#sec19"><span class="n">21</span> Before Next Class</a></li>
+  </ol>
+</nav>
+
+<!-- 1 -->
+<!-- SECTION: The Bank Appointment — Documents -->
+<section id="sec1">
+  <div class="sec-head"><div class="sec-num">1</div><h2>The Bank Appointment — Documents</h2></div>
+  <p class="tag">Read first. Don't worry about grammar yet — just find out what Lukas and Nora decide.</p>
+
+  <div class="doc" data-doctype="Email confirmation">
+    <div class="doc-meta">From: Alpen Bank Wien &lt;appointments@alpenbank.at&gt; — To: Nora Berger</div>
+    <p>Dear Ms Berger,<br>This confirms your appointment with financial advisor Frau Huber on Thursday at 10:00, regarding a renovation loan for your property at Burggasse 21. Please bring proof of income, your renovation invoices, and a form of ID.</p>
+  </div>
+
+  <div class="doc chat" data-doctype="WhatsApp — Nora &amp; Lukas, the night before">
+    <div class="doc-meta">22 March, 21:10</div>
+    <div class="chat-name">Lukas</div>
+    <div class="chat-bubble them">So — fixed rate or variable? I'd rather have a fixed rate. At least we know exactly what we're paying every month.</div>
+    <div class="chat-name">Nora</div>
+    <div class="chat-bubble me">I prefer fixed rates too, but they're often a bit more expensive at the start. We should ask the advisor for her honest opinion.</div>
+    <div class="chat-name">Lukas</div>
+    <div class="chat-bubble them">Agreed. Also — I'd rather borrow a bit less and finish the bathroom ourselves than borrow the full amount.</div>
+    <div class="chat-name">Nora</div>
+    <div class="chat-bubble me">Let's see what she says. You must remember to bring the invoices this time!</div>
+  </div>
+
+  <div class="doc" data-doctype="Bank leaflet — Loan Comparison">
+    <div class="doc-meta">Alpen Bank Wien — Renovation Loan Options</div>
+    <div class="table-scroll"><table>
+      <tr><th></th><th>Loan A — Fixed Rate</th><th>Loan B — Variable Rate</th></tr>
+      <tr><td>Interest rate (Year 1)</td><td>3.4%</td><td>2.9%</td></tr>
+      <tr><td>Monthly repayment</td><td>€612</td><td>€598</td></tr>
+      <tr><td>Total cost over 5 years</td><td>€36,720</td><td>roughly the same, but can rise or fall</td></tr>
+      <tr><td>Risk</td><td>Low — payment never changes</td><td>Higher — payment can increase</td></tr>
+    </table></div>
+    <p style="font-family:Arial,sans-serif;font-size:13px;color:var(--ink-soft);">Note from the advisor, handwritten on the leaflet: "Over five years, Loan A is almost as expensive as Loan B — but Loan A is far less risky."</p>
+  </div>
+
+  <div class="doc dialogue" data-doctype="Full Transcript — At Alpen Bank Wien">
+    <div class="doc-meta">Recorded live by Nora on her phone, with permission — Thursday, 10:00</div>
+    <div class="dialogue-line"><span class="speaker huber">Frau Huber:</span> Good morning, Ms Berger, Mr Fischer. Please, sit down. So, you're looking for a renovation loan for the guesthouse — congratulations on the progress so far.</div>
+    <div class="dialogue-line"><span class="speaker nora">Nora:</span> Thank you. We've almost finished the renovation, but we need around €30,000 more to complete the bathroom and buy furniture.</div>
+    <div class="dialogue-line"><span class="speaker huber">Frau Huber:</span> That's very manageable. Let me show you two options. Loan A has a fixed interest rate of 3.4%; Loan B has a variable rate starting at 2.9%.</div>
+    <div class="dialogue-line"><span class="speaker lukas">Lukas:</span> I'd rather have the fixed rate, to be honest. I don't like surprises.</div>
+    <div class="dialogue-line"><span class="speaker huber">Frau Huber:</span> That's a very common preference for a new business. Over five years, Loan A is almost as expensive as Loan B, but it's far less risky, because the payment never changes.</div>
+    <div class="dialogue-line"><span class="speaker nora">Nora:</span> What would you recommend for a business like ours?</div>
+    <div class="dialogue-line"><span class="speaker huber">Frau Huber:</span> Honestly, I'd recommend the fixed rate. You should choose stability while you're still new. You could also consider borrowing a little less and finishing part of the work yourselves.</div>
+    <div class="dialogue-line"><span class="speaker lukas">Lukas:</span> That's actually what I'd rather do — borrow less and finish the bathroom ourselves.</div>
+    <div class="dialogue-line"><span class="speaker huber">Frau Huber:</span> That's a sensible plan. Now, in terms of paperwork: you must submit your business registration by Friday, and I ought to mention you'll also need your renovation invoices.</div>
+    <div class="dialogue-line"><span class="speaker nora">Nora:</span> We have most of them already. Is there anything else we have to bring?</div>
+    <div class="dialogue-line"><span class="speaker huber">Frau Huber:</span> Just proof of income, and a form of ID if you haven't already provided one. You don't have to decide on the loan today, but the current offer expires in fourteen days.</div>
+    <div class="dialogue-line"><span class="speaker lukas">Lukas:</span> And if we have more questions before then?</div>
+    <div class="dialogue-line"><span class="speaker huber">Frau Huber:</span> You could call me directly. I'll send you the final offer by email tomorrow morning.</div>
+    <div class="dialogue-line"><span class="speaker nora">Nora:</span> Perfect. Thank you so much for your time.</div>
+    <div class="dialogue-line"><span class="speaker huber">Frau Huber:</span> My pleasure. Good luck with the guesthouse — I think you're going to do very well.</div>
+  </div>
+
+  <div class="doc chat" data-doctype="WhatsApp — Nora reports back to Lukas">
+    <div class="doc-meta">23 March, 11:20 — right after the meeting</div>
+    <div class="chat-name">Nora</div>
+    <div class="chat-bubble me">Just left the bank! Frau Huber said she'd recommend the fixed-rate loan. She said we should choose stability while we're a new business.</div>
+    <div class="chat-name">Lukas</div>
+    <div class="chat-bubble them">Good — that's what I'd rather have anyway. Did she say anything about the paperwork?</div>
+    <div class="chat-name">Nora</div>
+    <div class="chat-bubble me">Yes — she told us that we had to submit the business registration by Friday. She also said she would send the final offer by email tomorrow.</div>
+  </div>
+</section>
+
+<!-- 2 -->
+<!-- SECTION: Notice the Pattern -->
+<section id="sec2">
+  <div class="sec-head"><div class="sec-num">2</div><h2>Notice the Pattern</h2></div>
+  <p>Go back to the documents. Look closely before reading on.</p>
+  <div class="notice-box">
+    <p><strong>A. Preferences.</strong> Find "I'd rather have a fixed rate" and "I prefer fixed rates." Both express a preference, but one is followed directly by a noun, and one needs a different structure to compare two things ("I'd rather borrow less <em>than</em> borrow the full amount"). Can you see the difference in what follows each expression?</p>
+    <p><strong>B. Advice.</strong> Find "you should choose stability," "you must submit your business registration," and "you ought to keep a reserve fund." All give advice or obligation — but are they equally strong? Which one sounds like a rule, and which ones sound like recommendations?</p>
+    <p><strong>C. Equal comparison.</strong> Find "Loan A is almost as expensive as Loan B." What two things are being compared, and are they equal, or is one bigger?</p>
+    <p><strong>D. Reported speech.</strong> Now compare Frau Huber's exact words in the meeting notes with what Nora says afterwards on WhatsApp. "I'd recommend..." becomes "she said she'd recommend..." "You must submit..." becomes "she told us that we had to submit..." "I'll send..." becomes "she said she would send..." What happens to the verbs when we report what someone said?</p>
+  </div>
+  <button class="reveal" onclick="toggleAnswer('n1')">Check your noticing</button>
+  <div class="answer" id="n1">
+    <p><strong>A.</strong> "Would rather" is followed by a base-form verb (rather <em>have</em>, rather <em>borrow</em>) and uses "than" for comparison. "Prefer" is often followed directly by a noun or by "-ing," and uses "to" for comparison (prefer X to Y).</p>
+    <p><strong>B.</strong> "Must" = a strict obligation/rule (no choice). "Should / ought to" = a recommendation or advice (there is a choice, but it's a good idea).</p>
+    <p><strong>C.</strong> Loan A and Loan B are being compared, and "almost as expensive as" shows they are nearly equal in cost, with Loan A very slightly less than fully equal.</p>
+    <p><strong>D.</strong> When we report what someone said, the verb usually moves one step back into the past: <em>am/is</em> → <em>was</em>, <em>will</em> → <em>would</em>, <em>must</em> → <em>had to</em>. This is called "backshift," and it's the seed of what you'll study fully as reported speech in Grade 6.</p>
+  </div>
+  <p>You've just noticed four real grammar patterns in one short conversation. Sections 3–6 now name and explain each one properly.</p>
+</section>
+
+<!-- 3 -->
+<!-- SECTION: Grammar Focus — Prefer / Would Rather -->
+<section id="sec3">
+  <div class="sec-head"><div class="sec-num">3</div><h2>Grammar Focus — Prefer / Would Rather</h2></div>
+  <p class="tag">Expressing preferences</p>
+
+  <div class="table-scroll"><table>
+    <tr><th>Expression</th><th>Followed by</th><th>Comparing two things</th><th>Example</th></tr>
+    <tr><td><strong>prefer</strong></td><td>noun / -ing form</td><td>prefer X <strong>to</strong> Y</td><td>I prefer fixed rates to variable ones.</td></tr>
+    <tr><td><strong>would prefer</strong></td><td>to + infinitive</td><td>would prefer to X rather than Y</td><td>I'd prefer to wait rather than rush the decision.</td></tr>
+    <tr><td><strong>would rather</strong></td><td>base form (no "to")</td><td>would rather X <strong>than</strong> Y</td><td>I'd rather have a fixed rate than a variable one.</td></tr>
+  </table></div>
+
+  <div class="rule-box">
+    <h4>The most common learner error</h4>
+    <p>Learners often add "to" after <em>would rather</em> by mistake, copying the pattern of <em>would prefer</em>. Remember: <strong>would rather + base verb</strong>, never "would rather to."</p>
+    <p style="color:var(--danger);">✗ I'd rather to borrow less.</p>
+    <p style="color:var(--good);">✓ I'd rather borrow less.</p>
+  </div>
+
+  <h3>3.1 Talking about someone else's preference</h3>
+  <p>"Would rather" can also take a second subject, followed by the simple past (not present!) even though the meaning is present or future:</p>
+  <ul>
+    <li>I'd rather <strong>you called</strong> the bank, not me. <em>(present meaning, past form)</em></li>
+    <li>Nora would rather <strong>Lukas dealt with</strong> the paperwork.</li>
+  </ul>
+
+  <button class="reveal" onclick="toggleAnswer('g1')">Try it: prefer, would prefer, or would rather?</button>
+  <div class="answer" id="g1">
+    <p>1. I <strong>prefer</strong> saving money <strong>to</strong> spending it immediately.<br>
+    2. We'd <strong>rather</strong> talk to the advisor in person <strong>than</strong> by phone.<br>
+    3. Lukas would <strong>prefer to</strong> sign the papers this week rather than wait.<br>
+    4. I'd <strong>rather</strong> you didn't tell the whole family about the loan yet.</p>
+  </div>
+</section>
+
+<!-- 4 -->
+<!-- SECTION: Grammar Focus — Modal Verbs for Advice -->
+<section id="sec4">
+  <div class="sec-head"><div class="sec-num">4</div><h2>Grammar Focus — Modal Verbs for Advice</h2></div>
+  <p class="tag">should · ought to · must · have to · could (extended)</p>
+
+  <div class="table-scroll"><table>
+    <tr><th>Modal</th><th>Strength</th><th>Meaning</th><th>Example</th></tr>
+    <tr><td><strong>should / ought to</strong></td><td>Recommendation</td><td>a good idea, but not obligatory</td><td>You should keep a reserve fund.</td></tr>
+    <tr><td><strong>must</strong></td><td>Strong obligation</td><td>a rule, often from the speaker's authority or a real requirement</td><td>You must submit the registration by Friday.</td></tr>
+    <tr><td><strong>have to</strong></td><td>Strong obligation</td><td>a requirement, often from an outside rule or system (not the speaker personally)</td><td>New businesses have to provide two years of projected income.</td></tr>
+    <tr><td><strong>could</strong></td><td>A suggestion / possibility</td><td>one option among several — softer than should</td><td>You could also consider a smaller loan.</td></tr>
+  </table></div>
+
+  <div class="rule-box">
+    <h4>Must vs. have to — a subtle but useful distinction</h4>
+    <p><strong>Must</strong> often expresses the speaker's own authority or strong personal opinion ("I, the advisor, insist..."). <strong>Have to</strong> often reports an external rule or system ("the bank's policy requires..."). In everyday spoken English the two frequently overlap, but the distinction matters most in the negative:</p>
+    <p><strong>mustn't</strong> = it is forbidden. <strong>don't have to</strong> = it is not necessary (but you may if you wish).</p>
+    <p style="color:var(--good);">✓ You don't have to decide today. (no obligation)</p>
+    <p style="color:var(--good);">✓ You mustn't sign anything without reading it first. (forbidden)</p>
+  </div>
+
+  <h3>4.1 Giving advice politely</h3>
+  <p>In real spoken English, advice is often softened. Compare the directness:</p>
+  <ul>
+    <li>Direct: You should choose the fixed rate.</li>
+    <li>Softer: I think you should probably choose the fixed rate.</li>
+    <li>Very soft: If I were you, I'd choose the fixed rate.</li>
+  </ul>
+
+  <button class="reveal" onclick="toggleAnswer('g2')">Try it: choose the best modal</button>
+  <div class="answer" id="g2">
+    <p>1. New applicants <strong>have to</strong> provide two forms of ID — it's bank policy, not my personal opinion.<br>
+    2. You <strong>mustn't</strong> miss the Friday deadline — the offer will expire.<br>
+    3. You <strong>could</strong> also ask about a smaller loan if €30,000 feels like too much.<br>
+    4. I really think you <strong>should</strong> talk to an accountant before deciding.</p>
+  </div>
+</section>
+
+<!-- 5 -->
+<!-- SECTION: Grammar Focus — As + Adjective + As -->
+<section id="sec5">
+  <div class="sec-head"><div class="sec-num">5</div><h2>Grammar Focus — As + Adjective + As</h2></div>
+  <p class="tag">Comparing two things that are equal, or nearly equal</p>
+
+  <div class="rule-box">
+    <h4>Form</h4>
+    <p><strong>as + adjective + as</strong> (equal) &nbsp;·&nbsp; <strong>not as + adjective + as</strong> (unequal, first thing is less)</p>
+  </div>
+
+  <div class="table-scroll"><table>
+    <tr><th>Pattern</th><th>Meaning</th><th>Example</th></tr>
+    <tr><td>as X as</td><td>equal / the same degree</td><td>Loan A is almost as expensive as Loan B.</td></tr>
+    <tr><td>not as X as</td><td>the first thing is less X than the second</td><td>The variable rate isn't as safe as the fixed rate.</td></tr>
+    <tr><td>just as X as</td><td>emphasises true equality</td><td>A small loan can be just as useful as a large one.</td></tr>
+  </table></div>
+
+  <p><strong>Quick note:</strong> "not as...as" is far more common in real spoken English than its logical opposite "less...than," which sounds more formal. Corpus data shows native speakers prefer "not as safe as" over "less safe than" in everyday conversation.</p>
+
+  <button class="reveal" onclick="toggleAnswer('g3')">Try it: complete with as...as</button>
+  <div class="answer" id="g3">
+    <p>1. Frau Huber's advice was <strong>as</strong> clear <strong>as</strong> we'd hoped.<br>
+    2. A fixed-rate loan isn't always <strong>as</strong> cheap <strong>as</strong> a variable one at first.<br>
+    3. Finishing the bathroom themselves would be <strong>just as</strong> satisfying <strong>as</strong> hiring someone.</p>
+  </div>
+</section>
+
+<!-- 6 -->
+<!-- SECTION: Grammar Focus — Reported Speech (Preview) -->
+<section id="sec6">
+  <div class="sec-head"><div class="sec-num">6</div><h2>Grammar Focus — Reported Speech (Preview)</h2></div>
+  <p class="tag">say / tell + that-clause — a first look, full rules coming in Grade 6</p>
+
+  <p>When we report what someone said, instead of quoting their exact words, the verb tense usually moves one step back into the past. This is called <strong>backshift</strong>.</p>
+
+  <div class="direct-vs-reported">
+    <div class="dvr-box direct">"I'd recommend the fixed-rate loan." <br><span style="color:var(--ink-soft);font-size:12px;">(would — stays the same)</span></div>
+    <div class="arrow">→</div>
+    <div class="dvr-box reported">She <strong>said</strong> she'd recommend the fixed-rate loan.</div>
+  </div>
+  <div class="direct-vs-reported">
+    <div class="dvr-box direct">"You must submit your registration."</div>
+    <div class="arrow">→</div>
+    <div class="dvr-box reported">She <strong>told</strong> us that we <strong>had to</strong> submit our registration.</div>
+  </div>
+  <div class="direct-vs-reported">
+    <div class="dvr-box direct">"I'll send you the offer tomorrow."</div>
+    <div class="arrow">→</div>
+    <div class="dvr-box reported">She <strong>said</strong> she <strong>would</strong> send us the offer the next day.</div>
+  </div>
+
+  <div class="table-scroll"><table>
+    <tr><th>Direct speech</th><th>Reported speech</th></tr>
+    <tr><td>am / is / are</td><td>was / were</td></tr>
+    <tr><td>will</td><td>would</td></tr>
+    <tr><td>must</td><td>had to</td></tr>
+    <tr><td>can</td><td>could</td></tr>
+    <tr><td>today / tomorrow</td><td>that day / the next day</td></tr>
+  </table></div>
+
+  <div class="rule-box">
+    <h4>Say vs. Tell</h4>
+    <p><strong>Say</strong> — no personal object needed: <em>She said (that) she was busy.</em> If you name the listener, you need "to": <em>She said to me that...</em> (less common).</p>
+    <p><strong>Tell</strong> — always needs a personal object: <em>She told us that...</em> ✗ <em>She told that...</em> is incorrect.</p>
+  </div>
+
+  <p style="color:var(--ink-soft);font-size:14px;">This is only a preview — you'll meet the full system of reported questions, commands, and time-expression changes in Grade 6. For now, focus on recognising the pattern and using <em>say/tell + that</em> for simple statements.</p>
+
+  <button class="reveal" onclick="toggleAnswer('g4')">Try it: report these statements</button>
+  <div class="answer" id="g4">
+    <p>1. Lukas: "I'm worried about the interest rate." → Lukas <strong>said</strong> (that) he <strong>was</strong> worried about the interest rate.<br>
+    2. Frau Huber: "You can apply online." → She <strong>told</strong> us (that) we <strong>could</strong> apply online.<br>
+    3. Nora: "We'll decide by Friday." → Nora <strong>said</strong> (that) they <strong>would</strong> decide by Friday.</p>
+  </div>
+</section>
+
+<!-- 7 -->
+<!-- SECTION: Vocabulary — At the Bank -->
+<section id="sec7">
+  <div class="sec-head"><div class="sec-num">7</div><h2>Vocabulary — At the Bank</h2></div>
+  <p class="tag">Every word below appeared in Section 1. Read the example from the story before the definition — figure out the meaning from context first.</p>
+
+  <div class="vocab-cols">
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">loan</span><span class="pron">ləʊn</span><span class="pos">n</span></div>
+      <div class="ex">"You're looking for a renovation <strong>loan</strong> for the guesthouse."</div>
+      <div class="def">A sum of money that a bank lends you, which you pay back over time, usually with interest.</div>
+      <div class="colloc">Collocates: <em>apply for a loan, take out a loan, repay a loan, loan application</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">interest rate</span><span class="pos">n phrase</span></div>
+      <div class="ex">"Loan A has a fixed <strong>interest rate</strong> of 3.4%."</div>
+      <div class="def">The percentage a bank charges you (or pays you) for borrowing (or saving) money, usually calculated per year.</div>
+      <div class="colloc">Collocates: <em>a low/high interest rate, interest rates rise/fall, at a rate of...</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">fixed rate / variable rate</span><span class="pos">n phrase</span></div>
+      <div class="ex">"I'd rather have the <strong>fixed rate</strong>, to be honest. I don't like surprises."</div>
+      <div class="def"><strong>Fixed</strong> = stays exactly the same for the whole loan period. <strong>Variable</strong> = can go up or down depending on the market.</div>
+      <div class="colloc">Collocates: <em>a fixed-rate mortgage, a variable-rate loan, switch to a fixed rate</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">collateral</span><span class="pron">kəˈlætərəl</span><span class="pos">n, uncountable</span></div>
+      <div class="ex">Not directly in the dialogue, but relevant: a bank may ask for <strong>collateral</strong> on a large business loan.</div>
+      <div class="def">Something valuable (property, equipment) that you promise to give the bank if you cannot repay the loan.</div>
+      <div class="colloc">Collocates: <em>offer collateral, use the flat as collateral, secured against collateral</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">proof of income</span><span class="pos">n phrase</span></div>
+      <div class="ex">"Just <strong>proof of income</strong>, and a form of ID if you haven't already provided one."</div>
+      <div class="def">A document (payslip, tax return, bank statement) that shows how much money you earn.</div>
+      <div class="colloc">Collocates: <em>provide proof of income, proof of income document, request proof of income</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">business registration</span><span class="pos">n phrase</span></div>
+      <div class="ex">"You must submit your <strong>business registration</strong> by Friday."</div>
+      <div class="def">Official documentation proving a business legally exists and is registered with the authorities.</div>
+      <div class="colloc">Collocates: <em>submit your registration, registration number, register a business</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">reserve fund</span><span class="pos">n phrase</span></div>
+      <div class="ex">"I think you ought to keep a small <strong>reserve fund</strong> for unexpected costs."</div>
+      <div class="def">Money set aside and not spent, kept ready in case of an emergency or unplanned expense.</div>
+      <div class="colloc">Collocates: <em>build up a reserve fund, dip into the reserve fund, a healthy reserve</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">deadline</span><span class="pron">ˈdedlaɪn</span><span class="pos">n</span></div>
+      <div class="ex">"The current offer <strong>expires</strong> in fourteen days." / "you must submit... by Friday"</div>
+      <div class="def">The latest date or time by which something must be finished or submitted.</div>
+      <div class="colloc">Collocates: <em>meet a deadline, miss a deadline, an approaching deadline, extend a deadline</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">expire</span><span class="pron">ɪkˈspaɪər</span><span class="pos">v</span></div>
+      <div class="ex">"...the current offer <strong>expires</strong> in fourteen days."</div>
+      <div class="def">To stop being valid or usable after a certain date.</div>
+      <div class="colloc">Collocates: <em>the offer expires, before it expires, an expired document</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">financial advisor</span><span class="pos">n phrase</span></div>
+      <div class="ex">Frau Huber is Nora and Lukas's <strong>financial advisor</strong> at Alpen Bank Wien.</div>
+      <div class="def">A professional who helps people make decisions about money, loans, savings, and investments.</div>
+      <div class="colloc">Collocates: <em>consult a financial advisor, meet with your advisor, independent financial advice</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">apply for</span><span class="pos">phrasal verb</span></div>
+      <div class="ex">Nora and Lukas need to <strong>apply for</strong> a renovation loan.</div>
+      <div class="def">To formally ask for something (a loan, a job, a document) usually with a form or written request.</div>
+      <div class="colloc">Collocates: <em>apply for a loan, apply for a mortgage, apply for a visa, apply online</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">manageable</span><span class="pron">ˈmænɪdʒəbəl</span><span class="pos">adj</span></div>
+      <div class="ex">"That's very <strong>manageable</strong>," says Frau Huber, about the €30,000 they need.</div>
+      <div class="def">Not too difficult to deal with, control, or achieve; realistic and within reach.</div>
+      <div class="colloc">Collocates: <em>a manageable amount, keep it manageable, manageable workload</em></div>
+    </div>
+  </div>
+
+  <div class="vocab-more">
+    <h5>More Banking Words to Know</h5>
+    <p>mortgage (n) · overdraft (n) · savings account / current account (n) · balance (n) · direct debit (n) · credit history (n) · application form (n) · monthly repayment (n) · bank teller (n) · branch (n) · applicant (n) · installment (n)</p>
+  </div>
+
+  <h3 style="margin-top:26px;">Language at the Bank — What to Say</h3>
+  <div class="table-scroll"><table>
+    <tr><th>Situation</th><th>Useful phrases (from the dialogue)</th></tr>
+    <tr><td><strong>Opening a meeting</strong></td><td><em>Good morning, please sit down. / So, you're looking for... / Congratulations on the progress so far.</em></td></tr>
+    <tr><td><strong>Comparing options</strong></td><td><em>Let me show you two options. / Loan A is almost as expensive as Loan B. / The payment never changes / can rise or fall.</em></td></tr>
+    <tr><td><strong>Asking for advice</strong></td><td><em>What would you recommend? / Is there anything else we have to bring? / What if we have more questions?</em></td></tr>
+    <tr><td><strong>Giving advice</strong></td><td><em>I'd recommend... / You should consider... / You could also... / I ought to mention...</em></td></tr>
+    <tr><td><strong>Discussing paperwork &amp; deadlines</strong></td><td><em>You must submit... by Friday. / You don't have to decide today. / The offer expires in...</em></td></tr>
+    <tr><td><strong>Closing a meeting</strong></td><td><em>Thank you so much for your time. / My pleasure. / I'll send you... by email tomorrow.</em></td></tr>
+  </table></div>
+</section>
+
+<!-- 8 -->
+<!-- SECTION: Vocabulary — Reporting Verbs -->
+<section id="sec8">
+  <div class="sec-head"><div class="sec-num">8</div><h2>Vocabulary — Reporting Verbs</h2></div>
+  <p class="tag">The verbs we use to report what someone said — each has its own grammar pattern, so learn the pattern together with the word.</p>
+
+  <div class="vocab-cols">
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">say</span><span class="pron">seɪ</span><span class="pos">v</span></div>
+      <div class="ex">"Frau Huber <strong>said</strong> she'd recommend the fixed-rate loan."</div>
+      <div class="def">To report someone's words. Pattern: say + (that) + clause. No personal object needed.</div>
+      <div class="colloc">Pattern: <em>say (that) + clause</em> — NOT "say to me that..." in reported statements.</div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">tell</span><span class="pron">tel</span><span class="pos">v</span></div>
+      <div class="ex">"She <strong>told</strong> us that we had to submit our registration."</div>
+      <div class="def">To report someone's words, always naming who was told. Pattern: tell + person + (that) + clause.</div>
+      <div class="colloc">Pattern: <em>tell someone (that) + clause</em> — never "tell that..." without a person.</div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">explain</span><span class="pron">ɪkˈspleɪn</span><span class="pos">v</span></div>
+      <div class="ex">Frau Huber <strong>explained</strong> that the fixed rate was safer because the payment never changes.</div>
+      <div class="def">To give reasons or make something clear by giving more detail than a simple statement.</div>
+      <div class="colloc">Pattern: <em>explain (that) + clause / explain something to someone</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">mention</span><span class="pron">ˈmenʃən</span><span class="pos">v</span></div>
+      <div class="ex">"I ought to <strong>mention</strong> you'll also need your renovation invoices."</div>
+      <div class="def">To say something briefly, often as an extra or secondary piece of information.</div>
+      <div class="colloc">Pattern: <em>mention (that) + clause / mention something (to someone)</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">promise</span><span class="pron">ˈprɒmɪs</span><span class="pos">v</span></div>
+      <div class="ex">Frau Huber didn't just say she might send the offer — she made it a firm commitment: "I'll send you the final offer tomorrow" → she <strong>promised</strong> to send it.</div>
+      <div class="def">To give a firm, reliable commitment to do something in the future.</div>
+      <div class="colloc">Pattern: <em>promise to + infinitive / promise (that) + clause</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">warn</span><span class="pron">wɔːn</span><span class="pos">v</span></div>
+      <div class="ex">A financial advisor might <strong>warn</strong> a client not to miss the fourteen-day deadline.</div>
+      <div class="def">To tell someone about a possible danger, problem, or unpleasant consequence in advance.</div>
+      <div class="colloc">Pattern: <em>warn someone (not) to do something / warn someone that + clause</em></div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">advise</span><span class="pron">ədˈvaɪz</span><span class="pos">v</span></div>
+      <div class="ex">Frau Huber <strong>advised</strong> Lukas and Nora to keep a reserve fund.</div>
+      <div class="def">To give a professional or personal recommendation about what someone should do.</div>
+      <div class="colloc">Pattern: <em>advise someone to + infinitive</em> (note: the noun is "advice," spelled with a c)</div>
+    </div>
+    <div class="vocab-entry">
+      <div class="headword"><span class="word">recommend</span><span class="pron">ˌrekəˈmend</span><span class="pos">v</span></div>
+      <div class="ex">"I'd <strong>recommend</strong> the fixed-rate loan."</div>
+      <div class="def">To suggest that something is good, suitable, or the best choice.</div>
+      <div class="colloc">Pattern: <em>recommend + noun / recommend -ing / recommend that someone do something</em></div>
+    </div>
+  </div>
+
+  <div class="vocab-more">
+    <h5>More Reporting Language</h5>
+    <p>ask (+ if/whether) · add · reply · respond · confirm · point out · report back to someone · pass on a message · according to (the advisor)...</p>
+  </div>
+</section>
+
+<!-- 9 -->
+<!-- SECTION: Practice — Complete the Dialogue -->
+<section id="sec9">
+  <div class="sec-head"><div class="sec-num">9</div><h2>Practice — Complete the Dialogue</h2></div>
+  <p>Go back to the full transcript in Section 1 if you need to check. Fill each gap with the missing word(s) from the real conversation, then click "Check my answers."</p>
+
+  <div class="card">
+    <div class="fill-line">1. "Over five years, Loan A is almost <input class="fill-input" data-answer="as" size="4"> expensive <input class="fill-input" data-answer="as" size="4"> Loan B."</div>
+    <div class="fill-line">2. "I'd <input class="fill-input" data-answer="rather" size="8"> have the fixed rate, to be honest."</div>
+    <div class="fill-line">3. "You <input class="fill-input" data-answer="should" size="8"> choose stability while you're still new."</div>
+    <div class="fill-line">4. "You could also <input class="fill-input" data-answer="consider" size="10"> borrowing a little less."</div>
+    <div class="fill-line">5. "You <input class="fill-input" data-answer="must" size="8"> submit your business registration by Friday."</div>
+    <div class="fill-line">6. "You <input class="fill-input" data-answer="don't have to|dont have to" size="12"> decide on the loan today, but the offer expires in fourteen days."</div>
+    <div class="fill-line">7. "That's actually what I'd rather <input class="fill-input" data-answer="do" size="6"> — borrow less and finish the bathroom ourselves."</div>
+    <div class="fill-line">8. Later, Nora <input class="fill-input" data-answer="said|told" size="8"> Lukas that Frau Huber had recommended the fixed-rate loan.</div>
+    <button class="reveal" onclick="checkFill()">Check my answers</button>
+    <div class="feedback" id="fillFeedback"></div>
+  </div>
+</section>
+
+<!-- 10 -->
+<!-- SECTION: Practice — True or False -->
+<section id="sec10">
+  <div class="sec-head"><div class="sec-num">10</div><h2>Practice — True or False</h2></div>
+  <p>Based on the documents in Section 1.</p>
+  <div class="quiz-item">
+    <p class="q">1. Lukas would rather have a variable rate than a fixed rate.</p>
+    <div class="tf-buttons"><button onclick="tfCheck(this,false)">True</button><button onclick="tfCheck(this,true)">False</button></div>
+    <div class="feedback"></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">2. According to the leaflet, Loan A and Loan B cost almost the same over five years.</p>
+    <div class="tf-buttons"><button onclick="tfCheck(this,true)">True</button><button onclick="tfCheck(this,false)">False</button></div>
+    <div class="feedback"></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">3. Frau Huber said the business registration must be submitted by Friday.</p>
+    <div class="tf-buttons"><button onclick="tfCheck(this,true)">True</button><button onclick="tfCheck(this,false)">False</button></div>
+    <div class="feedback"></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">4. Nora told Lukas that the advisor would send the offer the same day.</p>
+    <div class="tf-buttons"><button onclick="tfCheck(this,false)">True</button><button onclick="tfCheck(this,true)">False</button></div>
+    <div class="feedback"></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">5. Lukas would rather borrow the full amount than finish the bathroom themselves.</p>
+    <div class="tf-buttons"><button onclick="tfCheck(this,false)">True</button><button onclick="tfCheck(this,true)">False</button></div>
+    <div class="feedback"></div>
+  </div>
+</section>
+
+<!-- 11 -->
+<!-- SECTION: Practice — Match the Collocations -->
+<section id="sec11">
+  <div class="sec-head"><div class="sec-num">11</div><h2>Practice — Match the Collocations</h2></div>
+  <p>Click a word on the left, then its partner on the right.</p>
+  <div class="match-wrap">
+    <div class="match-col" id="matchLeft">
+      <button data-pair="1">apply</button>
+      <button data-pair="2">submit an</button>
+      <button data-pair="3">meet a</button>
+      <button data-pair="4">the offer</button>
+      <button data-pair="5">a reserve</button>
+      <button data-pair="6">proof of</button>
+    </div>
+    <div class="match-col" id="matchRight">
+      <button data-pair="4">expires</button>
+      <button data-pair="1">for a loan</button>
+      <button data-pair="6">income</button>
+      <button data-pair="2">application</button>
+      <button data-pair="3">deadline</button>
+      <button data-pair="5">fund</button>
+    </div>
+  </div>
+  <div id="matchScore">Matched: 0 / 6</div>
+</section>
+
+<!-- 12 -->
+<!-- SECTION: Practice — Multiple Choice -->
+<section id="sec12">
+  <div class="sec-head"><div class="sec-num">12</div><h2>Practice — Multiple Choice</h2></div>
+  <div class="quiz-item">
+    <p class="q">1. Nora ___ a fixed rate ___ a variable one.</p>
+    <div class="mc-options">
+      <button onclick="mcCheck(this,true)">A) prefers / to</button>
+      <button onclick="mcCheck(this,false)">B) would rather / to</button>
+      <button onclick="mcCheck(this,false)">C) prefers / than</button>
+    </div>
+    <div class="feedback"></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">2. New applicants ___ show two forms of ID — it's simply bank policy.</p>
+    <div class="mc-options">
+      <button onclick="mcCheck(this,false)">A) could</button>
+      <button onclick="mcCheck(this,true)">B) have to</button>
+      <button onclick="mcCheck(this,false)">C) would rather</button>
+    </div>
+    <div class="feedback"></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">3. Loan A isn't ___ Loan B in the first year, but it's much safer.</p>
+    <div class="mc-options">
+      <button onclick="mcCheck(this,false)">A) as cheap than</button>
+      <button onclick="mcCheck(this,true)">B) as cheap as</button>
+      <button onclick="mcCheck(this,false)">C) so cheap that</button>
+    </div>
+    <div class="feedback"></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">4. Frau Huber ___ us that we ___ submit the form by Friday.</p>
+    <div class="mc-options">
+      <button onclick="mcCheck(this,false)">A) said / must</button>
+      <button onclick="mcCheck(this,true)">B) told / had to</button>
+      <button onclick="mcCheck(this,false)">C) told / must</button>
+    </div>
+    <div class="feedback"></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">5. "I'll email you tomorrow," she said. → She said she ___ email us ___.</p>
+    <div class="mc-options">
+      <button onclick="mcCheck(this,true)">A) would / the next day</button>
+      <button onclick="mcCheck(this,false)">B) will / tomorrow</button>
+      <button onclick="mcCheck(this,false)">C) would / tomorrow</button>
+    </div>
+    <div class="feedback"></div>
+  </div>
+</section>
+
+<!-- 13 -->
+<!-- SECTION: Practice — Fix the Errors -->
+<section id="sec13">
+  <div class="sec-head"><div class="sec-num">13</div><h2>Practice — Fix the Errors</h2></div>
+  <p>Five sentences below. <strong>One of them is already correct</strong> — don't "fix" a sentence that has nothing wrong with it.</p>
+  <div class="quiz-item"><p class="q">1. I'd rather to choose the fixed rate.</p></div>
+  <div class="quiz-item"><p class="q">2. She told that we had to submit the form by Friday.</p></div>
+  <div class="quiz-item"><p class="q">3. Loan A isn't as cheap as Loan B in year one.</p></div>
+  <div class="quiz-item"><p class="q">4. Nora said she will send the papers tomorrow.</p></div>
+  <div class="quiz-item"><p class="q">5. You not have to decide today, but you mustn't miss next month's deadline.</p></div>
+  <button class="reveal" onclick="toggleAnswer('err1')">Reveal corrections</button>
+  <div class="answer" id="err1">
+    <p>1. I'd rather <strong>choose</strong> the fixed rate. (no "to" after would rather)<br>
+    2. She <strong>told us</strong> that we had to submit the form by Friday. (tell always needs a personal object)<br>
+    3. ✅ <strong>Correct as written.</strong><br>
+    4. Nora said she <strong>would</strong> send the papers <strong>the next day</strong>. (backshift: will → would; tomorrow → the next day, when reported later)<br>
+    5. You <strong>don't have to</strong> decide today, but you mustn't miss next month's deadline. (missing auxiliary "don't")</p>
+  </div>
+</section>
+
+<!-- 14 -->
+
+<!-- SECTION: Speaking Practice -->
+<section id="speaking">
+  <div class="sec-head"><div class="sec-num">14</div><h2>Speaking Practice</h2></div>
+  <p class="section-intro">A bank appointment is a speaking exam with money attached: you compare options, state preferences, and ask for advice &mdash; then report it all to someone afterwards. Exactly this week's grammar. Voice memo app ready.</p>
+
+  <div class="speak-card">
+    <span class="speak-type">Roleplay scenario</span>
+    <h3>The loan appointment</h3>
+    <p><strong>Role A &mdash; Customer (like Lukas or Nora):</strong> You need a loan to finish a project. Explain what for, and state your preferences: <em>"I'd rather pay it back over five years&hellip; I'd prefer a fixed rate&hellip;"</em> Ask for advice: <em>"What would you recommend?"</em></p>
+    <p><strong>Role B &mdash; Bank adviser:</strong> Ask about the project and the budget, compare two options using <em>as&hellip;as</em> (<em>"The monthly payment isn't as high as you think"</em>), and give advice with <em>should / could</em>.</p>
+    <div class="speak-how"><strong>How:</strong> With a partner, or both roles yourself; record 3 minutes. <strong>When you listen back, check:</strong> <em>would rather</em> + base verb (<em>I'd rather pay</em>, not <em>to pay</em>); <em>prefer</em> + noun or <em>-ing</em>.</div>
+  </div>
+
+  <div class="speak-card">
+    <span class="speak-type">Opinion card</span>
+    <h3>Agree or disagree?</h3>
+    <p><em>"It's better to borrow money and start now than to wait and save for years."</em></p>
+    <p>Speak for <strong>60&ndash;90 seconds</strong>. Give your opinion with a real or imagined example. Use at least three items from this week's bank vocabulary (<em>a loan, interest, an instalment, to pay back, a budget&hellip;</em>) and at least one <em>as&hellip;as</em> comparison.</p>
+    <div class="speak-how"><strong>How:</strong> One take, recorded. <strong>When you listen back, check:</strong> advice and opinion modals at the right strength &mdash; <em>should</em> for advice, <em>could</em> for options, <em>must</em> only for real necessity.</div>
+  </div>
+
+  <div class="speak-card">
+    <span class="speak-type">Shadowing drill</span>
+    <h3>The bank dialogue, three ways</h3>
+    <p>Go back to the appointment dialogue in this unit and choose 4&ndash;5 lines &mdash; including one <em>would rather</em> sentence and one piece of advice. Read the lines aloud <strong>three times</strong>:</p>
+    <ul>
+      <li>Once slowly and clearly;</li>
+      <li>once at normal conversational speed;</li>
+      <li>once as politely and confidently as you can &mdash; this is your money, after all.</li>
+    </ul>
+    <div class="speak-how"><strong>How:</strong> Record the third read. <strong>When you listen back, check the contractions:</strong> <em>I'd rather</em> is two smooth syllables (<em>I'd-RAther</em>), and <em>you should</em> has a weak <em>should</em>. If every word is full strength, go again faster.</div>
+  </div>
+
+  <div class="tip-box">
+    <h3>Technique: preferences without apology</h3>
+    <ul>
+      <li>State preferences cleanly: <em>"I'd rather X than Y."</em> One sentence, no sorry. Politeness lives in the tone, not in extra words.</li>
+      <li>Reporting a meeting afterwards? You only need three verbs to start: <em>said, told, asked</em>. <em>"She said the rate was fixed. She told us to bring the documents."</em></li>
+      <li>Numbers kill fluency at the bank. Practise your key numbers out loud before any real appointment: amounts, years, percentages.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SECTION: Skills — Listening: The Bank's Voicemail -->
+<section id="sec14">
+  <div class="sec-head"><div class="sec-num">15</div><h2>Skills — Listening: The Bank's Voicemail</h2></div>
+  <p class="tag">Transcript-based listening task — read aloud with a partner or record yourselves, then answer.</p>
+  <div class="doc" data-doctype="Voicemail transcript">
+    <div class="doc-meta">From: Frau Huber (Alpen Bank Wien) → To: Nora — 24 March, 09:40</div>
+    <p><em>"Good morning, Ms Berger. I'm calling to follow up on yesterday's meeting. I said I'd send the final offer today, and I've just emailed it to you — please check your inbox. I'd recommend reading the terms carefully before you sign; you don't have to decide immediately, but the offer expires in fourteen days. If you'd rather discuss anything by phone first, you could call me directly. Also, a small reminder: you must still send the missing invoice from February. Speak soon."</em></p>
+  </div>
+  <div class="quiz-item">
+    <p class="q">Listening check 1: What did Frau Huber say she had already done?</p>
+    <button class="reveal" onclick="toggleAnswer('l1')">Reveal</button>
+    <div class="answer" id="l1"><p>She said she'd send the final offer that day, and she had just emailed it.</p></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">Listening check 2: What is Nora NOT obliged to do immediately, and what is she still required to do?</p>
+    <button class="reveal" onclick="toggleAnswer('l2')">Reveal</button>
+    <div class="answer" id="l2"><p>She doesn't have to decide immediately (though the offer expires in 14 days), but she must still send the missing invoice from February.</p></div>
+  </div>
+  <div class="quiz-item">
+    <p class="q">Listening check 3: What alternative does Frau Huber offer if Nora would rather not decide by reading alone?</p>
+    <button class="reveal" onclick="toggleAnswer('l3')">Reveal</button>
+    <div class="answer" id="l3"><p>Nora could call Frau Huber directly to discuss anything by phone first.</p></div>
+  </div>
+</section>
+
+<!-- 15 -->
+<!-- SECTION: Skills — Writing: Report the Meeting -->
+<section id="sec15">
+  <div class="sec-head"><div class="sec-num">16</div><h2>Skills — Writing: Report the Meeting</h2></div>
+  <p>Imagine you are Nora. Write a short message (80–120 words) to a friend, reporting what happened at the bank and what Frau Huber said. Use at least:</p>
+  <ul>
+    <li>one sentence with <em>prefer</em> or <em>would rather</em></li>
+    <li>two different modal verbs of advice/obligation</li>
+    <li>one <em>as...as</em> comparison</li>
+    <li>two reported statements with <em>said</em> or <em>told</em></li>
+  </ul>
+  <textarea id="writingBox" placeholder="Hi! So we finally went to the bank..."></textarea>
+  <div id="wordCount">0 words</div>
+</section>
+
+<!-- 16 -->
+
+<!-- SECTION: Listening & Watching -->
+<section id="listening">
+  <div class="sec-head"><div class="sec-num">17</div><h2>Listening &amp; Watching</h2></div>
+  <p class="section-intro">Money talk is everywhere in real English &mdash; and it's full of this week's advice modals and preferences. Each source below comes with one small task.</p>
+
+  <div class="media-card">
+    <div class="media-head"><h3>BBC 6 Minute English</h3><span class="media-platform">Podcast &middot; YouTube &middot; bbc.co.uk/learningenglish</span></div>
+    <p><strong>Why this week:</strong> The archive has episodes on money, saving, borrowing, and banks &mdash; this week's exact world, discussed for six structured minutes at a measured pace, with free transcripts.</p>
+    <div class="media-task"><strong>Your task:</strong> Pick an episode about money or saving. Listen once without the transcript, then with it. Note 3 new words &mdash; and every piece of advice you hear (<em>should, ought to, could</em>). Which advice would you actually take? Say why, aloud, in two sentences.</div>
+  </div>
+
+  <div class="media-card">
+    <div class="media-head"><h3>Culips ESL Podcast</h3><span class="media-platform">Podcast &middot; culips.com</span></div>
+    <p><strong>Why this week:</strong> Slow, natural learner-paced conversations about everyday life &mdash; including money, shopping, and making decisions. Real preference language (<em>I'd rather&hellip;, I prefer&hellip;</em>) at a speed you can catch.</p>
+    <div class="media-task"><strong>Your task:</strong> Pick an episode about money, shopping, or decisions. Note 3 new words and every preference phrase you hear. Then record 30 seconds of your own preferences about money: cash or card? Save or spend? <em>I'd rather&hellip;</em></div>
+  </div>
+
+  <div class="media-card">
+    <div class="media-head"><h3>Espresso English Podcast</h3><span class="media-platform">Podcast &middot; espressoenglish.net</span></div>
+    <p><strong>Why this week:</strong> Short, focused episodes on grammar in context &mdash; including modal verbs for advice and <em>would rather / prefer</em>, this week's two speaking tools, explained clearly with fresh examples.</p>
+    <div class="media-task"><strong>Your task:</strong> Find an episode on modal verbs or on expressing preferences. Shadow the host for 30 seconds, copying rhythm and stress. Note one example sentence and rebuild it aloud about the loan decision in this week's story.</div>
+  </div>
+</section>
+
+<!-- SECTION: Explore More — Independent Learning -->
+<section id="sec16">
+  <div class="sec-head"><div class="sec-num">18</div><h2>Explore More — Independent Learning</h2></div>
+  <p>Choose at least two of these before next class and bring back one thing you discovered.</p>
+  <div class="explore-grid">
+    <div class="explore-card">
+      <h5>Watch</h5>
+      <p>Search YouTube for "how to choose a mortgage" or "fixed vs variable rate explained" in English. Note every use of should/must/have to in the explanation.</p>
+    </div>
+    <div class="explore-card">
+      <h5>Read</h5>
+      <p>Find a real bank's website (in English) that compares loan or savings products. Highlight every "as...as" or "not as...as" comparison you can find.</p>
+    </div>
+    <div class="explore-card">
+      <h5>Investigate</h5>
+      <p>Look up the difference between "must" and "have to" on the <strong>Cambridge Dictionary</strong> or <strong>British Council</strong> grammar pages. Find one example that surprises you.</p>
+    </div>
+    <div class="explore-card">
+      <h5>Talk</h5>
+      <p>Ask someone: "Would you rather save money or spend it on experiences?" Report their answer back to a partner using reported speech: "They said they'd rather..."</p>
+    </div>
+    <div class="explore-card">
+      <h5>Reflect</h5>
+      <p>Think of a real piece of advice someone gave you recently. Write it first as direct speech, then rewrite it as reported speech.</p>
+    </div>
+    <div class="explore-card">
+      <h5>Corpus tool</h5>
+      <p>Try <strong>English-Corpora.org</strong> (COCA): search "would rather" and "I'd prefer" to see which is more common in spoken vs. academic English.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 17 -->
+<!-- SECTION: Week Summary -->
+<section id="sec17">
+  <div class="sec-head"><div class="sec-num">19</div><h2>Week Summary</h2></div>
+  <div class="summary-grid">
+    <div class="summary-card"><span class="icon">⚖️</span><h5>Prefer / Would Rather</h5><p>prefer + noun/-ing + to; would rather + base verb + than.</p></div>
+    <div class="summary-card"><span class="icon">📋</span><h5>Modal Verbs for Advice</h5><p>should/ought to = recommend; must/have to = obligation; could = a softer option.</p></div>
+    <div class="summary-card"><span class="icon">🟰</span><h5>As + Adjective + As</h5><p>equal comparisons; "not as...as" is more natural than "less...than" in speech.</p></div>
+    <div class="summary-card"><span class="icon">💬</span><h5>Reported Speech (Preview)</h5><p>backshift: is→was, will→would, must→had to; say vs. tell.</p></div>
+    <div class="summary-card"><span class="icon">🏦</span><h5>Banking Vocabulary</h5><p>loans, rates, accounts, documents, and the collocations around them.</p></div>
+    <div class="summary-card"><span class="icon">🗣️</span><h5>Reporting Verbs</h5><p>said, told, asked — plus explain, promise, warn, advise.</p></div>
+  </div>
+</section>
+
+<!-- 18 -->
+<!-- SECTION: Self-Check -->
+<section id="sec18">
+  <div class="sec-head"><div class="sec-num">20</div><h2>Self-Check</h2></div>
+  <p>Can you do the following? Be honest — this guides your own revision, not a grade.</p>
+  <div class="checklist">
+    <label><input type="checkbox"> I can use "would rather" without adding "to" by mistake.</label>
+    <label><input type="checkbox"> I can explain the difference between "must" and "have to."</label>
+    <label><input type="checkbox"> I can build an equal comparison with "as...as."</label>
+    <label><input type="checkbox"> I can report a simple statement using "said" or "told" with correct backshift.</label>
+    <label><input type="checkbox"> I can use at least eight banking words — with their correct part of speech — in a sentence of my own.</label>
+    <label><input type="checkbox"> I know the grammar pattern that follows each reporting verb (e.g. advise someone to..., warn someone that...).</label>
+    <label><input type="checkbox"> I completed the dialogue gap-fill (Section 9) without checking the transcript first.</label>
+    <label><input type="checkbox"> I completed at least two Explore More tasks.</label>
+  </div>
+</section>
+
+<!-- 19 -->
+<!-- SECTION: Before Next Class -->
+<section id="sec19">
+  <div class="sec-head"><div class="sec-num">21</div><h2>Before Next Class</h2></div>
+  <div class="card">
+    <ul>
+      <li>Finish and save your message reporting the bank meeting (Section 15) — bring it to class.</li>
+      <li>Complete at least two Explore More tasks (Section 16) and be ready to share one discovery.</li>
+      <li>Review the vocabulary cards in Sections 7–8; you'll need them for a role-play next class.</li>
+      <li>Think of one piece of real advice you've received (financial or otherwise) — you'll report it in class using this week's grammar.</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<div class="method-note">Grade 5 · Week 5 · The Bank Appointment — Flipped-classroom reference (ESA / Post-method / Task-based / CLT)</div>
+
+<!-- SECTION: Footer - Creator & Copyright -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p class="footer-copy">&copy; 2026 Bahar Esmaeelzadeh &middot; All rights reserved</p>
+    <p class="footer-line">Designed and created for English learners by Bahar Esmaeelzadeh.</p>
+    <p class="footer-links">
+      <a href="mailto:bahar.esmz.en@gmail.com">&#128231; bahar.esmz.en@gmail.com</a>
+      <span class="footer-dot">&middot;</span>
+      <a href="https://www.linkedin.com/in/bahar-esmaeelzadeh-650b98198" target="_blank" rel="noopener">&#128188; LinkedIn</a>
+    </p>
+    <p class="footer-note">If you found this helpful, feel free to get in touch.</p>
+  </div>
+</footer>
+
+
+<script>
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    document.getElementById('progress').style.width = scrolled + '%';
+  });
+
+  function toggleAnswer(id){
+    document.getElementById(id).classList.toggle('show');
+  }
+
+  function tfCheck(btn, correctForThisButton){
+    const container = btn.closest('.quiz-item');
+    const buttons = container.querySelectorAll('.tf-buttons button');
+    buttons.forEach(b => b.disabled = true);
+    const fb = container.querySelector('.feedback');
+    if(correctForThisButton){
+      btn.classList.add('correct');
+      fb.textContent = 'Correct!';
+      fb.style.color = 'var(--good)';
+    } else {
+      btn.classList.add('wrong');
+      fb.textContent = 'Not quite — look again at the documents.';
+      fb.style.color = 'var(--danger)';
+    }
+  }
+
+  function mcCheck(btn, isCorrect){
+    const container = btn.closest('.quiz-item');
+    const buttons = container.querySelectorAll('.mc-options button');
+    buttons.forEach(b => b.disabled = true);
+    const fb = container.querySelector('.feedback');
+    if(isCorrect){
+      btn.classList.add('correct');
+      fb.textContent = 'Correct!';
+      fb.style.color = 'var(--good)';
+    } else {
+      btn.classList.add('wrong');
+      fb.textContent = 'Incorrect. The right answer is now highlighted.';
+      fb.style.color = 'var(--danger)';
+      buttons.forEach(b => { if(b.getAttribute('onclick').includes(',true)')) b.classList.add('correct'); });
+    }
+  }
+
+  let selectedLeft = null;
+  let matchedCount = 0;
+  document.querySelectorAll('#matchLeft button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      if(btn.classList.contains('paired-correct')) return;
+      document.querySelectorAll('#matchLeft button').forEach(b=>b.classList.remove('selected'));
+      btn.classList.add('selected');
+      selectedLeft = btn;
+    });
+  });
+  document.querySelectorAll('#matchRight button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      if(!selectedLeft || btn.classList.contains('paired-correct')) return;
+      if(selectedLeft.dataset.pair === btn.dataset.pair){
+        selectedLeft.classList.remove('selected');
+        selectedLeft.classList.add('paired-correct');
+        btn.classList.add('paired-correct');
+        matchedCount++;
+        document.getElementById('matchScore').textContent = 'Matched: ' + matchedCount + ' / 6';
+        selectedLeft = null;
+      } else {
+        btn.classList.add('paired-wrong');
+        setTimeout(()=>btn.classList.remove('paired-wrong'), 600);
+      }
+    });
+  });
+
+  function checkFill(){
+    const inputs = document.querySelectorAll('.fill-input');
+    let correct = 0;
+    inputs.forEach(inp=>{
+      const answers = inp.dataset.answer.split('|').map(a=>a.trim().toLowerCase());
+      const val = inp.value.trim().toLowerCase().replace(/’/g, "'");
+      const ok = answers.includes(val);
+      inp.style.borderBottomColor = ok ? 'var(--good)' : 'var(--danger)';
+      if(ok) correct++;
+    });
+    const fb = document.getElementById('fillFeedback');
+    fb.textContent = correct + ' of ' + inputs.length + ' correct.';
+    fb.style.color = correct===inputs.length ? 'var(--good)' : 'var(--danger)';
+    fb.style.fontFamily = 'Arial,sans-serif';
+    fb.style.fontWeight = '700';
+    fb.style.marginTop = '10px';
+  }
+
+  const box = document.getElementById('writingBox');
+  const counter = document.getElementById('wordCount');
+  box.addEventListener('input', ()=>{
+    const words = box.value.trim().split(/\s+/).filter(Boolean).length;
+    counter.textContent = words + ' words (target: 80–120)';
+    counter.classList.remove('ok','low');
+    if(words >= 80 && words <= 130) counter.classList.add('ok');
+    else if(words > 0) counter.classList.add('low');
+  });
+
+/* Site frame (added): contents panel, back-to-top, table scroll hints */
+(function(){
+  var panel=document.getElementById('navPanel'),ov=document.getElementById('navOverlay'),
+      ham=document.getElementById('navHamburger'),closeB=document.getElementById('navClose'),
+      links=document.getElementById('navPanelLinks');
+  document.querySelectorAll('.toc a').forEach(function(a){
+    var n=document.createElement('a');
+    n.href=a.getAttribute('href');
+    n.textContent=a.textContent.replace(/^\s*\d+[a-z]?\.?\s+/,'');
+    links.appendChild(n);
+  });
+  function openP(){panel.classList.add('open');ov.classList.add('open');ham.setAttribute('aria-expanded','true');panel.setAttribute('aria-hidden','false');}
+  function closeP(){panel.classList.remove('open');ov.classList.remove('open');ham.setAttribute('aria-expanded','false');panel.setAttribute('aria-hidden','true');}
+  ham.addEventListener('click',function(){panel.classList.contains('open')?closeP():openP();});
+  closeB.addEventListener('click',closeP);
+  ov.addEventListener('click',closeP);
+  links.addEventListener('click',function(e){if(e.target.tagName==='A')closeP();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeP();});
+  document.getElementById('navTopBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  function hints(){document.querySelectorAll('.table-scroll').forEach(function(w){
+    if(w.scrollWidth>w.clientWidth+2){w.classList.add('has-overflow');}else{w.classList.remove('has-overflow');}
+  });}
+  window.addEventListener('resize',hints);window.addEventListener('load',hints);hints();
+  document.querySelectorAll('.table-scroll').forEach(function(w){
+    w.addEventListener('scroll',function(){if(w.scrollLeft>12)w.classList.remove('has-overflow');},{passive:true});
+  });
+})();
+
+</script>
+
+</body>
+</html>
