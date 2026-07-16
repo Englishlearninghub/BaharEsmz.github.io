@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Grade 10 &middot; Week 5 &mdash; The Final Dispatch | Complete Reference</title>
+<style>
+  :root {
+    --ink:#1A1F2E; --ink-soft:#4A5268; --paper:#F5F2EC; --paper-line:#E2DCCF;
+    --navy:#0F1C33; --navy-mid:#1E2E4A;
+    --gold:#C8993A; --gold-deep:#A87A20; --gold-light:#F0DCA0;
+    --teal:#1A5C5C; --teal-mid:#2A7A7A; --teal-soft:#E4F3F3;
+    --rose:#7A2A4A; --rose-mid:#9E3A5E; --rose-soft:#F5E8EE;
+    --sage:#2E5230; --sage-soft:#E8F0E8;
+    --amber:#7A4A10; --amber-soft:#FDF3E3;
+    --pine:#1A3A2A; --pine-mid:#2A5A3A; --pine-soft:#E4F0E8;
+    --slate:#3A4A6A; --white:#FFFFFF;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);
+    background-image:repeating-linear-gradient(transparent,transparent 35px,var(--paper-line) 35px,var(--paper-line) 36px);
+    color:var(--ink);font-family:'Inter', Calibri, "Segoe UI", Arial, sans-serif;font-size:17px;line-height:1.7;}
+  .wrap{max-width:940px;margin:0 auto;padding:0 24px 100px;}
+  .progress-track{position:sticky;top:0;height:5px;background:var(--paper-line);z-index:50;}
+  .progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--gold-deep),var(--teal));transition:width 0.1s ease;}
+  .masthead{background:var(--navy);color:var(--paper);margin:0 -24px;padding:52px 24px 42px;position:relative;overflow:hidden;}
+  .masthead::before{content:"Final Dispatch";position:absolute;right:-40px;top:50%;transform:translateY(-50%);font-family:Georgia,serif;font-size:80px;font-style:italic;font-weight:700;color:rgba(200,153,58,0.05);white-space:nowrap;pointer-events:none;}
+  .masthead::after{content:"";position:absolute;right:-80px;top:-80px;width:300px;height:300px;border-radius:50%;background:var(--navy-mid);opacity:0.55;}
+  .masthead-inner{max-width:892px;margin:0 auto;position:relative;z-index:1;}
+  .eyebrow{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin:0 0 14px;}
+  h1.title{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;font-size:40px;line-height:1.12;margin:0 0 12px;max-width:700px;}
+  h1.title em{color:var(--gold);font-style:italic;}
+  .masthead-desc{color:#B0BAD0;font-size:16px;max-width:580px;margin:0 0 20px;}
+  .masthead-meta{display:flex;gap:30px;flex-wrap:wrap;font-size:14px;color:#8A95B0;}
+  .masthead-meta span{font-weight:bold;color:var(--paper);}
+  .course-complete-badge{display:inline-block;background:var(--gold);color:var(--navy);font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;font-size:13px;font-weight:bold;letter-spacing:0.06em;padding:6px 18px;border-radius:4px;margin-bottom:18px;}
+  .toc{background:var(--white);border-radius:12px;margin-top:-22px;padding:22px 28px 18px;box-shadow:0 6px 28px rgba(15,28,51,0.16);position:relative;z-index:2;}
+  .toc h2{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;font-size:15px;margin:0 0 12px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:0.08em;}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:32px;font-size:14px;}
+  .toc li{margin-bottom:7px;break-inside:avoid;}
+  .toc a{color:var(--teal);text-decoration:none;font-weight:600;}
+  .toc a:hover{color:var(--gold-deep);text-decoration:underline;}
+  .tab-section{margin-top:48px;}
+  .tab-header{display:flex;align-items:center;gap:14px;margin-bottom:4px;flex-wrap:wrap;}
+  .tab-num{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;font-size:13px;font-weight:bold;color:var(--white);background:var(--navy-mid);border-radius:6px;padding:6px 14px;white-space:nowrap;letter-spacing:0.04em;}
+  .tab-header.scene .tab-num{background:var(--navy);}
+  .tab-header.study .tab-num{background:var(--teal);}
+  .tab-header.vocab .tab-num{background:var(--rose);}
+  .tab-header.exercise .tab-num{background:var(--gold-deep);color:var(--ink);}
+  .tab-header.autonomy .tab-num{background:#5A3A7A;}
+  .tab-header.colloc .tab-num{background:var(--pine-mid);}
+  h2.tab-title{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;font-size:24px;margin:0;color:var(--ink);}
+  .tab-rule{border:none;border-top:2px solid var(--paper-line);margin:14px 0 24px;}
+  .card{background:var(--white);border-radius:10px;padding:24px 28px;margin-bottom:22px;box-shadow:0 2px 12px rgba(15,28,51,0.08);}
+  .card h3{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;font-size:20px;margin:0 0 12px;color:var(--navy-mid);}
+  .card p{margin:0 0 10px;}.card p:last-child{margin-bottom:0;}
+  .hook-box{background:var(--navy);color:var(--paper);border-radius:10px;padding:28px 30px;margin-bottom:22px;}
+  .hook-box h3{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;margin:0 0 14px;color:var(--gold);font-size:20px;}
+  .hook-box p{margin:0 0 10px;color:#D0D8E8;font-size:16px;}
+  .grammar-box{background:var(--white);border-radius:10px;padding:26px 28px;margin-bottom:22px;box-shadow:0 2px 12px rgba(15,28,51,0.08);}
+  .grammar-box h3{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;font-size:20px;margin:0 0 6px;color:var(--teal);}
+  .grammar-sub{font-size:14px;color:var(--ink-soft);margin:0 0 18px;font-style:italic;}
+  .realia{background:var(--white);border-radius:10px;overflow:hidden;margin-bottom:22px;box-shadow:0 4px 18px rgba(15,28,51,0.12);border:1px solid var(--paper-line);}
+  .realia-header{background:var(--navy-mid);color:var(--white);padding:14px 26px;display:flex;align-items:center;gap:12px;}
+  .realia-header.gold-hd{background:var(--gold-deep);}
+  .realia-header.teal-hd{background:var(--teal);}
+  .realia-header.rose-hd{background:var(--rose);}
+  .realia-header .doctype{font-size:10px;font-weight:bold;letter-spacing:0.1em;text-transform:uppercase;background:var(--white);border-radius:4px;padding:3px 8px;color:var(--navy-mid);}
+  .realia-header.gold-hd .doctype{color:var(--amber);}
+  .realia-header.teal-hd .doctype{color:var(--teal);}
+  .realia-header.rose-hd .doctype{color:var(--rose);}
+  .realia-header .docname{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;font-size:17px;}
+  .realia-body{padding:26px 28px;font-size:15.5px;line-height:1.85;}
+  .realia-body p{margin:0 0 14px;}.realia-body p:last-child{margin-bottom:0;}
+  .realia-body h4{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;font-size:15px;margin:16px 0 6px;color:var(--navy-mid);}
+  .hi-teal{background:var(--teal-soft);color:var(--teal);padding:1px 5px;border-radius:3px;font-weight:bold;}
+  .hi-gold{background:var(--amber-soft);color:var(--amber);padding:1px 5px;border-radius:3px;font-weight:bold;}
+  .hi-pine{background:var(--pine-soft);color:var(--pine-mid);padding:1px 5px;border-radius:3px;font-weight:bold;}
+  .notice-box{background:#FFF8E6;border:2px dashed var(--gold-deep);border-radius:10px;padding:20px 26px;margin-bottom:22px;}
+  .notice-box h3{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;font-size:18px;margin:0 0 14px;color:var(--gold-deep);}
+  .notice-q{margin-bottom:14px;padding-left:28px;position:relative;}
+  .notice-q::before{content:"?";position:absolute;left:0;top:-2px;width:20px;height:20px;border-radius:50%;background:var(--gold-deep);color:var(--white);font-size:13px;font-weight:bold;text-align:center;line-height:20px;}
+  .notice-reveal{margin-top:6px;font-size:14px;color:var(--ink-soft);font-style:italic;border-left:3px solid var(--gold-deep);padding-left:10px;display:none;}
+  .reveal-btn{background:none;border:1px solid var(--gold-deep);color:var(--gold-deep);border-radius:5px;padding:3px 10px;font-size:12px;cursor:pointer;margin-top:6px;font-family:'Inter', Calibri, sans-serif;}
+  .reveal-btn:hover{background:var(--gold-deep);color:var(--white);}
+  .callout{border-radius:8px;padding:14px 18px;margin:14px 0;font-size:15px;border-left:4px solid;}
+  .callout.blue{background:var(--teal-soft);border-color:var(--teal);}
+  .callout.amber{background:var(--amber-soft);border-color:var(--gold-deep);}
+  .callout.red{background:var(--rose-soft);border-color:var(--rose);}
+  .callout.sage{background:var(--sage-soft);border-color:var(--sage);}
+  .callout.pine{background:var(--pine-soft);border-color:var(--pine-mid);}
+  .callout strong{display:block;margin-bottom:4px;font-size:14px;}
+  .ref-table-wrap{overflow-x:auto;margin:14px 0;}
+  table.ref-table{width:100%;border-collapse:collapse;font-size:14.5px;}
+  table.ref-table th{background:var(--ink);color:var(--paper);padding:10px 14px;text-align:left;font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;font-size:13.5px;}
+  table.ref-table td{padding:10px 14px;border-bottom:1px solid var(--paper-line);vertical-align:top;}
+  table.ref-table tr:nth-child(even) td{background:var(--paper);}
+  table.ref-table .ok{color:var(--sage);font-weight:bold;}
+  table.ref-table .bad{color:var(--rose);font-weight:bold;}
+  table.ref-table .note{font-size:13px;color:var(--ink-soft);font-style:italic;}
+  .tense-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0;}
+  .tense-card{background:var(--white);border-radius:8px;padding:14px 16px;box-shadow:0 2px 8px rgba(15,28,51,0.08);border-top:3px solid;}
+  .tense-card h4{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;font-size:14px;margin:0 0 5px;}
+  .tense-card .tc-form{font-size:12px;color:var(--ink-soft);margin-bottom:8px;font-style:italic;}
+  .tense-card .tc-ex{font-size:13px;color:var(--ink);border-left:3px solid;padding-left:8px;margin:0 0 5px;font-style:italic;}
+  .tense-card .tc-when{font-size:12px;color:var(--ink-soft);margin-top:6px;}
+  .tc-pp{border-top-color:var(--teal);}.tc-pp h4{color:var(--teal);}.tc-pp .tc-ex{border-color:var(--teal);}
+  .tc-ps{border-top-color:var(--rose);}.tc-ps h4{color:var(--rose);}.tc-ps .tc-ex{border-color:var(--rose);}
+  .tc-ppast{border-top-color:var(--pine-mid);}.tc-ppast h4{color:var(--pine-mid);}.tc-ppast .tc-ex{border-color:var(--pine-mid);}
+  .tc-pc{border-top-color:var(--amber);}.tc-pc h4{color:var(--amber);}.tc-pc .tc-ex{border-color:var(--gold-deep);}
+  .tc-ppc{border-top-color:#5A3A7A;}.tc-ppc h4{color:#5A3A7A;}.tc-ppc .tc-ex{border-color:#5A3A7A;}
+  .tc-fp{border-top-color:var(--teal-mid);}.tc-fp h4{color:var(--teal-mid);}.tc-fp .tc-ex{border-color:var(--teal-mid);}
+  .tc-fw{border-top-color:var(--gold-deep);}.tc-fw h4{color:var(--gold-deep);}.tc-fw .tc-ex{border-color:var(--gold-deep);}
+  .tc-fpr{border-top-color:var(--sage);}.tc-fpr h4{color:var(--sage);}.tc-fpr .tc-ex{border-color:var(--sage);}
+  .genre-box{background:var(--white);border-radius:10px;overflow:hidden;margin-bottom:20px;box-shadow:0 2px 12px rgba(15,28,51,0.08);}
+  .genre-head{padding:14px 20px;display:flex;align-items:center;gap:12px;}
+  .genre-head.letter-head{background:var(--navy-mid);}
+  .genre-head.proposal-head{background:var(--pine-mid);}
+  .genre-head h3{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;font-size:18px;color:var(--white);margin:0;}
+  .genre-badge{font-size:10px;font-weight:bold;letter-spacing:0.08em;text-transform:uppercase;background:rgba(255,255,255,0.15);border-radius:4px;padding:3px 8px;color:var(--white);}
+  .genre-body{padding:20px 22px;}
+  .genre-section{background:var(--paper);border-radius:6px;padding:12px 16px;margin:8px 0;display:grid;grid-template-columns:140px 1fr;gap:14px;align-items:start;}
+  .genre-label{font-size:11px;font-weight:bold;letter-spacing:0.07em;text-transform:uppercase;color:var(--gold-deep);padding-top:2px;}
+  .genre-content{font-size:14px;color:var(--ink);}
+  .phrase-box{background:var(--paper);border-radius:8px;padding:14px 18px;margin:10px 0;}
+  .phrase-box h4{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;font-size:15px;margin:0 0 10px;color:var(--navy-mid);}
+  .phrase-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+  .phrase-tag{font-size:11px;font-weight:bold;letter-spacing:0.04em;text-transform:uppercase;color:var(--white);background:var(--ink-soft);border-radius:4px;padding:2px 7px;white-space:nowrap;}
+  .phrase-tag.purpose{background:var(--teal);}
+  .phrase-tag.close{background:var(--rose);}
+  .phrase-tag.ref{background:var(--pine-mid);}
+  .phrase-tag.enclose{background:var(--amber);}
+  .phrase-tag.request{background:#5A3A7A;}
+  .phrase-tag.decline{background:var(--slate);}
+  .phrase-tag.propose{background:var(--teal);}
+  .phrase-tag.justify{background:var(--pine-mid);}
+  .phrase-tag.benefit{background:var(--sage);}
+  .phrase-tag.call{background:var(--gold-deep);color:var(--ink);}
+  .phrase-text{font-size:14px;color:var(--ink);font-style:italic;}
+  .colloc-journey{margin:0 0 24px;}
+  .cj-row{display:grid;grid-template-columns:80px 110px 1fr;gap:12px;align-items:start;padding:10px 14px;border-radius:8px;margin-bottom:8px;}
+  .cj-row:nth-child(odd){background:var(--white);}
+  .cj-row:nth-child(even){background:var(--paper);}
+  .cj-grade{font-size:11px;font-weight:bold;letter-spacing:0.06em;text-transform:uppercase;color:var(--gold-deep);padding-top:2px;}
+  .cj-type{font-size:12px;color:var(--ink-soft);font-style:italic;}
+  .cj-examples{font-size:14px;color:var(--ink);}
+  .cj-examples strong{color:var(--navy-mid);}
+  .cj-highlight{background:rgba(200,153,58,0.12);border-left:3px solid var(--gold);padding:10px 14px;border-radius:0 6px 6px 0;margin-top:6px;}
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0;}
+  .chip{background:var(--paper);border:1px solid var(--paper-line);border-radius:999px;padding:6px 14px;font-size:14px;color:var(--ink);}
+  .chip.teal{background:var(--teal-soft);color:var(--teal);border-color:rgba(26,92,92,0.3);}
+  .chip.amber{background:var(--amber-soft);color:var(--amber);border-color:rgba(122,74,16,0.3);}
+  .vocab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0;}
+  .vocab-card{background:var(--white);border-radius:8px;padding:14px 16px;box-shadow:0 2px 8px rgba(15,28,51,0.07);}
+  .vocab-card .vc-word{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;font-size:16px;font-weight:bold;color:var(--navy-mid);margin-bottom:3px;}
+  .vocab-card .vc-pos{font-size:11px;color:var(--ink-soft);font-style:italic;margin-bottom:5px;}
+  .vocab-card .vc-def{font-size:13.5px;color:var(--ink);margin-bottom:5px;}
+  .vocab-card .vc-ex{font-size:12.5px;color:var(--ink-soft);font-style:italic;border-left:2px solid var(--gold);padding-left:7px;}
+  .exercise{background:var(--white);border-radius:10px;padding:24px 28px;margin-bottom:20px;box-shadow:0 2px 12px rgba(15,28,51,0.08);}
+  .exercise-label{display:inline-block;font-size:12px;font-weight:bold;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink);background:var(--gold);border-radius:5px;padding:3px 10px;margin-bottom:12px;}
+  .exercise h4{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;font-size:18px;margin:0 0 6px;color:var(--ink);}
+  .exercise .ex-instr{font-size:14px;color:var(--ink-soft);margin-bottom:16px;font-style:italic;}
+  .q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:13px;flex-wrap:wrap;}
+  .q-num{font-weight:bold;color:var(--gold-deep);min-width:22px;}
+  .q-text{flex:1;min-width:220px;}
+  .blank-input{border:none;border-bottom:2.5px solid var(--gold-deep);background:var(--paper);font-family:'Inter', Calibri, sans-serif;font-size:15px;padding:4px 8px;width:200px;color:var(--ink);}
+  .blank-input:focus{outline:none;border-color:var(--teal);}
+  .check-btn{background:var(--gold);color:var(--ink);border:none;border-radius:6px;padding:9px 22px;font-weight:bold;font-size:14px;cursor:pointer;margin-top:10px;font-family:'Inter', Calibri, sans-serif;}
+  .check-btn:hover{background:var(--gold-deep);color:var(--white);}
+  .feedback{margin-top:12px;font-size:14px;border-radius:6px;padding:10px 14px;display:none;}
+  .feedback.show{display:block;}
+  .feedback.good{background:var(--sage-soft);color:var(--sage);}
+  .feedback.bad{background:var(--rose-soft);color:var(--rose);}
+  .tf-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px;}
+  .tf-card{background:var(--navy-mid);border-radius:8px;padding:16px 18px;}
+  .tf-statement{margin:0 0 12px;font-size:14.5px;color:var(--paper);}
+  .tf-buttons{display:flex;gap:10px;}
+  .tf-btn{flex:1;border:2px solid var(--gold);color:var(--gold);background:transparent;border-radius:6px;padding:7px 0;font-size:13px;font-weight:bold;cursor:pointer;transition:all 0.15s;font-family:'Inter', Calibri, sans-serif;}
+  .tf-btn:hover{background:var(--gold);color:var(--navy);}
+  .tf-btn.correct-guess{background:var(--sage);border-color:var(--sage);color:var(--white);}
+  .tf-btn.wrong-guess{background:var(--rose-mid);border-color:var(--rose-mid);color:var(--white);}
+  .tf-card.answered .tf-btn{cursor:default;pointer-events:none;}
+  .tf-q{font-size:14.5px;color:var(--paper) !important;line-height:1.65;margin:0 0 14px;}
+  .tf-reveal{display:none;margin:10px 0 0;font-size:13px;color:#D0D8E4;font-style:italic;border-left:3px solid var(--gold);padding-left:10px;}
+  .tf-card.answered .tf-reveal{display:block;}
+  .match-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0;}
+  .match-item{background:var(--paper);border-radius:8px;padding:11px 15px;font-size:14.5px;cursor:pointer;border:2px solid transparent;transition:all 0.15s;user-select:none;}
+  .match-item:hover{border-color:var(--gold-deep);}
+  .match-item.selected{border-color:var(--gold-deep);background:var(--amber-soft);}
+  .match-item.matched{border-color:var(--sage);background:var(--sage-soft);cursor:default;}
+  .match-item.wrong-flash{border-color:var(--rose-mid);background:var(--rose-soft);}
+  .activate-box{background:var(--gold-light);border-radius:10px;padding:26px 28px;margin-bottom:22px;border:1px solid rgba(168,122,32,0.25);}
+  .activate-box h3{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;margin:0 0 12px;color:var(--amber);font-size:19px;}
+  .activate-box p{margin:0 0 10px;color:var(--ink);}
+  textarea.response-box{width:100%;min-height:160px;border-radius:8px;border:2px solid rgba(168,122,32,0.4);padding:12px 14px;font-family:'Inter', Calibri, sans-serif;font-size:15px;resize:vertical;background:var(--white);color:var(--ink);}
+  textarea.response-box:focus{outline:none;border-color:var(--teal);}
+  .word-count{font-size:12px;color:var(--ink-soft);margin-top:6px;text-align:right;}
+  .research-card{background:#F2EBF8;border-radius:10px;padding:22px 26px;margin-bottom:18px;border:1px solid #DCC8EA;}
+  .research-card h3{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;font-size:18px;margin:0 0 10px;color:#5A3A7A;}
+  .research-tag{display:inline-block;font-size:11px;font-weight:bold;letter-spacing:0.05em;text-transform:uppercase;background:#5A3A7A;color:var(--white);border-radius:4px;padding:3px 9px;margin-bottom:10px;}
+  .link-suggestion{display:inline-block;background:var(--white);border:1px solid #DCC8EA;border-radius:6px;padding:6px 12px;font-size:13px;margin:4px 6px 4px 0;color:#5A3A7A;text-decoration:none;}
+  .link-suggestion:hover{background:#5A3A7A;color:var(--white);}
+  .week-row{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:16px 0;}
+  .week-pill{background:rgba(200,153,58,0.1);border:1px solid rgba(200,153,58,0.3);border-radius:6px;padding:10px 12px;}
+  .week-pill .wp-week{font-size:10px;font-weight:bold;letter-spacing:0.06em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+  .week-pill .wp-topic{font-size:12px;color:var(--paper);}
+  .self-check-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;}
+  .sc-col{background:var(--navy);border-radius:10px;padding:20px 24px;}
+  .sc-col h3{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;color:var(--gold);font-size:16px;margin:0 0 10px;}
+  .sc-col ul{margin:0;padding-left:18px;color:#C0CCE0;font-size:14px;}
+  .sc-col li{margin-bottom:6px;}
+  .sc-col.checklist li{list-style:none;margin-left:-18px;padding-left:28px;position:relative;}
+  .sc-col.checklist li::before{content:"☐";position:absolute;left:0;color:var(--gold);}
+  /* WEEK JOURNEY */
+  .week-journey{display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
+  .week-row{display:grid;grid-template-columns:48px 200px 1fr 1fr;gap:14px;align-items:start;background:var(--white);border-radius:10px;padding:14px 18px;box-shadow:0 1px 6px rgba(15,28,51,0.07);}
+  .wk-num{background:var(--navy-mid);color:#fff;font-weight:700;font-size:13px;border-radius:6px;padding:4px 8px;text-align:center;}
+  .wk-title{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;font-size:14px;font-weight:700;color:var(--navy-mid);}
+  .wk-grammar{font-size:13px;color:var(--ink-soft);line-height:1.5;}
+  .wk-vocab{font-size:13px;color:var(--ink-soft);line-height:1.5;}
+
+  /* SUMMARY GRID */
+  .summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:24px;}
+  .sum-card{background:var(--white);border-radius:12px;padding:22px;box-shadow:0 2px 10px rgba(15,28,51,0.08);}
+  .sum-card h4{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;font-size:16px;margin:0 0 12px;color:var(--navy-mid);}
+  .sum-card ul{margin:0;padding-left:18px;}
+  .sum-card li{font-size:14px;color:var(--ink-soft);line-height:1.6;margin-bottom:4px;}
+  .sc-icon{font-size:26px;margin-bottom:8px;}
+  .sc-teal{border-top:4px solid var(--teal);}
+  .sc-rose{border-top:4px solid var(--rose);}
+  .sc-amber{border-top:4px solid var(--amber);}
+  .sc-pine{border-top:4px solid var(--pine);}
+
+  /* WRITING OPTIONS */
+  .writing-options{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:18px;}
+  .writing-option{background:var(--white);border-radius:10px;padding:18px;box-shadow:0 1px 8px rgba(15,28,51,0.08);}
+  .writing-option h4{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;font-size:15px;margin:8px 0;color:var(--navy-mid);}
+  .writing-option p{font-size:14px;color:var(--ink-soft);line-height:1.6;}
+  .wo-badge{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:20px;display:inline-block;margin-bottom:4px;}
+  .writing-option.letter .wo-badge{background:#E4F3F3;color:var(--teal);}
+  .writing-option.proposal .wo-badge{background:#FDF3E3;color:var(--amber);}
+  .writing-option.reflect .wo-badge{background:#E4F0E8;color:#1A3A2A;}
+  .writing-option.letter{border-top:4px solid var(--teal);}
+  .writing-option.proposal{border-top:4px solid var(--amber);}
+  .writing-option.reflect{border-top:4px solid var(--pine);}
+  .wo-detail{font-size:12px;color:var(--ink-soft);margin-top:10px;padding:8px;background:var(--paper);border-radius:6px;line-height:1.5;}
+
+  /* AUTONOMY GRID */
+  .autonomy-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+  .aut-card{background:var(--white);border-radius:10px;padding:18px;box-shadow:0 1px 8px rgba(15,28,51,0.08);}
+  .aut-icon{font-size:28px;margin-bottom:8px;}
+  .aut-card h4{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;font-size:15px;margin:0 0 8px;color:var(--navy-mid);}
+  .aut-card p{font-size:14px;color:var(--ink-soft);line-height:1.6;margin:0;}
+
+  /* EXERCISE ITEMS (gap-fill, error clinic) */
+  .exercise-block{background:var(--white);border-radius:12px;padding:24px;margin-bottom:22px;box-shadow:0 2px 10px rgba(15,28,51,0.08);}
+  .exercise-block h3{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;font-size:18px;color:var(--navy-mid);margin:0 0 6px;}
+  .exercise-block .expl{font-size:14px;color:var(--ink-soft);margin-bottom:18px;}
+  .gf-item{display:grid;grid-template-columns:32px 1fr;gap:10px;align-items:start;padding:14px 0;border-bottom:1px solid var(--paper-line);}
+  .gf-item:last-of-type{border-bottom:none;}
+  .gf-num{background:var(--navy-mid);color:#fff;font-weight:700;font-size:13px;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+  .gf-sentence{font-size:15px;line-height:1.7;color:var(--ink);}
+  .gap{display:inline-block;min-width:100px;border-bottom:2px solid var(--gold);color:transparent;}
+  .error-item{padding:14px 0;border-bottom:1px solid var(--paper-line);display:grid;grid-template-columns:32px 1fr;gap:10px;align-items:start;}
+  .error-item:last-child{border-bottom:none;}
+  .err-num{background:var(--rose);color:#fff;font-weight:700;font-size:13px;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+  .err-sentence{font-size:15px;line-height:1.7;color:var(--ink);margin:0 0 6px;}
+  .err-label{font-size:11px;font-weight:700;letter-spacing:.06em;padding:2px 8px;border-radius:12px;margin-right:6px;}
+  .err-label.wrong{background:#F5E8EE;color:var(--rose);}
+  .err-label.correct{background:#E4F0E8;color:#1A3A2A;}
+
+  /* CLOSING DISPATCH */
+  .closing-dispatch{background:var(--navy);border-radius:14px;padding:32px 36px;margin-top:28px;text-align:center;}
+  .dispatch-header{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+  .dispatch-quote{font-family:'Playfair Display', 'Bookman Old Style', Cambria, Georgia, serif;font-size:17px;line-height:1.8;color:#F0DCA0;font-style:italic;margin:0 0 12px;border:none;padding:0;}
+  .dispatch-note{font-size:14px;color:var(--pewter);margin:0;}
+
+  /* CHECKLIST */
+  .checklist{display:flex;flex-direction:column;gap:10px;}
+  .cl-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink-soft);cursor:pointer;line-height:1.5;}
+  .cl-item input{margin-top:2px;accent-color:var(--teal);}
+
+  @media(max-width:660px){
+    h1.title{font-size:28px;}
+    .card,.grammar-box,.exercise,.hook-box,.activate-box,.research-card{padding:18px;}
+    .tense-grid{grid-template-columns:1fr 1fr;}
+    .vocab-grid{grid-template-columns:1fr 1fr;}
+    .match-grid,.tf-grid,.self-check-grid{grid-template-columns:1fr;}
+    .week-row{grid-template-columns:1fr 1fr;}
+    .toc ol{columns:1;}
+    .genre-section{grid-template-columns:1fr;}
+    .cj-row{grid-template-columns:1fr;}
+    .summary-grid,.writing-options,.autonomy-grid{grid-template-columns:1fr;}
+  }
+
+/* ============================================================
+   GLOBAL UX / RESPONSIVE / NAV / FOOTER LAYER
+   Added for Bahar Esmaeelzadeh's teaching platform
+   ============================================================ */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-x: hidden !important; }
+img, table, svg, video, iframe, .colloc-grid, .ever-grid { max-width: 100%; }
+p, li, td, th, div, span, h1, h2, h3, h4, blockquote { overflow-wrap: break-word; word-break: break-word; }
+body, .exercise, .card, .grammar-box, .research-card, .hook-box { font-family: 'Inter', Calibri, "Segoe UI", Arial, sans-serif; }
+
+/* ---------- TOP NAV ---------- */
+.site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 999; font-family: 'Inter', Calibri, sans-serif; }
+.nav-progress-track { height: 4px; background: rgba(255,255,255,0.15); width: 100%; }
+.nav-progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--gold), var(--rose-mid)); transition: width .1s ease; }
+.nav-bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; background: var(--navy); padding: 6px 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.2); }
+.nav-hamburger, .nav-top-btn { background: none; border: 1px solid rgba(255,255,255,0.25); color: var(--paper); font-size: 16px; border-radius: 8px; padding: 8px 12px; cursor: pointer; min-height: 40px; min-width: 44px; display: flex; align-items: center; justify-content: center; font-family: inherit; }
+.nav-hamburger:hover, .nav-top-btn:hover { background: rgba(255,255,255,0.14); }
+.nav-brand { color: var(--paper); font-size: 12.5px; font-weight: 600; letter-spacing: .01em; text-align: center; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 0 6px; }
+.nav-top-btn { font-size: 12.5px; gap: 4px; }
+
+.nav-panel { position: fixed; top: 0; left: 0; right: 0; background: var(--navy); max-height: 0; overflow: hidden; transition: max-height .3s ease; z-index: 998; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+.nav-panel.open { max-height: 86vh; overflow-y: auto; padding-top: 48px; -webkit-overflow-scrolling: touch; }
+.nav-panel-inner { padding: 14px 20px 26px; }
+.nav-panel-heading { color: var(--gold); font-family: 'Playfair Display', "Bookman Old Style", Cambria, Georgia, serif; font-size: 13px; text-transform: uppercase; letter-spacing: .1em; margin: 4px 0 10px; }
+.nav-panel-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.nav-panel-list li { margin: 0; }
+.nav-panel-list a { display: flex; align-items: center; color: #D6DEEC; text-decoration: none; font-size: 14.5px; padding: 12px 10px; border-radius: 8px; min-height: 44px; box-sizing: border-box; }
+.nav-panel-list a:hover, .nav-panel-list a:active { background: rgba(255,255,255,0.08); color: var(--gold-light); }
+.nav-panel-divider { height: 1px; background: rgba(255,255,255,0.14); margin: 18px 0 16px; }
+.nav-panel-branding { background: rgba(255,255,255,0.045); border-radius: 10px; padding: 16px 18px; }
+.nav-brand-name { color: var(--gold); font-family: 'Playfair Display', "Bookman Old Style", Cambria, Georgia, serif; font-size: 16px; font-weight: 700; margin: 0 0 4px; }
+.nav-brand-tag { color: #AEB8CC; font-size: 13px; margin: 0 0 10px; line-height: 1.5; }
+.nav-brand-links { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.nav-brand-links a { color: var(--paper); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: 999px; padding: 9px 14px; font-size: 13px; text-decoration: none; min-height: 40px; display: inline-flex; align-items: center; }
+.nav-brand-links a:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+.nav-brand-copy { color: #8A95B0; font-size: 12px; margin: 0; }
+.nav-overlay { position: fixed; inset: 0; background: rgba(10,14,26,0.45); z-index: 997; opacity: 0; pointer-events: none; transition: opacity .25s ease; }
+.nav-overlay.open { opacity: 1; pointer-events: auto; }
+
+body { padding-top: 48px; }
+
+/* Sticky section headers */
+.tab-header { position: sticky; top: 48px; background: var(--paper); z-index: 30; padding: 10px 0 6px; margin-left: -4px; margin-right: -4px; padding-left: 4px; padding-right: 4px; }
+@supports (backdrop-filter: blur(4px)) { .tab-header { backdrop-filter: blur(6px); background: rgba(245,242,236,0.94); } }
+
+/* Overflow-safe tables + scroll hint */
+.ref-table-wrap { position: relative; }
+.ref-table-wrap.has-scroll::before { content: "scroll for more →"; position: absolute; top: -20px; right: 0; font-size: 11px; color: var(--ink-soft); background: var(--gold-light); padding: 2px 8px; border-radius: 4px 4px 0 0; }
+
+/* ---------- FOOTER ---------- */
+.site-footer { margin-top: 56px; background: var(--navy); color: #C7D0E2; border-radius: 14px; padding: 32px 26px 26px; text-align: center; }
+.site-footer .footer-name { font-family: 'Playfair Display', "Bookman Old Style", Cambria, Georgia, serif; color: var(--gold); font-size: 20px; margin: 0 0 6px; }
+.site-footer .footer-tag { font-size: 14px; margin: 0 0 18px; color: #B0BAD0; }
+.site-footer .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
+.site-footer .footer-links a { color: var(--paper); background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; padding: 11px 18px; font-size: 13.5px; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+.site-footer .footer-links a:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+.site-footer .footer-invite { font-size: 13.5px; color: #AEB8CC; margin: 6px 0 16px; }
+.site-footer .footer-copy { font-size: 12px; color: #7C88A2; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 14px; margin: 14px auto 0; max-width: 520px; }
+
+/* ---------- Listening & Speaking sections ---------- */
+.listen-card, .speak-card { background: var(--white); border-radius: 10px; padding: 22px 26px; margin-bottom: 16px; box-shadow: 0 2px 12px rgba(15,28,51,0.08); border-left: 4px solid var(--teal); }
+.speak-card { border-left-color: var(--rose); }
+.listen-card h4, .speak-card h4 { font-family: 'Playfair Display', "Bookman Old Style", Cambria, Georgia, serif; font-size: 17px; margin: 0 0 6px; color: var(--navy-mid); }
+.listen-meta, .speak-meta { font-size: 12.5px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+.listen-task, .speak-task { background: var(--paper); border-radius: 8px; padding: 11px 14px; font-size: 14.5px; margin-top: 10px; border-left: 3px solid var(--gold-deep); }
+.speak-howto { font-size: 13px; color: var(--ink-soft); font-style: italic; margin-top: 10px; }
+.speak-tip { font-size: 13px; color: var(--teal); margin-top: 6px; }
+
+@media (max-width: 600px) {
+  .nav-brand { display: none; }
+  .site-footer .footer-links a, .nav-brand-links a { font-size: 13px; padding: 10px 14px; }
+  body { font-size: 16px; }
+  .listen-card, .speak-card { padding: 18px 18px; }
+}
+
+
+/* ---------- Horizontal overflow bug fix ---------- */
+/* .masthead sits at body level (not inside .wrap), so its legacy -24px
+   bleed margins overflowed the viewport on every file. Neutralised here. */
+html { overflow-x: hidden; }
+.masthead { margin-left: 0 !important; margin-right: 0 !important; }
+
+
+/* ---------- Nav stacking fix: keep bar clickable above the sliding panel ---------- */
+.nav-bar { position: relative; z-index: 1000; }
+.nav-progress-track { position: relative; z-index: 1000; }
+.nav-panel { z-index: 900; }
+.nav-overlay { z-index: 899; }
+
+</style>
+</head>
+<body>
+<!-- SECTION: Top Navigation -->
+<div class="site-nav" id="siteNav">
+  <div class="nav-progress-track"><div class="nav-progress-fill" id="progressFill"></div></div>
+  <div class="nav-bar">
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open section menu" aria-expanded="false">&#9776;</button>
+    <span class="nav-brand">Grade 10 · Week 5 &mdash; The Final Dispatch</span>
+    <button class="nav-top-btn" id="navTopBtn" aria-label="Back to top">&#8679; Top</button>
+  </div>
+  <div class="nav-panel" id="navPanel">
+    <div class="nav-panel-inner">
+      <div class="nav-panel-section">
+        <h4 class="nav-panel-heading">On this page</h4>
+        <ol class="nav-panel-list"><li><a href="#engage">The scene &mdash; Chen&rsquo;s final day</a></li>
+      <li><a href="#notice1">Notice &amp; discover (tenses)</a></li>
+      <li><a href="#tenses">Study: complete C1 tense system</a></li>
+      <li><a href="#highest-error">Study: highest-error contrasts</a></li>
+      <li><a href="#notice2">Notice &amp; discover (genres)</a></li>
+      <li><a href="#formal-letter">Study: formal letters &mdash; full scaffold</a></li>
+      <li><a href="#proposals">Study: proposals &mdash; genre &amp; language</a></li>
+      <li><a href="#awl">Study: AWL consolidation</a></li>
+      <li><a href="#collocation">Study: collocation archive (Grades 6&ndash;10)</a></li>
+      <li><a href="#vocab">Technology &amp; future vocabulary</a></li>
+      <li><a href="#exercises">Practice exercises</a></li>
+      <li><a href="#autonomy">Explore on your own</a></li>
+      <li><a href="#summary">Course completion summary</a></li><li><a href="#speaking">Speaking practice</a></li>
+      <li><a href="#listening">Listening &amp; watching</a></li>
+</ol>
+      </div>
+      <div class="nav-panel-divider"></div>
+      <div class="nav-panel-branding">
+        <p class="nav-brand-name">Bahar Esmaeelzadeh</p>
+        <p class="nav-brand-tag">Designed and created for English learners by Bahar Esmaeelzadeh.<br>If you found this helpful, feel free to get in touch.</p>
+        <div class="nav-brand-links">
+          <a href="mailto:bahar.esmz.en@gmail.com">&#128231; Email</a>
+          <a href="https://www.linkedin.com/in/bahar-esmaeelzadeh-650b98198" target="_blank" rel="noopener">&#128188; LinkedIn</a>
+        </div>
+        <p class="nav-brand-copy">&copy; 2026 Bahar Esmaeelzadeh &middot; All rights reserved</p>
+      </div>
+    </div>
+  </div>
+  <div class="nav-overlay" id="navOverlay"></div>
+</div>
+
+
+<div class="masthead">
+  <div class="masthead-inner">
+    <span class="course-complete-badge">&#127881; Course Completion &mdash; Grade 10, Week 5</span>
+    <p class="eyebrow">Grade 10 &middot; Week 5 &middot; Final Week &middot; Complete Reference &amp; Pre-Class Material</p>
+    <h1 class="title">The Final Dispatch<em>.</em><br>Tenses, Proposals &amp; the Collocation Archive</h1>
+    <p class="masthead-desc">A. Chen&rsquo;s Vienna posting is ending. Before leaving, they must write a formal letter of thanks, a policy proposal for a new Digital Diplomacy Initiative, and a final report. This week brings everything together: the full tense system, formal writing genres, AWL consolidation, and the complete Grade 6&ndash;10 collocation archive.</p>
+    <div class="masthead-meta">
+      <div>Level: <span>C1</span></div>
+      <div>Grammar: <span>Complete Tense Review &middot; Formal Letters &middot; Proposals</span></div>
+      <div>Vocab: <span>Technology &middot; AWL Review &middot; Collocation Archive</span></div>
+      <div>Est. time: <span>80&ndash;100 min</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="toc">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#engage">The scene &mdash; Chen&rsquo;s final day</a></li>
+      <li><a href="#notice1">Notice &amp; discover (tenses)</a></li>
+      <li><a href="#tenses">Study: complete C1 tense system</a></li>
+      <li><a href="#highest-error">Study: highest-error contrasts</a></li>
+      <li><a href="#notice2">Notice &amp; discover (genres)</a></li>
+      <li><a href="#formal-letter">Study: formal letters &mdash; full scaffold</a></li>
+      <li><a href="#proposals">Study: proposals &mdash; genre &amp; language</a></li>
+      <li><a href="#awl">Study: AWL consolidation</a></li>
+      <li><a href="#collocation">Study: collocation archive (Grades 6&ndash;10)</a></li>
+      <li><a href="#vocab">Technology &amp; future vocabulary</a></li>
+      <li><a href="#exercises">Practice exercises</a></li>
+      <li><a href="#autonomy">Explore on your own</a></li>
+      <li><a href="#summary">Course completion summary</a></li>
+    <li><a href="#speaking">Speaking practice</a></li>
+      <li><a href="#listening">Listening &amp; watching</a></li>
+</ol>
+  </div>
+
+  <!-- ENGAGE -->
+  <div class="tab-section" id="engage">
+    <div class="tab-header scene"><span class="tab-num">THE SCENE</span><h2 class="tab-title">Vienna. A. Chen&rsquo;s final week as Third Secretary.</h2></div>
+    <hr class="tab-rule">
+    <div class="hook-box">
+      <h3>The final dispatch.</h3>
+      <p>Five weeks ago, Chen arrived in Vienna as a newly posted Third Secretary. Tonight, the posting ends. Before handing over to the incoming diplomat, Chen must produce three documents: a formal letter of thanks to the panel chair from last week&rsquo;s climate conference; a formal proposal for a new Digital Diplomacy Initiative; and a brief final report to Ambassador Davies.</p>
+      <p>All three draw on everything we have studied: the full tense system, formal writing conventions, AWL vocabulary, and the collocations we have been building since Grade 6. Read them before turning to the grammar. Find the highlighted phrases &mdash; they are your entry point.</p>
+    </div>
+    <div class="realia">
+      <div class="realia-header gold-hd"><span class="doctype gold">Formal Letter</span><span class="docname">Third Secretary A. Chen to Dr. Hartmann</span></div>
+      <div class="realia-body">
+        <p>Embassy of the United Kingdom<br>Metternichgasse 13, 1030 Vienna<br>2 July 2026</p>
+        <p style="margin-top:14px;">Dr. Ingrid Hartmann<br>Chair, Vienna Climate Conference Panel</p>
+        <p style="margin-top:14px;">Dear Dr. Hartmann,</p>
+        <p><strong>Re: Expression of Gratitude following the Vienna Climate Conference</strong></p>
+        <p>I am writing to express my sincere gratitude for the opportunity to present at the Vienna Climate Conference last week. <span class="hi-teal">The panel had been reviewing</span> submissions for several months before we met, and I <span class="hi-teal">have since reflected</span> extensively on the questions you raised.</p>
+        <p>The data we <span class="hi-teal">had gathered</span> over the preceding year clearly indicated a trajectory that demands urgent attention. <span class="hi-teal">By the time</span> the next conference convenes, we <span class="hi-teal">will have implemented</span> the recommendations outlined in the attached proposal. I <span class="hi-teal">am also preparing</span> a digital briefing pack, which <span class="hi-teal">will be circulated</span> to all signatories before the autumn session.</p>
+        <p>I hope that our collaboration will continue to prove fruitful. Should you require any further information, please do not hesitate to contact my office.</p>
+        <p style="margin-top:12px;">Yours sincerely,<br><strong>A. Chen</strong><br>Third Secretary, British Embassy Vienna</p>
+        <p style="font-size:13px;color:var(--ink-soft);margin-top:8px;"><em>Enc: Digital Diplomacy Initiative &mdash; Proposal (5pp.)</em></p>
+      </div>
+    </div>
+    <div class="realia">
+      <div class="realia-header teal-hd"><span class="doctype teal">Policy Proposal</span><span class="docname">Digital Diplomacy Initiative &mdash; British Embassy Vienna</span></div>
+      <div class="realia-body">
+        <h4>1. Executive Summary</h4>
+        <p>This proposal outlines a plan to <strong>establish</strong> a Digital Diplomacy Hub at the Vienna Embassy. Advances in artificial intelligence and data analytics have fundamentally altered the diplomatic landscape. <strong>Investing in digital infrastructure</strong> is no longer optional; it is a strategic <strong>requirement</strong>.</p>
+        <h4>2. Background &amp; Context</h4>
+        <p>Since Chen <span class="hi-pine">joined the embassy five weeks ago</span>, it <span class="hi-pine">has become</span> apparent that the embassy&rsquo;s current data systems are outdated. The climate conference demonstrated that real-time data analysis significantly <strong>enhances</strong> the quality of diplomatic engagement. Our partners in Berlin and Paris <span class="hi-pine">have already adopted</span> comparable systems.</p>
+        <h4>3. Proposed Initiative</h4>
+        <p>We propose the <strong>allocation</strong> of &euro;120,000 over two years to fund a secure digital platform, staff training, and a dedicated <strong>data analyst</strong> post. By December 2027, the hub <span class="hi-pine">will have processed</span> over 200 briefing requests using AI-assisted research tools.</p>
+        <h4>4. Benefits</h4>
+        <p>The initiative will <strong>significantly contribute</strong> to the embassy&rsquo;s ability to respond to fast-moving diplomatic situations. Evidence from comparable embassies <strong>indicates</strong> a 40% reduction in briefing preparation time. Furthermore, our <strong>commitment</strong> to digital transformation will strengthen our position as a leading embassy in the region.</p>
+        <h4>5. Conclusion &amp; Call to Action</h4>
+        <p>We strongly recommend that the Foreign Office <strong>approve</strong> this initiative at the earliest opportunity. <em>Should further information be required</em>, a detailed budget breakdown is available upon request.</p>
+      </div>
+    </div>
+    <div class="realia">
+      <div class="realia-header rose-hd"><span class="doctype rose">Final Report</span><span class="docname">A. Chen to H.E. Ambassador R. Davies</span></div>
+      <div class="realia-body">
+        <p><strong>Subject:</strong> End-of-posting summary &mdash; Third Secretary A. Chen</p>
+        <p style="margin-top:10px;">Your Excellency,</p>
+        <p><span class="hi-gold">Over the past five weeks</span>, I <span class="hi-gold">have worked</span> on three principal areas: the Al-Rashid immigration case, the Vienna Climate Conference presentation, and the Digital Diplomacy Initiative proposal.</p>
+        <p>The posting <span class="hi-gold">began</span> with the Ambassador&rsquo;s Gala, which <span class="hi-gold">provided</span> an immediate opportunity to establish professional relationships. Since then, I <span class="hi-gold">have developed</span> a considerably deeper understanding of formal and procedural diplomatic work.</p>
+        <p>I am confident that the skills I <span class="hi-gold">have acquired</span> &mdash; particularly in formal written communication, data presentation, and cross-cultural negotiation &mdash; <span class="hi-gold">will serve</span> me well in any future posting. I <span class="hi-gold">had not anticipated</span> the pace of the work, but I am grateful for the experience.</p>
+        <p style="margin-top:12px;">Respectfully submitted,<br><strong>A. Chen</strong></p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Before turning to the grammar &mdash; three questions</h3>
+      <p>1. The <span style="color:var(--teal);font-weight:bold;">teal phrases</span> in the letter use six different tenses. Can you name them all? (Hint: past perfect continuous, present perfect, past perfect, future perfect, present continuous for future, future passive.)</p>
+      <p>2. The <span style="color:var(--pine-mid);font-weight:bold;">green phrases</span> in the proposal mix past simple, present perfect, and future perfect. Why is each tense the right choice in its context?</p>
+      <p style="margin:0;">3. The <span style="color:var(--amber);font-weight:bold;">gold phrases</span> in the final report use a sequence of tenses to narrate a five-week experience. Why does the narrative switch between them?</p>
+    </div>
+  </div>
+
+  <!-- BRIDGE: ENGAGE → NOTICE 1 -->
+  <div style="background:var(--paper);border-left:4px solid var(--teal);padding:14px 20px;margin-bottom:28px;border-radius:0 8px 8px 0;font-size:15px;color:var(--ink-soft);">
+    <strong style="color:var(--teal);">&#8599; Now zoom in on the language.</strong>
+    Before moving to the grammar study, pause on the highlighted verb forms in the three documents. The questions below train you to notice tense choice in context — before you read any rule.
+  </div>
+
+  <!-- NOTICE 1 -->
+  <div class="tab-section" id="notice1">
+    <div class="tab-header scene"><span class="tab-num">NOTICE &amp; DISCOVER</span><h2 class="tab-title">The tense choices in Chen&rsquo;s documents</h2></div>
+    <hr class="tab-rule">
+    <div class="notice-box">
+      <h3>Work through these before reading the Study section</h3>
+      <div class="notice-q">
+        In the letter: <em>&ldquo;The panel <strong>had been reviewing</strong> submissions for several months before we met.&rdquo;</em> Two things happened in the past. Which happened first? What tense signals that sequence?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal">The reviewing happened first (and continued until the meeting). The meeting happened second. The <strong>Past Perfect Continuous</strong> (had been + -ing) signals the earlier, ongoing action. The Simple Past (<em>we met</em>) gives the later event. The past perfect always signals: this happened before the main past event.</p>
+      </div>
+      <div class="notice-q">
+        In the proposal: <em>&ldquo;Our partners in Berlin and Paris <strong>have already adopted</strong> comparable systems.&rdquo;</em> Why is the Present Perfect used rather than Past Simple? What would change if it said <em>&ldquo;adopted&rdquo;</em>?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal">The Present Perfect connects a past action to the present situation &mdash; it implies: they adopted these systems, and they are currently using them &mdash; this is <em>relevant NOW</em>. The Past Simple would simply report a past event without that present relevance. In formal writing, this distinction is critical: you use Present Perfect when the past event informs the current argument.</p>
+      </div>
+      <div class="notice-q">
+        In the final report: <em>&ldquo;The posting <strong>began</strong> with the Ambassador&rsquo;s Gala&rdquo;</em> (Past Simple) but <em>&ldquo;I <strong>have developed</strong> a deeper understanding&rdquo;</em> (Present Perfect) in the same paragraph. Why the switch?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal"><em>&ldquo;The posting began&rdquo;</em> refers to a specific past event at a specific time (five weeks ago, now over) &rarr; Past Simple. <em>&ldquo;I have developed&rdquo;</em> describes a result or change that is relevant NOW &mdash; Chen is about to move on and is framing their current state &rarr; Present Perfect. The tense encodes the <em>relationship to now</em>, not just the time of the event.</p>
+      </div>
+      <div class="notice-q">
+        The letter contains: <em>&ldquo;I <strong>am also preparing</strong> a briefing pack, which <strong>will be circulated</strong>&hellip;&rdquo;</em> Two different future forms. What does each signal that the other cannot?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal"><em>&ldquo;Am preparing&rdquo;</em> (Present Continuous for future) signals an arrangement already in progress &mdash; it is planned and happening now. <em>&ldquo;Will be circulated&rdquo;</em> (future passive with <em>will</em>) is a prediction or commitment about a future event, not yet in motion. At C1, choosing the right future form depends on how certain, how arranged, and how soon the event is.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRIDGE: NOTICE 1 → TENSES STUDY -->
+  <div style="background:var(--paper);border-left:4px solid var(--gold);padding:14px 20px;margin-bottom:28px;border-radius:0 8px 8px 0;font-size:15px;color:var(--ink-soft);">
+    <strong style="color:var(--gold-deep);">&#8599; From context to form.</strong>
+    You have now noticed the tense patterns in context. The Study section below names each one, shows you how it is formed, and — crucially — tells you why it signals what it signals. Return to Chen&rsquo;s documents as you read each card.
+  </div>
+
+  <!-- STUDY: TENSES -->
+  <div class="tab-section" id="tenses">
+    <div class="tab-header study"><span class="tab-num">STUDY</span><h2 class="tab-title">The complete C1 tense system &mdash; all forms in one view</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3>Eight tenses that matter at C1</h3>
+      <p class="grammar-sub">The most common C1 error is not ignorance of a tense but choosing the wrong one in context. Every tense choice encodes meaning: the timing, the relevance, the speaker&rsquo;s relationship to the event.</p>
+      <div class="tense-grid">
+        <div class="tense-card tc-pp">
+          <h4>Present Perfect</h4>
+          <div class="tc-form">have/has + past participle</div>
+          <p class="tc-ex">&ldquo;I have worked on three principal areas.&rdquo;</p>
+          <p class="tc-ex">&ldquo;Partners have already adopted this system.&rdquo;</p>
+          <p class="tc-when">Past action with present relevance. Result or experience. Use with: just, already, yet, recently, since, for, ever, never. NOT with specific past times.</p>
+        </div>
+        <div class="tense-card tc-ps">
+          <h4>Past Simple</h4>
+          <div class="tc-form">verb + -ed / irregular</div>
+          <p class="tc-ex">&ldquo;The posting began with the gala.&rdquo;</p>
+          <p class="tc-ex">&ldquo;She submitted the documents on Monday.&rdquo;</p>
+          <p class="tc-when">Completed past action at a specific time. No present connection. Use with: yesterday, last week, in 2022, at 9am, when + clause.</p>
+        </div>
+        <div class="tense-card tc-ppast">
+          <h4>Past Perfect</h4>
+          <div class="tc-form">had + past participle</div>
+          <p class="tc-ex">&ldquo;The panel had reviewed submissions before we met.&rdquo;</p>
+          <p class="tc-ex">&ldquo;I had not anticipated the pace.&rdquo;</p>
+          <p class="tc-when">Past-before-past. Always refers to an earlier past event. Use with: before, after, by the time, already, when (in past narrative).</p>
+        </div>
+        <div class="tense-card tc-pc">
+          <h4>Past Continuous</h4>
+          <div class="tc-form">was/were + -ing</div>
+          <p class="tc-ex">&ldquo;While Chen was preparing the brief, the panel was meeting.&rdquo;</p>
+          <p class="tc-when">Background past action in progress when another past event occurred. Two simultaneous past actions. Interrupted past activity.</p>
+        </div>
+        <div class="tense-card tc-ppc">
+          <h4>Past Perfect Continuous</h4>
+          <div class="tc-form">had been + -ing</div>
+          <p class="tc-ex">&ldquo;The panel had been reviewing submissions for months before we met.&rdquo;</p>
+          <p class="tc-when">Ongoing activity before a past point. Emphasises duration leading up to that moment. Use with: for, since + past reference.</p>
+        </div>
+        <div class="tense-card tc-fp">
+          <h4>Future Perfect</h4>
+          <div class="tc-form">will have + past participle</div>
+          <p class="tc-ex">&ldquo;By December 2027, we will have processed 200 requests.&rdquo;</p>
+          <p class="tc-when">Action completed before a specific future point. Use with: by (the time), before, when + future clause.</p>
+        </div>
+        <div class="tense-card tc-fw">
+          <h4>Future: <em>will</em></h4>
+          <div class="tc-form">will + infinitive</div>
+          <p class="tc-ex">&ldquo;Our collaboration will continue.&rdquo;</p>
+          <p class="tc-ex">&ldquo;The pack will be circulated.&rdquo;</p>
+          <p class="tc-when">Prediction, promise, offer, spontaneous decision, future passive. NOT for pre-arranged personal events (use going to / present continuous).</p>
+        </div>
+        <div class="tense-card tc-fpr">
+          <h4>Future: Present Continuous</h4>
+          <div class="tc-form">am/is/are + -ing</div>
+          <p class="tc-ex">&ldquo;I am also preparing a digital briefing pack.&rdquo;</p>
+          <p class="tc-ex">&ldquo;She is meeting the Ambassador tomorrow.&rdquo;</p>
+          <p class="tc-when">Arranged, fixed future event. Already in progress or organised. NOT for general predictions.</p>
+        </div>
+      </div>
+      <div class="callout amber" style="margin-top:22px;">
+        <strong>&#128204; C1 note: tense choice encodes meaning, not just time</strong>
+        At C1, the error is rarely forming a tense incorrectly &mdash; it is choosing the wrong tense for the situation. Ask yourself: does this action have present relevance? Is it completed or ongoing? Is it before or after the reference point? Is it arranged or merely predicted?
+      </div>
+    </div>
+  </div>
+
+  <!-- BRIDGE: TENSES → HIGHEST-ERROR -->
+  <div style="background:var(--paper);border-left:4px solid var(--rose);padding:14px 20px;margin-bottom:28px;border-radius:0 8px 8px 0;font-size:15px;color:var(--ink-soft);">
+    <strong style="color:var(--rose);">&#8599; Now sharpen the distinctions that matter most.</strong>
+    You have the full tense map. Below, we focus only on the contrasts that produce the most C1 errors — the pairs that look similar but behave very differently in context.
+  </div>
+
+  <!-- STUDY: HIGHEST-ERROR -->
+  <div class="tab-section" id="highest-error">
+    <div class="tab-header study"><span class="tab-num">STUDY</span><h2 class="tab-title">The highest-error contrasts at C1</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3>1. Present Perfect vs. Past Simple &mdash; the most frequent C1 error</h3>
+      <p class="grammar-sub">COCA learner corpus data shows this is the single most common tense error at B2&ndash;C1. The rule is not complicated; the application is.</p>
+      <div class="ref-table-wrap"><table class="ref-table">
+        <tr><th>Use Present Perfect when&hellip;</th><th>Use Past Simple when&hellip;</th></tr>
+        <tr><td>&#10003; The time is not specified or not important<br><em>&ldquo;She has submitted the documents.&rdquo;</em></td><td>&#10003; A specific past time is given or implied<br><em>&ldquo;She submitted the documents on Monday.&rdquo;</em></td></tr>
+        <tr><td>&#10003; The result or relevance to now matters<br><em>&ldquo;I have reflected on your questions.&rdquo; (= I am informed now)</em></td><td>&#10003; The event is over, no present connection<br><em>&ldquo;Einstein discovered relativity in 1905.&rdquo;</em></td></tr>
+        <tr><td>&#10003; With: just, already, yet, recently, ever, never, so far, since, for<br><em>&ldquo;Have you ever written a formal proposal?&rdquo;</em></td><td>&#10003; With: yesterday, last week, in [year], at [time], ago, when + clause<br><em>&ldquo;I wrote my first proposal last year.&rdquo;</em></td></tr>
+        <tr><td>&#10003; To introduce a topic before giving details<br><em>&ldquo;She has worked at three embassies. The first was in Paris&hellip;&rdquo;</em></td><td>&#10003; To give those specific narrative details<br><em>&ldquo;In Paris, she dealt with three major cases&hellip;&rdquo;</em></td></tr>
+      </table></div>
+      <div class="callout red">
+        <strong>&#9888; The most common error form</strong>
+        &times; &ldquo;I <u>worked</u> on this case since last month.&rdquo;<br>
+        &#10003; &ldquo;I <u>have worked</u> on this case since last month.&rdquo; (ongoing relevance + <em>since</em> = PP required)<br><br>
+        &times; &ldquo;Did you ever visit Vienna?&rdquo; (in isolation, asking about life experience)<br>
+        &#10003; &ldquo;<u>Have</u> you <u>ever visited</u> Vienna?&rdquo; (life experience question = PP required)
+      </div>
+      <h3 style="margin-top:26px;">2. Four future forms &mdash; choosing deliberately</h3>
+      <div class="ref-table-wrap"><table class="ref-table">
+        <tr><th>Form</th><th>When to use</th><th>Example</th></tr>
+        <tr><td><strong>will + infinitive</strong></td><td>Prediction, promise, spontaneous decision, future facts</td><td><em>&ldquo;Our collaboration will continue to prove fruitful.&rdquo;</em></td></tr>
+        <tr><td><strong>going to + infinitive</strong></td><td>Intention already decided; evidence-based prediction</td><td><em>&ldquo;We are going to launch the hub in January.&rdquo;</em></td></tr>
+        <tr><td><strong>Present Continuous</strong></td><td>Fixed, arranged, booked event</td><td><em>&ldquo;I am meeting the Ambassador tomorrow at 10.&rdquo;</em></td></tr>
+        <tr><td><strong>Present Simple</strong></td><td>Scheduled, timetabled event</td><td><em>&ldquo;The conference closes at 18:00 on Friday.&rdquo;</em></td></tr>
+      </table></div>
+      <div class="callout blue">
+        <strong>&#128204; C1 tip: <em>will</em> does NOT replace all future forms</strong>
+        &ldquo;I&rsquo;m meeting the Ambassador tomorrow&rdquo; (arranged) is more natural than &ldquo;I will meet the Ambassador tomorrow.&rdquo; &ldquo;I&rsquo;m going to submit the report on Friday&rdquo; (decision already made) is preferred over &ldquo;I will submit.&rdquo; At C1, choose deliberately.
+      </div>
+      <h3 style="margin-top:26px;">3. Present Perfect vs. Past Perfect &mdash; the sequence trap</h3>
+      <div class="ref-table-wrap"><table class="ref-table">
+        <tr><th>Tense</th><th>Reference point</th><th>Example</th></tr>
+        <tr><td><strong>Present Perfect</strong></td><td>Now &mdash; past action with present relevance</td><td><em>&ldquo;I have reflected on your questions.&rdquo; (since the conference, relevant now)</em></td></tr>
+        <tr><td><strong>Past Perfect</strong></td><td>A past moment &mdash; an even earlier past action</td><td><em>&ldquo;The panel had reviewed submissions before we met.&rdquo; (before the meeting)</em></td></tr>
+      </table></div>
+      <p style="font-size:14px;color:var(--ink-soft);">Think of it this way: Present Perfect looks back from <em>now</em>. Past Perfect looks back from a <em>past moment</em>. If your narrative is in the past, use Past Perfect for anything earlier within that narrative.</p>
+    </div>
+  </div>
+
+  <!-- BRIDGE: TENSES → GENRES -->
+  <div style="background:var(--paper);border-left:4px solid var(--pine-mid);padding:14px 20px;margin-bottom:28px;border-radius:0 8px 8px 0;font-size:15px;color:var(--ink-soft);">
+    <strong style="color:var(--pine-mid);">&#8599; Shift from grammar to genre.</strong>
+    You now have a complete tense toolkit. Chen&rsquo;s three documents also demonstrate something else: each one belongs to a different formal genre, and each genre has its own rules. Before you read the genre guides, notice the differences yourself.
+  </div>
+
+  <!-- NOTICE 2: GENRES -->
+  <div class="tab-section" id="notice2">
+    <div class="tab-header scene"><span class="tab-num">NOTICE &amp; DISCOVER</span><h2 class="tab-title">The two genres &mdash; what makes them different?</h2></div>
+    <hr class="tab-rule">
+    <div class="notice-box">
+      <h3>Compare the letter and the proposal before reading the Study section</h3>
+      <div class="notice-q">
+        The letter opens: <em>&ldquo;I am writing to express my sincere gratitude&hellip;&rdquo;</em> The proposal opens: <em>&ldquo;This proposal outlines a plan to establish&hellip;&rdquo;</em> What is the fundamental difference in how each genre positions itself?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal">The letter opening centres on <strong>the writer</strong> &mdash; who is writing, why, and to whom. It is personal and relational. The proposal opening centres on <strong>the document itself</strong> &mdash; what it contains and what its purpose is. It is impersonal and functional. Letters begin with the writer; proposals begin with the content.</p>
+      </div>
+      <div class="notice-q">
+        The proposal uses section headings (Executive Summary, Background, etc.). The letter uses none. Why?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal">A proposal is a <strong>reference document</strong> &mdash; the reader may return to specific sections. Headings enable navigation. A formal letter is <strong>linear</strong> &mdash; read once, beginning to end. Using headings in a letter would make it feel like a report and break the relational register.</p>
+      </div>
+      <div class="notice-q">
+        Find the call to action in the proposal. How does it differ from the closing of the letter?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal">The proposal&rsquo;s call to action is direct and decision-demanding: <em>&ldquo;We strongly recommend that the Foreign Office approve this initiative.&rdquo;</em> The writer wants a clear decision. The letter&rsquo;s close is relational and open: <em>&ldquo;Should you require any further information, please do not hesitate to contact my office.&rdquo;</em> The writer wants to maintain the relationship. Proposals demand action; letters maintain connection.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRIDGE: NOTICE 2 → FORMAL LETTER -->
+  <div style="background:var(--paper);border-left:4px solid var(--teal);padding:14px 20px;margin-bottom:28px;border-radius:0 8px 8px 0;font-size:15px;color:var(--ink-soft);">
+    <strong style="color:var(--teal);">&#8599; From noticing to knowing.</strong>
+    You have identified the key differences between the letter and the proposal. Below, each genre is unpacked in full — structure, conventions, and a complete language bank. Use these as live reference documents when you do the writing tasks.
+  </div>
+
+  <!-- STUDY: FORMAL LETTER -->
+  <div class="tab-section" id="formal-letter">
+    <div class="tab-header study"><span class="tab-num">STUDY</span><h2 class="tab-title">Formal letters &mdash; complete scaffold and language bank</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3>The structure of a formal letter</h3>
+      <p class="grammar-sub">A formal letter has a fixed, conventional structure. Deviating from it signals unfamiliarity with the genre. Learn it so thoroughly it becomes automatic.</p>
+      <div class="genre-box">
+        <div class="genre-head letter-head"><h3>Formal Letter Structure</h3><span class="genre-badge">British English standard</span></div>
+        <div class="genre-body">
+          <div class="genre-section"><div class="genre-label">Sender&rsquo;s address</div><div class="genre-content">Top right (or top left on headed paper). Address only &mdash; no name here.<br><em>Embassy of the United Kingdom, Metternichgasse 13, 1030 Vienna</em></div></div>
+          <div class="genre-section"><div class="genre-label">Date</div><div class="genre-content">Written in full: <em>2 July 2026</em> (BrE) or <em>July 2, 2026</em> (AmE). Never 02/07/26 in a formal letter.</div></div>
+          <div class="genre-section"><div class="genre-label">Recipient&rsquo;s details</div><div class="genre-content">Name, title, organisation, address &mdash; all in full. Align left, below the date.</div></div>
+          <div class="genre-section"><div class="genre-label">Salutation</div><div class="genre-content"><em>Dear Dr. Hartmann,</em> (named) &rarr; close with <strong>Yours sincerely</strong><br><em>Dear Sir or Madam,</em> (unnamed) &rarr; close with <strong>Yours faithfully</strong></div></div>
+          <div class="genre-section"><div class="genre-label">Subject line</div><div class="genre-content">Optional but professional. After salutation, bold or underlined.<br><em><strong>Re: Expression of Gratitude following the Vienna Climate Conference</strong></em></div></div>
+          <div class="genre-section"><div class="genre-label">Opening paragraph</div><div class="genre-content">State purpose AND context. Not just &ldquo;I am writing to&hellip;&rdquo; &mdash; add the specific reason.<br><em>&ldquo;I am writing to express my sincere gratitude for the opportunity to present at the Vienna Climate Conference last week.&rdquo;</em></div></div>
+          <div class="genre-section"><div class="genre-label">Main body</div><div class="genre-content">2&ndash;3 paragraphs, one topic each. Use connectives and formal discourse markers.</div></div>
+          <div class="genre-section"><div class="genre-label">Closing paragraph</div><div class="genre-content">Brief, courteous close. Express hope for response or future action. Offer further information.</div></div>
+          <div class="genre-section"><div class="genre-label">Complimentary close</div><div class="genre-content"><em>Yours sincerely,</em> / <em>Yours faithfully,</em> &mdash; never <em>Bye</em> / <em>Best</em> / <em>Cheers</em></div></div>
+          <div class="genre-section"><div class="genre-label">Signature &amp; name</div><div class="genre-content">Sign name, print in full below. Include title/position if relevant.</div></div>
+          <div class="genre-section"><div class="genre-label">Enclosures</div><div class="genre-content">If attaching documents: <em>Enc:</em> or <em>Encl:</em> at the bottom with a list.</div></div>
+        </div>
+      </div>
+      <h3 style="margin-top:22px;">Formal letter language bank</h3>
+      <div class="phrase-box">
+        <h4>Opening purposes</h4>
+        <div class="phrase-row"><span class="phrase-tag purpose">Thanks</span><span class="phrase-text">I am writing to express my sincere / warmest gratitude for&hellip;</span></div>
+        <div class="phrase-row"><span class="phrase-tag purpose">Enquiry</span><span class="phrase-text">I am writing to enquire whether / about&hellip;</span></div>
+        <div class="phrase-row"><span class="phrase-tag purpose">Complaint</span><span class="phrase-text">I am writing to draw your attention to a matter of concern regarding&hellip;</span></div>
+        <div class="phrase-row"><span class="phrase-tag purpose">Follow-up</span><span class="phrase-text">I am writing further to our conversation / meeting on [date]&hellip;</span></div>
+        <div class="phrase-row"><span class="phrase-tag purpose">Request</span><span class="phrase-text">I would be most grateful if you could / I would like to request that&hellip;</span></div>
+      </div>
+      <div class="phrase-box">
+        <h4>Enclosures, references &amp; requests</h4>
+        <div class="phrase-row"><span class="phrase-tag enclose">Attach</span><span class="phrase-text">Please find enclosed / attached [document]&hellip;</span></div>
+        <div class="phrase-row"><span class="phrase-tag request">Polite request</span><span class="phrase-text">I would be grateful if you could / I would appreciate it if you were able to&hellip;</span></div>
+        <div class="phrase-row"><span class="phrase-tag request">Inverted cond.</span><span class="phrase-text">Should you require any further information, please do not hesitate to contact us.</span></div>
+      </div>
+      <div class="phrase-box">
+        <h4>Declining &amp; apologising</h4>
+        <div class="phrase-row"><span class="phrase-tag decline">Decline</span><span class="phrase-text">I regret to inform you that I am unable to attend / accept&hellip;</span></div>
+        <div class="phrase-row"><span class="phrase-tag decline">Apologise</span><span class="phrase-text">I sincerely apologise for any inconvenience caused by&hellip;</span></div>
+      </div>
+      <div class="phrase-box">
+        <h4>Closings</h4>
+        <div class="phrase-row"><span class="phrase-tag close">Hope</span><span class="phrase-text">I hope that [our collaboration / this matter] will [continue / prove fruitful]&hellip;</span></div>
+        <div class="phrase-row"><span class="phrase-tag close">Await</span><span class="phrase-text">I look forward to hearing from you / receiving your response&hellip;</span></div>
+        <div class="phrase-row"><span class="phrase-tag close">Next step</span><span class="phrase-text">I trust that you will give this matter your urgent / careful attention.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STUDY: PROPOSALS -->
+  <div class="tab-section" id="proposals">
+    <div class="tab-header study"><span class="tab-num">STUDY</span><h2 class="tab-title">Proposals &mdash; genre, structure &amp; persuasive language</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3>What makes a proposal different from an essay or a report?</h3>
+      <div class="ref-table-wrap"><table class="ref-table">
+        <tr><th>Genre</th><th>Purpose</th><th>Key feature</th><th>Ends with</th></tr>
+        <tr><td><strong>Essay</strong></td><td>Argue, discuss, evaluate</td><td>Thesis + balanced argument</td><td>Conclusion summarising your view</td></tr>
+        <tr><td><strong>Report</strong></td><td>Inform, analyse, recommend</td><td>Objective findings + data</td><td>Recommendations section</td></tr>
+        <tr><td><strong>Proposal</strong></td><td>Persuade, request approval</td><td>Problem &rarr; Solution &rarr; Benefits &rarr; Action</td><td>A clear call to action</td></tr>
+        <tr><td><strong>Formal letter</strong></td><td>Communicate personally &amp; formally</td><td>Relational, purpose-specific, linear</td><td>Complimentary close</td></tr>
+      </table></div>
+      <h3 style="margin-top:22px;">Proposal structure</h3>
+      <div class="genre-box">
+        <div class="genre-head proposal-head"><h3>Policy / Project Proposal Structure</h3><span class="genre-badge">C1 writing genre</span></div>
+        <div class="genre-body">
+          <div class="genre-section"><div class="genre-label">Title &amp; addressee</div><div class="genre-content">Clear, specific title. State who submits it and to whom.<br><em>Digital Diplomacy Initiative &mdash; Proposal submitted to the Foreign Office by A. Chen</em></div></div>
+          <div class="genre-section"><div class="genre-label">Executive Summary</div><div class="genre-content">One paragraph. States the problem, the solution, and the key benefit. Readers may read only this &mdash; make it complete.</div></div>
+          <div class="genre-section"><div class="genre-label">Background / Context</div><div class="genre-content">Why is this necessary? Current situation, evidence, and data. Use Present Perfect and Past tenses to establish current state.</div></div>
+          <div class="genre-section"><div class="genre-label">Proposed Initiative</div><div class="genre-content">What, when, who, how much. Be specific. Use future forms (will, going to) for concrete plans.</div></div>
+          <div class="genre-section"><div class="genre-label">Benefits / Justification</div><div class="genre-content">Why should the reader approve this? Evidence, impact, return on investment. Language of consequence and evidence.</div></div>
+          <div class="genre-section"><div class="genre-label">Call to action</div><div class="genre-content">Direct request for approval. Strong but formal. Often includes the recommended next step.</div></div>
+        </div>
+      </div>
+      <h3 style="margin-top:22px;">Proposal language bank</h3>
+      <div class="phrase-box">
+        <h4>Introducing and framing</h4>
+        <div class="phrase-row"><span class="phrase-tag propose">Purpose</span><span class="phrase-text">This proposal outlines / presents / sets out a plan to&hellip;</span></div>
+        <div class="phrase-row"><span class="phrase-tag propose">Problem</span><span class="phrase-text">It has become apparent that / Evidence suggests that [current situation is inadequate / outdated]&hellip;</span></div>
+      </div>
+      <div class="phrase-box">
+        <h4>Justifying and evidencing</h4>
+        <div class="phrase-row"><span class="phrase-tag justify">Evidence</span><span class="phrase-text">Evidence from [comparable organisations / data] indicates / demonstrates / suggests that&hellip;</span></div>
+        <div class="phrase-row"><span class="phrase-tag justify">Comparison</span><span class="phrase-text">Similar initiatives in [X and Y] have resulted in / led to&hellip;</span></div>
+        <div class="phrase-row"><span class="phrase-tag justify">Consequence</span><span class="phrase-text">Failure to act will result in / may lead to / is likely to compromise&hellip;</span></div>
+      </div>
+      <div class="phrase-box">
+        <h4>Benefits</h4>
+        <div class="phrase-row"><span class="phrase-tag benefit">Primary</span><span class="phrase-text">The principal / key benefit of this initiative is / will be&hellip;</span></div>
+        <div class="phrase-row"><span class="phrase-tag benefit">Additional</span><span class="phrase-text">Furthermore / In addition / Moreover, this initiative will&hellip;</span></div>
+        <div class="phrase-row"><span class="phrase-tag benefit">Long-term</span><span class="phrase-text">In the longer term, we anticipate / it is expected that&hellip;</span></div>
+      </div>
+      <div class="phrase-box">
+        <h4>Call to action</h4>
+        <div class="phrase-row"><span class="phrase-tag call">Recommend</span><span class="phrase-text">We strongly / respectfully recommend that [the committee] approve / endorse&hellip;</span></div>
+        <div class="phrase-row"><span class="phrase-tag call">Inverted cond.</span><span class="phrase-text">Should further information be required, a detailed breakdown is available upon request.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRIDGE: PROPOSALS → AWL -->
+  <div style="background:var(--paper);border-left:4px solid var(--rose);padding:14px 20px;margin-bottom:28px;border-radius:0 8px 8px 0;font-size:15px;color:var(--ink-soft);">
+    <strong style="color:var(--rose);">&#8599; Genre mastered. Now vocabulary.</strong>
+    Both genres use the same high-frequency academic vocabulary. Chen&rsquo;s proposal was full of AWL words — <em>implement, allocate, enhance, infrastructure</em>. The section below consolidates everything you have built across all five weeks.
+  </div>
+
+  <!-- STUDY: AWL -->
+  <div class="tab-section" id="awl">
+    <div class="tab-header vocab"><span class="tab-num">VOCABULARY</span><h2 class="tab-title">AWL consolidation &mdash; the full five-week picture</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3>AWL word families &mdash; this week&rsquo;s additions</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vc-word">innovation</div><div class="vc-pos">n &mdash; innovate (v), innovative (adj), innovator (n)</div><div class="vc-def">A new method or idea; the act of introducing new things.</div><div class="vc-ex">&ldquo;This initiative represents a significant innovation in embassy operations.&rdquo;</div></div>
+        <div class="vocab-card"><div class="vc-word">implement</div><div class="vc-pos">v &mdash; implementation (n), implementable (adj)</div><div class="vc-def">To put a plan or decision into effect.</div><div class="vc-ex">&ldquo;By December, we will have implemented the recommendations.&rdquo;</div></div>
+        <div class="vocab-card"><div class="vc-word">allocate</div><div class="vc-pos">v &mdash; allocation (n)</div><div class="vc-def">To distribute resources for a specific purpose.</div><div class="vc-ex">&ldquo;We propose the allocation of &euro;120,000 over two years.&rdquo;</div></div>
+        <div class="vocab-card"><div class="vc-word">enhance</div><div class="vc-pos">v &mdash; enhancement (n), enhanced (adj)</div><div class="vc-def">To improve the quality, value, or extent of something.</div><div class="vc-ex">&ldquo;Real-time data analysis significantly enhances diplomatic engagement.&rdquo;</div></div>
+        <div class="vocab-card"><div class="vc-word">infrastructure</div><div class="vc-pos">n &mdash; infrastructural (adj)</div><div class="vc-def">The basic systems needed for an organisation to function.</div><div class="vc-ex">&ldquo;Investing in digital infrastructure is no longer optional.&rdquo;</div></div>
+        <div class="vocab-card"><div class="vc-word">commitment</div><div class="vc-pos">n &mdash; commit (v), committed (adj)</div><div class="vc-def">A pledge or obligation; a firm decision to act.</div><div class="vc-ex">&ldquo;Our commitment to digital transformation will strengthen our position.&rdquo;</div></div>
+      </div>
+      <h3 style="margin-top:22px;">AWL master reference &mdash; all five weeks</h3>
+      <div class="ref-table-wrap"><table class="ref-table">
+        <tr><th>Week</th><th>AWL word families introduced</th></tr>
+        <tr><td>Week 1</td><td>significant / significance, establish / established, relevant / relevance, context / contextual</td></tr>
+        <tr><td>Week 2</td><td>analyse / analysis, concept / conceptual, identify / identification, require / requirement, contribute / contribution, document / documentation, indicate / indication, principle / principled</td></tr>
+        <tr><td>Week 3</td><td>assess / assessment, demonstrate / demonstration, appropriate / appropriateness, criteria, competence / competent</td></tr>
+        <tr><td>Week 4</td><td>anomaly, mitigation, projection, trajectory, threshold, data, correlation, offset</td></tr>
+        <tr><td>Week 5 &#9733;</td><td>innovation / innovate, implement / implementation, allocate / allocation, enhance / enhancement, infrastructure, commitment / commit, initiative, strategic</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <!-- BRIDGE: AWL → COLLOCATION -->
+  <div style="background:var(--paper);border-left:4px solid var(--pine-mid);padding:14px 20px;margin-bottom:28px;border-radius:0 8px 8px 0;font-size:15px;color:var(--ink-soft);">
+    <strong style="color:var(--pine-mid);">&#8599; From word families to word partnerships.</strong>
+    Knowing a word is not enough — you also need to know which words it travels with. The collocation archive below brings together five years of systematic work. At C1, collocation errors outnumber grammar errors 3:1.
+  </div>
+
+  <!-- STUDY: COLLOCATION ARCHIVE -->
+  <div class="tab-section" id="collocation">
+    <div class="tab-header colloc"><span class="tab-num">COLLOCATION ARCHIVE</span><h2 class="tab-title">The complete collocation strand &mdash; Grades 6&ndash;10</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3>Five years of systematic collocation building</h3>
+      <p class="grammar-sub">EVP and COCA data consistently show that collocation errors are the most persistent difficulty at B2&ndash;C1 &mdash; outnumbering grammar errors approximately 3:1. This is the complete archive from Grade 6 to Grade 10.</p>
+      <div class="callout amber">
+        <strong>&#128204; Why collocations matter more than grammar at C1</strong>
+        A learner who says &ldquo;I <u>did</u> a mistake&rdquo; (instead of <em>made</em>), or &ldquo;a <u>powerful</u> coffee&rdquo; (instead of <em>strong</em>), or &ldquo;<u>rise</u> concerns&rdquo; (instead of <em>raise</em>) has a collocation error. Mastering which words go with which is the single highest-impact area for C1 writing accuracy.
+      </div>
+      <div class="colloc-journey">
+        <div class="cj-row"><div class="cj-grade">Grade 6</div><div class="cj-type">make/do + noun; adjective collocations</div><div class="cj-examples"><strong>make:</strong> make a decision, make progress, make a mistake, make an effort, make an exception, make a suggestion<br><strong>do:</strong> do research, do damage, do your best, do harm, do business<br><strong>adjective + noun:</strong> strong opinion, heavy rain, heavy traffic, high demand, deep concern</div></div>
+        <div class="cj-row"><div class="cj-grade">Grade 7</div><div class="cj-type">verb + noun collocations</div><div class="cj-examples"><strong>take:</strong> take a risk, take action, take responsibility, take measures, take into account<br><strong>have:</strong> have a conversation, have an impact, have doubts, have access to<br><strong>give:</strong> give a speech, give notice, give priority to, give consideration to<br><strong>reach:</strong> reach an agreement, reach a conclusion, reach a decision, reach a compromise</div></div>
+        <div class="cj-row"><div class="cj-grade">Grade 8</div><div class="cj-type">adjective + noun; verb + that-clause</div><div class="cj-examples"><strong>adjective + noun:</strong> strong opposition, heavy workload, close relationship, sharp increase, significant impact, broad consensus, firm commitment<br><strong>verb + that-clause:</strong> suggest that, recommend that, propose that, indicate that, demonstrate that, ensure that</div></div>
+        <div class="cj-row"><div class="cj-grade">Grade 9</div><div class="cj-type">prepositional phrases; idiomatic collocations</div><div class="cj-examples"><strong>prepositional phrases:</strong> in terms of, with regard to, as a result of, in the context of, on the basis of, in light of, with a view to, in conjunction with, at the expense of, in the absence of<br><strong>idioms:</strong> bite the bullet, sit on the fence, break the ice, go the extra mile, hit the ground running, cut corners, miss the point</div></div>
+        <div class="cj-row" style="background:rgba(200,153,58,0.06);border:1px solid rgba(200,153,58,0.2);border-radius:8px;"><div class="cj-grade" style="color:var(--gold);">Grade 10 &#9733;</div><div class="cj-type" style="color:var(--ink);">Academic &amp; AWL collocations</div><div class="cj-examples"><strong>conduct:</strong> conduct research, conduct an investigation, conduct negotiations, conduct a review<br><strong>draw:</strong> draw conclusions, draw attention to, draw a distinction between, draw on (= use)<br><strong>raise:</strong> raise concerns, raise awareness, raise the question of, raise the profile of<br><strong>address:</strong> address an issue, address a concern, address the committee, fail to address<br><strong>formal:</strong> significant contribution, close collaboration, mutual understanding, firm conditions, binding commitment, strategic initiative, digital infrastructure<br><strong>AWL:</strong> significant impact, rigorous analysis, comprehensive assessment, relevant documentation, implement recommendations, allocate resources, enhance performance</div></div>
+      </div>
+      <h3 style="margin-top:22px;">The most common collocation errors at C1</h3>
+      <div class="ref-table-wrap"><table class="ref-table">
+        <tr><th>Wrong (common learner error)</th><th>Correct</th><th>Why</th></tr>
+        <tr><td class="bad">&times; do a mistake</td><td class="ok">&#10003; make a mistake</td><td class="note"><em>make</em> with errors; <em>do</em> with activities</td></tr>
+        <tr><td class="bad">&times; do a decision</td><td class="ok">&#10003; make a decision</td><td class="note"><em>make</em> collocates with decisions/choices</td></tr>
+        <tr><td class="bad">&times; powerful coffee</td><td class="ok">&#10003; strong coffee</td><td class="note"><em>strong</em> not <em>powerful</em> for drinks/flavours</td></tr>
+        <tr><td class="bad">&times; rise concerns</td><td class="ok">&#10003; raise concerns</td><td class="note"><em>raise</em> is transitive; <em>rise</em> is intransitive</td></tr>
+        <tr><td class="bad">&times; conduct a mistake</td><td class="ok">&#10003; conduct research / an investigation</td><td class="note"><em>conduct</em> for formal processes, not errors</td></tr>
+        <tr><td class="bad">&times; draw attention on</td><td class="ok">&#10003; draw attention to</td><td class="note">Preposition: always <em>draw attention TO</em></td></tr>
+        <tr><td class="bad">&times; achieve a progress</td><td class="ok">&#10003; make progress</td><td class="note"><em>progress</em> is uncountable; collocates with <em>make</em></td></tr>
+        <tr><td class="bad">&times; a sharp growth</td><td class="ok">&#10003; sharp increase / rapid growth</td><td class="note"><em>growth</em> collocates with <em>rapid</em>, not usually <em>sharp</em></td></tr>
+      </table></div>
+      <div class="cj-highlight" style="margin-top:16px;">
+        <strong style="color:var(--amber);">Self-test:</strong> Cover the right column. For each row in the collocation journey above, produce the full collocation from memory. Every hesitation = one entry to add to your vocabulary notebook today.
+      </div>
+    </div>
+  </div>
+
+  <!-- BRIDGE: COLLOCATION → VOCAB -->
+  <div style="background:var(--paper);border-left:4px solid var(--amber);padding:14px 20px;margin-bottom:28px;border-radius:0 8px 8px 0;font-size:15px;color:var(--ink-soft);">
+    <strong style="color:var(--amber);">&#8599; From archive to activation.</strong>
+    You have the collocation system. Now add the specific vocabulary field for this week&rsquo;s topic: technology, digital transformation, and formal writing. These words appear in Chen&rsquo;s proposal — and in real C1 professional contexts.
+  </div>
+
+  <!-- VOCABULARY -->
+  <div class="tab-section" id="vocab">
+    <div class="tab-header vocab"><span class="tab-num">VOCABULARY</span><h2 class="tab-title">Technology, future &amp; formal writing vocabulary</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3>Technology vocabulary for formal writing</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vc-word">artificial intelligence</div><div class="vc-pos">n &mdash; also: AI; machine learning</div><div class="vc-def">Computer systems that perform tasks normally requiring human intelligence.</div><div class="vc-ex">&ldquo;Advances in artificial intelligence have altered the diplomatic landscape.&rdquo;</div></div>
+        <div class="vocab-card"><div class="vc-word">data analytics</div><div class="vc-pos">n (field) &mdash; data analyst (n), analyse data (v)</div><div class="vc-def">The process of examining datasets to draw conclusions and support decisions.</div><div class="vc-ex">&ldquo;The hub will use data analytics to streamline briefing processes.&rdquo;</div></div>
+        <div class="vocab-card"><div class="vc-word">digital transformation</div><div class="vc-pos">n &mdash; digitalise (v), digital (adj)</div><div class="vc-def">The integration of digital technology into all areas of an organisation.</div><div class="vc-ex">&ldquo;Our commitment to digital transformation will strengthen our position.&rdquo;</div></div>
+        <div class="vocab-card"><div class="vc-word">secure platform</div><div class="vc-pos">n compound &mdash; cybersecurity (n), encrypted (adj)</div><div class="vc-def">A digital system with strong protections against unauthorised access.</div><div class="vc-ex">&ldquo;The hub will operate on a secure, encrypted digital platform.&rdquo;</div></div>
+        <div class="vocab-card"><div class="vc-word">real-time</div><div class="vc-pos">adj &mdash; always hyphenated before noun</div><div class="vc-def">Happening or processed without delay; immediate and current.</div><div class="vc-ex">&ldquo;Real-time data analysis significantly enhances diplomatic quality.&rdquo;</div></div>
+        <div class="vocab-card"><div class="vc-word">briefing</div><div class="vc-pos">n &mdash; brief (v/n/adj), debrief (v/n)</div><div class="vc-def">A meeting or document giving information or instructions about a task.</div><div class="vc-ex">&ldquo;By December 2027, the hub will have processed 200 briefing requests.&rdquo;</div></div>
+      </div>
+      <h3 style="margin-top:22px;">Prediction &amp; future assumptions language</h3>
+      <div class="chip-row">
+        <span class="chip teal">it is anticipated that</span><span class="chip teal">it is expected that</span>
+        <span class="chip teal">projections suggest that</span><span class="chip teal">evidence indicates that</span>
+        <span class="chip teal">it is likely that</span><span class="chip teal">it is reasonable to assume that</span>
+        <span class="chip amber">in the short term</span><span class="chip amber">in the longer term</span>
+        <span class="chip amber">over the coming years</span>
+      </div>
+      <h3 style="margin-top:16px;">Formal connectives for proposals &amp; letters</h3>
+      <div class="ref-table-wrap"><table class="ref-table">
+        <tr><th>Function</th><th>Connective</th><th>Example</th></tr>
+        <tr><td>Adding</td><td>Furthermore / Moreover / In addition / Additionally</td><td><em>&ldquo;Furthermore, our commitment to innovation will attract top-tier talent.&rdquo;</em></td></tr>
+        <tr><td>Contrasting</td><td>However / Nevertheless / Notwithstanding this / That said</td><td><em>&ldquo;Notwithstanding the initial costs, the long-term benefits are considerable.&rdquo;</em></td></tr>
+        <tr><td>Conceding</td><td>While / Although / Despite this / Admittedly</td><td><em>&ldquo;While the investment is significant, the returns are demonstrable.&rdquo;</em></td></tr>
+        <tr><td>Cause/effect</td><td>As a result / Consequently / Therefore / Thus</td><td><em>&ldquo;Consequently, we recommend immediate implementation.&rdquo;</em></td></tr>
+        <tr><td>Summarising</td><td>In summary / To conclude / On balance</td><td><em>&ldquo;In summary, this initiative represents a high-value investment.&rdquo;</em></td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <!-- BRIDGE: VOCAB → EXERCISES -->
+  <div style="background:var(--paper);border-left:4px solid var(--gold-deep);padding:14px 20px;margin-bottom:28px;border-radius:0 8px 8px 0;font-size:15px;color:var(--ink-soft);">
+    <strong style="color:var(--gold-deep);">&#8599; From study to practice.</strong>
+    You have now read every grammar rule, genre scaffold, and vocabulary set. Exercises 1&ndash;6 below test whether you can apply that knowledge &mdash; in isolation and in extended writing. Attempt each one independently before revealing the answer.
+  </div>
+
+  <!-- EXERCISES -->
+  
+  <!-- SECTION: Speaking Practice -->
+  <div class="tab-section speaking" id="speaking">
+    <div class="tab-header vocab">
+      <span class="tab-num">SPEAKING PRACTICE</span>
+      <h2 class="tab-title">Speaking Practice</h2>
+    </div>
+    <hr class="tab-rule">
+    <p class="grammar-sub" style="margin:-6px 0 18px;">This is a consolidation week &mdash; the speaking tasks deliberately mix every grammar area studied across the term.</p>
+      <div class="speak-card">
+        <div class="speak-meta">Timed monologue</div>
+        <h4>Looking back on the course</h4>
+        <p>Set a timer for 2 minutes. Speak about what you've learned this term, using at least one example each of past, present, and future tense correctly. Record yourself and don't stop, even if you search for a word.</p>
+        <div class="speak-howto">How to do this: record yourself using your phone's voice memo app (or Vocaroo.com if you prefer typing on a laptop). Save or send the recording to your teacher if asked.</div>
+        <div class="speak-task"><strong>When you listen back, check:</strong> where you paused or searched for a word, and whether your tense use stayed accurate under time pressure.</div>
+        
+      </div>
+      <div class="speak-card">
+        <div class="speak-meta">Opinion card</div>
+        <h4>Agree or disagree?</h4>
+        <p>&ldquo;A diplomat's most important skill is not knowledge of policy, but the ability to communicate carefully.&rdquo; Speak for 90 seconds using at least 3 words from across this term's vocabulary trackers.</p>
+        <div class="speak-howto">How to do this: record yourself using your phone's voice memo app (or Vocaroo.com if you prefer typing on a laptop). Save or send the recording to your teacher if asked.</div>
+        <div class="speak-task"><strong>When you listen back, check:</strong> whether you drew on vocabulary from more than one week of the course, not just this one.</div>
+        
+      </div>
+      <div class="speak-card">
+        <div class="speak-meta">Sentence challenge</div>
+        <h4>Course-wide vocabulary sprint</h4>
+        <p>Use each of these 5 words &mdash; one from an earlier week of your choice, plus <em>facilitate, ascertain, undergo, resolve</em> &mdash; in a spoken sentence. 60 seconds per word.</p>
+        <div class="speak-howto">How to do this: record yourself using your phone's voice memo app (or Vocaroo.com if you prefer typing on a laptop). Save or send the recording to your teacher if asked.</div>
+        <div class="speak-task"><strong>When you listen back, check:</strong> how many of the 5 sentences used correct collocations and natural formal register.</div>
+        <div class="speak-tip">&#128161; Tip: This is a good task to repeat right before a speaking exam &mdash; it forces fast, active recall rather than passive recognition.</div>
+      </div>
+  </div>
+
+  <div class="tab-section" id="exercises">
+    <div class="tab-header exercise"><span class="tab-num">PRACTICE</span><h2 class="tab-title">Exercises &mdash; tenses, genre &amp; collocation</h2></div>
+    <hr class="tab-rule">
+
+    <!-- EX 1: T/F -->
+    <div class="exercise-block" id="ex1">
+      <h3>Exercise 1 &mdash; True or False: Tense knowledge check</h3>
+      <p class="expl">Read each statement about English tenses. Mark it True or False, then reveal the explanation.</p>
+      <div class="tf-grid">
+
+        <div class="tf-card">
+          <div class="tf-q">"The present perfect is used for actions completed at a specific time in the past." (e.g. <em>I have seen that film in 2019.</em>)</div>
+          <div class="tf-btns">
+            <button class="tf-btn" onclick="tfCheck(this,'F')">True</button>
+            <button class="tf-btn" onclick="tfCheck(this,'F')">False</button>
+          </div>
+          <p class="tf-reveal"><strong>False.</strong> The present perfect cannot be used with a finished time marker (in 2019, last year, yesterday). Use the past simple: <em>I saw that film in 2019.</em> Present perfect = unspecified time / connection to now.</p>
+        </div>
+
+        <div class="tf-card">
+          <div class="tf-q">The past perfect is often used in formal writing to show that one past event happened before another. (e.g. <em>By the time she arrived, the meeting had already concluded.</em>)</div>
+          <div class="tf-btns">
+            <button class="tf-btn" onclick="tfCheck(this,'T')">True</button>
+            <button class="tf-btn" onclick="tfCheck(this,'T')">False</button>
+          </div>
+          <p class="tf-reveal"><strong>True.</strong> The past perfect signals a &ldquo;backstory&rdquo; &mdash; something completed before the main past narrative. It is especially common in formal reports and diplomatic writing to sequence events.</p>
+        </div>
+
+        <div class="tf-card">
+          <div class="tf-q">"Will + infinitive is always the correct way to talk about the future in formal writing." (e.g. <em>The hub will process all requests.</em>)</div>
+          <div class="tf-btns">
+            <button class="tf-btn" onclick="tfCheck(this,'F')">True</button>
+            <button class="tf-btn" onclick="tfCheck(this,'F')">False</button>
+          </div>
+          <p class="tf-reveal"><strong>False.</strong> <em>Will</em> is one future form, but formal writing also uses <em>is expected to, is anticipated that, is set to</em>, and <em>will have + past participle</em> (future perfect) for projected completions. Over-reliance on bare <em>will</em> can read as informal.</p>
+        </div>
+
+        <div class="tf-card">
+          <div class="tf-q">In Chen&rsquo;s proposal, the phrase <em>&ldquo;By December 2027, the hub will have processed&hellip;&rdquo;</em> uses the future perfect to express a completed future achievement.</div>
+          <div class="tf-btns">
+            <button class="tf-btn" onclick="tfCheck(this,'T')">True</button>
+            <button class="tf-btn" onclick="tfCheck(this,'T')">False</button>
+          </div>
+          <p class="tf-reveal"><strong>True.</strong> Future perfect (will have + past participle) looks back from a future deadline and states what will be completed by that point. It is the standard tense for proposal milestones and KPIs in formal writing.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- EX 2: TENSE GAP-FILL -->
+    <div class="exercise-block" id="ex2">
+      <h3>Exercise 2 &mdash; Tense selection: the complete system</h3>
+      <p class="expl">Choose the correct tense for each gap. Each item targets a different contrast from the Study section. Write the full verb form, then reveal.</p>
+
+      <div class="gf-item">
+        <span class="gf-num">1</span>
+        <div class="gf-sentence">Chen <span class="gap">____________</span> her final report before she left the embassy. <em>[past perfect — it was done before she left]</em></div>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal"><strong>had completed</strong> &mdash; Past perfect: the report was finished before the departure (an earlier past action).</p>
+      </div>
+
+      <div class="gf-item">
+        <span class="gf-num">2</span>
+        <div class="gf-sentence">By the end of next year, the Digital Diplomacy Hub <span class="gap">____________</span> over 500 briefing requests. <em>[future perfect &mdash; milestone]</em></div>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal"><strong>will have processed</strong> &mdash; Future perfect: a completed achievement at a specified future point.</p>
+      </div>
+
+      <div class="gf-item">
+        <span class="gf-num">3</span>
+        <div class="gf-sentence">Global temperatures <span class="gap">____________</span> gradually since 1980 and the trend continues. <em>[present perfect continuous &mdash; ongoing process]</em></div>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal"><strong>have been rising</strong> &mdash; Present perfect continuous: an ongoing process that started in the past and is still in progress. The continuous form emphasises the duration.</p>
+      </div>
+
+      <div class="gf-item">
+        <span class="gf-num">4</span>
+        <div class="gf-sentence">At the time of the conference, scientists <span class="gap">____________</span> on the problem for several decades. <em>[past perfect continuous &mdash; ongoing at a past point]</em></div>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal"><strong>had been working</strong> &mdash; Past perfect continuous: an activity that had been in progress for a duration up to a specific past moment.</p>
+      </div>
+
+      <div class="gf-item">
+        <span class="gf-num">5</span>
+        <div class="gf-sentence">We recommend that the proposal <span class="gap">____________</span> to all senior officials immediately. <em>[subjunctive &mdash; after formal recommendation]</em></div>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal"><strong>be circulated</strong> &mdash; Formal subjunctive after <em>recommend that</em>: base form of the verb (no -s, no auxiliary). This is the same pattern from Week 2.</p>
+      </div>
+
+      <div class="gf-item">
+        <span class="gf-num">6</span>
+        <div class="gf-sentence">Dr. Hartmann <span class="gap">____________</span> three papers on climate policy since 2020. <em>[present perfect &mdash; relevance to now]</em></div>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal"><strong>has published</strong> &mdash; Present perfect: the papers are relevant now (they form part of his current expertise). No specific time adverb makes this present perfect, not past simple.</p>
+      </div>
+
+      <div class="gf-item">
+        <span class="gf-num">7</span>
+        <div class="gf-sentence">The ambassador <span class="gap">____________</span> Chen&rsquo;s proposal at last month&rsquo;s strategy meeting. <em>[past simple &mdash; specific finished time]</em></div>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal"><strong>approved</strong> &mdash; Past simple: <em>last month&rsquo;s meeting</em> is a specific finished time, requiring the past simple, not the present perfect.</p>
+      </div>
+
+      <div class="gf-item">
+        <span class="gf-num">8</span>
+        <div class="gf-sentence">Were the funding <span class="gap">____________</span>, the hub could be operational within eighteen months. <em>[inverted conditional — hypothetical]</em></div>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal"><strong>to be approved</strong> &mdash; <em>Were + subject + to + infinitive</em>: formal inverted conditional (from Week 1). It signals an unlikely or hypothetical future condition with formal register.</p>
+      </div>
+
+    </div>
+
+    <!-- EX 3: COLLOCATION MATCH -->
+    <div class="exercise-block" id="ex3">
+      <h3>Exercise 3 &mdash; Collocation match</h3>
+      <p class="expl">Match each verb (left) with its correct noun partner (right). Each verb has exactly one best match. Write your answers, then reveal.</p>
+
+      <div class="match-game">
+        <div class="match-col">
+          <div class="match-item left" id="ml1">1. conduct</div>
+          <div class="match-item left" id="ml2">2. draw</div>
+          <div class="match-item left" id="ml3">3. raise</div>
+          <div class="match-item left" id="ml4">4. implement</div>
+          <div class="match-item left" id="ml5">5. allocate</div>
+          <div class="match-item left" id="ml6">6. enhance</div>
+        </div>
+        <div class="match-col">
+          <div class="match-item right" id="mr1">A. resources</div>
+          <div class="match-item right" id="mr2">B. recommendations</div>
+          <div class="match-item right" id="mr3">C. concerns</div>
+          <div class="match-item right" id="mr4">D. an investigation</div>
+          <div class="match-item right" id="mr5">E. performance</div>
+          <div class="match-item right" id="mr6">F. conclusions</div>
+        </div>
+      </div>
+      <button class="reveal-btn" style="margin-top:14px;" onclick="this.nextElementSibling.style.display='block'">Reveal all</button>
+      <div class="notice-reveal">
+        <strong>1-D</strong> conduct an investigation &nbsp;|&nbsp;
+        <strong>2-F</strong> draw conclusions &nbsp;|&nbsp;
+        <strong>3-C</strong> raise concerns &nbsp;|&nbsp;
+        <strong>4-B</strong> implement recommendations &nbsp;|&nbsp;
+        <strong>5-A</strong> allocate resources &nbsp;|&nbsp;
+        <strong>6-E</strong> enhance performance
+        <br><br>
+        <em>Note:</em> <em>draw resources</em>, <em>raise conclusions</em>, and <em>conduct concerns</em> all feel wrong to a native ear &mdash; not because of grammar, but because of collocation. This is the C1 precision target.
+      </div>
+    </div>
+
+    <!-- EX 4: ERROR CLINIC -->
+    <div class="exercise-block" id="ex4">
+      <h3>Exercise 4 &mdash; Error clinic &mdash; formal writing correction</h3>
+      <p class="expl">Six sentences from student draft proposals and letters. Some have errors. Find and fix each one &mdash; or write &ldquo;Correct&rdquo; if the sentence is already fine. One sentence is a trap: it is completely correct.</p>
+
+      <div class="error-item">
+        <span class="err-num">1</span>
+        <p class="err-sentence">&ldquo;By June 2028, the programme will process 1,000 applications.&rdquo;</p>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal"><span class="err-label wrong">Error</span> The future perfect is required for a completed projection at a deadline: <strong>&ldquo;By June 2028, the programme will have processed 1,000 applications.&rdquo;</strong> Bare <em>will process</em> sounds like an ongoing action, not a completed milestone.</p>
+      </div>
+
+      <div class="error-item">
+        <span class="err-num">2</span>
+        <p class="err-sentence">&ldquo;Dear Sir or Madam, &hellip; Yours sincerely, J. Chen.&rdquo;</p>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal"><span class="err-label wrong">Error</span> <em>Dear Sir or Madam</em> (unnamed) must close with <strong>Yours faithfully</strong>, not <em>Yours sincerely</em>. The rule: named salutation &rarr; sincerely; unnamed &rarr; faithfully.</p>
+      </div>
+
+      <div class="error-item">
+        <span class="err-num">3</span>
+        <p class="err-sentence">&ldquo;The committee recommends that the proposal is approved without delay.&rdquo;</p>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal"><span class="err-label wrong">Error</span> After <em>recommend / suggest / propose that</em>, the formal subjunctive requires the base form: <strong>&ldquo;&hellip;that the proposal <u>be</u> approved without delay.&rdquo;</strong> Adding <em>is</em> breaks the subjunctive construction.</p>
+      </div>
+
+      <div class="error-item">
+        <span class="err-num">4</span>
+        <p class="err-sentence">&ldquo;In light of these findings, we strongly recommend that the Foreign Office allocate additional resources to this initiative.&rdquo;</p>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal"><span class="err-label correct">&#10003; Correct</span> This is entirely correct. Subjunctive base form (<em>allocate</em>, not <em>allocates</em>) after <em>recommend that</em> is the right formal construction. The collocation <em>allocate resources</em> is also accurate. This was the trap sentence &mdash; did you try to &ldquo;fix&rdquo; it?</p>
+      </div>
+
+      <div class="error-item">
+        <span class="err-num">5</span>
+        <p class="err-sentence">&ldquo;I am writing to enquire about the possibility of an extend contract for our partnership.&rdquo;</p>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal"><span class="err-label wrong">Error</span> <em>extend</em> is a verb used as an adjective here &mdash; it must be the adjective form: <strong>&ldquo;&hellip;an <u>extended</u> contract&hellip;&rdquo;</strong> or alternatively &ldquo;the possibility of extending our contract.&rdquo;</p>
+      </div>
+
+      <div class="error-item">
+        <span class="err-num">6</span>
+        <p class="err-sentence">&ldquo;The hub will operate since January 2027.&rdquo;</p>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal"><span class="err-label wrong">Error</span> <em>Since</em> is used with the present or past perfect, not bare future: <strong>&ldquo;The hub will have been operating since January 2027 [by the time we review it].&rdquo;</strong> Alternatively: <strong>&ldquo;The hub will begin operating in January 2027.&rdquo;</strong></p>
+      </div>
+
+    </div>
+
+    <!-- EX 5: AWL WORD FAMILIES -->
+    <div class="exercise-block" id="ex5">
+      <h3>Exercise 5 &mdash; AWL word families in context</h3>
+      <p class="expl">Complete each sentence by choosing the correct form of the AWL word. Write the full word, then reveal.</p>
+
+      <div class="gf-item">
+        <span class="gf-num">1</span>
+        <div class="gf-sentence">The proposal aims to <span class="gap">____________</span> a new Digital Diplomacy Hub within eighteen months. <em>[establish / establishment]</em></div>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal"><strong>establish</strong> &mdash; verb form after <em>to</em> (infinitive). <em>Establishment</em> is the noun: <em>the establishment of a new hub.</em></p>
+      </div>
+
+      <div class="gf-item">
+        <span class="gf-num">2</span>
+        <div class="gf-sentence">A <span class="gap">____________</span> review of diplomatic procedures will be conducted annually. <em>[rigorous / rigorously]</em></div>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal"><strong>rigorous</strong> &mdash; adjective modifying the noun <em>review</em>. <em>Rigorously</em> is an adverb, used with verbs: <em>tested rigorously.</em></p>
+      </div>
+
+      <div class="gf-item">
+        <span class="gf-num">3</span>
+        <div class="gf-sentence">The <span class="gap">____________</span> of digital tools across all embassies is the initiative&rsquo;s primary goal. <em>[implement / implementation]</em></div>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal"><strong>implementation</strong> &mdash; noun required after <em>The</em> as subject. <em>Implement</em> is the verb: <em>to implement digital tools.</em></p>
+      </div>
+
+      <div class="gf-item">
+        <span class="gf-num">4</span>
+        <div class="gf-sentence">The findings are <span class="gap">____________</span> to any organisation facing these challenges. <em>[relevance / relevant]</em></div>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal"><strong>relevant</strong> &mdash; adjective after linking verb <em>are</em>. <em>Relevance</em> is the noun: <em>the relevance of the findings.</em></p>
+      </div>
+
+      <div class="gf-item">
+        <span class="gf-num">5</span>
+        <div class="gf-sentence">The report provides a <span class="gap">____________</span> assessment of the current situation. <em>[comprehensive / comprehensively]</em></div>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal"><strong>comprehensive</strong> &mdash; adjective before noun <em>assessment</em>. <em>Comprehensively</em> is an adverb: <em>the situation was comprehensively analysed.</em></p>
+      </div>
+
+      <div class="gf-item">
+        <span class="gf-num">6</span>
+        <div class="gf-sentence">These projections <span class="gap">____________</span> that significant investment will be required. <em>[indicate / indication]</em></div>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button>
+        <p class="notice-reveal"><strong>indicate</strong> &mdash; verb form (subject = <em>projections</em>, third person plural). <em>Indication</em> is the noun: <em>an indication that&hellip;</em></p>
+      </div>
+
+    </div>
+
+    <!-- EX 6: EXTENDED WRITING -->
+    <div class="exercise-block" id="ex6">
+      <h3>Exercise 6 &mdash; Extended writing (choose one)</h3>
+      <p class="expl">Select one task and write your response before your next class. Minimum word counts apply. Your writing will be assessed for tense accuracy, genre conventions, and collocation quality.</p>
+      <div class="writing-options">
+
+        <div class="writing-option letter">
+          <div class="wo-badge">Option A &mdash; Formal letter</div>
+          <h4>A response to Chen from Dr. Hartmann</h4>
+          <p>Dr. Hartmann has received Chen&rsquo;s formal letter of thanks. Write his reply. He should: acknowledge her work, express one concern he still has about the Digital Diplomacy proposal, and invite her to collaborate on a joint publication.</p>
+          <div class="wo-detail">
+            <strong>Genre:</strong> Formal letter &nbsp;|&nbsp; <strong>Min:</strong> 200 words &nbsp;|&nbsp; <strong>Must use:</strong> correct salutation/close; 3+ formal phrases from the language bank; at least one inverted conditional from Week 1
+          </div>
+        </div>
+
+        <div class="writing-option proposal">
+          <div class="wo-badge">Option B &mdash; Proposal excerpt</div>
+          <h4>The &ldquo;Benefits&rdquo; section of a new proposal</h4>
+          <p>Write the Benefits section of a proposal recommending that the Vienna Embassy adopt a four-day working week pilot programme. You must justify the proposal using data language, future perfect milestones, and formal connectives.</p>
+          <div class="wo-detail">
+            <strong>Genre:</strong> Proposal section &nbsp;|&nbsp; <strong>Min:</strong> 180 words &nbsp;|&nbsp; <strong>Must use:</strong> <em>will have + past participle</em> (×2); <em>recommend that + subjunctive</em>; 3+ collocations from the archive
+          </div>
+        </div>
+
+        <div class="writing-option reflect">
+          <div class="wo-badge">Option C &mdash; End-of-course reflection</div>
+          <h4>Your own &ldquo;Final Dispatch&rdquo;</h4>
+          <p>Like Chen, write your own end-of-year reflection on what you have learned across Weeks 1&ndash;5. Use the complete tense system naturally &mdash; past simple for events, present perfect for what you have achieved, future perfect for your goals by a specific date.</p>
+          <div class="wo-detail">
+            <strong>Genre:</strong> Formal reflective writing &nbsp;|&nbsp; <strong>Min:</strong> 220 words &nbsp;|&nbsp; <strong>Must use:</strong> 5+ different tenses; 4+ collocations; 1 inverted conditional; 1 formal connective per paragraph
+          </div>
+        </div>
+
+      </div>
+      <div id="free-write-counter" style="margin-top:18px;">
+        <textarea id="fw-area" rows="10" placeholder="Write your chosen response here (word count tracked below)..." style="width:100%;font-family:'Inter', Calibri, sans-serif;font-size:15px;padding:14px;border:1.5px solid var(--paper-line);border-radius:8px;background:var(--white);color:var(--ink);line-height:1.7;resize:vertical;" oninput="updateWordCount()"></textarea>
+        <div style="font-size:13px;color:var(--ink-soft);margin-top:6px;">Word count: <strong id="wc-display">0</strong></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- AUTONOMY -->
+  
+  <!-- SECTION: Listening &amp; Watching -->
+  <div class="tab-section listening" id="listening">
+    <div class="tab-header study">
+      <span class="tab-num">LISTENING &amp; WATCHING</span>
+      <h2 class="tab-title">Listening &amp; Watching</h2>
+    </div>
+    <hr class="tab-rule">
+    <p class="grammar-sub" style="margin:-6px 0 18px;">As a final week, these sources deliberately mix register and topic &mdash; language, technology, and long-form storytelling &mdash; to consolidate everything covered across the course.</p>
+      <div class="listen-card">
+        <h4>TED Talks</h4>
+        <div class="listen-meta">ted.com / YouTube</div>
+        <p>Search for a talk on technology, diplomacy, or international cooperation &mdash; fitting subject matter for a &ldquo;Digital Diplomacy Initiative.&rdquo; Dense, academic register throughout.</p>
+        <div class="listen-task"><strong>Your task:</strong> Watch one full talk. Note 5 formal vocabulary items or collocations across the whole course that you hear reused here, and one example of each tense you've studied this term if you can find them.</div>
+      </div>
+      <div class="listen-card">
+        <h4>Lexicon Valley Podcast</h4>
+        <div class="listen-meta">Slate / John McWhorter</div>
+        <p>A podcast about language itself &mdash; a fitting way to close a course built entirely around noticing how English works.</p>
+        <div class="listen-task"><strong>Your task:</strong> Listen to 10 minutes of any episode. Note one linguistic observation the host makes that changes how you think about a grammar point from this course.</div>
+      </div>
+      <div class="listen-card">
+        <h4>The Guardian Audio Long Reads</h4>
+        <div class="listen-meta">podcast</div>
+        <p>Long-form journalism at C1+ register &mdash; strong final practice for sustained listening at your target level.</p>
+        <div class="listen-task"><strong>Your task:</strong> Choose any article. After listening, write (or say aloud) a 3-sentence formal summary as if it were the opening of a report &mdash; the genre you've studied this week.</div>
+      </div>
+  </div>
+
+  <div class="tab-section" id="autonomy">
+    <div class="tab-header autonomy"><span class="tab-num">EXPLORE</span><h2 class="tab-title">Research &amp; autonomy &mdash; go beyond the lesson</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3>Six paths for independent exploration</h3>
+      <div class="autonomy-grid">
+
+        <div class="aut-card">
+          <div class="aut-icon">&#128196;</div>
+          <h4>Read a real diplomatic proposal</h4>
+          <p>Search for <em>&ldquo;UNESCO digital culture proposal 2024&rdquo;</em> or <em>&ldquo;Foreign Office policy paper&rdquo;</em> on official .gov or .int sites. Identify the five structural sections. How closely does the real document follow the scaffold you studied?</p>
+        </div>
+
+        <div class="aut-card">
+          <div class="aut-icon">&#127758;</div>
+          <h4>The IPCC interactive atlas</h4>
+          <p>Visit <em>interactive-atlas.ipcc.ch</em> &mdash; the official IPCC climate data tool. Select your own country and a 50-year temperature trend. Write three sentences describing the chart using only vocabulary from Week 4 and Week 5.</p>
+        </div>
+
+        <div class="aut-card">
+          <div class="aut-icon">&#128218;</div>
+          <h4>AWL in the wild</h4>
+          <p>Read any article from <em>The Economist</em> or <em>Foreign Affairs</em> (both have some free articles). Highlight every AWL word you encounter from Weeks 1&ndash;5. How many can you find per 500 words? What patterns do you notice about AWL word position in sentences?</p>
+        </div>
+
+        <div class="aut-card">
+          <div class="aut-icon">&#128172;</div>
+          <h4>Corpus collocation search</h4>
+          <p>Go to <em>corpus.byu.edu</em> (COCA or BNC). Type a verb from the collocation archive &mdash; e.g. <em>conduct</em>, <em>raise</em>, <em>allocate</em>. Look at the 20 most frequent nouns it collocates with. Are any surprising? Add two new collocations to your vocabulary notebook.</p>
+        </div>
+
+        <div class="aut-card">
+          <div class="aut-icon">&#9997;&#65039;</div>
+          <h4>Write a real proposal</h4>
+          <p>Identify something you genuinely think should change at school or in your community. Write a full two-page proposal (all five sections) arguing your case. Use the formal language bank, a future perfect milestone, and at least one AWL word per section.</p>
+        </div>
+
+        <div class="aut-card">
+          <div class="aut-icon">&#127897;&#65039;</div>
+          <h4>Tense audit: your own writing</h4>
+          <p>Take any piece of writing you have produced this year. Highlight every verb in a colour code (one colour per tense). Which tenses do you use most? Which do you avoid? Write a one-paragraph diagnosis of your own tense habits and what you will consciously practise.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- COURSE COMPLETION SUMMARY -->
+  <div class="tab-section" id="summary">
+    <div class="tab-header summary"><span class="tab-num">COURSE SUMMARY</span><h2 class="tab-title">Grade 10 &mdash; End-of-year review</h2></div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <h3>Five weeks, five chapters, one story</h3>
+      <p>Across this course, you have followed Chen&rsquo;s year-long Vienna posting: from the Ambassador&rsquo;s Gala in Week 1 to the Digital Diplomacy proposal in Week 5. Every grammar point, every genre, and every vocabulary set was encountered in the context of a real-world professional situation. Below is the complete map of what you have built.</p>
+    </div>
+
+    <!-- 5-week journey grid -->
+    <div class="week-journey">
+      <div class="week-row w1">
+        <div class="wk-num">W1</div>
+        <div class="wk-title">The Ambassador&rsquo;s Gala</div>
+        <div class="wk-grammar">Register &amp; formal/informal &middot; Ever clauses &middot; Conditionals &amp; unless &middot; Inverted conditionals (Should / Were / Had)</div>
+        <div class="wk-vocab">Relationships &amp; friendship &middot; Academic collocations (Yr 1)</div>
+      </div>
+      <div class="week-row w2">
+        <div class="wk-num">W2</div>
+        <div class="wk-title">The Morning After</div>
+        <div class="wk-grammar">Future Perfect &middot; Future Perfect Continuous &middot; Formal subjunctive (suggest / recommend that&hellip;)</div>
+        <div class="wk-vocab">AWL Sublist 1 (9 families) &middot; Immigration &middot; Weddings &middot; Wishes &amp; hopes</div>
+      </div>
+      <div class="week-row w3">
+        <div class="wk-num">W3</div>
+        <div class="wk-title">The Interview Suite</div>
+        <div class="wk-grammar">Inversion (4 types) &middot; Participle clauses &middot; Emphatic do/does/did &middot; Essays vs. Reports (genre)</div>
+        <div class="wk-vocab">Professional &amp; interview lexis &middot; Academic discourse markers</div>
+      </div>
+      <div class="week-row w4">
+        <div class="wk-num">W4</div>
+        <div class="wk-title">The Climate Desk</div>
+        <div class="wk-grammar">Gerunds &amp; verb patterns (-ing) &middot; Gerunds with possessives &middot; Graph description language</div>
+        <div class="wk-vocab">Nature &amp; environment &middot; Data &amp; statistics &middot; (Dis)agreement language &middot; Concede &amp; redirect</div>
+      </div>
+      <div class="week-row w5" style="background:rgba(200,153,58,0.07);border:1px solid rgba(200,153,58,0.2);">
+        <div class="wk-num" style="background:var(--gold);color:#fff;">W5 &#9733;</div>
+        <div class="wk-title" style="color:var(--gold);">The Final Dispatch</div>
+        <div class="wk-grammar">Complete tense system (8 tenses) &middot; Tense contrasts (highest-error) &middot; Formal letters &middot; Proposals</div>
+        <div class="wk-vocab">Technology &amp; future &middot; AWL consolidation (all 5 weeks) &middot; Complete collocation archive</div>
+      </div>
+    </div>
+
+    <!-- 4 summary cards -->
+    <div class="summary-grid">
+      <div class="sum-card sc-teal">
+        <div class="sc-icon">&#128337;</div>
+        <h4>Tenses &amp; genre</h4>
+        <ul>
+          <li>8 tense forms: present/past/perfect/continuous and future variants</li>
+          <li>4 writing genres: essay, report, proposal, formal letter</li>
+          <li>Key contrasts: PS vs PP &middot; PP vs PPC &middot; future simple vs future perfect</li>
+          <li>Formal subjunctive (recommend/suggest/propose that + base)</li>
+          <li>Inverted conditionals: Should / Were / Had + inversion</li>
+        </ul>
+      </div>
+      <div class="sum-card sc-rose">
+        <div class="sc-icon">&#128218;</div>
+        <h4>Vocabulary &amp; collocations</h4>
+        <ul>
+          <li>AWL Sublist 1: 9 word families &times; all four forms</li>
+          <li>AWL Sublist 5 (W5): establish, implement, allocate, enhance&hellip;</li>
+          <li>Full collocation archive: Grade 6 &rarr; Grade 10 progression</li>
+          <li>10 most common C1 collocation errors identified and fixed</li>
+          <li>Register awareness: formal / neutral / informal contrasts</li>
+        </ul>
+      </div>
+      <div class="sum-card sc-amber">
+        <div class="sc-icon">&#9998;&#65039;</div>
+        <h4>Grammar highlights</h4>
+        <ul>
+          <li>Inversion (4 types): Never/Rarely/Not until/Only when&hellip;</li>
+          <li>Participle clauses: having completed, being considered&hellip;</li>
+          <li>Emphatic do: <em>She did submit the report.</em></li>
+          <li>Gerund patterns: avoid/deny/risk/enjoy + -ing</li>
+          <li>Gerunds with possessives: <em>his presenting, the team&rsquo;s agreeing</em></li>
+        </ul>
+      </div>
+      <div class="sum-card sc-pine">
+        <div class="sc-icon">&#128336;</div>
+        <h4>Chen&rsquo;s story arc</h4>
+        <ul>
+          <li>W1: Arrives at the Gala &mdash; meets Dr. Hartmann</li>
+          <li>W2: Navigates the morning after &mdash; the immigration case &amp; the wedding</li>
+          <li>W3: Interviews for the permanent posting &mdash; writes her application</li>
+          <li>W4: Presents at the Climate Conference &mdash; her briefing paper challenged</li>
+          <li>W5: Writes three final documents &mdash; and leaves Vienna</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Self-check -->
+    <div class="grammar-box" style="margin-top:28px;">
+      <h3>Final self-check &mdash; C1 readiness</h3>
+      <p class="grammar-sub">Work through each statement honestly. &ldquo;Yes, confidently&rdquo; means you can produce this without looking at notes.</p>
+      <div class="checklist">
+        <label class="cl-item"><input type="checkbox"> I can name and form all 8 tense forms without prompting.</label>
+        <label class="cl-item"><input type="checkbox"> I know when to use past simple vs. present perfect (and can explain why).</label>
+        <label class="cl-item"><input type="checkbox"> I can write a future perfect sentence for a proposal milestone.</label>
+        <label class="cl-item"><input type="checkbox"> I know the formal letter structure by memory (address, date, salutation, close).</label>
+        <label class="cl-item"><input type="checkbox"> I know the correct close for named (sincerely) vs. unnamed (faithfully) salutations.</label>
+        <label class="cl-item"><input type="checkbox"> I know the five sections of a formal proposal.</label>
+        <label class="cl-item"><input type="checkbox"> I can produce the formal subjunctive: <em>recommend that [subject] + base form.</em></label>
+        <label class="cl-item"><input type="checkbox"> I can write one inverted conditional from each of the three Week 1 types.</label>
+        <label class="cl-item"><input type="checkbox"> I can recall at least 6 AWL word families with all four word forms each.</label>
+        <label class="cl-item"><input type="checkbox"> I can identify 5 common collocation errors and produce the correct form.</label>
+        <label class="cl-item"><input type="checkbox"> I can describe a graph using at least 6 different movement verbs with adverb partners.</label>
+        <label class="cl-item"><input type="checkbox"> I have added at least 20 items to my vocabulary notebook across the course.</label>
+      </div>
+    </div>
+
+    <!-- Before-you-leave checklist -->
+    <div class="grammar-box" style="margin-top:22px;border-left:4px solid var(--gold);">
+      <h3>Before you leave this page</h3>
+      <div class="checklist">
+        <label class="cl-item"><input type="checkbox"> I have read all three of Chen&rsquo;s final documents (formal letter, policy proposal, final report) in the Engage section.</label>
+        <label class="cl-item"><input type="checkbox"> I have completed the Notice &amp; Discover questions for both tenses and genres.</label>
+        <label class="cl-item"><input type="checkbox"> I have studied the 8-tense grid and can produce examples for each form.</label>
+        <label class="cl-item"><input type="checkbox"> I have reviewed the complete collocation journey (Grades 6&ndash;10).</label>
+        <label class="cl-item"><input type="checkbox"> I have attempted all six exercises, including the extended writing.</label>
+        <label class="cl-item"><input type="checkbox"> I have chosen at least one Autonomy task to complete this week.</label>
+        <label class="cl-item"><input type="checkbox"> I am ready for the in-class Activate session.</label>
+      </div>
+    </div>
+
+    <!-- Closing quote -->
+    <div class="closing-dispatch">
+      <div class="dispatch-header">&#9993; &nbsp;Chen&rsquo;s final line from Vienna</div>
+      <blockquote class="dispatch-quote">
+        &ldquo;I am writing this report having completed what <em>had been</em> the most demanding year of my career. In that time, I <em>have learned</em> that precision in language is not a luxury in diplomacy &mdash; it is the work itself. By the time you read this, I <em>will already have boarded</em> my flight. Should you <em>need</em> to reach me, my successor <em>will have been briefed</em> and <em>is ready</em> to continue the work we <em>started</em> together.&rdquo;
+      </blockquote>
+      <p class="dispatch-note"><em>Eight tenses, one paragraph. This is C1.</em></p>
+    </div>
+
+  </div>
+
+
+  <!-- SECTION: Footer / Creator Branding -->
+  <footer class="site-footer">
+    <p class="footer-name">Bahar Esmaeelzadeh</p>
+    <p class="footer-tag">Designed and created for English learners by Bahar Esmaeelzadeh</p>
+    <div class="footer-links">
+      <a href="mailto:bahar.esmz.en@gmail.com">&#128231; bahar.esmz.en@gmail.com</a>
+      <a href="https://www.linkedin.com/in/bahar-esmaeelzadeh-650b98198" target="_blank" rel="noopener">&#128188; LinkedIn</a>
+    </div>
+    <p class="footer-invite">If you found this helpful, feel free to get in touch.</p>
+    <p class="footer-copy">&copy; 2026 Bahar Esmaeelzadeh &middot; All rights reserved. These materials may not be redistributed or reproduced for commercial use without permission.</p>
+  </footer>
+
+</div><!-- /.wrap -->
+
+<script>
+  // Word counter
+  function updateWordCount() {
+    const text = document.getElementById('fw-area').value.trim();
+    const count = text ? text.split(/\s+/).length : 0;
+    document.getElementById('wc-display').textContent = count;
+  }
+
+  // T/F checker
+  function tfCheck(btn, correct) {
+    const btns = btn.parentElement.querySelectorAll('.tf-btn');
+    const chosen = btn.textContent.trim() === 'True' ? 'T' : 'F';
+    btns.forEach(b => b.disabled = true);
+    btn.style.background = chosen === correct ? '#E4F0E8' : '#F5E8EE';
+    btn.style.borderColor = chosen === correct ? '#2A5A3A' : '#7A2A4A';
+    btn.style.color = chosen === correct ? '#1A3A2A' : '#7A2A4A';
+    btn.textContent += chosen === correct ? ' ✓' : ' ✗';
+    const reveal = btn.parentElement.nextElementSibling;
+    if (reveal && reveal.classList.contains('tf-reveal')) {
+      reveal.style.display = 'block';
+    }
+  }
+
+  // Smooth scroll for TOC
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+
+  // ---- TOP NAV: hamburger, overlay, back-to-top ----
+  (function () {
+    const hamburger = document.getElementById('navHamburger');
+    const panel = document.getElementById('navPanel');
+    const overlay = document.getElementById('navOverlay');
+    const topBtn = document.getElementById('navTopBtn');
+    if (!hamburger || !panel || !overlay) return;
+    function closePanel() {
+      panel.classList.remove('open'); overlay.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+    function openPanel() {
+      panel.classList.add('open'); overlay.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+    }
+    hamburger.addEventListener('click', () => {
+      panel.classList.contains('open') ? closePanel() : openPanel();
+    });
+    overlay.addEventListener('click', closePanel);
+    panel.querySelectorAll('a').forEach(a => a.addEventListener('click', closePanel));
+    if (topBtn) topBtn.addEventListener('click', () => { closePanel(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePanel(); });
+  })();
+
+  // ---- Mobile scroll hint for wide tables ----
+  function markScrollableTables() {
+    document.querySelectorAll('.ref-table-wrap').forEach(el => {
+      if (el.scrollWidth > el.clientWidth + 4) el.classList.add('has-scroll');
+      else el.classList.remove('has-scroll');
+    });
+  }
+  window.addEventListener('load', markScrollableTables);
+  window.addEventListener('resize', markScrollableTables);
+
+</script>
+</body>
+</html>
