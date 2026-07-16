@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet">
+<title>Grade 7 · Week 2 — Passive Voice & Expressing Contrast | Full Reference</title>
+<style>
+  :root {
+    --ink: #28344A;
+    --ink-soft: #4A5775;
+    --paper: #F7F3E8;
+    --paper-line: #E3DCC8;
+    --chalk-green: #1F3A2E;
+    --chalk-green-light: #2E5240;
+    --chalk-yellow: #E8B84B;
+    --chalk-yellow-deep: #C99423;
+    --coral: #D8694F;
+    --coral-deep: #B14B34;
+    --blue: #3D6E8C;
+    --blue-deep: #285067;
+    --white: #FFFFFF;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper);
+    background-image: repeating-linear-gradient(transparent, transparent 35px, var(--paper-line) 35px, var(--paper-line) 36px);
+    color: var(--ink); font-family:'Inter',Calibri,Arial,sans-serif; font-size: 17px; line-height: 1.65;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px 80px; }
+
+  .masthead { background: var(--chalk-green); color: var(--paper); margin: 0 -24px 0; padding: 38px 24px 30px; position: relative; overflow: hidden; }
+  .masthead::before { content: ""; position: absolute; right: -40px; bottom: -40px; width: 260px; height: 260px; border-radius: 50%; background: var(--chalk-green-light); opacity: 0.45; }
+  .masthead::after { content: ""; position: absolute; left: 60%; top: -30px; width: 160px; height: 160px; border-radius: 50%; background: var(--chalk-green-light); opacity: 0.3; }
+  .masthead-inner { max-width: 872px; margin: 0 auto; position: relative; z-index: 1; }
+  .eyebrow { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--chalk-yellow); margin: 0 0 10px; }
+  h1.title { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 36px; line-height: 1.2; margin: 0 0 14px; max-width: 680px; }
+  .masthead-meta { display: flex; gap: 24px; flex-wrap: wrap; font-size: 14px; color: #C8D9CC; margin-top: 16px; }
+  .masthead-meta span { font-weight: bold; color: var(--paper); }
+
+  .toc { background: var(--white); border-radius: 10px; margin-top: -18px; padding: 20px 26px; box-shadow: 0 4px 16px rgba(40,52,74,0.12); position: relative; z-index: 2; }
+  .toc h2 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 16px; margin: 0 0 10px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; }
+  .toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 30px; font-size: 14px; }
+  .toc li { margin-bottom: 6px; }
+  .toc a { color: var(--coral-deep); text-decoration: none; font-weight: bold; }
+  .toc a:hover { text-decoration: underline; }
+
+  .tab-section { margin-top: 46px; }
+  .tab-header { display: flex; align-items: center; gap: 14px; margin-bottom: 4px; flex-wrap: wrap; }
+  .tab-num { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 14px; font-weight: bold; color: var(--white); background: var(--chalk-green); border-radius: 6px; padding: 6px 14px; white-space: nowrap; }
+  .tab-header.study .tab-num { background: var(--coral-deep); }
+  .tab-header.activate .tab-num { background: var(--chalk-yellow-deep); color: var(--ink); }
+  .tab-header.vocab .tab-num { background: var(--blue-deep); }
+  .tab-header.autonomy .tab-num { background: #6B4C8A; }
+  h2.tab-title { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 24px; margin: 0; color: var(--ink); }
+  .tab-rule { border: none; border-top: 2px solid var(--paper-line); margin: 14px 0 22px; }
+
+  .card { background: var(--white); border-radius: 10px; padding: 22px 26px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(40,52,74,0.08); }
+  .card h3 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 19px; margin: 0 0 10px; color: var(--chalk-green); }
+  .card p { margin: 0 0 10px; }
+  .card p:last-child { margin-bottom: 0; }
+
+  /* Odd one out engage */
+  .material-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 18px 0; }
+  .material-group { background: var(--chalk-green); border-radius: 10px; padding: 16px; }
+  .material-group h4 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 14px; color: var(--chalk-yellow); margin: 0 0 10px; letter-spacing: 0.05em; text-transform: uppercase; }
+  .material-items { display: flex; flex-direction: column; gap: 8px; }
+  .material-item { background: var(--chalk-green-light); border-radius: 6px; padding: 10px 12px; font-size: 14.5px; color: var(--paper); cursor: pointer; border: 2px solid transparent; transition: all 0.15s ease; }
+  .material-item:hover { border-color: var(--chalk-yellow); }
+  .material-item.selected-odd { border-color: var(--chalk-yellow); background: #3A6B4E; }
+  .material-item.revealed-odd { border-color: var(--chalk-green-light); }
+  .material-item.is-odd { border-color: var(--chalk-yellow) !important; background: #3A6B4E !important; }
+  .odd-reveal { font-size: 13px; color: var(--chalk-yellow); margin-top: 10px; display: none; }
+  .odd-reveal.show { display: block; }
+  .reveal-btn { background: none; border: 1px solid var(--chalk-yellow); color: var(--chalk-yellow); border-radius: 5px; padding: 3px 10px; font-size: 12px; cursor: pointer; margin-top: 10px; }
+  .reveal-btn:hover { background: var(--chalk-yellow); color: var(--chalk-green); }
+
+  /* Realia */
+  .realia { background: var(--white); border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 16px rgba(40,52,74,0.12); overflow: hidden; border: 1px solid var(--paper-line); }
+  .realia-header { background: var(--chalk-green); color: var(--white); padding: 14px 24px; display: flex; align-items: center; gap: 12px; }
+  .realia-tag { font-size: 11px; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; background: var(--chalk-yellow); color: var(--ink); border-radius: 4px; padding: 3px 9px; }
+  .realia-name { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 17px; }
+  .realia-body { padding: 24px 28px; line-height: 1.75; }
+  .realia-body p { margin: 0 0 14px; }
+  .realia-body p:last-child { margin-bottom: 0; }
+  .byline { font-size: 12.5px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 18px !important; }
+
+  /* Review thread */
+  .review-post { padding: 18px 26px; border-bottom: 1px solid var(--paper-line); display: grid; grid-template-columns: 44px 1fr; gap: 14px; }
+  .review-post:last-child { border-bottom: none; }
+  .rev-avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px; color: var(--white); flex-shrink: 0; }
+  .rev-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; flex-wrap: wrap; }
+  .rev-handle { font-weight: bold; font-size: 14px; color: var(--ink); }
+  .rev-stars { color: var(--chalk-yellow-deep); font-size: 13px; }
+  .rev-verified { font-size: 11px; background: #E3F0E5; color: var(--chalk-green); border-radius: 4px; padding: 2px 7px; font-weight: bold; }
+  .rev-text { font-size: 15px; line-height: 1.65; }
+
+  .target-1 { background: #FBEDE9; color: var(--coral-deep); padding: 1px 5px; border-radius: 3px; font-weight: bold; }
+  .target-2 { background: #E9F0F5; color: var(--blue-deep); padding: 1px 5px; border-radius: 3px; font-weight: bold; }
+  .target-3 { background: #FFF8E0; color: var(--chalk-yellow-deep); padding: 1px 5px; border-radius: 3px; font-weight: bold; }
+
+  .notice-box { background: #FFF8E8; border: 2px dashed var(--chalk-yellow-deep); border-radius: 10px; padding: 20px 26px; margin-bottom: 20px; }
+  .notice-box h3 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 18px; margin: 0 0 12px; color: var(--chalk-yellow-deep); }
+  .notice-q { margin-bottom: 14px; padding-left: 28px; position: relative; }
+  .notice-q::before { content: "?"; position: absolute; left: 0; top: -2px; width: 20px; height: 20px; border-radius: 50%; background: var(--chalk-yellow-deep); color: var(--white); font-size: 13px; font-weight: bold; text-align: center; line-height: 20px; }
+  .reveal-hint { background: none; border: 1px solid var(--chalk-yellow-deep); color: var(--chalk-yellow-deep); border-radius: 5px; padding: 3px 10px; font-size: 12px; cursor: pointer; margin-top: 4px; }
+  .reveal-hint:hover { background: var(--chalk-yellow-deep); color: var(--white); }
+  .notice-reveal { margin-top: 6px; font-size: 14px; color: var(--ink-soft); font-style: italic; border-left: 3px solid var(--chalk-yellow-deep); padding-left: 10px; display: none; }
+
+  .grammar-box { background: var(--white); border-radius: 10px; padding: 24px 28px; margin-bottom: 22px; box-shadow: 0 2px 10px rgba(40,52,74,0.08); }
+  .grammar-box h3 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 21px; margin: 0 0 6px; color: var(--coral-deep); }
+  .grammar-sub { font-size: 14px; color: var(--ink-soft); margin: 0 0 18px; font-style: italic; }
+
+  .example-row { display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start; margin-bottom: 10px; padding: 10px 14px; background: var(--paper); border-radius: 8px; }
+  .example-row .mark { font-weight: bold; color: var(--coral-deep); font-size: 18px; }
+  .example-row .txt strong { color: var(--chalk-green); }
+  .example-row .gloss { display: block; font-size: 13px; color: var(--ink-soft); margin-top: 2px; font-style: italic; }
+  .example-row .src { display: block; font-size: 12px; color: var(--blue-deep); margin-top: 4px; }
+
+  .rule-pill { display: inline-block; background: var(--chalk-yellow); color: var(--ink); font-weight: bold; font-size: 13px; border-radius: 6px; padding: 4px 10px; margin: 4px 6px 4px 0; }
+
+  /* Passive transformation visual */
+  .transform-vis { display: grid; grid-template-columns: 1fr auto 1fr; gap: 14px; align-items: center; margin: 14px 0; }
+  .transform-box { background: var(--paper); border-radius: 8px; padding: 14px 16px; font-size: 15px; }
+  .transform-box .label { font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); margin-bottom: 6px; }
+  .transform-arrow { text-align: center; font-size: 22px; color: var(--coral-deep); }
+
+  .compare-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 14px 0; }
+  .compare-col { padding: 16px 18px; border-radius: 8px; }
+  .compare-col.c-green { background: #EFF5F1; }
+  .compare-col.c-coral { background: #FBEDE9; }
+  .compare-col.c-blue { background: #E9F0F5; }
+  .compare-col.c-yellow { background: #FFF8E0; }
+  .compare-col h4 { margin: 0 0 10px; font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 16px; }
+  .compare-col.c-green h4 { color: var(--chalk-green); }
+  .compare-col.c-coral h4 { color: var(--coral-deep); }
+  .compare-col.c-blue h4 { color: var(--blue-deep); }
+  .compare-col.c-yellow h4 { color: var(--chalk-yellow-deep); }
+  .compare-col p { margin: 0 0 8px; font-size: 14.5px; }
+
+  table.conj-table { width: 100%; border-collapse: collapse; margin: 14px 0 6px; font-size: 15px; }
+  table.conj-table th { background: var(--chalk-green); color: var(--paper); padding: 8px 12px; text-align: left; font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 14px; }
+  table.conj-table td { padding: 8px 12px; border-bottom: 1px solid var(--paper-line); vertical-align: top; }
+  table.conj-table tr:nth-child(even) td { background: var(--paper); }
+
+  /* Adjective order visual */
+  .adj-chain { display: flex; align-items: center; gap: 0; margin: 18px 0; flex-wrap: wrap; }
+  .adj-box { padding: 10px 14px; text-align: center; flex: 1; min-width: 80px; }
+  .adj-box .num { font-size: 11px; font-weight: bold; color: var(--white); background: var(--coral-deep); border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 6px; }
+  .adj-box .category { font-size: 11px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.05em; }
+  .adj-box .examples { font-size: 13px; color: var(--ink); font-weight: bold; margin-top: 4px; }
+  .adj-box:nth-child(odd) { background: var(--paper); }
+  .adj-box:nth-child(even) { background: var(--white); }
+
+  /* Contrast connector table */
+  .connector-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 14px 0; }
+  .connector-card { background: var(--paper); border-radius: 8px; padding: 14px 16px; }
+  .connector-card .word { font-weight: bold; color: var(--blue-deep); font-size: 16px; }
+  .connector-card .pos { font-size: 11px; color: var(--ink-soft); text-transform: uppercase; margin-left: 6px; }
+  .connector-card .usage { font-size: 13px; color: var(--ink-soft); margin-top: 4px; font-style: italic; }
+  .connector-card .ex { font-size: 13.5px; margin-top: 6px; border-left: 3px solid var(--chalk-yellow-deep); padding-left: 10px; }
+
+  .vocab-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 14px 0; }
+  .vocab-card { background: var(--paper); border-radius: 8px; padding: 14px 16px; }
+  .vocab-card .word { font-weight: bold; color: var(--blue-deep); font-size: 16px; }
+  .vocab-card .pos { font-size: 11px; color: var(--ink-soft); text-transform: uppercase; margin-left: 6px; }
+  .vocab-card .def { font-size: 14px; margin-top: 4px; }
+  .vocab-card .ex { font-size: 13px; color: var(--ink-soft); margin-top: 4px; font-style: italic; }
+
+  .pronunciation-tag { display: inline-block; font-family: "Courier New", monospace; font-size: 13px; background: var(--ink); color: var(--paper); border-radius: 4px; padding: 2px 8px; margin-left: 6px; }
+
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+  .chip { background: var(--paper); border: 1px solid var(--paper-line); border-radius: 999px; padding: 6px 14px; font-size: 14px; color: var(--ink); }
+
+  .exercise { background: var(--white); border-radius: 10px; padding: 22px 26px; margin-bottom: 18px; box-shadow: 0 2px 10px rgba(40,52,74,0.08); }
+  .exercise-label { display: inline-block; font-size: 12px; font-weight: bold; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white); background: var(--chalk-green); border-radius: 5px; padding: 3px 10px; margin-bottom: 10px; }
+  .exercise h4 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 17px; margin: 0 0 12px; color: var(--ink); }
+  .q-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+  .q-num { font-weight: bold; color: var(--coral-deep); min-width: 22px; }
+  .q-text { flex: 1; min-width: 220px; }
+  .blank-input { border: none; border-bottom: 2px solid var(--chalk-yellow-deep); background: var(--paper); font-family:'Inter',Calibri,sans-serif; font-size: 15px; padding: 4px 8px; width: 200px; color: var(--ink); }
+  .blank-input:focus { outline: none; border-color: var(--coral-deep); }
+  .check-btn { background: var(--chalk-yellow); color: var(--ink); border: none; border-radius: 6px; padding: 9px 20px; font-weight: bold; font-size: 14px; cursor: pointer; margin-top: 8px; }
+  .check-btn:hover { background: var(--chalk-yellow-deep); }
+  .feedback { margin-top: 12px; font-size: 14px; border-radius: 6px; padding: 10px 14px; display: none; }
+  .feedback.show { display: block; }
+  .feedback.good { background: #E3F0E5; color: var(--chalk-green); }
+  .feedback.bad { background: #F8E4DE; color: var(--coral-deep); }
+
+  .mc-opt { display: block; background: var(--paper); border: 2px solid var(--paper-line); border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; cursor: pointer; font-size: 15px; transition: border-color 0.15s ease; }
+  .mc-opt:hover { border-color: var(--chalk-yellow-deep); }
+  .mc-opt.correct-flash { border-color: var(--chalk-green); background: #E3F0E5; }
+  .mc-opt.wrong-flash { border-color: var(--coral-deep); background: #F8E4DE; }
+
+  .match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0; }
+  .match-item { background: var(--paper); border-radius: 8px; padding: 10px 14px; font-size: 14.5px; cursor: pointer; border: 2px solid transparent; transition: all 0.15s ease; }
+  .match-item:hover { border-color: var(--chalk-yellow-deep); }
+  .match-item.selected { border-color: var(--chalk-yellow-deep); background: #FFF8E0; }
+  .match-item.matched { border-color: var(--chalk-green); background: #E3F0E5; cursor: default; }
+  .match-item.wrong-flash { border-color: var(--coral-deep); background: #F8E4DE; }
+
+  .activate-box { background: var(--chalk-yellow); border-radius: 10px; padding: 26px 28px; margin-bottom: 20px; }
+  .activate-box h3 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; margin: 0 0 12px; color: var(--ink); font-size: 19px; }
+  textarea.response-box { width: 100%; min-height: 110px; border-radius: 8px; border: 2px solid var(--chalk-yellow-deep); padding: 12px 14px; font-family:'Inter',Calibri,sans-serif; font-size: 15px; resize: vertical; background: var(--white); color: var(--ink); }
+  textarea.response-box:focus { outline: none; border-color: var(--coral-deep); }
+  .word-count { font-size: 12px; color: var(--ink-soft); margin-top: 6px; text-align: right; }
+
+  .research-card { background: #F2EBF7; border-radius: 10px; padding: 22px 26px; margin-bottom: 18px; border: 1px solid #DCC8EA; }
+  .research-card h3 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 18px; margin: 0 0 10px; color: #6B4C8A; }
+  .research-tag { display: inline-block; font-size: 11px; font-weight: bold; letter-spacing: 0.05em; text-transform: uppercase; background: #6B4C8A; color: var(--white); border-radius: 4px; padding: 3px 9px; margin-bottom: 10px; }
+  .link-suggestion { display: inline-block; background: var(--white); border: 1px solid #DCC8EA; border-radius: 6px; padding: 6px 12px; font-size: 13px; margin: 4px 6px 4px 0; color: #6B4C8A; }
+
+  table.ref-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 14px 0; }
+  table.ref-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 13.5px; }
+  table.ref-table td { padding: 10px 14px; border-bottom: 1px solid var(--paper-line); vertical-align: top; }
+  table.ref-table tr:nth-child(even) td { background: var(--paper); }
+
+  .wrapup { background: var(--ink); color: var(--paper); border-radius: 10px; padding: 24px 28px; margin-top: 40px; }
+  .wrapup h3 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; color: var(--chalk-yellow); margin: 0 0 10px; font-size: 18px; }
+  .wrapup li { margin-bottom: 6px; }
+
+  .progress-track { position: sticky; top: 0; height: 5px; background: var(--paper-line); z-index: 50; }
+  .progress-fill { height: 100%; width: 0%; background: var(--coral); transition: width 0.1s ease; }
+
+  @media (max-width: 600px) {
+    h1.title { font-size: 26px; }
+    .material-grid, .compare-cols, .vocab-grid, .match-grid, .connector-grid { grid-template-columns: 1fr; }
+    .transform-vis { grid-template-columns: 1fr; }
+    .transform-arrow { transform: rotate(90deg); }
+    .adj-chain { flex-direction: column; }
+    .toc ol { columns: 1; }
+  }
+
+/* ============================================================
+   SITE FRAME (added): fixed top nav + progress bar, slide-out
+   contents panel with creator branding, sticky section headers,
+   responsive & overflow fixes, footer, speaking/listening cards
+   ============================================================ */
+:root{--navh:52px;}
+html{scroll-behavior:smooth;}
+body{overflow-x:hidden;padding-top:calc(var(--navh) + 4px);}
+[id]{scroll-margin-top:calc(var(--navh) + 20px);}
+img,svg,table{max-width:100%;}
+.wrap p,.wrap li,.wrap td,.wrap th,.wrap h1,.wrap h2,.wrap h3{overflow-wrap:break-word;word-break:break-word;}
+.masthead{margin-left:0;margin-right:0;}
+.debate-band{margin-left:0;margin-right:0;}
+
+/* Progress bar: fixed, always visible below the nav */
+.progress-track{position:fixed;top:var(--navh);left:0;right:0;height:4px;z-index:120;}
+
+/* Top navigation bar */
+.nav-bar{position:fixed;top:0;left:0;right:0;height:var(--navh);background:var(--chalk-green);color:#FFFFFF;display:flex;align-items:center;gap:10px;padding:0 12px;z-index:130;box-shadow:0 2px 12px rgba(0,0,0,.20);}
+.nav-btn{min-width:44px;min-height:44px;background:transparent;border:none;color:#FFFFFF;font-size:20px;cursor:pointer;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',Arial,sans-serif;transition:background .15s;}
+.nav-btn:hover{background:rgba(255,255,255,.14);}
+.nav-top{font-size:13px;font-weight:700;letter-spacing:.03em;white-space:nowrap;padding:0 10px;}
+.nav-brand{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.25;}
+.nav-brand-week{font-family:'Inter',Arial,sans-serif;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;opacity:.75;}
+.nav-brand-title{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+/* Slide-out contents panel */
+.nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .25s;z-index:135;}
+.nav-overlay.open{opacity:1;pointer-events:auto;}
+.nav-panel{position:fixed;top:0;bottom:0;left:0;width:min(330px,88vw);background:#FFFFFF;z-index:140;transform:translateX(-103%);transition:transform .28s ease;display:flex;flex-direction:column;box-shadow:6px 0 28px rgba(0,0,0,.22);}
+.nav-panel.open{transform:translateX(0);}
+.nav-panel-head{display:flex;align-items:center;justify-content:space-between;padding:8px 10px 8px 20px;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);border-bottom:1px solid var(--paper-line);}
+.nav-panel-head .nav-btn{color:var(--ink);font-size:16px;}
+.nav-panel-links{flex:1;overflow-y:auto;padding:10px 8px;}
+.nav-panel-links a{display:flex;align-items:center;min-height:44px;padding:6px 14px;border-radius:8px;text-decoration:none;color:var(--ink);font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:600;line-height:1.4;}
+.nav-panel-links a:hover{background:var(--paper);color:var(--blue-deep);}
+/* Branding zone: visually separated from navigation */
+.nav-panel-brand{border-top:2px solid var(--paper-line);background:var(--paper);padding:16px 20px 18px;}
+.nav-panel-brand .brand-name{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.nav-panel-brand .brand-line{font-family:'Inter',Arial,sans-serif;font-size:12.5px;color:var(--ink-soft);margin-bottom:10px;line-height:1.55;}
+.nav-panel-brand a{display:flex;align-items:center;min-height:40px;font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--blue-deep);text-decoration:none;font-weight:600;}
+.nav-panel-brand a:hover{text-decoration:underline;}
+.nav-panel-brand .brand-copy{margin-top:10px;font-family:'Inter',Arial,sans-serif;font-size:11.5px;color:var(--ink-soft);}
+
+/* Sticky section headers: current section title stays visible */
+.tab-header{position:sticky;top:calc(var(--navh) + 4px);z-index:60;background:var(--paper);padding:10px 0 8px;}
+
+/* Scrollable table wrapper with mobile hint */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;}
+.table-scroll table{max-width:none;}
+.table-scroll.has-overflow{background:linear-gradient(to left,rgba(0,0,0,.12),rgba(0,0,0,0) 26px) right center / 26px 100% no-repeat;}
+.table-scroll.has-overflow::before{content:'scroll \2192';display:block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--ink-soft);text-align:right;padding:0 6px 4px;}
+
+/* Speaking & Listening sections */
+.tb-speak{background:var(--blue-deep);color:#FFFFFF;}
+.tb-listen{background:var(--coral-deep);color:#FFFFFF;}
+.section-intro{font-family:'Inter',Arial,sans-serif;font-size:14.5px;color:var(--ink-soft);margin:0 0 18px;line-height:1.65;}
+.speak-card{background:#FFFFFF;border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.07);border-left:4px solid var(--blue-deep);}
+.speak-type{display:inline-block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:8px;}
+.speak-card h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0 0 10px;color:var(--ink);}
+.speak-card p{margin:0 0 10px;}
+.speak-card ul{margin:0 0 10px 20px;padding:0;}
+.speak-card li{margin-bottom:6px;}
+.speak-how{background:var(--paper);border-radius:8px;padding:12px 16px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;line-height:1.65;margin-top:12px;}
+.media-card{background:#FFFFFF;border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.07);border-left:4px solid var(--coral-deep);}
+.media-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px;}
+.media-head h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0;color:var(--ink);}
+.media-platform{font-family:'Inter',Arial,sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--coral-deep);}
+.media-card p{margin:0 0 10px;}
+.media-task{border-left:3px solid var(--coral-deep);background:var(--paper);padding:10px 14px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;line-height:1.65;margin-top:10px;border-radius:0 8px 8px 0;}
+.tip-box{border:2px dashed var(--blue-deep);border-radius:10px;padding:18px 22px;background:#FFFFFF;margin-top:6px;}
+.tip-box h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:16px;margin:0 0 10px;color:var(--blue-deep);}
+.tip-box ul{margin:0 0 0 20px;padding:0;}
+.tip-box li{margin-bottom:6px;font-size:14.5px;}
+
+/* Footer */
+.site-footer{background:var(--chalk-green);color:#FFFFFF;margin-top:56px;padding:34px 24px 40px;}
+.site-footer-inner{max-width:920px;margin:0 auto;text-align:center;}
+.footer-copy{font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:700;margin:0 0 6px;}
+.footer-line{font-family:'Playfair Display',Cambria,Georgia,serif;font-style:italic;font-size:14.5px;opacity:.88;margin:0 0 12px;}
+.footer-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 10px;}
+.footer-links a{color:#FFFFFF;font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding:8px 2px;min-height:44px;display:inline-flex;align-items:center;}
+.footer-links a:hover{border-bottom-color:#FFFFFF;}
+.footer-dot{opacity:.5;}
+.footer-note{font-family:'Inter',Arial,sans-serif;font-size:12.5px;opacity:.72;margin:0;}
+
+/* Mobile refinements (375px-safe) */
+@media(max-width:600px){
+  .wrap{padding-left:18px;padding-right:18px;}
+  .masthead{padding:34px 20px 28px;}
+  .grammar-box,.card{padding:20px 18px;}
+  .oped-body{padding:20px 18px;}
+  .speak-card,.media-card{padding:18px 16px;}
+  .check-btn,.reveal-btn,.rev-btn,.poll-opt{min-height:44px;}
+  .vs-table{grid-template-columns:1fr;}
+  .vs-divider{display:none;}
+  table.rule-table{font-size:13.5px;}
+  .nav-top{font-size:12px;}
+  .site-footer{padding:28px 18px 34px;}
+}
+
+@media(max-width:600px){.check-slider-btn,.toc a{min-height:44px;}}
+
+</style>
+</head>
+<body>
+
+<!-- SECTION: Top Navigation Bar -->
+<header class="nav-bar" id="navBar">
+  <button class="nav-btn nav-hamburger" id="navHamburger" aria-label="Open contents menu" aria-expanded="false">&#9776;</button>
+  <div class="nav-brand">
+    <span class="nav-brand-week">Grade 7 · Week 2</span>
+    <span class="nav-brand-title">Passive Voice & Contrast</span>
+  </div>
+  <button class="nav-btn nav-top" id="navTopBtn" aria-label="Back to top">&#8593; Top</button>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+<aside class="nav-panel" id="navPanel" aria-hidden="true">
+  <div class="nav-panel-head"><span>On this page</span><button class="nav-btn nav-close" id="navClose" aria-label="Close menu">&#10005;</button></div>
+  <nav class="nav-panel-links" id="navPanelLinks"></nav>
+  <!-- Creator & branding section of the menu -->
+  <div class="nav-panel-brand">
+    <div class="brand-name">Bahar Esmaeelzadeh</div>
+    <div class="brand-line">Designed and created for English learners by Bahar Esmaeelzadeh.</div>
+    <a href="mailto:bahar.esmz.en@gmail.com">&#128231; bahar.esmz.en@gmail.com</a>
+    <a href="https://www.linkedin.com/in/bahar-esmaeelzadeh-650b98198" target="_blank" rel="noopener">&#128188; LinkedIn &mdash; Bahar Esmaeelzadeh</a>
+    <div class="brand-copy">&copy; 2026 Bahar Esmaeelzadeh &middot; All rights reserved</div>
+  </div>
+</aside>
+
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- SECTION: Masthead / Header -->
+<div class="masthead">
+  <div class="masthead-inner">
+    <p class="eyebrow">Grade 7 &middot; Week 2 &middot; Complete Reference &amp; Pre-Class Material</p>
+    <h1 class="title">Passive Voice &amp; Expressing Contrast</h1>
+    <div class="masthead-meta">
+      <div>Level: <span>B2</span></div>
+      <div>Theme: <span>Clothing &amp; Fabrics</span></div>
+      <div>Function: <span>Expressing Contrast</span></div>
+      <div>Est. time: <span>60&ndash;70 min</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <!-- SECTION: Table of Contents -->
+  <div class="toc">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#engage">1. Engage &mdash; odd one out</a></li>
+      <li><a href="#context1">2. Context: the brand article</a></li>
+      <li><a href="#notice1">3. Notice &amp; discover (passive)</a></li>
+      <li><a href="#study1">4. Study: be-passive</a></li>
+      <li><a href="#study1b">5. Study: get-passive</a></li>
+      <li><a href="#context2">6. Context: the review thread</a></li>
+      <li><a href="#notice2">7. Notice &amp; discover (contrast)</a></li>
+      <li><a href="#study2">8. Study: contrast connectors</a></li>
+      <li><a href="#study3">9. Study: order of adjectives</a></li>
+      <li><a href="#pronunciation">10. Pronunciation focus</a></li>
+      <li><a href="#vocab">11. Vocabulary: fabrics, patterns &amp; fashion</a></li>
+      <li><a href="#exercises">12. Practice exercises</a></li>
+      <li><a href="#speaking">13. Speaking practice</a></li>
+      <li><a href="#listening">14. Listening &amp; watching</a></li>
+      <li><a href="#autonomy">15. Explore on your own</a></li>
+      <li><a href="#activate">16. A taste of Activate</a></li>
+      <li><a href="#reference">17. Quick-reference summary</a></li>
+    </ol>
+  </div>
+
+  <!-- SECTION: Odd one out &mdash; before any grammar -->
+  <div class="tab-section" id="engage">
+    <div class="tab-header">
+      <span class="tab-num">ENGAGE</span>
+      <h2 class="tab-title">Odd one out &mdash; before any grammar</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <h3>Which one doesn&rsquo;t belong?</h3>
+      <p>Look at the three groups below. In each group, one item is the odd one out. Click it, then click &ldquo;Reveal&rdquo; to see the reason. There&rsquo;s always a reason &mdash; your job is to find the most interesting one.</p>
+    </div>
+
+    <div class="material-grid">
+      <div class="material-group">
+        <h4>Group A</h4>
+        <div class="material-items" id="groupA">
+          <div class="material-item" data-group="A" data-odd="false">linen</div>
+          <div class="material-item" data-group="A" data-odd="true">polyester</div>
+          <div class="material-item" data-group="A" data-odd="false">cotton</div>
+        </div>
+        <button class="reveal-btn" onclick="revealOdd('A','Polyester is the odd one out: linen and cotton are natural fibres from plants, while polyester is a synthetic (man-made) material.')">Reveal</button>
+        <p class="odd-reveal" id="revealA"></p>
+      </div>
+      <div class="material-group">
+        <h4>Group B</h4>
+        <div class="material-items" id="groupB">
+          <div class="material-item" data-group="B" data-odd="false">woven</div>
+          <div class="material-item" data-group="B" data-odd="false">knitted</div>
+          <div class="material-item" data-group="B" data-odd="true">dyed</div>
+        </div>
+        <button class="reveal-btn" onclick="revealOdd('B','Dyed is the odd one out: woven and knitted describe how a fabric is constructed (its structure), while dyed describes how it was treated with colour (a separate process).')">Reveal</button>
+        <p class="odd-reveal" id="revealB"></p>
+      </div>
+      <div class="material-group">
+        <h4>Group C</h4>
+        <div class="material-items" id="groupC">
+          <div class="material-item" data-group="C" data-odd="false">striped</div>
+          <div class="material-item" data-group="C" data-odd="false">checked</div>
+          <div class="material-item" data-group="C" data-odd="true">velvet</div>
+        </div>
+        <button class="reveal-btn" onclick="revealOdd('C','Velvet is the odd one out: striped and checked describe patterns on fabric, while velvet describes the texture of the material itself.')">Reveal</button>
+        <p class="odd-reveal" id="revealC"></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Why this matters</h3>
+      <p>This week&rsquo;s texts are set in the world of clothing and fabrics. The vocabulary above will come up repeatedly &mdash; and the grammar (the passive voice) is exactly how professionals in fashion and manufacturing describe processes: <em>the fabric is woven, the garment is cut, the colour gets absorbed.</em></p>
+    </div>
+  </div>
+
+  <!-- SECTION: Read first: the brand article -->
+  <div class="tab-section" id="context1">
+    <div class="tab-header study">
+      <span class="tab-num">CONTEXT</span>
+      <h2 class="tab-title">Read first: the brand article</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <p>Read this fictional magazine article. Don&rsquo;t analyse the grammar yet &mdash; just answer: <strong>what makes Thornfield&rsquo;s production process unusual compared to most fashion brands?</strong></p>
+    </div>
+
+    <div class="realia">
+      <div class="realia-header">
+        <span class="realia-tag">Feature</span>
+        <span class="realia-name">Fabric &amp; Form Monthly &mdash; &ldquo;Made to Last: Inside Thornfield Denim&rdquo;</span>
+      </div>
+      <div class="realia-body">
+        <p class="byline">By Simone Araujo &middot; Correspondent, sustainable fashion</p>
+
+        <p>At most denim brands, jeans <span class="target-1">are produced</span> in large overseas factories and <span class="target-1">are shipped</span> directly to retail stores within weeks of being ordered. At Thornfield, almost nothing works that way.</p>
+
+        <p>The raw cotton <span class="target-1">is grown</span> on a co-operative farm in Portugal. Once harvested, it <span class="target-1">is cleaned</span>, <span class="target-1">is spun into yarn</span>, and <span class="target-1">is woven into denim</span> using looms that date back to the 1960s. The fabric <span class="target-2">gets treated</span> with natural indigo dye &mdash; a process that takes three days, because the dye <span class="target-2">gets absorbed</span> more slowly at lower temperatures. &ldquo;Patience,&rdquo; says founder Marta Voss, &ldquo;is literally built into every pair.&rdquo;</p>
+
+        <p>The jeans themselves <span class="target-1">are cut</span> by hand and <span class="target-1">are assembled</span> by a team of twelve seamstresses in a converted farmhouse outside Porto. Each pair <span class="target-1">is inspected</span> individually before it leaves the building. If a seam <span class="target-2">gets weakened</span> or a button <span class="target-2">gets loose</span>, the garment <span class="target-1">is returned</span> to the workshop &mdash; not discarded.</p>
+
+        <p>It takes roughly six weeks from raw material to finished product. That&rsquo;s about twelve times longer than the industry average. <span class="target-1">The price is reflected</span> accordingly: a single pair starts at €280. However, the brand argues that the cost <span class="target-1">is justified</span> by longevity. &ldquo;These jeans <span class="target-1">are designed</span> to last twenty years,&rdquo; says Voss. &ldquo;Fast fashion <span class="target-1">is made</span> to be replaced. Ours <span class="target-1">are made</span> to be kept.&rdquo;</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Quick meaning check</h3>
+      <p>1. Where is Thornfield&rsquo;s raw cotton grown?</p>
+      <p>2. Why does the dyeing process take three days?</p>
+      <p>3. What happens to a garment if a seam gets weakened?</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Two kinds of passive &mdash; what do you notice? -->
+  <div class="tab-section" id="notice1">
+    <div class="tab-header study">
+      <span class="tab-num">NOTICE &amp; DISCOVER</span>
+      <h2 class="tab-title">Two kinds of passive &mdash; what do you notice?</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="notice-box">
+      <h3>Detective work: is + past participle vs. gets + past participle</h3>
+
+      <div class="notice-q">
+        The article uses two different passive patterns: coral-highlighted (<span class="target-1">is grown, is cut, is designed</span>) and blue-highlighted (<span class="target-2">gets treated, gets absorbed, gets weakened</span>). Both describe actions done to a subject &mdash; but do they feel exactly the same to you? Can you sense any difference in what they suggest about the situation?
+        <button class="reveal-hint" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">The be-passive (is/was + past participle) is neutral and factual &mdash; it just says something happened or happens. The get-passive (get/got + past participle) often implies the event was unexpected, accidental, unplanned, or the result of an outside force. &ldquo;The seam gets weakened&rdquo; suggests it happens through wear and use, not intentional design.</p>
+      </div>
+
+      <div class="notice-q">
+        In the sentence &ldquo;The raw cotton <em>is grown</em> on a co-operative farm,&rdquo; who actually does the growing? And in &ldquo;the dye <em>gets absorbed</em> more slowly at lower temperatures,&rdquo; who does the absorbing?
+        <button class="reveal-hint" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">In the first sentence, farmers grow the cotton &mdash; but the sentence doesn&rsquo;t name them. In the second, it&rsquo;s a natural process &mdash; no human agent at all. This is one key reason writers choose the passive: the agent is already known, unimportant, or not human. The focus shifts entirely to the object of the action (the cotton, the dye).</p>
+      </div>
+
+      <div class="notice-q">
+        At the end of the article, Marta Voss says: &ldquo;Fast fashion <em>is made</em> to be replaced. Ours <em>are made</em> to be kept.&rdquo; She uses the same structure twice. Why do you think she&rsquo;s chosen passive here rather than &ldquo;We make ours to be kept&rdquo;?
+        <button class="reveal-hint" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">Using the passive shifts the focus from the maker to the object (the jeans) and gives the statement a more universal, authoritative tone. It also creates a neat parallel contrast: &ldquo;fast fashion is made to be replaced&rdquo; vs &ldquo;ours are made to be kept.&rdquo; The passive is often chosen for rhetorical impact, not just because the agent is unknown.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: The passive voice: a complete guide -->
+  <div class="tab-section" id="study1">
+    <div class="tab-header study">
+      <span class="tab-num">STUDY</span>
+      <h2 class="tab-title">The passive voice: a complete guide</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <!-- 1. WHAT IS THE PASSIVE -->
+    <div class="grammar-box">
+      <h3>1. Active vs. passive: what actually changes?</h3>
+      <p class="grammar-sub">This is your first formal encounter with the passive voice &mdash; but you have already been using it in English without realising it. Let&rsquo;s make it explicit.</p>
+
+      <p>In an <strong>active sentence</strong>, the grammatical subject is the one doing the action:</p>
+      <div style="background:var(--paper); border-radius:8px; padding:16px 18px; margin:12px 0; font-size:16px;">
+        <span style="background:#FBEDE9; color:var(--coral-deep); padding:2px 6px; border-radius:4px; font-weight:bold;">Workers</span>
+        &nbsp;<span style="background:#EFF5F1; color:var(--chalk-green); padding:2px 6px; border-radius:4px; font-weight:bold;">weave</span>&nbsp;
+        <span style="background:#E9F0F5; color:var(--blue-deep); padding:2px 6px; border-radius:4px; font-weight:bold;">the fabric</span>
+        &nbsp;on old looms.
+        <div style="font-size:12px; color:var(--ink-soft); margin-top:8px;">
+          <span style="color:var(--coral-deep);">■</span> Subject (doer) &nbsp;&nbsp;
+          <span style="color:var(--chalk-green);">■</span> Verb &nbsp;&nbsp;
+          <span style="color:var(--blue-deep);">■</span> Object (receiver)
+        </div>
+      </div>
+
+      <p>In a <strong>passive sentence</strong>, the object of the action becomes the grammatical subject. The doer either disappears or moves to a "by" phrase:</p>
+      <div style="background:var(--paper); border-radius:8px; padding:16px 18px; margin:12px 0; font-size:16px;">
+        <span style="background:#E9F0F5; color:var(--blue-deep); padding:2px 6px; border-radius:4px; font-weight:bold;">The fabric</span>
+        &nbsp;<span style="background:#EFF5F1; color:var(--chalk-green); padding:2px 6px; border-radius:4px; font-weight:bold;">is woven</span>&nbsp;
+        on old looms
+        &nbsp;<span style="background:#FFF8E0; color:var(--chalk-yellow-deep); padding:2px 6px; border-radius:4px; font-weight:bold;">(by workers)</span>.
+        <div style="font-size:12px; color:var(--ink-soft); margin-top:8px;">
+          <span style="color:var(--blue-deep);">■</span> New subject (was the object) &nbsp;&nbsp;
+          <span style="color:var(--chalk-green);">■</span> be + past participle &nbsp;&nbsp;
+          <span style="color:var(--chalk-yellow-deep);">■</span> Agent (optional)
+        </div>
+      </div>
+
+      <div class="compare-cols" style="margin-top:16px;">
+        <div class="compare-col c-coral">
+          <h4>Active &mdash; focus on the doer</h4>
+          <p><strong>Marta Voss</strong> designed these jeans.</p>
+          <p><strong>A seamstress</strong> inspects every pair.</p>
+          <p><em>The subject is the person performing the action. We know who did it and it matters.</em></p>
+        </div>
+        <div class="compare-col c-blue">
+          <h4>Passive &mdash; focus on the result</h4>
+          <p><strong>These jeans</strong> were designed by Marta Voss.</p>
+          <p><strong>Every pair</strong> is inspected.</p>
+          <p><em>The subject received the action. The focus shifts to the object. The agent is optional.</em></p>
+        </div>
+      </div>
+
+      <div class="example-row" style="margin-top:6px;">
+        <span class="mark" style="color:var(--blue-deep);">💡</span>
+        <span class="txt"><strong>An analogy:</strong> think of the passive as a camera angle change. Active = camera on the person doing the action. Passive = camera on the thing being done to. Same event, different focus.
+        </span>
+      </div>
+    </div>
+
+    <!-- 2. BY + AGENT -->
+    <div class="grammar-box">
+      <h3>2. When do we use &ldquo;by + agent&rdquo;?</h3>
+      <p class="grammar-sub">The doer of the action can be included using <em>by</em> — but in most passive sentences, it is left out entirely.</p>
+
+      <p><strong>Include "by + agent" when the doer is surprising, important, or new information:</strong></p>
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt">These jeans were designed <strong>by a team of three artisans</strong>.
+          <span class="gloss">The agent is interesting &mdash; not the usual factory team. Worth mentioning.</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt">The dye <strong>was developed by a chemist in the 1940s</strong>.
+          <span class="gloss">Specific, informative. The person is the interesting part.</span>
+        </span>
+      </div>
+
+      <p style="margin-top:14px;"><strong>Omit "by + agent" when the doer is obvious, unknown, or unimportant:</strong></p>
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt">Each garment <strong>is inspected</strong> before it leaves the factory.
+          <span class="gloss">&ldquo;By workers&rdquo; is obvious — of course humans inspect it. No need to say it.</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt">My jacket <strong>was stolen</strong> at the market.
+          <span class="gloss">We don&rsquo;t know who did it — that&rsquo;s precisely why the passive is used here.</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✗</span>
+        <span class="txt"><em>The cotton is grown in Portugal by farmers.</em>
+          <span class="gloss">Technically possible but &ldquo;by farmers&rdquo; adds no information — cotton is always grown by farmers. Omit it: <strong>The cotton is grown in Portugal.</strong></span>
+        </span>
+      </div>
+
+      <p style="margin-top:14px; padding:14px 18px; background:#E9F0F5; border-radius:8px; font-size:14.5px;">
+        <strong style="color:var(--blue-deep);">Rule of thumb:</strong> If adding &ldquo;by [someone]&rdquo; would sound obvious or add nothing, leave it out. In real writing, about 80% of passive sentences have no "by" phrase at all.
+      </p>
+    </div>
+
+    <!-- 3. VERBS THAT CANNOT BE PASSIVE -->
+    <div class="grammar-box">
+      <h3>3. Verbs that cannot be used in the passive</h3>
+      <p class="grammar-sub">Only <strong>transitive verbs</strong> (verbs that take a direct object) can be made passive. Intransitive verbs &mdash; those that never take a direct object &mdash; cannot.</p>
+
+      <p>The test: can you ask &ldquo;[verb] what?&rdquo; or &ldquo;[verb] whom?&rdquo; and get an answer? If yes, it&rsquo;s transitive and can be passive. If not, it&rsquo;s intransitive and cannot.</p>
+
+      <div class="compare-cols">
+        <div class="compare-col c-green">
+          <h4>✓ Transitive — CAN be passive</h4>
+          <p><strong>make</strong> → "make what?" → jeans → passive ✓</p>
+          <p><strong>design</strong> → "design what?" → a coat → passive ✓</p>
+          <p><strong>inspect</strong> → "inspect what?" → the garment → passive ✓</p>
+          <p><strong>wash</strong> → "wash what?" → the fabric → passive ✓</p>
+        </div>
+        <div class="compare-col c-coral">
+          <h4>✗ Intransitive — CANNOT be passive</h4>
+          <p><strong>arrive</strong> → "arrive what?" → ✗ no answer → no passive</p>
+          <p><strong>happen</strong> → "happen what?" → ✗ no answer → no passive</p>
+          <p><strong>sleep</strong> → "sleep what?" → ✗ no answer → no passive</p>
+          <p><strong>exist</strong> → "exist what?" → ✗ no answer → no passive</p>
+        </div>
+      </div>
+
+      <div class="example-row" style="margin-top:10px;">
+        <span class="mark">✗</span>
+        <span class="txt"><em>The conference was happened last week.</em>
+          <span class="gloss">&ldquo;Happen&rdquo; is intransitive — it never takes an object. You cannot say this. Correct: <strong>The conference happened last week.</strong> (Active only.)</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✗</span>
+        <span class="txt"><em>She was arrived at the store early.</em>
+          <span class="gloss">&ldquo;Arrive&rdquo; is intransitive. Correct: <strong>She arrived at the store early.</strong></span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">!</span>
+        <span class="txt"><strong>Watch out:</strong> some verbs can be both transitive and intransitive depending on usage.
+          <span class="gloss"><em>&ldquo;The door opened&rdquo;</em> (intransitive, no passive possible) vs <em>&ldquo;The door was opened by the manager&rdquo;</em> (transitive, passive works).</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- 4. FULL TENSE TABLE -->
+    <div class="grammar-box">
+      <h3>4. The be-passive across all tenses</h3>
+      <p class="grammar-sub">The form is always <strong>be + past participle</strong>. Only the tense of <em>be</em> changes. The past participle itself never changes.</p>
+
+      <div class="table-scroll"><table class="conj-table">
+        <tr>
+          <th>Tense</th>
+          <th>Active form</th>
+          <th>Passive form (be + pp)</th>
+          <th>Clothing example</th>
+        </tr>
+        <tr>
+          <td><strong>Present simple</strong></td>
+          <td>They make the jeans by hand.</td>
+          <td><strong>is / are</strong> + pp</td>
+          <td>The jeans <strong>are made</strong> by hand.</td>
+        </tr>
+        <tr>
+          <td><strong>Present continuous</strong></td>
+          <td>They are dyeing the fabric now.</td>
+          <td><strong>is / are being</strong> + pp</td>
+          <td>The fabric <strong>is being dyed</strong> right now.</td>
+        </tr>
+        <tr>
+          <td><strong>Past simple</strong></td>
+          <td>A seamstress stitched every hem.</td>
+          <td><strong>was / were</strong> + pp</td>
+          <td>Every hem <strong>was stitched</strong> by a seamstress.</td>
+        </tr>
+        <tr>
+          <td><strong>Past continuous</strong></td>
+          <td>Workers were weaving the cloth when we arrived.</td>
+          <td><strong>was / were being</strong> + pp</td>
+          <td>The cloth <strong>was being woven</strong> when we arrived.</td>
+        </tr>
+        <tr>
+          <td><strong>Present perfect</strong></td>
+          <td>The team has inspected every pair.</td>
+          <td><strong>has / have been</strong> + pp</td>
+          <td>Every pair <strong>has been inspected</strong>.</td>
+        </tr>
+        <tr>
+          <td><strong>Past perfect</strong></td>
+          <td>Someone had already cut the fabric before we arrived.</td>
+          <td><strong>had been</strong> + pp</td>
+          <td>The fabric <strong>had been cut</strong> before we arrived.</td>
+        </tr>
+        <tr>
+          <td><strong>Future (will)</strong></td>
+          <td>The factory will ship the order on Friday.</td>
+          <td><strong>will be</strong> + pp</td>
+          <td>The order <strong>will be shipped</strong> on Friday.</td>
+        </tr>
+        <tr>
+          <td><strong>Future (going to)</strong></td>
+          <td>They are going to launch the new collection soon.</td>
+          <td><strong>is / are going to be</strong> + pp</td>
+          <td>The new collection <strong>is going to be launched</strong> soon.</td>
+        </tr>
+        <tr>
+          <td><strong>Modal (can/could)</strong></td>
+          <td>You can wash this garment at 30°.</td>
+          <td><strong>can / could be</strong> + pp</td>
+          <td>This garment <strong>can be washed</strong> at 30°.</td>
+        </tr>
+        <tr>
+          <td><strong>Modal (should/must)</strong></td>
+          <td>You should store silk in a cool place.</td>
+          <td><strong>should / must be</strong> + pp</td>
+          <td>Silk <strong>should be stored</strong> in a cool place.</td>
+        </tr>
+      </table></div>
+
+      <p style="margin-top:14px; font-size:14px; color:var(--ink-soft); font-style:italic;">
+        Note: Past perfect continuous passive and future perfect passive exist but are very rare and not taught at B2. Focus on the ten forms above.
+      </p>
+    </div>
+
+    <!-- 5. COMMON MISTAKES + TIPS -->
+    <div class="grammar-box">
+      <h3>5. Common mistakes &mdash; and how to avoid them</h3>
+      <p class="grammar-sub">These are the errors that appear most often in learner writing at B2 level. Read each one carefully before doing the exercises.</p>
+
+      <div class="table-scroll"><table class="conj-table">
+        <tr>
+          <th style="width:35%">Wrong</th>
+          <th style="width:35%">Correct</th>
+          <th>Why</th>
+        </tr>
+        <tr>
+          <td style="color:var(--coral-deep);">The jeans are <em>make</em> by hand.</td>
+          <td style="color:var(--chalk-green);">The jeans are <strong>made</strong> by hand.</td>
+          <td>Use the past participle, never the base form.</td>
+        </tr>
+        <tr>
+          <td style="color:var(--coral-deep);">The cotton is <em>grew</em> in Portugal.</td>
+          <td style="color:var(--chalk-green);">The cotton is <strong>grown</strong> in Portugal.</td>
+          <td>Past tense ≠ past participle. grow → grew (past) → grown (pp).</td>
+        </tr>
+        <tr>
+          <td style="color:var(--coral-deep);">It <em>is been</em> designed carefully.</td>
+          <td style="color:var(--chalk-green);">It <strong>has been</strong> designed carefully.</td>
+          <td>Present perfect passive uses "has/have been", not "is been".</td>
+        </tr>
+        <tr>
+          <td style="color:var(--coral-deep);">The fabric <em>was being weaved</em>.</td>
+          <td style="color:var(--chalk-green);">The fabric <strong>was being woven</strong>.</td>
+          <td>Weave is irregular: weaved ✗, woven ✓.</td>
+        </tr>
+        <tr>
+          <td style="color:var(--coral-deep);">She <em>was arrived</em> at the shop.</td>
+          <td style="color:var(--chalk-green);">She <strong>arrived</strong> at the shop.</td>
+          <td>"Arrive" is intransitive — cannot be passive.</td>
+        </tr>
+        <tr>
+          <td style="color:var(--coral-deep);">The dress <em>is being make</em> now.</td>
+          <td style="color:var(--chalk-green);">The dress <strong>is being made</strong> now.</td>
+          <td>Present continuous passive: is/are + being + past participle.</td>
+        </tr>
+        <tr>
+          <td style="color:var(--coral-deep);">The jacket <em>will been</em> delivered.</td>
+          <td style="color:var(--chalk-green);">The jacket <strong>will be</strong> delivered.</td>
+          <td>After "will", use the base form of be: "will be", not "will been".</td>
+        </tr>
+      </table></div>
+
+      <div style="margin-top:18px; display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+        <div style="background:#EFF5F1; border-radius:8px; padding:14px 16px;">
+          <p style="font-weight:bold; color:var(--chalk-green); margin:0 0 8px;">💡 Tip 1: the "pp test"</p>
+          <p style="margin:0; font-size:14px;">Before writing a passive verb, ask: is what I wrote a past participle? If it&rsquo;s the past tense form instead (e.g. <em>grew</em> instead of <em>grown</em>), fix it immediately.</p>
+        </div>
+        <div style="background:#E9F0F5; border-radius:8px; padding:14px 16px;">
+          <p style="font-weight:bold; color:var(--blue-deep); margin:0 0 8px;">💡 Tip 2: learn irregulars in passive pairs</p>
+          <p style="margin:0; font-size:14px;">Learn: make→made, grow→grown, weave→woven, tear→torn, wear→worn, write→written. These are all frequent in passive contexts.</p>
+        </div>
+        <div style="background:#FFF8E0; border-radius:8px; padding:14px 16px;">
+          <p style="font-weight:bold; color:var(--chalk-yellow-deep); margin:0 0 8px;">💡 Tip 3: "by" is usually not needed</p>
+          <p style="margin:0; font-size:14px;">If you&rsquo;ve written &ldquo;by people&rdquo; or &ldquo;by someone&rdquo;, delete it. Only include &ldquo;by&rdquo; when the agent is surprising or specifically relevant.</p>
+        </div>
+        <div style="background:#FBEDE9; border-radius:8px; padding:14px 16px;">
+          <p style="font-weight:bold; color:var(--coral-deep); margin:0 0 8px;">💡 Tip 4: don&rsquo;t overuse the passive</p>
+          <p style="margin:0; font-size:14px;">Using passive constantly makes writing feel cold and bureaucratic. Mix active and passive sentences. A good paragraph often has 1&ndash;2 passive verbs, not 5.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. DIALOGUE: PASSIVE IN REAL CONVERSATION -->
+    <div class="grammar-box">
+      <h3>6. Listen in: a real conversation in a clothes shop</h3>
+      <p class="grammar-sub">Notice how the passive appears naturally &mdash; nobody is &ldquo;doing grammar.&rdquo; They&rsquo;re just talking. The passive is highlighted so you can spot it.</p>
+
+      <div style="background:var(--paper); border-radius:10px; overflow:hidden; border:1px solid var(--paper-line);">
+        <!-- Customer -->
+        <div style="display:grid; grid-template-columns:44px 1fr; gap:12px; padding:16px 18px; border-bottom:1px solid var(--paper-line);">
+          <div style="width:40px; height:40px; border-radius:50%; background:var(--coral-deep); color:var(--white); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:13px; flex-shrink:0;">CU</div>
+          <div>
+            <div style="font-weight:bold; font-size:13.5px; color:var(--ink); margin-bottom:5px;">Customer</div>
+            <p style="margin:0; font-size:15.5px;">Excuse me &mdash; do you know where <span class="target-1">this jacket was made</span>? I can&rsquo;t find the label.</p>
+          </div>
+        </div>
+        <!-- Staff -->
+        <div style="display:grid; grid-template-columns:44px 1fr; gap:12px; padding:16px 18px; border-bottom:1px solid var(--paper-line); background:var(--white);">
+          <div style="width:40px; height:40px; border-radius:50%; background:var(--blue-deep); color:var(--white); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:13px; flex-shrink:0;">ST</div>
+          <div>
+            <div style="font-weight:bold; font-size:13.5px; color:var(--ink); margin-bottom:5px;">Staff member</div>
+            <p style="margin:0; font-size:15.5px;">That one <span class="target-1">is produced</span> in Portugal, actually. The fabric <span class="target-1">is woven</span> locally and then <span class="target-1">is cut and assembled</span> in a small workshop. <span class="target-1">It&rsquo;s designed</span> here in the city, though.</p>
+          </div>
+        </div>
+        <!-- Customer -->
+        <div style="display:grid; grid-template-columns:44px 1fr; gap:12px; padding:16px 18px; border-bottom:1px solid var(--paper-line);">
+          <div style="width:40px; height:40px; border-radius:50%; background:var(--coral-deep); color:var(--white); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:13px; flex-shrink:0;">CU</div>
+          <div>
+            <div style="font-weight:bold; font-size:13.5px; color:var(--ink); margin-bottom:5px;">Customer</div>
+            <p style="margin:0; font-size:15.5px;">Oh, nice. What about this one? <span class="target-2">It got torn</span> last time I tried it on &mdash; right along the seam. Was that just a one-off?</p>
+          </div>
+        </div>
+        <!-- Staff -->
+        <div style="display:grid; grid-template-columns:44px 1fr; gap:12px; padding:16px 18px; border-bottom:1px solid var(--paper-line); background:var(--white);">
+          <div style="width:40px; height:40px; border-radius:50%; background:var(--blue-deep); color:var(--white); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:13px; flex-shrink:0;">ST</div>
+          <div>
+            <div style="font-weight:bold; font-size:13.5px; color:var(--ink); margin-bottom:5px;">Staff member</div>
+            <p style="margin:0; font-size:15.5px;">Unfortunately we <span class="target-1">were notified</span> about a seam issue in that batch. <span class="target-1">All the affected garments have been recalled</span> and <span class="target-1">are being replaced</span> this week. Can I take your details?</p>
+          </div>
+        </div>
+        <!-- Customer -->
+        <div style="display:grid; grid-template-columns:44px 1fr; gap:12px; padding:16px 18px;">
+          <div style="width:40px; height:40px; border-radius:50%; background:var(--coral-deep); color:var(--white); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:13px; flex-shrink:0;">CU</div>
+          <div>
+            <div style="font-weight:bold; font-size:13.5px; color:var(--ink); margin-bottom:5px;">Customer</div>
+            <p style="margin:0; font-size:15.5px;">Yes, please. And will I <span class="target-1">be refunded</span> automatically, or do I need to bring it back in?</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:14px; background:#FFF8E0; border-radius:8px; padding:14px 18px;">
+        <p style="font-weight:bold; color:var(--chalk-yellow-deep); margin:0 0 8px; font-size:14.5px;">Dialogue analysis &mdash; what to notice:</p>
+        <ul style="margin:0; padding-left:20px; font-size:14px; line-height:1.7;">
+          <li>The customer asks a natural passive question: <em>&ldquo;where was this made?&rdquo;</em> — no agent mentioned because we don&rsquo;t know who made it.</li>
+          <li>The staff member uses a chain of passive verbs (<em>is produced / is woven / is cut and assembled</em>) — typical of describing a manufacturing process.</li>
+          <li>The customer uses <em>got torn</em> (get-passive) for an accidental, unwanted event — not <em>was torn</em>, which would sound more formal.</li>
+          <li>The staff member uses present perfect passive (<em>have been recalled</em>) and present continuous passive (<em>are being replaced</em>) in the same sentence — two different passive tenses working together.</li>
+          <li>The customer asks <em>&ldquo;will I be refunded&rdquo;</em> — future passive question, very natural in customer service contexts.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- WHEN TO USE: rule pills -->
+    <div class="grammar-box">
+      <h3>7. When to use the passive: a summary</h3>
+      <p class="grammar-sub">Now that you know the full form, here&rsquo;s when to reach for it.</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px;">
+        <div style="background:var(--paper); border-radius:8px; padding:14px 16px;">
+          <p style="font-weight:bold; color:var(--chalk-green); margin:0 0 6px; font-size:14.5px;">✓ Use passive when...</p>
+          <ul style="margin:0; padding-left:18px; font-size:14px; line-height:1.75;">
+            <li>The agent is unknown: <em>My bag was stolen.</em></li>
+            <li>The agent is obvious: <em>The seam is stitched.</em></li>
+            <li>The result matters more than the doer: <em>The fabric is woven on 1960s looms.</em></li>
+            <li>Formal / scientific / professional context: <em>Participants were interviewed twice.</em></li>
+            <li>Deliberate stylistic effect: <em>These jeans are made to be kept.</em></li>
+          </ul>
+        </div>
+        <div style="background:var(--paper); border-radius:8px; padding:14px 16px;">
+          <p style="font-weight:bold; color:var(--coral-deep); margin:0 0 6px; font-size:14.5px;">✗ Avoid passive when...</p>
+          <ul style="margin:0; padding-left:18px; font-size:14px; line-height:1.75;">
+            <li>The verb is intransitive: <em>✗ She was arrived.</em></li>
+            <li>The agent matters: <em>✗ The painting was painted.</em> → Who? By whom?</li>
+            <li>Active is clearer and more direct: <em>✗ The food was eaten by me</em> → <em>I ate the food.</em></li>
+            <li>You would overload the text with passive sentences back to back.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: The get-passive &mdash; more dynamic, more spoken -->
+  <div class="tab-section" id="study1b">
+    <div class="tab-header study">
+      <span class="tab-num">STUDY</span>
+      <h2 class="tab-title">The get-passive &mdash; more dynamic, more spoken</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>1b. The get-passive: get + past participle</h3>
+      <p class="grammar-sub">Extremely common in spoken English and informal writing &mdash; often implies accident, change, or an outside force. According to COCA, it appears constantly in everyday speech but is rarely taught in EFL courses.</p>
+
+      <div class="compare-cols">
+        <div class="compare-col c-blue">
+          <h4>Be-passive &mdash; neutral statement</h4>
+          <p>The seam <strong>is weakened</strong> over time.</p>
+          <p><em>Factual. Could happen by design or by chance.</em></p>
+        </div>
+        <div class="compare-col c-coral">
+          <h4>Get-passive &mdash; dynamic / accidental</h4>
+          <p>The seam <strong>gets weakened</strong> over time.</p>
+          <p><em>Suggests gradual wear, an outside process happening to the seam.</em></p>
+        </div>
+      </div>
+
+      <div class="table-scroll"><table class="conj-table">
+        <tr><th>Tense</th><th>Form</th><th>Example</th></tr>
+        <tr><td>Present simple</td><td>get/gets + past participle</td><td>Silk <strong>gets damaged</strong> easily.</td></tr>
+        <tr><td>Past simple</td><td>got + past participle</td><td>My jacket <strong>got torn</strong> on a nail.</td></tr>
+        <tr><td>Present perfect</td><td>has/have gotten + past participle</td><td>The button <strong>has gotten loose</strong> again.</td></tr>
+      </table></div>
+
+      <p style="font-weight:bold; color:var(--chalk-green); margin-top:16px;">Common get-passive situations:</p>
+      <span class="rule-pill">Accidents: I got fired / she got hurt</span>
+      <span class="rule-pill">Changes: it got broken / he got promoted</span>
+      <span class="rule-pill">Natural processes: the dye got absorbed</span>
+      <span class="rule-pill">Informal/spoken register</span>
+
+      <div class="example-row" style="margin-top:14px;">
+        <span class="mark">✓</span>
+        <span class="txt">My coat <strong>got caught</strong> on the door and the sleeve ripped.
+          <span class="gloss">Accidental, outside force &mdash; get-passive is perfect here.</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt">She <strong>got promoted</strong> after three years at the company.
+          <span class="gloss">Change of state (positive here), very common in spoken English.</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">!</span>
+        <span class="txt"><em>Get-passive is NOT used in formal written reports or academic writing.</em>
+          <span class="gloss">Use be-passive in formal contexts: &ldquo;The specimen was analysed&rdquo;, not &ldquo;got analysed&rdquo;.</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Read next: customer reviews -->
+  <div class="tab-section" id="context2">
+    <div class="tab-header study">
+      <span class="tab-num">CONTEXT</span>
+      <h2 class="tab-title">Read next: customer reviews</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <p>Read these fictional reviews of Thornfield jeans. Focus on meaning first: <strong>which reviewer would buy again, and which wouldn&rsquo;t?</strong></p>
+    </div>
+
+    <div class="realia">
+      <div class="realia-header">
+        <span class="realia-tag">Reviews</span>
+        <span class="realia-name">Thornfield Denim &mdash; Customer Reviews (Verified Purchases)</span>
+      </div>
+
+      <div class="review-post">
+        <div class="rev-avatar" style="background:var(--blue-deep);">MK</div>
+        <div>
+          <div class="rev-meta">
+            <span class="rev-handle">marta_k</span>
+            <span class="rev-stars">★★★★★</span>
+            <span class="rev-verified">Verified</span>
+          </div>
+          <p class="rev-text">
+            These are genuinely the best jeans I&rsquo;ve owned. <span class="target-3">However</span>, I want to be honest: the price is a barrier. <span class="target-1">They were crafted</span> beautifully &mdash; every stitch <span class="target-1">is placed</span> with obvious care. <span class="target-3">On the other hand</span>, I bought a cheaper pair last year and <span class="target-2">they got ruined</span> after six months. With Thornfield, you&rsquo;re paying for durability. <span class="target-3">In contrast</span> to fast fashion, the quality is immediately obvious when you put them on.
+          </p>
+        </div>
+      </div>
+
+      <div class="review-post">
+        <div class="rev-avatar" style="background:var(--coral-deep);">JS</div>
+        <div>
+          <div class="rev-meta">
+            <span class="rev-handle">james_s</span>
+            <span class="rev-stars">★★★☆☆</span>
+            <span class="rev-verified">Verified</span>
+          </div>
+          <p class="rev-text">
+            The denim <span class="target-1">is constructed</span> beautifully, I&rsquo;ll grant them that. <span class="target-3">Despite</span> the obvious quality, I found the sizing inconsistent. My usual size <span class="target-2">got changed</span> between seasons without any notice. <span class="target-3">Whereas</span> the fabric itself is excellent, the customer service <span class="target-1">left a lot to be desired</span>. <span class="target-1">My complaint was handled</span> politely, <span class="target-3">although</span> the refund <span class="target-1">wasn&rsquo;t processed</span> quickly enough.
+          </p>
+        </div>
+      </div>
+
+      <div class="review-post">
+        <div class="rev-avatar" style="background:var(--chalk-green);">RT</div>
+        <div>
+          <div class="rev-meta">
+            <span class="rev-handle">riko_t</span>
+            <span class="rev-stars">★★★★☆</span>
+            <span class="rev-verified">Verified</span>
+          </div>
+          <p class="rev-text">
+            I&rsquo;ve worn these twice a week for two years. The colour <span class="target-1">has been maintained</span> remarkably well, <span class="target-3">even though</span> they&rsquo;<span class="target-1">ve been washed</span> over a hundred times. The denim <span class="target-2">hasn&rsquo;t gotten thin</span> the way synthetic blends do. <span class="target-3">However</span>, the break-in period is real &mdash; they <span class="target-1">were stiff</span> for the first few weeks. <span class="target-3">Nevertheless</span>, once <span class="target-1">they&rsquo;re broken in</span>, they fit perfectly.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Quick meaning check</h3>
+      <p>1. What specific problem does james_s describe with sizing?</p>
+      <p>2. What does riko_t say about the colour after two years of use?</p>
+      <p>3. Find two sentences in the reviews that use a contrast connector. What contrast is being made in each?</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Contrast connectors &mdash; same job, different position -->
+  <div class="tab-section" id="notice2">
+    <div class="tab-header study">
+      <span class="tab-num">NOTICE &amp; DISCOVER</span>
+      <h2 class="tab-title">Contrast connectors &mdash; same job, different position</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="notice-box">
+      <h3>Detective work: where do contrast words go?</h3>
+
+      <div class="notice-q">
+        Look at: <em>&ldquo;However, I want to be honest&rdquo;</em> and <em>&ldquo;Despite the obvious quality, I found the sizing inconsistent.&rdquo;</em> Both express contrast with what came before. But <em>however</em> starts a new sentence while <em>despite</em> begins a subordinate clause. What grammatical difference follows each one?
+        <button class="reveal-hint" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal"><em>However</em> is an adverb &mdash; it connects ideas between sentences and is followed by a complete clause (subject + verb). <em>Despite</em> is a preposition &mdash; it introduces a noun phrase (not a full clause): &ldquo;despite the obvious quality&rdquo; = noun phrase. You cannot say &ldquo;despite the quality is obvious&rdquo; &mdash; use &ldquo;although&rdquo; instead for a full clause.</p>
+      </div>
+
+      <div class="notice-q">
+        marta_k writes: <em>&ldquo;Whereas the fabric itself is excellent, the customer service left a lot to be desired.&rdquo;</em> Could you replace <em>whereas</em> with <em>however</em> here without any other changes? Why or why not?
+        <button class="reveal-hint" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">No &mdash; <em>whereas</em> is a conjunction that connects two clauses in a single sentence, directly linking them in a before/after structure. <em>However</em> would require a full stop before it: &ldquo;The fabric is excellent. However, the customer service...&rdquo; Same contrast, different sentence structure.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Now let&rsquo;s name them: contrast connectors -->
+  <div class="tab-section" id="study2">
+    <div class="tab-header study">
+      <span class="tab-num">STUDY</span>
+      <h2 class="tab-title">Now let&rsquo;s name them: contrast connectors</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>2. Expressing contrast: the main connectors</h3>
+      <p class="grammar-sub">Each connector works differently &mdash; the key is knowing what grammatical form follows each one.</p>
+
+      <div class="connector-grid">
+        <div class="connector-card">
+          <span class="word">however</span><span class="pos">adverb</span>
+          <div class="usage">Starts a new sentence or clause. Followed by subject + verb. Usually has a comma after it.</div>
+          <div class="ex">The price is high. <strong>However,</strong> the quality justifies it.</div>
+        </div>
+        <div class="connector-card">
+          <span class="word">although / even though</span><span class="pos">conjunction</span>
+          <div class="usage">Joins two clauses in one sentence. Can go at the start or in the middle. Followed by subject + verb.</div>
+          <div class="ex"><strong>Although</strong> the jeans were expensive, they lasted for years.</div>
+        </div>
+        <div class="connector-card">
+          <span class="word">despite / in spite of</span><span class="pos">preposition</span>
+          <div class="usage">Followed by a noun or noun phrase (NOT a full clause). Can use <em>despite the fact that</em> + clause.</div>
+          <div class="ex"><strong>Despite</strong> the high price, sales have been strong.</div>
+        </div>
+        <div class="connector-card">
+          <span class="word">whereas / while</span><span class="pos">conjunction</span>
+          <div class="usage">Directly compares two contrasting clauses. Often used for simultaneous contrast.</div>
+          <div class="ex"><strong>Whereas</strong> synthetic fabrics fade quickly, natural fibres last longer.</div>
+        </div>
+        <div class="connector-card">
+          <span class="word">on the other hand</span><span class="pos">adverb phrase</span>
+          <div class="usage">Presents the second side of a balanced argument. Always refers back to a point already made.</div>
+          <div class="ex">Fast fashion is cheap. <strong>On the other hand,</strong> it creates enormous waste.</div>
+        </div>
+        <div class="connector-card">
+          <span class="word">nevertheless / nonetheless</span><span class="pos">adverb</span>
+          <div class="usage">Formal. Means &ldquo;despite what was just said, this is still true.&rdquo; Stronger than <em>however</em>.</div>
+          <div class="ex">The break-in period is long. <strong>Nevertheless,</strong> the fit is perfect once worn in.</div>
+        </div>
+      </div>
+
+      <div class="example-row" style="margin-top:10px;">
+        <span class="mark">✗</span>
+        <span class="txt"><em>Despite the quality is high, the returns rate is low.</em>
+          <span class="gloss">Wrong &mdash; <em>despite</em> needs a noun phrase, not a clause. Fix: <strong>Despite the high quality</strong>, the returns rate is low. <em>Or:</em> <strong>Although</strong> the quality is high, the returns rate is low.</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Order of adjectives &mdash; quick review -->
+  <div class="tab-section" id="study3">
+    <div class="tab-header study">
+      <span class="tab-num">STUDY</span>
+      <h2 class="tab-title">Order of adjectives &mdash; quick review</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>3. Order of adjectives before a noun</h3>
+      <p class="grammar-sub">English adjectives follow a fixed order that native speakers feel instinctively, even if they can&rsquo;t always explain why. Most descriptions use only 2&ndash;3 adjectives at most.</p>
+
+      <div class="adj-chain">
+        <div class="adj-box"><div class="num">1</div><div class="category">Opinion</div><div class="examples">beautiful<br>elegant</div></div>
+        <div class="adj-box"><div class="num">2</div><div class="category">Size</div><div class="examples">large<br>tiny</div></div>
+        <div class="adj-box"><div class="num">3</div><div class="category">Age</div><div class="examples">old<br>vintage</div></div>
+        <div class="adj-box"><div class="num">4</div><div class="category">Shape</div><div class="examples">slim<br>wide-leg</div></div>
+        <div class="adj-box"><div class="num">5</div><div class="category">Colour</div><div class="examples">navy<br>faded</div></div>
+        <div class="adj-box"><div class="num">6</div><div class="category">Origin</div><div class="examples">Portuguese<br>Italian</div></div>
+        <div class="adj-box"><div class="num">7</div><div class="category">Material</div><div class="examples">denim<br>silk</div></div>
+      </div>
+
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt">a <strong>beautiful old Portuguese denim</strong> jacket
+          <span class="gloss">Opinion (beautiful) &rarr; age (old) &rarr; origin (Portuguese) &rarr; material (denim)</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt">some <strong>slim navy cotton</strong> trousers
+          <span class="gloss">Shape (slim) &rarr; colour (navy) &rarr; material (cotton)</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✗</span>
+        <span class="txt"><em>a denim beautiful old jacket</em>
+          <span class="gloss">Wrong order &mdash; material before opinion sounds very unnatural. Always: opinion first, material last.</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Past participles: irregular forms matter -->
+  <div class="tab-section" id="pronunciation">
+    <div class="tab-header study">
+      <span class="tab-num">PRONUNCIATION</span>
+      <h2 class="tab-title">Past participles: irregular forms matter</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>Passive voice depends on correct past participles</h3>
+      <p class="grammar-sub">Many common verbs have irregular past participles that must be memorised. Here are the key ones from this week&rsquo;s texts.</p>
+      <div class="table-scroll"><table class="conj-table">
+        <tr><th>Verb</th><th>Past participle</th><th>Passive example</th></tr>
+        <tr><td>grow</td><td><strong>grown</strong> <span class="pronunciation-tag">/ɡrəʊn/</span></td><td>The cotton <strong>is grown</strong> in Portugal.</td></tr>
+        <tr><td>weave</td><td><strong>woven</strong> <span class="pronunciation-tag">/ˈwəʊvən/</span></td><td>The yarn <strong>is woven</strong> into denim.</td></tr>
+        <tr><td>tear</td><td><strong>torn</strong> <span class="pronunciation-tag">/tɔːn/</span></td><td>My jacket <strong>got torn</strong> on a nail.</td></tr>
+        <tr><td>wear</td><td><strong>worn</strong> <span class="pronunciation-tag">/wɔːn/</span></td><td>These jeans <strong>are worn</strong> twice a week.</td></tr>
+        <tr><td>make</td><td><strong>made</strong> <span class="pronunciation-tag">/meɪd/</span></td><td>They <strong>are made</strong> to last.</td></tr>
+        <tr><td>design</td><td><strong>designed</strong> <span class="pronunciation-tag">/dɪˈzaɪnd/</span></td><td>The cut <strong>was designed</strong> in 1968.</td></tr>
+      </table></div>
+      <p style="margin-top:12px; font-size:14.5px;">Note: <em>grown, woven, torn, worn</em> are all monosyllabic &mdash; be careful not to add an extra syllable. Say <em>/ɡrəʊn/</em> not <em>/ˈɡrəʊwɪn/</em>.</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Fabrics, materials & fashion -->
+  <div class="tab-section" id="vocab">
+    <div class="tab-header vocab">
+      <span class="tab-num">VOCABULARY</span>
+      <h2 class="tab-title">Fabrics, materials &amp; fashion</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <h3>1. Fabrics &amp; materials</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card"><span class="word">denim</span><span class="pos">noun</span><div class="def">a strong, usually blue cotton fabric used for jeans and jackets</div><div class="ex">"This denim is woven on vintage looms."</div></div>
+        <div class="vocab-card"><span class="word">linen</span><span class="pos">noun</span><div class="def">a light, natural fabric made from flax; breathable and slightly rough in texture</div><div class="ex">"Linen is grown and processed mainly in Europe and East Asia."</div></div>
+        <div class="vocab-card"><span class="word">velvet</span><span class="pos">noun</span><div class="def">a soft fabric with a short, dense pile that catches the light; often used for formal wear</div><div class="ex">"The jacket was lined with dark green velvet."</div></div>
+        <div class="vocab-card"><span class="word">polyester</span><span class="pos">noun</span><div class="def">a common synthetic (man-made) fabric, often blended with natural fibres</div><div class="ex">"Despite being cheap, polyester gets damaged by high heat."</div></div>
+        <div class="vocab-card"><span class="word">a fibre</span><span class="pos">noun</span><div class="def">a thin thread that forms the base of a fabric; can be natural (cotton, wool) or synthetic</div><div class="ex">"Natural fibres are generally more breathable than synthetic ones."</div></div>
+        <div class="vocab-card"><span class="word">a weave</span><span class="pos">noun</span><div class="def">the way threads are interlocked to form a fabric; determines texture and strength</div><div class="ex">"A tight weave makes the fabric more durable."</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>2. Patterns &amp; textures</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card"><span class="word">striped</span><span class="pos">adjective</span><div class="def">parallel lines of colour running across or along the fabric</div><div class="ex">"A classic blue-and-white striped shirt is made from woven cotton."</div></div>
+        <div class="vocab-card"><span class="word">checked / check</span><span class="pos">adjective / noun</span><div class="def">a regular pattern of squares in two or more contrasting colours</div><div class="ex">"The checked fabric was woven on a traditional loom."</div></div>
+        <div class="vocab-card"><span class="word">plain</span><span class="pos">adjective</span><div class="def">no pattern; a single, solid colour across the whole fabric</div><div class="ex">"Whereas the jacket is floral, the trousers are kept plain."</div></div>
+        <div class="vocab-card"><span class="word">floral</span><span class="pos">adjective</span><div class="def">decorated with a pattern of flowers; common in dresses, blouses, and summer fabrics</div><div class="ex">"The floral dress is printed on a lightweight cotton base."</div></div>
+        <div class="vocab-card"><span class="word">polka dot</span><span class="pos">noun / adjective</span><div class="def">a regular pattern of small, evenly-spaced round dots on a contrasting background</div><div class="ex">"The polka dot scarf is made from Italian silk."</div></div>
+        <div class="vocab-card"><span class="word">paisley</span><span class="pos">noun / adjective</span><div class="def">a curved, teardrop-shaped motif of Persian origin; often seen on scarves and ties</div><div class="ex">"Paisley scarves are traditionally woven in Kashmir and exported worldwide."</div></div>
+        <div class="vocab-card"><span class="word">houndstooth</span><span class="pos">noun / adjective</span><div class="def">a woven pattern of small, irregular checks that resemble dog&rsquo;s teeth; classic in coats and blazers</div><div class="ex">"The houndstooth coat was designed for the 1960s collection and is still being reproduced today."</div></div>
+        <div class="vocab-card"><span class="word">tartan / plaid</span><span class="pos">noun / adjective</span><div class="def">a cross-hatched pattern of coloured stripes, associated with Scottish heritage; <em>tartan</em> (UK) / <em>plaid</em> (US)</div><div class="ex">"Tartan fabric is woven in a specific sequence of coloured threads."</div></div>
+        <div class="vocab-card"><span class="word">camouflage</span><span class="pos">noun / adjective</span><div class="def">irregular patches of colour (usually green, brown, khaki) designed to blend with natural surroundings; now also used as a fashion pattern</div><div class="ex">"The camouflage jacket was originally designed for military use and got adopted by streetwear brands."</div></div>
+        <div class="vocab-card"><span class="word">geometric</span><span class="pos">adjective</span><div class="def">based on precise shapes — triangles, hexagons, diamonds; modern, graphic in feel</div><div class="ex">"A geometric print is usually screen-printed onto the fabric rather than woven in."</div></div>
+        <div class="vocab-card"><span class="word">abstract</span><span class="pos">adjective</span><div class="def">a non-representational pattern with no identifiable shapes; often artistic and irregular</div><div class="ex">"Abstract prints are popular in contemporary fashion because they can be interpreted differently by each wearer."</div></div>
+        <div class="vocab-card"><span class="word">textured</span><span class="pos">adjective</span><div class="def">having a surface that is not smooth; the structure of the fabric itself creates visual or tactile interest</div><div class="ex">"Boucl&eacute; is a textured fabric where the yarn has been looped to create a bumpy surface."</div></div>
+      </div>
+
+      <div style="margin-top:16px; background:#E9F0F5; border-radius:8px; padding:14px 18px;">
+        <p style="font-weight:bold; color:var(--blue-deep); margin:0 0 8px; font-size:14.5px;">📌 Passive connection: notice how many of these are used in passive descriptions</p>
+        <p style="margin:0; font-size:14px;">The fabric <strong>is printed</strong> with a floral design &bull; The pattern <strong>is woven</strong> in &bull; The polka dots <strong>are screen-printed</strong> &bull; The houndstooth check <strong>was designed</strong> in Scotland. Describing patterns almost always uses the passive — the pattern is done <em>to</em> the fabric, not by the fabric.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>3. Production &amp; quality</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card"><span class="word">a seam</span><span class="pos">noun</span><div class="def">the line where two pieces of fabric are sewn together</div><div class="ex">"If a seam gets weakened, the garment is returned to the workshop."</div></div>
+        <div class="vocab-card"><span class="word">a garment</span><span class="pos">noun</span><div class="def">any piece of clothing; a slightly formal or technical term</div><div class="ex">"Each garment is inspected before it leaves the building."</div></div>
+        <div class="vocab-card"><span class="word">sustainable</span><span class="pos">adjective</span><div class="def">designed to avoid depleting natural resources; not harmful to the environment long-term</div><div class="ex">"The brand is known for its sustainable production methods."</div></div>
+        <div class="vocab-card"><span class="word">fast fashion</span><span class="pos">noun (uncountable)</span><div class="def">cheap clothing produced rapidly in large volumes, designed to reflect trends and be replaced quickly</div><div class="ex">"Fast fashion is made to be discarded. Ours is made to last."</div></div>
+        <div class="vocab-card"><span class="word">durability</span><span class="pos">noun</span><div class="def">the ability to withstand wear and last for a long time without breaking down</div><div class="ex">"The high price is justified by the durability of the fabric."</div></div>
+        <div class="vocab-card"><span class="word">a blend</span><span class="pos">noun</span><div class="def">a mixture of two or more types of fibre used to make a fabric</div><div class="ex">"A cotton-polyester blend gets thinner faster than pure cotton."</div></div>
+      </div>
+    </div>
+
+    <!-- Second dialogue: fashion design studio -->
+    <div class="card">
+      <h3>4. A second dialogue: in the design studio</h3>
+      <p>This conversation happens during a product development meeting. Notice: passive questions, passive with different tenses, and get-passive for accidents. The patterns vocabulary also appears naturally.</p>
+
+      <div style="background:var(--paper); border-radius:10px; overflow:hidden; border:1px solid var(--paper-line); margin-top:14px;">
+        <div style="background:var(--blue-deep); padding:12px 20px; display:flex; align-items:center; gap:10px;">
+          <span style="font-size:11px; font-weight:bold; letter-spacing:0.07em; text-transform:uppercase; background:var(--chalk-yellow); color:var(--ink); border-radius:4px; padding:2px 8px;">Dialogue 2</span>
+          <span style="font-family:'Playfair Display','Bookman Old Style',serif; font-size:16px; color:var(--white);">Thornfield Design Studio &mdash; New Collection Meeting</span>
+        </div>
+
+        <div style="display:grid; grid-template-columns:44px 1fr; gap:12px; padding:16px 20px; border-bottom:1px solid var(--paper-line);">
+          <div style="width:40px; height:40px; border-radius:50%; background:#6B4C8A; color:var(--white); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:13px; flex-shrink:0;">DA</div>
+          <div><div style="font-weight:bold; font-size:13.5px; color:var(--ink); margin-bottom:5px;">Diego (Head of Design)</div>
+          <p style="margin:0; font-size:15.5px;">Right, let&rsquo;s talk about the autumn line. The new flannel shirts &mdash; <span class="target-1">have they been approved</span> by the production team yet?</p></div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:44px 1fr; gap:12px; padding:16px 20px; border-bottom:1px solid var(--paper-line); background:var(--white);">
+          <div style="width:40px; height:40px; border-radius:50%; background:var(--chalk-green); color:var(--white); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:13px; flex-shrink:0;">PA</div>
+          <div><div style="font-weight:bold; font-size:13.5px; color:var(--ink); margin-bottom:5px;">Priya (Production Manager)</div>
+          <p style="margin:0; font-size:15.5px;">The plain ones, yes. But the <span class="target-3">tartan</span> versions <span class="target-1">haven&rsquo;t been signed off</span> yet. The colour palette still needs to <span class="target-1">be confirmed</span> by the client.</p></div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:44px 1fr; gap:12px; padding:16px 20px; border-bottom:1px solid var(--paper-line);">
+          <div style="width:40px; height:40px; border-radius:50%; background:#6B4C8A; color:var(--white); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:13px; flex-shrink:0;">DA</div>
+          <div><div style="font-weight:bold; font-size:13.5px; color:var(--ink); margin-bottom:5px;">Diego</div>
+          <p style="margin:0; font-size:15.5px;">And what about the <span class="target-3">floral</span> print blouses? <span class="target-1">Were those printed</span> on the new sustainable base fabric, or the old polyester one?</p></div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:44px 1fr; gap:12px; padding:16px 20px; border-bottom:1px solid var(--paper-line); background:var(--white);">
+          <div style="width:40px; height:40px; border-radius:50%; background:var(--chalk-green); color:var(--white); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:13px; flex-shrink:0;">PA</div>
+          <div><div style="font-weight:bold; font-size:13.5px; color:var(--ink); margin-bottom:5px;">Priya</div>
+          <p style="margin:0; font-size:15.5px;"><span class="target-1">They were printed</span> on the sustainable cotton, as agreed. Though I should mention &mdash; one of the sample runs <span class="target-2">got ruined</span> when the ink got onto the wrong side. It was only three shirts, but we&rsquo;re looking into why it happened.</p></div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:44px 1fr; gap:12px; padding:16px 20px; border-bottom:1px solid var(--paper-line);">
+          <div style="width:40px; height:40px; border-radius:50%; background:#6B4C8A; color:var(--white); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:13px; flex-shrink:0;">DA</div>
+          <div><div style="font-weight:bold; font-size:13.5px; color:var(--ink); margin-bottom:5px;">Diego</div>
+          <p style="margin:0; font-size:15.5px;">That&rsquo;s frustrating. <span class="target-1">Will the process be reviewed</span> before the full run starts?</p></div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:44px 1fr; gap:12px; padding:16px 20px; background:var(--white);">
+          <div style="width:40px; height:40px; border-radius:50%; background:var(--chalk-green); color:var(--white); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:13px; flex-shrink:0;">PA</div>
+          <div><div style="font-weight:bold; font-size:13.5px; color:var(--ink); margin-bottom:5px;">Priya</div>
+          <p style="margin:0; font-size:15.5px;">Yes &mdash; <span class="target-1">a new printing protocol is being developed</span> right now. The <span class="target-3">polka dot</span> and <span class="target-3">paisley</span> blouses <span class="target-1">won&rsquo;t be started</span> until it <span class="target-1">has been tested</span> and approved.</p></div>
+        </div>
+      </div>
+
+      <div style="margin-top:14px; background:#FFF8E0; border-radius:8px; padding:14px 18px;">
+        <p style="font-weight:bold; color:var(--chalk-yellow-deep); margin:0 0 8px; font-size:14.5px;">Dialogue 2 analysis &mdash; what to notice:</p>
+        <ul style="margin:0; padding-left:20px; font-size:14px; line-height:1.75;">
+          <li><strong>Passive questions</strong>: &ldquo;Have they been approved?&rdquo; / &ldquo;Were those printed?&rdquo; / &ldquo;Will the process be reviewed?&rdquo; &mdash; the passive is extremely common in professional meetings when checking the status of things.</li>
+          <li><strong>Present perfect passive</strong> (<em>have been approved / haven&rsquo;t been signed off</em>) describes whether actions are complete yet &mdash; very natural in project updates.</li>
+          <li><strong>Get-passive for accidents</strong>: <em>&ldquo;one of the sample runs got ruined&rdquo;</em> &mdash; Diego uses get-passive for an unplanned, unfortunate event, while using be-passive for planned processes.</li>
+          <li><strong>Present continuous passive</strong>: <em>&ldquo;a new protocol is being developed&rdquo;</em> &mdash; the action is happening right now, still in progress.</li>
+          <li><strong>Pattern vocabulary in context</strong>: tartan, floral, polka dot, paisley &mdash; all appear as adjectives describing the products being made.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Now practise what you&rsquo;ve discovered -->
+  <div class="tab-section" id="exercises">
+    <div class="tab-header study">
+      <span class="tab-num">PRACTICE</span>
+      <h2 class="tab-title">Now practise what you&rsquo;ve discovered</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 1 &middot; Controlled Practice</span>
+      <h4>Transform to passive. Rewrite each sentence using the be-passive.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span class="q-text">Workers spin the cotton into yarn. &rarr; The cotton ______.</span><input type="text" class="blank-input" data-answer="is spun into yarn" placeholder="your answer"></div>
+      <div class="q-row"><span class="q-num">2.</span><span class="q-text">They have designed this jacket for cold climates. &rarr; This jacket ______.</span><input type="text" class="blank-input" data-answer="has been designed for cold climates" placeholder="your answer"></div>
+      <div class="q-row"><span class="q-num">3.</span><span class="q-text">The team will inspect every garment before shipping. &rarr; Every garment ______.</span><input type="text" class="blank-input" data-answer="will be inspected before shipping" placeholder="your answer"></div>
+      <button class="check-btn" onclick="checkExercise(1)">Check my answers</button>
+      <div class="feedback" id="feedback1"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 2 &middot; Be-passive or get-passive?</span>
+      <h4>Choose the most natural form. Type <strong>be</strong> or <strong>get</strong>.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span class="q-text">The fabric <em>___ dyed</em> at low temperatures to preserve the colour. <em>(planned, deliberate process)</em></span><input type="text" class="blank-input" data-answer="is" placeholder="be or get"></div>
+      <div class="q-row"><span class="q-num">2.</span><span class="q-text">Her coat <em>___ caught</em> on a nail and tore. <em>(accident)</em></span><input type="text" class="blank-input" data-answer="got" placeholder="be or get"></div>
+      <div class="q-row"><span class="q-num">3.</span><span class="q-text">He <em>___ fired</em> last week &mdash; no warning at all. <em>(sudden unexpected event)</em></span><input type="text" class="blank-input" data-answer="got" placeholder="be or get"></div>
+      <div class="q-row"><span class="q-num">4.</span><span class="q-text">All garments <em>___ inspected</em> before they leave the factory. <em>(formal, systematic)</em></span><input type="text" class="blank-input" data-answer="are" placeholder="be or get"></div>
+      <button class="check-btn" onclick="checkExercise(2)">Check my answers</button>
+      <div class="feedback" id="feedback2"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 3 &middot; Contrast connectors</span>
+      <h4>Complete with the correct connector: <em>however, although, despite, whereas, nevertheless</em>.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span class="q-text">______ the high price, the jeans have sold out three times this year.</span><input type="text" class="blank-input" data-answer="despite" placeholder="your answer"></div>
+      <div class="q-row"><span class="q-num">2.</span><span class="q-text">The sizing was inconsistent. ______, I would order again.</span><input type="text" class="blank-input" data-answer="however,nevertheless" placeholder="your answer"></div>
+      <div class="q-row"><span class="q-num">3.</span><span class="q-text">______ synthetic blends fade quickly, natural denim deepens in colour.</span><input type="text" class="blank-input" data-answer="whereas,while" placeholder="your answer"></div>
+      <button class="check-btn" onclick="checkExercise(3)">Check my answers</button>
+      <div class="feedback" id="feedback3"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 4 &middot; Adjective order</span>
+      <h4>Put the adjectives in the correct order.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span class="q-text">a (Italian / old / beautiful / silk) scarf &rarr; a ______ scarf</span><input type="text" class="blank-input" data-answer="beautiful old Italian silk" placeholder="your answer"></div>
+      <div class="q-row"><span class="q-num">2.</span><span class="q-text">some (navy / slim / cotton) trousers &rarr; some ______ trousers</span><input type="text" class="blank-input" data-answer="slim navy cotton" placeholder="your answer"></div>
+      <button class="check-btn" onclick="checkExercise(4)">Check my answers</button>
+      <div class="feedback" id="feedback4"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 5 &middot; Vocabulary Matching</span>
+      <h4>Click a word on the left, then its matching definition on the right.</h4>
+      <div class="match-grid" id="matchGrid">
+        <div class="match-item" data-pair="1">a seam</div>
+        <div class="match-item" data-pair="3">able to last without breaking down</div>
+        <div class="match-item" data-pair="2">a garment</div>
+        <div class="match-item" data-pair="4">cheap, trend-driven, disposable clothing</div>
+        <div class="match-item" data-pair="3">durable</div>
+        <div class="match-item" data-pair="1">the line where two pieces of fabric meet</div>
+        <div class="match-item" data-pair="4">fast fashion</div>
+        <div class="match-item" data-pair="2">any item of clothing (formal term)</div>
+      </div>
+      <div class="feedback" id="feedback5"></div>
+    </div>
+  </div>
+
+  <!-- ============ AUTONOMY ============ -->
+
+  <!-- SECTION: Speaking Practice -->
+  <div class="tab-section" id="speaking">
+    <div class="tab-header"><span class="tab-badge tb-speak">SPEAKING PRACTICE</span><h2 class="tab-title">How it's made &mdash; spoken</h2></div>
+    <hr class="tab-rule">
+    <p class="section-intro">The Thornfield article works because the writer keeps the spotlight on the product, not the people &mdash; that's what the passive is for. These tasks train that spotlight in speech. Voice memo app ready.</p>
+
+    <div class="speak-card">
+      <span class="speak-type">Describe &amp; compare</span>
+      <h3>Two garments, one wardrobe</h3>
+      <p>Pick two real items you own &mdash; one cheap and mass-produced, one better-made (or older). Describe and compare them aloud for <strong>90 seconds</strong>, keeping the passive in play:</p>
+      <ul>
+        <li><em>"This one was probably made in&hellip; it's woven from&hellip;"</em></li>
+        <li><em>"The stitching has been repaired twice&hellip;"</em></li>
+        <li>&hellip;and use at least three pattern/fabric words from this week (<em>striped, checked, floral, denim, linen&hellip;</em>) with the adjectives in the right order: <em>a faded blue cotton shirt</em>, not <em>a cotton blue faded shirt</em>.</li>
+      </ul>
+      <div class="speak-how"><strong>How:</strong> Hold the two items while you record &mdash; real objects keep speech concrete. <strong>When you listen back, check:</strong> adjective order first, passives second. Re-record any noun phrase that came out scrambled.</div>
+    </div>
+
+    <div class="speak-card">
+      <span class="speak-type">Retell task</span>
+      <h3>The 45-second brand story</h3>
+      <p>Re-read the Thornfield article in the Context section. Close it. Now retell how their products are made in a <strong>45-second spoken version</strong> from memory &mdash; as if explaining the brand to a friend who asked why it's expensive. The passive should carry the process: <em>"The fabric is woven in&hellip; each piece is checked by hand&hellip;"</em></p>
+      <div class="speak-how"><strong>How:</strong> Record once, listen, re-record tighter. <strong>When you listen back, count:</strong> your passives. A process description with zero passives has the spotlight in the wrong place.</div>
+    </div>
+
+    <div class="speak-card">
+      <span class="speak-type">Sentence challenge</span>
+      <h3>Six words, sixty seconds each</h3>
+      <p>Use each of these items from this week's vocabulary in a spoken sentence about clothes you own or have seen. <strong>60 seconds per word</strong>:</p>
+      <ul>
+        <li><em>denim</em></li>
+        <li><em>linen</em></li>
+        <li><em>a weave</em></li>
+        <li><em>checked</em></li>
+        <li><em>floral</em></li>
+        <li><em>plain</em></li>
+      </ul>
+      <div class="speak-how"><strong>How:</strong> One continuous recording, timer running. <strong>When you listen back, check:</strong> each fabric or pattern word should sit inside a full noun phrase &mdash; <em>a plain white linen shirt</em> &mdash; not float alone.</div>
+    </div>
+
+    <div class="tip-box">
+      <h3>Technique: the weak "was"</h3>
+      <ul>
+        <li>In natural speech, passive auxiliaries go weak: <em>was made</em> sounds like <em>w'z made</em>, <em>been checked</em> like <em>b'n checked</em>. Full-strength auxiliaries make you sound like a textbook &mdash; practise the weak forms.</li>
+        <li>Contrast connectors are spoken with a pause <em>before</em> them: <em>"The fabric is beautiful &mdash; whereas the buttons&hellip;"</em> The pause is the signal; the connector is the label.</li>
+        <li>Don't memorise the adjective-order table for speaking. Memorise three whole phrases you'd actually say (<em>my old grey wool coat</em>) &mdash; the order comes free.</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- SECTION: Listening & Watching -->
+  <div class="tab-section" id="listening">
+    <div class="tab-header"><span class="tab-badge tb-listen">LISTENING &amp; WATCHING</span><h2 class="tab-title">Fashion, production &amp; the passive at work</h2></div>
+    <hr class="tab-rule">
+    <p class="section-intro">"How it's made" content is everywhere in English media &mdash; and it's wall-to-wall passive voice. These sources match this level; each comes with a specific task.</p>
+
+    <div class="media-card">
+      <div class="media-head"><h3>TED-Ed</h3><span class="media-platform">YouTube &middot; ed.ted.com</span></div>
+      <p><strong>Why this week:</strong> Animated explainers on fast fashion, cotton, and what your clothes are made of &mdash; the real-world version of the Thornfield article, narrated clearly, with the process language (<em>is grown, is dyed, is shipped</em>) doing exactly what you studied.</p>
+      <div class="media-task"><strong>Your task:</strong> Watch one episode about clothing or fast fashion, once without subtitles, once with. Write down five passive forms you hear. Then record a 45-second retell of the process &mdash; using at least three of them.</div>
+    </div>
+
+    <div class="media-card">
+      <div class="media-head"><h3>BBC 6 Minute English</h3><span class="media-platform">Podcast &middot; YouTube &middot; bbc.co.uk/learningenglish</span></div>
+      <p><strong>Why this week:</strong> The archive includes episodes on fast fashion, sustainable clothing, and shopping habits &mdash; topical discussion at a measured pace with transcripts, and this week's fabric vocabulary appearing in real context.</p>
+      <div class="media-task"><strong>Your task:</strong> Pick an episode on fashion or shopping. Note 3 new words. Then listen for contrast: every <em>however, whereas, although, on the other hand</em>. Which contrast connector do the hosts actually use most &mdash; and is it the one you use?</div>
+    </div>
+
+    <div class="media-card">
+      <div class="media-head"><h3>Espresso English Podcast</h3><span class="media-platform">Podcast &middot; espressoenglish.net</span></div>
+      <p><strong>Why this week:</strong> Short, focused episodes teaching grammar in context &mdash; including the passive voice. Hearing the rules you studied here explained in a second voice, with fresh examples, is one of the fastest ways to make them stick.</p>
+      <div class="media-task"><strong>Your task:</strong> Find an episode on the passive voice. Shadow the host for 30 seconds &mdash; rhythm and intonation exactly, weak auxiliaries included. Then note one example sentence from the episode and rebuild it aloud about your own clothes.</div>
+    </div>
+  </div>
+
+  <!-- SECTION: Go further: research tasks -->
+  <div class="tab-section" id="autonomy">
+    <div class="tab-header autonomy">
+      <span class="tab-num">EXPLORE ON YOUR OWN</span>
+      <h2 class="tab-title">Go further: research tasks</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="research-card">
+      <span class="research-tag">Language in the wild</span>
+      <h3>Find 3 passive sentences on a clothing brand website</h3>
+      <p>Visit any clothing brand&rsquo;s website &mdash; preferably in their &ldquo;About&rdquo; or &ldquo;Sustainability&rdquo; section. Find three sentences using the passive voice.</p>
+      <ul>
+        <li>Write out each sentence and identify the tense (is made / was designed / has been certified...)</li>
+        <li>Decide: is it a be-passive or a get-passive? Why did the brand choose passive here?</li>
+        <li>Bring your three sentences to Session 1 &mdash; we&rsquo;ll analyse them together.</li>
+      </ul>
+      <span class="link-suggestion">Try: patagonia.com/our-footprint / any brand "About" page</span>
+    </div>
+
+    <div class="research-card">
+      <span class="research-tag">Vocabulary extension</span>
+      <h3>Find 3 more fabric or clothing-production words</h3>
+      <p>You&rsquo;ve learned denim, linen, velvet, polyester, seam, garment. Search for three more words commonly used when discussing clothing production or sustainability.</p>
+      <ul>
+        <li>Write each word in a sentence using the passive voice.</li>
+        <li>Bonus: write a contrast sentence using <em>however</em>, <em>whereas</em>, or <em>despite</em>.</li>
+      </ul>
+      <span class="link-suggestion">Try: a fashion glossary or textile industry website</span>
+    </div>
+  </div>
+
+  <!-- SECTION: Try it yourself &mdash; before class -->
+  <div class="tab-section" id="activate">
+    <div class="tab-header activate">
+      <span class="tab-num">A TASTE OF ACTIVATE</span>
+      <h2 class="tab-title">Try it yourself &mdash; before class</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="activate-box">
+      <h3>Mini-task: describe something you&rsquo;re wearing</h3>
+      <p>Look at what you&rsquo;re wearing right now (or think of a favourite item of clothing). Write <strong>4&ndash;5 sentences</strong> describing it, using:</p>
+      <ul style="margin:10px 0 14px; padding-left:20px;">
+        <li>at least <strong>two passive sentences</strong> (be-passive or get-passive) describing how it was made, how it&rsquo;s worn, or what could happen to it</li>
+        <li>at least <strong>one contrast</strong> using <em>however, although, despite</em>, or <em>whereas</em></li>
+        <li>at least <strong>two adjectives in the correct order</strong> before a noun</li>
+      </ul>
+      <textarea class="response-box" id="freeWriting" placeholder="Write your 4–5 sentences here..."></textarea>
+      <div class="word-count" id="wordCount">0 words</div>
+    </div>
+
+    <div class="card">
+      <h3>Bring this to class</h3>
+      <p>In Session 1, you&rsquo;ll share your description with a partner, who will act as a journalist and ask follow-up questions &mdash; in the passive voice only.</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Everything from this week, on one page -->
+  <div class="tab-section" id="reference">
+    <div class="tab-header vocab">
+      <span class="tab-num">QUICK REFERENCE</span>
+      <h2 class="tab-title">Everything from this week, on one page</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <div class="table-scroll"><table class="ref-table">
+        <tr><th>Structure</th><th>Form</th><th>Key use</th><th>Example</th></tr>
+        <tr><td>Be-passive</td><td>be + past participle</td><td>Neutral, factual; all tenses; formal &amp; informal</td><td>The fabric is woven by hand.</td></tr>
+        <tr><td>Get-passive</td><td>get + past participle</td><td>Accidental, dynamic, change of state; mostly informal/spoken</td><td>My jacket got torn on a nail.</td></tr>
+        <tr><td>However / nevertheless</td><td>adverb + comma + clause</td><td>Contrast between sentences</td><td>It is expensive. However, it lasts.</td></tr>
+        <tr><td>Although / even though</td><td>conjunction + full clause</td><td>Contrast within a sentence</td><td>Although it is expensive, it lasts.</td></tr>
+        <tr><td>Despite / in spite of</td><td>preposition + noun phrase</td><td>Contrast with a noun, not a clause</td><td>Despite the price, it sells well.</td></tr>
+        <tr><td>Whereas / while</td><td>conjunction + clause</td><td>Direct side-by-side contrast</td><td>Whereas cotton breathes, polyester doesn&rsquo;t.</td></tr>
+        <tr><td>Adjective order</td><td>Opinion &rarr; Size &rarr; Age &rarr; Shape &rarr; Colour &rarr; Origin &rarr; Material</td><td>Pre-noun adjective sequence</td><td>a beautiful old Italian silk scarf</td></tr>
+      </table></div>
+    </div>
+
+    <div class="card">
+      <h3>Vocabulary you should now recognise</h3>
+      <div class="chip-row">
+        <span class="chip">denim</span><span class="chip">linen</span><span class="chip">velvet</span><span class="chip">polyester</span>
+        <span class="chip">fibre</span><span class="chip">weave</span><span class="chip">seam</span><span class="chip">garment</span>
+        <span class="chip">sustainable</span><span class="chip">fast fashion</span><span class="chip">durability</span><span class="chip">blend</span>
+        <span class="chip">striped</span><span class="chip">checked</span><span class="chip">plain</span><span class="chip">floral</span>
+        <span class="chip">polka dot</span><span class="chip">paisley</span><span class="chip">houndstooth</span><span class="chip">tartan</span>
+        <span class="chip">camouflage</span><span class="chip">geometric</span><span class="chip">abstract</span><span class="chip">textured</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapup">
+    <h3>Before Session 1, make sure you can&hellip;</h3>
+    <ul>
+      <li>Explain the difference between active and passive voice, and when to choose each</li>
+      <li>Form the be-passive in at least four tenses (present simple, past simple, present perfect, future)</li>
+      <li>Explain why &ldquo;by + agent&rdquo; is usually omitted, and when to include it</li>
+      <li>Name two verbs that CANNOT be made passive, and explain why</li>
+      <li>Explain the difference between be-passive and get-passive, with one example of each</li>
+      <li>Use <em>despite</em> correctly (with a noun phrase, NOT a full clause)</li>
+      <li>Distinguish <em>whereas</em> (joins clauses) from <em>however</em> (starts a new sentence)</li>
+      <li>Put a list of three adjectives in the correct order before a noun</li>
+      <li>Name and describe at least six fabric patterns (e.g. floral, paisley, houndstooth, tartan&hellip;)</li>
+      <li>Pronounce <em>woven, grown, torn</em> correctly (monosyllabic past participles)</li>
+      <li>Have your 4&ndash;5 sentence clothing description ready to share</li>
+      <li>Bring at least one passive sentence from a real brand website to Session 1</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- SECTION: Footer - Creator & Copyright -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p class="footer-copy">&copy; 2026 Bahar Esmaeelzadeh &middot; All rights reserved</p>
+    <p class="footer-line">Designed and created for English learners by Bahar Esmaeelzadeh.</p>
+    <p class="footer-links">
+      <a href="mailto:bahar.esmz.en@gmail.com">&#128231; bahar.esmz.en@gmail.com</a>
+      <span class="footer-dot">&middot;</span>
+      <a href="https://www.linkedin.com/in/bahar-esmaeelzadeh-650b98198" target="_blank" rel="noopener">&#128188; LinkedIn</a>
+    </p>
+    <p class="footer-note">If you found this helpful, feel free to get in touch.</p>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    document.getElementById('progressFill').style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+  });
+
+  // Odd one out
+  const selections = {};
+  document.querySelectorAll('.material-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const group = item.dataset.group;
+      if (selections[group]) selections[group].classList.remove('selected-odd');
+      selections[group] = item;
+      item.classList.add('selected-odd');
+    });
+  });
+  function revealOdd(group, explanation) {
+    const revealEl = document.getElementById('reveal' + group);
+    revealEl.textContent = explanation;
+    revealEl.classList.add('show');
+    document.querySelectorAll(`.material-item[data-group="${group}"]`).forEach(el => {
+      if (el.dataset.odd === 'true') el.classList.add('is-odd');
+    });
+  }
+
+  // Exercises
+  function checkExercise(num) {
+    const ex = [...document.querySelectorAll('.exercise')].find(e => {
+      const btn = e.querySelector('.check-btn');
+      return btn && (btn.getAttribute('onclick') === `checkExercise(${num})` || btn.getAttribute('onclick') === `checkExercise('${num}')`);
+    });
+    const inputs = ex.querySelectorAll('.blank-input');
+    let correct = 0;
+    inputs.forEach(input => {
+      const answers = input.dataset.answer.split(',').map(a => a.trim().toLowerCase());
+      if (answers.includes(input.value.trim().toLowerCase())) {
+        correct++; input.style.borderColor = '#1F3A2E';
+      } else { input.style.borderColor = '#B14B34'; }
+    });
+    const fb = document.getElementById('feedback' + num);
+    fb.classList.add('show');
+    if (correct === inputs.length) {
+      fb.classList.remove('bad'); fb.classList.add('good');
+      fb.textContent = `All ${inputs.length} correct! Great work.`;
+    } else {
+      fb.classList.remove('good'); fb.classList.add('bad');
+      fb.textContent = `${correct} of ${inputs.length} correct. Check the red-bordered answers and try again.`;
+    }
+  }
+
+  // MC exercise (none in this file, pattern kept for consistency)
+
+  // Matching
+  function setupMatching(gridId, pairAttr, feedbackId, totalPairs) {
+    let first = null, count = 0;
+    const grid = document.getElementById(gridId);
+    if (!grid) return;
+    grid.querySelectorAll('.match-item').forEach(item => {
+      item.addEventListener('click', () => {
+        if (item.classList.contains('matched')) return;
+        if (!first) { first = item; item.classList.add('selected'); }
+        else if (first === item) { first.classList.remove('selected'); first = null; }
+        else {
+          if (first.dataset[pairAttr] === item.dataset[pairAttr]) {
+            first.classList.remove('selected'); first.classList.add('matched');
+            item.classList.add('matched'); count++;
+            first = null;
+            const fb = document.getElementById(feedbackId);
+            fb.classList.add('show'); fb.classList.remove('bad'); fb.classList.add('good');
+            fb.textContent = count === totalPairs ? 'All matched! Great vocabulary work.' : `${count} of ${totalPairs} pairs matched. Keep going!`;
+          } else {
+            const wrong = item;
+            wrong.classList.add('wrong-flash');
+            setTimeout(() => { first.classList.remove('selected'); wrong.classList.remove('wrong-flash'); first = null; }, 500);
+          }
+        }
+      });
+    });
+  }
+  setupMatching('matchGrid', 'pair', 'feedback5', 4);
+
+  document.getElementById('freeWriting').addEventListener('input', e => {
+    const words = e.target.value.trim().split(/\s+/).filter(w => w.length > 0);
+    document.getElementById('wordCount').textContent = (e.target.value.trim() === '' ? 0 : words.length) + ' words';
+  });
+
+/* Site frame (added): contents panel, back-to-top, table scroll hints */
+(function(){
+  var panel=document.getElementById('navPanel'),ov=document.getElementById('navOverlay'),
+      ham=document.getElementById('navHamburger'),closeB=document.getElementById('navClose'),
+      links=document.getElementById('navPanelLinks');
+  document.querySelectorAll('.toc a').forEach(function(a){
+    var n=document.createElement('a');
+    n.href=a.getAttribute('href');
+    n.textContent=a.textContent.replace(/^\s*\d+[a-z]?\.\s*/,'');
+    links.appendChild(n);
+  });
+  function openP(){panel.classList.add('open');ov.classList.add('open');ham.setAttribute('aria-expanded','true');panel.setAttribute('aria-hidden','false');}
+  function closeP(){panel.classList.remove('open');ov.classList.remove('open');ham.setAttribute('aria-expanded','false');panel.setAttribute('aria-hidden','true');}
+  ham.addEventListener('click',function(){panel.classList.contains('open')?closeP():openP();});
+  closeB.addEventListener('click',closeP);
+  ov.addEventListener('click',closeP);
+  links.addEventListener('click',function(e){if(e.target.tagName==='A')closeP();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeP();});
+  document.getElementById('navTopBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  function hints(){document.querySelectorAll('.table-scroll').forEach(function(w){
+    if(w.scrollWidth>w.clientWidth+2){w.classList.add('has-overflow');}else{w.classList.remove('has-overflow');}
+  });}
+  window.addEventListener('resize',hints);window.addEventListener('load',hints);hints();
+  document.querySelectorAll('.table-scroll').forEach(function(w){
+    w.addEventListener('scroll',function(){if(w.scrollLeft>12)w.classList.remove('has-overflow');},{passive:true});
+  });
+})();
+
+</script>
+</body>
+</html>

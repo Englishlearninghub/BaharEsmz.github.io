@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet">
+<title>Grade 7 · Week 1 — Second Conditional & Wish | Full Reference</title>
+<style>
+  :root {
+    --ink: #28344A;
+    --ink-soft: #4A5775;
+    --paper: #F7F3E8;
+    --paper-line: #E3DCC8;
+    --chalk-green: #1F3A2E;
+    --chalk-green-light: #2E5240;
+    --chalk-yellow: #E8B84B;
+    --chalk-yellow-deep: #C99423;
+    --coral: #D8694F;
+    --coral-deep: #B14B34;
+    --blue: #3D6E8C;
+    --blue-deep: #285067;
+    --white: #FFFFFF;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper);
+    background-image: repeating-linear-gradient(transparent, transparent 35px, var(--paper-line) 35px, var(--paper-line) 36px);
+    color: var(--ink); font-family:'Inter',Calibri,Arial,sans-serif; font-size: 17px; line-height: 1.65;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px 80px; }
+
+  .masthead { background: var(--chalk-green); color: var(--paper); margin: 0 -24px 0; padding: 38px 24px 30px; position: relative; overflow: hidden; }
+  .masthead::after { content: ""; position: absolute; right: -60px; top: -60px; width: 220px; height: 220px; border-radius: 50%; background: var(--chalk-green-light); opacity: 0.5; }
+  .masthead-inner { max-width: 872px; margin: 0 auto; position: relative; z-index: 1; }
+  .eyebrow { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--chalk-yellow); margin: 0 0 10px; }
+  h1.title { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 36px; line-height: 1.2; margin: 0 0 14px; max-width: 640px; }
+  .masthead-meta { display: flex; gap: 24px; flex-wrap: wrap; font-size: 14px; color: #D9E5DC; margin-top: 16px; }
+  .masthead-meta span { font-weight: bold; color: var(--paper); }
+
+  .toc { background: var(--white); border-radius: 10px; margin-top: -18px; padding: 20px 26px; box-shadow: 0 4px 16px rgba(40,52,74,0.12); position: relative; z-index: 2; }
+  .toc h2 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 16px; margin: 0 0 10px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; }
+  .toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 30px; font-size: 14px; }
+  .toc li { margin-bottom: 6px; }
+  .toc a { color: var(--coral-deep); text-decoration: none; font-weight: bold; }
+  .toc a:hover { text-decoration: underline; }
+
+  .tab-section { margin-top: 46px; }
+  .tab-header { display: flex; align-items: center; gap: 14px; margin-bottom: 4px; flex-wrap: wrap; }
+  .tab-num { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 14px; font-weight: bold; color: var(--white); background: var(--chalk-green); border-radius: 6px; padding: 6px 14px; white-space: nowrap; }
+  .tab-header.study .tab-num { background: var(--coral-deep); }
+  .tab-header.activate .tab-num { background: var(--chalk-yellow-deep); color: var(--ink); }
+  .tab-header.vocab .tab-num { background: var(--blue-deep); }
+  .tab-header.autonomy .tab-num { background: #6B4C8A; }
+  h2.tab-title { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 24px; margin: 0; color: var(--ink); }
+  .tab-rule { border: none; border-top: 2px solid var(--paper-line); margin: 14px 0 22px; }
+
+  .card { background: var(--white); border-radius: 10px; padding: 22px 26px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(40,52,74,0.08); }
+  .card h3 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 19px; margin: 0 0 10px; color: var(--chalk-green); }
+  .card p { margin: 0 0 10px; }
+  .card p:last-child { margin-bottom: 0; }
+
+  .hook-box { background: var(--chalk-green); color: var(--paper); border-radius: 10px; padding: 26px 28px; margin-bottom: 20px; }
+  .hook-box h3 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; margin: 0 0 12px; color: var(--chalk-yellow); font-size: 19px; }
+  .hook-box p { margin: 0 0 10px; color: #E7EFE9; }
+
+  .rank-list { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+  .rank-item { background: var(--chalk-green-light); border: 2px solid transparent; border-radius: 8px; padding: 14px 16px; cursor: pointer; display: flex; align-items: center; gap: 14px; transition: all 0.15s ease; }
+  .rank-item:hover { border-color: var(--chalk-yellow); }
+  .rank-item.placed { border-color: var(--chalk-yellow); }
+  .rank-badge { width: 30px; height: 30px; border-radius: 50%; background: var(--chalk-yellow); color: var(--ink); font-weight: bold; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; visibility: hidden; }
+  .rank-item.placed .rank-badge { visibility: visible; }
+  .rank-text { color: var(--paper); font-size: 15px; }
+  .rank-order-note { margin-top: 14px; font-size: 14px; color: #C7D6CB; }
+  .rank-reset { background: none; border: 1px solid var(--chalk-yellow); color: var(--chalk-yellow); border-radius: 5px; padding: 4px 12px; font-size: 12px; cursor: pointer; margin-top: 10px; }
+  .rank-reset:hover { background: var(--chalk-yellow); color: var(--ink); }
+
+  .realia { background: var(--white); border-radius: 10px; padding: 0; margin-bottom: 20px; box-shadow: 0 4px 16px rgba(40,52,74,0.12); overflow: hidden; border: 1px solid var(--paper-line); }
+  .realia-header { background: var(--blue-deep); color: var(--white); padding: 16px 26px; display: flex; align-items: center; gap: 12px; }
+  .realia-header .doctype { font-size: 11px; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; background: var(--white); color: var(--blue-deep); border-radius: 4px; padding: 3px 9px; }
+  .realia-header .docname { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 18px; }
+  .realia-body { padding: 24px 28px; }
+  .realia-body p { margin: 0 0 14px; }
+  .realia-body .signoff { font-style: italic; color: var(--ink-soft); margin-top: 18px; }
+  .interview-q { font-weight: bold; color: var(--blue-deep); margin-bottom: 4px; }
+
+  .target-1 { background: #FBEDE9; color: var(--coral-deep); padding: 1px 4px; border-radius: 3px; font-weight: bold; }
+  .target-2 { background: #E9F0F5; color: var(--blue-deep); padding: 1px 4px; border-radius: 3px; font-weight: bold; }
+  .target-3 { background: #F2EBF7; color: #6B4C8A; padding: 1px 4px; border-radius: 3px; font-weight: bold; }
+
+  .forum-thread { padding: 0; }
+  .forum-post { padding: 18px 28px; border-bottom: 1px solid var(--paper-line); }
+  .forum-post:last-child { border-bottom: none; }
+  .forum-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .forum-avatar { width: 34px; height: 34px; border-radius: 50%; background: var(--chalk-yellow); color: var(--ink); display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px; flex-shrink: 0; }
+  .forum-name { font-weight: bold; font-size: 14px; color: var(--ink); }
+  .forum-tag { font-size: 11px; color: var(--ink-soft); background: var(--paper); border-radius: 4px; padding: 2px 8px; }
+  .forum-text { font-size: 15.5px; margin-left: 44px; }
+  .forum-likes { font-size: 12px; color: var(--ink-soft); margin-left: 44px; margin-top: 6px; }
+
+  .notice-box { background: #FFF8E8; border: 2px dashed var(--chalk-yellow-deep); border-radius: 10px; padding: 20px 26px; margin-bottom: 20px; }
+  .notice-box h3 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 18px; margin: 0 0 12px; color: var(--chalk-yellow-deep); }
+  .notice-q { margin-bottom: 12px; padding-left: 28px; position: relative; }
+  .notice-q::before { content: "?"; position: absolute; left: 0; top: -2px; width: 20px; height: 20px; border-radius: 50%; background: var(--chalk-yellow-deep); color: var(--white); font-size: 13px; font-weight: bold; text-align: center; line-height: 20px; }
+  .notice-reveal { margin-top: 6px; font-size: 14px; color: var(--ink-soft); font-style: italic; border-left: 3px solid var(--chalk-yellow-deep); padding-left: 10px; display: none; }
+  .reveal-btn { background: none; border: 1px solid var(--chalk-yellow-deep); color: var(--chalk-yellow-deep); border-radius: 5px; padding: 3px 10px; font-size: 12px; cursor: pointer; margin-top: 4px; }
+  .reveal-btn:hover { background: var(--chalk-yellow-deep); color: var(--white); }
+
+  .grammar-box { background: var(--white); border-radius: 10px; padding: 24px 28px; margin-bottom: 22px; box-shadow: 0 2px 10px rgba(40,52,74,0.08); }
+  .grammar-box h3 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 21px; margin: 0 0 6px; color: var(--coral-deep); }
+  .grammar-sub { font-size: 14px; color: var(--ink-soft); margin: 0 0 18px; font-style: italic; }
+
+  .example-row { display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start; margin-bottom: 10px; padding: 10px 14px; background: var(--paper); border-radius: 8px; }
+  .example-row .mark { font-weight: bold; color: var(--coral-deep); font-size: 18px; }
+  .example-row .txt strong { color: var(--chalk-green); }
+  .example-row .gloss { display: block; font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
+  .example-row .src { display: block; font-size: 12px; color: var(--blue-deep); margin-top: 4px; }
+
+  .rule-pill { display: inline-block; background: var(--chalk-yellow); color: var(--ink); font-weight: bold; font-size: 13px; border-radius: 6px; padding: 4px 10px; margin: 4px 6px 4px 0; }
+
+  table.conj-table { width: 100%; border-collapse: collapse; margin: 14px 0 6px; font-size: 15px; }
+  table.conj-table th { background: var(--chalk-green); color: var(--paper); padding: 8px 12px; text-align: left; font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 14px; }
+  table.conj-table td { padding: 8px 12px; border-bottom: 1px solid var(--paper-line); }
+  table.conj-table tr:nth-child(even) td { background: var(--paper); }
+
+  .pronunciation-tag { display: inline-block; font-family: "Courier New", monospace; font-size: 13px; background: var(--ink); color: var(--paper); border-radius: 4px; padding: 2px 8px; margin-left: 6px; }
+
+  .timeline-visual { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 18px 0; padding: 20px; background: var(--paper); border-radius: 8px; flex-wrap: wrap; }
+  .timeline-block { background: var(--white); border: 2px solid var(--blue-deep); border-radius: 8px; padding: 12px 18px; font-weight: bold; color: var(--blue-deep); font-size: 15px; text-align: center; }
+  .timeline-arrow { font-size: 20px; color: var(--ink-soft); font-weight: bold; }
+
+  .wish-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 14px 0; }
+  .wish-col { padding: 16px 18px; border-radius: 8px; }
+  .wish-col.primary { background: #E3F0E5; }
+  .wish-col.secondary { background: #FBEDE9; }
+  .wish-col h4 { margin: 0 0 10px; font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 16px; }
+  .wish-col.primary h4 { color: var(--chalk-green); }
+  .wish-col.secondary h4 { color: var(--coral-deep); }
+  .wish-col p { font-size: 14px; margin: 0 0 8px; }
+
+  .vocab-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 14px 0; }
+  .vocab-card { background: var(--paper); border-radius: 8px; padding: 14px 16px; }
+  .vocab-card .word { font-weight: bold; color: var(--blue-deep); font-size: 16px; }
+  .vocab-card .pos { font-size: 11px; color: var(--ink-soft); text-transform: uppercase; margin-left: 6px; }
+  .vocab-card .def { font-size: 14px; margin-top: 4px; }
+  .vocab-card .ex { font-size: 13px; color: var(--ink-soft); margin-top: 4px; font-style: italic; }
+
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+  .chip { background: var(--paper); border: 1px solid var(--paper-line); border-radius: 999px; padding: 6px 14px; font-size: 14px; color: var(--ink); }
+  .chip strong { color: var(--coral-deep); }
+
+  .exercise { background: var(--white); border-radius: 10px; padding: 22px 26px; margin-bottom: 18px; box-shadow: 0 2px 10px rgba(40,52,74,0.08); }
+  .exercise-label { display: inline-block; font-size: 12px; font-weight: bold; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white); background: var(--chalk-green); border-radius: 5px; padding: 3px 10px; margin-bottom: 10px; }
+  .exercise h4 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 17px; margin: 0 0 12px; color: var(--ink); }
+  .q-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+  .q-num { font-weight: bold; color: var(--coral-deep); min-width: 22px; }
+  .q-text { flex: 1; min-width: 220px; }
+  .blank-input { border: none; border-bottom: 2px solid var(--chalk-yellow-deep); background: var(--paper); font-family:'Inter',Calibri,sans-serif; font-size: 15px; padding: 4px 8px; width: 190px; color: var(--ink); }
+  .blank-input:focus { outline: none; border-color: var(--coral-deep); }
+
+  .check-btn { background: var(--chalk-yellow); color: var(--ink); border: none; border-radius: 6px; padding: 9px 20px; font-weight: bold; font-size: 14px; cursor: pointer; margin-top: 8px; }
+  .check-btn:hover { background: var(--chalk-yellow-deep); }
+
+  .feedback { margin-top: 12px; font-size: 14px; border-radius: 6px; padding: 10px 14px; display: none; }
+  .feedback.show { display: block; }
+  .feedback.good { background: #E3F0E5; color: var(--chalk-green); }
+  .feedback.bad { background: #F8E4DE; color: var(--coral-deep); }
+
+  .mc-opt { display: block; background: var(--paper); border: 2px solid var(--paper-line); border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; cursor: pointer; font-size: 15px; transition: border-color 0.15s ease; }
+  .mc-opt:hover { border-color: var(--chalk-yellow-deep); }
+  .mc-opt.correct-flash { border-color: var(--chalk-green); background: #E3F0E5; }
+  .mc-opt.wrong-flash { border-color: var(--coral-deep); background: #F8E4DE; }
+  .mc-opt input { margin-right: 10px; }
+
+  .match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0; }
+  .match-item { background: var(--paper); border-radius: 8px; padding: 10px 14px; font-size: 14.5px; cursor: pointer; border: 2px solid transparent; transition: all 0.15s ease; }
+  .match-item.selected { border-color: var(--chalk-yellow-deep); }
+  .match-item.matched { border-color: var(--chalk-green); background: #E3F0E5; }
+
+  .builder-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; align-items: center; }
+  .builder-chip { background: var(--paper); border: 2px solid var(--paper-line); border-radius: 6px; padding: 8px 14px; font-size: 14px; cursor: pointer; }
+  .builder-chip.used { opacity: 0.35; cursor: default; }
+  .builder-slot { display: inline-block; min-width: 70px; border-bottom: 2px dashed var(--chalk-yellow-deep); padding: 4px 8px; font-size: 14px; color: var(--ink-soft); }
+  .builder-slot.filled { border-bottom-style: solid; color: var(--ink); font-weight: bold; }
+
+  .activate-box { background: var(--chalk-yellow); border-radius: 10px; padding: 26px 28px; margin-bottom: 20px; }
+  .activate-box h3 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; margin: 0 0 12px; color: var(--ink); font-size: 19px; }
+  .activate-box p { color: var(--ink); margin: 0 0 10px; }
+  textarea.response-box { width: 100%; min-height: 110px; border-radius: 8px; border: 2px solid var(--chalk-yellow-deep); padding: 12px 14px; font-family:'Inter',Calibri,sans-serif; font-size: 15px; resize: vertical; background: var(--white); color: var(--ink); }
+  textarea.response-box:focus { outline: none; border-color: var(--coral-deep); }
+  .word-count { font-size: 12px; color: var(--ink-soft); margin-top: 6px; text-align: right; }
+
+  .research-card { background: #F2EBF7; border-radius: 10px; padding: 22px 26px; margin-bottom: 18px; border: 1px solid #DCC8EA; }
+  .research-card h3 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 18px; margin: 0 0 10px; color: #6B4C8A; }
+  .research-card ul { margin: 10px 0; padding-left: 22px; }
+  .research-card li { margin-bottom: 6px; }
+  .research-tag { display: inline-block; font-size: 11px; font-weight: bold; letter-spacing: 0.05em; text-transform: uppercase; background: #6B4C8A; color: var(--white); border-radius: 4px; padding: 3px 9px; margin-bottom: 10px; }
+  .link-suggestion { display: inline-block; background: var(--white); border: 1px solid #DCC8EA; border-radius: 6px; padding: 6px 12px; font-size: 13px; margin: 4px 6px 4px 0; color: #6B4C8A; }
+
+  .ref-table-wrap { overflow-x: auto; }
+  table.ref-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 14px 0; }
+  table.ref-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 13.5px; }
+  table.ref-table td { padding: 10px 14px; border-bottom: 1px solid var(--paper-line); vertical-align: top; }
+  table.ref-table tr:nth-child(even) td { background: var(--paper); }
+
+  .wrapup { background: var(--ink); color: var(--paper); border-radius: 10px; padding: 24px 28px; margin-top: 40px; }
+  .wrapup h3 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; color: var(--chalk-yellow); margin: 0 0 10px; font-size: 18px; }
+  .wrapup ul { margin: 0; padding-left: 20px; }
+  .wrapup li { margin-bottom: 6px; }
+
+  .progress-track { position: sticky; top: 0; height: 5px; background: var(--paper-line); z-index: 50; }
+  .progress-fill { height: 100%; width: 0%; background: var(--coral); transition: width 0.1s ease; }
+
+  @media (max-width: 600px) {
+    h1.title { font-size: 26px; }
+    .card, .grammar-box, .exercise, .hook-box, .activate-box, .research-card { padding: 18px 18px; }
+    .vocab-grid, .match-grid, .wish-cols { grid-template-columns: 1fr; }
+    .toc ol { columns: 1; }
+  }
+
+/* ============================================================
+   SITE FRAME (added): fixed top nav + progress bar, slide-out
+   contents panel with creator branding, sticky section headers,
+   responsive & overflow fixes, footer, speaking/listening cards
+   ============================================================ */
+:root{--navh:52px;}
+html{scroll-behavior:smooth;}
+body{overflow-x:hidden;padding-top:calc(var(--navh) + 4px);}
+[id]{scroll-margin-top:calc(var(--navh) + 20px);}
+img,svg,table{max-width:100%;}
+.wrap p,.wrap li,.wrap td,.wrap th,.wrap h1,.wrap h2,.wrap h3{overflow-wrap:break-word;word-break:break-word;}
+.masthead{margin-left:0;margin-right:0;}
+.debate-band{margin-left:0;margin-right:0;}
+
+/* Progress bar: fixed, always visible below the nav */
+.progress-track{position:fixed;top:var(--navh);left:0;right:0;height:4px;z-index:120;}
+
+/* Top navigation bar */
+.nav-bar{position:fixed;top:0;left:0;right:0;height:var(--navh);background:var(--chalk-green);color:#FFFFFF;display:flex;align-items:center;gap:10px;padding:0 12px;z-index:130;box-shadow:0 2px 12px rgba(0,0,0,.20);}
+.nav-btn{min-width:44px;min-height:44px;background:transparent;border:none;color:#FFFFFF;font-size:20px;cursor:pointer;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',Arial,sans-serif;transition:background .15s;}
+.nav-btn:hover{background:rgba(255,255,255,.14);}
+.nav-top{font-size:13px;font-weight:700;letter-spacing:.03em;white-space:nowrap;padding:0 10px;}
+.nav-brand{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.25;}
+.nav-brand-week{font-family:'Inter',Arial,sans-serif;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;opacity:.75;}
+.nav-brand-title{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+/* Slide-out contents panel */
+.nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .25s;z-index:135;}
+.nav-overlay.open{opacity:1;pointer-events:auto;}
+.nav-panel{position:fixed;top:0;bottom:0;left:0;width:min(330px,88vw);background:#FFFFFF;z-index:140;transform:translateX(-103%);transition:transform .28s ease;display:flex;flex-direction:column;box-shadow:6px 0 28px rgba(0,0,0,.22);}
+.nav-panel.open{transform:translateX(0);}
+.nav-panel-head{display:flex;align-items:center;justify-content:space-between;padding:8px 10px 8px 20px;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);border-bottom:1px solid var(--paper-line);}
+.nav-panel-head .nav-btn{color:var(--ink);font-size:16px;}
+.nav-panel-links{flex:1;overflow-y:auto;padding:10px 8px;}
+.nav-panel-links a{display:flex;align-items:center;min-height:44px;padding:6px 14px;border-radius:8px;text-decoration:none;color:var(--ink);font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:600;line-height:1.4;}
+.nav-panel-links a:hover{background:var(--paper);color:var(--coral-deep);}
+/* Branding zone: visually separated from navigation */
+.nav-panel-brand{border-top:2px solid var(--paper-line);background:var(--paper);padding:16px 20px 18px;}
+.nav-panel-brand .brand-name{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.nav-panel-brand .brand-line{font-family:'Inter',Arial,sans-serif;font-size:12.5px;color:var(--ink-soft);margin-bottom:10px;line-height:1.55;}
+.nav-panel-brand a{display:flex;align-items:center;min-height:40px;font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--coral-deep);text-decoration:none;font-weight:600;}
+.nav-panel-brand a:hover{text-decoration:underline;}
+.nav-panel-brand .brand-copy{margin-top:10px;font-family:'Inter',Arial,sans-serif;font-size:11.5px;color:var(--ink-soft);}
+
+/* Sticky section headers: current section title stays visible */
+.tab-header{position:sticky;top:calc(var(--navh) + 4px);z-index:60;background:var(--paper);padding:10px 0 8px;}
+
+/* Scrollable table wrapper with mobile hint */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;}
+.table-scroll table{max-width:none;}
+.table-scroll.has-overflow{background:linear-gradient(to left,rgba(0,0,0,.12),rgba(0,0,0,0) 26px) right center / 26px 100% no-repeat;}
+.table-scroll.has-overflow::before{content:'scroll \2192';display:block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--ink-soft);text-align:right;padding:0 6px 4px;}
+
+/* Speaking & Listening sections */
+.tb-speak{background:var(--chalk-green-light);color:#FFFFFF;}
+.tb-listen{background:var(--coral-deep);color:#FFFFFF;}
+.section-intro{font-family:'Inter',Arial,sans-serif;font-size:14.5px;color:var(--ink-soft);margin:0 0 18px;line-height:1.65;}
+.speak-card{background:#FFFFFF;border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.07);border-left:4px solid var(--chalk-green-light);}
+.speak-type{display:inline-block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--chalk-green-light);margin-bottom:8px;}
+.speak-card h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0 0 10px;color:var(--ink);}
+.speak-card p{margin:0 0 10px;}
+.speak-card ul{margin:0 0 10px 20px;padding:0;}
+.speak-card li{margin-bottom:6px;}
+.speak-how{background:var(--paper);border-radius:8px;padding:12px 16px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;line-height:1.65;margin-top:12px;}
+.media-card{background:#FFFFFF;border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.07);border-left:4px solid var(--coral-deep);}
+.media-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px;}
+.media-head h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0;color:var(--ink);}
+.media-platform{font-family:'Inter',Arial,sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--coral-deep);}
+.media-card p{margin:0 0 10px;}
+.media-task{border-left:3px solid var(--coral-deep);background:var(--paper);padding:10px 14px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;line-height:1.65;margin-top:10px;border-radius:0 8px 8px 0;}
+.tip-box{border:2px dashed var(--chalk-green-light);border-radius:10px;padding:18px 22px;background:#FFFFFF;margin-top:6px;}
+.tip-box h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:16px;margin:0 0 10px;color:var(--chalk-green-light);}
+.tip-box ul{margin:0 0 0 20px;padding:0;}
+.tip-box li{margin-bottom:6px;font-size:14.5px;}
+
+/* Footer */
+.site-footer{background:var(--chalk-green);color:#FFFFFF;margin-top:56px;padding:34px 24px 40px;}
+.site-footer-inner{max-width:920px;margin:0 auto;text-align:center;}
+.footer-copy{font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:700;margin:0 0 6px;}
+.footer-line{font-family:'Playfair Display',Cambria,Georgia,serif;font-style:italic;font-size:14.5px;opacity:.88;margin:0 0 12px;}
+.footer-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 10px;}
+.footer-links a{color:#FFFFFF;font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding:8px 2px;min-height:44px;display:inline-flex;align-items:center;}
+.footer-links a:hover{border-bottom-color:#FFFFFF;}
+.footer-dot{opacity:.5;}
+.footer-note{font-family:'Inter',Arial,sans-serif;font-size:12.5px;opacity:.72;margin:0;}
+
+/* Mobile refinements (375px-safe) */
+@media(max-width:600px){
+  .wrap{padding-left:18px;padding-right:18px;}
+  .masthead{padding:34px 20px 28px;}
+  .grammar-box,.card{padding:20px 18px;}
+  .oped-body{padding:20px 18px;}
+  .speak-card,.media-card{padding:18px 16px;}
+  .check-btn,.reveal-btn,.rev-btn,.poll-opt{min-height:44px;}
+  .vs-table{grid-template-columns:1fr;}
+  .vs-divider{display:none;}
+  table.rule-table{font-size:13.5px;}
+  .nav-top{font-size:12px;}
+  .site-footer{padding:28px 18px 34px;}
+}
+
+@media(max-width:600px){.check-slider-btn,.toc a{min-height:44px;}}
+
+</style>
+</head>
+<body>
+
+<!-- SECTION: Top Navigation Bar -->
+<header class="nav-bar" id="navBar">
+  <button class="nav-btn nav-hamburger" id="navHamburger" aria-label="Open contents menu" aria-expanded="false">&#9776;</button>
+  <div class="nav-brand">
+    <span class="nav-brand-week">Grade 7 · Week 1</span>
+    <span class="nav-brand-title">Second Conditional & Wish</span>
+  </div>
+  <button class="nav-btn nav-top" id="navTopBtn" aria-label="Back to top">&#8593; Top</button>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+<aside class="nav-panel" id="navPanel" aria-hidden="true">
+  <div class="nav-panel-head"><span>On this page</span><button class="nav-btn nav-close" id="navClose" aria-label="Close menu">&#10005;</button></div>
+  <nav class="nav-panel-links" id="navPanelLinks"></nav>
+  <!-- Creator & branding section of the menu -->
+  <div class="nav-panel-brand">
+    <div class="brand-name">Bahar Esmaeelzadeh</div>
+    <div class="brand-line">Designed and created for English learners by Bahar Esmaeelzadeh.</div>
+    <a href="mailto:bahar.esmz.en@gmail.com">&#128231; bahar.esmz.en@gmail.com</a>
+    <a href="https://www.linkedin.com/in/bahar-esmaeelzadeh-650b98198" target="_blank" rel="noopener">&#128188; LinkedIn &mdash; Bahar Esmaeelzadeh</a>
+    <div class="brand-copy">&copy; 2026 Bahar Esmaeelzadeh &middot; All rights reserved</div>
+  </div>
+</aside>
+
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- SECTION: Masthead / Header -->
+<div class="masthead">
+  <div class="masthead-inner">
+    <p class="eyebrow">Grade 7 &middot; Week 1 &middot; Complete Reference &amp; Pre-Class Material</p>
+    <h1 class="title">Second Conditional &amp; Wish</h1>
+    <div class="masthead-meta">
+      <div>Level: <span>B2</span></div>
+      <div>Theme: <span>Politics &mdash; Wishes &amp; Regrets</span></div>
+      <div>Est. time: <span>55&ndash;65 min</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <!-- SECTION: Table of Contents -->
+  <div class="toc">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#engage">1. Engage &mdash; the hook</a></li>
+      <li><a href="#context1">2. Context: "If I were in charge"</a></li>
+      <li><a href="#notice1">3. Notice &amp; discover (second conditional)</a></li>
+      <li><a href="#study1">4. Study: second conditional</a></li>
+      <li><a href="#context2">5. Context: the regrets forum</a></li>
+      <li><a href="#notice2">6. Notice &amp; discover (wish)</a></li>
+      <li><a href="#study2">7. Study: wish</a></li>
+      <li><a href="#pronunciation">8. Pronunciation focus</a></li>
+      <li><a href="#vocab">9. Vocabulary: politics, systems &amp; ideologies</a></li>
+      <li><a href="#exercises">10. Practice exercises</a></li>
+      <li><a href="#speaking">11. Speaking practice</a></li>
+      <li><a href="#listening">12. Listening &amp; watching</a></li>
+      <li><a href="#autonomy">13. Explore on your own</a></li>
+      <li><a href="#activate">14. A taste of Activate</a></li>
+      <li><a href="#reference">15. Quick-reference summary</a></li>
+    </ol>
+  </div>
+
+  <!-- SECTION: How realistic is this wish? -->
+  <div class="tab-section" id="engage">
+    <div class="tab-header">
+      <span class="tab-num">ENGAGE</span>
+      <h2 class="tab-title">How realistic is this wish?</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="hook-box">
+      <h3>Before we start &mdash; rank these wishes</h3>
+      <p>Click each wish below in order, from the one you think is <strong>most realistic</strong> to the one that's <strong>most unlikely</strong> ever to happen. There's no single correct answer &mdash; we'll compare opinions in class.</p>
+      <div class="rank-list" id="rankList">
+        <div class="rank-item" data-wish="1"><span class="rank-badge"></span><span class="rank-text">I wish every country had completely free public transport.</span></div>
+        <div class="rank-item" data-wish="2"><span class="rank-badge"></span><span class="rank-text">I wish politicians had to pass a basic exam before running for office.</span></div>
+        <div class="rank-item" data-wish="3"><span class="rank-badge"></span><span class="rank-text">I wish there were no political parties at all, just independent thinkers.</span></div>
+        <div class="rank-item" data-wish="4"><span class="rank-badge"></span><span class="rank-text">I wish world leaders had to live for a month on the average local salary.</span></div>
+      </div>
+      <p class="rank-order-note" id="rankNote">Click the wishes in order, starting with the most realistic.</p>
+      <button class="rank-reset" onclick="resetRanking()">Reset my ranking</button>
+    </div>
+
+    <div class="card">
+      <h3>Where we're going this week</h3>
+      <p>You're going to read two texts built around imagining a different world: a magazine feature where people answer "if I were in charge" questions, and a forum thread where people share political regrets. Read for meaning first &mdash; the grammar explanations come after, and they'll point straight back at sentences you've already read.</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Read first: "If I Were in Charge" -->
+  <div class="tab-section" id="context1">
+    <div class="tab-header study">
+      <span class="tab-num">CONTEXT</span>
+      <h2 class="tab-title">Read first: "If I Were in Charge"</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <p>Read this magazine feature where ordinary people answer hypothetical questions about leadership. Don't worry about the underlined words yet &mdash; just answer this first: <strong>whose answer do you find most interesting, and why?</strong></p>
+    </div>
+
+    <div class="realia">
+      <div class="realia-header">
+        <span class="doctype">Magazine feature</span>
+        <span class="docname">"If I Were in Charge" &mdash; Reader Responses</span>
+      </div>
+      <div class="realia-body">
+        <p class="interview-q">If you became Prime Minister tomorrow, what's the first thing you'd change?</p>
+        <p><strong>Amara, 34, teacher:</strong> If I <span class="target-1">became</span> Prime Minister tomorrow, I <span class="target-1">would invest</span> heavily in public education immediately. If teachers <span class="target-1">earned</span> a fairer salary, fewer of my colleagues <span class="target-1">would leave</span> the profession every year.</p>
+
+        <p class="interview-q">If you had unlimited power for one day, what would you do?</p>
+        <p><strong>Diego, 41, small business owner:</strong> Honestly, if I <span class="target-1">had</span> unlimited power for just one day, I <span class="target-1">wouldn't make</span> any huge changes &mdash; I <span class="target-1">would simply listen</span>. If more leaders <span class="target-2">actually listened</span> to ordinary citizens, politics <span class="target-2">would feel</span> far less distant from everyday life.</p>
+
+        <p class="interview-q">If voting were compulsory in every country, would that improve democracy?</p>
+        <p><strong>Priya, 27, student:</strong> That's a hard one. If voting <span class="target-3">were</span> compulsory everywhere, turnout <span class="target-3">would obviously rise</span>, but I'm not sure quality of choice <span class="target-3">would improve</span> at the same time. If people <span class="target-1">didn't care</span> about an election, forcing them to vote <span class="target-1">wouldn't necessarily fix</span> that.</p>
+
+        <p class="signoff">&mdash; Responses collected for our ongoing reader series</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Quick meaning check (no grammar terms yet!)</h3>
+      <p>1. According to Amara, what would happen if teachers earned a fairer salary?</p>
+      <p>2. What does Diego say he would do with unlimited power, and why?</p>
+      <p>3. Does Priya think compulsory voting would definitely improve democracy? What's her concern?</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Look back at the highlighted phrases -->
+  <div class="tab-section" id="notice1">
+    <div class="tab-header study">
+      <span class="tab-num">NOTICE &amp; DISCOVER</span>
+      <h2 class="tab-title">Look back at the highlighted phrases</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="notice-box">
+      <h3>Detective work: imagining the unreal</h3>
+
+      <div class="notice-q">
+        Look at "If I became Prime Minister tomorrow, I would invest..." Is Amara actually likely to become Prime Minister tomorrow? What does that tell you about why the verb "became" is in a past form, even though she's talking about tomorrow?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">No, it's a pure hypothetical, not a real future possibility. The past form ("became") signals unreality or distance from fact, not actual past time &mdash; this is the core idea behind the second conditional.</p>
+      </div>
+
+      <div class="notice-q">
+        Look at Priya's sentence: "If voting were compulsory everywhere..." Most verbs here use the simple past form (became, had, earned), but "were" is used even with "voting" (singular). Have you seen "were" used with a singular subject before, and where?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">This is the subjunctive "were," traditionally preferred after "if" with any subject in formal English ("if I were," "if she were"), even though "was" is now common informally. Both appear in real usage, but "were" is considered more correct in writing.</p>
+      </div>
+
+      <div class="notice-q">
+        Compare "I would invest" and "I wouldn't make any huge changes." What does adding "n't" change about Diego's hypothetical plan?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">Simply the polarity of the hypothetical result &mdash; "would" and "wouldn't" both describe imagined outcomes, just opposite ones. The grammar pattern itself doesn't change.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Now let's name it: the second conditional -->
+  <div class="tab-section" id="study1">
+    <div class="tab-header study">
+      <span class="tab-num">STUDY</span>
+      <h2 class="tab-title">Now let's name it: the second conditional</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>1. Second Conditional</h3>
+      <p class="grammar-sub">Used for hypothetical, unreal, or unlikely situations in the present or future &mdash; not real possibilities.</p>
+
+      <div class="timeline-visual">
+        <div class="timeline-block">If + subject + past simple</div>
+        <div class="timeline-arrow">+</div>
+        <div class="timeline-block">subject + would + base verb</div>
+      </div>
+
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt">If I <strong>became</strong> Prime Minister, I <strong>would invest</strong> in education.
+          <span class="gloss">Pure hypothetical &mdash; Amara is not actually becoming Prime Minister.</span>
+          <span class="src">Found in: magazine feature, Amara's answer</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt">If voting <strong>were</strong> compulsory, turnout <strong>would rise</strong>.
+          <span class="gloss">"Were" instead of "was" after "if" is the more formal, traditionally correct option with any subject.</span>
+          <span class="src">Found in: magazine feature, Priya's answer</span>
+        </span>
+      </div>
+
+      <div class="table-scroll"><table class="conj-table">
+        <tr><th>If clause (past simple)</th><th>Result clause (would + base verb)</th></tr>
+        <tr><td>If I had more time,</td><td>I would read more about politics.</td></tr>
+        <tr><td>If she won the election,</td><td>she would change the tax system.</td></tr>
+        <tr><td>If they didn't agree,</td><td>they wouldn't sign the agreement.</td></tr>
+      </table></div>
+
+      <p style="margin-top:16px;"><span class="rule-pill">if + past simple</span> describes the hypothetical condition</p>
+      <p><span class="rule-pill">would + base verb</span> describes the imagined result</p>
+      <p><span class="rule-pill">if I/she/he/it were</span> more formal than "was," traditionally preferred</p>
+      <p><span class="rule-pill">order is flexible</span> "If X, Y" or "Y if X" &mdash; both correct, comma only needed when "if" comes first</p>
+
+      <div class="example-row">
+        <span class="mark">✗</span>
+        <span class="txt"><em>If I would become Prime Minister, I would invest in education.</em>
+          <span class="gloss">Wrong &mdash; "would" never appears in the if-clause itself: <strong>If I became Prime Minister, I would invest in education.</strong></span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✗</span>
+        <span class="txt"><em>If she will win the election, she would change the tax system.</em>
+          <span class="gloss">Wrong &mdash; the if-clause needs simple past, not "will": <strong>If she won the election, she would change the tax system.</strong></span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Read next: the political regrets forum -->
+  <div class="tab-section" id="context2">
+    <div class="tab-header study">
+      <span class="tab-num">CONTEXT</span>
+      <h2 class="tab-title">Read next: the political regrets forum</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <p>This is a (fictional) online forum thread where people share general civic regrets and frustrations. Read for meaning first: <strong>what's the most common type of regret people share here?</strong></p>
+    </div>
+
+    <div class="realia">
+      <div class="realia-header">
+        <span class="doctype">Forum thread</span>
+        <span class="docname">r/CivicLife &mdash; "What do you wish you'd known before voting age?"</span>
+      </div>
+      <div class="forum-thread">
+        <div class="forum-post">
+          <div class="forum-meta">
+            <div class="forum-avatar">RT</div>
+            <span class="forum-name">riverthompson</span>
+            <span class="forum-tag">42 upvotes</span>
+          </div>
+          <p class="forum-text">I wish I <span class="target-1">had paid</span> more attention in my first election. I wish I <span class="target-1">understood</span> the local issues better back then &mdash; I voted based on slogans alone, and I regret it now.</p>
+        </div>
+        <div class="forum-post">
+          <div class="forum-meta">
+            <div class="forum-avatar">JK</div>
+            <span class="forum-name">jkim_writes</span>
+            <span class="forum-tag">31 upvotes</span>
+          </div>
+          <p class="forum-text">Honestly, I wish more candidates <span class="target-1">explained</span> their policies in plain language. I wish I <span class="target-2">could ask</span> them direct questions without a filter &mdash; town halls always feel so scripted.</p>
+        </div>
+        <div class="forum-post">
+          <div class="forum-meta">
+            <div class="forum-avatar">AM</div>
+            <span class="forum-name">amara_v</span>
+            <span class="forum-tag">28 upvotes</span>
+          </div>
+          <p class="forum-text">I wish politicians <span class="target-2">would listen</span> to young voters more, instead of only campaigning to older demographics. I wish I <span class="target-2">would stop</span> feeling like my vote doesn't matter, but that's harder to fix with grammar alone!</p>
+        </div>
+        <div class="forum-post">
+          <div class="forum-meta">
+            <div class="forum-avatar">DC</div>
+            <span class="forum-name">diego_chen</span>
+            <span class="forum-tag">19 upvotes</span>
+          </div>
+          <p class="forum-text">I wish I <span class="target-1">lived</span> somewhere with a simpler voting system &mdash; ours takes forever to explain to first-time voters. I wish there <span class="target-2">were</span> a single trustworthy source for comparing candidates' actual records.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Quick meaning check</h3>
+      <p>1. What does riverthompson regret about their first election?</p>
+      <p>2. What does jkim_writes wish candidates would do differently?</p>
+      <p>3. Find two different verb forms that follow "I wish" across this thread. Are they all the same tense?</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Wishing about now, then, and other people -->
+  <div class="tab-section" id="notice2">
+    <div class="tab-header study">
+      <span class="tab-num">NOTICE &amp; DISCOVER</span>
+      <h2 class="tab-title">Wishing about now, then, and other people</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="notice-box">
+      <h3>Detective work: not all wishes are the same</h3>
+
+      <div class="notice-q">
+        Compare "I wish I had paid more attention" with "I wish I understood the local issues better." One describes a single past action, the other describes an ongoing state. Do both use a past form after "wish," even though their meanings are slightly different?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">Yes &mdash; "had paid" (past perfect, regret about a past action) and "understood" (past simple, regret about a present/past state) both follow "wish" with a past-shifted form. The exact tense shifts depending on whether the regret is about the past or the present, but it always moves backward in time from the real situation.</p>
+      </div>
+
+      <div class="notice-q">
+        Look at "I wish politicians would listen to young voters more." Is this wish about something amara_v wants to change about herself, or about someone else's behavior?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">Someone else's behavior &mdash; "wish + would" is specifically used to express frustration about another person's (or group's) actions, often implying annoyance that they haven't changed already.</p>
+      </div>
+
+      <div class="notice-q">
+        Now compare "I wish I would stop feeling like my vote doesn't matter" with "I wish there were a single trustworthy source." Both use slightly different patterns after "wish" &mdash; one is "would + verb," the other is "were." Based on what you just noticed about "would," does "I wish I would stop feeling..." sound slightly unusual to you, even though it's grammatically valid?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">Yes, and that's intentional &mdash; "wish + would" about yourself is technically possible but sounds awkward to native speakers, since "would" is meant for other people's behavior. Most speakers would say "I wish I could stop feeling..." instead, which the Study section explains next.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Now let's name it: wish -->
+  <div class="tab-section" id="study2">
+    <div class="tab-header study">
+      <span class="tab-num">STUDY</span>
+      <h2 class="tab-title">Now let's name it: wish</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>2. Wish + Past Simple (the most common pattern)</h3>
+      <p class="grammar-sub">By far the most frequent way to express regret about the present in real English &mdash; learn this pattern first.</p>
+
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt">I wish I <strong>understood</strong> the local issues better.
+          <span class="gloss">Wishing the present situation were different &mdash; I don't understand them now.</span>
+          <span class="src">Found in: forum thread, riverthompson</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt">I wish I <strong>lived</strong> somewhere with a simpler voting system.
+          <span class="gloss">Wishing my current, real situation were different.</span>
+          <span class="src">Found in: forum thread, diego_chen</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt">I wish I <strong>had paid</strong> more attention in my first election.
+          <span class="gloss">Regret about a finished past action &mdash; uses past perfect, one step further back.</span>
+          <span class="src">Found in: forum thread, riverthompson</span>
+        </span>
+      </div>
+
+      <div class="table-scroll"><table class="conj-table">
+        <tr><th>Real situation</th><th>Wish (regret)</th></tr>
+        <tr><td>I don't understand the issues.</td><td>I wish I understood the issues. <em>(past simple)</em></td></tr>
+        <tr><td>I didn't pay attention.</td><td>I wish I had paid attention. <em>(past perfect)</em></td></tr>
+        <tr><td>I can't vote in this election.</td><td>I wish I could vote in this election. <em>(could)</em></td></tr>
+      </table></div>
+
+      <p style="margin-top:16px;"><span class="rule-pill">wish + past simple</span> regret about the present</p>
+      <p><span class="rule-pill">wish + past perfect</span> regret about the past</p>
+      <p><span class="rule-pill">wish + could</span> regret about present ability/permission</p>
+    </div>
+
+    <div class="grammar-box">
+      <h3>2b. Wish + Would (secondary pattern: frustration with others)</h3>
+      <p class="grammar-sub">A distinct, less frequent pattern &mdash; specifically for criticizing someone else's actions, never your own.</p>
+
+      <div class="wish-cols">
+        <div class="wish-col primary">
+          <h4>About yourself or a state</h4>
+          <p>I wish I understood politics better.</p>
+          <p>I wish I could vote here.</p>
+          <p style="font-size:13px; color:var(--ink-soft);">Use past simple, past perfect, or could.</p>
+        </div>
+        <div class="wish-col secondary">
+          <h4>About someone else's behavior</h4>
+          <p>I wish politicians would listen more.</p>
+          <p>I wish the news would stop exaggerating.</p>
+          <p style="font-size:13px; color:var(--ink-soft);">Use "would" &mdash; implies frustration they haven't changed.</p>
+        </div>
+      </div>
+
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt">I wish politicians <strong>would listen</strong> to young voters more.
+          <span class="gloss">Frustration about politicians' (someone else's) ongoing behavior.</span>
+          <span class="src">Found in: forum thread, amara_v</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✗</span>
+        <span class="txt"><em>I wish I would stop feeling like my vote doesn't matter.</em>
+          <span class="gloss">Unusual &mdash; "wish + would" about yourself sounds awkward to native speakers. More natural: <strong>I wish I could stop feeling like my vote doesn't matter.</strong></span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: The weak, fast "would" -->
+  <div class="tab-section" id="pronunciation">
+    <div class="tab-header study">
+      <span class="tab-num">PRONUNCIATION</span>
+      <h2 class="tab-title">The weak, fast "would"</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>"Would" almost disappears in fast speech</h3>
+      <p class="grammar-sub">This is one of the biggest gaps between what learners expect to hear and what native speakers actually say.</p>
+      <p>In natural speech, "would" after a pronoun is almost always contracted and reduced to a quick "/d/" sound:</p>
+      <p style="font-size:18px; text-align:center; margin:18px 0;">
+        I'd invest in education. <span class="pronunciation-tag">/aɪd ɪnˈvɛst/ &mdash; "would" reduces to just "/d/"</span>
+      </p>
+      <p style="font-size:18px; text-align:center; margin:18px 0;">
+        She'd change the system. <span class="pronunciation-tag">/ʃiːd tʃeɪndʒ/ &mdash; almost merges into the pronoun</span>
+      </p>
+      <p>Learners who pronounce "would" fully and separately in every sentence ("I would invest," stressed evenly) tend to sound noticeably less fluent than learners who use the natural contraction "I'd invest." Try saying "If I had more time, I'd read more" out loud, blending "I'd" into one quick syllable.</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Politics, systems & regret vocabulary -->
+  <div class="tab-section" id="vocab">
+    <div class="tab-header vocab">
+      <span class="tab-num">VOCABULARY EXPANSION</span>
+      <h2 class="tab-title">Politics, systems &amp; regret vocabulary</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <h3>1. Elections &amp; civic life</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <span class="word">a ballot</span><span class="pos">noun</span>
+          <div class="def">the process of voting, or the paper you use to record your vote</div>
+          <div class="ex">"I wish every citizen had the right to cast a ballot freely."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to campaign</span><span class="pos">verb</span>
+          <div class="def">to work in an organised way to achieve a political goal or win an election</div>
+          <div class="ex">"She campaigned on a platform of free public transport."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">turnout</span><span class="pos">noun</span>
+          <div class="def">the number (or proportion) of eligible voters who actually vote</div>
+          <div class="ex">"If voting were easier, turnout would increase significantly."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">a constituency</span><span class="pos">noun</span>
+          <div class="def">a geographic area whose voters elect one representative</div>
+          <div class="ex">"He has represented this constituency for over a decade."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">a policy</span><span class="pos">noun</span>
+          <div class="def">a plan or set of principles adopted by a government or party</div>
+          <div class="ex">"I wish politicians were more honest about the costs of their policies."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">to run for office</span><span class="pos">phrase</span>
+          <div class="def">to be a candidate in an election</div>
+          <div class="ex">"I wish more independent voices would run for office."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">accountable</span><span class="pos">adjective</span>
+          <div class="def">required to explain or justify your decisions to others</div>
+          <div class="ex">"If politicians were more accountable, trust would recover faster."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">hindsight</span><span class="pos">noun</span>
+          <div class="def">understanding of a past situation that you only gain after it is over</div>
+          <div class="ex">"In hindsight, I wish I had paid more attention to local politics."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>2. Political roles &amp; titles</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <span class="word">a minister</span><span class="pos">noun</span>
+          <div class="def">a senior member of government responsible for a specific area (e.g. the Finance Minister, the Health Minister)</div>
+          <div class="ex">"I wish the Education Minister would spend a week in an actual classroom."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">a prime minister</span><span class="pos">noun</span>
+          <div class="def">the head of government in countries with a parliamentary system (e.g. the UK, India, Canada)</div>
+          <div class="ex">"If I were Prime Minister, I would make civic education compulsory."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">a chancellor</span><span class="pos">noun</span>
+          <div class="def">the head of government in some countries (e.g. Germany, Austria); also the finance minister in the UK</div>
+          <div class="ex">"The Chancellor announced a new economic policy last week."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">a vice president</span><span class="pos">noun</span>
+          <div class="def">the second-highest official in a presidential system; takes over if the president cannot serve</div>
+          <div class="ex">"I wish the vice president had more influence on domestic policy."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">a monarch</span><span class="pos">noun</span>
+          <div class="def">a king or queen who rules a country, often by hereditary right</div>
+          <div class="ex">"In a constitutional monarchy, the monarch has mainly ceremonial powers."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">a dictator</span><span class="pos">noun</span>
+          <div class="def">a ruler who holds power without democratic accountability, often by force</div>
+          <div class="ex">"I wish there were international mechanisms to remove dictators from power."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">a democrat</span><span class="pos">noun</span>
+          <div class="def">someone who believes in democracy as a system of government (lowercase d; separate from any specific party)</div>
+          <div class="ex">"He considers himself a democrat first and a party member second."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">a republican</span><span class="pos">noun / adjective</span>
+          <div class="def">someone who believes a country should be governed as a republic (without a monarch); note: also a specific US party name</div>
+          <div class="ex">"Many republicans argued that abolishing the monarchy would modernise the state."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>3. Political systems</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <span class="word">a monarchy</span><span class="pos">noun</span>
+          <div class="def">a system where a king or queen is the head of state; can be absolute or constitutional</div>
+          <div class="ex">"In a constitutional monarchy, the monarch's powers are limited by law."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">a republic</span><span class="pos">noun</span>
+          <div class="def">a system where the head of state is elected, not hereditary; most modern democracies are republics</div>
+          <div class="ex">"France became a republic after its revolution."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">a dictatorship</span><span class="pos">noun</span>
+          <div class="def">a system in which one person or group holds absolute power, usually without free elections</div>
+          <div class="ex">"I wish the international community did more to challenge dictatorships."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">democracy</span><span class="pos">noun</span>
+          <div class="def">a system where citizens vote to choose their leaders and influence decisions</div>
+          <div class="ex">"If more people participated, democracy would function much better."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">capitalism</span><span class="pos">noun</span>
+          <div class="def">an economic system where businesses and property are privately owned and operate for profit</div>
+          <div class="ex">"I wish capitalism were better regulated to protect workers and the environment."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">socialism</span><span class="pos">noun</span>
+          <div class="def">a system where key industries or resources are owned or regulated collectively, often by the state, to reduce inequality</div>
+          <div class="ex">"Supporters of socialism argue that it distributes wealth more fairly."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">left-wing</span><span class="pos">adjective</span>
+          <div class="def">favouring social equality, workers' rights, public services, and redistribution of wealth</div>
+          <div class="ex">"Left-wing parties typically support higher taxes on the wealthy."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">right-wing</span><span class="pos">adjective</span>
+          <div class="def">favouring free markets, limited government, traditional values, and lower taxes</div>
+          <div class="ex">"Right-wing governments often prioritise reducing public spending."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>4. Political ideologies</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <span class="word">conservatism</span><span class="pos">noun</span>
+          <div class="def">a political ideology that values tradition, stability, free markets, and limited government intervention</div>
+          <div class="ex">"Conservatism generally opposes rapid social change."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">a conservative</span><span class="pos">noun / adjective</span>
+          <div class="def">someone who holds conservative beliefs; or an adjective describing cautious, tradition-respecting positions</div>
+          <div class="ex">"She is fiscally conservative but socially progressive."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">liberalism</span><span class="pos">noun</span>
+          <div class="def">a political ideology emphasising individual freedoms, civil rights, and democratic government</div>
+          <div class="ex">"Classical liberalism focuses on personal liberty rather than economic equality."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">nationalism</span><span class="pos">noun</span>
+          <div class="def">strong identification with one's own nation and its interests, sometimes to the exclusion of others</div>
+          <div class="ex">"Economic nationalism often leads to trade barriers between countries."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">centrist</span><span class="pos">noun / adjective</span>
+          <div class="def">holding moderate political views; not strongly left-wing or right-wing</div>
+          <div class="ex">"I wish more centrist voices were represented in the debate."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">progressive</span><span class="pos">adjective / noun</span>
+          <div class="def">favouring social reform, equality, and modernisation; often associated with the political left</div>
+          <div class="ex">"Progressive policies on climate and education were central to the campaign."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">radical</span><span class="pos">adjective</span>
+          <div class="def">advocating thorough or fundamental change to existing systems; can apply to left or right</div>
+          <div class="ex">"If I were in charge, I would introduce some radical reforms to the tax system."</div>
+        </div>
+        <div class="vocab-card">
+          <span class="word">bipartisan</span><span class="pos">adjective</span>
+          <div class="def">involving or supported by both major parties; representing cross-party agreement</div>
+          <div class="ex">"I wish climate policy had broader bipartisan support."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="notice-box" style="margin-top:10px;">
+      <h3>A note on register</h3>
+      <p style="margin:0 0 10px;">Many of these words are <strong>formal or academic</strong> in register. You wouldn&rsquo;t use <em>bipartisan</em> or <em>constituency</em> in a casual text message, but you would in a discussion, article, or presentation.</p>
+      <p style="margin:0 0 10px;">Be careful with words that have <strong>a general meaning and a specific party name</strong>: <em>democrat</em> (lowercase) means someone who believes in democracy; <em>Democrat</em> (capital D) is a US party member. The same applies to <em>republican / Republican</em>.</p>
+      <p style="margin:0;">Left-wing and right-wing are relative terms &mdash; what counts as &ldquo;left&rdquo; or &ldquo;right&rdquo; varies significantly by country and historical period.</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Now practise what you've discovered -->
+  <div class="tab-section" id="exercises">
+    <div class="tab-header study">
+      <span class="tab-num">PRACTICE</span>
+      <h2 class="tab-title">Now practise what you've discovered</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 1 &middot; Controlled Practice</span>
+      <h4>Second conditional: type the correct form of the verb in brackets.</h4>
+
+      <div class="q-row">
+        <span class="q-num">1.</span>
+        <span class="q-text">If I ______ Prime Minister, I would lower taxes for small businesses. <em>(be)</em></span>
+        <input type="text" class="blank-input" data-answer="were,was" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">2.</span>
+        <span class="q-text">If more people ______ in local elections, councils would represent communities better. <em>(vote)</em></span>
+        <input type="text" class="blank-input" data-answer="voted" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">3.</span>
+        <span class="q-text">If she won the election, she ______ raise the minimum wage. <em>(would)</em></span>
+        <input type="text" class="blank-input" data-answer="would" placeholder="your answer">
+      </div>
+      <button class="check-btn" onclick="checkExercise(1)">Check my answers</button>
+      <div class="feedback" id="feedback1"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 2 &middot; Controlled Practice</span>
+      <h4>Wish: type the correct form of the verb in brackets.</h4>
+
+      <div class="q-row">
+        <span class="q-num">1.</span>
+        <span class="q-text">I wish I ______ more about economics. <em>(know, regret about now)</em></span>
+        <input type="text" class="blank-input" data-answer="knew" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">2.</span>
+        <span class="q-text">I wish I ______ more attention during the debate. <em>(pay, regret about the past)</em></span>
+        <input type="text" class="blank-input" data-answer="had paid" placeholder="your answer">
+      </div>
+      <div class="q-row">
+        <span class="q-num">3.</span>
+        <span class="q-text">I wish the government ______ explain its decisions more clearly. <em>(would, frustration with others)</em></span>
+        <input type="text" class="blank-input" data-answer="would" placeholder="your answer">
+      </div>
+      <button class="check-btn" onclick="checkExercise(2)">Check my answers</button>
+      <div class="feedback" id="feedback2"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 3 &middot; Multiple Choice</span>
+      <h4>Which sentence correctly uses "wish + would" about someone else's behavior?</h4>
+      <label class="mc-opt"><input type="radio" name="mc3" value="wrong"> I wish I would understand politics better.</label>
+      <label class="mc-opt"><input type="radio" name="mc3" value="right"> I wish politicians would explain things more clearly.</label>
+      <label class="mc-opt"><input type="radio" name="mc3" value="wrong2"> I wish I would vote in every election.</label>
+      <div class="feedback" id="feedback3"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 4 &middot; Vocabulary Matching</span>
+      <h4>Click a word on the left, then its matching definition on the right.</h4>
+      <div class="match-grid" id="matchGrid">
+        <div class="match-item" data-pair="1">turnout</div>
+        <div class="match-item" data-pair="3">required to justify your actions</div>
+        <div class="match-item" data-pair="2">a policy</div>
+        <div class="match-item" data-pair="4">understanding only after something happens</div>
+        <div class="match-item" data-pair="3">accountable</div>
+        <div class="match-item" data-pair="1">the number of people who vote</div>
+        <div class="match-item" data-pair="4">hindsight</div>
+        <div class="match-item" data-pair="2">a plan of action by a government</div>
+      </div>
+      <div class="feedback" id="feedback4"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 5 &middot; Sentence Builder</span>
+      <h4>Click the chips in the correct order to build a complete second conditional sentence.</h4>
+      <div class="builder-row" id="builderPool">
+        <div class="builder-chip" data-order="1">If</div>
+        <div class="builder-chip" data-order="3">had</div>
+        <div class="builder-chip" data-order="2">I</div>
+        <div class="builder-chip" data-order="4">more free time,</div>
+        <div class="builder-chip" data-order="5">I</div>
+        <div class="builder-chip" data-order="6">would</div>
+        <div class="builder-chip" data-order="7">volunteer</div>
+        <div class="builder-chip" data-order="8">for a local campaign.</div>
+      </div>
+      <div class="builder-row" id="builderSlots"></div>
+      <button class="check-btn" onclick="checkBuilder()">Check my sentence</button>
+      <button class="rank-reset" style="margin-top:8px;" onclick="resetBuilder()">Reset</button>
+      <div class="feedback" id="feedback5"></div>
+    </div>
+  </div>
+
+  <!-- ============ AUTONOMY / RESEARCH ============ -->
+
+  <!-- SECTION: Speaking Practice -->
+  <div class="tab-section" id="speaking">
+    <div class="tab-header"><span class="tab-badge tb-speak">SPEAKING PRACTICE</span><h2 class="tab-title">If you were in charge &mdash; out loud</h2></div>
+    <hr class="tab-rule">
+    <p class="section-intro">The magazine feature asked ordinary people to speak hypothetically &mdash; and that's harder than it looks. These tasks put the second conditional and <em>wish</em> into your mouth, not just your notebook. All you need is your phone's voice memo app.</p>
+
+    <div class="speak-card">
+      <span class="speak-type">Opinion card</span>
+      <h3>Agree or disagree?</h3>
+      <p><em>"Voting should be compulsory &mdash; if everyone had to vote, governments would care about everyone."</em></p>
+      <p>Speak for <strong>90 seconds</strong>. Take a clear position and defend it with at least two full second conditionals (<em>"If voting were compulsory, politicians would&hellip;"</em>) and three items from this week's vocabulary (<em>turnout, a policy, accountable, to run for office, a ballot&hellip;</em>).</p>
+      <div class="speak-how"><strong>How:</strong> Record it in one take on your phone. <strong>When you listen back, check the machinery:</strong> past simple in the <em>if</em>-clause, <em>would</em> in the result. The classic slip is <em>"if it would be"</em> &mdash; hunt for it and re-record just that sentence.</div>
+    </div>
+
+    <div class="speak-card">
+      <span class="speak-type">Timed monologue</span>
+      <h3>Two minutes in charge</h3>
+      <p>Set a timer for <strong>2 minutes</strong>. You have just been put in charge of your city. Speak without stopping about <em>the three things you would change first &mdash; and one thing you wish were different but couldn't fix.</em></p>
+      <p>That last part forces this week's second structure: <em>"I wish public transport were cheaper, but&hellip;"</em></p>
+      <div class="speak-how"><strong>How:</strong> Record without stopping to self-correct. <strong>When you listen back, note:</strong> where you paused searching for a word &mdash; and whether <em>wish</em> was followed by a past form (<em>I wish it were / I wish we had</em>), not a present one.</div>
+    </div>
+
+    <div class="speak-card">
+      <span class="speak-type">Discussion questions</span>
+      <h3>For a partner &mdash; or the microphone</h3>
+      <p>Discuss with a partner, or record spoken answers (60&ndash;90 seconds each). Choose two:</p>
+      <ul>
+        <li>If you could ask your country's leader one question, and they had to answer honestly, what would it be &mdash; and why that one?</li>
+        <li>Would you ever run for office yourself? What would have to be true for you to say yes?</li>
+        <li>Is there a rule &mdash; at work, in your city, anywhere &mdash; that you wish didn't exist? What would happen if it disappeared tomorrow?</li>
+        <li>People often say "if I were in charge, things would be different." Do you believe them? Would power change what they want?</li>
+      </ul>
+      <div class="speak-how"><strong>How:</strong> One question per recording. <strong>When you listen back, check:</strong> did every hypothetical stay hypothetical &mdash; past form + <em>would</em> &mdash; or did you drift into <em>will</em>?</div>
+    </div>
+
+    <div class="tip-box">
+      <h3>Technique: the hypothetical gear-change</h3>
+      <ul>
+        <li>Native speakers signal the switch into imagination with sound, not just grammar: <em>"If I were&hellip;"</em> often comes with a slight pause and falling tone. Practise that gear-change out loud.</li>
+        <li><em>Would</em> compresses to <em>'d</em> in speech: <em>"I'd lower the fares, I'd fix the buses."</em> If your recording has full <em>would</em>s everywhere, do a faster second take.</li>
+        <li>One <em>wish</em> is stronger than three. Save it for the thing you actually mean.</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- SECTION: Listening & Watching -->
+  <div class="tab-section" id="listening">
+    <div class="tab-header"><span class="tab-badge tb-listen">LISTENING &amp; WATCHING</span><h2 class="tab-title">Politics, power &amp; hypotheticals</h2></div>
+    <hr class="tab-rule">
+    <p class="section-intro">Talk about politics is full of this week's grammar &mdash; every promise, criticism, and daydream about power runs on <em>would</em> and <em>wish</em>. These free, real sources match this level; each comes with a specific task.</p>
+
+    <div class="media-card">
+      <div class="media-head"><h3>BBC 6 Minute English</h3><span class="media-platform">Podcast &middot; YouTube &middot; bbc.co.uk/learningenglish</span></div>
+      <p><strong>Why this week:</strong> The archive has episodes on voting, democracy, and how governments work &mdash; six structured minutes at a measured natural pace, with free transcripts, and vocabulary defined as the hosts go.</p>
+      <div class="media-task"><strong>Your task:</strong> Pick an episode on voting or democracy. Listen once without the transcript, then once with it. Note 3 words you didn't know &mdash; and every <em>would</em> you hear. Which ones are hypothetical, and which are just polite?</div>
+    </div>
+
+    <div class="media-card">
+      <div class="media-head"><h3>Thinking in English</h3><span class="media-platform">Podcast &middot; Tom Wilkinson</span></div>
+      <p><strong>Why this week:</strong> Slow-but-natural discussions of politics and society made for learners &mdash; elections, leaders, how countries are run. The host constantly asks exactly this week's question: <em>what would happen if&hellip;?</em></p>
+      <div class="media-task"><strong>Your task:</strong> Choose an episode on a political or social topic. Note one opinion the host offers carefully rather than absolutely. Then record a 60-second answer to the episode's central question &mdash; with at least one full second conditional.</div>
+    </div>
+
+    <div class="media-card">
+      <div class="media-head"><h3>TED-Ed</h3><span class="media-platform">YouTube &middot; ed.ted.com</span></div>
+      <p><strong>Why this week:</strong> Short animated explainers on how elections, governments, and power actually work &mdash; the systems behind this week's vocabulary (<em>ballot, constituency, turnout</em>), narrated clearly over animation.</p>
+      <div class="media-task"><strong>Your task:</strong> Watch one episode about elections or government, once without subtitles, once with. Afterwards, summarise it aloud in 2&ndash;3 sentences using at least three words from this week's vocabulary. Record the summary and listen for word stress: <em>POLicy, acCOUNTable, conSTITuency.</em></div>
+    </div>
+  </div>
+
+  <!-- SECTION: Go further: research tasks -->
+  <div class="tab-section" id="autonomy">
+    <div class="tab-header autonomy">
+      <span class="tab-num">EXPLORE ON YOUR OWN</span>
+      <h2 class="tab-title">Go further: research tasks</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="research-card">
+      <span class="research-tag">Vocabulary extension</span>
+      <h3>Find 3 more political/civic vocabulary words</h3>
+      <p>Search online for political or civic vocabulary in English (try "political vocabulary English B2") and find three words you haven't seen before.</p>
+      <ul>
+        <li>Write each one in a full sentence, kept general and non-partisan.</li>
+        <li>Bring your three to class &mdash; we'll build a shared vocabulary wall together.</li>
+      </ul>
+      <span class="link-suggestion">Try: Cambridge Dictionary + "politics vocabulary"</span>
+      <span class="link-suggestion">Try: BBC Learning English politics topics</span>
+    </div>
+
+    <div class="research-card">
+      <span class="research-tag">Real-world listening</span>
+      <h3>Find one real example of "I wish" or a second conditional</h3>
+      <p>Search online for a short interview, speech, or article (in English) where someone expresses a wish or a hypothetical political idea.</p>
+      <ul>
+        <li>Note the exact sentence and which pattern it uses (wish + past simple, wish + would, or second conditional).</li>
+        <li>Be ready to share your example at the start of Session 1.</li>
+      </ul>
+      <span class="link-suggestion">Try searching: "I wish" interview English news</span>
+      <span class="link-suggestion">Try: a TED talk transcript on a civic or social topic</span>
+    </div>
+
+    <div class="card">
+      <h3>Why this matters</h3>
+      <p>Politicians, journalists, and ordinary people use these structures constantly when discussing hypothetical policies or expressing frustration. Noticing them in real, authentic English will make the grammar feel far less abstract than studying it from a textbook alone.</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Try it yourself &mdash; before class -->
+  <div class="tab-section" id="activate">
+    <div class="tab-header activate">
+      <span class="tab-num">A TASTE OF ACTIVATE</span>
+      <h2 class="tab-title">Try it yourself &mdash; before class</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="activate-box">
+      <h3>Mini-task: If I were in charge...</h3>
+      <p>Write 3&ndash;4 sentences imagining you had the power to change one thing about your city, country, or workplace. Use at least <strong>one second conditional sentence</strong> and <strong>one "I wish" sentence</strong> somewhere in your writing.</p>
+      <p style="font-size:14px;"><em>Example starter: "If I were in charge of my city, I would... I wish people would..."</em></p>
+      <textarea class="response-box" id="freeWriting" placeholder="Type your 3-4 sentences here..."></textarea>
+      <div class="word-count" id="wordCount">0 words</div>
+    </div>
+
+    <div class="card">
+      <h3>Bring this to class</h3>
+      <p>Save or screenshot what you wrote &mdash; we'll use it as the starting point for a speaking activity in Session 1, where you'll share your hypothetical changes with classmates.</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Everything from this week, on one page -->
+  <div class="tab-section" id="reference">
+    <div class="tab-header vocab">
+      <span class="tab-num">QUICK REFERENCE</span>
+      <h2 class="tab-title">Everything from this week, on one page</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="ref-table-wrap">
+      <div class="table-scroll"><table class="ref-table">
+        <tr><th>Item</th><th>Form</th><th>Use it when...</th><th>Example</th></tr>
+        <tr><td>Second conditional</td><td>if + past simple, ... would + base verb</td><td>Imagining hypothetical present/future situations</td><td>If I became PM, I would invest in education.</td></tr>
+        <tr><td>Wish + past simple</td><td>wish + past simple</td><td>Regret about a present situation</td><td>I wish I understood politics better.</td></tr>
+        <tr><td>Wish + past perfect</td><td>wish + had + past participle</td><td>Regret about a past action</td><td>I wish I had paid more attention.</td></tr>
+        <tr><td>Wish + would</td><td>wish + would + base verb</td><td>Frustration about someone else's behavior</td><td>I wish politicians would listen more.</td></tr>
+      </table></div>
+    </div>
+
+    <div class="card">
+      <h3>Vocabulary you should now recognise</h3>
+      <div class="chip-row">
+        <span class="chip">ballot</span><span class="chip">campaign</span><span class="chip">turnout</span>
+        <span class="chip">policy</span><span class="chip">run for office</span><span class="chip">constituency</span>
+        <span class="chip">accountable</span><span class="chip">hindsight</span><span class="chip">regret</span>
+        <span class="chip">minister</span><span class="chip">prime minister</span><span class="chip">chancellor</span>
+        <span class="chip">vice president</span><span class="chip">monarch</span><span class="chip">dictator</span>
+        <span class="chip">democrat</span><span class="chip">republican</span>
+        <span class="chip">monarchy</span><span class="chip">republic</span><span class="chip">dictatorship</span>
+        <span class="chip">democracy</span><span class="chip">capitalism</span><span class="chip">socialism</span>
+        <span class="chip">left-wing</span><span class="chip">right-wing</span><span class="chip">centrist</span>
+        <span class="chip">conservatism</span><span class="chip">conservative</span><span class="chip">liberalism</span>
+        <span class="chip">nationalism</span><span class="chip">progressive</span><span class="chip">radical</span>
+        <span class="chip">bipartisan</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapup">
+    <h3>Before Session 1, make sure you can&hellip;</h3>
+    <ul>
+      <li>Form a complete second conditional sentence, with the if-clause and result clause in the right forms</li>
+      <li>Explain why &ldquo;would&rdquo; never appears in the if-clause itself</li>
+      <li>Distinguish wish + past simple (present frustration) from wish + past perfect (past regret)</li>
+      <li>Explain why &ldquo;wish + would&rdquo; is used for other people&rsquo;s behaviour, not your own</li>
+      <li>Say &ldquo;I&rsquo;d invest in education&rdquo; out loud with the natural contracted &lsquo;d</li>
+      <li>Name at least two political roles (e.g. prime minister, chancellor, vice president)</li>
+      <li>Explain the difference between a monarchy and a republic in one sentence</li>
+      <li>Define left-wing and right-wing in your own words</li>
+      <li>Explain the difference between a dictator and a democrat (lowercase d)</li>
+      <li>Have your &ldquo;If I were in charge&rdquo; mini-task ready to share</li>
+      <li>Bring one research finding (vocabulary or a real example) to share with a partner</li>
+    </ul>
+  </div>
+
+</div>
+
+
+<!-- SECTION: Footer - Creator & Copyright -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p class="footer-copy">&copy; 2026 Bahar Esmaeelzadeh &middot; All rights reserved</p>
+    <p class="footer-line">Designed and created for English learners by Bahar Esmaeelzadeh.</p>
+    <p class="footer-links">
+      <a href="mailto:bahar.esmz.en@gmail.com">&#128231; bahar.esmz.en@gmail.com</a>
+      <span class="footer-dot">&middot;</span>
+      <a href="https://www.linkedin.com/in/bahar-esmaeelzadeh-650b98198" target="_blank" rel="noopener">&#128188; LinkedIn</a>
+    </p>
+    <p class="footer-note">If you found this helpful, feel free to get in touch.</p>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    document.getElementById('progressFill').style.width = scrolled + '%';
+  });
+
+  let rankOrder = [];
+  document.querySelectorAll('.rank-item').forEach(item => {
+    item.addEventListener('click', () => {
+      if (item.classList.contains('placed')) return;
+      rankOrder.push(item);
+      item.classList.add('placed');
+      item.querySelector('.rank-badge').textContent = rankOrder.length;
+      const note = document.getElementById('rankNote');
+      if (rankOrder.length === document.querySelectorAll('.rank-item').length) {
+        note.textContent = "Ranked! Keep this order in mind \u2014 you'll compare with classmates later this week.";
+      } else {
+        note.textContent = `${rankOrder.length} of ${document.querySelectorAll('.rank-item').length} ranked. Click the next most realistic wish.`;
+      }
+    });
+  });
+  function resetRanking() {
+    rankOrder = [];
+    document.querySelectorAll('.rank-item').forEach(item => {
+      item.classList.remove('placed');
+      item.querySelector('.rank-badge').textContent = '';
+    });
+    document.getElementById('rankNote').textContent = 'Click the wishes in order, starting with the most realistic.';
+  }
+
+  function checkExercise(num) {
+    const exerciseEl = [...document.querySelectorAll('.exercise')].find(ex => {
+      const btn = ex.querySelector('.check-btn');
+      if (!btn) return false;
+      const onclickAttr = btn.getAttribute('onclick') || '';
+      return onclickAttr === `checkExercise(${num})` || onclickAttr === `checkExercise('${num}')`;
+    });
+    const inputs = exerciseEl.querySelectorAll('.blank-input');
+    let correct = 0;
+    inputs.forEach(input => {
+      const answers = input.dataset.answer.split(',').map(a => a.trim().toLowerCase());
+      const userVal = input.value.trim().toLowerCase();
+      if (answers.includes(userVal)) {
+        correct++;
+        input.style.borderColor = '#1F3A2E';
+      } else {
+        input.style.borderColor = '#B14B34';
+      }
+    });
+    const fb = document.getElementById('feedback' + num);
+    fb.classList.add('show');
+    if (correct === inputs.length) {
+      fb.classList.remove('bad'); fb.classList.add('good');
+      fb.textContent = `All ${inputs.length} correct! Great work.`;
+    } else {
+      fb.classList.remove('good'); fb.classList.add('bad');
+      fb.textContent = `${correct} of ${inputs.length} correct. Check the red-bordered answers and try again.`;
+    }
+  }
+
+  document.querySelectorAll('input[name="mc3"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      document.querySelectorAll('input[name="mc3"]').forEach(r => {
+        r.closest('.mc-opt').classList.remove('correct-flash', 'wrong-flash');
+      });
+      const fb = document.getElementById('feedback3');
+      fb.classList.add('show');
+      if (radio.value === 'right') {
+        radio.closest('.mc-opt').classList.add('correct-flash');
+        fb.classList.remove('bad'); fb.classList.add('good');
+        fb.textContent = 'Correct! "Wish + would" criticizes someone else\'s behavior, never your own.';
+      } else {
+        radio.closest('.mc-opt').classList.add('wrong-flash');
+        fb.classList.remove('good'); fb.classList.add('bad');
+        fb.textContent = 'Not quite. "Wish + would" about yourself sounds unnatural \u2014 it\'s used for other people\'s behavior.';
+      }
+    });
+  });
+
+  function setupMatching(gridId, pairAttr, feedbackId, totalPairs) {
+    let firstSelection = null;
+    let matchedCount = 0;
+    const grid = document.getElementById(gridId);
+    if (!grid) return;
+    grid.querySelectorAll('.match-item').forEach(item => {
+      item.addEventListener('click', () => {
+        if (item.classList.contains('matched')) return;
+        if (!firstSelection) {
+          firstSelection = item;
+          item.classList.add('selected');
+        } else if (firstSelection === item) {
+          firstSelection.classList.remove('selected');
+          firstSelection = null;
+        } else {
+          if (firstSelection.dataset[pairAttr] === item.dataset[pairAttr]) {
+            firstSelection.classList.remove('selected');
+            firstSelection.classList.add('matched');
+            item.classList.add('matched');
+            matchedCount++;
+            firstSelection = null;
+            const fb = document.getElementById(feedbackId);
+            fb.classList.add('show'); fb.classList.remove('bad'); fb.classList.add('good');
+            if (matchedCount === totalPairs) {
+              fb.textContent = 'All matched! Great vocabulary work.';
+            } else {
+              fb.textContent = `${matchedCount} of ${totalPairs} pairs matched. Keep going!`;
+            }
+          } else {
+            item.classList.add('wrong-flash');
+            setTimeout(() => {
+              firstSelection.classList.remove('selected');
+              item.classList.remove('wrong-flash');
+              firstSelection = null;
+            }, 500);
+          }
+        }
+      });
+    });
+  }
+  setupMatching('matchGrid', 'pair', 'feedback4', 4);
+
+  const builderCorrectOrder = ["If", "I", "had", "more free time,", "I", "would", "volunteer", "for a local campaign."];
+  let builderChosen = [];
+  document.querySelectorAll('.builder-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      if (chip.classList.contains('used')) return;
+      chip.classList.add('used');
+      builderChosen.push(chip);
+      renderBuilderSlots();
+    });
+  });
+  function renderBuilderSlots() {
+    const slotsEl = document.getElementById('builderSlots');
+    slotsEl.innerHTML = '';
+    builderChosen.forEach(chip => {
+      const span = document.createElement('span');
+      span.className = 'builder-slot filled';
+      span.textContent = chip.textContent;
+      slotsEl.appendChild(span);
+    });
+  }
+  function resetBuilder() {
+    builderChosen = [];
+    document.querySelectorAll('.builder-chip').forEach(c => c.classList.remove('used'));
+    document.getElementById('builderSlots').innerHTML = '';
+    document.getElementById('feedback5').classList.remove('show');
+  }
+  function checkBuilder() {
+    const fb = document.getElementById('feedback5');
+    fb.classList.add('show');
+    if (builderChosen.length !== builderCorrectOrder.length) {
+      fb.classList.remove('good'); fb.classList.add('bad');
+      fb.textContent = `Select all ${builderCorrectOrder.length} chips first (you've chosen ${builderChosen.length} so far).`;
+      return;
+    }
+    const userSentence = builderChosen.map(c => c.textContent);
+    const isCorrect = userSentence.every((word, idx) => word === builderCorrectOrder[idx]);
+    if (isCorrect) {
+      fb.classList.remove('bad'); fb.classList.add('good');
+      fb.textContent = 'Correct! "If I had more free time, I would volunteer for a local campaign."';
+    } else {
+      fb.classList.remove('good'); fb.classList.add('bad');
+      fb.textContent = 'Not quite the right order yet. Reset and try again.';
+    }
+  }
+
+  document.getElementById('freeWriting').addEventListener('input', (e) => {
+    const words = e.target.value.trim().split(/\s+/).filter(w => w.length > 0);
+    document.getElementById('wordCount').textContent = (e.target.value.trim() === '' ? 0 : words.length) + ' words';
+  });
+
+/* Site frame (added): contents panel, back-to-top, table scroll hints */
+(function(){
+  var panel=document.getElementById('navPanel'),ov=document.getElementById('navOverlay'),
+      ham=document.getElementById('navHamburger'),closeB=document.getElementById('navClose'),
+      links=document.getElementById('navPanelLinks');
+  document.querySelectorAll('.toc a').forEach(function(a){
+    var n=document.createElement('a');
+    n.href=a.getAttribute('href');
+    n.textContent=a.textContent.replace(/^\s*\d+[a-z]?\.\s*/,'');
+    links.appendChild(n);
+  });
+  function openP(){panel.classList.add('open');ov.classList.add('open');ham.setAttribute('aria-expanded','true');panel.setAttribute('aria-hidden','false');}
+  function closeP(){panel.classList.remove('open');ov.classList.remove('open');ham.setAttribute('aria-expanded','false');panel.setAttribute('aria-hidden','true');}
+  ham.addEventListener('click',function(){panel.classList.contains('open')?closeP():openP();});
+  closeB.addEventListener('click',closeP);
+  ov.addEventListener('click',closeP);
+  links.addEventListener('click',function(e){if(e.target.tagName==='A')closeP();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeP();});
+  document.getElementById('navTopBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  function hints(){document.querySelectorAll('.table-scroll').forEach(function(w){
+    if(w.scrollWidth>w.clientWidth+2){w.classList.add('has-overflow');}else{w.classList.remove('has-overflow');}
+  });}
+  window.addEventListener('resize',hints);window.addEventListener('load',hints);hints();
+  document.querySelectorAll('.table-scroll').forEach(function(w){
+    w.addEventListener('scroll',function(){if(w.scrollLeft>12)w.classList.remove('has-overflow');},{passive:true});
+  });
+})();
+
+</script>
+
+</body>
+</html>

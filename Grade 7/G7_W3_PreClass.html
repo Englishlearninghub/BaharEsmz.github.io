@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet">
+<title>Grade 7 · Week 3 — Used To, Would & Getting Used To | Full Reference</title>
+<style>
+  :root {
+    --ink: #28344A;
+    --ink-soft: #4A5775;
+    --paper: #F7F3E8;
+    --paper-line: #E3DCC8;
+    --chalk-green: #1F3A2E;
+    --chalk-green-light: #2E5240;
+    --chalk-yellow: #E8B84B;
+    --chalk-yellow-deep: #C99423;
+    --coral: #D8694F;
+    --coral-deep: #B14B34;
+    --blue: #3D6E8C;
+    --blue-deep: #285067;
+    --purple: #6B4C8A;
+    --purple-light: #F2EBF7;
+    --white: #FFFFFF;
+    --amber: #8B5E1A;
+    --amber-light: #FFF3E0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper);
+    background-image: repeating-linear-gradient(transparent, transparent 35px, var(--paper-line) 35px, var(--paper-line) 36px);
+    color: var(--ink); font-family:'Inter',Calibri,Arial,sans-serif; font-size: 17px; line-height: 1.65;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px 80px; }
+
+  .masthead { background: var(--purple); color: var(--paper); margin: 0 -24px 0; padding: 38px 24px 30px; position: relative; overflow: hidden; }
+  .masthead::before { content: ""; position: absolute; right: -60px; top: -60px; width: 240px; height: 240px; border-radius: 50%; background: #5C3D7A; opacity: 0.5; }
+  .masthead::after  { content: ""; position: absolute; left: 55%; bottom: -40px; width: 180px; height: 180px; border-radius: 50%; background: #5C3D7A; opacity: 0.35; }
+  .masthead-inner { max-width: 872px; margin: 0 auto; position: relative; z-index: 1; }
+  .eyebrow { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--chalk-yellow); margin: 0 0 10px; }
+  h1.title { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 36px; line-height: 1.2; margin: 0 0 14px; max-width: 700px; }
+  .masthead-meta { display: flex; gap: 24px; flex-wrap: wrap; font-size: 14px; color: #DDD0EE; margin-top: 16px; }
+  .masthead-meta span { font-weight: bold; color: var(--paper); }
+
+  .toc { background: var(--white); border-radius: 10px; margin-top: -18px; padding: 20px 26px; box-shadow: 0 4px 16px rgba(40,52,74,0.12); position: relative; z-index: 2; }
+  .toc h2 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 16px; margin: 0 0 10px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; }
+  .toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 30px; font-size: 14px; }
+  .toc li { margin-bottom: 6px; }
+  .toc a { color: var(--coral-deep); text-decoration: none; font-weight: bold; }
+  .toc a:hover { text-decoration: underline; }
+
+  .tab-section { margin-top: 46px; }
+  .tab-header { display: flex; align-items: center; gap: 14px; margin-bottom: 4px; flex-wrap: wrap; }
+  .tab-num { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 14px; font-weight: bold; color: var(--white); background: var(--chalk-green); border-radius: 6px; padding: 6px 14px; white-space: nowrap; }
+  .tab-header.study .tab-num  { background: var(--coral-deep); }
+  .tab-header.activate .tab-num { background: var(--chalk-yellow-deep); color: var(--ink); }
+  .tab-header.vocab .tab-num  { background: var(--blue-deep); }
+  .tab-header.autonomy .tab-num { background: var(--purple); }
+  h2.tab-title { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 24px; margin: 0; color: var(--ink); }
+  .tab-rule { border: none; border-top: 2px solid var(--paper-line); margin: 14px 0 22px; }
+
+  .card { background: var(--white); border-radius: 10px; padding: 22px 26px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(40,52,74,0.08); }
+  .card h3 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 19px; margin: 0 0 10px; color: var(--chalk-green); }
+  .card p  { margin: 0 0 10px; }
+  .card p:last-child { margin-bottom: 0; }
+
+  /* ENGAGE: Then vs Now sorting */
+  .sort-zone { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0 10px; }
+  .sort-col { border-radius: 10px; padding: 16px; min-height: 90px; }
+  .sort-col.then-col { background: var(--purple); }
+  .sort-col.now-col  { background: var(--chalk-green); }
+  .sort-col h4 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 15px; margin: 0 0 10px; color: var(--chalk-yellow); text-align: center; }
+  .sort-col .placed-chips { display: flex; flex-wrap: wrap; gap: 6px; min-height: 40px; }
+  .sort-col .placed-chip { background: rgba(255,255,255,0.18); color: var(--paper); border-radius: 6px; padding: 5px 10px; font-size: 13px; }
+  .stmt-pool { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+  .stmt-card { background: var(--paper); border: 2px solid var(--paper-line); border-radius: 8px; padding: 10px 14px; font-size: 14.5px; cursor: pointer; transition: all 0.15s ease; max-width: 260px; line-height: 1.45; }
+  .stmt-card:hover { border-color: var(--purple); }
+  .stmt-card.placed { opacity: 0.35; cursor: default; }
+  .stmt-card.wrong-flash { border-color: var(--coral-deep); background: #F8E4DE; }
+  .sort-btns { display: flex; gap: 10px; margin-top: 12px; }
+  .sort-btn { padding: 9px 20px; border: none; border-radius: 6px; font-weight: bold; font-size: 14px; cursor: pointer; }
+  .sort-btn.then-btn { background: var(--purple); color: var(--white); }
+  .sort-btn.now-btn  { background: var(--chalk-green); color: var(--white); }
+  .sort-btn:hover { opacity: 0.85; }
+  .sort-score { font-size: 13px; color: var(--ink-soft); margin-top: 8px; }
+
+  /* Realia: Essay */
+  .essay-block { background: var(--white); border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 16px rgba(40,52,74,0.12); overflow: hidden; border: 1px solid var(--paper-line); }
+  .essay-header { background: var(--purple); color: var(--white); padding: 14px 26px; display: flex; align-items: center; gap: 12px; }
+  .essay-tag { font-size: 11px; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; background: var(--chalk-yellow); color: var(--ink); border-radius: 4px; padding: 3px 9px; }
+  .essay-title { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 17px; }
+  .essay-body { padding: 26px 30px; line-height: 1.8; }
+  .essay-body p { margin: 0 0 16px; }
+  .essay-body p:last-child { margin-bottom: 0; }
+  .byline { font-size: 12.5px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 20px !important; }
+
+  /* Forum thread */
+  .forum-block { background: var(--white); border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 16px rgba(40,52,74,0.12); overflow: hidden; border: 1px solid var(--paper-line); }
+  .forum-header { background: var(--chalk-green); color: var(--white); padding: 13px 24px; display: flex; align-items: center; gap: 10px; }
+  .forum-tag { font-size: 11px; font-weight: bold; letter-spacing: 0.06em; background: var(--chalk-yellow); color: var(--ink); border-radius: 3px; padding: 2px 8px; }
+  .forum-title { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 16px; }
+  .forum-post { padding: 16px 24px; border-bottom: 1px solid var(--paper-line); display: grid; grid-template-columns: 44px 1fr; gap: 12px; }
+  .forum-post:last-child { border-bottom: none; }
+  .f-avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px; color: var(--white); flex-shrink: 0; }
+  .f-handle { font-weight: bold; font-size: 13.5px; color: var(--ink); margin-bottom: 5px; }
+  .f-upvotes { float: right; font-size: 12px; background: var(--paper); border: 1px solid var(--paper-line); border-radius: 4px; padding: 2px 7px; color: var(--ink-soft); }
+  .f-text { font-size: 15.5px; line-height: 1.65; }
+
+  .t1 { background: #FBEDE9; color: var(--coral-deep); padding: 1px 5px; border-radius: 3px; font-weight: bold; }
+  .t2 { background: #E9F0F5; color: var(--blue-deep); padding: 1px 5px; border-radius: 3px; font-weight: bold; }
+  .t3 { background: var(--purple-light); color: var(--purple); padding: 1px 5px; border-radius: 3px; font-weight: bold; }
+
+  /* Notice box */
+  .notice-box { background: var(--amber-light); border: 2px dashed var(--chalk-yellow-deep); border-radius: 10px; padding: 20px 26px; margin-bottom: 20px; }
+  .notice-box h3 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 18px; margin: 0 0 12px; color: var(--chalk-yellow-deep); }
+  .notice-q { margin-bottom: 14px; padding-left: 28px; position: relative; }
+  .notice-q::before { content: "?"; position: absolute; left: 0; top: -2px; width: 20px; height: 20px; border-radius: 50%; background: var(--chalk-yellow-deep); color: var(--white); font-size: 13px; font-weight: bold; text-align: center; line-height: 20px; }
+  .reveal-btn { background: none; border: 1px solid var(--chalk-yellow-deep); color: var(--chalk-yellow-deep); border-radius: 5px; padding: 3px 10px; font-size: 12px; cursor: pointer; margin-top: 4px; }
+  .reveal-btn:hover { background: var(--chalk-yellow-deep); color: var(--white); }
+  .notice-reveal { margin-top: 6px; font-size: 14px; color: var(--ink-soft); font-style: italic; border-left: 3px solid var(--chalk-yellow-deep); padding-left: 10px; display: none; }
+
+  .grammar-box { background: var(--white); border-radius: 10px; padding: 24px 28px; margin-bottom: 22px; box-shadow: 0 2px 10px rgba(40,52,74,0.08); }
+  .grammar-box h3 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 21px; margin: 0 0 6px; color: var(--coral-deep); }
+  .grammar-sub { font-size: 14px; color: var(--ink-soft); margin: 0 0 18px; font-style: italic; }
+  .example-row { display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start; margin-bottom: 10px; padding: 10px 14px; background: var(--paper); border-radius: 8px; }
+  .example-row .mark { font-weight: bold; color: var(--coral-deep); font-size: 18px; }
+  .example-row .txt strong { color: var(--chalk-green); }
+  .example-row .gloss { display: block; font-size: 13px; color: var(--ink-soft); margin-top: 2px; font-style: italic; }
+  .example-row .src { display: block; font-size: 12px; color: var(--blue-deep); margin-top: 4px; }
+  .rule-pill { display: inline-block; background: var(--chalk-yellow); color: var(--ink); font-weight: bold; font-size: 13px; border-radius: 6px; padding: 4px 10px; margin: 4px 6px 4px 0; }
+
+  /* Three-way distinction axis */
+  .three-way { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin: 18px 0; border-radius: 10px; overflow: hidden; }
+  .way-box { padding: 18px 16px; }
+  .way-box.w1 { background: var(--coral-deep); }
+  .way-box.w2 { background: var(--blue-deep); }
+  .way-box.w3 { background: var(--purple); }
+  .way-label { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 15px; font-weight: bold; color: var(--chalk-yellow); margin: 0 0 10px; }
+  .way-form  { font-size: 14px; color: rgba(255,255,255,0.85); margin: 0 0 8px; font-weight: bold; }
+  .way-meaning { font-size: 13.5px; color: rgba(255,255,255,0.75); margin: 0 0 8px; line-height: 1.5; }
+  .way-ex    { font-size: 13px; color: var(--white); font-style: italic; line-height: 1.45; margin: 0; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 8px; margin-top: 8px; }
+
+  table.conj-table { width: 100%; border-collapse: collapse; margin: 14px 0 6px; font-size: 15px; }
+  table.conj-table th { background: var(--chalk-green); color: var(--paper); padding: 8px 12px; text-align: left; font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 14px; }
+  table.conj-table td { padding: 8px 12px; border-bottom: 1px solid var(--paper-line); vertical-align: top; }
+  table.conj-table tr:nth-child(even) td { background: var(--paper); }
+
+  .compare-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 14px 0; }
+  .compare-col { padding: 16px 18px; border-radius: 8px; }
+  .compare-col.c-coral { background: #FBEDE9; }
+  .compare-col.c-blue  { background: #E9F0F5; }
+  .compare-col.c-purple{ background: var(--purple-light); }
+  .compare-col.c-green { background: #EFF5F1; }
+  .compare-col h4 { margin: 0 0 10px; font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 16px; }
+  .compare-col.c-coral h4 { color: var(--coral-deep); }
+  .compare-col.c-blue  h4 { color: var(--blue-deep); }
+  .compare-col.c-purple h4 { color: var(--purple); }
+  .compare-col.c-green  h4 { color: var(--chalk-green); }
+  .compare-col p { margin: 0 0 8px; font-size: 14.5px; }
+
+  /* Dialogue */
+  .dialogue-block { background: var(--white); border-radius: 10px; overflow: hidden; border: 1px solid var(--paper-line); margin-bottom: 20px; }
+  .dialogue-header { padding: 12px 22px; display: flex; align-items: center; gap: 10px; }
+  .dlg-turn { display: grid; grid-template-columns: 44px 1fr; gap: 12px; padding: 14px 22px; border-bottom: 1px solid var(--paper-line); }
+  .dlg-turn:last-child { border-bottom: none; }
+  .dlg-turn:nth-child(even) { background: var(--paper); }
+  .dlg-avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px; color: var(--white); flex-shrink: 0; }
+  .dlg-name { font-weight: bold; font-size: 13.5px; color: var(--ink); margin-bottom: 4px; }
+  .dlg-text { font-size: 15.5px; line-height: 1.65; margin: 0; }
+
+  .vocab-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 14px 0; }
+  .vocab-card { background: var(--paper); border-radius: 8px; padding: 14px 16px; }
+  .vocab-card .word { font-weight: bold; color: var(--blue-deep); font-size: 16px; }
+  .vocab-card .pos { font-size: 11px; color: var(--ink-soft); text-transform: uppercase; margin-left: 6px; }
+  .vocab-card .def { font-size: 14px; margin-top: 4px; }
+  .vocab-card .ex  { font-size: 13px; color: var(--ink-soft); margin-top: 4px; font-style: italic; }
+
+  .pronunciation-tag { display: inline-block; font-family: "Courier New", monospace; font-size: 13px; background: var(--ink); color: var(--paper); border-radius: 4px; padding: 2px 8px; margin-left: 6px; }
+
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+  .chip { background: var(--paper); border: 1px solid var(--paper-line); border-radius: 999px; padding: 6px 14px; font-size: 14px; color: var(--ink); }
+
+  .exercise { background: var(--white); border-radius: 10px; padding: 22px 26px; margin-bottom: 18px; box-shadow: 0 2px 10px rgba(40,52,74,0.08); }
+  .exercise-label { display: inline-block; font-size: 12px; font-weight: bold; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white); background: var(--chalk-green); border-radius: 5px; padding: 3px 10px; margin-bottom: 10px; }
+  .exercise h4 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 17px; margin: 0 0 12px; color: var(--ink); }
+  .q-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+  .q-num { font-weight: bold; color: var(--coral-deep); min-width: 22px; }
+  .q-text { flex: 1; min-width: 220px; }
+  .blank-input { border: none; border-bottom: 2px solid var(--chalk-yellow-deep); background: var(--paper); font-family:'Inter',Calibri,sans-serif; font-size: 15px; padding: 4px 8px; width: 240px; color: var(--ink); }
+  .blank-input:focus { outline: none; border-color: var(--coral-deep); }
+  .check-btn { background: var(--chalk-yellow); color: var(--ink); border: none; border-radius: 6px; padding: 9px 20px; font-weight: bold; font-size: 14px; cursor: pointer; margin-top: 8px; }
+  .check-btn:hover { background: var(--chalk-yellow-deep); }
+  .feedback { margin-top: 12px; font-size: 14px; border-radius: 6px; padding: 10px 14px; display: none; }
+  .feedback.show { display: block; }
+  .feedback.good { background: #E3F0E5; color: var(--chalk-green); }
+  .feedback.bad  { background: #F8E4DE; color: var(--coral-deep); }
+  .mc-opt { display: block; background: var(--paper); border: 2px solid var(--paper-line); border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; cursor: pointer; font-size: 15px; transition: border-color 0.15s ease; }
+  .mc-opt:hover { border-color: var(--chalk-yellow-deep); }
+  .mc-opt.correct-flash { border-color: var(--chalk-green); background: #E3F0E5; }
+  .mc-opt.wrong-flash   { border-color: var(--coral-deep);  background: #F8E4DE; }
+  .match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0; }
+  .match-item { background: var(--paper); border-radius: 8px; padding: 10px 14px; font-size: 14.5px; cursor: pointer; border: 2px solid transparent; transition: all 0.15s ease; }
+  .match-item:hover   { border-color: var(--chalk-yellow-deep); }
+  .match-item.selected{ border-color: var(--chalk-yellow-deep); background: #FFF8E0; }
+  .match-item.matched { border-color: var(--chalk-green); background: #E3F0E5; cursor: default; }
+  .match-item.wrong-flash { border-color: var(--coral-deep); background: #F8E4DE; }
+
+  .activate-box { background: var(--chalk-yellow); border-radius: 10px; padding: 26px 28px; margin-bottom: 20px; }
+  .activate-box h3 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; margin: 0 0 12px; color: var(--ink); font-size: 19px; }
+  textarea.response-box { width: 100%; min-height: 120px; border-radius: 8px; border: 2px solid var(--chalk-yellow-deep); padding: 12px 14px; font-family:'Inter',Calibri,sans-serif; font-size: 15px; resize: vertical; background: var(--white); color: var(--ink); }
+  textarea.response-box:focus { outline: none; border-color: var(--coral-deep); }
+  .word-count { font-size: 12px; color: var(--ink-soft); margin-top: 6px; text-align: right; }
+
+  .research-card { background: var(--purple-light); border-radius: 10px; padding: 22px 26px; margin-bottom: 18px; border: 1px solid #DCC8EA; }
+  .research-card h3 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 18px; margin: 0 0 10px; color: var(--purple); }
+  .research-tag { display: inline-block; font-size: 11px; font-weight: bold; letter-spacing: 0.05em; text-transform: uppercase; background: var(--purple); color: var(--white); border-radius: 4px; padding: 3px 9px; margin-bottom: 10px; }
+  .link-suggestion { display: inline-block; background: var(--white); border: 1px solid #DCC8EA; border-radius: 6px; padding: 6px 12px; font-size: 13px; margin: 4px 6px 4px 0; color: var(--purple); }
+
+  table.ref-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 14px 0; }
+  table.ref-table th { background: var(--ink); color: var(--paper); padding: 10px 14px; text-align: left; font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; font-size: 13.5px; }
+  table.ref-table td { padding: 10px 14px; border-bottom: 1px solid var(--paper-line); vertical-align: top; }
+  table.ref-table tr:nth-child(even) td { background: var(--paper); }
+
+  .wrapup { background: var(--ink); color: var(--paper); border-radius: 10px; padding: 24px 28px; margin-top: 40px; }
+  .wrapup h3 { font-family:'Playfair Display',"Bookman Old Style",Georgia,serif; color: var(--chalk-yellow); margin: 0 0 10px; font-size: 18px; }
+  .wrapup li { margin-bottom: 6px; }
+
+  .progress-track { position: sticky; top: 0; height: 5px; background: var(--paper-line); z-index: 50; }
+  .progress-fill  { height: 100%; width: 0%; background: var(--purple); transition: width 0.1s ease; }
+
+  @media (max-width: 600px) {
+    h1.title { font-size: 26px; }
+    .sort-zone, .compare-cols, .vocab-grid, .match-grid, .three-way { grid-template-columns: 1fr; }
+    .toc ol { columns: 1; }
+  }
+
+/* ============================================================
+   SITE FRAME (added): fixed top nav + progress bar, slide-out
+   contents panel with creator branding, sticky section headers,
+   responsive & overflow fixes, footer, speaking/listening cards
+   ============================================================ */
+:root{--navh:52px;}
+html{scroll-behavior:smooth;}
+body{overflow-x:hidden;padding-top:calc(var(--navh) + 4px);}
+[id]{scroll-margin-top:calc(var(--navh) + 20px);}
+img,svg,table{max-width:100%;}
+.wrap p,.wrap li,.wrap td,.wrap th,.wrap h1,.wrap h2,.wrap h3{overflow-wrap:break-word;word-break:break-word;}
+.masthead{margin-left:0;margin-right:0;}
+.debate-band{margin-left:0;margin-right:0;}
+
+/* Progress bar: fixed, always visible below the nav */
+.progress-track{position:fixed;top:var(--navh);left:0;right:0;height:4px;z-index:120;}
+
+/* Top navigation bar */
+.nav-bar{position:fixed;top:0;left:0;right:0;height:var(--navh);background:var(--purple);color:#FFFFFF;display:flex;align-items:center;gap:10px;padding:0 12px;z-index:130;box-shadow:0 2px 12px rgba(0,0,0,.20);}
+.nav-btn{min-width:44px;min-height:44px;background:transparent;border:none;color:#FFFFFF;font-size:20px;cursor:pointer;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',Arial,sans-serif;transition:background .15s;}
+.nav-btn:hover{background:rgba(255,255,255,.14);}
+.nav-top{font-size:13px;font-weight:700;letter-spacing:.03em;white-space:nowrap;padding:0 10px;}
+.nav-brand{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.25;}
+.nav-brand-week{font-family:'Inter',Arial,sans-serif;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;opacity:.75;}
+.nav-brand-title{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+/* Slide-out contents panel */
+.nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .25s;z-index:135;}
+.nav-overlay.open{opacity:1;pointer-events:auto;}
+.nav-panel{position:fixed;top:0;bottom:0;left:0;width:min(330px,88vw);background:#FFFFFF;z-index:140;transform:translateX(-103%);transition:transform .28s ease;display:flex;flex-direction:column;box-shadow:6px 0 28px rgba(0,0,0,.22);}
+.nav-panel.open{transform:translateX(0);}
+.nav-panel-head{display:flex;align-items:center;justify-content:space-between;padding:8px 10px 8px 20px;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);border-bottom:1px solid var(--paper-line);}
+.nav-panel-head .nav-btn{color:var(--ink);font-size:16px;}
+.nav-panel-links{flex:1;overflow-y:auto;padding:10px 8px;}
+.nav-panel-links a{display:flex;align-items:center;min-height:44px;padding:6px 14px;border-radius:8px;text-decoration:none;color:var(--ink);font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:600;line-height:1.4;}
+.nav-panel-links a:hover{background:var(--paper);color:var(--purple);}
+/* Branding zone: visually separated from navigation */
+.nav-panel-brand{border-top:2px solid var(--paper-line);background:var(--paper);padding:16px 20px 18px;}
+.nav-panel-brand .brand-name{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.nav-panel-brand .brand-line{font-family:'Inter',Arial,sans-serif;font-size:12.5px;color:var(--ink-soft);margin-bottom:10px;line-height:1.55;}
+.nav-panel-brand a{display:flex;align-items:center;min-height:40px;font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--purple);text-decoration:none;font-weight:600;}
+.nav-panel-brand a:hover{text-decoration:underline;}
+.nav-panel-brand .brand-copy{margin-top:10px;font-family:'Inter',Arial,sans-serif;font-size:11.5px;color:var(--ink-soft);}
+
+/* Sticky section headers: current section title stays visible */
+.tab-header{position:sticky;top:calc(var(--navh) + 4px);z-index:60;background:var(--paper);padding:10px 0 8px;}
+
+/* Scrollable table wrapper with mobile hint */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;}
+.table-scroll table{max-width:none;}
+.table-scroll.has-overflow{background:linear-gradient(to left,rgba(0,0,0,.12),rgba(0,0,0,0) 26px) right center / 26px 100% no-repeat;}
+.table-scroll.has-overflow::before{content:'scroll \2192';display:block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--ink-soft);text-align:right;padding:0 6px 4px;}
+
+/* Speaking & Listening sections */
+.tb-speak{background:var(--purple);color:#FFFFFF;}
+.tb-listen{background:var(--amber);color:#FFFFFF;}
+.section-intro{font-family:'Inter',Arial,sans-serif;font-size:14.5px;color:var(--ink-soft);margin:0 0 18px;line-height:1.65;}
+.speak-card{background:#FFFFFF;border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.07);border-left:4px solid var(--purple);}
+.speak-type{display:inline-block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin-bottom:8px;}
+.speak-card h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0 0 10px;color:var(--ink);}
+.speak-card p{margin:0 0 10px;}
+.speak-card ul{margin:0 0 10px 20px;padding:0;}
+.speak-card li{margin-bottom:6px;}
+.speak-how{background:var(--paper);border-radius:8px;padding:12px 16px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;line-height:1.65;margin-top:12px;}
+.media-card{background:#FFFFFF;border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.07);border-left:4px solid var(--amber);}
+.media-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px;}
+.media-head h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0;color:var(--ink);}
+.media-platform{font-family:'Inter',Arial,sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--amber);}
+.media-card p{margin:0 0 10px;}
+.media-task{border-left:3px solid var(--amber);background:var(--paper);padding:10px 14px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;line-height:1.65;margin-top:10px;border-radius:0 8px 8px 0;}
+.tip-box{border:2px dashed var(--purple);border-radius:10px;padding:18px 22px;background:#FFFFFF;margin-top:6px;}
+.tip-box h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:16px;margin:0 0 10px;color:var(--purple);}
+.tip-box ul{margin:0 0 0 20px;padding:0;}
+.tip-box li{margin-bottom:6px;font-size:14.5px;}
+
+/* Footer */
+.site-footer{background:var(--purple);color:#FFFFFF;margin-top:56px;padding:34px 24px 40px;}
+.site-footer-inner{max-width:920px;margin:0 auto;text-align:center;}
+.footer-copy{font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:700;margin:0 0 6px;}
+.footer-line{font-family:'Playfair Display',Cambria,Georgia,serif;font-style:italic;font-size:14.5px;opacity:.88;margin:0 0 12px;}
+.footer-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 10px;}
+.footer-links a{color:#FFFFFF;font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding:8px 2px;min-height:44px;display:inline-flex;align-items:center;}
+.footer-links a:hover{border-bottom-color:#FFFFFF;}
+.footer-dot{opacity:.5;}
+.footer-note{font-family:'Inter',Arial,sans-serif;font-size:12.5px;opacity:.72;margin:0;}
+
+/* Mobile refinements (375px-safe) */
+@media(max-width:600px){
+  .wrap{padding-left:18px;padding-right:18px;}
+  .masthead{padding:34px 20px 28px;}
+  .grammar-box,.card{padding:20px 18px;}
+  .oped-body{padding:20px 18px;}
+  .speak-card,.media-card{padding:18px 16px;}
+  .check-btn,.reveal-btn,.rev-btn,.poll-opt{min-height:44px;}
+  .vs-table{grid-template-columns:1fr;}
+  .vs-divider{display:none;}
+  table.rule-table{font-size:13.5px;}
+  .nav-top{font-size:12px;}
+  .site-footer{padding:28px 18px 34px;}
+}
+
+@media(max-width:600px){.check-slider-btn,.toc a{min-height:44px;}}
+
+</style>
+</head>
+<body>
+
+<!-- SECTION: Top Navigation Bar -->
+<header class="nav-bar" id="navBar">
+  <button class="nav-btn nav-hamburger" id="navHamburger" aria-label="Open contents menu" aria-expanded="false">&#9776;</button>
+  <div class="nav-brand">
+    <span class="nav-brand-week">Grade 7 · Week 3</span>
+    <span class="nav-brand-title">Used To, Would & Getting Used To</span>
+  </div>
+  <button class="nav-btn nav-top" id="navTopBtn" aria-label="Back to top">&#8593; Top</button>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+<aside class="nav-panel" id="navPanel" aria-hidden="true">
+  <div class="nav-panel-head"><span>On this page</span><button class="nav-btn nav-close" id="navClose" aria-label="Close menu">&#10005;</button></div>
+  <nav class="nav-panel-links" id="navPanelLinks"></nav>
+  <!-- Creator & branding section of the menu -->
+  <div class="nav-panel-brand">
+    <div class="brand-name">Bahar Esmaeelzadeh</div>
+    <div class="brand-line">Designed and created for English learners by Bahar Esmaeelzadeh.</div>
+    <a href="mailto:bahar.esmz.en@gmail.com">&#128231; bahar.esmz.en@gmail.com</a>
+    <a href="https://www.linkedin.com/in/bahar-esmaeelzadeh-650b98198" target="_blank" rel="noopener">&#128188; LinkedIn &mdash; Bahar Esmaeelzadeh</a>
+    <div class="brand-copy">&copy; 2026 Bahar Esmaeelzadeh &middot; All rights reserved</div>
+  </div>
+</aside>
+
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- SECTION: Masthead / Header -->
+<div class="masthead">
+  <div class="masthead-inner">
+    <p class="eyebrow">Grade 7 &middot; Week 3 &middot; Complete Reference &amp; Pre-Class Material</p>
+    <h1 class="title">Used To, Would &amp; Getting Used To</h1>
+    <div class="masthead-meta">
+      <div>Level: <span>B2</span></div>
+      <div>Theme: <span>Childhood &amp; Memories</span></div>
+      <div>Function: <span>Expressing Memories</span></div>
+      <div>Est. time: <span>60&ndash;70 min</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <!-- SECTION: Table of Contents -->
+  <div class="toc">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#engage">1. Engage &mdash; then vs. now</a></li>
+      <li><a href="#context1">2. Context: the essay</a></li>
+      <li><a href="#notice1">3. Notice &amp; discover</a></li>
+      <li><a href="#study1">4. Study: used to</a></li>
+      <li><a href="#study2">5. Study: would</a></li>
+      <li><a href="#study3">6. Study: be used to / get used to</a></li>
+      <li><a href="#threeway">7. The three-way distinction</a></li>
+      <li><a href="#context2">8. Context: the forum thread</a></li>
+      <li><a href="#dialogue">9. Dialogue: talking about the past</a></li>
+      <li><a href="#pronunciation">10. Pronunciation focus</a></li>
+      <li><a href="#vocab">11. Vocabulary: society &amp; nostalgia</a></li>
+      <li><a href="#exercises">12. Practice exercises</a></li>
+      <li><a href="#speaking">13. Speaking practice</a></li>
+      <li><a href="#listening">14. Listening &amp; watching</a></li>
+      <li><a href="#autonomy">15. Explore on your own</a></li>
+      <li><a href="#activate">16. A taste of Activate</a></li>
+      <li><a href="#reference">17. Quick-reference summary</a></li>
+    </ol>
+  </div>
+
+  <!-- SECTION: Then vs. now &mdash; sort your life -->
+  <div class="tab-section" id="engage">
+    <div class="tab-header">
+      <span class="tab-num">ENGAGE</span>
+      <h2 class="tab-title">Then vs. now &mdash; sort your life</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <h3>Before any grammar: think about yourself</h3>
+      <p>Below are eight statements about everyday life. Click a statement to select it, then click <strong>Then</strong> (true when you were a child) or <strong>Now</strong> (true for you as an adult). Some might belong in both &mdash; but pick the stronger fit. Don&rsquo;t overthink it.</p>
+      <p style="font-size:14px; color:var(--ink-soft);">This is not a test &mdash; it&rsquo;s personal. The grammar for expressing exactly this kind of comparison is what you&rsquo;ll learn this week.</p>
+    </div>
+
+    <div class="stmt-pool" id="stmtPool">
+      <div class="stmt-card" data-cat="then" data-id="A">I believed in things without question.</div>
+      <div class="stmt-card" data-cat="now"  data-id="B">I find crowded places harder to handle.</div>
+      <div class="stmt-card" data-cat="then" data-id="C">Summer holidays felt endless.</div>
+      <div class="stmt-card" data-cat="now"  data-id="D">I&rsquo;m used to making decisions alone.</div>
+      <div class="stmt-card" data-cat="then" data-id="E">I&rsquo;d spend hours outside with neighbours.</div>
+      <div class="stmt-card" data-cat="now"  data-id="F">Getting up early is something I&rsquo;ve had to get used to.</div>
+      <div class="stmt-card" data-cat="then" data-id="G">Adults seemed to know everything.</div>
+      <div class="stmt-card" data-cat="now"  data-id="H">I&rsquo;m still not used to how fast time passes.</div>
+    </div>
+
+    <div class="sort-zone">
+      <div class="sort-col then-col" id="thenCol">
+        <h4>THEN &mdash; as a child</h4>
+        <div class="placed-chips" id="thenChips"></div>
+      </div>
+      <div class="sort-col now-col" id="nowCol">
+        <h4>NOW &mdash; as an adult</h4>
+        <div class="placed-chips" id="nowChips"></div>
+      </div>
+    </div>
+    <div class="sort-btns">
+      <button class="sort-btn then-btn" onclick="placeSelected('then')">Place in THEN</button>
+      <button class="sort-btn now-btn"  onclick="placeSelected('now')">Place in NOW</button>
+      <button class="sort-btn" style="background:var(--paper); color:var(--ink); border:1px solid var(--paper-line);" onclick="resetSort()">Reset</button>
+    </div>
+    <p class="sort-score" id="sortScore">Select a statement above, then click a column button.</p>
+
+    <div class="card" style="margin-top:18px;">
+      <h3>What to notice</h3>
+      <p>Some statements use grammar you probably recognise from English: <em>&ldquo;I&rsquo;d spend hours outside&rdquo;</em> or <em>&ldquo;I&rsquo;m used to making decisions.&rdquo;</em> These are exactly the three patterns you&rsquo;ll study this week. Keep them in mind as you read the next text.</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Read first: the personal essay -->
+  <div class="tab-section" id="context1">
+    <div class="tab-header study">
+      <span class="tab-num">CONTEXT</span>
+      <h2 class="tab-title">Read first: the personal essay</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <p>Read this fictional personal essay. Don&rsquo;t analyse the grammar yet &mdash; just answer: <strong>what was the single hardest thing the writer had to adjust to, and how did they eventually deal with it?</strong></p>
+    </div>
+
+    <div class="essay-block">
+      <div class="essay-header">
+        <span class="essay-tag">Essay</span>
+        <span class="essay-title">Elsewhere &mdash; &ldquo;When Everything Changed&rdquo;</span>
+      </div>
+      <div class="essay-body">
+        <p class="byline">By Amara Nwosu &middot; Writer &amp; educator, Lagos &rarr; Amsterdam</p>
+
+        <p>When I was growing up in Lagos, I <span class="t1">used to fall asleep</span> to street noise &mdash; vendors calling out, motorcycles, the sound of neighbours arguing across a courtyard. I never noticed it as a child. It was simply what evenings sounded like. Then I moved to Amsterdam at twenty-six, and the silence of my first apartment nearly drove me to distraction.</p>
+
+        <p>In the summers back home, my siblings and I <span class="t1">would spend</span> entire days at my grandmother&rsquo;s house &mdash; she <span class="t1">used to make</span> pepper soup on Fridays, and we <span class="t1">would crowd</span> around the kitchen while she worked. The smell of it still does something to me when I encounter it now. That version of Fridays no longer exists.</p>
+
+        <p>People who move between countries often describe the same experience: the small rituals you <span class="t1">used to take for granted</span> become the things you grieve the most. I didn&rsquo;t miss Lagos in a general way &mdash; I missed specific sounds, specific smells, specific routines I hadn&rsquo;t realised I was attached to.</p>
+
+        <p>Adjusting to the Netherlands took longer than I expected. I was not <span class="t2">used to the cold</span>, obviously &mdash; but more than the cold, I wasn&rsquo;t <span class="t2">used to the directness</span>. Dutch communication style felt blunt at first. I had to <span class="t3">get used to people saying exactly what they meant</span> without softening it. It took about two years before I stopped reading criticism into straightforward sentences.</p>
+
+        <p>I also had to <span class="t3">get used to cycling everywhere</span>. In Lagos I <span class="t1">didn&rsquo;t use to cycle</span> at all &mdash; it wasn&rsquo;t something adults in my neighbourhood did. In Amsterdam, the bicycle is infrastructure. Now I can&rsquo;t imagine living without one. <span class="t2">I&rsquo;m completely used to it</span>. But it took time, and I fell off twice.</p>
+
+        <p>That is the strange arithmetic of moving: you lose things, and you gain things, and eventually you <span class="t3">get used to holding both</span>. What I <span class="t1">used to think of as home</span> is still home. This place is also home. I am <span class="t2">used to the contradiction now</span>. I wasn&rsquo;t always.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Quick meaning check</h3>
+      <p>1. What specific routine from Lagos does Amara miss most vividly?</p>
+      <p>2. What aspect of Dutch culture took about two years to adjust to?</p>
+      <p>3. What is the &ldquo;strange arithmetic&rdquo; that Amara describes at the end?</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Three similar phrases &mdash; three very different meanings -->
+  <div class="tab-section" id="notice1">
+    <div class="tab-header study">
+      <span class="tab-num">NOTICE &amp; DISCOVER</span>
+      <h2 class="tab-title">Three similar phrases &mdash; three very different meanings</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="notice-box">
+      <h3>Detective work: spot the differences</h3>
+
+      <div class="notice-q">
+        The essay contains: <em>&ldquo;I used to fall asleep to street noise,&rdquo;</em> <em>&ldquo;I wasn&rsquo;t used to the directness,&rdquo;</em> and <em>&ldquo;I had to get used to saying exactly what they meant.&rdquo;</em> All three phrases contain the word &ldquo;used.&rdquo; But do they describe the same kind of experience? How does each one feel different?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">They describe three completely different things: (1) a habit that existed in the past but no longer does; (2) a current state — something you are or aren't accustomed to right now; (3) a process — the gradual journey of becoming accustomed. Same word, three distinct grammatical and conceptual functions.</p>
+      </div>
+
+      <div class="notice-q">
+        Amara also uses &ldquo;would&rdquo;: <em>&ldquo;my siblings and I would spend entire days at my grandmother&rsquo;s house&rdquo;</em> and <em>&ldquo;we would crowd around the kitchen.&rdquo;</em> Could she have written <em>&ldquo;we used to crowd around the kitchen&rdquo;</em> instead? What about <em>&ldquo;she would make pepper soup on Fridays&rdquo;</em> &mdash; does that feel the same as <em>&ldquo;she used to make pepper soup&rdquo;</em>?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">"We used to crowd" and "we would crowd" are both acceptable for a past repeated action. But "she used to make pepper soup" and "she would make pepper soup" are subtly different: <em>used to</em> can describe states (the pepper soup existed as a Friday tradition), while <em>would</em> strictly describes actions/habits. <em>Would</em> cannot describe a past state — "I would live in Lagos" sounds wrong for a general past fact. "I used to live in Lagos" is correct.</p>
+      </div>
+
+      <div class="notice-q">
+        What grammatical form follows <em>&ldquo;be used to&rdquo;</em> and <em>&ldquo;get used to&rdquo;</em>? Look carefully at: <em>&ldquo;I wasn&rsquo;t used to the cold,&rdquo;</em> <em>&ldquo;I&rsquo;m used to it,&rdquo;</em> <em>&ldquo;I had to get used to cycling everywhere.&rdquo;</em> What comes directly after "to" in each case?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">After "be used to" and "get used to", you use a noun ("the cold," "it") or a gerund ("cycling," "saying"). The "to" here is a preposition, NOT part of an infinitive. This is the most important thing to remember: "I am used to <strong>cycling</strong>" (✓) — never "I am used to <strong>cycle</strong>" (✗).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: 1. Used to: past habits & states -->
+  <div class="tab-section" id="study1">
+    <div class="tab-header study">
+      <span class="tab-num">STUDY</span>
+      <h2 class="tab-title">1. Used to: past habits &amp; states</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>Used to + base verb</h3>
+      <p class="grammar-sub">Describes something that was true or happened regularly in the past, but is no longer true or no longer happens. Works for both habitual actions AND past states.</p>
+
+      <div class="compare-cols">
+        <div class="compare-col c-coral">
+          <h4>Past habit (action)</h4>
+          <p>I <strong>used to fall asleep</strong> to street noise.</p>
+          <p>She <strong>used to make</strong> pepper soup on Fridays.</p>
+          <p>We <strong>used to spend</strong> summers at my grandmother&rsquo;s.</p>
+          <p style="font-size:13px; font-style:italic; color:var(--ink-soft);">These actions no longer happen regularly.</p>
+        </div>
+        <div class="compare-col c-blue">
+          <h4>Past state (condition)</h4>
+          <p>I <strong>used to live</strong> in Lagos.</p>
+          <p>He <strong>used to be</strong> very shy.</p>
+          <p>That place <strong>used to be</strong> a market.</p>
+          <p style="font-size:13px; font-style:italic; color:var(--ink-soft);">These states no longer exist.</p>
+        </div>
+      </div>
+
+      <div class="table-scroll"><table class="conj-table" style="margin-top:16px;">
+        <tr><th>Form</th><th>Example</th></tr>
+        <tr><td><strong>Positive</strong>: used to + base verb</td><td>I <strong>used to cycle</strong> to school.</td></tr>
+        <tr><td><strong>Negative</strong>: didn&rsquo;t use to + base verb</td><td>I <strong>didn&rsquo;t use to cycle</strong> anywhere.</td></tr>
+        <tr><td><strong>Question</strong>: Did + subject + use to?</td><td><strong>Did</strong> you <strong>use to live</strong> here?</td></tr>
+      </table></div>
+
+      <div style="background:#FFF8E0; border-radius:8px; padding:14px 18px; margin-top:14px;">
+        <p style="font-weight:bold; color:var(--chalk-yellow-deep); margin:0 0 6px;">⚠ Spelling note: used to vs. use to</p>
+        <p style="margin:0; font-size:14.5px;">In positive sentences: <strong>used to</strong> (with d). In negatives and questions, after "did/didn't": <strong>use to</strong> (no d) &mdash; because the past tense is already carried by "did."</p>
+      </div>
+
+      <div class="example-row" style="margin-top:14px;">
+        <span class="mark">✗</span>
+        <span class="txt"><em>I use to wake up early.</em>
+          <span class="gloss">Positive sentence needs "used to": <strong>I used to wake up early.</strong></span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✗</span>
+        <span class="txt"><em>I didn't used to cycle.</em>
+          <span class="gloss">After "didn't" drop the d: <strong>I didn't use to cycle.</strong></span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: 2. Would: past habits only -->
+  <div class="tab-section" id="study2">
+    <div class="tab-header study">
+      <span class="tab-num">STUDY</span>
+      <h2 class="tab-title">2. Would: past habits only</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>Would + base verb (for past habits)</h3>
+      <p class="grammar-sub">Would describes repeated past actions &mdash; things done regularly in the past. It is more literary and nostalgic in feel than "used to." It CANNOT be used for past states.</p>
+
+      <div class="compare-cols">
+        <div class="compare-col c-green">
+          <h4>✓ Would for repeated actions</h4>
+          <p>We <strong>would spend</strong> Sundays at the market.</p>
+          <p>She <strong>would sing</strong> while cooking dinner.</p>
+          <p>He <strong>would always arrive</strong> ten minutes late.</p>
+          <p style="font-size:13px; font-style:italic; color:var(--ink-soft);">All replaceable with "used to" without change of meaning.</p>
+        </div>
+        <div class="compare-col c-coral">
+          <h4>✗ Would for past states (NOT allowed)</h4>
+          <p>✗ <em>I would live in Lagos.</em> → ✓ <strong>I used to live in Lagos.</strong></p>
+          <p>✗ <em>She would be a teacher.</em> → ✓ <strong>She used to be a teacher.</strong></p>
+          <p>✗ <em>They would know each other.</em> → ✓ <strong>They used to know each other.</strong></p>
+          <p style="font-size:13px; font-style:italic; color:var(--ink-soft);">States require "used to" — not "would."</p>
+        </div>
+      </div>
+
+      <p style="margin-top:16px; font-size:14.5px;">The test: if you can add <em>&ldquo;every day / every summer / whenever&rdquo;</em> and it makes sense, it is an action — both <em>used to</em> and <em>would</em> work. If the sentence describes a condition or state that existed over a period, only <em>used to</em> works.</p>
+
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt">Every Friday, she <strong>would make</strong> pepper soup. <em>(action — would ✓)</em>
+          <span class="gloss">Can also say: &ldquo;she used to make pepper soup.&rdquo; Both are correct.</span>
+          <span class="src">Found in: essay, paragraph 2</span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✓</span>
+        <span class="txt">That version of Fridays no longer exists. I <strong>used to take</strong> it for granted. <em>(state)</em>
+          <span class="gloss">"Would take it for granted" is possible here too, but "used to" feels more natural for a general past truth.</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: 3. Be used to & get used to: present adjustment -->
+  <div class="tab-section" id="study3">
+    <div class="tab-header study">
+      <span class="tab-num">STUDY</span>
+      <h2 class="tab-title">3. Be used to &amp; get used to: present adjustment</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>Be used to doing / Get used to doing</h3>
+      <p class="grammar-sub">These are NOT about the past. They are about your current relationship with something — whether you are accustomed to it (<em>be used to</em>) or the process of becoming accustomed (<em>get used to</em>). Both are followed by a <strong>gerund or noun</strong> — NOT a base verb.</p>
+
+      <div class="compare-cols">
+        <div class="compare-col c-blue">
+          <h4>Be used to + gerund/noun &mdash; STATE</h4>
+          <p>I <strong>am used to cycling</strong> everywhere. <em>(now comfortable with it)</em></p>
+          <p>She <strong>is used to the cold</strong>. <em>(noun — accustomed to it)</em></p>
+          <p>We <strong>were used to working</strong> long hours. <em>(past state of being accustomed)</em></p>
+          <p style="font-size:13px; font-style:italic; color:var(--ink-soft);">Be used to describes a current (or past) state of familiarity. It can be in any tense.</p>
+        </div>
+        <div class="compare-col c-purple">
+          <h4>Get used to + gerund/noun &mdash; PROCESS</h4>
+          <p>I <strong>got used to cycling</strong> everywhere. <em>(process, now complete)</em></p>
+          <p>She <strong>is getting used to the cold</strong>. <em>(process, in progress)</em></p>
+          <p>You&rsquo;ll <strong>get used to it</strong>. <em>(noun — future process)</em></p>
+          <p style="font-size:13px; font-style:italic; color:var(--ink-soft);">Get used to describes the process of becoming accustomed. Implies it took effort.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:16px; background:#E9F0F5; border-radius:8px; padding:14px 18px;">
+        <p style="font-weight:bold; color:var(--blue-deep); margin:0 0 8px;">The most important rule</p>
+        <p style="margin:0; font-size:14.5px;">The "to" in <em>be used to</em> and <em>get used to</em> is a <strong>preposition</strong>, not part of an infinitive. This means the next verb must be a <strong>gerund (-ing)</strong>, never a base verb.</p>
+      </div>
+
+      <div class="example-row" style="margin-top:14px;">
+        <span class="mark">✗</span>
+        <span class="txt"><em>I am used to cycle to work.</em>
+          <span class="gloss">Wrong &mdash; &ldquo;to&rdquo; here is a preposition. Must use the gerund: <strong>I am used to cycling to work.</strong></span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✗</span>
+        <span class="txt"><em>I am getting used to wake up early.</em>
+          <span class="gloss">Same error: <strong>I am getting used to waking up early.</strong></span>
+        </span>
+      </div>
+      <div class="example-row">
+        <span class="mark">✗</span>
+        <span class="txt"><em>I used to cycling to work as a child.</em>
+          <span class="gloss">This mixes the two patterns. "Used to" (past habit) takes a base verb: <strong>I used to cycle to work.</strong> "Be used to cycling" is a completely different structure.</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: The three-way distinction at a glance -->
+  <div class="tab-section" id="threeway">
+    <div class="tab-header study">
+      <span class="tab-num">STUDY</span>
+      <h2 class="tab-title">The three-way distinction at a glance</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="three-way">
+      <div class="way-box w1">
+        <p class="way-label">Used to + BASE VERB</p>
+        <p class="way-form">used to do</p>
+        <p class="way-meaning">Past habit or state that no longer exists. Neither the action nor the state is true anymore.</p>
+        <p class="way-ex">&ldquo;I used to fall asleep to street noise.&rdquo;<br>&ldquo;She used to be very quiet.&rdquo;</p>
+      </div>
+      <div class="way-box w2">
+        <p class="way-label">Be used to + GERUND / NOUN</p>
+        <p class="way-form">am/is/are/was used to doing</p>
+        <p class="way-meaning">A current (or past) state of being accustomed. You are familiar with something. No longer difficult.</p>
+        <p class="way-ex">&ldquo;I&rsquo;m used to cycling in the rain.&rdquo;<br>&ldquo;She wasn&rsquo;t used to the directness.&rdquo;</p>
+      </div>
+      <div class="way-box w3">
+        <p class="way-label">Get used to + GERUND / NOUN</p>
+        <p class="way-form">get/got/getting used to doing</p>
+        <p class="way-meaning">The process of becoming accustomed. Implies effort and time. Focuses on the transition, not the end state.</p>
+        <p class="way-ex">&ldquo;I had to get used to the silence.&rdquo;<br>&ldquo;You&rsquo;ll get used to it.&rdquo;</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <h3>Common confusion: &ldquo;I used to cycling&rdquo; — why it&rsquo;s wrong</h3>
+      <p>This is the single most frequent error with these structures at B2 level. Learners mix the two patterns:</p>
+      <div class="table-scroll"><table class="conj-table">
+        <tr><th>Intended meaning</th><th>Wrong</th><th>Correct</th></tr>
+        <tr><td>Past habit (no longer true)</td><td style="color:var(--coral-deep);">I used to cycling to school.</td><td style="color:var(--chalk-green);">I <strong>used to cycle</strong> to school.</td></tr>
+        <tr><td>Currently accustomed</td><td style="color:var(--coral-deep);">I am used to cycle to work.</td><td style="color:var(--chalk-green);">I am <strong>used to cycling</strong> to work.</td></tr>
+        <tr><td>Becoming accustomed</td><td style="color:var(--coral-deep);">I got used to cycle there.</td><td style="color:var(--chalk-green);">I <strong>got used to cycling</strong> there.</td></tr>
+        <tr><td>Past state</td><td style="color:var(--coral-deep);">I would live in Lagos.</td><td style="color:var(--chalk-green);">I <strong>used to live</strong> in Lagos.</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <!-- SECTION: Read next: the forum thread -->
+  <div class="tab-section" id="context2">
+    <div class="tab-header study">
+      <span class="tab-num">CONTEXT</span>
+      <h2 class="tab-title">Read next: the forum thread</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <p>These are fictional forum replies. Read for meaning: <strong>which poster describes the most difficult adjustment?</strong></p>
+    </div>
+
+    <div class="forum-block">
+      <div class="forum-header">
+        <span class="forum-tag">r/Expats &amp; Memories</span>
+        <span class="forum-title">What&rsquo;s one thing from your childhood you&rsquo;re now completely used to not having?</span>
+      </div>
+
+      <div class="forum-post">
+        <div class="f-avatar" style="background:var(--coral-deep);">KA</div>
+        <div>
+          <div class="f-handle">kadi_amstel <span class="f-upvotes">&#x25B2; 342</span></div>
+          <p class="f-text">Noise, honestly. I <span class="t1">used to need</span> background noise to concentrate &mdash; in Dakar, there was always something happening. When I moved to the countryside here, the silence <span class="t2">wasn&rsquo;t something I was used to</span>. I genuinely couldn&rsquo;t sleep. It took about six months before I <span class="t3">got used to</span> it. Now I <span class="t2">am so used to the quiet</span> that going back to the city stresses me out.</p>
+        </div>
+      </div>
+
+      <div class="forum-post" style="background:var(--white);">
+        <div class="f-avatar" style="background:var(--blue-deep);">SH</div>
+        <div>
+          <div class="f-handle">s_hiroshi_99 <span class="f-upvotes">&#x25B2; 218</span></div>
+          <p class="f-text">My grandmother <span class="t1">would make</span> breakfast every morning without being asked &mdash; rice, miso soup, pickled things. Just there, on the table. I <span class="t1">used to take</span> it completely for granted. Now I live alone in Berlin and I&rsquo;m <span class="t3">still getting used to</span> making my own breakfast. Three years in and it still doesn&rsquo;t feel natural.</p>
+        </div>
+      </div>
+
+      <div class="forum-post">
+        <div class="f-avatar" style="background:var(--chalk-green);">MB</div>
+        <div>
+          <div class="f-handle">mb_writes <span class="f-upvotes">&#x25B2; 197</span></div>
+          <p class="f-text">The sense of time. Back home in Mexico City, we <span class="t1">wouldn&rsquo;t stress</span> about being five minutes late &mdash; it <span class="t1">used to be</span> understood. Here in Zurich, five minutes late is considered rude. I had to <span class="t3">get used to being early</span> everywhere. It felt unnatural for a long time. <span class="t2">I&rsquo;m used to it now</span>, but I <span class="t1">didn&rsquo;t use to think</span> about time this way at all.</p>
+        </div>
+      </div>
+
+      <div class="forum-post" style="background:var(--white);">
+        <div class="f-avatar" style="background:var(--purple);">RL</div>
+        <div>
+          <div class="f-handle">rlu_bcn <span class="f-upvotes">&#x25B2; 156</span></div>
+          <p class="f-text">This is a strange one: <span class="t1">I used to know</span> almost everyone on my street. There <span class="t1">used to be</span> this sense of being watched &mdash; not in a bad way, just that people knew your name, your family. Moving to a flat in Barcelona: anonymity. My neighbours <span class="t2">aren&rsquo;t used to</span> acknowledging each other in the lift. I had to <span class="t3">get used to that kind of privacy</span>. I&rsquo;m not sure I ever fully did.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Quick meaning check</h3>
+      <p>1. What does kadi_amstel now find stressful, and why?</p>
+      <p>2. What does s_hiroshi_99 say is &ldquo;still not feeling natural&rdquo; after three years?</p>
+      <p>3. What cultural attitude did mb_writes have to actively change?</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Hear it in conversation -->
+  <div class="tab-section" id="dialogue">
+    <div class="tab-header study">
+      <span class="tab-num">DIALOGUE</span>
+      <h2 class="tab-title">Hear it in conversation</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <p>Two colleagues &mdash; one who recently moved cities, one who did so years ago &mdash; talk over lunch. Notice how naturally the three structures appear in ordinary speech.</p>
+    </div>
+
+    <div class="dialogue-block">
+      <div class="dialogue-header" style="background:var(--purple);">
+        <span style="font-size:11px; font-weight:bold; letter-spacing:0.07em; text-transform:uppercase; background:var(--chalk-yellow); color:var(--ink); border-radius:4px; padding:2px 8px;">Dialogue</span>
+        <span style="font-family:'Playfair Display','Bookman Old Style',serif; font-size:16px; color:var(--white);">Two colleagues over lunch &mdash; talking about moving cities</span>
+      </div>
+
+      <div class="dlg-turn">
+        <div class="dlg-avatar" style="background:var(--coral-deep);">TA</div>
+        <div>
+          <div class="dlg-name">Tariq</div>
+          <p class="dlg-text">How are you finding it? You&rsquo;ve only been here three months, right?</p>
+        </div>
+      </div>
+
+      <div class="dlg-turn">
+        <div class="dlg-avatar" style="background:var(--blue-deep);">LU</div>
+        <div>
+          <div class="dlg-name">Luisa</div>
+          <p class="dlg-text">Honestly, it&rsquo;s good but hard. I&rsquo;m <span class="t3">still getting used to</span> commuting by train. Back home I <span class="t1">used to drive</span> everywhere. The idea of standing on a platform at 7am was just not something I <span class="t2">was used to</span>.</p>
+        </div>
+      </div>
+
+      <div class="dlg-turn">
+        <div class="dlg-avatar" style="background:var(--coral-deep);">TA</div>
+        <div>
+          <div class="dlg-name">Tariq</div>
+          <p class="dlg-text">I remember that feeling. I <span class="t1">used to live</span> about twenty minutes from work when I first arrived, and I <span class="t1">would walk</span> in. Then I moved and suddenly everything was a 45-minute tube journey.</p>
+        </div>
+      </div>
+
+      <div class="dlg-turn">
+        <div class="dlg-avatar" style="background:var(--blue-deep);">LU</div>
+        <div>
+          <div class="dlg-name">Luisa</div>
+          <p class="dlg-text">How long did it take you to <span class="t3">get used to it</span>?</p>
+        </div>
+      </div>
+
+      <div class="dlg-turn">
+        <div class="dlg-avatar" style="background:var(--coral-deep);">TA</div>
+        <div>
+          <div class="dlg-name">Tariq</div>
+          <p class="dlg-text">About a year, I&rsquo;d say. Now I&rsquo;m completely <span class="t2">used to it</span> &mdash; I actually use the commute to read. I <span class="t1">didn&rsquo;t use to read</span> much before all this, so that&rsquo;s been an unexpected upside.</p>
+        </div>
+      </div>
+
+      <div class="dlg-turn">
+        <div class="dlg-avatar" style="background:var(--blue-deep);">LU</div>
+        <div>
+          <div class="dlg-name">Luisa</div>
+          <p class="dlg-text">That&rsquo;s a good reframe. What about the people? The office culture here feels quite different to what I&rsquo;m <span class="t2">used to</span>.</p>
+        </div>
+      </div>
+
+      <div class="dlg-turn">
+        <div class="dlg-avatar" style="background:var(--coral-deep);">TA</div>
+        <div>
+          <div class="dlg-name">Tariq</div>
+          <p class="dlg-text">Yes, it can be. I <span class="t1">used to work</span> somewhere much more formal &mdash; we <span class="t1">would always have</span> a proper dress code, everyone wore suits. Here it&rsquo;s much more relaxed. You&rsquo;ll <span class="t3">get used to that</span> faster than the commute, I promise.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#FFF8E0; border-radius:8px; padding:14px 18px; margin-top:14px;">
+      <p style="font-weight:bold; color:var(--chalk-yellow-deep); margin:0 0 8px; font-size:14.5px;">Dialogue analysis &mdash; what to notice:</p>
+      <ul style="margin:0; padding-left:20px; font-size:14px; line-height:1.8;">
+        <li><em>Used to + base verb</em> for past habits and states: <em>&ldquo;I used to drive,&rdquo; &ldquo;I used to live,&rdquo; &ldquo;I didn&rsquo;t use to read.&rdquo;</em></li>
+        <li><em>Would + base verb</em> for repeated past actions alongside used to: <em>&ldquo;I would walk in,&rdquo; &ldquo;we would always have a dress code.&rdquo;</em></li>
+        <li><em>Be used to + gerund/noun</em> for current familiarity: <em>&ldquo;not something I was used to,&rdquo; &ldquo;what I&rsquo;m used to,&rdquo; &ldquo;completely used to it.&rdquo;</em></li>
+        <li><em>Get used to + gerund/noun</em> for the ongoing process: <em>&ldquo;still getting used to commuting,&rdquo; &ldquo;get used to it,&rdquo; &ldquo;get used to that.&rdquo;</em></li>
+        <li>Notice how Tariq uses <em>would</em> and <em>used to</em> in the same memory: <em>&ldquo;we would always have a dress code&rdquo;</em> (action, would ✓) describes the repeated habit, while <em>&ldquo;I used to work somewhere formal&rdquo;</em> (state, would ✗) describes where he worked.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION: How &ldquo;used to&rdquo; actually sounds -->
+  <div class="tab-section" id="pronunciation">
+    <div class="tab-header study">
+      <span class="tab-num">PRONUNCIATION</span>
+      <h2 class="tab-title">How &ldquo;used to&rdquo; actually sounds</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="grammar-box">
+      <h3>The /t/ at the end of &ldquo;used&rdquo; disappears</h3>
+      <p class="grammar-sub">In natural, connected speech, &ldquo;used to&rdquo; sounds very different from how it&rsquo;s spelled. The /d/ in &ldquo;used&rdquo; and the /t/ at the start of &ldquo;to&rdquo; merge into a single sound.</p>
+
+      <p style="font-size:18px; text-align:center; margin:20px 0;">
+        &ldquo;used to&rdquo; &rarr; <strong style="color:var(--coral-deep);">/juːst&nbsp;tə/</strong> <span class="pronunciation-tag">sounds like "yoosta"</span>
+      </p>
+      <p style="font-size:18px; text-align:center; margin:18px 0;">
+        &ldquo;I used to live there&rdquo; &rarr; <strong style="color:var(--coral-deep);">/aɪ&nbsp;juːstə&nbsp;lɪv&nbsp;ðeə/</strong>
+      </p>
+
+      <p>Similarly, &ldquo;get used to&rdquo; in fast speech:</p>
+      <p style="font-size:18px; text-align:center; margin:18px 0;">
+        &ldquo;get used to it&rdquo; &rarr; <strong style="color:var(--blue-deep);">/ɡɛt&nbsp;juːstə&nbsp;ɪt/</strong> <span class="pronunciation-tag">very fast: "gettyoosta-it"</span>
+      </p>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:16px;">
+        <div style="background:#FBEDE9; border-radius:8px; padding:14px 16px;">
+          <p style="font-weight:bold; color:var(--coral-deep); margin:0 0 6px;">⚠ Common mispronunciation</p>
+          <p style="margin:0; font-size:14px;">Learners often stress both words equally: <em>/ˈjuːzd tuː/</em> — this sounds unnatural. &ldquo;To&rdquo; is almost never stressed and reduces to /tə/.</p>
+        </div>
+        <div style="background:#EFF5F1; border-radius:8px; padding:14px 16px;">
+          <p style="font-weight:bold; color:var(--chalk-green); margin:0 0 6px;">💡 Listening tip</p>
+          <p style="margin:0; font-size:14px;">When you hear &ldquo;yoosta&rdquo; in a podcast or film, recognise it as &ldquo;used to.&rdquo; It&rsquo;s extremely common in spoken English and easy to miss if you&rsquo;re listening for the spelled-out version.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Society & nostalgia vocabulary -->
+  <div class="tab-section" id="vocab">
+    <div class="tab-header vocab">
+      <span class="tab-num">VOCABULARY</span>
+      <h2 class="tab-title">Society &amp; nostalgia vocabulary</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <h3>1. Memory &amp; nostalgia</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card"><span class="word">nostalgia</span><span class="pos">noun (uncountable)</span><div class="def">a sentimental longing for a past period or place, often idealised</div><div class="ex">"There's a particular nostalgia for the neighbourhood I used to grow up in."</div></div>
+        <div class="vocab-card"><span class="word">to reminisce</span><span class="pos">verb</span><div class="def">to think or talk about happy memories of the past</div><div class="ex">"We would spend hours reminiscing about our school days."</div></div>
+        <div class="vocab-card"><span class="word">to take for granted</span><span class="pos">phrase</span><div class="def">to fail to appreciate something because you are so used to having it</div><div class="ex">"I used to take the sense of community completely for granted."</div></div>
+        <div class="vocab-card"><span class="word">bittersweet</span><span class="pos">adjective</span><div class="def">a feeling that is both happy and sad at the same time; used to describe nostalgic emotions</div><div class="ex">"Looking at old photos is always bittersweet — I miss it, but I'm glad I moved."</div></div>
+        <div class="vocab-card"><span class="word">to grieve</span><span class="pos">verb</span><div class="def">to feel deep sorrow, often for something lost — not just a person but a place, time, or way of life</div><div class="ex">"It took years to realise I was grieving a version of my life I'd left behind."</div></div>
+        <div class="vocab-card"><span class="word">a ritual</span><span class="pos">noun</span><div class="def">a regular, often meaningful routine that gives structure or comfort to life</div><div class="ex">"Friday pepper soup was a ritual — we all used to look forward to it."</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>2. Society &amp; change</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card"><span class="word">to adapt</span><span class="pos">verb</span><div class="def">to change your behaviour or attitude to fit a new situation</div><div class="ex">"It took me longer to adapt than I expected."</div></div>
+        <div class="vocab-card"><span class="word">to adjust (to)</span><span class="pos">verb</span><div class="def">to get used to a new situation; slightly more gradual than &lsquo;adapt&rsquo;</div><div class="ex">"I'm still adjusting to the pace of life here."</div></div>
+        <div class="vocab-card"><span class="word">a generation</span><span class="pos">noun</span><div class="def">a group of people born and living at approximately the same time</div><div class="ex">"My parents' generation used to stay in one city their whole lives."</div></div>
+        <div class="vocab-card"><span class="word">community</span><span class="pos">noun</span><div class="def">a group of people living in the same place or with shared characteristics and a sense of belonging</div><div class="ex">"I used to have a real sense of community on my street."</div></div>
+        <div class="vocab-card"><span class="word">anonymity</span><span class="pos">noun</span><div class="def">the state of being unknown to others; not being recognised</div><div class="ex">"Moving to a city means getting used to anonymity — no one knows your name."</div></div>
+        <div class="vocab-card"><span class="word">to uproot</span><span class="pos">verb</span><div class="def">to move yourself or someone else from an established place or way of life</div><div class="ex">"Being uprooted from a familiar place takes much longer to process than people expect."</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>3. Everyday life &amp; habits</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card"><span class="word">a commute</span><span class="pos">noun / verb</span><div class="def">a regular journey between home and work; also the act of making that journey</div><div class="ex">"I'm getting used to commuting — I used to live five minutes from work."</div></div>
+        <div class="vocab-card"><span class="word">a routine</span><span class="pos">noun</span><div class="def">a regular sequence of actions that are followed as part of daily life</div><div class="ex">"Building a new routine is what helped me get used to living alone."</div></div>
+        <div class="vocab-card"><span class="word">pace of life</span><span class="pos">phrase</span><div class="def">the speed and intensity at which daily life is lived in a given place</div><div class="ex">"I used to find the pace of life in London exhausting."</div></div>
+        <div class="vocab-card"><span class="word">upside</span><span class="pos">noun (informal)</span><div class="def">a positive aspect of something that is generally difficult or unwanted</div><div class="ex">"The upside of getting used to the long commute was discovering audiobooks."</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Now practise what you&rsquo;ve discovered -->
+  <div class="tab-section" id="exercises">
+    <div class="tab-header study">
+      <span class="tab-num">PRACTICE</span>
+      <h2 class="tab-title">Now practise what you&rsquo;ve discovered</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 1 &middot; Controlled Practice</span>
+      <h4>Complete with <em>used to</em>, <em>would</em>, <em>be used to</em>, or <em>get used to</em> + the verb in brackets in the correct form.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span class="q-text">When I was a child, I ______ (walk) to school every day. The route took about twenty minutes.</span><input type="text" class="blank-input" data-answer="used to walk,would walk" placeholder="your answer"></div>
+      <div class="q-row"><span class="q-num">2.</span><span class="q-text">She ______ (not be) very sociable. She&rsquo;s completely different now.</span><input type="text" class="blank-input" data-answer="didn't use to be,used to not be" placeholder="your answer"></div>
+      <div class="q-row"><span class="q-num">3.</span><span class="q-text">He&rsquo;s ______ (work) late &mdash; it&rsquo;s just part of his life now. <em>(currently accustomed)</em></span><input type="text" class="blank-input" data-answer="used to working" placeholder="your answer"></div>
+      <div class="q-row"><span class="q-num">4.</span><span class="q-text">It took about six months before I ______ (drive) on the left. <em>(process, completed)</em></span><input type="text" class="blank-input" data-answer="got used to driving" placeholder="your answer"></div>
+      <button class="check-btn" onclick="checkExercise(1)">Check my answers</button>
+      <div class="feedback" id="feedback1"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 2 &middot; Error correction</span>
+      <h4>Each sentence has one error. Find and correct it.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span class="q-text">I didn't used to like coffee, but now I drink three cups a day.</span><input type="text" class="blank-input" data-answer="didn't use to like" placeholder="corrected phrase"></div>
+      <div class="q-row"><span class="q-num">2.</span><span class="q-text">She is used to wake up at 5am — she&rsquo;s been doing it for years.</span><input type="text" class="blank-input" data-answer="used to waking up" placeholder="corrected phrase"></div>
+      <div class="q-row"><span class="q-num">3.</span><span class="q-text">I would live in Seoul for three years before moving here.</span><input type="text" class="blank-input" data-answer="used to live" placeholder="corrected phrase"></div>
+      <button class="check-btn" onclick="checkExercise(2)">Check my answers</button>
+      <div class="feedback" id="feedback2"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 3 &middot; Multiple Choice</span>
+      <h4>Which sentence is correct?</h4>
+      <label class="mc-opt"><input type="radio" name="mc3" value="wrong1"> My grandfather would be a farmer before moving to the city.</label>
+      <label class="mc-opt"><input type="radio" name="mc3" value="right">  My grandfather used to be a farmer before moving to the city.</label>
+      <label class="mc-opt"><input type="radio" name="mc3" value="wrong2"> My grandfather was used to be a farmer before moving to the city.</label>
+      <div class="feedback" id="feedback3"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 4 &middot; Vocabulary Matching</span>
+      <h4>Click a word on the left, then its matching definition on the right.</h4>
+      <div class="match-grid" id="matchGrid">
+        <div class="match-item" data-pair="1">nostalgia</div>
+        <div class="match-item" data-pair="3">to feel sorrow for something lost</div>
+        <div class="match-item" data-pair="2">to take for granted</div>
+        <div class="match-item" data-pair="4">a regular sequence of daily actions</div>
+        <div class="match-item" data-pair="3">to grieve</div>
+        <div class="match-item" data-pair="1">longing for a past time, often idealised</div>
+        <div class="match-item" data-pair="4">a routine</div>
+        <div class="match-item" data-pair="2">to fail to appreciate what you always have</div>
+      </div>
+      <div class="feedback" id="feedback4"></div>
+    </div>
+
+    <div class="exercise">
+      <span class="exercise-label">Exercise 5 &middot; Sentence completion</span>
+      <h4>Complete each sentence in your own words, using the structure given. Make it true for you.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span class="q-text">When I was younger, I used to ______. <em>(your past habit)</em></span><input type="text" class="blank-input" data-answer="free" placeholder="your own answer"></div>
+      <div class="q-row"><span class="q-num">2.</span><span class="q-text">I&rsquo;m now used to ______ , but it took a while. <em>(something you're now accustomed to)</em></span><input type="text" class="blank-input" data-answer="free" placeholder="your own answer"></div>
+      <div class="q-row"><span class="q-num">3.</span><span class="q-text">I&rsquo;m still getting used to ______. <em>(something you're still adjusting to)</em></span><input type="text" class="blank-input" data-answer="free" placeholder="your own answer"></div>
+      <button class="check-btn" onclick="checkExercise(5)">Check my answers</button>
+      <div class="feedback" id="feedback5"></div>
+    </div>
+  </div>
+
+  <!-- ============ AUTONOMY ============ -->
+
+  <!-- SECTION: Speaking Practice -->
+  <div class="tab-section" id="speaking">
+    <div class="tab-header"><span class="tab-badge tb-speak">SPEAKING PRACTICE</span><h2 class="tab-title">Then and now &mdash; out loud</h2></div>
+    <hr class="tab-rule">
+    <p class="section-intro">The essay writer looks back at a life that no longer exists and a new one they slowly got used to. Everyone has that story &mdash; this week you tell yours, with the grammar carrying the timeline. Voice memo app ready.</p>
+
+    <div class="speak-card">
+      <span class="speak-type">Timed monologue</span>
+      <h3>Your neighbourhood, then and now</h3>
+      <p>Set a timer for <strong>2 minutes</strong>. Speak without stopping about <em>a place you knew well as a child &mdash; your street, your town, a relative's house &mdash; and how it (or your life there) has changed.</em></p>
+      <p>Use all three of this week's tools at least once each: <em>used to</em> (past states and habits), <em>would</em> (repeated past actions: <em>"every summer we would&hellip;"</em>), and <em>be/get used to</em> (adjusting to the new: <em>"I've got used to the noise now"</em>).</p>
+      <div class="speak-how"><strong>How:</strong> Record without stopping. <strong>When you listen back, check the classic trap:</strong> <em>would</em> works for repeated actions but not states &mdash; <em>"we would live in a small flat"</em> is the error to hunt for. And after <em>be/get used to</em>: noun or <em>-ing</em>, never the bare verb.</div>
+    </div>
+
+    <div class="speak-card">
+      <span class="speak-type">Shadowing drill</span>
+      <h3>Reading the essay aloud</h3>
+      <p>Go back to the personal essay in the Context section and choose 4&ndash;5 sentences that carry the most feeling &mdash; including at least one <em>used to</em>, one <em>would</em>, and one <em>get used to</em>. Read them aloud <strong>three times</strong>:</p>
+      <ul>
+        <li>Once slowly, every word deliberate;</li>
+        <li>once at normal reading pace;</li>
+        <li>once as if it were your own story &mdash; quieter, more natural.</li>
+      </ul>
+      <div class="speak-how"><strong>How:</strong> Record the third read. <strong>When you listen back, check pronunciation:</strong> <em>used to</em> is /juːstə/ &mdash; the <em>d</em> disappears into the <em>t</em>. If you can hear a clear /d/, read it again faster.</div>
+    </div>
+
+    <div class="speak-card">
+      <span class="speak-type">Discussion questions</span>
+      <h3>For a partner &mdash; or the microphone</h3>
+      <p>Discuss with a partner, or record spoken answers (60&ndash;90 seconds each). Choose two:</p>
+      <ul>
+        <li>What's one thing from your childhood routine that you now realise you took for granted?</li>
+        <li>Think of the biggest adjustment you've ever had to make &mdash; a move, a new job, a new country, a new stage of life. What was hardest to get used to, and are you used to it now?</li>
+        <li>Is nostalgia mostly pleasant or mostly a trap? Can you miss a time you know wasn't actually better?</li>
+        <li>What do you think today's children will say they "used to do" when they're your age?</li>
+      </ul>
+      <div class="speak-how"><strong>How:</strong> One question per recording. <strong>When you listen back, check:</strong> at least three items from this week's vocabulary should appear naturally (<em>nostalgia, to reminisce, bittersweet, pace of life, to adapt&hellip;</em>).</div>
+    </div>
+
+    <div class="tip-box">
+      <h3>Technique: let the timeline do the work</h3>
+      <ul>
+        <li>Structure beats vocabulary in a then-and-now story: two or three <em>used to</em> sentences, then a pivot (<em>"But now&hellip;"</em>), then <em>be/get used to</em> for the adjustment. The listener always knows where they are in time.</li>
+        <li><em>Would</em> for the past only works once the past time is established. Open with <em>used to</em>, then switch to <em>would</em> for the details.</li>
+        <li>Bittersweet stories need a bittersweet pace &mdash; slow down on the old world, speed up slightly on the new one.</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- SECTION: Listening & Watching -->
+  <div class="tab-section" id="listening">
+    <div class="tab-header"><span class="tab-badge tb-listen">LISTENING &amp; WATCHING</span><h2 class="tab-title">Memory, change &amp; the way things were</h2></div>
+    <hr class="tab-rule">
+    <p class="section-intro">People talk about the past constantly &mdash; which makes <em>used to</em> and <em>would</em> two of the most common sounds in real English. These sources match this level; each comes with a specific task.</p>
+
+    <div class="media-card">
+      <div class="media-head"><h3>All Ears English</h3><span class="media-platform">Podcast &middot; allearsenglish.com</span></div>
+      <p><strong>Why this week:</strong> Two hosts in natural American conversation who constantly reminisce &mdash; childhood, old jobs, how things used to be. This is this week's grammar at full conversational speed, with the reduced /juːstə/ pronunciation everywhere.</p>
+      <div class="media-task"><strong>Your task:</strong> Pick any episode where the hosts talk about their past. Tally every <em>used to</em> and <em>would</em> you hear in ten minutes. Then shadow one 30-second stretch of reminiscing &mdash; match the reduced pronunciation exactly.</div>
+    </div>
+
+    <div class="media-card">
+      <div class="media-head"><h3>TED-Ed</h3><span class="media-platform">YouTube &middot; ed.ted.com</span></div>
+      <p><strong>Why this week:</strong> Animated explainers on memory and nostalgia &mdash; why we remember the past as better than it was, and what nostalgia actually does to us. The science behind the essay's <em>bittersweet</em> feeling, narrated clearly.</p>
+      <div class="media-task"><strong>Your task:</strong> Watch one episode on memory or nostalgia, once without subtitles, once with. Note 3 new words. Then answer aloud in 2&ndash;3 sentences: <em>Does the video change how you feel about missing the past?</em> Use <em>nostalgia</em> and one more vocabulary item.</div>
+    </div>
+
+    <div class="media-card">
+      <div class="media-head"><h3>BBC 6 Minute English</h3><span class="media-platform">Podcast &middot; YouTube &middot; bbc.co.uk/learningenglish</span></div>
+      <p><strong>Why this week:</strong> Episodes on how cities, childhood, work, and daily life have changed &mdash; measured natural pace, free transcripts, and a constant stream of then-vs-now comparison, which is exactly this week's territory.</p>
+      <div class="media-task"><strong>Your task:</strong> Choose an episode about how life has changed. Listen once without the transcript, then check it. Note one expression for talking about change that you'd like to make active &mdash; then use it in your Timed Monologue above, second take.</div>
+    </div>
+  </div>
+
+  <!-- SECTION: Go further: research tasks -->
+  <div class="tab-section" id="autonomy">
+    <div class="tab-header autonomy">
+      <span class="tab-num">EXPLORE ON YOUR OWN</span>
+      <h2 class="tab-title">Go further: research tasks</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="research-card">
+      <span class="research-tag">Language in the wild</span>
+      <h3>Find 3 real examples of &ldquo;used to&rdquo; or &ldquo;get used to&rdquo;</h3>
+      <p>Listen to a podcast, interview, or TED talk that involves people reflecting on change or the past. Find three examples of any of this week&rsquo;s structures.</p>
+      <ul>
+        <li>Write the sentence and which structure it uses.</li>
+        <li>Note: could the speaker have used a different structure from this week? What would change?</li>
+      </ul>
+      <span class="link-suggestion">Try: NPR "This American Life" or "Desert Island Discs" — both rich in nostalgic memory language</span>
+    </div>
+
+    <div class="research-card">
+      <span class="research-tag">Society vocabulary</span>
+      <h3>Find 3 more words related to memory, nostalgia, or cultural adjustment</h3>
+      <p>The vocabulary list above is a starting point. Search for three more words that belong in this area and write each in a sentence using one of this week&rsquo;s grammar structures.</p>
+      <span class="link-suggestion">Try: searching "nostalgia synonyms" or reading an expat essay in English</span>
+    </div>
+  </div>
+
+  <!-- SECTION: Try it yourself &mdash; before class -->
+  <div class="tab-section" id="activate">
+    <div class="tab-header activate">
+      <span class="tab-num">A TASTE OF ACTIVATE</span>
+      <h2 class="tab-title">Try it yourself &mdash; before class</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="activate-box">
+      <h3>Mini-task: write a short memory paragraph</h3>
+      <p>Think about a place, routine, or phase of your life that has changed significantly. Write <strong>5&ndash;7 sentences</strong> about it, using at least:</p>
+      <ul style="margin:10px 0 14px; padding-left:20px;">
+        <li>two uses of <em>used to + base verb</em> (for past habits or states)</li>
+        <li>one use of <em>would + base verb</em> (for a repeated past action)</li>
+        <li>one use of <em>be used to + gerund/noun</em> (current or past state of familiarity)</li>
+        <li>one use of <em>get used to + gerund/noun</em> (process of adjustment)</li>
+      </ul>
+      <textarea class="response-box" id="freeWriting" placeholder="Write your memory paragraph here..."></textarea>
+      <div class="word-count" id="wordCount">0 words</div>
+    </div>
+
+    <div class="card">
+      <h3>Bring this to class</h3>
+      <p>In Session 1 you&rsquo;ll share this paragraph with a partner, who will note which structures you used and ask one follow-up question using &ldquo;Did you use to...?&rdquo; or &ldquo;Are you still getting used to...?&rdquo;</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Everything from this week, on one page -->
+  <div class="tab-section" id="reference">
+    <div class="tab-header vocab">
+      <span class="tab-num">QUICK REFERENCE</span>
+      <h2 class="tab-title">Everything from this week, on one page</h2>
+    </div>
+    <hr class="tab-rule">
+
+    <div class="card">
+      <div class="table-scroll"><table class="ref-table">
+        <tr><th>Structure</th><th>Form</th><th>Meaning</th><th>Example</th><th>Watch out</th></tr>
+        <tr><td><strong>used to</strong></td><td>used to + base verb</td><td>Past habit or state (no longer true)</td><td>I used to live in Lagos.</td><td>Neg/Q: didn&rsquo;t use to / Did you use to?</td></tr>
+        <tr><td><strong>would</strong></td><td>would + base verb</td><td>Repeated past action only (not states)</td><td>We would meet every Friday.</td><td>✗ I would live there. Use &ldquo;used to live.&rdquo;</td></tr>
+        <tr><td><strong>be used to</strong></td><td>be + used to + gerund/noun</td><td>Currently (or previously) accustomed</td><td>I&rsquo;m used to cycling now.</td><td>✗ used to cycle — wrong pattern</td></tr>
+        <tr><td><strong>get used to</strong></td><td>get + used to + gerund/noun</td><td>Process of becoming accustomed</td><td>I got used to the cold.</td><td>✗ get used to cycle — needs gerund</td></tr>
+      </table></div>
+    </div>
+
+    <div class="card">
+      <h3>Vocabulary you should now recognise</h3>
+      <div class="chip-row">
+        <span class="chip">nostalgia</span><span class="chip">reminisce</span><span class="chip">take for granted</span>
+        <span class="chip">bittersweet</span><span class="chip">grieve</span><span class="chip">ritual</span>
+        <span class="chip">adapt</span><span class="chip">adjust</span><span class="chip">generation</span>
+        <span class="chip">community</span><span class="chip">anonymity</span><span class="chip">uproot</span>
+        <span class="chip">commute</span><span class="chip">routine</span><span class="chip">pace of life</span><span class="chip">upside</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapup">
+    <h3>Before Session 1, make sure you can&hellip;</h3>
+    <ul>
+      <li>Form <em>used to + base verb</em> in positive, negative, and question forms</li>
+      <li>Explain why <em>would</em> cannot be used for past states</li>
+      <li>Use <em>be used to + gerund</em> for a current state of familiarity</li>
+      <li>Use <em>get used to + gerund</em> for the process of adjustment</li>
+      <li>Identify the error in: &ldquo;I am used to work late&rdquo; and correct it</li>
+      <li>Pronounce &ldquo;used to&rdquo; naturally as /juːstə/</li>
+      <li>Define at least 5 of this week&rsquo;s vocabulary words in your own words</li>
+      <li>Have your 5&ndash;7 sentence memory paragraph ready to share</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- SECTION: Footer - Creator & Copyright -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p class="footer-copy">&copy; 2026 Bahar Esmaeelzadeh &middot; All rights reserved</p>
+    <p class="footer-line">Designed and created for English learners by Bahar Esmaeelzadeh.</p>
+    <p class="footer-links">
+      <a href="mailto:bahar.esmz.en@gmail.com">&#128231; bahar.esmz.en@gmail.com</a>
+      <span class="footer-dot">&middot;</span>
+      <a href="https://www.linkedin.com/in/bahar-esmaeelzadeh-650b98198" target="_blank" rel="noopener">&#128188; LinkedIn</a>
+    </p>
+    <p class="footer-note">If you found this helpful, feel free to get in touch.</p>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    document.getElementById('progressFill').style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+  });
+
+  // ── THEN vs NOW sorting ──
+  let selectedStmt = null;
+  let sortedCount = 0;
+  const correctCats = { A:'then', B:'now', C:'then', D:'now', E:'then', F:'now', G:'then', H:'now' };
+
+  document.querySelectorAll('.stmt-card').forEach(card => {
+    card.addEventListener('click', () => {
+      if (card.classList.contains('placed')) return;
+      document.querySelectorAll('.stmt-card').forEach(c => c.style.outline = 'none');
+      selectedStmt = card;
+      card.style.outline = '2px solid var(--purple)';
+      document.getElementById('sortScore').textContent = 'Now click "Place in THEN" or "Place in NOW".';
+    });
+  });
+
+  function placeSelected(cat) {
+    if (!selectedStmt) { document.getElementById('sortScore').textContent = 'Select a statement first.'; return; }
+    const id = selectedStmt.dataset.id;
+    const correct = correctCats[id];
+    const chipEl = document.createElement('span');
+    chipEl.className = 'placed-chip';
+    chipEl.textContent = selectedStmt.textContent.trim();
+    if (cat === correct) {
+      document.getElementById(cat + 'Chips').appendChild(chipEl);
+      selectedStmt.classList.add('placed');
+      selectedStmt.style.outline = 'none';
+      sortedCount++;
+      document.getElementById('sortScore').textContent = sortedCount + ' of 8 placed. ' + (sortedCount === 8 ? 'All done! Notice which statements used "used to" and which used "be used to" or "get used to" — we\'ll study exactly that difference.' : 'Keep going.');
+    } else {
+      const wrongCard = selectedStmt;
+      wrongCard.classList.add('wrong-flash');
+      document.getElementById('sortScore').textContent = 'Not quite — think again about when this statement is more likely true.';
+      setTimeout(() => { wrongCard.classList.remove('wrong-flash'); }, 600);
+    }
+    selectedStmt = null;
+  }
+
+  function resetSort() {
+    document.getElementById('thenChips').innerHTML = '';
+    document.getElementById('nowChips').innerHTML = '';
+    document.querySelectorAll('.stmt-card').forEach(c => { c.classList.remove('placed', 'wrong-flash'); c.style.outline = 'none'; });
+    selectedStmt = null; sortedCount = 0;
+    document.getElementById('sortScore').textContent = 'Select a statement above, then click a column button.';
+  }
+
+  // ── Exercises ──
+  function checkExercise(num) {
+    const ex = [...document.querySelectorAll('.exercise')].find(e => {
+      const btn = e.querySelector('.check-btn');
+      return btn && (btn.getAttribute('onclick') === `checkExercise(${num})` || btn.getAttribute('onclick') === `checkExercise('${num}')`);
+    });
+    const inputs = ex.querySelectorAll('.blank-input');
+    let correct = 0;
+    inputs.forEach(input => {
+      const answers = input.dataset.answer.split(',').map(a => a.trim().toLowerCase());
+      const val = input.value.trim().toLowerCase();
+      if (answers[0] === 'free' || answers.includes(val)) {
+        correct++; input.style.borderColor = '#1F3A2E';
+      } else { input.style.borderColor = '#B14B34'; }
+    });
+    const fb = document.getElementById('feedback' + num);
+    fb.classList.add('show');
+    if (num === 5) {
+      fb.classList.remove('bad'); fb.classList.add('good');
+      fb.textContent = 'Great — bring these personal examples to class. Your partner will ask a follow-up question about each one.';
+      return;
+    }
+    if (correct === inputs.length) {
+      fb.classList.remove('bad'); fb.classList.add('good');
+      fb.textContent = `All ${inputs.length} correct! Great work.`;
+    } else {
+      fb.classList.remove('good'); fb.classList.add('bad');
+      fb.textContent = `${correct} of ${inputs.length} correct. Check the red-bordered answers and try again.`;
+    }
+  }
+
+  document.querySelectorAll('input[name="mc3"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      document.querySelectorAll('input[name="mc3"]').forEach(r => r.closest('.mc-opt').classList.remove('correct-flash','wrong-flash'));
+      const fb = document.getElementById('feedback3');
+      fb.classList.add('show');
+      if (radio.value === 'right') {
+        radio.closest('.mc-opt').classList.add('correct-flash');
+        fb.classList.remove('bad'); fb.classList.add('good');
+        fb.textContent = 'Correct! "Used to be" is right here — "would be" cannot describe a past state, and "was used to be" mixes two different structures.';
+      } else {
+        radio.closest('.mc-opt').classList.add('wrong-flash');
+        fb.classList.remove('good'); fb.classList.add('bad');
+        fb.textContent = 'Not quite. "Would be" cannot describe a past state. "Was used to be" is a blend of two structures. Only "used to be" works here.';
+      }
+    });
+  });
+
+  function setupMatching(gridId, pairAttr, feedbackId, total) {
+    let first = null, count = 0;
+    document.getElementById(gridId).querySelectorAll('.match-item').forEach(item => {
+      item.addEventListener('click', () => {
+        if (item.classList.contains('matched')) return;
+        if (!first) { first = item; item.classList.add('selected'); }
+        else if (first === item) { first.classList.remove('selected'); first = null; }
+        else {
+          if (first.dataset[pairAttr] === item.dataset[pairAttr]) {
+            first.classList.remove('selected'); first.classList.add('matched');
+            item.classList.add('matched'); count++; first = null;
+            const fb = document.getElementById(feedbackId);
+            fb.classList.add('show'); fb.classList.remove('bad'); fb.classList.add('good');
+            fb.textContent = count === total ? 'All matched! Great vocabulary work.' : `${count} of ${total} matched. Keep going!`;
+          } else {
+            const w = item;
+            w.classList.add('wrong-flash');
+            setTimeout(() => { first.classList.remove('selected'); w.classList.remove('wrong-flash'); first = null; }, 500);
+          }
+        }
+      });
+    });
+  }
+  setupMatching('matchGrid', 'pair', 'feedback4', 4);
+
+  document.getElementById('freeWriting').addEventListener('input', e => {
+    const words = e.target.value.trim().split(/\s+/).filter(w => w.length > 0);
+    document.getElementById('wordCount').textContent = (e.target.value.trim() === '' ? 0 : words.length) + ' words';
+  });
+
+/* Site frame (added): contents panel, back-to-top, table scroll hints */
+(function(){
+  var panel=document.getElementById('navPanel'),ov=document.getElementById('navOverlay'),
+      ham=document.getElementById('navHamburger'),closeB=document.getElementById('navClose'),
+      links=document.getElementById('navPanelLinks');
+  document.querySelectorAll('.toc a').forEach(function(a){
+    var n=document.createElement('a');
+    n.href=a.getAttribute('href');
+    n.textContent=a.textContent.replace(/^\s*\d+[a-z]?\.\s*/,'');
+    links.appendChild(n);
+  });
+  function openP(){panel.classList.add('open');ov.classList.add('open');ham.setAttribute('aria-expanded','true');panel.setAttribute('aria-hidden','false');}
+  function closeP(){panel.classList.remove('open');ov.classList.remove('open');ham.setAttribute('aria-expanded','false');panel.setAttribute('aria-hidden','true');}
+  ham.addEventListener('click',function(){panel.classList.contains('open')?closeP():openP();});
+  closeB.addEventListener('click',closeP);
+  ov.addEventListener('click',closeP);
+  links.addEventListener('click',function(e){if(e.target.tagName==='A')closeP();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeP();});
+  document.getElementById('navTopBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  function hints(){document.querySelectorAll('.table-scroll').forEach(function(w){
+    if(w.scrollWidth>w.clientWidth+2){w.classList.add('has-overflow');}else{w.classList.remove('has-overflow');}
+  });}
+  window.addEventListener('resize',hints);window.addEventListener('load',hints);hints();
+  document.querySelectorAll('.table-scroll').forEach(function(w){
+    w.addEventListener('scroll',function(){if(w.scrollLeft>12)w.classList.remove('has-overflow');},{passive:true});
+  });
+})();
+
+</script>
+</body>
+</html>
