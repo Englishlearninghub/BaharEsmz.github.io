@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet">
+<title>Grade 9 · Week 1 — Arguing a Position | Full Reference</title>
+<style>
+:root {
+  --slate:       #1C2B3A;
+  --slate-mid:   #2E4057;
+  --slate-soft:  #3D546B;
+  --red:         #C0392B;
+  --red-pale:    #FCEAE8;
+  --red-mid:     #E74C3C;
+  --sage:        #4A7C59;
+  --sage-pale:   #E8F4EC;
+  --sage-mid:    #6BAA7A;
+  --gold:        #D4A017;
+  --gold-pale:   #FBF5E0;
+  --paper:       #F8F8F6;
+  --paper-line:  #E4E4E0;
+  --white:       #FFFFFF;
+  --ink:         #1C2B3A;
+  --concrete:    #7F8C8D;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;font-size:16.5px;line-height:1.78;}
+.wrap{max-width:940px;margin:0 auto;padding:0 24px 80px;}
+.progress-track{position:sticky;top:0;height:4px;background:var(--paper-line);z-index:100;}
+.progress-fill{height:100%;width:0;background:var(--red);transition:width .1s;}
+
+/* MASTHEAD */
+.masthead{background:var(--slate);margin:0 -24px;padding:48px 24px 38px;position:relative;overflow:hidden;}
+.divide{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--red);opacity:0.18;}
+.masthead::after{content:'';position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(to right,var(--red),var(--sage));}
+.masthead-inner{max-width:892px;margin:0 auto;position:relative;z-index:1;}
+.eyebrow{font-family:'Inter',Arial,sans-serif;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin:0 0 12px;font-weight:bold;}
+h1.title{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:36px;line-height:1.1;color:var(--white);margin:0 0 16px;max-width:700px;}
+.masthead-meta{display:flex;gap:28px;flex-wrap:wrap;font-family:'Inter',Arial,sans-serif;font-size:13px;color:#6B8096;margin-top:14px;}
+.masthead-meta span{color:var(--white);font-weight:bold;}
+.versus{position:absolute;right:40px;top:50%;transform:translateY(-50%);font-family:'Playfair Display',Cambria,Georgia,serif;font-size:72px;font-weight:bold;color:var(--white);opacity:.05;letter-spacing:-.04em;line-height:1;}
+/* TOC */
+.toc{background:var(--white);border-radius:10px;margin-top:-12px;padding:22px 28px;box-shadow:0 4px 20px rgba(28,43,58,.13);position:relative;z-index:2;}
+.toc h2{font-family:'Inter',Arial,sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--concrete);margin:0 0 12px;}
+.toc ol{margin:0;padding-left:18px;columns:2;column-gap:32px;font-size:14px;line-height:1.65;}
+.toc li{margin-bottom:5px;}
+.toc a{color:var(--slate-mid);text-decoration:none;font-weight:bold;font-family:'Inter',Arial,sans-serif;}
+.toc a:hover{color:var(--red);text-decoration:underline;}
+
+/* SECTIONS */
+.tab-section{margin-top:50px;}
+.tab-header{display:flex;align-items:center;gap:14px;margin-bottom:6px;flex-wrap:wrap;}
+.tab-badge{font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:bold;letter-spacing:.1em;text-transform:uppercase;border-radius:5px;padding:5px 12px;white-space:nowrap;}
+.tb-engage{background:var(--slate);color:var(--white);}
+.tb-context{background:var(--slate-soft);color:var(--white);}
+.tb-notice{background:var(--slate-mid);color:var(--white);}
+.tb-study{background:var(--red);color:var(--white);}
+.tb-studyb{background:var(--sage);color:var(--white);}
+.tb-vocab{background:var(--slate-mid);color:var(--white);}
+.tb-practice{background:var(--slate-soft);color:var(--white);}
+.tb-together{background:var(--gold);color:var(--white);}
+.tb-explore{background:#6A3D8F;color:var(--white);}
+.tb-ref{background:var(--slate);color:var(--white);}
+h2.tab-title{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:22px;color:var(--ink);}
+.tab-rule{border:none;border-top:1.5px solid var(--paper-line);margin:12px 0 22px;}
+
+/* CARDS */
+.card{background:var(--white);border-radius:10px;padding:22px 26px;margin-bottom:20px;box-shadow:0 2px 10px rgba(28,43,58,.07);}
+.card h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:17px;margin:0 0 10px;color:var(--ink);}
+.card p{margin:0 0 10px;}
+.card p:last-child{margin-bottom:0;}
+
+/* HOOK */
+.hook-box{background:var(--slate);border-radius:10px;padding:28px 32px;margin-bottom:20px;border-bottom:4px solid var(--red);}
+.hook-box h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:20px;color:var(--white);margin:0 0 12px;}
+.hook-box p{color:#A0B4C4;margin:0 0 10px;font-size:15.5px;}
+.poll{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;}
+.poll-opt{border:2px solid var(--red);color:var(--red);border-radius:999px;padding:8px 18px;font-size:13.5px;font-weight:bold;cursor:pointer;background:transparent;font-family:'Inter',Arial,sans-serif;transition:all .15s;}
+.poll-opt.sage{border-color:var(--sage);color:var(--sage);}
+.poll-opt:hover,.poll-opt.selected{background:var(--red);color:var(--white);border-color:var(--red);}
+.poll-opt.sage:hover,.poll-opt.sage.selected{background:var(--sage);color:var(--white);border-color:var(--sage);}
+.poll-result{margin-top:12px;font-size:13.5px;color:#A0B4C4;display:none;font-family:'Inter',Arial,sans-serif;}
+
+/* OP-ED DOCUMENTS */
+.oped{border-radius:10px;overflow:hidden;margin-bottom:22px;box-shadow:0 4px 16px rgba(28,43,58,.10);}
+.oped-header{padding:14px 24px;font-family:'Inter',Arial,sans-serif;font-size:12px;display:flex;align-items:center;justify-content:space-between;}
+.oped-header.pro{background:var(--sage);color:var(--white);}
+.oped-header.con{background:var(--red);color:var(--white);}
+.oped-author{font-weight:bold;font-size:15px;}
+.oped-meta{opacity:.82;font-size:12px;}
+.oped-body{background:var(--white);padding:26px 30px;}
+.oped-body p{margin:0 0 14px;font-size:15.5px;line-height:1.78;}
+.oped-body p:last-child{margin:0;}
+.oped-title{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:20px;font-weight:bold;color:var(--ink);margin:0 0 16px;border-bottom:2px solid var(--paper-line);padding-bottom:12px;}
+
+/* HIGHLIGHTS */
+.hl-red{background:var(--red-pale);color:var(--red);padding:1px 5px;border-radius:3px;font-weight:bold;}
+.hl-sage{background:var(--sage-pale);color:var(--sage);padding:1px 5px;border-radius:3px;font-weight:bold;}
+.hl-gold{background:var(--gold-pale);color:var(--gold);padding:1px 5px;border-radius:3px;font-weight:bold;}
+
+/* NOTICE */
+.notice-box{background:#FFFBF0;border:2px dashed var(--gold);border-radius:10px;padding:22px 26px;margin-bottom:20px;}
+.notice-box h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;color:var(--gold);margin:0 0 14px;}
+.notice-q{margin-bottom:14px;padding-left:30px;position:relative;font-size:15.5px;}
+.notice-q::before{content:'?';position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--gold);color:var(--white);font-size:13px;font-weight:bold;text-align:center;line-height:20px;font-family:'Inter',Arial,sans-serif;}
+.reveal-btn{display:inline-block;margin-top:6px;background:none;border:1px solid var(--gold);color:var(--gold);border-radius:5px;padding:3px 10px;font-size:12px;cursor:pointer;font-family:'Inter',Arial,sans-serif;transition:all .15s;}
+.reveal-btn:hover{background:var(--gold);color:var(--white);}
+.notice-reveal{margin-top:8px;font-size:14px;color:var(--slate-mid);font-style:italic;border-left:3px solid var(--gold);padding-left:10px;display:none;}
+
+/* GRAMMAR BOXES */
+.grammar-box{background:var(--white);border-radius:10px;padding:26px 30px;margin-bottom:24px;box-shadow:0 2px 10px rgba(28,43,58,.07);}
+.grammar-box h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:21px;color:var(--red);margin:0 0 6px;}
+.grammar-box h3.sage{color:var(--sage);}
+.grammar-sub{font-family:'Inter',Arial,sans-serif;font-size:14px;color:var(--concrete);margin:0 0 18px;font-style:italic;}
+
+/* TABLES */
+table.rule-table{width:100%;border-collapse:collapse;margin:16px 0 8px;font-size:14.5px;font-family:'Inter',Arial,sans-serif;}
+table.rule-table th{background:var(--slate);color:var(--white);padding:9px 13px;text-align:left;font-size:13px;}
+table.rule-table td{padding:9px 13px;border-bottom:1px solid var(--paper-line);vertical-align:top;}
+table.rule-table tr:nth-child(even) td{background:var(--sage-pale);}
+
+/* VS SPLIT TABLE */
+.vs-table{display:grid;grid-template-columns:1fr 32px 1fr;gap:0;margin:16px 0;}
+.vs-col{border-radius:10px;overflow:hidden;}
+.vs-col.left{border-top-right-radius:0;border-bottom-right-radius:0;}
+.vs-col.right{border-top-left-radius:0;border-bottom-left-radius:0;}
+.vs-head{padding:10px 14px;font-family:'Inter',Arial,sans-serif;font-size:12px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;color:var(--white);}
+.vs-head.red{background:var(--red);}
+.vs-head.sage{background:var(--sage);}
+.vs-body{padding:14px;background:var(--white);box-shadow:0 2px 8px rgba(28,43,58,.07);}
+.vs-body p{font-size:14px;margin:0 0 8px;line-height:1.6;}
+.vs-body p:last-child{margin:0;}
+.vs-divider{display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',Cambria,Georgia,serif;font-weight:bold;font-size:18px;color:var(--concrete);}
+
+/* EXAMPLE ROWS */
+.example-row{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;margin-bottom:10px;padding:10px 14px;background:var(--paper);border-radius:8px;}
+.example-row .mark{font-weight:bold;font-size:18px;}
+.example-row .mark.ok{color:var(--sage);}
+.example-row .mark.bad{color:var(--red);}
+.example-row .gloss{display:block;font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--concrete);margin-top:3px;}
+.example-row .note{display:block;font-family:'Inter',Arial,sans-serif;font-size:12.5px;color:var(--red);margin-top:3px;font-weight:bold;}
+
+/* CHIP ROWS */
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;}
+.chip{background:var(--paper);border:1px solid var(--paper-line);border-radius:999px;padding:5px 14px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;color:var(--ink);}
+.chip.red{background:var(--red-pale);border-color:var(--red);color:var(--red);}
+.chip.sage{background:var(--sage-pale);border-color:var(--sage);color:var(--sage);}
+.chip.gold{background:var(--gold-pale);border-color:var(--gold);color:var(--gold);}
+
+/* CONDITIONAL STRUCTURE BOX */
+.struct-box{border-radius:10px;overflow:hidden;margin:16px 0;}
+.struct-header{padding:10px 18px;font-family:'Inter',Arial,sans-serif;font-size:12px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;}
+.struct-row{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--paper-line);padding:2px;}
+.struct-cell{background:var(--white);padding:10px 14px;font-size:14px;}
+.struct-cell.label{font-family:'Inter',Arial,sans-serif;font-weight:bold;font-size:12px;color:var(--concrete);text-transform:uppercase;letter-spacing:.06em;background:var(--paper);}
+
+/* VOCAB */
+.vocab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:14px 0;}
+.vocab-card{background:var(--white);border-radius:8px;padding:14px 16px;border-left:4px solid var(--slate-mid);box-shadow:0 2px 8px rgba(28,43,58,.06);}
+.vocab-card.red{border-left-color:var(--red);}
+.vocab-card.sage{border-left-color:var(--sage);}
+.vocab-card .word{font-family:'Playfair Display',Cambria,Georgia,serif;font-weight:bold;color:var(--ink);font-size:16px;}
+.vocab-card .pos{font-family:'Inter',Arial,sans-serif;font-size:11px;color:var(--concrete);text-transform:uppercase;margin-left:6px;}
+.vocab-card .pron{font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--concrete);margin-top:3px;}
+.vocab-card .def{font-size:14px;margin-top:5px;}
+.vocab-card .ex{font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--concrete);margin-top:5px;font-style:italic;}
+
+/* EXERCISES */
+.exercise{background:var(--white);border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(28,43,58,.07);}
+.ex-label{display:inline-block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;border-radius:4px;padding:3px 10px;margin-bottom:10px;}
+.ex-label.red{background:var(--red);color:var(--white);}
+.ex-label.sage{background:var(--sage);color:var(--white);}
+.ex-label.slate{background:var(--slate-mid);color:var(--white);}
+.ex-label.gold{background:var(--gold);color:var(--white);}
+.exercise h4{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0 0 12px;color:var(--ink);}
+.exercise .instr{font-family:'Inter',Arial,sans-serif;font-size:13.5px;color:var(--concrete);margin-bottom:14px;font-style:italic;}
+.q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:11px;flex-wrap:wrap;}
+.q-num{font-family:'Inter',Arial,sans-serif;font-weight:bold;color:var(--red);min-width:22px;}
+.blank-input{border:none;border-bottom:2px solid var(--red);background:var(--paper);font-family:'Playfair Display',Cambria,Georgia,serif;font-size:15px;padding:3px 8px;width:260px;color:var(--ink);}
+.blank-input:focus{outline:none;border-color:var(--sage);}
+.wide-input{width:100%;margin-top:6px;}
+.check-btn{background:var(--slate-mid);color:var(--white);border:none;border-radius:6px;padding:9px 22px;font-family:'Inter',Arial,sans-serif;font-weight:bold;font-size:14px;cursor:pointer;margin-top:10px;transition:background .15s;}
+.check-btn:hover{background:var(--slate);}
+.feedback{margin-top:12px;font-family:'Inter',Arial,sans-serif;font-size:14px;border-radius:6px;padding:10px 14px;display:none;}
+.feedback.show{display:block;}
+.feedback.good{background:var(--sage-pale);color:var(--sage);}
+.feedback.bad{background:var(--red-pale);color:var(--red);}
+textarea.response-box{width:100%;min-height:110px;border-radius:8px;border:2px solid var(--paper-line);padding:12px 14px;font-family:'Playfair Display',Cambria,Georgia,serif;font-size:15px;resize:vertical;background:var(--white);color:var(--ink);line-height:1.65;}
+textarea.response-box:focus{outline:none;border-color:var(--sage);}
+.word-count{font-family:'Inter',Arial,sans-serif;font-size:12px;color:var(--concrete);margin-top:5px;text-align:right;}
+
+/* ACTIVATE */
+.activate-box{background:var(--gold);border-radius:10px;padding:26px 30px;margin-bottom:20px;}
+.activate-box h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:20px;color:var(--white);margin:0 0 12px;}
+.activate-box p{color:var(--white);margin:0 0 10px;font-size:15.5px;}
+
+/* EXPLORE */
+.explore-card{background:#F4EDF9;border:1px solid #D5B8EA;border-radius:10px;padding:22px 26px;margin-bottom:18px;}
+.explore-card h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:17px;color:#6A3D8F;margin:0 0 10px;}
+.explore-tag{display:inline-block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;background:#6A3D8F;color:var(--white);border-radius:4px;padding:3px 9px;margin-bottom:10px;}
+.explore-card ul{padding-left:20px;margin:10px 0 0;font-size:15px;}
+.explore-card li{margin-bottom:7px;}
+
+/* ANSWER KEY */
+.answer-key{background:var(--white);border-radius:10px;padding:26px 30px;margin-top:48px;border:2px solid var(--gold);box-shadow:0 4px 16px rgba(28,43,58,.10);}
+.ak-title{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:22px;color:var(--ink);margin:0 0 6px;}
+.ak-sub{font-family:'Inter',Arial,sans-serif;font-size:13.5px;color:var(--concrete);margin:0 0 20px;font-style:italic;}
+.ak-section{margin-bottom:20px;}
+.ak-section h4{font-family:'Inter',Arial,sans-serif;font-size:13px;font-weight:bold;letter-spacing:.07em;text-transform:uppercase;color:var(--red);margin:0 0 10px;border-bottom:1px solid var(--paper-line);padding-bottom:6px;}
+.ak-item{display:grid;grid-template-columns:28px 1fr 1fr;gap:8px;padding:8px 4px;border-bottom:1px solid var(--paper-line);font-size:14px;}
+.ak-item:last-child{border-bottom:none;}
+.an{font-family:'Inter',Arial,sans-serif;font-weight:bold;color:var(--red);}
+.av{font-weight:bold;color:var(--sage);}
+.anote{font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--concrete);font-style:italic;}
+
+/* INLINE ANSWER PANELS */
+.ak-inline{margin-top:12px;}
+.ak-toggle{font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:bold;color:#946f10;background:transparent;border:1.5px solid #946f10;border-radius:6px;padding:9px 16px;cursor:pointer;min-height:40px;}
+.ak-toggle:hover{background:#946f10;color:var(--white);}
+.ak-panel{margin-top:10px;background:var(--white);border:1.5px solid #946f10;border-radius:8px;padding:12px 16px;}
+.ak-panel .ak-item{font-size:14px;}
+
+/* REF TABLE */
+table.ref-table{width:100%;border-collapse:collapse;font-family:'Inter',Arial,sans-serif;font-size:14px;}
+table.ref-table th{background:var(--slate);color:var(--white);padding:10px 14px;text-align:left;font-size:13px;}
+table.ref-table td{padding:10px 14px;border-bottom:1px solid var(--paper-line);vertical-align:top;}
+table.ref-table tr:nth-child(even) td{background:var(--paper);}
+
+.wrapup{background:var(--slate);color:var(--white);border-radius:10px;padding:26px 30px;margin-top:40px;border-bottom:4px solid var(--red);}
+.wrapup h3{font-family:'Playfair Display',Cambria,Georgia,serif;color:var(--red);margin:0 0 12px;font-size:18px;}
+.wrapup ul{padding-left:20px;margin:0;}
+.wrapup li{margin-bottom:7px;font-size:15px;color:#A0B4C4;}
+
+@media(max-width:600px){h1.title{font-size:26px;}.vocab-grid{grid-template-columns:1fr;}.toc ol{columns:1;}.ak-item{grid-template-columns:28px 1fr;}.ak-item .anote{grid-column:2;}.vs-table{grid-template-columns:1fr;}.vs-divider{display:none;}}
+
+/* ============================================================
+   SITE FRAME (added): fixed top nav + progress bar, slide-out
+   contents panel with creator branding, sticky section headers,
+   responsive & overflow fixes, footer, speaking/listening cards
+   ============================================================ */
+:root{--navh:52px;}
+html{scroll-behavior:smooth;}
+html{overflow-x:hidden;}
+body{overflow-x:hidden;padding-top:calc(var(--navh) + 4px);}
+[id]{scroll-margin-top:calc(var(--navh) + 20px);}
+img,svg,table{max-width:100%;}
+.wrap p,.wrap li,.wrap td,.wrap th,.wrap h1,.wrap h2,.wrap h3{overflow-wrap:break-word;word-break:break-word;}
+
+/* Progress bar: fixed, always visible below the nav */
+.progress-track{position:fixed;top:var(--navh);left:0;right:0;height:4px;z-index:120;}
+
+/* Top navigation bar */
+.nav-bar{position:fixed;top:0;left:0;right:0;height:var(--navh);background:var(--slate);color:#FFFFFF;display:flex;align-items:center;gap:10px;padding:0 12px;z-index:130;box-shadow:0 2px 12px rgba(0,0,0,.20);}
+.nav-btn{min-width:44px;min-height:44px;background:transparent;border:none;color:#FFFFFF;font-size:20px;cursor:pointer;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',Arial,sans-serif;transition:background .15s;}
+.nav-btn:hover{background:rgba(255,255,255,.14);}
+.nav-top{font-size:13px;font-weight:700;letter-spacing:.03em;white-space:nowrap;padding:0 10px;}
+.nav-brand{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.25;}
+.nav-brand-week{font-family:'Inter',Arial,sans-serif;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;opacity:.75;}
+.nav-brand-title{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+/* Slide-out contents panel */
+.nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .25s;z-index:135;}
+.nav-overlay.open{opacity:1;pointer-events:auto;}
+.nav-panel{position:fixed;top:0;bottom:0;left:0;width:min(330px,88vw);background:#FFFFFF;z-index:140;transform:translateX(-103%);transition:transform .28s ease;display:flex;flex-direction:column;box-shadow:6px 0 28px rgba(0,0,0,.22);}
+.nav-panel.open{transform:translateX(0);}
+.nav-panel-head{display:flex;align-items:center;justify-content:space-between;padding:8px 10px 8px 20px;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--concrete);border-bottom:1px solid var(--paper-line);}
+.nav-panel-head .nav-btn{color:var(--ink);font-size:16px;}
+.nav-panel-links{flex:1;overflow-y:auto;padding:10px 8px;}
+.nav-panel-links a{display:flex;align-items:center;min-height:44px;padding:6px 14px;border-radius:8px;text-decoration:none;color:var(--ink);font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:600;line-height:1.4;}
+.nav-panel-links a:hover{background:var(--paper);color:var(--red);}
+/* Branding zone: visually separated from navigation */
+.nav-panel-brand{border-top:2px solid var(--paper-line);background:var(--paper);padding:16px 20px 18px;}
+.nav-panel-brand .brand-name{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.nav-panel-brand .brand-line{font-family:'Inter',Arial,sans-serif;font-size:12.5px;color:var(--concrete);margin-bottom:10px;line-height:1.55;}
+.nav-panel-brand a{display:flex;align-items:center;min-height:40px;font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--red);text-decoration:none;font-weight:600;}
+.nav-panel-brand a:hover{text-decoration:underline;}
+.nav-panel-brand .brand-copy{margin-top:10px;font-family:'Inter',Arial,sans-serif;font-size:11.5px;color:var(--concrete);}
+
+/* Sticky section headers: current section title stays visible */
+.tab-header{position:sticky;top:calc(var(--navh) + 4px);z-index:60;background:var(--paper);padding:10px 0 8px;}
+
+/* Scrollable table wrapper with mobile hint */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;}
+.table-scroll table{max-width:none;}
+.table-scroll.has-overflow{background:linear-gradient(to left,rgba(0,0,0,.12),rgba(0,0,0,0) 26px) right center / 26px 100% no-repeat;}
+.table-scroll.has-overflow::before{content:'scroll \2192';display:block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--concrete);text-align:right;padding:0 6px 4px;}
+
+/* Speaking & Listening sections */
+.tb-speak{background:var(--sage);color:#FFFFFF;}
+.tb-listen{background:#946f10;color:#FFFFFF;}
+.section-intro{font-family:'Inter',Arial,sans-serif;font-size:14.5px;color:var(--concrete);margin:0 0 18px;line-height:1.65;}
+.speak-card{background:#FFFFFF;border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.07);border-left:4px solid var(--sage);}
+.speak-type{display:inline-block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin-bottom:8px;}
+.speak-card h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0 0 10px;color:var(--ink);}
+.speak-card p{margin:0 0 10px;}
+.speak-card ul{margin:0 0 10px 20px;padding:0;}
+.speak-card li{margin-bottom:6px;}
+.speak-how{background:var(--paper);border-radius:8px;padding:12px 16px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;line-height:1.65;margin-top:12px;}
+.media-card{background:#FFFFFF;border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.07);border-left:4px solid #946f10;}
+.media-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px;}
+.media-head h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0;color:var(--ink);}
+.media-platform{font-family:'Inter',Arial,sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#946f10;}
+.media-card p{margin:0 0 10px;}
+.media-task{border-left:3px solid #946f10;background:var(--paper);padding:10px 14px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;line-height:1.65;margin-top:10px;border-radius:0 8px 8px 0;}
+.tip-box{border:2px dashed var(--sage);border-radius:10px;padding:18px 22px;background:#FFFFFF;margin-top:6px;}
+.tip-box h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:16px;margin:0 0 10px;color:var(--sage);}
+.tip-box ul{margin:0 0 0 20px;padding:0;}
+.tip-box li{margin-bottom:6px;font-size:14.5px;}
+
+/* Footer */
+.site-footer{background:var(--slate);color:#FFFFFF;margin-top:56px;padding:34px 24px 40px;}
+.site-footer-inner{max-width:920px;margin:0 auto;text-align:center;}
+.footer-copy{font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:700;margin:0 0 6px;}
+.footer-line{font-family:'Playfair Display',Cambria,Georgia,serif;font-style:italic;font-size:14.5px;opacity:.88;margin:0 0 12px;}
+.footer-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 10px;}
+.footer-links a{color:#FFFFFF;font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding:8px 2px;min-height:44px;display:inline-flex;align-items:center;}
+.footer-links a:hover{border-bottom-color:#FFFFFF;}
+.footer-dot{opacity:.5;}
+.footer-note{font-family:'Inter',Arial,sans-serif;font-size:12.5px;opacity:.72;margin:0;}
+
+/* Mobile refinements (375px-safe) */
+@media(max-width:600px){
+  .masthead{padding:34px 20px 28px;}
+  .grammar-box,.card{padding:20px 18px;}
+  .oped-body{padding:20px 18px;}
+  .speak-card,.media-card{padding:18px 16px;}
+  .check-btn,.reveal-btn,.rev-btn,.poll-opt{min-height:44px;}
+  .vs-table{grid-template-columns:1fr;}
+  .vs-divider{display:none;}
+  table.rule-table{font-size:13.5px;}
+  .nav-top{font-size:12px;}
+  .site-footer{padding:28px 18px 34px;}
+}
+
+</style>
+</head>
+<body>
+
+<!-- SECTION: Top Navigation Bar -->
+<header class="nav-bar" id="navBar">
+  <button class="nav-btn nav-hamburger" id="navHamburger" aria-label="Open contents menu" aria-expanded="false">&#9776;</button>
+  <div class="nav-brand">
+    <span class="nav-brand-week">Grade 9 · Week 1</span>
+    <span class="nav-brand-title">Arguing a Position</span>
+  </div>
+  <button class="nav-btn nav-top" id="navTopBtn" aria-label="Back to top">&#8593; Top</button>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+<aside class="nav-panel" id="navPanel" aria-hidden="true">
+  <div class="nav-panel-head"><span>On this page</span><button class="nav-btn nav-close" id="navClose" aria-label="Close menu">&#10005;</button></div>
+  <nav class="nav-panel-links" id="navPanelLinks"></nav>
+  <!-- Creator & branding section of the menu -->
+  <div class="nav-panel-brand">
+    <div class="brand-name">Bahar Esmaeelzadeh</div>
+    <div class="brand-line">Designed and created for English learners by Bahar Esmaeelzadeh.</div>
+    <a href="mailto:bahar.esmz.en@gmail.com">&#128231; bahar.esmz.en@gmail.com</a>
+    <a href="https://www.linkedin.com/in/bahar-esmaeelzadeh-650b98198" target="_blank" rel="noopener">&#128188; LinkedIn &mdash; Bahar Esmaeelzadeh</a>
+    <div class="brand-copy">&copy; 2026 Bahar Esmaeelzadeh &middot; All rights reserved</div>
+  </div>
+</aside>
+
+<div class="progress-track"><div class="progress-fill" id="pf"></div></div>
+
+<!-- SECTION: Masthead / Header -->
+<div class="masthead">
+  <div class="divide"></div>
+  <div class="versus">VS</div>
+  <div class="masthead-inner">
+    <p class="eyebrow">Grade 9 · Week 1 · Complete Reference &amp; Pre-Class Material</p>
+    <h1 class="title">Arguing a Position:<br>Mixed Conditionals &amp; Controversy</h1>
+    <div class="masthead-meta">
+      <div>Level: <span>C1</span></div>
+      <div>Theme: <span>Vaccination · Conspiracy Theories · Abortion &amp; Adoption</span></div>
+      <div>Grammar: <span>Mixed Conditionals · Unreal Conditionals</span></div>
+      <div>Est. time: <span>70–80 min</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <!-- SECTION: Table of Contents -->
+  <div class="toc">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#engage">1. Engage — taking a position</a></li>
+      <li><a href="#ctx1">2. Context: two op-eds</a></li>
+      <li><a href="#nd1">3. Notice &amp; discover</a></li>
+      <li><a href="#s1">4. Study: Unreal Conditionals review</a></li>
+      <li><a href="#s2">5. Study: Mixed Conditionals</a></li>
+      <li><a href="#p1">6. Practice: conditionals</a></li>
+      <li><a href="#ctx2">7. Context: abortion &amp; adoption debate</a></li>
+      <li><a href="#s3">8. Study: Arguing a position</a></li>
+      <li><a href="#p2">9. Practice: argument language</a></li>
+      <li><a href="#vocab">10. Vocabulary: controversy</a></li>
+      <li><a href="#vp">11. Practice: vocabulary</a></li>
+      <li><a href="#speaking">12. Speaking practice</a></li>
+      <li><a href="#together">13. Putting it together</a></li>
+      <li><a href="#listening">14. Listening &amp; watching</a></li>
+      <li><a href="#explore">15. Explore on your own</a></li>
+      <li><a href="#ref">16. Quick reference</a></li>
+    </ol>
+  </div>
+
+  <!-- SECTION: Where do you stand? -->
+  <div class="tab-section" id="engage">
+    <div class="tab-header"><span class="tab-badge tb-engage">ENGAGE</span><h2 class="tab-title">Where do you stand?</h2></div>
+    <hr class="tab-rule">
+    <div class="hook-box">
+      <h3>Before we start: three positions</h3>
+      <p>This week's grammar — mixed conditionals — is not just a structural exercise. It is the language of hypothetical argument: what <em>would</em> be different now <em>if</em> something <em>had</em> happened differently in the past. This is the grammar of debate, regret, and counterfactual reasoning.</p>
+      <p>Before looking at any grammar, take a position on three genuinely controversial questions. There is no "correct" answer here. Your answer will shape your practice writing later.</p>
+      <p><strong>Question 1: Mandatory childhood vaccination</strong></p>
+      <p style="font-size:14px;color:#6B8096;">Should childhood vaccination be legally required, with exemptions only for documented medical reasons?</p>
+      <div class="poll" id="poll1">
+        <button class="poll-opt" data-poll="1" data-opt="a">Yes — mandatory vaccination protects public health above individual choice</button>
+        <button class="poll-opt sage" data-poll="1" data-opt="b">No — medical decisions should remain the parent's right to make</button>
+        <button class="poll-opt" data-poll="1" data-opt="c" style="border-color:var(--gold);color:var(--gold);">Depends — context, disease, and alternative measures matter</button>
+      </div>
+      <p style="margin-top:14px;"><strong>Question 2: Conspiracy theories and social media</strong></p>
+      <p style="font-size:14px;color:#6B8096;">Should social media platforms be legally required to remove medically disproven health claims — even if this limits free speech?</p>
+      <div class="poll" id="poll2">
+        <button class="poll-opt" data-poll="2" data-opt="a">Yes — public health harm justifies content restriction</button>
+        <button class="poll-opt sage" data-poll="2" data-opt="b">No — determining "disproven" gives too much power to governments and platforms</button>
+        <button class="poll-opt" data-poll="2" data-opt="c" style="border-color:var(--gold);color:var(--gold);">Partial — labelling misinformation is acceptable, but removal goes too far</button>
+      </div>
+      <p id="pollResult" style="margin-top:12px;font-size:13.5px;color:#6B8096;font-family:'Inter',Arial,sans-serif;display:none;">Bring your reasoning to class — we open Session 1 by comparing positions.</p>
+    </div>
+    <div class="card">
+      <h3>This week's colour code</h3>
+      <p><span class="hl-red">Red</span> = mixed conditional structure (the target form). &nbsp;<span class="hl-sage">Green</span> = argument language (how to frame a position). &nbsp;<span class="hl-gold">Gold</span> = controversy vocabulary.</p>
+      <p style="font-size:14px;color:var(--concrete);">Read the texts for meaning first. Then re-read and notice the highlighted language.</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Read first: two op-eds in response to each other -->
+  <div class="tab-section" id="ctx1">
+    <div class="tab-header"><span class="tab-badge tb-context">CONTEXT</span><h2 class="tab-title">Read first: two op-eds in response to each other</h2></div>
+    <hr class="tab-rule">
+    <div class="card"><p><strong>Before any grammar:</strong> What is each writer's core position? Where do they agree? Where do they most sharply disagree? What kind of evidence does each use?</p></div>
+
+    <div class="oped">
+      <div class="oped-header pro">
+        <div><div class="oped-author">Dr. Nadia Voss</div><div class="oped-meta">Associate Professor of Public Health, University of Leiden · Published in <em>The European Policy Review</em></div></div>
+        <div class="oped-meta">FOR MANDATORY VACCINATION</div>
+      </div>
+      <div class="oped-body">
+        <p class="oped-title">Herd immunity is not a choice: the case for mandatory vaccination</p>
+        <p>The resurgence of measles across three European countries last spring was not inevitable. <span class="hl-red">If governments had enforced vaccination requirements a decade ago, the current outbreaks would not be threatening immunocompromised children who cannot protect themselves.</span> This is not a hypothetical exercise — it is arithmetic. Below a ninety-five percent vaccination threshold, herd immunity collapses.</p>
+        <p>Critics invoke individual liberty. But individual liberty, <span class="hl-sage">as I would argue</span>, has never been absolute. You are not free to drive without a seatbelt in most jurisdictions precisely because your injury imposes costs on others. <span class="hl-sage">The evidence strongly suggests that</span> vaccine hesitancy correlates more closely with misinformation exposure than with genuine philosophical conviction. <span class="hl-red">Had social media platforms removed anti-vaccination content five years ago, vaccine uptake rates would be significantly higher today.</span></p>
+        <p><span class="hl-sage">It is worth noting that</span> countries with the most robust mandatory vaccination frameworks — Germany, France, Italy — have seen measles cases fall by over eighty percent since 2019. <span class="hl-red">If the EU had implemented a unified vaccination directive in 2018, the public health landscape across member states would look dramatically different now.</span> The data is not ambiguous. The political will has been.</p>
+        <p>Marcus Osei writes that mandates "trample parental rights." <span class="hl-sage">While it is true that</span> parental autonomy is a genuine value, it is not a value that extends to placing other people's children at risk. We regulate food safety, building codes, and car seats. <span class="hl-sage">It is difficult to see why</span> the bodies of unvaccinated children should be exempt from the same logic.</p>
+      </div>
+    </div>
+
+    <div class="oped">
+      <div class="oped-header con">
+        <div><div class="oped-author">Marcus Osei</div><div class="oped-meta">Science writer &amp; editor, <em>The Independent Health Monitor</em></div></div>
+        <div class="oped-meta">AGAINST MANDATORY VACCINATION</div>
+      </div>
+      <div class="oped-body">
+        <p class="oped-title">Compulsion breeds resistance: why mandates backfire</p>
+        <p>Dr. Voss's argument, however carefully constructed, rests on a foundational error: that compulsion produces compliance. The epidemiological literature is more complicated. <span class="hl-red">If France had not introduced its mandatory vaccination law in 2018, it is not certain that uptake would have been lower</span> — in fact, some regional studies suggest mandates <span class="hl-gold">polarise</span> communities that were previously ambivalent.</p>
+        <p><span class="hl-sage">I do not dispute the fact that</span> herd immunity is the goal. <span class="hl-sage">However, the claim that</span> only mandates can achieve it is empirically contestable. Scandinavia — with no mandatory vaccination — maintains uptake above ninety-five percent through trusted public communication. <span class="hl-red">If investment in health communication had matched investment in enforcement infrastructure, we might now have both higher uptake and greater public trust.</span></p>
+        <p>The conspiracy theory problem is real. But <span class="hl-sage">it does not follow that</span> removing content solves it. Suppressed information migrates to harder-to-monitor platforms. <span class="hl-red">Had platforms taken a transparency-first approach rather than removal, the vaccine-hesitant community would arguably be more reachable today.</span> Censorship does not change minds; it changes venues.</p>
+        <p><span class="hl-sage">What strikes me as most troubling</span> in Dr. Voss's framing is the assumption that state power applied to bodies is analogous to state power applied to food labels. These are not equivalent. One governs things; the other governs people. <span class="hl-red">If we had designed public health policy around persuasion rather than compulsion from the outset, the anti-vaccination movement would not have the martyrdom narrative it now feeds on.</span></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Comprehension &amp; position check</h3>
+      <p>1. What does Dr. Voss mean by "herd immunity is arithmetic"? What number does she give, and why does it matter?</p>
+      <p>2. Marcus Osei mentions Scandinavia. What point is he making, and how does it undercut Dr. Voss's argument?</p>
+      <p>3. Both writers mention conspiracy theories and social media — but disagree on the solution. Summarise each position in one sentence.</p>
+      <p>4. Which argument do you find more persuasive — and why? What evidence would change your mind?</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Find the pattern in the red sentences -->
+  <div class="tab-section" id="nd1">
+    <div class="tab-header"><span class="tab-badge tb-notice">NOTICE &amp; DISCOVER</span><h2 class="tab-title">Find the pattern in the red sentences</h2></div>
+    <hr class="tab-rule">
+    <div class="notice-box">
+      <h3>Look at the red sentences — what do they have in common?</h3>
+      <div class="notice-q">
+        Look at: <em>"If governments had enforced vaccination requirements a decade ago, the current outbreaks would not be threatening immunocompromised children."</em><br>
+        The <em>if</em>-clause is in the past — which specific tense? The main clause is in the present — which modal?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">If-clause: past perfect (had enforced). Main clause: would not be + -ing (present conditional progressive). This mixes a past-time hypothesis with a present-time result — that is the "mixed" in mixed conditional.</p>
+      </div>
+      <div class="notice-q">
+        Compare: <em>"If France had not introduced its mandatory vaccination law, it is not certain that uptake would have been lower."</em><br>
+        What is the time frame of the result here — is it past or present?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">The result is also in the past: "would have been lower." This is a Type 3 conditional (standard): past hypothesis → past result. Not a mixed conditional. The key test: when is the result? Past → Type 3. Present/now → Mixed conditional.</p>
+      </div>
+      <div class="notice-q">
+        Look at: <em>"If investment in health communication had matched investment in enforcement infrastructure, we might now have both higher uptake and greater public trust."</em><br>
+        What word tells you the result is in the present?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">"Now" — "we might now have." The past action (if investment had matched) → a present situation (what we might have now). The presence of "now" or references to the current state of affairs is often the clearest signal that a conditional is mixed, not Type 3.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Unreal Conditionals — Brief Review (Types 2 & 3) -->
+  <div class="tab-section" id="s1">
+    <div class="tab-header"><span class="tab-badge tb-study">STUDY</span><h2 class="tab-title">Unreal Conditionals — Brief Review (Types 2 &amp; 3)</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3>Unreal Conditionals</h3>
+      <p class="grammar-sub">These express situations that are contrary to reality — either present/future (Type 2) or past (Type 3). Both are needed to understand mixed conditionals.</p>
+
+      <div class="vs-table">
+        <div class="vs-col left">
+          <div class="vs-head red">Type 2 — Unreal Present / Future</div>
+          <div class="vs-body">
+            <p><strong>Structure:</strong> If + past simple → would/could/might + infinitive</p>
+            <p><strong>Meaning:</strong> An imaginary situation now or in the future that is not true or unlikely.</p>
+            <p><strong>Example:</strong> <em>"If mandatory vaccination <strong>were</strong> introduced tomorrow, many parents <strong>would resist</strong> it."</em></p>
+            <p><strong>Note:</strong> Formal English uses <em>were</em> (not <em>was</em>) for all persons in the if-clause: "If I/she/he were…"</p>
+          </div>
+        </div>
+        <div class="vs-divider">↔</div>
+        <div class="vs-col right">
+          <div class="vs-head sage">Type 3 — Unreal Past</div>
+          <div class="vs-body">
+            <p><strong>Structure:</strong> If + past perfect → would/could/might + have + past participle</p>
+            <p><strong>Meaning:</strong> An imaginary situation in the past — something that didn't happen.</p>
+            <p><strong>Example:</strong> <em>"If France <strong>had not introduced</strong> the mandate, uptake <strong>might have been</strong> lower."</em></p>
+            <p><strong>Note:</strong> Both clauses refer to the past. This is the standard "hypothetical about the past" form.</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top:18px;"><strong>Quick test — which type?</strong></p>
+      <div class="table-scroll"><table class="rule-table">
+        <tr><th>Sentence</th><th>If-clause time</th><th>Result time</th><th>Type</th></tr>
+        <tr><td><em>"If I were a scientist, I would study vaccine development."</em></td><td>Present (unreal)</td><td>Present (unreal)</td><td>Type 2</td></tr>
+        <tr><td><em>"If the trial had succeeded, the drug would have been approved."</em></td><td>Past (unreal)</td><td>Past (unreal)</td><td>Type 3</td></tr>
+        <tr><td><em>"If the mandate had passed in 2018, we would now have herd immunity."</em></td><td>Past (unreal)</td><td>Present (real gap)</td><td><strong>Mixed</strong></td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <!-- SECTION: Mixed Conditionals — Form, Meaning, and Register -->
+  <div class="tab-section" id="s2">
+    <div class="tab-header"><span class="tab-badge tb-study">STUDY</span><h2 class="tab-title">Mixed Conditionals — Form, Meaning, and Register</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3>Mixed Conditionals</h3>
+      <p class="grammar-sub">A mixed conditional connects a hypothetical past condition with a present (or ongoing) result — or less commonly, a present condition with a past result. The key insight: the two time frames are different.</p>
+
+      <p><strong>Type A (most common): Past condition → Present result</strong></p>
+      <p style="font-size:14px;color:var(--concrete);margin-bottom:12px;font-style:italic;">The most useful and frequent type. A different past would mean a different present.</p>
+      <div class="struct-box">
+        <div class="struct-header" style="background:var(--red);color:var(--white);">PAST CONDITION → PRESENT RESULT</div>
+        <div class="struct-row">
+          <div class="struct-cell label">If-clause (past perfect)</div>
+          <div class="struct-cell label">Main clause (would/could/might + infinitive)</div>
+        </div>
+        <div class="struct-row">
+          <div class="struct-cell"><em>If + subject + <strong>had</strong> (not) <strong>done</strong>…</em></div>
+          <div class="struct-cell"><em>subject + <strong>would/could/might</strong> + (not) + <strong>be / have / do</strong>…</em></div>
+        </div>
+        <div class="struct-row">
+          <div class="struct-cell" style="color:var(--red);font-style:italic;">"If the EU <strong>had implemented</strong> a unified directive in 2018…"</div>
+          <div class="struct-cell" style="color:var(--red);font-style:italic;">"…the public health landscape <strong>would look</strong> dramatically different <strong>now</strong>."</div>
+        </div>
+      </div>
+
+      <p style="margin-top:20px;"><strong>Type B (less common): Present condition → Past result</strong></p>
+      <p style="font-size:14px;color:var(--concrete);margin-bottom:12px;font-style:italic;">A present state explains why something in the past happened differently. Less frequent, but important to recognise.</p>
+      <div class="struct-box">
+        <div class="struct-header" style="background:var(--slate-mid);color:var(--white);">PRESENT CONDITION → PAST RESULT</div>
+        <div class="struct-row">
+          <div class="struct-cell label">If-clause (past simple — unreal present)</div>
+          <div class="struct-cell label">Main clause (would have + past participle)</div>
+        </div>
+        <div class="struct-row">
+          <div class="struct-cell"><em>If + subject + <strong>were</strong> / <strong>didn't</strong> + verb…</em></div>
+          <div class="struct-cell"><em>subject + <strong>would have</strong> + past participle…</em></div>
+        </div>
+        <div class="struct-row">
+          <div class="struct-cell" style="color:var(--slate-mid);font-style:italic;">"If I <strong>weren't</strong> a trained scientist…"</div>
+          <div class="struct-cell" style="color:var(--slate-mid);font-style:italic;">"…I <strong>would have believed</strong> the misinformation years ago."</div>
+        </div>
+      </div>
+
+      <p style="margin-top:20px;"><strong>All examples from the op-eds:</strong></p>
+      <div class="table-scroll"><table class="rule-table">
+        <tr><th>Sentence</th><th>If-clause</th><th>Result</th><th>Type</th></tr>
+        <tr><td><em>"If governments had enforced vaccination requirements a decade ago, the current outbreaks would not be threatening children."</em></td><td>Past perfect</td><td>Present continuous (now)</td><td>Mixed A</td></tr>
+        <tr><td><em>"Had social media platforms removed anti-vaccination content five years ago, vaccine uptake rates would be significantly higher today."</em></td><td>Past perfect (inverted)</td><td>Present state (today)</td><td>Mixed A</td></tr>
+        <tr><td><em>"If investment in health communication had matched enforcement spending, we might now have both higher uptake and trust."</em></td><td>Past perfect</td><td>Present state (now)</td><td>Mixed A</td></tr>
+        <tr><td><em>"Had platforms taken a transparency-first approach, the vaccine-hesitant community would arguably be more reachable today."</em></td><td>Past perfect (inverted)</td><td>Present state (today)</td><td>Mixed A</td></tr>
+      </table></div>
+
+      <p style="margin-top:20px;"><strong>⚠ Corpus note — register:</strong></p>
+      <div class="card" style="background:var(--red-pale);border-left:4px solid var(--red);margin-top:0;">
+        <p>Mixed conditionals are primarily a <strong>formal written</strong> feature. Corpus data (COCA, BNC) confirms they appear far more in written essays, opinion pieces, academic papers, and formal speeches than in everyday spoken conversation. In informal speech, speakers usually express the same meaning more simply:</p>
+        <div class="example-row"><span class="mark bad">formal</span><span class="txt"><em>"If the vaccine mandate had passed in 2018, we would now have herd immunity."</em><span class="gloss">Written op-ed or academic essay — mixed conditional appropriate.</span></span></div>
+        <div class="example-row"><span class="mark ok">informal</span><span class="txt"><em>"I mean, if they'd done it back in 2018, we'd probably be fine by now."</em><span class="gloss">Spoken conversation — contracted, simpler, no "now" required.</span></span></div>
+        <p style="margin-top:10px;">Use mixed conditionals when writing formal opinion pieces, essays, proposals, or delivering prepared speeches. In casual discussion, the distinction often disappears naturally.</p>
+      </div>
+
+      <p style="margin-top:18px;"><strong>Inverted form (formal writing only):</strong></p>
+      <p>In formal written English, the if-clause can be inverted — the subject and auxiliary swap, and <em>if</em> is omitted:</p>
+      <div class="example-row"><span class="mark ok">✓</span><span class="txt"><em>Had governments enforced requirements earlier, the outbreaks would not be occurring now.</em><span class="gloss">Inversion: "Had + subject + past participle…" — only with had, were, should. Formal written register only.</span></span></div>
+      <div class="example-row"><span class="mark bad">✗</span><span class="txt"><em>Had I a doctor, I would have known sooner.</em><span class="note">WRONG modern English — inversion with "had" works only with "had been/done/etc." (perfect), not with simple "had."</span></span></div>
+
+      <p style="margin-top:18px;"><strong>Time signals that reveal mixed conditionals:</strong></p>
+      <div class="chip-row">
+        <span class="chip red">now · today · currently · at present</span>
+        <span class="chip red">still · no longer · already</span>
+        <span class="chip red">would be (not would have been)</span>
+        <span class="chip red">could/might + present infinitive</span>
+      </div>
+
+      <p style="margin-top:18px;"><strong>⚠ Common errors:</strong></p>
+      <div class="example-row"><span class="mark bad">✗</span><span class="txt"><em>If the mandate would have passed, we would now have herd immunity.</em><span class="note">WRONG — no "would" in the if-clause. Use past perfect: "If the mandate had passed…"</span></span></div>
+      <div class="example-row"><span class="mark bad">✗</span><span class="txt"><em>If they had acted sooner, things would have been better now.</em><span class="note">MIXED — "would have been" is past result. For a present result: "would be better now." Small change, different meaning.</span></span></div>
+      <div class="example-row"><span class="mark ok">✓</span><span class="txt"><em>If they had acted sooner, things would be better now.</em><span class="gloss">Correct mixed conditional: past action → present state.</span></span></div>
+    </div>
+  </div>
+
+  <!-- SECTION: Try it: conditional forms -->
+  <div class="tab-section" id="p1">
+    <div class="tab-header"><span class="tab-badge tb-practice">PRACTICE</span><h2 class="tab-title">Try it: conditional forms</h2></div>
+    <hr class="tab-rule">
+    <div class="exercise">
+      <span class="ex-label red">Exercise 1 · Identify the type</span>
+      <h4>Is each sentence Type 2, Type 3, or Mixed? Write the letter. Then write the time of the if-clause and the result.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span>"If vaccine hesitancy were as low as it was in the 1990s, we would not be facing these outbreaks."</span>
+        <input type="text" class="blank-input" id="e1a" data-answer="mixed" placeholder="Type…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">2.</span><span>"If the clinical trial had succeeded, the drug would have entered production in 2021."</span>
+        <input type="text" class="blank-input" id="e1b" data-answer="type 3|3" placeholder="Type…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">3.</span><span>"If governments invested more in science communication, public trust in vaccines would improve."</span>
+        <input type="text" class="blank-input" id="e1c" data-answer="type 2|2" placeholder="Type…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">4.</span><span>"Had the EU introduced a unified vaccination directive in 2016, member states would now have far more consistent coverage."</span>
+        <input type="text" class="blank-input" id="e1d" data-answer="mixed" placeholder="Type…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">5.</span><span>"If she weren't a researcher in infectious disease, she would probably never have questioned the initial reports."</span>
+        <input type="text" class="blank-input" id="e1e" data-answer="mixed b|mixed" placeholder="Type…"></div>
+      <button class="check-btn" onclick="checkEx1()">Check my answers</button>
+      <div class="feedback" id="fb-ex1"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">Mixed</span><span class="anote">If-clause = past unreal (were as low as it was in the 1990s → imaginary present); result = present progressive (would not be facing). Past condition → present ongoing result.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">Type 3</span><span class="anote">If-clause: past perfect (had succeeded). Result: past (would have entered). Both past — standard Type 3.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">Type 2</span><span class="anote">If-clause: past simple (invested — imaginary present). Result: present (would improve). Imaginary present → present result.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">Mixed</span><span class="anote">Inverted form (Had the EU introduced…). Result: present (would now have). Past condition → present result = Mixed A.</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">Mixed B</span><span class="anote">If-clause: past simple unreal present (weren't — she IS a researcher). Result: past (would never have questioned). Present state → past result = Mixed B.</span></div>
+    
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label red">Exercise 2 · Complete the mixed conditional</span>
+      <h4>Complete each sentence. Use the verb in brackets in the correct form. All sentences are Mixed Type A unless indicated.</h4>
+      <p class="instr">Context: arguing about vaccination policy, social media, and public health.</p>
+      <div class="q-row"><span class="q-num">1.</span><span>If the EU ____________ (adopt) a coordinated anti-misinformation policy in 2017, vaccine hesitancy ____________ (be) far lower across Europe today.</span></div>
+      <input type="text" class="blank-input wide-input" id="e2a" data-answer="had adopted" placeholder="if-clause verb…">
+      <input type="text" class="blank-input wide-input" id="e2b" data-answer="would be" placeholder="main clause verb…" style="margin-top:6px;">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">2.</span><span>____________ (invest) governments in rural health infrastructure a decade earlier, the current gap in vaccination rates between urban and rural communities ____________ (not exist).</span></div>
+      <input type="text" class="blank-input wide-input" id="e2c" data-answer="had governments invested|if governments had invested" placeholder="if-clause (inverted or standard)…">
+      <input type="text" class="blank-input wide-input" id="e2d" data-answer="would not exist|wouldn't exist" placeholder="main clause…" style="margin-top:6px;">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">3.</span><span>If Marcus Osei ____________ (not / hold) his current position as a health writer, he might ____________ (not develop) such a nuanced view of the mandate debate.</span></div>
+      <input type="text" class="blank-input wide-input" id="e2e" data-answer="didn't hold|weren't holding|did not hold" placeholder="if-clause (present state)…">
+      <input type="text" class="blank-input wide-input" id="e2f" data-answer="not have developed|never have developed" placeholder="main clause (past result — Mixed B)…" style="margin-top:6px;">
+      <button class="check-btn" onclick="checkEx2()">Check my answers</button>
+      <div class="feedback" id="fb-ex2"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1a.</span><span class="av">had adopted</span><span class="anote">Past perfect in the if-clause — Mixed A.</span></div>
+      <div class="ak-item"><span class="an">1b.</span><span class="av">would be</span><span class="anote">Present infinitive (not "would have been") — the result is the current state across Europe.</span></div>
+      <div class="ak-item"><span class="an">2a.</span><span class="av">Had governments invested</span><span class="anote">Inverted form: Had + subject + past participle. No "if." Formal written only.</span></div>
+      <div class="ak-item"><span class="an">2b.</span><span class="av">would not exist</span><span class="anote">Present infinitive — the gap is a current situation. "Would not have existed" would mean the gap never existed at all (different meaning).</span></div>
+      <div class="ak-item"><span class="an">3a.</span><span class="av">didn't hold / weren't holding</span><span class="anote">Mixed B: imaginary present state — he DOES hold this position. Past simple (unreal present).</span></div>
+      <div class="ak-item"><span class="an">3b.</span><span class="av">not have developed / never have developed</span><span class="anote">Past result (he developed the view at some point in the past). would not/never have developed.</span></div>
+    
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label red">Exercise 3 · Error correction</span>
+      <h4>Each sentence has one error. Find and fix it.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span>If the mandate would have been introduced earlier, public trust would be higher now.</span></div>
+      <input type="text" class="blank-input wide-input" id="e3a" data-answer="if the mandate had been introduced earlier, public trust would be higher now" placeholder="Corrected sentence…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">2.</span><span>Had the research been published sooner, doctors would have been better informed today.</span></div>
+      <input type="text" class="blank-input wide-input" id="e3b" data-answer="had the research been published sooner, doctors would be better informed today" placeholder="Corrected sentence…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">3.</span><span>If governments had taken action earlier, the situation would been different now.</span></div>
+      <input type="text" class="blank-input wide-input" id="e3c" data-answer="if governments had taken action earlier, the situation would be different now" placeholder="Corrected sentence…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">4.</span><span>If she is a stronger advocate in 2015, the policy would have passed.</span></div>
+      <input type="text" class="blank-input wide-input" id="e3d" data-answer="if she had been a stronger advocate in 2015, the policy would have passed" placeholder="Corrected sentence…">
+      <button class="check-btn" onclick="checkEx3()">Check my answers</button>
+      <div class="feedback" id="fb-ex3"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">If the mandate had been introduced earlier, public trust would be higher now.</span><span class="anote">"would have been" → no "would" in the if-clause. Must be past perfect (had been introduced).</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">Had the research been published sooner, doctors would be better informed today.</span><span class="anote">"would have been" → this should be a Mixed conditional (past → present). Result = "would be" (now/today), not "would have been" (past).</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">If governments had taken action earlier, the situation would be different now.</span><span class="anote">"would been" is missing the auxiliary "be": "would be different." Classic modal error.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">If she had been a stronger advocate in 2015, the policy would have passed.</span><span class="anote">"If she is" → present tense in the if-clause with a past result doesn't work. The hypothesis is in the past (2015), so: past perfect (had been). Both clauses past → Type 3.</span></div>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Read next: a second controversy -->
+  <div class="tab-section" id="ctx2">
+    <div class="tab-header"><span class="tab-badge tb-context">CONTEXT</span><h2 class="tab-title">Read next: a second controversy</h2></div>
+    <hr class="tab-rule">
+    <div class="card"><p><strong>Before any grammar:</strong> What is the speaker's position? What assumptions does the argument rest on? Do you agree?</p>
+    <p style="font-size:14px;color:var(--concrete);margin-top:8px;">Note: the following extract deals with abortion and adoption policy — genuinely contentious topics on which reasonable people hold strong opposing views. The text is designed to practise argument language, not to advocate a position.</p></div>
+
+    <div class="oped">
+      <div class="oped-header" style="background:var(--slate-mid);">
+        <div><div class="oped-author">Panel discussion transcript</div><div class="oped-meta">International Conference on Bioethics and Policy · Geneva, 2024</div></div>
+        <div class="oped-meta">ADOPTION &amp; REPRODUCTIVE RIGHTS PANEL</div>
+      </div>
+      <div class="oped-body">
+        <p class="oped-title">Excerpt: making the case for expanded adoption support</p>
+        <p><span class="hl-sage">"The position I want to advance</span> is not a simple one. <span class="hl-sage">I would argue that</span> the most significant failure in reproductive policy over the past thirty years has not been in the domain of abortion law — it has been in the near-total collapse of adoption infrastructure in many Western countries.</p>
+        <p><span class="hl-red">If adoption had been made genuinely accessible — financially, legally, and emotionally — many of the women who sought abortions out of economic desperation would have had a real alternative.</span> <span class="hl-sage">This is not to say that</span> adoption could or should replace abortion rights. These are separate questions. <span class="hl-red">Had robust post-adoption support systems been built in the 1990s, the framing of this debate would look quite different today.</span></p>
+        <p><span class="hl-sage">What I find striking is that</span> both sides of the abortion debate have largely ignored the adoption question. Pro-choice advocates have focused, rightly, on bodily autonomy. Pro-life advocates have focused on fetal personhood. Neither has built a serious policy framework for the children already born and in need of permanent families. <span class="hl-sage">It is difficult to escape the conclusion that</span> adoption has been treated as a political afterthought by everyone.</p>
+        <p><span class="hl-red">If we had invested as much political energy in reforming adoption law as we have in litigating abortion rights over the past two decades, thousands of children currently in institutional care would now be in permanent homes.</span> <span class="hl-sage">The evidence suggests that</span> simplified, subsidised adoption processes — as piloted in the Netherlands and Denmark — result in significantly higher rates of adoption finalisation without reducing the safeguarding of children's interests."</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Comprehension &amp; position check</h3>
+      <p>1. What is the speaker's main claim? Is this a pro-life or pro-choice argument — or neither?</p>
+      <p>2. Find two mixed conditionals in the extract. What past situation is being imagined? What present reality is being described?</p>
+      <p>3. The speaker says "both sides have largely ignored the adoption question." Do you agree — and why might this be?</p>
+      <p>4. What is one objection you could raise to this argument? How might the speaker respond?</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Arguing a Position — Language for Academic Opinion -->
+  <div class="tab-section" id="s3">
+    <div class="tab-header"><span class="tab-badge tb-studyb">STUDY</span><h2 class="tab-title">Arguing a Position — Language for Academic Opinion</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3 class="sage">Language for Arguing a Position</h3>
+      <p class="grammar-sub">At C1 level, arguments are not just about what you say — but how you frame it. Corpus research shows that proficient academic writers use a repertoire of hedging, conceding, and positioning phrases that signal precision and intellectual honesty.</p>
+
+      <p><strong>1. Stating your position</strong></p>
+      <div class="chip-row">
+        <span class="chip sage">I would argue that…</span>
+        <span class="chip sage">The position I want to advance is…</span>
+        <span class="chip sage">My contention is that…</span>
+        <span class="chip sage">It is my view that…</span>
+        <span class="chip sage">I take the view that…</span>
+      </div>
+
+      <p style="margin-top:16px;"><strong>2. Hedging — softening a claim</strong></p>
+      <p style="font-size:14px;color:var(--concrete);font-style:italic;margin-bottom:8px;">Hedging signals that a claim is not absolute — it's based on evidence, not certainty. C1 writers hedge strategically, not out of weakness.</p>
+      <div class="chip-row">
+        <span class="chip sage">The evidence suggests that…</span>
+        <span class="chip sage">It seems likely that…</span>
+        <span class="chip sage">This appears to indicate…</span>
+        <span class="chip sage">arguably · presumably · evidently</span>
+        <span class="chip sage">in many / most cases</span>
+      </div>
+
+      <p style="margin-top:16px;"><strong>3. Conceding a point (then counter-arguing)</strong></p>
+      <p style="font-size:14px;color:var(--concrete);font-style:italic;margin-bottom:8px;">The concede-then-rebuttal move is one of the most powerful academic argument structures. You acknowledge the other side — then show why your position still holds.</p>
+      <div class="table-scroll"><table class="rule-table">
+        <tr><th>Concession</th><th>Counter-argument link</th></tr>
+        <tr><td><em>While it is true that…</em></td><td><em>…it does not follow that…</em></td></tr>
+        <tr><td><em>I do not dispute the fact that…</em></td><td><em>…however, the claim that X is empirically contestable.</em></td></tr>
+        <tr><td><em>This is not to say that…</em></td><td><em>…rather, the point is that…</em></td></tr>
+        <tr><td><em>Granted,…</em></td><td><em>…but this misses the broader picture…</em></td></tr>
+        <tr><td><em>It may well be that…</em></td><td><em>…nevertheless, the evidence indicates…</em></td></tr>
+      </table></div>
+
+      <p style="margin-top:18px;"><strong>4. Introducing evidence or examples</strong></p>
+      <div class="chip-row">
+        <span class="chip sage">It is worth noting that…</span>
+        <span class="chip sage">The data indicates / suggests…</span>
+        <span class="chip sage">As the case of [X] illustrates…</span>
+        <span class="chip sage">This is borne out by…</span>
+        <span class="chip sage">The evidence is unambiguous:</span>
+      </div>
+
+      <p style="margin-top:16px;"><strong>5. Drawing conclusions / challenging assumptions</strong></p>
+      <div class="chip-row">
+        <span class="chip sage">It is difficult to escape the conclusion that…</span>
+        <span class="chip sage">It is difficult to see why…</span>
+        <span class="chip sage">What strikes me as troubling is…</span>
+        <span class="chip sage">It does not follow that…</span>
+        <span class="chip sage">The assumption that X is questionable because…</span>
+      </div>
+
+      <p style="margin-top:18px;"><strong>Combining argument language with mixed conditionals:</strong></p>
+      <p>The most sophisticated academic arguments often embed a mixed conditional inside an argument structure phrase:</p>
+      <div class="example-row"><span class="mark ok">✓</span><span class="txt"><em>The evidence strongly suggests that, <strong>had</strong> adoption infrastructure <strong>been reformed</strong> in the 1990s, the current debate <strong>would look</strong> quite different today.</em><span class="gloss">Hedging phrase + inverted mixed conditional = high-level academic writing.</span></span></div>
+      <div class="example-row"><span class="mark ok">✓</span><span class="txt"><em>I would argue that <strong>if</strong> we <strong>had invested</strong> as heavily in persuasion as in compulsion, public trust in vaccines <strong>would be</strong> substantially higher now.</em><span class="gloss">Position statement + mixed conditional = thesis-level claim.</span></span></div>
+    </div>
+  </div>
+
+  <!-- SECTION: Try it: arguing a position -->
+  <div class="tab-section" id="p2">
+    <div class="tab-header"><span class="tab-badge tb-practice">PRACTICE</span><h2 class="tab-title">Try it: arguing a position</h2></div>
+    <hr class="tab-rule">
+    <div class="exercise">
+      <span class="ex-label sage">Exercise 4 · Match the function</span>
+      <h4>Each sentence below uses argument language. Identify its function: (A) stating a position (B) hedging (C) conceding &amp; rebutting (D) introducing evidence (E) drawing a conclusion.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span>"I do not dispute the fact that herd immunity requires broad coverage — however, the claim that mandates are the only route there is contestable."</span>
+        <input type="text" class="blank-input" id="e4a" data-answer="c" placeholder="A/B/C/D/E"></div>
+      <div class="q-row"><span class="q-num">2.</span><span>"It is difficult to escape the conclusion that adoption policy has been a political afterthought for both sides."</span>
+        <input type="text" class="blank-input" id="e4b" data-answer="e" placeholder="A/B/C/D/E"></div>
+      <div class="q-row"><span class="q-num">3.</span><span>"The evidence suggests that vaccine hesitancy correlates more with misinformation exposure than with genuine conviction."</span>
+        <input type="text" class="blank-input" id="e4c" data-answer="d|b" placeholder="A/B/C/D/E"></div>
+      <div class="q-row"><span class="q-num">4.</span><span>"The position I want to advance is that reproductive policy must be evaluated on outcomes, not on the ideological commitments of its advocates."</span>
+        <input type="text" class="blank-input" id="e4d" data-answer="a" placeholder="A/B/C/D/E"></div>
+      <div class="q-row"><span class="q-num">5.</span><span>"It seems likely that community-based outreach would produce higher uptake than legal compulsion in resistant populations."</span>
+        <input type="text" class="blank-input" id="e4e" data-answer="b" placeholder="A/B/C/D/E"></div>
+      <button class="check-btn" onclick="checkEx4()">Check my answers</button>
+      <div class="feedback" id="fb-ex4"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">C — Concede + rebut</span><span class="anote">"I do not dispute…" = concession; "however, the claim that… is contestable" = rebuttal.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">E — Drawing a conclusion</span><span class="anote">"It is difficult to escape the conclusion that…" is a fixed conclusion phrase.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">D — Introducing evidence (also B)</span><span class="anote">"The evidence suggests…" introduces a finding from data. It also hedges (B) — "suggests" not "proves." Both D and B are defensible; D is primary.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">A — Stating a position</span><span class="anote">"The position I want to advance is…" is a direct position statement.</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">B — Hedging</span><span class="anote">"It seems likely that…" softens the claim — it's probable, not certain.</span></div>
+    
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label sage">Exercise 5 · Build the argument</span>
+      <h4>Expand each prompt into a full argumentative sentence using the function indicated and a mixed conditional where appropriate.</h4>
+      <p class="instr">Write in formal academic register. Use the argument phrases from Study section 8.</p>
+      <div class="q-row"><span class="q-num">1.</span><span>Function: <strong>Concede + rebut</strong>. Topic: parents' right to make medical decisions for their children vs. public health obligations.</span></div>
+      <textarea class="response-box" id="e5a" style="min-height:80px;" placeholder="While it is true that… / However, it does not follow that…"></textarea>
+      <div class="q-row" style="margin-top:10px;"><span class="q-num">2.</span><span>Function: <strong>State position + mixed conditional</strong>. Topic: adoption support systems and their effect on the abortion debate today.</span></div>
+      <textarea class="response-box" id="e5b" style="min-height:80px;" placeholder="I would argue that if… had…, the debate would now…"></textarea>
+      <div class="q-row" style="margin-top:10px;"><span class="q-num">3.</span><span>Function: <strong>Draw conclusion + evidence</strong>. Topic: the relationship between social media content removal and vaccine hesitancy.</span></div>
+      <textarea class="response-box" id="e5c" style="min-height:80px;" placeholder="It is difficult to escape the conclusion that… The evidence suggests…"></textarea>
+      <p style="font-family:'Inter',Arial,sans-serif;font-size:13.5px;color:var(--concrete);margin-top:10px;font-style:italic;">Open-ended — bring your best sentence to class for peer review.</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Controversy — The Full Word Set -->
+  <div class="tab-section" id="vocab">
+    <div class="tab-header"><span class="tab-badge tb-vocab">VOCABULARY</span><h2 class="tab-title">Controversy — The Full Word Set</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3 style="color:var(--gold);">Core vocabulary: taking a position</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card red"><span class="word">to polarise</span><span class="pos">verb (BrE: polarise / AmE: polarize)</span><div class="pron">/ˈpəʊlərʌɪz/</div><div class="def">to divide people or opinion into two sharply opposed camps, with little middle ground.</div><div class="ex">"The vaccine mandate polarised the community — those who supported it and those who opposed it stopped speaking to each other."</div></div>
+        <div class="vocab-card red"><span class="word">contentious</span><span class="pos">adj</span><div class="pron">/kənˈtenʃəs/</div><div class="def">causing or likely to cause argument; contested. Often used of claims, topics, or decisions.</div><div class="ex">"The panel's conclusion was deeply contentious — two members refused to sign the final report."</div></div>
+        <div class="vocab-card red"><span class="word">to contest</span><span class="pos">verb</span><div class="pron">/kənˈtest/</div><div class="def">to dispute or argue against a claim, decision, or statement.</div><div class="ex">"Marcus Osei contests Voss's assumption that compulsion reliably produces compliance."</div></div>
+        <div class="vocab-card red"><span class="word">empirical</span><span class="pos">adj</span><div class="pron">/ɪmˈpɪrɪkəl/</div><div class="def">based on observation and evidence rather than theory or argument alone. Key word in academic and policy debate.</div><div class="ex">"The empirical evidence on mandatory vaccination is more nuanced than either side acknowledges."</div></div>
+        <div class="vocab-card sage"><span class="word">to advocate (for)</span><span class="pos">verb / noun</span><div class="pron">/ˈædvəkeɪt/ (v) · /ˈædvəkɪt/ (n)</div><div class="def">verb: to publicly support or recommend a cause or policy. noun: a person who does this.</div><div class="ex">"She has been advocating for simplified adoption law for over a decade."</div></div>
+        <div class="vocab-card sage"><span class="word">bodily autonomy</span><span class="pos">noun phrase</span><div class="pron">/ˈbɒdɪli ɔːˈtɒnəmi/</div><div class="def">the right of a person to have sovereignty over their own body and make their own medical decisions without external compulsion.</div><div class="ex">"The court's decision was seen as a direct challenge to the principle of bodily autonomy."</div></div>
+        <div class="vocab-card sage"><span class="word">compulsion</span><span class="pos">noun</span><div class="pron">/kəmˈpʌlʃən/</div><div class="def">the use of legal or social pressure to force someone to act. Contrast with persuasion.</div><div class="ex">"Marcus Osei distinguishes between compulsion — legal mandates — and persuasion, which he prefers."</div></div>
+        <div class="vocab-card sage"><span class="word">hesitancy</span><span class="pos">noun</span><div class="pron">/ˈhezɪtənsi/</div><div class="def">reluctance to act or commit, typically because of doubt or uncertainty. Often used with "vaccine hesitancy."</div><div class="ex">"Vaccine hesitancy has increased in communities with lower trust in government institutions."</div></div>
+      </div>
+    </div>
+
+    <div class="grammar-box">
+      <h3 style="color:var(--gold);">Extended vocabulary: policy and ethics</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card"><span class="word">mandate</span><span class="pos">noun / verb</span><div class="pron">/ˈmændeɪt/</div><div class="def">noun: an official order or requirement. verb: to officially require or authorise. Heavily used in policy contexts.</div><div class="ex">"The court struck down the vaccine mandate, ruling that it exceeded federal authority."</div></div>
+        <div class="vocab-card"><span class="word">herd immunity</span><span class="pos">noun phrase</span><div class="pron">/hɜːd ɪˈmjuːnɪti/</div><div class="def">the resistance to the spread of a disease achieved when a sufficient proportion of a population has become immune through vaccination or prior infection.</div><div class="ex">"Epidemiologists estimate that ninety-five percent vaccination coverage is required for measles herd immunity."</div></div>
+        <div class="vocab-card"><span class="word">misinformation</span><span class="pos">noun</span><div class="pron">/ˌmɪsɪnfəˈmeɪʃən/</div><div class="def">false or inaccurate information, especially when spread inadvertently. Distinguish from disinformation (deliberately false).</div><div class="ex">"The rapid spread of vaccine misinformation on social media preceded the 2023 measles resurgence."</div></div>
+        <div class="vocab-card"><span class="word">counterfactual</span><span class="pos">adj / noun</span><div class="pron">/ˌkaʊntəˈfæktʃuəl/</div><div class="def">relating to or expressing what has not happened or is not the case — "what if" reasoning. Mixed conditionals are counterfactual by nature.</div><div class="ex">"Her argument rests on a counterfactual claim: that a different policy would have produced a different outcome."</div></div>
+        <div class="vocab-card"><span class="word">immunocompromised</span><span class="pos">adj</span><div class="pron">/ˌɪmjʊnəʊˈkɒmprəmaɪzd/</div><div class="def">having a weakened immune system, due to illness (e.g. cancer, HIV) or treatment (e.g. chemotherapy), making vaccination of others especially important.</div><div class="ex">"Children who are immunocompromised depend on herd immunity because they cannot receive live vaccines."</div></div>
+        <div class="vocab-card"><span class="word">safeguarding</span><span class="pos">noun / adj</span><div class="pron">/ˈseɪfɡɑːdɪŋ/</div><div class="def">measures taken to protect individuals — especially children or vulnerable people — from harm or abuse. Common in social policy and education.</div><div class="ex">"The adoption reform proposals included strengthened safeguarding procedures for prospective parents."</div></div>
+        <div class="vocab-card"><span class="word">suppression</span><span class="pos">noun</span><div class="pron">/səˈpreʃən/</div><div class="def">the act of preventing something from being known, expressed, or acted upon — often used in the context of information, research, or dissent.</div><div class="ex">"Critics argued that content removal amounted to suppression of legitimate public debate."</div></div>
+        <div class="vocab-card"><span class="word">epidemiological</span><span class="pos">adj</span><div class="pron">/ˌepɪˌdiːmɪəˈlɒdʒɪkəl/</div><div class="def">relating to the study of how diseases spread through populations. Often used when citing public health research in policy debate.</div><div class="ex">"The epidemiological evidence on community transmission was cited in both op-eds."</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Word family — CONTROVERSY</h3>
+      <div class="table-scroll"><table class="rule-table">
+        <tr><th>Form</th><th>Word</th><th>Example</th></tr>
+        <tr><td>Noun</td><td>controversy</td><td><em>"The mandate sparked widespread controversy across the political spectrum."</em></td></tr>
+        <tr><td>Adjective</td><td>controversial</td><td><em>"Mandatory vaccination remains one of the most controversial public health issues."</em></td></tr>
+        <tr><td>Adverb</td><td>controversially</td><td><em>"The court controversially overturned the regulation, citing constitutional grounds."</em></td></tr>
+        <tr><td>Verb</td><td>to contest · to dispute</td><td><em>"Critics contested the government's interpretation of the epidemiological data."</em></td></tr>
+        <tr><td>Related noun</td><td>contention · contentiousness</td><td><em>"Her main contention is that compulsion backfires in low-trust communities."</em></td></tr>
+      </table></div>
+    </div>
+
+    <div class="card">
+      <h3>Key collocations</h3>
+      <div class="chip-row">
+        <span class="chip red">spark / fuel / stoke controversy</span>
+        <span class="chip red">deeply / highly / bitterly controversial</span>
+        <span class="chip red">polarise opinion / polarise communities</span>
+        <span class="chip red">vaccine hesitancy / mandate / uptake / coverage</span>
+        <span class="chip sage">advance / defend / challenge a position</span>
+        <span class="chip sage">mount / rebut / address an argument</span>
+        <span class="chip sage">cite / present / evaluate evidence</span>
+        <span class="chip sage">invoke / challenge bodily autonomy</span>
+        <span class="chip gold">empirical evidence / empirical data</span>
+        <span class="chip gold">counterfactual claim / counterfactual reasoning</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Try it: vocabulary -->
+  <div class="tab-section" id="vp">
+    <div class="tab-header"><span class="tab-badge tb-vocab">PRACTICE</span><h2 class="tab-title">Try it: vocabulary</h2></div>
+    <hr class="tab-rule">
+    <div class="exercise">
+      <span class="ex-label gold">Exercise 6 · Gap-fill</span>
+      <h4>Complete each sentence with the correct word or phrase from the box.</h4>
+      <p class="instr"><em>polarise · empirical · compulsion · hesitancy · bodily autonomy · contentious · mandate · counterfactual</em></p>
+      <div class="q-row"><span class="q-num">1.</span><span>The ____________ evidence on whether mandatory vaccination actually increases uptake is more nuanced than Dr. Voss suggests.</span>
+        <input type="text" class="blank-input" id="e6a" data-answer="empirical" placeholder="word…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">2.</span><span>Marcus Osei argues that ____________ breeds resistance — that legal force is less effective than community trust.</span>
+        <input type="text" class="blank-input" id="e6b" data-answer="compulsion" placeholder="word…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">3.</span><span>The vaccine ____________ introduced by France in 2018 required parents to vaccinate children against eleven diseases to enrol them in school.</span>
+        <input type="text" class="blank-input" id="e6c" data-answer="mandate" placeholder="word…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">4.</span><span>Her argument that "what if" policies would have worked better is fundamentally ____________ — it cannot be tested against reality.</span>
+        <input type="text" class="blank-input" id="e6d" data-answer="counterfactual" placeholder="word…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">5.</span><span>Anti-vaccination content on social media has been shown to ____________ previously ambivalent communities, making outreach far harder.</span>
+        <input type="text" class="blank-input" id="e6e" data-answer="polarise|polarize" placeholder="word…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">6.</span><span>The court's ruling prioritised ____________ — the right of individuals to refuse medical procedures — over the public health case for mandatory vaccination.</span>
+        <input type="text" class="blank-input" id="e6f" data-answer="bodily autonomy" placeholder="phrase…"></div>
+      <button class="check-btn" onclick="checkEx6()">Check my answers</button>
+      <div class="feedback" id="fb-ex6"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">empirical</span><span class="anote">Empirical evidence = based on data and observation.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">compulsion</span><span class="anote">Osei distinguishes compulsion (legal force) from persuasion.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">mandate</span><span class="anote">A vaccination mandate = a legal requirement to vaccinate.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">counterfactual</span><span class="anote">Counterfactual = "what if it had been different" — cannot be empirically tested against an alternative reality.</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">polarise</span><span class="anote">To polarise communities = to divide them into opposing camps.</span></div>
+      <div class="ak-item"><span class="an">6.</span><span class="av">bodily autonomy</span><span class="anote">The right to make medical decisions about one's own body.</span></div>
+    
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label gold">Exercise 7 · Collocation build</span>
+      <h4>Complete each collocation. More than one answer may be possible — check your choice with the collocation list.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span>The issue has ____________ (sparked / fuelled / stoked?) intense controversy across Europe.</span>
+        <input type="text" class="blank-input" id="e7a" data-answer="sparked|fuelled|stoked|sparked / fuelled / stoked" placeholder="verb…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">2.</span><span>She spent the first ten minutes of the debate ____________ (advancing / mounting / defending?) her core position before addressing any objections.</span>
+        <input type="text" class="blank-input" id="e7b" data-answer="advancing|defending" placeholder="verb…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">3.</span><span>Critics ____________ (rebutted / addressed / challenged?) the minister's claim by citing three independent epidemiological studies.</span>
+        <input type="text" class="blank-input" id="e7c" data-answer="rebutted|challenged" placeholder="verb…"></div>
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">4.</span><span>The panel's report was ____________ controversial, prompting immediate resignations from two advisory members.</span>
+        <input type="text" class="blank-input" id="e7d" data-answer="deeply|highly|bitterly" placeholder="adverb…"></div>
+      <button class="check-btn" onclick="checkEx7()">Check my answers</button>
+      <div class="feedback" id="fb-ex7"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">sparked / fuelled / stoked (all correct)</span><span class="anote">All three collocate with "controversy." "Sparked" = started it; "fuelled" = intensified it; "stoked" = deliberately increased it.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">advancing / defending</span><span class="anote">"Advancing a position" = putting it forward for the first time. "Defending" = protecting it from objections. "Mounting" collocates with argument/case, not position.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">rebutted / challenged</span><span class="anote">"Rebutted" = directly argued against. "Challenged" = questioned. "Addressed" is weaker — it means dealt with, not necessarily opposed.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">deeply / highly / bitterly</span><span class="anote">All three work. "Bitterly controversial" implies more personal or painful division; "highly" is neutral; "deeply" suggests embedded disagreement.</span></div>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 12. PUTTING IT TOGETHER -->
+
+  <!-- SECTION: Speaking Practice -->
+  <div class="tab-section" id="speaking">
+    <div class="tab-header"><span class="tab-badge tb-speak">SPEAKING PRACTICE</span><h2 class="tab-title">Argue it out loud</h2></div>
+    <hr class="tab-rule">
+    <p class="section-intro">Written argument and spoken argument are different skills. These three tasks move this week's conditionals, argument language, and vocabulary from the page into your mouth. All you need is your phone's voice memo app.</p>
+
+    <div class="speak-card">
+      <span class="speak-type">Opinion card</span>
+      <h3>Do you agree or disagree?</h3>
+      <p><em>"No government should ever have the power to make a medical treatment compulsory &mdash; regardless of the public health benefit."</em></p>
+      <p>Speak for <strong>90 seconds</strong>. State your position, concede one point to the other side, then rebut it &mdash; exactly the concede-and-rebut structure from the Study section. Use at least <strong>3 words</strong> from this week's set: <em>mandate, bodily autonomy, compulsion, empirical, polarise, hesitancy</em>.</p>
+      <div class="speak-how"><strong>How:</strong> Record yourself on your phone (voice memo app), or send the recording to your teacher. <strong>When you listen back, check:</strong> Did you actually concede before rebutting, or did you only attack? Did the three vocabulary items sound natural in context?</div>
+    </div>
+
+    <div class="speak-card">
+      <span class="speak-type">Timed monologue</span>
+      <h3>The decision that changed the present</h3>
+      <p>Set a timer for <strong>2 minutes</strong>. Speak without stopping about <em>a past decision &mdash; yours, or a government's &mdash; that, if it had been made differently, would have changed how things are today.</em></p>
+      <p>This topic is designed to force mixed conditionals: <em>"If I had&hellip;, I would now&hellip;"</em> / <em>"Had the government&hellip;, we would be&hellip;"</em></p>
+      <div class="speak-how"><strong>How:</strong> Record it. Don't stop to fix mistakes &mdash; keep going. <strong>When you listen back, note:</strong> where you paused or searched for a word, and how many mixed conditionals you actually produced. Then record a second version and compare.</div>
+    </div>
+
+    <div class="speak-card">
+      <span class="speak-type">Discussion questions</span>
+      <h3>For a speaking partner &mdash; or for yourself</h3>
+      <p>Discuss with a partner, or record your answers as short spoken paragraphs (60&ndash;90 seconds each):</p>
+      <ul>
+        <li>Where exactly is the line between <em>persuasion</em> and <em>manipulation</em> in public debate?</li>
+        <li>On technical questions &mdash; vaccines, climate, AI &mdash; should experts' views carry more weight than voters' views? Why, or why not?</li>
+        <li>Is it ever legitimate to remove an individual's choice for a collective benefit? Where would <em>you</em> draw the boundary?</li>
+        <li>Think of a debate in your own country that has polarised people. If one key event in that debate had gone differently, what would the situation be now?</li>
+      </ul>
+      <div class="speak-how"><strong>How:</strong> If you're alone, pick two questions and record spoken answers. <strong>When you listen back, check:</strong> Did you hedge your claims (<em>"I would argue&hellip;", "It seems to me&hellip;"</em>) or state everything as absolute fact?</div>
+    </div>
+
+    <div class="tip-box">
+      <h3>Technique: the 15-second skeleton</h3>
+      <ul>
+        <li>Before you press record, take 15 seconds to plan four beats: <strong>position &rarr; reason &rarr; concession &rarr; rebuttal</strong>. Don't script sentences &mdash; just the beats.</li>
+        <li>If you lose a word mid-flow, paraphrase and keep moving. Fluency first; precision on the second recording.</li>
+        <li>Record each task twice at most. The second take is where the improvement happens; a third rarely adds anything.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION: Write a formal opinion paragraph -->
+  <div class="tab-section" id="together">
+    <div class="tab-header"><span class="tab-badge tb-together">PUTTING IT TOGETHER</span><h2 class="tab-title">Write a formal opinion paragraph</h2></div>
+    <hr class="tab-rule">
+    <div class="activate-box">
+      <h3>Writing task: a formal opinion paragraph</h3>
+      <p>Choose <em>one</em> of the controversial topics from this week — vaccination policy, social media content regulation, adoption reform, or abortion and reproductive rights. Write a formal opinion paragraph (130–150 words) from the perspective of Dr. Voss, Marcus Osei, the bioethics panel speaker, or your own position.</p>
+      <p>Your paragraph must include:</p>
+      <p>✓ At least <strong>2 mixed conditionals</strong> (one may use the inverted form)<br>
+         ✓ At least <strong>1 concede + rebut</strong> structure<br>
+         ✓ At least <strong>1 hedging phrase</strong><br>
+         ✓ At least <strong>4 vocabulary items</strong> from this week<br>
+         ✓ Formal register throughout — no casual language</p>
+      <p style="font-size:14px;color:rgba(255,255,255,.85);margin-top:8px;"><em>Starter option: "I would argue that the most significant failure in [X] policy over the past decade has not been [Y] — it has been [Z]. Had [past situation], [present consequence]. While it is true that…"</em></p>
+      <textarea class="response-box" id="togetherBox" placeholder="Write your formal opinion paragraph here…" style="border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.95);"></textarea>
+      <div class="word-count" id="togetherCount" style="color:rgba(255,255,255,.7);">0 words</div>
+    </div>
+    <div class="card">
+      <h3>Bring to Session 2</h3>
+      <p>Exchange paragraphs with a classmate. Check: does every mixed conditional have a past perfect if-clause and a present-tense main clause? Is the register consistently formal? Identify the strongest argument phrase used — and the weakest — and be ready to explain why.</p>
+    </div>
+  </div>
+
+  <!-- 13. EXPLORE -->
+
+  <!-- SECTION: Listening & Watching -->
+  <div class="tab-section" id="listening">
+    <div class="tab-header"><span class="tab-badge tb-listen">LISTENING &amp; WATCHING</span><h2 class="tab-title">Hear the argument language in the wild</h2></div>
+    <hr class="tab-rule">
+    <p class="section-intro">All three sources below are real and free. Each comes with a specific task &mdash; don't just "watch and enjoy." At C1, the goal is to notice <em>how</em> skilled speakers build a position, not just what they say.</p>
+
+    <div class="media-card">
+      <div class="media-head"><h3>TED Talks</h3><span class="media-platform">ted.com &middot; YouTube</span></div>
+      <p><strong>Why this week:</strong> TED speakers argue positions for a living, and almost every strong talk uses the exact architecture from the Study section &mdash; position, evidence, concession, rebuttal. Choose any full-length talk (12&ndash;18 min) on public health, technology policy, or another contested issue.</p>
+      <div class="media-task"><strong>Your task:</strong> Listen once without subtitles, then again with the transcript on. (1) Write down verbatim any conditional sentence you hear &mdash; is any of them mixed? (2) Note every hedging phrase (<em>"the evidence suggests," "I would argue"</em>). (3) Mark the moment the speaker concedes a point &mdash; what words signal it?</div>
+    </div>
+
+    <div class="media-card">
+      <div class="media-head"><h3>The Guardian Audio Long Reads</h3><span class="media-platform">Podcast &middot; theguardian.com</span></div>
+      <p><strong>Why this week:</strong> Narrated long-form journalism at exactly the register of this week's op-eds &mdash; formal, argumentative, dense. Pick any episode on politics, health, or society.</p>
+      <div class="media-task"><strong>Your task:</strong> After listening, summarise the writer's position in 2&ndash;3 spoken or written sentences using at least three words from this week's vocabulary set (<em>contentious, advocate, empirical, polarise&hellip;</em>). Note one expression from the episode you'd like to add to your active vocabulary.</div>
+    </div>
+
+    <div class="media-card">
+      <div class="media-head"><h3>Thinking in English (Tom Wilkinson)</h3><span class="media-platform">Podcast &middot; YouTube</span></div>
+      <p><strong>Why this week:</strong> Episodes regularly take a controversial social question and present both sides &mdash; a spoken model of the balanced-argument structure you'll write in Putting It Together. Made for B1&ndash;C1 learners, so the pace is natural but clear.</p>
+      <div class="media-task"><strong>Your task:</strong> Choose any debate-style episode. Shadow the host for 30 seconds &mdash; copy his rhythm and intonation exactly, especially on contrast words (<em>however, nevertheless, on the other hand</em>). Then note 3 words or phrases you didn't know.</div>
+    </div>
+  </div>
+
+  <!-- SECTION: Go further -->
+  <div class="tab-section" id="explore">
+    <div class="tab-header"><span class="tab-badge tb-explore">EXPLORE ON YOUR OWN</span><h2 class="tab-title">Go further</h2></div>
+    <hr class="tab-rule">
+    <div class="explore-card">
+      <span class="explore-tag">Corpus research</span>
+      <h3>Mixed conditionals in the wild</h3>
+      <p>Go to the COCA (Corpus of Contemporary American English) and search for "had been * * would be" or "had * would now" in the newspaper or academic sub-corpus. Find two authentic examples of mixed conditionals from real edited writing.</p>
+      <ul>
+        <li>Copy each example and identify: what is the past condition? What is the present result?</li>
+        <li>Note the topic — are mixed conditionals more common in political writing, science writing, or opinion pieces?</li>
+        <li>Now search the spoken sub-corpus for the same pattern. What do you find?</li>
+      </ul>
+    </div>
+    <div class="explore-card">
+      <span class="explore-tag">Listening task</span>
+      <h3>Argument language in academic speech</h3>
+      <p>Watch any 10-minute TED Talk or academic lecture on a controversial topic (try: "TED vaccine hesitancy," "TED reproductive rights," "UN adoption speech"). Listen for:</p>
+      <ul>
+        <li>Any mixed conditionals — write them down verbatim if you can</li>
+        <li>Any concede + rebut structures ("While it is true that… however…")</li>
+        <li>How many hedging phrases do you hear? Are they "would argue," "suggests," or something else?</li>
+        <li>Does the speaker use formal vocabulary from this week's set?</li>
+      </ul>
+    </div>
+    <div class="explore-card">
+      <span class="explore-tag">Research &amp; writing</span>
+      <h3>The Scandinavian comparison</h3>
+      <p>Marcus Osei mentions that Scandinavia achieves above-ninety-five percent vaccine uptake without mandatory vaccination. Research this claim:</p>
+      <ul>
+        <li>Which Scandinavian countries have no vaccination mandate? What mechanisms do they use instead?</li>
+        <li>Find one data source that supports Osei's claim and one that complicates it.</li>
+        <li>Write two mixed conditional sentences based on your findings: one supporting Osei, one challenging him.</li>
+      </ul>
+    </div>
+    <div class="explore-card">
+      <span class="explore-tag">Position paper</span>
+      <h3>Write the other side</h3>
+      <p>Choose the perspective you find <em>least</em> persuasive from this week's texts. Write a 120-word formal paragraph defending it as strongly as you can — using mixed conditionals, argument language, and this week's vocabulary. Bring both versions (your real view and the opposing view) to class.</p>
+    </div>
+    <div class="explore-card">
+      <span class="explore-tag">Grammar extension</span>
+      <h3>The third mixed conditional type</h3>
+      <p>This week covered the two main types: past → present (Type A) and present → past (Type B). Research whether grammarians recognise a third type — and if so, what it is. Try searching "mixed conditional all types" in a reputable grammar resource (English Grammar in Use Advanced, Practical English Usage by Swan, or a similar reference).</p>
+      <ul>
+        <li>Does the third type appear in corpus data, or is it mostly a theoretical description?</li>
+        <li>Can you construct a natural-sounding example? Bring it to class.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION: Everything on one page -->
+  <div class="tab-section" id="ref">
+    <div class="tab-header"><span class="tab-badge tb-ref">QUICK REFERENCE</span><h2 class="tab-title">Everything on one page</h2></div>
+    <hr class="tab-rule">
+    <div style="overflow-x:auto;">
+      <div class="table-scroll"><table class="ref-table">
+        <tr><th>Form</th><th>Structure</th><th>Meaning / time</th><th>Example</th></tr>
+        <tr><td><strong>Type 2</strong></td><td>If + past simple → would + inf.</td><td>Imaginary present/future</td><td><em>"If it were introduced tomorrow, many would resist."</em></td></tr>
+        <tr><td><strong>Type 3</strong></td><td>If + past perfect → would have + p.p.</td><td>Imaginary past → past result</td><td><em>"If France hadn't introduced the mandate, uptake might have been lower."</em></td></tr>
+        <tr><td><strong>Mixed A</strong></td><td>If + past perfect → would/could/might + inf.</td><td>Imaginary past → present result</td><td><em>"If they had acted sooner, we would now have herd immunity."</em></td></tr>
+        <tr><td><strong>Mixed B</strong></td><td>If + past simple (were/didn't) → would have + p.p.</td><td>Imaginary present → past result</td><td><em>"If she weren't a researcher, she would have believed it."</em></td></tr>
+        <tr><td><strong>Inversion (formal)</strong></td><td>Had + subject + p.p. → would + inf.</td><td>Formal written Mixed A — no "if"</td><td><em>"Had governments acted sooner, uptake would be higher today."</em></td></tr>
+        <tr><td><strong>Register note</strong></td><td>Mixed conditionals = formal written</td><td>Rare in casual spoken English</td><td>Use in essays, op-eds, formal speeches</td></tr>
+      </table></div>
+    </div>
+    <div style="overflow-x:auto;margin-top:20px;">
+      <div class="table-scroll"><table class="ref-table">
+        <tr><th>Function</th><th>Phrase</th></tr>
+        <tr><td>State position</td><td><em>I would argue that… / My contention is that… / The position I want to advance is…</em></td></tr>
+        <tr><td>Hedge</td><td><em>The evidence suggests… / It seems likely that… / arguably / presumably</em></td></tr>
+        <tr><td>Concede</td><td><em>While it is true that… / I do not dispute the fact that… / Granted,…</em></td></tr>
+        <tr><td>Rebut</td><td><em>…it does not follow that… / …however, the claim that X is contestable… / …this misses the broader picture…</em></td></tr>
+        <tr><td>Introduce evidence</td><td><em>It is worth noting that… / The data indicates… / As the case of X illustrates…</em></td></tr>
+        <tr><td>Draw conclusion</td><td><em>It is difficult to escape the conclusion that… / What strikes me as troubling is… / It is difficult to see why…</em></td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="wrapup">
+    <h3>Before Session 1, make sure you can…</h3>
+    <ul>
+      <li>Identify the three conditional types (2, 3, Mixed) by the time frames of the if-clause and main clause</li>
+      <li>Form Mixed Type A: if + past perfect → would/could/might + present infinitive</li>
+      <li>Form Mixed Type B: if + past simple (were/didn't) → would have + past participle</li>
+      <li>Use the inverted form (Had + subject + p.p.) in formal written contexts</li>
+      <li>Explain why mixed conditionals are formal/written — and give the informal spoken equivalent</li>
+      <li>Use at least 5 argument phrases from the Study section (position, hedge, concede, rebut, conclude)</li>
+      <li>Have the Putting It Together paragraph (130–150 words) ready for peer review in Session 2</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- SECTION: Footer - Creator & Copyright -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p class="footer-copy">&copy; 2026 Bahar Esmaeelzadeh &middot; All rights reserved</p>
+    <p class="footer-line">Designed and created for English learners by Bahar Esmaeelzadeh.</p>
+    <p class="footer-links">
+      <a href="mailto:bahar.esmz.en@gmail.com">&#128231; bahar.esmz.en@gmail.com</a>
+      <span class="footer-dot">&middot;</span>
+      <a href="https://www.linkedin.com/in/bahar-esmaeelzadeh-650b98198" target="_blank" rel="noopener">&#128188; LinkedIn</a>
+    </p>
+    <p class="footer-note">If you found this helpful, feel free to get in touch.</p>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  document.getElementById('pf').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+});
+document.querySelectorAll('.poll-opt').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const p=btn.dataset.poll;
+    document.querySelectorAll(`.poll-opt[data-poll="${p}"]`).forEach(b=>b.classList.remove('selected'));
+    btn.classList.add('selected');
+    document.getElementById('pollResult').style.display='block';
+  });
+});
+document.querySelectorAll('.reveal-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{btn.nextElementSibling.style.display='block';btn.style.display='none';});
+});
+
+function norm(v){return v.trim().toLowerCase().replace(/[.,!?'"]/g,'');}
+function matches(val,ans){
+  const v=norm(val);
+  return ans.split('|').some(a=>{a=norm(a);return v===a||(v.length>5&&(a.startsWith(v.substring(0,Math.min(v.length,18)))||v.startsWith(a.substring(0,Math.min(a.length,18)))));});
+}
+function checkGroup(ids,answers,fbId){
+  let ok=0;
+  ids.forEach((id,i)=>{
+    const el=document.getElementById(id);if(!el)return;
+    if(answers[i]==='open'){el.style.borderColor='#4A7C59';ok++;return;}
+    if(matches(el.value,answers[i])){ok++;el.style.borderColor='#4A7C59';}
+    else{el.style.borderColor='#C0392B';}
+  });
+  const fb=document.getElementById(fbId);fb.classList.add('show');
+  if(ok===ids.length){fb.classList.remove('bad');fb.classList.add('good');fb.textContent='All '+ids.length+' correct!';}
+  else{fb.classList.remove('good');fb.classList.add('bad');fb.textContent=ok+' of '+ids.length+' correct — check red borders. Then open “Show answers &amp; explanations” for the full key.';}
+}
+function checkEx1(){checkGroup(['e1a','e1b','e1c','e1d','e1e'],['mixed','type 3|3','type 2|2','mixed','mixed b|mixed'],'fb-ex1');}
+function checkEx2(){checkGroup(['e2a','e2b','e2c','e2d','e2e','e2f'],['had adopted','would be','had governments invested|if governments had invested','would not exist|wouldn\'t exist',"didn't hold|weren't holding|did not hold","not have developed|never have developed|have developed"],'fb-ex2');}
+function checkEx3(){checkGroup(['e3a','e3b','e3c','e3d'],['if the mandate had been introduced earlier, public trust would be higher now','had the research been published sooner, doctors would be better informed today','if governments had taken action earlier, the situation would be different now','if she had been a stronger advocate in 2015, the policy would have passed'],'fb-ex3');}
+function checkEx4(){checkGroup(['e4a','e4b','e4c','e4d','e4e'],['c','e','d|b','a','b'],'fb-ex4');}
+function checkEx6(){checkGroup(['e6a','e6b','e6c','e6d','e6e','e6f'],['empirical','compulsion','mandate','counterfactual','polarise|polarize','bodily autonomy'],'fb-ex6');}
+function checkEx7(){checkGroup(['e7a','e7b','e7c','e7d'],['sparked|fuelled|stoked|sparked / fuelled / stoked','advancing|defending','rebutted|challenged','deeply|highly|bitterly'],'fb-ex7');}
+
+const box=document.getElementById('togetherBox');
+const cnt=document.getElementById('togetherCount');
+if(box&&cnt) box.addEventListener('input',()=>{
+  const w=box.value.trim().split(/\s+/).filter(x=>x.length>0);
+  cnt.textContent=(box.value.trim()===''?0:w.length)+' words';
+});
+
+/* Site frame (added): contents panel, back-to-top, table scroll hints */
+(function(){
+  var panel=document.getElementById('navPanel'),ov=document.getElementById('navOverlay'),
+      ham=document.getElementById('navHamburger'),closeB=document.getElementById('navClose'),
+      links=document.getElementById('navPanelLinks');
+  document.querySelectorAll('.toc a').forEach(function(a){
+    var n=document.createElement('a');
+    n.href=a.getAttribute('href');
+    n.textContent=a.textContent.replace(/^\s*\d+[a-z]?\.\s*/,'');
+    links.appendChild(n);
+  });
+  function openP(){panel.classList.add('open');ov.classList.add('open');ham.setAttribute('aria-expanded','true');panel.setAttribute('aria-hidden','false');}
+  function closeP(){panel.classList.remove('open');ov.classList.remove('open');ham.setAttribute('aria-expanded','false');panel.setAttribute('aria-hidden','true');}
+  ham.addEventListener('click',function(){panel.classList.contains('open')?closeP():openP();});
+  closeB.addEventListener('click',closeP);
+  ov.addEventListener('click',closeP);
+  links.addEventListener('click',function(e){if(e.target.tagName==='A')closeP();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeP();});
+  document.getElementById('navTopBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  function hints(){document.querySelectorAll('.table-scroll').forEach(function(w){
+    if(w.scrollWidth>w.clientWidth+2){w.classList.add('has-overflow');}else{w.classList.remove('has-overflow');}
+  });}
+  window.addEventListener('resize',hints);window.addEventListener('load',hints);hints();
+  document.querySelectorAll('.table-scroll').forEach(function(w){
+    w.addEventListener('scroll',function(){if(w.scrollLeft>12)w.classList.remove('has-overflow');},{passive:true});
+  });
+})();
+
+
+function toggleAK(btn){var p=btn.nextElementSibling;if(p.hasAttribute('hidden')){p.removeAttribute('hidden');btn.setAttribute('aria-expanded','true');btn.textContent=btn.textContent.replace(/^Show/,'Hide');}else{p.setAttribute('hidden','');btn.setAttribute('aria-expanded','false');btn.textContent=btn.textContent.replace(/^Hide/,'Show');}}
+</script>
+</body>
+</html>

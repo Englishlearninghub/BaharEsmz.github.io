@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet">
+<title>Grade 9 · Week 4 — Disasters &amp; Safety: Regret, Contrast &amp; Consequence</title>
+<style>
+:root{
+  --slate:    #1C2535;
+  --slate-mid:#253245;
+  --slate-soft:#3A4F66;
+  --red:      #C0392B;
+  --red-pale: #FAECEB;
+  --red-deep: #922B21;
+  --amber:    #E67E22;
+  --amber-pale:#FEF5EC;
+  --amber-deep:#B7611A;
+  --teal:     #1A8A7B;
+  --teal-pale:#E8F6F4;
+  --teal-deep:#12665C;
+  --ash:      #F4F2EF;
+  --ash-line: #DDD9D3;
+  --concrete: #8A9BA8;
+  --white:    #FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--ash);color:var(--slate);font-family:'Inter',Arial,sans-serif;font-size:16.5px;line-height:1.78;}
+.wrap{max-width:940px;margin:0 auto;padding:0 24px 80px;}
+.progress-track{position:sticky;top:0;height:4px;background:var(--ash-line);z-index:100;}
+.progress-fill{height:100%;width:0;background:var(--red);transition:width .1s;}
+
+/* MASTHEAD */
+.masthead{background:var(--slate);margin:0 -24px;padding:44px 24px 0;position:relative;overflow:hidden;}
+.timeline-bar{display:flex;height:8px;width:100%;}
+.timeline-bar span{flex:1;background:var(--slate-mid);}
+.timeline-bar span:nth-child(4n){background:var(--red);}
+.timeline-bar span:nth-child(7n){background:var(--amber);}
+.timeline-bar span:nth-child(11n){background:var(--teal);}
+.masthead-inner{max-width:892px;margin:0 auto;padding-bottom:38px;position:relative;z-index:1;}
+.eyebrow{font-family:'Inter',Arial,sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:bold;}
+h1.title{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:34px;line-height:1.12;color:var(--white);margin:0 0 16px;max-width:700px;}
+.masthead-meta{display:flex;gap:28px;flex-wrap:wrap;font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--concrete);margin-top:14px;}
+.masthead-meta span{color:var(--white);font-weight:bold;}
+.commission-stamp{position:absolute;right:0;top:0;bottom:0;width:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-left:1px solid rgba(255,255,255,.08);padding:0 20px;text-align:center;}
+.commission-stamp p{font-family:'Inter',Arial,sans-serif;font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.1em;text-transform:uppercase;line-height:1.6;}
+
+/* TOC */
+.toc{background:var(--white);border-radius:10px;margin-top:0;padding:22px 28px;box-shadow:0 4px 20px rgba(28,37,53,.12);position:relative;z-index:2;}
+.toc h2{font-family:'Inter',Arial,sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--concrete);margin:0 0 12px;}
+.toc ol{margin:0;padding-left:18px;columns:2;column-gap:32px;font-size:14px;line-height:1.65;}
+.toc li{margin-bottom:5px;}
+.toc a{color:var(--slate-soft);text-decoration:none;font-weight:bold;font-family:'Inter',Arial,sans-serif;}
+.toc a:hover{color:var(--red);text-decoration:underline;}
+
+/* SECTION HEADERS */
+.tab-section{margin-top:50px;}
+.tab-header{display:flex;align-items:center;gap:14px;margin-bottom:6px;flex-wrap:wrap;}
+.tab-badge{font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:bold;letter-spacing:.1em;text-transform:uppercase;border-radius:5px;padding:5px 12px;white-space:nowrap;}
+.tb-engage{background:var(--slate);color:var(--white);}
+.tb-ctx{background:var(--slate-mid);color:var(--white);}
+.tb-notice{background:var(--red-deep);color:var(--white);}
+.tb-study-red{background:var(--red);color:var(--white);}
+.tb-study-amber{background:var(--amber-deep);color:var(--white);}
+.tb-study-teal{background:var(--teal);color:var(--white);}
+.tb-vocab{background:var(--slate);color:var(--white);}
+.tb-practice{background:var(--concrete);color:var(--white);}
+.tb-together{background:var(--red-deep);color:var(--white);}
+.tb-explore{background:#5C3070;color:var(--white);}
+.tb-ref{background:var(--slate);color:var(--white);}
+h2.tab-title{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:22px;color:var(--slate);}
+.tab-rule{border:none;border-top:1.5px solid var(--ash-line);margin:12px 0 22px;}
+
+/* CARDS */
+.card{background:var(--white);border-radius:10px;padding:22px 26px;margin-bottom:20px;box-shadow:0 2px 10px rgba(28,37,53,.07);}
+.card h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:17px;margin:0 0 10px;color:var(--slate);}
+
+/* REPORT */
+.report{border-radius:10px;overflow:hidden;margin-bottom:22px;box-shadow:0 4px 16px rgba(28,37,53,.12);}
+.report-header{background:var(--slate);padding:14px 24px;}
+.report-header .doc-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:4px;font-family:'Inter',Arial,sans-serif;}
+.report-header .doc-title{font-size:18px;font-weight:bold;color:var(--white);font-family:'Playfair Display',Cambria,Georgia,serif;line-height:1.2;}
+.report-header .doc-meta{font-size:12px;color:var(--concrete);margin-top:5px;font-family:'Inter',Arial,sans-serif;}
+.report-body{background:var(--white);padding:26px 30px;}
+.report-section{font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:bold;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin:18px 0 8px;border-bottom:1px solid var(--ash-line);padding-bottom:4px;}
+.report-body p{margin:0 0 14px;font-size:15.5px;line-height:1.78;}
+.report-body p:last-child{margin:0;}
+
+/* HIGHLIGHTS */
+.hl-red{background:var(--red-pale);color:var(--red-deep);padding:1px 5px;border-radius:3px;font-weight:bold;}
+.hl-amber{background:var(--amber-pale);color:var(--amber-deep);padding:1px 5px;border-radius:3px;font-weight:bold;}
+.hl-teal{background:var(--teal-pale);color:var(--teal-deep);padding:1px 5px;border-radius:3px;font-weight:bold;}
+.hl-blue{background:#EAF0FB;color:#2A5298;padding:1px 5px;border-radius:3px;font-weight:bold;}
+
+/* NOTICE */
+.notice-box{background:#FFF8F0;border:2px dashed var(--amber);border-radius:10px;padding:22px 26px;margin-bottom:20px;}
+.notice-box h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;color:var(--amber-deep);margin:0 0 14px;}
+.notice-q{margin-bottom:14px;padding-left:30px;position:relative;font-size:15.5px;}
+.notice-q::before{content:'?';position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--amber-deep);color:var(--white);font-size:13px;font-weight:bold;text-align:center;line-height:20px;font-family:'Inter',Arial,sans-serif;}
+.reveal-btn{display:inline-block;margin-top:6px;background:none;border:1px solid var(--amber-deep);color:var(--amber-deep);border-radius:5px;padding:3px 10px;font-size:12px;cursor:pointer;font-family:'Inter',Arial,sans-serif;transition:all .15s;}
+.reveal-btn:hover{background:var(--amber-deep);color:var(--white);}
+.notice-reveal{margin-top:8px;font-size:14px;color:var(--slate-soft);font-style:italic;border-left:3px solid var(--amber-deep);padding-left:10px;display:none;}
+
+/* GRAMMAR BOXES */
+.grammar-box{background:var(--white);border-radius:10px;padding:26px 30px;margin-bottom:24px;box-shadow:0 2px 10px rgba(28,37,53,.07);}
+.grammar-box h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:21px;margin:0 0 6px;}
+.grammar-box h3.red{color:var(--red);}
+.grammar-box h3.amber{color:var(--amber-deep);}
+.grammar-box h3.teal{color:var(--teal);}
+.grammar-sub{font-family:'Inter',Arial,sans-serif;font-size:14px;color:var(--concrete);margin:0 0 18px;font-style:italic;}
+
+/* TABLES */
+table.rule-table{width:100%;border-collapse:collapse;margin:16px 0 8px;font-size:14.5px;font-family:'Inter',Arial,sans-serif;}
+table.rule-table th{background:var(--slate);color:var(--white);padding:9px 13px;text-align:left;font-size:13px;}
+table.rule-table td{padding:9px 13px;border-bottom:1px solid var(--ash-line);vertical-align:top;}
+table.rule-table tr:nth-child(even) td{background:var(--ash);}
+table.rule-table td em{color:var(--slate-mid);}
+table.rule-table td code{background:var(--ash);border-radius:3px;padding:1px 5px;font-family:'Courier New',monospace;font-size:13px;}
+
+/* MODAL COMPARISON TABLE */
+table.modal-table{width:100%;border-collapse:collapse;font-family:'Inter',Arial,sans-serif;font-size:14px;margin:16px 0;}
+table.modal-table th{padding:10px 14px;text-align:left;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--white);}
+table.modal-table th.red{background:var(--red);}
+table.modal-table th.amber{background:var(--amber-deep);}
+table.modal-table th.teal{background:var(--teal);}
+table.modal-table th.slate{background:var(--slate);}
+table.modal-table td{padding:10px 14px;border-bottom:1px solid var(--ash-line);vertical-align:top;}
+table.modal-table tr:nth-child(even) td{background:var(--ash);}
+
+/* STRENGTH SCALE */
+.scale-wrap{background:var(--ash);border-radius:8px;padding:16px 20px;margin:14px 0;}
+.scale-bar{height:10px;border-radius:5px;background:linear-gradient(to right,var(--teal),var(--amber),var(--red));margin:8px 0 6px;}
+.scale-labels{display:flex;justify-content:space-between;font-family:'Inter',Arial,sans-serif;font-size:12px;color:var(--concrete);}
+.scale-markers{display:flex;justify-content:space-between;margin-top:4px;}
+.scale-markers span{font-family:'Inter',Arial,sans-serif;font-size:11px;color:var(--slate);text-align:center;flex:1;}
+
+/* CORRELATIVE CARDS */
+.corr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0;}
+.corr-card{background:var(--white);border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(28,37,53,.07);}
+.corr-card .cc-head{padding:10px 14px;}
+.corr-card .cc-head.teal{background:var(--teal);}
+.corr-card .cc-head.amber{background:var(--amber-deep);}
+.corr-card .cc-head.red{background:var(--red-deep);}
+.corr-card .cc-phrase{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:15px;font-weight:bold;color:var(--white);}
+.corr-card .cc-pron{font-family:'Inter',Arial,sans-serif;font-size:11px;color:rgba(255,255,255,.7);margin-top:2px;}
+.corr-card .cc-body{padding:14px 16px;}
+.corr-card .cc-meaning{font-size:13px;font-weight:bold;color:var(--slate);margin-bottom:8px;font-family:'Inter',Arial,sans-serif;}
+.corr-card .cc-note{font-size:13px;color:var(--concrete);margin-bottom:8px;}
+.corr-card .cc-example{font-size:13.5px;color:var(--slate);font-style:italic;border-left:3px solid var(--amber);padding-left:9px;}
+
+/* EXAMPLE ROWS */
+.example-row{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;margin-bottom:10px;padding:10px 14px;background:var(--ash);border-radius:8px;}
+.mark.ok{color:var(--teal);font-weight:bold;font-size:18px;}
+.mark.bad{color:var(--red);font-weight:bold;font-size:18px;}
+.gloss{display:block;font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--concrete);margin-top:3px;}
+.note{display:block;font-family:'Inter',Arial,sans-serif;font-size:12.5px;color:var(--red);margin-top:3px;font-weight:bold;}
+
+/* CHIPS */
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;}
+.chip{background:var(--ash);border:1px solid var(--ash-line);border-radius:999px;padding:5px 14px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;color:var(--slate);}
+.chip.red{background:var(--red-pale);border-color:var(--red);color:var(--red-deep);}
+.chip.amber{background:var(--amber-pale);border-color:var(--amber-deep);color:var(--amber-deep);}
+.chip.teal{background:var(--teal-pale);border-color:var(--teal);color:var(--teal-deep);}
+
+/* VOCAB */
+.vocab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:14px 0;}
+.vocab-card{background:var(--white);border-radius:8px;padding:14px 16px;border-left:4px solid var(--slate-mid);box-shadow:0 2px 8px rgba(28,37,53,.06);}
+.vocab-card.red{border-left-color:var(--red);}
+.vocab-card.amber{border-left-color:var(--amber-deep);}
+.vocab-card.teal{border-left-color:var(--teal);}
+.vocab-card .word{font-family:'Playfair Display',Cambria,Georgia,serif;font-weight:bold;color:var(--slate);font-size:16px;}
+.vocab-card .pos{font-family:'Inter',Arial,sans-serif;font-size:11px;color:var(--concrete);text-transform:uppercase;margin-left:6px;}
+.vocab-card .pron{font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--concrete);margin-top:3px;}
+.vocab-card .def{font-size:14px;margin-top:5px;}
+.vocab-card .ex{font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--concrete);margin-top:5px;font-style:italic;}
+
+/* EXERCISES */
+.exercise{background:var(--white);border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(28,37,53,.07);}
+.ex-label{display:inline-block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;border-radius:4px;padding:3px 10px;margin-bottom:10px;}
+.ex-label.red{background:var(--red);color:var(--white);}
+.ex-label.amber{background:var(--amber-deep);color:var(--white);}
+.ex-label.teal{background:var(--teal);color:var(--white);}
+.ex-label.slate{background:var(--slate);color:var(--white);}
+.exercise h4{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0 0 12px;color:var(--slate);}
+.exercise .instr{font-family:'Inter',Arial,sans-serif;font-size:13.5px;color:var(--concrete);margin-bottom:14px;font-style:italic;}
+.q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:11px;flex-wrap:wrap;}
+.q-num{font-family:'Inter',Arial,sans-serif;font-weight:bold;color:var(--red);min-width:22px;}
+.blank-input{border:none;border-bottom:2px solid var(--amber-deep);background:var(--ash);font-family:'Playfair Display',Cambria,Georgia,serif;font-size:15px;padding:3px 8px;width:260px;color:var(--slate);}
+.blank-input:focus{outline:none;border-color:var(--teal);}
+.wide-input{width:100%;margin-top:6px;}
+.check-btn{background:var(--slate-mid);color:var(--white);border:none;border-radius:6px;padding:9px 22px;font-family:'Inter',Arial,sans-serif;font-weight:bold;font-size:14px;cursor:pointer;margin-top:10px;transition:background .15s;}
+.check-btn:hover{background:var(--slate);}
+.feedback{margin-top:12px;font-family:'Inter',Arial,sans-serif;font-size:14px;border-radius:6px;padding:10px 14px;display:none;}
+.feedback.show{display:block;}
+.feedback.good{background:var(--teal-pale);color:var(--teal-deep);}
+.feedback.bad{background:var(--red-pale);color:var(--red-deep);}
+textarea.response-box{width:100%;min-height:110px;border-radius:8px;border:2px solid var(--ash-line);padding:12px 14px;font-family:'Playfair Display',Cambria,Georgia,serif;font-size:15px;resize:vertical;background:var(--white);color:var(--slate);line-height:1.65;}
+textarea.response-box:focus{outline:none;border-color:var(--teal);}
+.word-count{font-family:'Inter',Arial,sans-serif;font-size:12px;color:var(--concrete);margin-top:5px;text-align:right;}
+
+/* ACTIVATE BOX */
+.activate-box{background:var(--slate);border-radius:10px;padding:26px 30px;margin-bottom:20px;border-bottom:4px solid var(--amber);}
+.activate-box h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:20px;color:var(--amber);margin:0 0 12px;}
+.activate-box p{color:#A0B0C0;margin:0 0 10px;font-size:15.5px;}
+
+/* EXPLORE */
+.explore-card{background:#F2EBF8;border:1px solid #D0B0E8;border-radius:10px;padding:22px 26px;margin-bottom:18px;}
+.explore-card h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:17px;color:#5C3070;margin:0 0 10px;}
+.explore-tag{display:inline-block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;background:#5C3070;color:var(--white);border-radius:4px;padding:3px 9px;margin-bottom:10px;}
+.explore-card ul{padding-left:20px;margin:10px 0 0;font-size:15px;}
+.explore-card li{margin-bottom:7px;}
+
+/* ANSWER KEY */
+.answer-key{background:var(--white);border-radius:10px;padding:26px 30px;margin-top:48px;border:2px solid var(--amber-deep);box-shadow:0 4px 16px rgba(28,37,53,.10);}
+.ak-title{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:22px;color:var(--slate);margin:0 0 6px;}
+.ak-sub{font-family:'Inter',Arial,sans-serif;font-size:13.5px;color:var(--concrete);margin:0 0 20px;font-style:italic;}
+.ak-section{margin-bottom:20px;}
+.ak-section h4{font-family:'Inter',Arial,sans-serif;font-size:13px;font-weight:bold;letter-spacing:.07em;text-transform:uppercase;color:var(--amber-deep);margin:0 0 10px;border-bottom:1px solid var(--ash-line);padding-bottom:6px;}
+.ak-item{display:grid;grid-template-columns:28px 1fr 1fr;gap:8px;padding:8px 4px;border-bottom:1px solid var(--ash-line);font-size:14px;}
+.ak-item:last-child{border-bottom:none;}
+.an{font-family:'Inter',Arial,sans-serif;font-weight:bold;color:var(--amber-deep);}
+.av{font-weight:bold;color:var(--teal-deep);}
+.anote{font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--concrete);font-style:italic;}
+
+/* INLINE ANSWER PANELS */
+.ak-inline{margin-top:12px;}
+.ak-toggle{font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:bold;color:#af5d18;background:transparent;border:1.5px solid #af5d18;border-radius:6px;padding:9px 16px;cursor:pointer;min-height:40px;}
+.ak-toggle:hover{background:#af5d18;color:var(--white);}
+.ak-panel{margin-top:10px;background:var(--white);border:1.5px solid #af5d18;border-radius:8px;padding:12px 16px;}
+.ak-panel .ak-item{font-size:14px;}
+
+table.ref-table{width:100%;border-collapse:collapse;font-family:'Inter',Arial,sans-serif;font-size:14px;}
+table.ref-table th{background:var(--slate);color:var(--white);padding:10px 14px;text-align:left;font-size:13px;}
+table.ref-table td{padding:10px 14px;border-bottom:1px solid var(--ash-line);vertical-align:top;}
+table.ref-table tr:nth-child(even) td{background:var(--ash);}
+
+.wrapup{background:var(--slate);color:var(--white);border-radius:10px;padding:26px 30px;margin-top:40px;border-bottom:4px solid var(--amber);}
+.wrapup h3{font-family:'Playfair Display',Cambria,Georgia,serif;color:var(--amber);margin:0 0 12px;font-size:18px;}
+.wrapup ul{padding-left:20px;margin:0;}
+.wrapup li{margin-bottom:7px;font-size:15px;color:#A0B0C0;}
+
+@media(max-width:600px){h1.title{font-size:24px;}.vocab-grid{grid-template-columns:1fr;}.corr-grid{grid-template-columns:1fr;}.toc ol{columns:1;}.ak-item{grid-template-columns:28px 1fr;}.ak-item .anote{grid-column:2;}}
+
+/* ============================================================
+   SITE FRAME (added): fixed top nav + progress bar, slide-out
+   contents panel with creator branding, sticky section headers,
+   responsive & overflow fixes, footer, speaking/listening cards
+   ============================================================ */
+:root{--navh:52px;}
+html{scroll-behavior:smooth;}
+html{overflow-x:hidden;}
+body{overflow-x:hidden;padding-top:calc(var(--navh) + 4px);}
+[id]{scroll-margin-top:calc(var(--navh) + 20px);}
+img,svg,table{max-width:100%;}
+.wrap p,.wrap li,.wrap td,.wrap th,.wrap h1,.wrap h2,.wrap h3{overflow-wrap:break-word;word-break:break-word;}
+.debate-band{margin-left:0;margin-right:0;}
+
+/* Progress bar: fixed, always visible below the nav */
+.progress-track{position:fixed;top:var(--navh);left:0;right:0;height:4px;z-index:120;}
+
+/* Top navigation bar */
+.nav-bar{position:fixed;top:0;left:0;right:0;height:var(--navh);background:var(--slate);color:#FFFFFF;display:flex;align-items:center;gap:10px;padding:0 12px;z-index:130;box-shadow:0 2px 12px rgba(0,0,0,.20);}
+.nav-btn{min-width:44px;min-height:44px;background:transparent;border:none;color:#FFFFFF;font-size:20px;cursor:pointer;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',Arial,sans-serif;transition:background .15s;}
+.nav-btn:hover{background:rgba(255,255,255,.14);}
+.nav-top{font-size:13px;font-weight:700;letter-spacing:.03em;white-space:nowrap;padding:0 10px;}
+.nav-brand{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.25;}
+.nav-brand-week{font-family:'Inter',Arial,sans-serif;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;opacity:.75;}
+.nav-brand-title{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+/* Slide-out contents panel */
+.nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .25s;z-index:135;}
+.nav-overlay.open{opacity:1;pointer-events:auto;}
+.nav-panel{position:fixed;top:0;bottom:0;left:0;width:min(330px,88vw);background:#FFFFFF;z-index:140;transform:translateX(-103%);transition:transform .28s ease;display:flex;flex-direction:column;box-shadow:6px 0 28px rgba(0,0,0,.22);}
+.nav-panel.open{transform:translateX(0);}
+.nav-panel-head{display:flex;align-items:center;justify-content:space-between;padding:8px 10px 8px 20px;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--concrete);border-bottom:1px solid var(--ash-line);}
+.nav-panel-head .nav-btn{color:var(--slate);font-size:16px;}
+.nav-panel-links{flex:1;overflow-y:auto;padding:10px 8px;}
+.nav-panel-links a{display:flex;align-items:center;min-height:44px;padding:6px 14px;border-radius:8px;text-decoration:none;color:var(--slate);font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:600;line-height:1.4;}
+.nav-panel-links a:hover{background:var(--ash);color:var(--red);}
+/* Branding zone: visually separated from navigation */
+.nav-panel-brand{border-top:2px solid var(--ash-line);background:var(--ash);padding:16px 20px 18px;}
+.nav-panel-brand .brand-name{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:16px;font-weight:700;color:var(--slate);margin-bottom:4px;}
+.nav-panel-brand .brand-line{font-family:'Inter',Arial,sans-serif;font-size:12.5px;color:var(--concrete);margin-bottom:10px;line-height:1.55;}
+.nav-panel-brand a{display:flex;align-items:center;min-height:40px;font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--red);text-decoration:none;font-weight:600;}
+.nav-panel-brand a:hover{text-decoration:underline;}
+.nav-panel-brand .brand-copy{margin-top:10px;font-family:'Inter',Arial,sans-serif;font-size:11.5px;color:var(--concrete);}
+
+/* Sticky section headers: current section title stays visible */
+.tab-header{position:sticky;top:calc(var(--navh) + 4px);z-index:60;background:var(--ash);padding:10px 0 8px;}
+
+/* Scrollable table wrapper with mobile hint */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;}
+.table-scroll table{max-width:none;}
+.table-scroll.has-overflow{background:linear-gradient(to left,rgba(0,0,0,.12),rgba(0,0,0,0) 26px) right center / 26px 100% no-repeat;}
+.table-scroll.has-overflow::before{content:'scroll \2192';display:block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--concrete);text-align:right;padding:0 6px 4px;}
+
+/* Speaking & Listening sections */
+.tb-speak{background:#188173;color:#FFFFFF;}
+.tb-listen{background:#af5d18;color:#FFFFFF;}
+.section-intro{font-family:'Inter',Arial,sans-serif;font-size:14.5px;color:var(--concrete);margin:0 0 18px;line-height:1.65;}
+.speak-card{background:#FFFFFF;border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.07);border-left:4px solid #188173;}
+.speak-type{display:inline-block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#188173;margin-bottom:8px;}
+.speak-card h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0 0 10px;color:var(--slate);}
+.speak-card p{margin:0 0 10px;}
+.speak-card ul{margin:0 0 10px 20px;padding:0;}
+.speak-card li{margin-bottom:6px;}
+.speak-how{background:var(--ash);border-radius:8px;padding:12px 16px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;line-height:1.65;margin-top:12px;}
+.media-card{background:#FFFFFF;border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.07);border-left:4px solid #af5d18;}
+.media-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px;}
+.media-head h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0;color:var(--slate);}
+.media-platform{font-family:'Inter',Arial,sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#af5d18;}
+.media-card p{margin:0 0 10px;}
+.media-task{border-left:3px solid #af5d18;background:var(--ash);padding:10px 14px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;line-height:1.65;margin-top:10px;border-radius:0 8px 8px 0;}
+.tip-box{border:2px dashed #188173;border-radius:10px;padding:18px 22px;background:#FFFFFF;margin-top:6px;}
+.tip-box h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:16px;margin:0 0 10px;color:#188173;}
+.tip-box ul{margin:0 0 0 20px;padding:0;}
+.tip-box li{margin-bottom:6px;font-size:14.5px;}
+
+/* Footer */
+.site-footer{background:var(--slate);color:#FFFFFF;margin-top:56px;padding:34px 24px 40px;}
+.site-footer-inner{max-width:920px;margin:0 auto;text-align:center;}
+.footer-copy{font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:700;margin:0 0 6px;}
+.footer-line{font-family:'Playfair Display',Cambria,Georgia,serif;font-style:italic;font-size:14.5px;opacity:.88;margin:0 0 12px;}
+.footer-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 10px;}
+.footer-links a{color:#FFFFFF;font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding:8px 2px;min-height:44px;display:inline-flex;align-items:center;}
+.footer-links a:hover{border-bottom-color:#FFFFFF;}
+.footer-dot{opacity:.5;}
+.footer-note{font-family:'Inter',Arial,sans-serif;font-size:12.5px;opacity:.72;margin:0;}
+
+/* Mobile refinements (375px-safe) */
+@media(max-width:600px){
+  .masthead{padding:34px 20px 28px;}
+  .grammar-box,.card{padding:20px 18px;}
+  .oped-body{padding:20px 18px;}
+  .speak-card,.media-card{padding:18px 16px;}
+  .check-btn,.reveal-btn,.rev-btn,.poll-opt{min-height:44px;}
+  .vs-table{grid-template-columns:1fr;}
+  .vs-divider{display:none;}
+  table.rule-table{font-size:13.5px;}
+  .nav-top{font-size:12px;}
+  .site-footer{padding:28px 18px 34px;}
+}
+
+</style>
+</head>
+<body>
+
+<!-- SECTION: Top Navigation Bar -->
+<header class="nav-bar" id="navBar">
+  <button class="nav-btn nav-hamburger" id="navHamburger" aria-label="Open contents menu" aria-expanded="false">&#9776;</button>
+  <div class="nav-brand">
+    <span class="nav-brand-week">Grade 9 · Week 4</span>
+    <span class="nav-brand-title">Disasters & Safety</span>
+  </div>
+  <button class="nav-btn nav-top" id="navTopBtn" aria-label="Back to top">&#8593; Top</button>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+<aside class="nav-panel" id="navPanel" aria-hidden="true">
+  <div class="nav-panel-head"><span>On this page</span><button class="nav-btn nav-close" id="navClose" aria-label="Close menu">&#10005;</button></div>
+  <nav class="nav-panel-links" id="navPanelLinks"></nav>
+  <!-- Creator & branding section of the menu -->
+  <div class="nav-panel-brand">
+    <div class="brand-name">Bahar Esmaeelzadeh</div>
+    <div class="brand-line">Designed and created for English learners by Bahar Esmaeelzadeh.</div>
+    <a href="mailto:bahar.esmz.en@gmail.com">&#128231; bahar.esmz.en@gmail.com</a>
+    <a href="https://www.linkedin.com/in/bahar-esmaeelzadeh-650b98198" target="_blank" rel="noopener">&#128188; LinkedIn &mdash; Bahar Esmaeelzadeh</a>
+    <div class="brand-copy">&copy; 2026 Bahar Esmaeelzadeh &middot; All rights reserved</div>
+  </div>
+</aside>
+
+<div class="progress-track"><div class="progress-fill" id="pf"></div></div>
+
+<!-- SECTION: Masthead / Header -->
+<div class="masthead">
+  <div class="commission-stamp"><p>UN Disaster<br>Response<br>Review<br>Commission<br>Veldoria 2024</p></div>
+  <div class="masthead-inner">
+    <p class="eyebrow">Grade 9 · Week 4 · Complete Reference &amp; Pre-Class Material</p>
+    <h1 class="title">Disasters &amp; Safety:<br>Regret, Contrast &amp; Consequence</h1>
+    <div class="masthead-meta">
+      <div>Level: <span>C1</span></div>
+      <div>Theme: <span>Natural Disasters · Safety</span></div>
+      <div>Grammar: <span>Perfect Modals · As…as (extended) · Correlative Conjunctions</span></div>
+      <div>Est. time: <span>75–85 min</span></div>
+    </div>
+  </div>
+  <div class="timeline-bar" id="tlBar"></div>
+</div>
+
+<div class="wrap">
+  <!-- SECTION: Table of Contents -->
+  <div class="toc">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#engage">1. Engage — what went wrong?</a></li>
+      <li><a href="#ctx">2. Context: the Veldoria Commission report</a></li>
+      <li><a href="#nd1">3. Notice &amp; discover (perfect modals)</a></li>
+      <li><a href="#s1">4. Study: Perfect Modals — regret &amp; advice</a></li>
+      <li><a href="#p1">5. Practice: perfect modals</a></li>
+      <li><a href="#nd2">6. Notice &amp; discover (as…as)</a></li>
+      <li><a href="#s2">7. Study: As…as extended</a></li>
+      <li><a href="#p2">8. Practice: as…as</a></li>
+      <li><a href="#nd3">9. Notice &amp; discover (correlative conjunctions)</a></li>
+      <li><a href="#s3">10. Study: Correlative Conjunctions</a></li>
+      <li><a href="#p3">11. Practice: correlative conjunctions</a></li>
+      <li><a href="#vocab">12. Vocabulary: disasters &amp; safety</a></li>
+      <li><a href="#vp">13. Practice: vocabulary</a></li>
+      <li><a href="#speaking">14. Speaking practice</a></li>
+      <li><a href="#together">15. Putting it together</a></li>
+      <li><a href="#listening">16. Listening &amp; watching</a></li>
+      <li><a href="#explore">17. Explore on your own</a></li>
+      <li><a href="#ref">18. Quick reference</a></li>
+    </ol>
+  </div>
+
+  <!-- SECTION: What went wrong? -->
+  <div class="tab-section" id="engage">
+    <div class="tab-header"><span class="tab-badge tb-engage">ENGAGE</span><h2 class="tab-title">What went wrong?</h2></div>
+    <hr class="tab-rule">
+    <div class="card">
+      <h3>Before you read: think about a disaster response</h3>
+      <p>Think about any natural disaster you've read about or heard of — a flood, earthquake, hurricane, or wildfire. Before you look at this week's grammar, consider:</p>
+      <p>1. What are the first three things a government or emergency service should do in the immediate hours after a disaster?</p>
+      <p>2. What kinds of mistakes do disaster responses typically involve — too slow, poor communication, lack of resources, wrong priorities?</p>
+      <p>3. When disaster investigators write their reports afterwards, what kind of language do they use to describe what went wrong? Think: are they describing facts, or are they making judgements about what was right or wrong?</p>
+      <p style="margin-top:12px;font-family:'Inter',Arial,sans-serif;font-size:14px;color:var(--concrete);font-style:italic;">Keep these questions in mind as you read the commission report below.</p>
+    </div>
+    <div class="card">
+      <h3>Colour code for this week</h3>
+      <p><span class="hl-red">Red</span> = Perfect modals (should have / could have / might have). &nbsp;<span class="hl-amber">Amber</span> = As…as constructions. &nbsp;<span class="hl-teal">Teal</span> = Correlative conjunctions (not only…but also / both…and / neither…nor). &nbsp;<span class="hl-blue">Blue</span> = Natural disaster &amp; safety vocabulary.</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Read first: the Veldoria Commission Report -->
+  <div class="tab-section" id="ctx">
+    <div class="tab-header"><span class="tab-badge tb-ctx">CONTEXT</span><h2 class="tab-title">Read first: the Veldoria Commission Report</h2></div>
+    <hr class="tab-rule">
+    <div class="card"><p><strong>Before any grammar:</strong> What were the three main failures identified by the commission? Where does the report place most responsibility — on the government, on infrastructure, or on communication systems? Do you think the tone is fair?</p></div>
+
+    <div class="report">
+      <div class="report-header">
+        <div class="doc-label">UN Disaster Response Review Commission · Veldoria · Final Report, March 2025</div>
+        <div class="doc-title">The 2024 Meridian River Floods:<br>Failures of Preparedness, Response &amp; Coordination</div>
+        <div class="doc-meta">Prepared by: Dr. Amara Diallo (Emergency Management, former ICRC) &amp; Nikos Papadakis (Urban Infrastructure Analysis) · Confidential draft</div>
+      </div>
+      <div class="report-body">
+        <p class="report-section">Executive Summary</p>
+        <p>The flooding of the Meridian River basin in October 2024 resulted in 312 confirmed deaths, the displacement of an estimated 84,000 residents, and infrastructure losses <span class="hl-amber">as severe as</span> those recorded in the country's worst flood year of 1998. This commission finds that the human cost was <span class="hl-amber">not as low as</span> it could have been, and that a series of avoidable failures contributed to the loss of life. <span class="hl-red">The government should have issued formal evacuation orders</span> at least 48 hours before the levee breach. <span class="hl-red">Early warning systems could have saved</span> an estimated 80–120 lives had they been operational.</p>
+
+        <p class="report-section">1. Failures of Preparedness</p>
+        <p><span class="hl-teal">Not only were the levees inadequately maintained</span>, <span class="hl-teal">but the flood modelling data was also eighteen months out of date</span>. The Meridian Basin Flood Risk Assessment, last updated in April 2023, projected maximum water levels <span class="hl-amber">as high as</span> 6.2 metres — a figure that proved catastrophically optimistic when levels reached 8.7 metres. <span class="hl-red">The regional authority should have commissioned a revised assessment</span> prior to the high-risk season.</p>
+        <p><span class="hl-teal">Both the primary evacuation routes and the backup road network</span> <span class="hl-teal">were compromised</span> by ongoing construction work that had not been suspended despite known flood risk. <span class="hl-red">This construction should not have been permitted</span> to continue within the designated flood plain. <span class="hl-red">Local engineers might have anticipated</span> the compound effect of simultaneous road closures and rising water — but no formal risk assessment was completed.</p>
+
+        <p class="report-section">2. Failures of Response</p>
+        <p>The emergency response on the night of 14–15 October was <span class="hl-amber">as chaotic as</span> any this commission has reviewed. <span class="hl-teal">Neither the national emergency coordination centre nor the regional civil defence authority</span> <span class="hl-teal">had a functioning communication protocol</span> at the time of the breach. The breakdown of coordination meant that search and rescue teams were dispatched to the same districts twice while other areas received no assistance for up to eleven hours.</p>
+        <p><span class="hl-red">The Ministry of Infrastructure could have pre-positioned</span> emergency response equipment in the high-risk districts, as recommended in the 2022 preparedness audit. <span class="hl-red">Had this been done, response times might have been</span> reduced by forty to sixty percent. <span class="hl-teal">Not only did the delay cost lives</span>, <span class="hl-teal">but it also eroded public trust in emergency institutions</span> in a way that will affect future compliance with evacuation orders.</p>
+
+        <p class="report-section">3. Failures of Communication</p>
+        <p>Public warnings were <span class="hl-amber">not as clear as</span> international standards require. The national broadcaster issued an alert at 23:14 — <span class="hl-amber">as late as</span> possible given the rate of water rise — but the alert used technical language that many residents did not understand. <span class="hl-red">A plain-language alert should have been issued</span> six hours earlier. <span class="hl-teal">Both the failure to communicate clearly and the failure to act early</span> reflect a systemic problem with how Veldoria's emergency management system prioritises expert accuracy over public accessibility.</p>
+        <p>This commission recommends that the Veldorian government treat this disaster <span class="hl-amber">as seriously as</span> the 1998 floods when allocating reconstruction and preparedness funding. The findings of this report are <span class="hl-amber">as damning as</span> any previously produced by this office.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Comprehension check</h3>
+      <p>1. How many deaths resulted from the Meridian River floods? How does the commission describe the infrastructure damage?</p>
+      <p>2. What were the three main levee/road failures described in Section 1?</p>
+      <p>3. What happened to search and rescue coordination on the night of 14–15 October?</p>
+      <p>4. The commission says the delay "eroded public trust in a way that will affect future compliance with evacuation orders." What does this mean — and why is it significant?</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Look at the red phrases — what are they expressing? -->
+  <div class="tab-section" id="nd1">
+    <div class="tab-header"><span class="tab-badge tb-notice">NOTICE &amp; DISCOVER</span><h2 class="tab-title">Look at the red phrases — what are they expressing?</h2></div>
+    <hr class="tab-rule">
+    <div class="notice-box">
+      <h3>Perfect modals — three different shades of meaning</h3>
+      <div class="notice-q">
+        Compare these three sentences from the report:<br>
+        <em>"The government <span class="hl-red">should have issued</span> evacuation orders 48 hours earlier."</em><br>
+        <em>"Early warning systems <span class="hl-red">could have saved</span> 80–120 lives."</em><br>
+        <em>"Local engineers <span class="hl-red">might have anticipated</span> the compound effect."</em><br>
+        All three are past modal + have + past participle. But do they express the same thing? What is the difference in force between should, could, and might?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">"Should have" = strong moral judgement / critical advice after the fact — it didn't happen, and it was wrong that it didn't. "Could have" = unrealised possibility — it was capable of happening but didn't. "Might have" = weaker, more speculative — it's possible it would have happened, but we're less certain. The strength: should have &gt; could have &gt; might have.</p>
+      </div>
+      <div class="notice-q">
+        Look at: <em>"<span class="hl-red">This construction should not have been permitted</span> to continue."</em><br>
+        This is a negative perfect modal — and it uses the passive. What are the two things being expressed simultaneously?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">First: the passive ("should not have been permitted") removes the agent — we don't say who permitted it. This is appropriate in a formal report. Second: the negative perfect modal expresses that something happened that should NOT have — a criticism of an action that occurred. So: something happened (construction continued) + it was wrong that it happened = should not have + been + past participle.</p>
+      </div>
+      <div class="notice-q">
+        Look at: <em>"<span class="hl-red">Had this been done, response times might have been reduced</span> by forty to sixty percent."</em><br>
+        What is unusual about "had this been done"? What full conditional sentence does this come from?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">This is an inverted third conditional — formal written English sometimes inverts the if-clause: "If this had been done" → "Had this been done." The full version: "If the equipment had been pre-positioned, response times might have been reduced." The inversion (had + subject + past participle) is used in formal writing to give extra weight. You've seen this from Grade 9 Week 1 (mixed conditionals) — now it reappears in the context of perfect modals.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Perfect Modals — Advice & Regret -->
+  <div class="tab-section" id="s1">
+    <div class="tab-header"><span class="tab-badge tb-study-red">STUDY</span><h2 class="tab-title">Perfect Modals — Advice &amp; Regret</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3 class="red">Perfect Modals: should have / could have / might have</h3>
+      <p class="grammar-sub">Modal + have + past participle. Used to talk about past situations that did not happen — expressing what was possible, advisable, or wrong. A key feature of formal reports, retrospective analysis, and expressing regret.</p>
+
+      <p><strong>Form — all three:</strong></p>
+      <div class="table-scroll"><table class="rule-table">
+        <tr><th>Form</th><th>Structure</th><th>Example</th></tr>
+        <tr><td>Affirmative</td><td>modal + have + past participle</td><td><em>"The government <span class="hl-red">should have issued</span> warnings earlier."</em></td></tr>
+        <tr><td>Negative</td><td>modal + not + have + past participle</td><td><em>"Construction <span class="hl-red">should not have been permitted</span> in the flood plain."</em></td></tr>
+        <tr><td>Question</td><td>Modal + subject + have + past participle?</td><td><em>"<span class="hl-red">Could the levees have been reinforced</span> in time?"</em></td></tr>
+        <tr><td>With passive</td><td>modal + have + been + past participle</td><td><em>"Response times <span class="hl-red">might have been reduced</span> by 50%."</em></td></tr>
+        <tr><td>Inverted conditional</td><td>Had + subject + past participle, … modal + have…</td><td><em>"<span class="hl-red">Had the alert been issued</span> earlier, lives <span class="hl-red">could have been saved</span>."</em></td></tr>
+      </table></div>
+
+      <p style="margin-top:20px;"><strong>The three modals — meaning and strength:</strong></p>
+      <div class="scale-wrap">
+        <p style="font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--concrete);margin-bottom:4px;">Strength of certainty / moral force:</p>
+        <div class="scale-bar"></div>
+        <div class="scale-markers">
+          <span>might have<br><em style="color:var(--teal-deep);">speculative /<br>weakest</em></span>
+          <span>could have<br><em style="color:var(--amber-deep);">possibility /<br>neutral</em></span>
+          <span>should have<br><em style="color:var(--red);">obligation /<br>strongest</em></span>
+        </div>
+      </div>
+
+      <div class="table-scroll"><table class="modal-table" style="margin-top:18px;">
+        <tr>
+          <th class="slate">Modal</th>
+          <th class="red">Should have</th>
+          <th class="amber">Could have</th>
+          <th class="teal">Might have</th>
+        </tr>
+        <tr>
+          <td><strong>Core meaning</strong></td>
+          <td>It was the right thing to do — but it didn't happen. Strong regret or criticism.</td>
+          <td>It was possible — but it didn't happen. Unrealised ability or opportunity.</td>
+          <td>It was possible it would happen — but we're less certain. Speculation about the past.</td>
+        </tr>
+        <tr>
+          <td><strong>Tone</strong></td>
+          <td>Critical, moral, advisory — implies a clear failure of duty</td>
+          <td>Neutral — possibility without strong judgement</td>
+          <td>Tentative — hedged, softened</td>
+        </tr>
+        <tr>
+          <td><strong>Negative</strong></td>
+          <td>"Shouldn't have done it" = it was wrong to do it (and they did)</td>
+          <td>"Couldn't have done it" = it wasn't possible (so we don't blame them)</td>
+          <td>"Mightn't have happened" = it's possible it wouldn't have occurred</td>
+        </tr>
+        <tr>
+          <td><strong>Example (report)</strong></td>
+          <td><em>"The ministry <span class="hl-red">should have pre-positioned</span> equipment. This was their duty."</em></td>
+          <td><em>"Better data <span class="hl-amber">could have prevented</span> the miscalculation."</em></td>
+          <td><em>"Engineers <span class="hl-teal">might have anticipated</span> the compound risk — but this is speculative."</em></td>
+        </tr>
+        <tr>
+          <td><strong>Corpus note</strong></td>
+          <td>Most frequent perfect modal in COCA — used in formal reports, criticism, advice</td>
+          <td>Common in analytical writing — counterfactuals, alternatives</td>
+          <td>Less frequent than could have — often in hedged or speculative contexts</td>
+        </tr>
+      </table></div>
+
+      <p style="margin-top:20px;"><strong>Common C1 errors:</strong></p>
+      <div class="example-row"><span class="mark bad">✗</span><span><em>The government should have issue the evacuation order.</em><span class="note">WRONG — needs past participle: "should have issued." Never base form after "have."</span></span></div>
+      <div class="example-row"><span class="mark bad">✗</span><span><em>They should issued the warnings earlier.</em><span class="note">WRONG — missing "have": "should have issued." The full structure is: modal + HAVE + past participle.</span></span></div>
+      <div class="example-row"><span class="mark bad">✗</span><span><em>The engineers could have anticipate the risk.</em><span class="note">WRONG — past participle needed: "could have anticipated."</span></span></div>
+      <div class="example-row"><span class="mark ok">✓</span><span><em>The regional authority should have commissioned a revised flood assessment six months earlier.</em><span class="gloss">CORRECT — should + have + past participle (commissioned). Strong past advice/criticism.</span></span></div>
+      <div class="example-row"><span class="mark ok">✓</span><span><em>Had the equipment been pre-positioned, response times might have been reduced significantly.</em><span class="gloss">CORRECT — inverted conditional + might have + been + past participle (passive).</span></span></div>
+    </div>
+  </div>
+
+  <!-- SECTION: Try it: Perfect Modals -->
+  <div class="tab-section" id="p1">
+    <div class="tab-header"><span class="tab-badge tb-practice">PRACTICE</span><h2 class="tab-title">Try it: Perfect Modals</h2></div>
+    <hr class="tab-rule">
+    <div class="exercise">
+      <span class="ex-label red">Exercise 1 · Gap-fill — form</span>
+      <h4>Complete each sentence with the correct perfect modal form. Use the modal in brackets.</h4>
+      <p class="instr">All sentences relate to the Veldoria flood response. Pay attention to passive forms where needed.</p>
+      <div class="q-row"><span class="q-num">1.</span><span>The levees ______________ (should / reinforce) at least two years before the flood season.</span></div>
+      <input type="text" class="blank-input wide-input" id="e1a" data-answer="should have been reinforced" placeholder="perfect modal (passive)…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">2.</span><span>A clearer warning system ______________ (could / save) dozens of lives in the northern districts.</span></div>
+      <input type="text" class="blank-input wide-input" id="e1b" data-answer="could have saved" placeholder="perfect modal…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">3.</span><span>The construction company ______________ (should / not / permit) to begin work in the flood plain during high-risk months.</span></div>
+      <input type="text" class="blank-input wide-input" id="e1c" data-answer="should not have been permitted" placeholder="negative perfect modal (passive)…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">4.</span><span>The coordination failure ______________ (might / avoid) if both agencies had shared their protocols in advance.</span></div>
+      <input type="text" class="blank-input wide-input" id="e1d" data-answer="might have been avoided" placeholder="perfect modal (passive)…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">5.</span><span>______________ (Had / issue) the plain-language alert six hours earlier, many more residents ______________ (might / evacuate) safely.</span></div>
+      <input type="text" class="blank-input wide-input" id="e1e" data-answer="had the plain-language alert been issued|had the alert been issued" placeholder="inverted conditional…">
+      <input type="text" class="blank-input wide-input" id="e1f" data-answer="might have evacuated" placeholder="result clause…" style="margin-top:6px;">
+      <button class="check-btn" onclick="checkEx1()">Check my answers</button>
+      <div class="feedback" id="fb-ex1"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">should have been reinforced</span><span class="anote">Passive perfect modal: should + have + been + past participle. The agent is omitted (formal report style).</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">could have saved</span><span class="anote">Active perfect modal: could + have + saved. Unrealised possibility — the systems had the capacity but weren't operational.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">should not have been permitted</span><span class="anote">Negative passive perfect modal: should + not + have + been + past participle. Something happened that was wrong — it was permitted but shouldn't have been.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">might have been avoided</span><span class="anote">Speculative passive perfect modal: might + have + been + avoided. Hedged — the report doesn't claim certainty, only possibility.</span></div>
+      <div class="ak-item"><span class="an">5a.</span><span class="av">Had the plain-language alert been issued (earlier)</span><span class="anote">Inverted third conditional: Had + subject + been + past participle. Replaces "If the alert had been issued." No comma between "had" and "the alert."</span></div>
+      <div class="ak-item"><span class="an">5b.</span><span class="av">might have evacuated</span><span class="anote">Result clause with hedged perfect modal. "Could have evacuated" also acceptable — slightly more confident about the possibility.</span></div>
+    
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label red">Exercise 2 · Choose the right modal</span>
+      <h4>Choose the most appropriate perfect modal (should have / could have / might have) for each context. Justify your choice.</h4>
+      <p class="instr">In some cases more than one is possible — choose the one that fits the context most precisely and explain why.</p>
+      <div class="q-row"><span class="q-num">1.</span><span>The commission's tone is strongly critical of the government. Which modal for: "The government ___ issued a formal alert 48 hours earlier"?</span></div>
+      <input type="text" class="blank-input wide-input" id="e2a" data-answer="should have" placeholder="modal…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">2.</span><span>The report is speculating about what the engineers noticed. Which modal for: "Engineers ___ anticipated the compound effect of simultaneous road closures"?</span></div>
+      <input type="text" class="blank-input wide-input" id="e2b" data-answer="might have|could have" placeholder="modal…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">3.</span><span>The report says better equipment placement was entirely feasible. Which modal for: "Pre-positioned equipment ___ reduced response times by 40–60%"?</span></div>
+      <input type="text" class="blank-input wide-input" id="e2c" data-answer="could have" placeholder="modal…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">4.</span><span>A resident describes feeling they had no choice: "I didn't know the evacuation route was closed — I ___ planned differently if I had known." (personal regret)</span></div>
+      <input type="text" class="blank-input wide-input" id="e2d" data-answer="could have|should have" placeholder="modal…">
+      <button class="check-btn" onclick="checkEx2()">Check my answers</button>
+      <div class="feedback" id="fb-ex2"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">should have</span><span class="anote">Strong moral criticism — the government had a duty to issue the alert and failed. "Should have" is the only appropriate modal for strong, clear-cut criticism of a failure of duty.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">might have / could have</span><span class="anote">Both acceptable. "Might have anticipated" = speculative — we're not sure they could have. "Could have anticipated" = it was within their capacity to notice. The report uses "might have" because it's hedging the claim about the engineers' foresight.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">could have</span><span class="anote">Unrealised possibility stated as feasible fact — the report says "as recommended" which confirms the pre-positioning was achievable. "Could have" = it was possible to achieve this. "Should have" would also work if the report is being critical of the decision not to do it.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">could have / should have</span><span class="anote">"Could have planned differently" = I had the capacity/opportunity. "Should have planned differently" = it was the right thing to do and I regret not doing it. Both grammatically correct — the emotional weight differs.</span></div>
+    
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label red">Exercise 3 · Error correction</span>
+      <h4>Each sentence has one error in the perfect modal structure. Find and correct it.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span>The emergency coordinator should have take responsibility for the communication breakdown.</span></div>
+      <input type="text" class="blank-input wide-input" id="e3a" data-answer="the emergency coordinator should have taken responsibility for the communication breakdown" placeholder="corrected…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">2.</span><span>Response teams could arrived in the northern districts much faster with pre-positioned equipment.</span></div>
+      <input type="text" class="blank-input wide-input" id="e3b" data-answer="response teams could have arrived in the northern districts much faster with pre-positioned equipment" placeholder="corrected…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">3.</span><span>The construction might have not been approved if the risk assessment had been reviewed.</span></div>
+      <input type="text" class="blank-input wide-input" id="e3c" data-answer="the construction might not have been approved if the risk assessment had been reviewed" placeholder="corrected…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">4.</span><span>Had the levees been maintained properly, the flooding would been far less severe.</span></div>
+      <input type="text" class="blank-input wide-input" id="e3d" data-answer="had the levees been maintained properly the flooding would have been far less severe" placeholder="corrected…">
+      <button class="check-btn" onclick="checkEx3()">Check my answers</button>
+      <div class="feedback" id="fb-ex3"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">should have taken</span><span class="anote">"Take" → "taken" — past participle required after "have." Never base form.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">could have arrived</span><span class="anote">Missing "have" — "could arrived" is wrong. Full structure: modal + HAVE + past participle.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">might not have been approved</span><span class="anote">"Might have not" → "might not have" — the negation "not" comes immediately after the modal, before "have." Never split modal from "not have."</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">would have been</span><span class="anote">Missing "have" — "would been" is wrong. Full structure in conditional result clause: would + HAVE + been + adjective.</span></div>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Look at the amber phrases — what is being compared? -->
+  <div class="tab-section" id="nd2">
+    <div class="tab-header"><span class="tab-badge tb-notice">NOTICE &amp; DISCOVER</span><h2 class="tab-title">Look at the amber phrases — what is being compared?</h2></div>
+    <hr class="tab-rule">
+    <div class="notice-box">
+      <h3>As…as — more than a simple equality comparison</h3>
+      <div class="notice-q">
+        Find all the amber phrases in the report. For each one, is the comparison saying the two things are equal? Or is it doing something more nuanced?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">Not all as…as phrases express simple equality. "As severe as" = equal severity (comparing 2024 to 1998). "Not as low as it could have been" = less than expected — a negative comparison meaning it was higher than it should have been. "As late as possible" = at the extreme end of lateness. "As seriously as" = to the same degree. "As damning as any" = a superlative-style comparison. So as…as extends well beyond "X = Y in this quality."</p>
+      </div>
+      <div class="notice-q">
+        Compare: <em>"The damage was <span class="hl-amber">as severe as</span> 1998"</em> vs <em>"The human cost was <span class="hl-amber">not as low as</span> it could have been."</em><br>
+        What is the difference between "as severe as" (positive) and "not as low as" (negative)?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">Positive as…as = equality (same level). Negative not as…as = below the standard/level mentioned. "Not as low as it could have been" = the death toll was higher than it should have been. The negative construction is often used to express that something fell short: "not as effective as expected" = less effective than expected.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: As…as — Extended Uses at C1 -->
+  <div class="tab-section" id="s2">
+    <div class="tab-header"><span class="tab-badge tb-study-amber">STUDY</span><h2 class="tab-title">As…as — Extended Uses at C1</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3 class="amber">As…as — Beyond Basic Equality</h3>
+      <p class="grammar-sub">At B1/B2, as…as is taught as a simple equality comparison: "as tall as." At C1, the structure is used in five more sophisticated patterns — all common in formal writing, analysis, and critical commentary.</p>
+
+      <p><strong>1. Basic equality comparison</strong> (review)</p>
+      <div class="table-scroll"><table class="rule-table">
+        <tr><th>Structure</th><th>Example</th><th>Note</th></tr>
+        <tr><td>as + adj/adv + as</td><td><em>"The 2024 floods were <span class="hl-amber">as severe as</span> those of 1998."</em></td><td>Same degree; both sides compared on the same quality.</td></tr>
+        <tr><td>as much/many … as</td><td><em>"Twice <span class="hl-amber">as many</span> districts were affected <span class="hl-amber">as</span> in 2018."</em></td><td>Quantity comparison: as many / as much / as few / as little.</td></tr>
+      </table></div>
+
+      <p style="margin-top:18px;"><strong>2. Negative comparison — not as…as</strong></p>
+      <div class="table-scroll"><table class="rule-table">
+        <tr><th>Structure</th><th>Example</th><th>Meaning</th></tr>
+        <tr><td>not as + adj + as</td><td><em>"The human cost was <span class="hl-amber">not as low as</span> it could have been."</em></td><td>Less than expected / below the stated standard. = the cost was higher than it should have been.</td></tr>
+        <tr><td>not as + adj + as + expected/required</td><td><em>"Public warnings were <span class="hl-amber">not as clear as</span> international standards require."</em></td><td>Failed to meet a standard or expectation.</td></tr>
+      </table></div>
+
+      <p style="margin-top:18px;"><strong>3. Intensifying uses — as…as possible / as…as ever</strong></p>
+      <div class="table-scroll"><table class="rule-table">
+        <tr><th>Structure</th><th>Example</th><th>Meaning</th></tr>
+        <tr><td>as + adj/adv + as possible</td><td><em>"The alert was issued <span class="hl-amber">as late as possible</span> given the rate of water rise."</em></td><td>At the maximum possible degree — often carries a critical implication.</td></tr>
+        <tr><td>as + adj + as any / as ever</td><td><em>"The response was <span class="hl-amber">as chaotic as</span> any this commission has reviewed."</em></td><td>Superlative-style: at least as bad/good as the worst/best known case.</td></tr>
+        <tr><td>as…as ever</td><td><em>"The need for preparedness funding is <span class="hl-amber">as urgent as ever</span>."</em></td><td>Continues to be at the same high degree — implies it hasn't improved.</td></tr>
+      </table></div>
+
+      <p style="margin-top:18px;"><strong>4. As…as with modal verbs — counterfactual comparisons</strong></p>
+      <div class="table-scroll"><table class="rule-table">
+        <tr><th>Structure</th><th>Example</th><th>Use</th></tr>
+        <tr><td>not as + adj + as + it could/should have been</td><td><em>"The response was <span class="hl-amber">not as coordinated as</span> it should have been."</em></td><td>Criticism: it fell short of what was possible or required.</td></tr>
+        <tr><td>as + adj + as + it would have been (if…)</td><td><em>"The damage would have been <span class="hl-amber">as bad as</span> 1998 had the levees not held."</em></td><td>Counterfactual comparison in hypothetical context.</td></tr>
+      </table></div>
+
+      <p style="margin-top:18px;"><strong>5. Fixed expressions with as…as (corpus-frequent)</strong></p>
+      <div class="chip-row">
+        <span class="chip amber">as soon as possible (ASAP)</span>
+        <span class="chip amber">as long as (= provided that / on the condition that)</span>
+        <span class="chip amber">as far as I know / as far as we can tell</span>
+        <span class="chip amber">as well as (= in addition to)</span>
+        <span class="chip amber">as much as X, Y is also… (concession)</span>
+        <span class="chip amber">treat X as seriously as Y</span>
+      </div>
+
+      <p style="margin-top:16px;"><strong>⚠ Common errors:</strong></p>
+      <div class="example-row"><span class="mark bad">✗</span><span><em>The response was as faster as we expected.</em><span class="note">WRONG — use base adjective/adverb, not comparative: "as fast as."</span></span></div>
+      <div class="example-row"><span class="mark bad">✗</span><span><em>The damage was not so severe as 1998.</em><span class="note">Technically possible (not so…as is archaic/formal BrE) but "not as severe as" is strongly preferred in modern English.</span></span></div>
+      <div class="example-row"><span class="mark ok">✓</span><span><em>The government should treat this disaster as seriously as the 1998 floods when allocating funding.</em><span class="gloss">CORRECT — as seriously as = to the same degree of seriousness. Note: adverb "seriously" used (not adjective) because it modifies the verb "treat."</span></span></div>
+    </div>
+  </div>
+
+  <!-- SECTION: Try it: As…as -->
+  <div class="tab-section" id="p2">
+    <div class="tab-header"><span class="tab-badge tb-practice">PRACTICE</span><h2 class="tab-title">Try it: As…as</h2></div>
+    <hr class="tab-rule">
+    <div class="exercise">
+      <span class="ex-label amber">Exercise 4 · Complete the comparison</span>
+      <h4>Complete each sentence using an appropriate as…as structure. More than one answer may be possible — note which type of as…as you used.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span>The 2024 death toll was not ______________ it should have been — the evacuation failure directly cost lives. (negative comparison)</span></div>
+      <input type="text" class="blank-input wide-input" id="e4a" data-answer="as low as" placeholder="as … as…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">2.</span><span>Reconstruction funds must be deployed ______________ to prevent secondary health crises. (intensifying)</span></div>
+      <input type="text" class="blank-input wide-input" id="e4b" data-answer="as quickly as possible|as fast as possible|as soon as possible" placeholder="as … as…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">3.</span><span>The new flood modelling software is ______________ the 2022 model — but it covers three times the geographic area. (equality comparison)</span></div>
+      <input type="text" class="blank-input wide-input" id="e4c" data-answer="as accurate as" placeholder="as … as…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">4.</span><span>Communication between agencies was ______________ required by emergency protocol — a failure the commission highlights strongly. (negative, not meeting a standard)</span></div>
+      <input type="text" class="blank-input wide-input" id="e4d" data-answer="not as clear as|not as effective as|not as coordinated as" placeholder="not as … as…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">5.</span><span>The need for international funding for flood prevention is ______________ — if not more so — given recent climate projections. (as…as ever / as urgent as ever)</span></div>
+      <input type="text" class="blank-input wide-input" id="e4e" data-answer="as urgent as ever|as important as ever|as pressing as ever" placeholder="as … as ever…">
+      <button class="check-btn" onclick="checkEx4()">Check my answers</button>
+      <div class="feedback" id="fb-ex4"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">as low as</span><span class="anote">Negative comparison: the death toll was not as low as it should have been = it was higher than it should have been. The adjective "low" (not "high") because the standard being compared to is the ideal (lower deaths).</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">as quickly as possible / as soon as possible</span><span class="anote">Intensifying as…as possible. "Quickly" (adverb) modifies deploy. Also acceptable: "as fast as possible."</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">as accurate as</span><span class="anote">Basic equality comparison. "As accurate as the 2022 model" = same level of accuracy.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">not as clear as / not as effective as</span><span class="anote">Negative comparison against a standard ("required by protocol"). "Not as clear as required" = fell short of the required standard.</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">as urgent as ever / as pressing as ever</span><span class="anote">"As…as ever" = the urgency hasn't diminished; it remains at the same high level. Often carries the implication that insufficient progress has been made.</span></div>
+    
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label amber">Exercise 5 · Rewrite using as…as</span>
+      <h4>Rewrite each sentence using an as…as structure without changing the meaning.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span>The 2024 floods were more destructive than any other flood in Veldoria's recent history.</span></div>
+      <input type="text" class="blank-input wide-input" id="e5a" data-answer="the 2024 floods were as destructive as any in veldoria's recent history|the 2024 floods were as destructive as any other flood in veldoria's recent history" placeholder="as … as…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">2.</span><span>The report concluded that the emergency response fell short of the required standard.</span></div>
+      <input type="text" class="blank-input wide-input" id="e5b" data-answer="the report concluded that the emergency response was not as effective as required|was not as good as the required standard|was not as coordinated as it should have been" placeholder="not as … as…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">3.</span><span>The commission recommends deploying search teams without any delay.</span></div>
+      <input type="text" class="blank-input wide-input" id="e5c" data-answer="the commission recommends deploying search teams as quickly as possible|as soon as possible" placeholder="as … as possible…">
+      <button class="check-btn" onclick="checkEx5()">Check my answers</button>
+      <div class="feedback" id="fb-ex5"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">as destructive as any (flood) in Veldoria's recent history</span><span class="anote">"More destructive than any other" → "as destructive as any" — the superlative-style as…as construction.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">the response was not as effective as required / not as good as the required standard</span><span class="anote">"Fell short of the required standard" → "not as [adjective] as required." Several adjectives possible: effective, adequate, coordinated, professional.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">as quickly / soon as possible</span><span class="anote">"Without any delay" → "as quickly/soon as possible." The phrase "as soon as possible" is so frequent it has become a fixed expression (ASAP).</span></div>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Look at the teal phrases — two halves, one idea -->
+  <div class="tab-section" id="nd3">
+    <div class="tab-header"><span class="tab-badge tb-notice">NOTICE &amp; DISCOVER</span><h2 class="tab-title">Look at the teal phrases — two halves, one idea</h2></div>
+    <hr class="tab-rule">
+    <div class="notice-box">
+      <h3>Correlative conjunctions — find the two parts</h3>
+      <div class="notice-q">
+        Look at: <em>"<span class="hl-teal">Not only were the levees inadequately maintained, but the flood modelling data was also eighteen months out of date.</span>"</em><br>
+        Can you find the two halves of this sentence? What connects them — and how would you write this as two separate sentences?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">Two halves: (1) "Not only were the levees inadequately maintained" + (2) "but the flood modelling data was also eighteen months out of date." As two sentences: "The levees were inadequately maintained. In addition, the flood modelling data was eighteen months out of date." The correlative conjunction connects two pieces of information that reinforce each other — but does so more emphatically and formally than "and also." Note also the inversion after "not only": "were the levees" not "the levees were."</p>
+      </div>
+      <div class="notice-q">
+        Compare these three teal phrases from the report:<br>
+        <em>"<span class="hl-teal">Not only did the delay cost lives, but it also eroded public trust.</span>"</em><br>
+        <em>"<span class="hl-teal">Both the communication breakdown and the under-resourcing of first responders</span> contributed to the death toll."</em><br>
+        <em>"<span class="hl-teal">Neither the national coordination centre nor the regional civil defence authority</span> had a functioning protocol."</em><br>
+        What is different about each one — in meaning and in structure?
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal a hint</button>
+        <p class="notice-reveal">Not only…but also = adds something further, often surprising or more serious than the first item. Implies: "and what's more." / Both…and = includes two things equally. Both of them. / Neither…nor = excludes two things equally. Neither of them. Each has a different logical meaning: addition (not only), inclusion of both (both…and), or exclusion of both (neither…nor).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Correlative Conjunctions -->
+  <div class="tab-section" id="s3">
+    <div class="tab-header"><span class="tab-badge tb-study-teal">STUDY</span><h2 class="tab-title">Correlative Conjunctions</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3 class="teal">Not only…but also · Both…and · Neither…nor</h3>
+      <p class="grammar-sub">Correlative conjunctions work in pairs — the first half sets up an expectation, the second half completes it. All three are high-frequency in formal written English and in persuasive speech. They make connections between two parallel ideas more emphatic and elegant than "and" alone.</p>
+
+      <div class="corr-grid">
+        <div class="corr-card">
+          <div class="cc-head teal">
+            <div class="cc-phrase">not only … but also</div>
+            <div class="cc-pron">/nɒt ˈəʊnli … bʌt ˈɔːlsəʊ/</div>
+          </div>
+          <div class="cc-body">
+            <div class="cc-meaning">Addition — "and what's more / furthermore"</div>
+            <div class="cc-note">Emphasises that the second item is additional — often more surprising or more serious than the first. The "also" can be omitted in informal use, but is standard in formal writing.</div>
+            <div class="cc-example">"<span class="hl-teal">Not only did the delay cost lives, but it also eroded public trust</span> in emergency institutions."</div>
+          </div>
+        </div>
+        <div class="corr-card">
+          <div class="cc-head amber">
+            <div class="cc-phrase">both … and</div>
+            <div class="cc-pron">/bəʊθ … ænd/</div>
+          </div>
+          <div class="cc-body">
+            <div class="cc-meaning">Inclusion — "the two of them / each equally"</div>
+            <div class="cc-note">Connects two items and includes both equally. Used to emphasise that two things share a quality or that two people/entities are jointly responsible. Takes plural agreement when connecting two subjects.</div>
+            <div class="cc-example">"<span class="hl-teal">Both the communication breakdown and the under-resourcing of first responders</span> contributed to the death toll."</div>
+          </div>
+        </div>
+        <div class="corr-card">
+          <div class="cc-head red">
+            <div class="cc-phrase">neither … nor</div>
+            <div class="cc-pron">/ˈnaɪðə … nɔː/</div>
+          </div>
+          <div class="cc-body">
+            <div class="cc-meaning">Exclusion — "not the one and not the other"</div>
+            <div class="cc-note">Negative counterpart of both…and. Excludes both items. The verb agrees with the subject closest to it (proximity rule). Never use "not…nor" — this is a double negative error.</div>
+            <div class="cc-example">"<span class="hl-teal">Neither the coordination centre nor the regional authority</span> had a functioning protocol."</div>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top:20px;"><strong>Critical grammar: inversion after "not only"</strong></p>
+      <div class="card" style="background:var(--red-pale);border-left:4px solid var(--red);margin:0 0 16px;">
+        <p>When "not only" appears at the start of a clause, the subject and auxiliary verb invert — like in a question. This is the most common error students make with this structure.</p>
+        <div class="table-scroll"><table class="rule-table">
+          <tr><th>Without inversion (mid-sentence)</th><th>With inversion (sentence-initial)</th></tr>
+          <tr><td><em>"The response was not only slow <span class="hl-teal">but also</span> poorly coordinated."</em> — no inversion when "not only" is mid-clause</td><td><em>"<span class="hl-teal">Not only was</span> the response slow, but it was also poorly coordinated."</em> — inversion when "not only" opens the clause</td></tr>
+          <tr><td><em>"The agency not only failed to communicate but also failed to act."</em></td><td><em>"<span class="hl-teal">Not only did</span> the agency fail to communicate, but it also failed to act."</em></td></tr>
+        </table></div>
+        <p style="margin-top:10px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;"><strong>Inversion rule:</strong> auxiliary verb (is/was/did/had/will) + subject. If no auxiliary, use "do/does/did": "Not only did they fail…" (not "Not only they failed…")</p>
+      </div>
+
+      <p><strong>Agreement rules:</strong></p>
+      <div class="table-scroll"><table class="rule-table">
+        <tr><th>Structure</th><th>Agreement</th><th>Example</th></tr>
+        <tr><td><strong>Both…and</strong> (two subjects)</td><td>Plural verb</td><td><em>"<span class="hl-teal">Both the levees and the road network</span> <strong>were</strong> compromised."</em></td></tr>
+        <tr><td><strong>Neither…nor</strong> (two subjects)</td><td>Verb agrees with nearer subject (proximity)</td><td><em>"<span class="hl-teal">Neither the minister nor the officials</span> <strong>were</strong> available." / "Neither the officials nor the minister <strong>was</strong> available."</em></td></tr>
+        <tr><td><strong>Not only…but also</strong></td><td>Verb agrees with its own subject normally</td><td><em>"<span class="hl-teal">Not only were the levees damaged, but the roads were also blocked.</span>"</em></td></tr>
+      </table></div>
+
+      <p style="margin-top:18px;"><strong>Parallel structure — the key requirement:</strong></p>
+      <p>Both halves of a correlative conjunction must be grammatically parallel — the same part of speech on each side.</p>
+      <div class="example-row"><span class="mark bad">✗</span><span><em>Not only the levees failed but also flooding the roads.</em><span class="note">WRONG — not parallel: noun phrase (the levees failed) ≠ gerund (flooding). Correct: "Not only did the levees fail, but the roads also flooded."</span></span></div>
+      <div class="example-row"><span class="mark bad">✗</span><span><em>The report criticises both the government's slow response and that agencies didn't communicate.</em><span class="note">WRONG — not parallel: noun phrase ≠ that-clause. Correct: "both the government's slow response and the failure of agencies to communicate."</span></span></div>
+      <div class="example-row"><span class="mark ok">✓</span><span><em>Neither the evacuation plan nor the communication protocol was adequate for a flood of this scale.</em><span class="gloss">CORRECT — parallel: noun phrase (the evacuation plan) + noun phrase (the communication protocol). Verb "was" agrees with the nearer subject "the communication protocol" (singular).</span></span></div>
+    </div>
+  </div>
+
+  <!-- SECTION: Try it: Correlative Conjunctions -->
+  <div class="tab-section" id="p3">
+    <div class="tab-header"><span class="tab-badge tb-practice">PRACTICE</span><h2 class="tab-title">Try it: Correlative Conjunctions</h2></div>
+    <hr class="tab-rule">
+    <div class="exercise">
+      <span class="ex-label teal">Exercise 6 · Complete the sentence</span>
+      <h4>Complete each sentence with the correct correlative conjunction and any other necessary words.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span>______________ the levees ______________ the emergency shelters were adequate for a flood of this magnitude. (exclusion)</span></div>
+      <input type="text" class="blank-input wide-input" id="e6a" data-answer="neither…nor|neither the levees nor the emergency shelters were adequate" placeholder="neither … nor…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">2.</span><span>______________ the government's underfunding of infrastructure ______________ the failure to update the flood model contributed to the disaster. (inclusion of both)</span></div>
+      <input type="text" class="blank-input wide-input" id="e6b" data-answer="both…and|both the government's underfunding of infrastructure and the failure to update the flood model contributed" placeholder="both … and…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">3.</span><span>______________ ______________ the delay cost lives, ______________ it ______________ caused a long-term erosion of public trust. (addition with inversion)</span></div>
+      <input type="text" class="blank-input wide-input" id="e6c" data-answer="not only did the delay cost lives but it also caused|not only did…but…also" placeholder="not only did … but … also…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">4.</span><span>Dr. Diallo argued that ______________ the technical failures ______________ the communication failures could be addressed through existing legislation. (both can be solved)</span></div>
+      <input type="text" class="blank-input wide-input" id="e6d" data-answer="both…and|both the technical failures and the communication failures could be addressed" placeholder="both … and…">
+      <button class="check-btn" onclick="checkEx6()">Check my answers</button>
+      <div class="feedback" id="fb-ex6"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">Neither the levees nor the emergency shelters were adequate…</span><span class="anote">Neither…nor for exclusion — both were inadequate. Verb "were" agrees with the nearer subject "the emergency shelters" (plural).</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">Both the government's underfunding… and the failure to update the flood model contributed…</span><span class="anote">Both…and for inclusion. Verb "contributed" is plural (both = two subjects). Note parallel structure: noun phrase + noun phrase.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">Not only did the delay cost lives, but it also caused…</span><span class="anote">Inversion required: "Not only DID the delay cost" — auxiliary "did" inverted before subject. "Also" appears in the second clause after the subject.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">Both the technical failures and the communication failures could be addressed…</span><span class="anote">Both…and — plural subject takes plural verb "could be addressed."</span></div>
+    
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label teal">Exercise 7 · Rewrite with inversion</span>
+      <h4>Rewrite each sentence so that it begins with "Not only…" Use inversion correctly.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span>The flood modelling was outdated and also the evacuation routes were blocked.</span></div>
+      <input type="text" class="blank-input wide-input" id="e7a" data-answer="not only was the flood modelling outdated but the evacuation routes were also blocked|not only was the flood modelling outdated but also the evacuation routes were blocked" placeholder="Not only was / did…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">2.</span><span>The warning came too late and it was also written in language most residents couldn't understand.</span></div>
+      <input type="text" class="blank-input wide-input" id="e7b" data-answer="not only did the warning come too late but it was also written in language most residents couldn't understand|not only was the warning late but it was also incomprehensible to most residents" placeholder="Not only did / was…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">3.</span><span>The commission found that the government failed to prepare and it also failed to respond adequately.</span></div>
+      <input type="text" class="blank-input wide-input" id="e7c" data-answer="not only did the government fail to prepare but it also failed to respond adequately|not only did it fail to prepare but also to respond adequately" placeholder="Not only did…">
+      <button class="check-btn" onclick="checkEx7()">Check my answers</button>
+      <div class="feedback" id="fb-ex7"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">Not only was the flood modelling outdated, but the evacuation routes were also blocked.</span><span class="anote">Inversion: "Not only WAS the flood modelling outdated" (was + subject). "Also" in the second clause, after "were."</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">Not only did the warning come too late, but it was also written in language most residents couldn't understand.</span><span class="anote">Inversion with "did": "Not only DID the warning come" — auxiliary "did" before subject "the warning."</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">Not only did the government fail to prepare, but it also failed to respond adequately.</span><span class="anote">"Did" inversion. Both clauses must be grammatically parallel: "fail to prepare" / "fail to respond."</span></div>
+    
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label teal">Exercise 8 · Error correction</span>
+      <h4>Find and correct the error in each sentence.</h4>
+      <div class="q-row"><span class="q-num">1.</span><span>Not only the agency failed to respond but also it didn't communicate with other services.</span></div>
+      <input type="text" class="blank-input wide-input" id="e8a" data-answer="not only did the agency fail to respond but it also didn't communicate with other services|not only did the agency fail to respond but also failed to communicate" placeholder="corrected…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">2.</span><span>Neither the minister nor the officials was available to comment on the commission's findings.</span></div>
+      <input type="text" class="blank-input wide-input" id="e8b" data-answer="neither the minister nor the officials were available to comment on the commission's findings" placeholder="corrected…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">3.</span><span>The report criticises both failing to warn residents early and that the shelters were overcrowded.</span></div>
+      <input type="text" class="blank-input wide-input" id="e8c" data-answer="the report criticises both the failure to warn residents early and the overcrowding of shelters|both failing to warn residents early and overcrowding the shelters" placeholder="corrected (parallel structure)…">
+      <button class="check-btn" onclick="checkEx8()">Check my answers</button>
+      <div class="feedback" id="fb-ex8"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">Not only did the agency fail to respond, but it also didn't communicate…</span><span class="anote">Missing inversion: "Not only DID the agency fail" — not "Not only the agency failed." Inversion is obligatory when "not only" opens the clause.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">Neither the minister nor the officials were available…</span><span class="anote">Proximity agreement: verb agrees with the nearer subject "the officials" (plural) → "were," not "was."</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">…both the failure to warn residents early and the overcrowding of shelters / both failing to warn residents early and overcrowding the shelters</span><span class="anote">Parallel structure: "failing to warn residents" (gerund) ≠ "that the shelters were overcrowded" (that-clause). Both sides must use the same grammatical form: either both gerunds or both noun phrases.</span></div>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Natural Disasters & Safety -->
+  <div class="tab-section" id="vocab">
+    <div class="tab-header"><span class="tab-badge tb-vocab">VOCABULARY</span><h2 class="tab-title">Natural Disasters &amp; Safety</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3 class="red">Core vocabulary from the report</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card red"><span class="word">levee</span><span class="pos">noun</span><div class="pron">/ˈlevi/</div><div class="def">an embankment built alongside a river to prevent flooding — either natural (formed by sediment deposits) or artificial (built by engineers). A levee <strong>breach</strong> occurs when water breaks through or overtops it.</div><div class="ex">"Not only were the levees inadequately maintained, but the modelling data used to assess them was eighteen months out of date."</div></div>
+        <div class="vocab-card red"><span class="word">evacuation</span><span class="pos">noun</span><div class="pron">/ɪˌvækjuˈeɪʃən/</div><div class="def">the organised movement of people away from a dangerous area. An <strong>evacuation order</strong> is an official instruction to leave. <strong>Voluntary evacuation</strong> = recommended but not mandatory. <strong>Mandatory evacuation</strong> = legally required to leave.</div><div class="ex">"The government should have issued formal evacuation orders at least 48 hours before the levee breach."</div></div>
+        <div class="vocab-card red"><span class="word">displacement</span><span class="pos">noun</span><div class="pron">/dɪsˈpleɪsmənt/</div><div class="def">the forced movement of people from their homes due to disaster, conflict, or environmental change. <strong>Internally displaced persons (IDPs)</strong> remain within their country; <strong>refugees</strong> cross international borders.</div><div class="ex">"The flooding resulted in the displacement of an estimated 84,000 residents, many of whom could not return for three months."</div></div>
+        <div class="vocab-card red"><span class="word">flood plain</span><span class="pos">noun</span><div class="pron">/ˈflʌd pleɪn/</div><div class="def">the flat area of land adjacent to a river, formed by sediment deposited during floods. Flood plains are highly fertile but inherently at risk — building on them is controversial because it increases both the frequency and severity of flood damage.</div><div class="ex">"Construction should not have been permitted to continue within the designated flood plain during high-risk months."</div></div>
+        <div class="vocab-card amber"><span class="word">early warning system</span><span class="pos">noun phrase</span><div class="pron">/ˈɜːli ˈwɔːnɪŋ ˈsɪstəm/</div><div class="def">a network of sensors, monitoring stations, and communication infrastructure designed to detect hazards and alert populations before they cause harm. Effective early warning systems require both technical accuracy and accessible communication.</div><div class="ex">"Early warning systems could have saved an estimated 80–120 lives had they been operational on the night of 14 October."</div></div>
+        <div class="vocab-card amber"><span class="word">search and rescue (SAR)</span><span class="pos">noun phrase</span><div class="pron">/sɜːtʃ ænd ˈreskjuː/</div><div class="def">emergency operations to locate and help people in danger. <strong>Urban search and rescue (USAR)</strong> involves collapsed buildings. <strong>Water rescue</strong> is specific to flood and maritime contexts. SAR teams are typically the first responders in disaster settings.</div><div class="ex">"Search and rescue teams were dispatched to the same districts twice while other areas received no assistance for eleven hours."</div></div>
+        <div class="vocab-card amber"><span class="word">first responder</span><span class="pos">noun</span><div class="pron">/fɜːst rɪˈspɒndə/</div><div class="def">emergency services personnel — firefighters, paramedics, police, and specialised rescue teams — who are the first to arrive at the scene of a disaster or emergency. Their effectiveness depends heavily on pre-positioning of equipment and training.</div><div class="ex">"Both the communication breakdown and the under-resourcing of first responders contributed to the scale of the disaster."</div></div>
+        <div class="vocab-card amber"><span class="word">catastrophic</span><span class="pos">adjective</span><div class="pron">/ˌkætəˈstrɒfɪk/</div><div class="def">involving or causing sudden great damage or suffering — far beyond normal or manageable. Degrees: <strong>minor</strong> → <strong>significant</strong> → <strong>severe</strong> → <strong>catastrophic</strong>. In disaster management, catastrophic typically means all response resources are overwhelmed.</div><div class="ex">"Water levels reached 8.7 metres — a figure that proved catastrophically optimistic against the 6.2m projection."</div></div>
+      </div>
+    </div>
+
+    <div class="grammar-box">
+      <h3 class="amber">Extended vocabulary: disaster management &amp; risk</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card teal"><span class="word">mitigation</span><span class="pos">noun</span><div class="pron">/ˌmɪtɪˈɡeɪʃən/</div><div class="def">action taken to reduce the severity, impact, or likelihood of a disaster. Distinct from <strong>preparedness</strong> (getting ready for a specific event) and <strong>response</strong> (acting during an event). Mitigation is long-term: building levees, planting flood-absorbing forests, relocating communities from flood plains.</div><div class="ex">"In terms of long-term mitigation, the commission recommends a twenty-year investment programme in Meridian Basin infrastructure."</div></div>
+        <div class="vocab-card teal"><span class="word">resilience</span><span class="pos">noun</span><div class="pron">/rɪˈzɪliəns/</div><div class="def">the ability of a system, community, or individual to absorb disruption and recover. In disaster management: <strong>community resilience</strong> = how well communities can cope with and recover from disasters without external aid. Distinguished from mere <strong>resistance</strong> (not being damaged) — resilient systems bend but bounce back.</div><div class="ex">"Both the infrastructure failures and the coordination gaps revealed a resilience deficit that years of underfunding had created."</div></div>
+        <div class="vocab-card teal"><span class="word">risk assessment</span><span class="pos">noun phrase</span><div class="pron">/rɪsk əˈsesmənt/</div><div class="def">a systematic process of identifying, analysing, and evaluating potential hazards and their consequences. In disaster contexts: identifies likelihood × impact for each hazard type. The 2023 Meridian Basin risk assessment was a key failure in the Veldoria floods — it was outdated.</div><div class="ex">"The regional authority should have commissioned a revised risk assessment prior to the high-risk season."</div></div>
+        <div class="vocab-card teal"><span class="word">infrastructure</span><span class="pos">noun</span><div class="pron">/ˈɪnfrəˌstrʌktʃə/</div><div class="def">the fundamental physical systems of a society — roads, bridges, levees, power grids, water treatment, communication networks. <strong>Critical infrastructure</strong> = systems whose failure would have severe consequences. Infrastructure resilience is a key focus of modern disaster management.</div><div class="ex">"Infrastructure losses in 2024 were as severe as those recorded in Veldoria's worst flood year of 1998."</div></div>
+        <div class="vocab-card"><span class="word">aftershock</span><span class="pos">noun</span><div class="pron">/ˈɑːftəʃɒk/</div><div class="def">a smaller earthquake that follows the main shock in the same region. More broadly used metaphorically: the <strong>aftershock</strong> of a disaster = the secondary effects that continue after the immediate event (economic disruption, psychological trauma, political fallout).</div><div class="ex">"Neither the government nor the health system was prepared for the aftershock of the disaster — a wave of displacement-related illness."</div></div>
+        <div class="vocab-card"><span class="word">hazard</span><span class="pos">noun</span><div class="pron">/ˈhæzəd/</div><div class="def">a condition or event with the potential to cause harm. In disaster risk science, a hazard only becomes a disaster when it intersects with a vulnerable population. Types: <strong>geophysical</strong> (earthquake, volcano), <strong>hydrological</strong> (flood, tsunami), <strong>climatological</strong> (drought, wildfire), <strong>meteorological</strong> (hurricane, storm).</div><div class="ex">"Both the flooding hazard and the compound road closure hazard should have been identified in a comprehensive risk register."</div></div>
+        <div class="vocab-card"><span class="word">contingency plan</span><span class="pos">noun phrase</span><div class="pron">/kənˈtɪndʒənsi plæn/</div><div class="def">a plan prepared for a specific possible future event — especially a negative or unexpected one. A <strong>contingency plan</strong> pre-defines what to do if a particular scenario occurs. The absence of a contingency plan for simultaneous road closures and flooding was a key failure in Veldoria.</div><div class="ex">"Not only was there no contingency plan for simultaneous road closures, but the one that existed for flooding alone had not been reviewed since 2019."</div></div>
+        <div class="vocab-card"><span class="word">triage</span><span class="pos">noun / verb</span><div class="pron">/ˈtriːɑːʒ/</div><div class="def">the process of sorting injured people (or competing priorities) according to urgency and available resources. From French — originally a medical sorting process. In disaster contexts: deciding which areas or casualties to address first when resources are insufficient for all.</div><div class="ex">"As a result of poor triage during the first twelve hours, resources were misallocated and the most vulnerable communities received help last."</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Word family — DISASTER</h3>
+      <div class="table-scroll"><table class="rule-table">
+        <tr><th>Form</th><th>Word</th><th>Example</th></tr>
+        <tr><td>Noun</td><td>disaster · catastrophe · calamity</td><td><em>"The Meridian floods were the worst disaster in Veldoria in a generation."</em></td></tr>
+        <tr><td>Adjective</td><td>disastrous · catastrophic · calamitous</td><td><em>"The miscalculation proved catastrophically optimistic."</em></td></tr>
+        <tr><td>Adverb</td><td>disastrously · catastrophically</td><td><em>"The response was disastrously slow in the first six hours."</em></td></tr>
+        <tr><td>Verb</td><td>devastate · wreak havoc · ravage</td><td><em>"The floods devastated the northern districts of the Meridian Basin."</em></td></tr>
+        <tr><td>Related noun</td><td>devastation · havoc · ruin</td><td><em>"The scale of the devastation was not as bad as 1998 — but only barely."</em></td></tr>
+      </table></div>
+    </div>
+
+    <div class="card">
+      <h3>Key collocations</h3>
+      <div class="chip-row">
+        <span class="chip red">issue / lift an evacuation order</span>
+        <span class="chip red">levee breach / failure / reinforcement</span>
+        <span class="chip red">should have + past participle (hindsight criticism)</span>
+        <span class="chip amber">flood plain / flood risk / flood modelling</span>
+        <span class="chip amber">early warning / trigger a warning / issue an alert</span>
+        <span class="chip amber">deploy / pre-position / mobilise resources</span>
+        <span class="chip teal">coordinate / break down / restore communication</span>
+        <span class="chip teal">mitigate / assess / manage risk</span>
+        <span class="chip teal">build / erode / restore resilience</span>
+        <span class="chip">contingency plan · triage · first responder</span>
+        <span class="chip">displacement · aftershock · casualty figures</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Try it: vocabulary -->
+  <div class="tab-section" id="vp">
+    <div class="tab-header"><span class="tab-badge tb-vocab">PRACTICE</span><h2 class="tab-title">Try it: vocabulary</h2></div>
+    <hr class="tab-rule">
+    <div class="exercise">
+      <span class="ex-label slate">Exercise 9 · Gap-fill</span>
+      <h4>Complete each sentence with the correct word or phrase.</h4>
+      <p class="instr"><em>levee · evacuation · displacement · contingency plan · triage · mitigation · resilience · risk assessment · first responders · early warning system</em></p>
+      <div class="q-row"><span class="q-num">1.</span><span>The ______________ breach occurred at 02:47, flooding twelve districts within four hours.</span></div>
+      <input type="text" class="blank-input wide-input" id="e9a" data-answer="levee" placeholder="word…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">2.</span><span>Both the technical failure of the ______________ and the delay in issuing the alert contributed to the death toll.</span></div>
+      <input type="text" class="blank-input wide-input" id="e9b" data-answer="early warning system" placeholder="phrase…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">3.</span><span>Effective ______________ during the first hours of a disaster means allocating teams and resources to the most critical areas first.</span></div>
+      <input type="text" class="blank-input wide-input" id="e9c" data-answer="triage" placeholder="word…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">4.</span><span>The absence of a ______________ for simultaneous road closures was cited as a key organisational failure.</span></div>
+      <input type="text" class="blank-input wide-input" id="e9d" data-answer="contingency plan" placeholder="phrase…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">5.</span><span>The ______________ of 84,000 residents created a secondary humanitarian crisis that lasted three months.</span></div>
+      <input type="text" class="blank-input wide-input" id="e9e" data-answer="displacement" placeholder="word…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">6.</span><span>Long-term flood ______________ requires not only engineering solutions but also restrictions on development in high-risk areas.</span></div>
+      <input type="text" class="blank-input wide-input" id="e9f" data-answer="mitigation" placeholder="word…">
+      <div class="q-row" style="margin-top:8px;"><span class="q-num">7.</span><span>Neither the ______________ nor the community had been adequately prepared — yet both bore the cost of the failure.</span></div>
+      <input type="text" class="blank-input wide-input" id="e9g" data-answer="first responders" placeholder="phrase…">
+      <button class="check-btn" onclick="checkEx9()">Check my answers</button>
+      <div class="feedback" id="fb-ex9"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">levee</span><span class="anote">The levee breach = the moment the embankment fails and water breaks through.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">early warning system</span><span class="anote">The technical infrastructure that should detect hazards and alert populations — central to the Veldoria failures.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">triage</span><span class="anote">Medical/disaster sorting — allocating scarce resources to highest-priority needs first.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">contingency plan</span><span class="anote">A plan prepared for a specific possible future scenario — absent from Veldoria's planning for compound road/flood events.</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">displacement</span><span class="anote">84,000 residents were forced from their homes — an internally displaced persons (IDPs) situation.</span></div>
+      <div class="ak-item"><span class="an">6.</span><span class="av">mitigation</span><span class="anote">Long-term risk reduction — engineering, land-use planning, reforestation — distinct from preparedness (ready for a specific event).</span></div>
+      <div class="ak-item"><span class="an">7.</span><span class="av">first responders</span><span class="anote">Emergency services who arrive first — underfunded, under-equipped, and poorly coordinated in the Veldoria case.</span></div>
+    
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label slate">Exercise 10 · Integrate all three grammar points + vocabulary</span>
+      <h4>Write four sentences about the Veldoria flood response, each meeting a different brief.</h4>
+      <p class="instr">Open-ended — bring to Session 2 for peer comparison.</p>
+      <div class="q-row"><span class="q-num">A.</span><span>A sentence using <strong>should have</strong> + vocabulary word (criticism of the response).</span></div>
+      <textarea class="response-box" id="e10a" style="min-height:60px;" placeholder="e.g. The ministry should have pre-positioned first responders in the northern flood plain weeks before the high-risk season began."></textarea>
+      <div class="q-row" style="margin-top:10px;"><span class="q-num">B.</span><span>A sentence using <strong>not as…as</strong> + vocabulary word (critical comparison).</span></div>
+      <textarea class="response-box" id="e10b" style="min-height:60px;" placeholder="e.g. The contingency plan was not as comprehensive as the 2019 preparedness audit had recommended."></textarea>
+      <div class="q-row" style="margin-top:10px;"><span class="q-num">C.</span><span>A sentence using <strong>not only…but also</strong> with inversion + vocabulary word.</span></div>
+      <textarea class="response-box" id="e10c" style="min-height:60px;" placeholder="e.g. Not only did the levee breach trigger immediate displacement, but it also caused the collapse of the road network, preventing triage of affected districts."></textarea>
+      <div class="q-row" style="margin-top:10px;"><span class="q-num">D.</span><span>A sentence combining <strong>could have</strong> + <strong>both…and</strong> (what two things could have prevented the disaster).</span></div>
+      <textarea class="response-box" id="e10d" style="min-height:60px;" placeholder="e.g. Both an updated risk assessment and a functioning early warning system could have reduced the death toll significantly."></textarea>
+    </div>
+  </div>
+
+  <!-- 14. PUTTING IT TOGETHER -->
+
+  <!-- SECTION: Speaking Practice -->
+  <div class="tab-section" id="speaking">
+    <div class="tab-header"><span class="tab-badge tb-speak">SPEAKING PRACTICE</span><h2 class="tab-title">Regret, contrast &mdash; spoken</h2></div>
+    <hr class="tab-rule">
+    <p class="section-intro">Commissions present their findings out loud; survivors retell what happened; officials answer for what should have been done. These tasks put this week's perfect modals, <em>as&hellip;as</em> structures, and disaster vocabulary under mild spoken pressure. Use your phone's voice memo app.</p>
+
+    <div class="speak-card">
+      <span class="speak-type">Retell task</span>
+      <h3>Present the Commission's findings</h3>
+      <p>Re-read the Veldoria Commission report in the Context section. Then close it and, from memory, present its key findings aloud in <strong>90 seconds</strong> &mdash; as if you were the Commission chair at a press conference. Build your presentation around perfect modals: <em>what should have been done, what could have been prevented, what needn't have happened.</em></p>
+      <div class="speak-how"><strong>How:</strong> Record without looking at the text. <strong>When you listen back, count:</strong> your perfect modals &mdash; and check each one has the full form (<em>should have been issued</em>, not <em>should been issued</em>). Weak forms are fine (<em>should've</em>); missing pieces are not.</div>
+    </div>
+
+    <div class="speak-card">
+      <span class="speak-type">Timed monologue</span>
+      <h3>The near miss</h3>
+      <p>Set a timer for <strong>2 minutes</strong>. Speak without stopping about <em>a time when something went wrong &mdash; or nearly went wrong &mdash; for you, your city, or your country, and what should have been done differently.</em> A storm, a missed flight, a public failure &mdash; any scale works.</p>
+      <p>Try to use at least three items from this week's word set: <em>evacuation, early warning system, mitigation, contingency plan, risk assessment, resilience.</em></p>
+      <div class="speak-how"><strong>How:</strong> Record it; don't stop to self-correct. <strong>When you listen back, note:</strong> where you paused or searched for a word, and whether your regret language was varied &mdash; or whether every sentence began with <em>"They should have&hellip;"</em>. Re-record once, deliberately varying the openings.</div>
+    </div>
+
+    <div class="speak-card">
+      <span class="speak-type">Describe &amp; compare</span>
+      <h3>Two responses, one storm</h3>
+      <p>Imagine two neighbouring towns hit by the same flood. Town A had a contingency plan, drills, and a working early warning system; Town B had none of these. Speak for <strong>90 seconds</strong> comparing the two responses using this week's <em>as&hellip;as</em> structures:</p>
+      <ul>
+        <li><em>"Town B's response was nowhere near as fast as&hellip;"</em></li>
+        <li><em>"The damage was twice as severe as&hellip;"</em></li>
+        <li><em>"Not so much a failure of resources as a failure of planning&hellip;"</em></li>
+      </ul>
+      <div class="speak-how"><strong>How:</strong> Record it. <strong>When you listen back, check:</strong> Did each comparison keep both halves of the structure (<em>as + adjective + as</em>)? Did you also manage one correlative pair &mdash; <em>not only&hellip; but also&hellip;</em> or <em>neither&hellip; nor&hellip;</em>?</div>
+    </div>
+
+    <div class="tip-box">
+      <h3>Technique: the pause is not the enemy</h3>
+      <ul>
+        <li>Under time pressure, learners rush and drop modal pieces (<em>"should have been"</em> &rarr; <em>"should be"</em>). A one-second pause before a complex form is invisible to listeners &mdash; and saves the grammar.</li>
+        <li>Perfect modals carry stress on the main verb: <em>should have <strong>WARNED</strong></em>, <em>could have been pre<strong>VEN</strong>ted</em>. Say the recording back with exaggerated stress once.</li>
+        <li>Retelling from memory always loses details &mdash; that's the point. Retell what the report <em>argued</em>, not every number it contained.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION: Write a commission recommendation paragraph -->
+  <div class="tab-section" id="together">
+    <div class="tab-header"><span class="tab-badge tb-together">PUTTING IT TOGETHER</span><h2 class="tab-title">Write a commission recommendation paragraph</h2></div>
+    <hr class="tab-rule">
+    <div class="activate-box">
+      <h3>Writing task: commission recommendation (140–170 words)</h3>
+      <p>You are writing Section 4 (Recommendations) of the Veldoria Commission Report. Write a formal recommendation paragraph in the style of the report.</p>
+      <p>Your paragraph must include:</p>
+      <p>✓ At least <strong>2 perfect modal constructions</strong> (should have / could have / might have — including at least one negative and one passive)<br>
+         ✓ At least <strong>2 as…as constructions</strong> (including at least one negative: not as…as)<br>
+         ✓ At least <strong>1 correlative conjunction</strong> (not only…but also / both…and / neither…nor)<br>
+         ✓ At least <strong>4 vocabulary items</strong> from this week<br>
+         ✓ Formal register throughout</p>
+      <p style="font-size:14px;color:rgba(255,255,255,.6);margin-top:8px;"><em>Starter: "This commission finds that the failures identified in Sections 1–3 were not as isolated as initially reported. Both [X] and [Y] should have been…"</em></p>
+      <textarea class="response-box" id="togetherBox" placeholder="Write your commission recommendation paragraph here…" style="border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.95);"></textarea>
+      <div class="word-count" id="togetherCount" style="color:rgba(255,255,255,.55);">0 words</div>
+    </div>
+  </div>
+
+  <!-- 15. EXPLORE -->
+
+  <!-- SECTION: Listening & Watching -->
+  <div class="tab-section" id="listening">
+    <div class="tab-header"><span class="tab-badge tb-listen">LISTENING &amp; WATCHING</span><h2 class="tab-title">Disasters, hindsight &amp; accountability</h2></div>
+    <hr class="tab-rule">
+    <p class="section-intro">Real disasters produce exactly this week's language: hindsight, regret, comparison, and accountability. These free, real sources let you hear it at C1 register &mdash; each with a specific task.</p>
+
+    <div class="media-card">
+      <div class="media-head"><h3>TED Talks</h3><span class="media-platform">ted.com &middot; YouTube</span></div>
+      <p><strong>Why this week:</strong> Search TED for a full-length talk on disaster preparedness, pandemic readiness, or building resilient cities. Speakers on these topics constantly reason in hindsight &mdash; <em>what we should have done, what could have been prevented</em> &mdash; the core grammar of this unit.</p>
+      <div class="media-task"><strong>Your task:</strong> Listen once without subtitles, then with the transcript. Write down verbatim every perfect modal you hear (<em>should have, could have, might have + past participle</em>). Then summarise the speaker's main recommendation in 2&ndash;3 sentences using at least three words from this week's set (<em>mitigation, resilience, contingency plan&hellip;</em>).</div>
+    </div>
+
+    <div class="media-card">
+      <div class="media-head"><h3>The Guardian Audio Long Reads</h3><span class="media-platform">Podcast &middot; theguardian.com</span></div>
+      <p><strong>Why this week:</strong> The long-read format regularly reconstructs disasters and institutional failures minute by minute &mdash; journalism written in the same register as the Veldoria Commission report. Choose any episode about a disaster, accident, or systemic failure.</p>
+      <div class="media-task"><strong>Your task:</strong> As you listen, note the language of contrast and consequence: <em>whereas, as a result, not only&hellip; but also.</em> Afterwards, record a 60-second spoken answer: <em>What should the institutions in this story have done differently?</em> Note one expression from the episode for your active vocabulary.</div>
+    </div>
+
+    <div class="media-card">
+      <div class="media-head"><h3>In Our Time (BBC Radio 4)</h3><span class="media-platform">Podcast &middot; bbc.co.uk</span></div>
+      <p><strong>Why this week:</strong> The archive includes episodes on historical catastrophes &mdash; plagues, fires, eruptions, famines &mdash; discussed by historians at full academic pace. Hindsight analysis of events centuries old uses the same counterfactual reasoning as this week's report.</p>
+      <div class="media-task"><strong>Your task:</strong> Pick an episode on a historical disaster. In the first 15 minutes, note 3 words you didn't know and one sentence where a historian speculates about the past (<em>"they may well have&hellip;", "it must have seemed&hellip;"</em>) &mdash; the exact territory of next week's grammar. Shadow one 30-second stretch for rhythm.</div>
+    </div>
+  </div>
+
+  <!-- SECTION: Go further -->
+  <div class="tab-section" id="explore">
+    <div class="tab-header"><span class="tab-badge tb-explore">EXPLORE ON YOUR OWN</span><h2 class="tab-title">Go further</h2></div>
+    <hr class="tab-rule">
+    <div class="explore-card">
+      <span class="explore-tag">Reading</span>
+      <h3>Read a real disaster review</h3>
+      <p>Search for a real post-disaster review or official report — try the UNDRR (UN Office for Disaster Risk Reduction) website, or search for any country's official inquiry into a flood, earthquake, or hurricane. Read the executive summary and find:</p>
+      <ul>
+        <li>At least three perfect modal constructions — are they using should have, could have, or might have? What is being criticised or what unrealised possibility is being described?</li>
+        <li>Any correlative conjunctions — how are they being used to structure the findings?</li>
+        <li>Note the register — how does it compare to the Veldoria Commission Report in this week's HTML?</li>
+      </ul>
+    </div>
+    <div class="explore-card">
+      <span class="explore-tag">Grammar extension</span>
+      <h3>Perfect modals of deduction (Week 5 preview)</h3>
+      <p>This week covered <em>should have / could have / might have</em> for regret and advice. Next week adds the deduction strand: <em>must have / might have / can't have</em>. Research the difference now:</p>
+      <ul>
+        <li>What is the difference between "She might have left" (regret/possibility) and "She might have left" (deduction)? Are these the same structure?</li>
+        <li>How does "must have" (deduction) differ in meaning from "should have" (regret/criticism)?</li>
+        <li>Find two examples of each type in a news article. Bring them to Session 2.</li>
+      </ul>
+    </div>
+    <div class="explore-card">
+      <span class="explore-tag">Research</span>
+      <h3>The Sendai Framework</h3>
+      <p>The Sendai Framework for Disaster Risk Reduction (2015–2030) is the global agreement on how countries should prepare for and respond to disasters. Look it up and find:</p>
+      <ul>
+        <li>What are the four priorities of the Sendai Framework? Write one sentence about each using a correlative conjunction.</li>
+        <li>Find a country that has significantly improved its disaster resilience since 2015. What did they do? Write two sentences using "not as…as" to describe how their situation changed.</li>
+        <li>Find one country that failed to implement the framework effectively. What should they have done differently?</li>
+      </ul>
+    </div>
+    <div class="explore-card">
+      <span class="explore-tag">Vocabulary</span>
+      <h3>The language of blame in official reports</h3>
+      <p>Official inquiry reports have a distinctive language for assigning responsibility without being directly accusatory. Compare these phrases:</p>
+      <ul>
+        <li>"The ministry failed to act" vs "The ministry could have acted" vs "The ministry should have acted" — order these from most to least directly blaming.</li>
+        <li>Find three other "softening" or "hedging" phrases used in official reports to criticise without using the word "blame." Bring them to class.</li>
+        <li>Rewrite one paragraph from the Veldoria report in more direct, accusatory language — then in more hedged language. What changes, and why does the register matter?</li>
+      </ul>
+    </div>
+    <div class="explore-card">
+      <span class="explore-tag">Listening / Video</span>
+      <h3>Disaster documentary</h3>
+      <p>Watch any documentary about a major disaster — Hurricane Katrina, the 2004 Indian Ocean tsunami, the 2011 Fukushima disaster, or any other. Documentaries are full of hindsight language and correlative conjunctions.</p>
+      <ul>
+        <li>Count how many times you hear a perfect modal (should have, could have, might have). Note what went wrong each time.</li>
+        <li>Listen for any correlative conjunctions — not only…but also, both…and, neither…nor.</li>
+        <li>Write a three-sentence summary of the key failures using this week's language.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION: Everything on one page -->
+  <div class="tab-section" id="ref">
+    <div class="tab-header"><span class="tab-badge tb-ref">QUICK REFERENCE</span><h2 class="tab-title">Everything on one page</h2></div>
+    <hr class="tab-rule">
+    <div style="overflow-x:auto;">
+      <div class="table-scroll"><table class="ref-table">
+        <tr><th>Form</th><th>Structure</th><th>Key use</th><th>Example</th></tr>
+        <tr><td><strong>should have</strong></td><td>should + have + p.p.</td><td>Strong regret / past criticism — the right thing to do, but didn't happen</td><td><em>"The government should have issued warnings 48h earlier."</em></td></tr>
+        <tr><td><strong>could have</strong></td><td>could + have + p.p.</td><td>Unrealised possibility — it was possible but didn't happen</td><td><em>"Better data could have prevented the miscalculation."</em></td></tr>
+        <tr><td><strong>might have</strong></td><td>might + have + p.p.</td><td>Speculative past possibility — hedged, less certain</td><td><em>"Engineers might have anticipated the compound risk."</em></td></tr>
+        <tr><td><strong>Passive perfect modal</strong></td><td>modal + have + been + p.p.</td><td>Combines passive (remove agent) with perfect modal</td><td><em>"Construction should not have been permitted in the flood plain."</em></td></tr>
+        <tr><td><strong>Inverted conditional</strong></td><td>Had + subj + p.p., … modal + have…</td><td>Formal third conditional — written English; high register</td><td><em>"Had the alert been issued earlier, lives could have been saved."</em></td></tr>
+        <tr><td><strong>as…as (equality)</strong></td><td>as + adj/adv + as</td><td>Same degree as a reference point</td><td><em>"Damage was as severe as 1998."</em></td></tr>
+        <tr><td><strong>not as…as</strong></td><td>not as + adj/adv + as</td><td>Below a standard or expectation; less than</td><td><em>"Warnings were not as clear as required."</em></td></tr>
+        <tr><td><strong>as…as possible/ever</strong></td><td>as + adj + as possible/ever</td><td>Maximum degree / unchanged degree</td><td><em>"Deploy resources as quickly as possible."</em></td></tr>
+        <tr><td><strong>not only…but also</strong></td><td>Not only [inversion], but [subject] also…</td><td>Emphatic addition — and what's more. Inversion when sentence-initial.</td><td><em>"Not only did the delay cost lives, but it also eroded trust."</em></td></tr>
+        <tr><td><strong>both…and</strong></td><td>Both [NP] and [NP] + plural verb</td><td>Inclusive — both things equally</td><td><em>"Both the levees and the road network were compromised."</em></td></tr>
+        <tr><td><strong>neither…nor</strong></td><td>Neither [NP] nor [NP] + verb (proximity agreement)</td><td>Exclusive — neither of them; negative</td><td><em>"Neither the centre nor the authority had a protocol."</em></td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="wrapup">
+    <h3>Before Session 1, make sure you can…</h3>
+    <ul>
+      <li>Form should have / could have / might have — active and passive — and explain the difference in meaning and force between them</li>
+      <li>Use the inverted conditional: "Had + subject + past participle, … modal + have + past participle"</li>
+      <li>Use negative perfect modals correctly: "should not have been permitted" (not "should not have permit")</li>
+      <li>Use as…as in at least four ways: equality, negative (not as…as), intensifying (as…as possible), and counterfactual</li>
+      <li>Use not only…but also with correct inversion when it opens a clause</li>
+      <li>Use both…and (plural verb) and neither…nor (proximity agreement) correctly</li>
+      <li>Ensure parallel structure in both halves of a correlative conjunction</li>
+      <li>Define and use: levee · evacuation · displacement · mitigation · resilience · triage · contingency plan</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- SECTION: Footer - Creator & Copyright -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p class="footer-copy">&copy; 2026 Bahar Esmaeelzadeh &middot; All rights reserved</p>
+    <p class="footer-line">Designed and created for English learners by Bahar Esmaeelzadeh.</p>
+    <p class="footer-links">
+      <a href="mailto:bahar.esmz.en@gmail.com">&#128231; bahar.esmz.en@gmail.com</a>
+      <span class="footer-dot">&middot;</span>
+      <a href="https://www.linkedin.com/in/bahar-esmaeelzadeh-650b98198" target="_blank" rel="noopener">&#128188; LinkedIn</a>
+    </p>
+    <p class="footer-note">If you found this helpful, feel free to get in touch.</p>
+  </div>
+</footer>
+
+<script>
+// timeline bar
+const tlBar=document.getElementById('tlBar');
+for(let i=0;i<50;i++){const sp=document.createElement('span');tlBar.appendChild(sp);}
+// progress
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  document.getElementById('pf').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+});
+document.querySelectorAll('.reveal-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{btn.nextElementSibling.style.display='block';btn.style.display='none';});
+});
+
+function norm(v){return v.trim().toLowerCase().replace(/[.,!?'"]/g,'');}
+function matches(val,ans){
+  const v=norm(val);
+  return ans.split('|').some(a=>{
+    a=norm(a);
+    return v===a||(v.length>6&&(a.includes(v.substring(0,Math.min(v.length,24)))||v.includes(a.substring(0,Math.min(a.length,24)))));
+  });
+}
+function checkGroup(ids,answers,fbId){
+  let ok=0;
+  ids.forEach((id,i)=>{
+    const el=document.getElementById(id);if(!el)return;
+    if(answers[i]==='open'){el.style.borderColor='var(--teal)';ok++;return;}
+    if(matches(el.value,answers[i])){ok++;el.style.borderColor='var(--teal)';}
+    else el.style.borderColor='var(--amber-deep)';
+  });
+  const fb=document.getElementById(fbId);fb.classList.add('show');
+  if(ok===ids.length){fb.classList.remove('bad');fb.classList.add('good');fb.textContent='All correct!';}
+  else{fb.classList.remove('good');fb.classList.add('bad');fb.textContent=ok+' of '+ids.length+' correct — check amber borders. Then open “Show answers &amp; explanations” for the full key.';}
+}
+function checkEx1(){checkGroup(['e1a','e1b','e1c','e1d','e1e','e1f'],['should have been reinforced','could have saved','should not have been permitted','might have been avoided','had the plain-language alert been issued|had the alert been issued','might have evacuated|could have evacuated'],'fb-ex1');}
+function checkEx2(){checkGroup(['e2a','e2b','e2c','e2d'],['should have','might have|could have','could have','could have|should have'],'fb-ex2');}
+function checkEx3(){checkGroup(['e3a','e3b','e3c','e3d'],['should have taken','could have arrived','might not have been approved','would have been'],'fb-ex3');}
+function checkEx4(){checkGroup(['e4a','e4b','e4c','e4d','e4e'],['as low as','as quickly as possible|as fast as possible|as soon as possible','as accurate as','not as clear as|not as effective as|not as coordinated as','as urgent as ever|as important as ever|as pressing as ever'],'fb-ex4');}
+function checkEx5(){checkGroup(['e5a','e5b','e5c'],['as destructive as any|as bad as any','not as effective as|not as good as|not as coordinated as|not as adequate as','as quickly as possible|as soon as possible|as fast as possible'],'fb-ex5');}
+function checkEx6(){checkGroup(['e6a','e6b','e6c','e6d'],['neither|neither the levees nor','both|both the government|both…and','not only did|not only…but…also','both…and|both the technical'],'fb-ex6');}
+function checkEx7(){checkGroup(['e7a','e7b','e7c'],['not only was the flood modelling|not only was the modelling','not only did the warning come|not only was the warning','not only did the government fail|not only did it fail'],'fb-ex7');}
+function checkEx8(){checkGroup(['e8a','e8b','e8c'],['not only did the agency fail','neither the minister nor the officials were','both the failure to warn|both failing to warn'],'fb-ex8');}
+function checkEx9(){checkGroup(['e9a','e9b','e9c','e9d','e9e','e9f','e9g'],['levee','early warning system','triage','contingency plan','displacement','mitigation','first responders'],'fb-ex9');}
+
+const tb=document.getElementById('togetherBox');const tc=document.getElementById('togetherCount');
+if(tb&&tc) tb.addEventListener('input',()=>{const w=tb.value.trim().split(/\s+/).filter(x=>x.length>0);tc.textContent=(tb.value.trim()===''?0:w.length)+' words';});
+
+/* Site frame (added): contents panel, back-to-top, table scroll hints */
+(function(){
+  var panel=document.getElementById('navPanel'),ov=document.getElementById('navOverlay'),
+      ham=document.getElementById('navHamburger'),closeB=document.getElementById('navClose'),
+      links=document.getElementById('navPanelLinks');
+  document.querySelectorAll('.toc a').forEach(function(a){
+    var n=document.createElement('a');
+    n.href=a.getAttribute('href');
+    n.textContent=a.textContent.replace(/^\s*\d+[a-z]?\.\s*/,'');
+    links.appendChild(n);
+  });
+  function openP(){panel.classList.add('open');ov.classList.add('open');ham.setAttribute('aria-expanded','true');panel.setAttribute('aria-hidden','false');}
+  function closeP(){panel.classList.remove('open');ov.classList.remove('open');ham.setAttribute('aria-expanded','false');panel.setAttribute('aria-hidden','true');}
+  ham.addEventListener('click',function(){panel.classList.contains('open')?closeP():openP();});
+  closeB.addEventListener('click',closeP);
+  ov.addEventListener('click',closeP);
+  links.addEventListener('click',function(e){if(e.target.tagName==='A')closeP();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeP();});
+  document.getElementById('navTopBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  function hints(){document.querySelectorAll('.table-scroll').forEach(function(w){
+    if(w.scrollWidth>w.clientWidth+2){w.classList.add('has-overflow');}else{w.classList.remove('has-overflow');}
+  });}
+  window.addEventListener('resize',hints);window.addEventListener('load',hints);hints();
+  document.querySelectorAll('.table-scroll').forEach(function(w){
+    w.addEventListener('scroll',function(){if(w.scrollLeft>12)w.classList.remove('has-overflow');},{passive:true});
+  });
+})();
+
+
+function toggleAK(btn){var p=btn.nextElementSibling;if(p.hasAttribute('hidden')){p.removeAttribute('hidden');btn.setAttribute('aria-expanded','true');btn.textContent=btn.textContent.replace(/^Show/,'Hide');}else{p.setAttribute('hidden','');btn.setAttribute('aria-expanded','false');btn.textContent=btn.textContent.replace(/^Hide/,'Show');}}
+</script>
+</body>
+</html>

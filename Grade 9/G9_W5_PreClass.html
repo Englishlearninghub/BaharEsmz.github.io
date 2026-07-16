@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet">
+<title>Grade 9 · Week 5 — Lying &amp; Disinformation: Deduction, Truth &amp; Language</title>
+<style>
+:root{
+  --ink:#16181D;--ink-mid:#2F3542;--ink-soft:#4A5263;
+  --red:#C0392B;--red-pale:#FAECEB;--red-deep:#922B21;
+  --gold:#D4AC0D;--gold-pale:#FDF8E3;--gold-deep:#A07C00;
+  --cream:#F5F0E8;--cream-line:#DDD8CE;--grey:#8A9199;
+  --white:#FFFFFF;--teal:#1A8A7B;--teal-pale:#E8F6F4;--teal-deep:#12665C;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--cream);color:var(--ink);font-family:'Inter',Arial,sans-serif;font-size:16.5px;line-height:1.78;}
+.wrap{max-width:940px;margin:0 auto;padding:0 24px 80px;}
+.progress-track{position:sticky;top:0;height:4px;background:var(--cream-line);z-index:100;}
+.progress-fill{height:100%;width:0;background:var(--red);transition:width .1s;}
+.masthead{background:var(--ink);margin:0 -24px;padding:0 24px;}
+.mast-rule{height:3px;background:var(--gold);}
+.mast-dateline{font-family:'Inter',Arial,sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.1);}
+.mast-inner{max-width:940px;margin:0 auto;}
+.mast-grid{display:grid;grid-template-columns:1fr 210px;gap:28px;padding:26px 0 24px;align-items:start;}
+.mast-kicker{font-family:'Inter',Arial,sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:0 0 8px;font-weight:bold;}
+h1.title{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:32px;line-height:1.1;color:var(--white);margin:0 0 12px;}
+.mast-desc{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:14px;color:rgba(255,255,255,.55);line-height:1.65;}.toc{background:var(--white);border-radius:8px;padding:20px 26px;margin-top:0;box-shadow:0 4px 20px rgba(22,24,29,.10);}
+.toc h2{font-family:'Inter',Arial,sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin:0 0 10px;}
+.toc ol{margin:0;padding-left:18px;columns:2;gap:32px;font-size:14px;line-height:1.7;}
+.toc li{margin-bottom:4px;}
+.toc a{color:var(--ink-soft);text-decoration:none;font-weight:bold;font-family:'Inter',Arial,sans-serif;}
+.toc a:hover{color:var(--red);}
+.tab-section{margin-top:46px;}
+.tab-header{display:flex;align-items:center;gap:14px;margin-bottom:6px;flex-wrap:wrap;}
+.tab-badge{font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:bold;letter-spacing:.1em;text-transform:uppercase;border-radius:4px;padding:5px 12px;white-space:nowrap;}
+.tb-e{background:var(--ink);color:var(--white);}
+.tb-ctx{background:var(--ink-mid);color:var(--white);}
+.tb-n{background:var(--red-deep);color:var(--white);}
+.tb-sr{background:var(--red);color:var(--white);}
+.tb-sg{background:var(--gold-deep);color:var(--white);}
+.tb-st{background:var(--teal);color:var(--white);}
+.tb-v{background:var(--ink);color:var(--white);}
+.tb-p{background:var(--grey);color:var(--white);}
+.tb-tog{background:var(--red-deep);color:var(--white);}
+.tb-ex{background:#5C3070;color:var(--white);}
+.tb-ref{background:var(--ink);color:var(--white);}
+h2.tab-title{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:22px;color:var(--ink);}
+.tab-rule{border:none;border-top:1.5px solid var(--cream-line);margin:12px 0 22px;}
+.card{background:var(--white);border-radius:8px;padding:20px 24px;margin-bottom:18px;box-shadow:0 2px 10px rgba(22,24,29,.07);}
+.card h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:17px;margin:0 0 10px;color:var(--ink);}
+.card p{margin:0 0 10px;}
+.card p:last-child{margin:0;}
+.article{border-radius:8px;overflow:hidden;margin-bottom:22px;box-shadow:0 4px 16px rgba(22,24,29,.12);}
+.art-hd{background:var(--ink);padding:14px 24px 16px;}
+.art-kick{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;font-family:'Inter',Arial,sans-serif;font-weight:bold;}
+.art-hl{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:21px;font-weight:bold;color:var(--white);line-height:1.15;}
+.art-deck{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:14px;color:rgba(255,255,255,.6);margin-top:8px;line-height:1.5;}
+.art-byline{font-family:'Inter',Arial,sans-serif;font-size:11px;color:var(--grey);margin-top:10px;border-top:1px solid rgba(255,255,255,.1);padding-top:8px;}
+.art-body{background:var(--white);padding:24px 28px;}
+.dateline{font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:bold;color:var(--grey);text-transform:uppercase;letter-spacing:.06em;margin:0 0 12px;}
+.art-body p{margin:0 0 13px;font-size:15.5px;line-height:1.78;}
+.art-body p:last-child{margin:0;}
+.pull-quote{border-left:4px solid var(--gold);padding:10px 16px;margin:14px 0;font-style:italic;font-size:16px;color:var(--ink-mid);}
+.transcript{background:#F8F6F0;border:1px solid var(--cream-line);border-radius:8px;padding:20px 24px;margin-bottom:18px;}
+.tr-head{font-family:'Inter',Arial,sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin-bottom:12px;border-bottom:1px solid var(--cream-line);padding-bottom:8px;}
+.t-turn{margin-bottom:14px;font-size:15.5px;}
+.t-spk{font-weight:bold;font-family:'Inter',Arial,sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px;}
+.tk .t-spk{color:var(--red);}
+.td .t-spk{color:var(--teal);}
+.hl-red{background:var(--red-pale);color:var(--red-deep);padding:1px 5px;border-radius:3px;font-weight:bold;}
+.hl-gold{background:var(--gold-pale);color:var(--gold-deep);padding:1px 5px;border-radius:3px;font-weight:bold;}
+.hl-teal{background:var(--teal-pale);color:var(--teal);padding:1px 5px;border-radius:3px;font-weight:bold;}
+.hl-blue{background:#EAF0FB;color:#2A5298;padding:1px 5px;border-radius:3px;font-weight:bold;}
+.notice-box{background:var(--gold-pale);border:2px dashed var(--gold-deep);border-radius:8px;padding:20px 24px;margin-bottom:20px;}
+.notice-box h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;color:var(--gold-deep);margin:0 0 14px;}
+.nq{margin-bottom:14px;padding-left:30px;position:relative;font-size:15.5px;}
+.nq::before{content:'?';position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--gold-deep);color:var(--white);font-size:13px;font-weight:bold;text-align:center;line-height:20px;font-family:'Inter',Arial,sans-serif;}
+.rev-btn{display:inline-block;margin-top:6px;background:none;border:1px solid var(--gold-deep);color:var(--gold-deep);border-radius:4px;padding:3px 10px;font-size:12px;cursor:pointer;font-family:'Inter',Arial,sans-serif;}
+.rev-btn:hover{background:var(--gold-deep);color:var(--white);}
+.notice-reveal{margin-top:8px;font-size:14px;color:var(--ink-soft);font-style:italic;border-left:3px solid var(--gold-deep);padding-left:10px;display:none;}
+.grammar-box{background:var(--white);border-radius:8px;padding:24px 28px;margin-bottom:22px;box-shadow:0 2px 10px rgba(22,24,29,.07);}
+.grammar-box h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:21px;margin:0 0 6px;}
+.grammar-box h3.red{color:var(--red);}
+.grammar-box h3.gold{color:var(--gold-deep);}
+.grammar-box h3.teal{color:var(--teal);}
+.gsub{font-family:'Inter',Arial,sans-serif;font-size:14px;color:var(--grey);margin:0 0 16px;font-style:italic;}
+table.rt{width:100%;border-collapse:collapse;margin:14px 0 8px;font-size:14.5px;font-family:'Inter',Arial,sans-serif;}
+table.rt th{background:var(--ink);color:var(--white);padding:9px 13px;text-align:left;font-size:13px;}
+table.rt td{padding:9px 13px;border-bottom:1px solid var(--cream-line);vertical-align:top;}
+table.rt tr:nth-child(even) td{background:var(--cream);}
+table.ct{width:100%;border-collapse:collapse;font-family:'Inter',Arial,sans-serif;font-size:13.5px;margin:14px 0;}
+table.ct th{padding:9px 13px;text-align:left;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--white);}
+table.ct th.ink{background:var(--ink);}
+table.ct th.red{background:var(--red);}
+table.ct th.gold{background:var(--gold-deep);}
+table.ct th.teal{background:var(--teal);}
+table.ct td{padding:9px 13px;border-bottom:1px solid var(--cream-line);vertical-align:top;}
+table.ct tr:nth-child(even) td{background:var(--cream);}
+.idiom-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:14px 0;}
+.ic{background:var(--white);border-radius:8px;overflow:hidden;box-shadow:0 2px 10px rgba(22,24,29,.08);}
+.ic-hd{padding:12px 14px;}
+.ic-phrase{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:15px;font-weight:bold;color:var(--white);}
+.ic-pron{font-family:'Inter',Arial,sans-serif;font-size:11px;color:rgba(255,255,255,.65);margin-top:2px;}
+.ic-body{padding:14px 16px;}
+.ic-lit{font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:bold;color:var(--grey);margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em;}
+.ic-meaning{font-size:14px;color:var(--ink);margin-bottom:8px;}
+.ic-use{font-family:'Inter',Arial,sans-serif;font-size:12px;color:var(--grey);margin-bottom:8px;}
+.ic-ex{font-size:13.5px;color:var(--ink-soft);font-style:italic;border-left:3px solid var(--gold);padding-left:9px;}
+.er{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;margin-bottom:10px;padding:10px 14px;background:var(--cream);border-radius:7px;}
+.ok{color:var(--teal);font-weight:bold;font-size:18px;}
+.bad{color:var(--red);font-weight:bold;font-size:18px;}
+.gl{display:block;font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--grey);margin-top:3px;}
+.nt{display:block;font-family:'Inter',Arial,sans-serif;font-size:12.5px;color:var(--red);margin-top:3px;font-weight:bold;}
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;}
+.chip{background:var(--cream);border:1px solid var(--cream-line);border-radius:999px;padding:5px 14px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;color:var(--ink);}
+.chip.red{background:var(--red-pale);border-color:var(--red);color:var(--red-deep);}
+.chip.gold{background:var(--gold-pale);border-color:var(--gold-deep);color:var(--gold-deep);}
+.chip.teal{background:var(--teal-pale);border-color:var(--teal);color:var(--teal);}
+.vocab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:14px 0;}
+.vc{background:var(--white);border-radius:8px;padding:14px 16px;border-left:4px solid var(--ink-mid);box-shadow:0 2px 8px rgba(22,24,29,.06);}
+.vc.red{border-left-color:var(--red);}
+.vc.gold{border-left-color:var(--gold-deep);}
+.vc.teal{border-left-color:var(--teal);}
+.vc .word{font-family:'Playfair Display',Cambria,Georgia,serif;font-weight:bold;color:var(--ink);font-size:16px;}
+.vc .pos{font-family:'Inter',Arial,sans-serif;font-size:11px;color:var(--grey);text-transform:uppercase;margin-left:6px;}
+.vc .pron{font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--grey);margin-top:3px;}
+.vc .def{font-size:14px;margin-top:5px;}
+.vc .vex{font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--grey);margin-top:5px;font-style:italic;}
+.exercise{background:var(--white);border-radius:8px;padding:20px 24px;margin-bottom:16px;box-shadow:0 2px 10px rgba(22,24,29,.07);}
+.ex-label{display:inline-block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;border-radius:4px;padding:3px 10px;margin-bottom:10px;}
+.ex-label.red{background:var(--red);color:var(--white);}
+.ex-label.gold{background:var(--gold-deep);color:var(--white);}
+.ex-label.teal{background:var(--teal);color:var(--white);}
+.ex-label.ink{background:var(--ink);color:var(--white);}
+.exercise h4{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0 0 12px;color:var(--ink);}
+.instr{font-family:'Inter',Arial,sans-serif;font-size:13.5px;color:var(--grey);margin-bottom:14px;font-style:italic;}
+.qr{display:flex;align-items:baseline;gap:10px;margin-bottom:10px;flex-wrap:wrap;}
+.qn{font-family:'Inter',Arial,sans-serif;font-weight:bold;color:var(--red);min-width:22px;}
+.bi{border:none;border-bottom:2px solid var(--gold-deep);background:var(--cream);font-family:'Playfair Display',Cambria,Georgia,serif;font-size:15px;padding:3px 8px;width:280px;color:var(--ink);}
+.bi:focus{outline:none;border-color:var(--teal);}
+.wi{width:100%;margin-top:6px;}
+.check-btn{background:var(--ink-mid);color:var(--white);border:none;border-radius:6px;padding:9px 22px;font-family:'Inter',Arial,sans-serif;font-weight:bold;font-size:14px;cursor:pointer;margin-top:10px;}
+.check-btn:hover{background:var(--ink);}
+.feedback{margin-top:12px;font-family:'Inter',Arial,sans-serif;font-size:14px;border-radius:6px;padding:10px 14px;display:none;}
+.feedback.show{display:block;}
+.feedback.good{background:var(--teal-pale);color:var(--teal-deep);}
+.feedback.bad{background:var(--red-pale);color:var(--red-deep);}
+textarea.rb{width:100%;min-height:90px;border-radius:7px;border:2px solid var(--cream-line);padding:12px 14px;font-family:'Playfair Display',Cambria,Georgia,serif;font-size:15px;resize:vertical;background:var(--white);color:var(--ink);line-height:1.65;}
+textarea.rb:focus{outline:none;border-color:var(--teal);}
+.wc{font-family:'Inter',Arial,sans-serif;font-size:12px;color:var(--grey);margin-top:5px;text-align:right;}
+.explore-card{background:#F2EBF8;border:1px solid #D0B0E8;border-radius:8px;padding:20px 24px;margin-bottom:16px;}
+.explore-card h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:17px;color:#5C3070;margin:0 0 10px;}
+.ex-tag{display:inline-block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;background:#5C3070;color:var(--white);border-radius:4px;padding:3px 9px;margin-bottom:10px;}
+.explore-card ul{padding-left:20px;margin:10px 0 0;font-size:15px;}
+.explore-card li{margin-bottom:7px;}
+.answer-key{background:var(--white);border-radius:8px;padding:26px 30px;margin-top:48px;border:2px solid var(--gold-deep);box-shadow:0 4px 16px rgba(22,24,29,.10);}
+.ak-title{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:22px;color:var(--ink);margin:0 0 6px;}
+.ak-sub{font-family:'Inter',Arial,sans-serif;font-size:13.5px;color:var(--grey);margin:0 0 20px;font-style:italic;}
+.ak-section{margin-bottom:20px;}
+.ak-section h4{font-family:'Inter',Arial,sans-serif;font-size:13px;font-weight:bold;letter-spacing:.07em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 10px;border-bottom:1px solid var(--cream-line);padding-bottom:6px;}
+.ak-item{display:grid;grid-template-columns:28px 1fr 1fr;gap:8px;padding:8px 4px;border-bottom:1px solid var(--cream-line);font-size:14px;}
+.ak-item:last-child{border-bottom:none;}
+.an{font-family:'Inter',Arial,sans-serif;font-weight:bold;color:var(--gold-deep);}
+.av{font-weight:bold;color:var(--teal-deep);}
+.anote{font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--grey);font-style:italic;}
+
+/* INLINE ANSWER PANELS */
+.ak-inline{margin-top:12px;}
+.ak-toggle{font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:bold;color:#906f00;background:transparent;border:1.5px solid #906f00;border-radius:6px;padding:9px 16px;cursor:pointer;min-height:40px;}
+.ak-toggle:hover{background:#906f00;color:var(--white);}
+.ak-panel{margin-top:10px;background:var(--white);border:1.5px solid #906f00;border-radius:8px;padding:12px 16px;}
+.ak-panel .ak-item{font-size:14px;}
+table.reft{width:100%;border-collapse:collapse;font-family:'Inter',Arial,sans-serif;font-size:14px;}
+table.reft th{background:var(--ink);color:var(--white);padding:10px 14px;text-align:left;font-size:13px;}
+table.reft td{padding:10px 14px;border-bottom:1px solid var(--cream-line);vertical-align:top;}
+table.reft tr:nth-child(even) td{background:var(--cream);}
+.wrapup{background:var(--ink);color:var(--white);border-radius:8px;padding:26px 30px;margin-top:40px;border-bottom:4px solid var(--gold);}
+.wrapup h3{font-family:'Playfair Display',Cambria,Georgia,serif;color:var(--gold);margin:0 0 12px;font-size:18px;}
+.wrapup ul{padding-left:20px;margin:0;}
+.wrapup li{margin-bottom:7px;font-size:15px;color:rgba(255,255,255,.65);}
+@media(max-width:600px){.mast-grid{grid-template-columns:1fr;}.vocab-grid{grid-template-columns:1fr;}.idiom-grid{grid-template-columns:1fr;}.toc ol{columns:1;}.ak-item{grid-template-columns:28px 1fr;}.ak-item .anote{grid-column:2;}}
+.masthead-meta{display:flex;gap:28px;flex-wrap:wrap;font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--grey);margin-top:16px;}
+.masthead-meta span{color:var(--white);font-weight:bold;}
+.mast-grid{grid-template-columns:1fr;}
+
+/* ============================================================
+   SITE FRAME (added): fixed top nav + progress bar, slide-out
+   contents panel with creator branding, sticky section headers,
+   responsive & overflow fixes, footer, speaking/listening cards
+   ============================================================ */
+:root{--navh:52px;}
+html{scroll-behavior:smooth;}
+html{overflow-x:hidden;}
+body{overflow-x:hidden;padding-top:calc(var(--navh) + 4px);}
+[id]{scroll-margin-top:calc(var(--navh) + 20px);}
+img,svg,table{max-width:100%;}
+.wrap p,.wrap li,.wrap td,.wrap th,.wrap h1,.wrap h2,.wrap h3{overflow-wrap:break-word;word-break:break-word;}
+
+/* Progress bar: fixed, always visible below the nav */
+.progress-track{position:fixed;top:var(--navh);left:0;right:0;height:4px;z-index:120;}
+
+/* Top navigation bar */
+.nav-bar{position:fixed;top:0;left:0;right:0;height:var(--navh);background:var(--ink);color:#FFFFFF;display:flex;align-items:center;gap:10px;padding:0 12px;z-index:130;box-shadow:0 2px 12px rgba(0,0,0,.20);}
+.nav-btn{min-width:44px;min-height:44px;background:transparent;border:none;color:#FFFFFF;font-size:20px;cursor:pointer;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',Arial,sans-serif;transition:background .15s;}
+.nav-btn:hover{background:rgba(255,255,255,.14);}
+.nav-top{font-size:13px;font-weight:700;letter-spacing:.03em;white-space:nowrap;padding:0 10px;}
+.nav-brand{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.25;}
+.nav-brand-week{font-family:'Inter',Arial,sans-serif;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;opacity:.75;}
+.nav-brand-title{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+/* Slide-out contents panel */
+.nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .25s;z-index:135;}
+.nav-overlay.open{opacity:1;pointer-events:auto;}
+.nav-panel{position:fixed;top:0;bottom:0;left:0;width:min(330px,88vw);background:#FFFFFF;z-index:140;transform:translateX(-103%);transition:transform .28s ease;display:flex;flex-direction:column;box-shadow:6px 0 28px rgba(0,0,0,.22);}
+.nav-panel.open{transform:translateX(0);}
+.nav-panel-head{display:flex;align-items:center;justify-content:space-between;padding:8px 10px 8px 20px;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);border-bottom:1px solid var(--cream-line);}
+.nav-panel-head .nav-btn{color:var(--ink);font-size:16px;}
+.nav-panel-links{flex:1;overflow-y:auto;padding:10px 8px;}
+.nav-panel-links a{display:flex;align-items:center;min-height:44px;padding:6px 14px;border-radius:8px;text-decoration:none;color:var(--ink);font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:600;line-height:1.4;}
+.nav-panel-links a:hover{background:var(--cream);color:var(--red);}
+/* Branding zone: visually separated from navigation */
+.nav-panel-brand{border-top:2px solid var(--cream-line);background:var(--cream);padding:16px 20px 18px;}
+.nav-panel-brand .brand-name{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.nav-panel-brand .brand-line{font-family:'Inter',Arial,sans-serif;font-size:12.5px;color:var(--grey);margin-bottom:10px;line-height:1.55;}
+.nav-panel-brand a{display:flex;align-items:center;min-height:40px;font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--red);text-decoration:none;font-weight:600;}
+.nav-panel-brand a:hover{text-decoration:underline;}
+.nav-panel-brand .brand-copy{margin-top:10px;font-family:'Inter',Arial,sans-serif;font-size:11.5px;color:var(--grey);}
+
+/* Sticky section headers: current section title stays visible */
+.tab-header{position:sticky;top:calc(var(--navh) + 4px);z-index:60;background:var(--cream);padding:10px 0 8px;}
+
+/* Scrollable table wrapper with mobile hint */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;}
+.table-scroll table{max-width:none;}
+.table-scroll.has-overflow{background:linear-gradient(to left,rgba(0,0,0,.12),rgba(0,0,0,0) 26px) right center / 26px 100% no-repeat;}
+.table-scroll.has-overflow::before{content:'scroll \2192';display:block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--grey);text-align:right;padding:0 6px 4px;}
+
+/* Speaking & Listening sections */
+.tb-speak{background:#188173;color:#FFFFFF;}
+.tb-listen{background:#906f00;color:#FFFFFF;}
+.section-intro{font-family:'Inter',Arial,sans-serif;font-size:14.5px;color:var(--grey);margin:0 0 18px;line-height:1.65;}
+.speak-card{background:#FFFFFF;border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.07);border-left:4px solid #188173;}
+.speak-type{display:inline-block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#188173;margin-bottom:8px;}
+.speak-card h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0 0 10px;color:var(--ink);}
+.speak-card p{margin:0 0 10px;}
+.speak-card ul{margin:0 0 10px 20px;padding:0;}
+.speak-card li{margin-bottom:6px;}
+.speak-how{background:var(--cream);border-radius:8px;padding:12px 16px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;line-height:1.65;margin-top:12px;}
+.media-card{background:#FFFFFF;border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.07);border-left:4px solid #906f00;}
+.media-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px;}
+.media-head h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0;color:var(--ink);}
+.media-platform{font-family:'Inter',Arial,sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#906f00;}
+.media-card p{margin:0 0 10px;}
+.media-task{border-left:3px solid #906f00;background:var(--cream);padding:10px 14px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;line-height:1.65;margin-top:10px;border-radius:0 8px 8px 0;}
+.tip-box{border:2px dashed #188173;border-radius:10px;padding:18px 22px;background:#FFFFFF;margin-top:6px;}
+.tip-box h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:16px;margin:0 0 10px;color:#188173;}
+.tip-box ul{margin:0 0 0 20px;padding:0;}
+.tip-box li{margin-bottom:6px;font-size:14.5px;}
+
+/* Footer */
+.site-footer{background:var(--ink);color:#FFFFFF;margin-top:56px;padding:34px 24px 40px;}
+.site-footer-inner{max-width:920px;margin:0 auto;text-align:center;}
+.footer-copy{font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:700;margin:0 0 6px;}
+.footer-line{font-family:'Playfair Display',Cambria,Georgia,serif;font-style:italic;font-size:14.5px;opacity:.88;margin:0 0 12px;}
+.footer-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 10px;}
+.footer-links a{color:#FFFFFF;font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding:8px 2px;min-height:44px;display:inline-flex;align-items:center;}
+.footer-links a:hover{border-bottom-color:#FFFFFF;}
+.footer-dot{opacity:.5;}
+.footer-note{font-family:'Inter',Arial,sans-serif;font-size:12.5px;opacity:.72;margin:0;}
+
+/* Mobile refinements (375px-safe) */
+@media(max-width:600px){
+  .masthead{padding:34px 20px 28px;}
+  .grammar-box,.card{padding:20px 18px;}
+  .oped-body{padding:20px 18px;}
+  .speak-card,.media-card{padding:18px 16px;}
+  .check-btn,.reveal-btn,.rev-btn,.poll-opt{min-height:44px;}
+  .vs-table{grid-template-columns:1fr;}
+  .vs-divider{display:none;}
+  table.rule-table{font-size:13.5px;}
+  .nav-top{font-size:12px;}
+  .site-footer{padding:28px 18px 34px;}
+}
+
+</style>
+</head>
+<body>
+
+<!-- SECTION: Top Navigation Bar -->
+<header class="nav-bar" id="navBar">
+  <button class="nav-btn nav-hamburger" id="navHamburger" aria-label="Open contents menu" aria-expanded="false">&#9776;</button>
+  <div class="nav-brand">
+    <span class="nav-brand-week">Grade 9 · Week 5</span>
+    <span class="nav-brand-title">Lying & Disinformation</span>
+  </div>
+  <button class="nav-btn nav-top" id="navTopBtn" aria-label="Back to top">&#8593; Top</button>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+<aside class="nav-panel" id="navPanel" aria-hidden="true">
+  <div class="nav-panel-head"><span>On this page</span><button class="nav-btn nav-close" id="navClose" aria-label="Close menu">&#10005;</button></div>
+  <nav class="nav-panel-links" id="navPanelLinks"></nav>
+  <!-- Creator & branding section of the menu -->
+  <div class="nav-panel-brand">
+    <div class="brand-name">Bahar Esmaeelzadeh</div>
+    <div class="brand-line">Designed and created for English learners by Bahar Esmaeelzadeh.</div>
+    <a href="mailto:bahar.esmz.en@gmail.com">&#128231; bahar.esmz.en@gmail.com</a>
+    <a href="https://www.linkedin.com/in/bahar-esmaeelzadeh-650b98198" target="_blank" rel="noopener">&#128188; LinkedIn &mdash; Bahar Esmaeelzadeh</a>
+    <div class="brand-copy">&copy; 2026 Bahar Esmaeelzadeh &middot; All rights reserved</div>
+  </div>
+</aside>
+
+<div class="progress-track"><div class="progress-fill" id="pf"></div></div>
+<!-- SECTION: Masthead / Header -->
+<div class="masthead">
+  <div class="mast-rule"></div>
+  <div class="mast-inner">
+    <div class="mast-dateline">Grade 9 · Week 5 · Complete Reference &amp; Pre-Class Material &nbsp;|&nbsp; The Northgate Files</div>
+    <div class="mast-grid">
+      <div>
+        <p class="mast-kicker">Lying · Disinformation · Media Literacy</p>
+        <h1 class="title">When Did You Know It Was a Lie?<br>Deduction, Truth &amp; Language</h1>
+        <p class="mast-desc">A fabricated story. A ruined reputation. A viral hoax that exposed the fragility of truth in the digital age. This week we use a media scandal to explore how English encodes deduction, certainty, and the fine line between "I think" and "I know."</p>
+          <div class="masthead-meta"><div>Level: <span>C1</span></div><div>Grammar: <span>must / might / can’t have</span></div><div>Theme: <span>Lying &amp; Disinformation</span></div><div>Est. time: <span>75–85 min</span></div></div>
+      </div>
+      </div>
+  </div>
+  <div class="mast-rule"></div>
+</div>
+
+<div class="wrap">
+  <!-- SECTION: Table of Contents -->
+  <div class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#engage">1. Engage — who would do this?</a></li>
+      <li><a href="#ctx">2. Context: The Northgate Files transcript</a></li>
+      <li><a href="#nd1">3. Notice &amp; discover (deduction modals)</a></li>
+      <li><a href="#s1">4. Study: must have / might have / can't have</a></li>
+      <li><a href="#contrast">5. Contrast: Week 4 vs Week 5 modals</a></li>
+      <li><a href="#p1">6. Practice: deduction modals</a></li>
+      <li><a href="#nd2">7. Notice &amp; discover (idioms)</a></li>
+      <li><a href="#s2">8. Study: idiomatic collocations</a></li>
+      <li><a href="#p2">9. Practice: idioms</a></li>
+      <li><a href="#nd3">10. Notice &amp; discover (neither…nor review)</a></li>
+      <li><a href="#s3">11. Review: neither…nor in context</a></li>
+      <li><a href="#vocab">12. Vocabulary: lying &amp; disinformation</a></li>
+      <li><a href="#vocab2">13. Vocabulary: media literacy</a></li>
+      <li><a href="#vp">14. Practice: vocabulary</a></li>
+      <li><a href="#speaking">15. Speaking practice</a></li>
+      <li><a href="#together">16. Putting it together</a></li>
+      <li><a href="#listening">17. Listening &amp; watching</a></li>
+      <li><a href="#explore">18. Explore on your own</a></li>
+      <li><a href="#ref">19. Quick reference</a></li>
+    </ol>
+  </div>
+
+  <!-- SECTION: Who would do this — and why? -->
+  <div class="tab-section" id="engage">
+    <div class="tab-header"><span class="tab-badge tb-e">ENGAGE</span><h2 class="tab-title">Who would do this — and why?</h2></div>
+    <hr class="tab-rule">
+    <div class="card">
+      <h3>Before you read: think about a lie that spread</h3>
+      <p>Think of a time you encountered a false story — online, in the news, or in everyday life. Before any grammar, consider:</p>
+      <p>1. How did you first come across it? Did it look credible? What made it seem true?</p>
+      <p>2. When you found out it was false — how did you reason about <em>who might have created it</em> and <em>why</em>? What language did you use when explaining your reasoning to someone else?</p>
+      <p>3. Is there a difference between an <em>honest mistake</em> (saying something false you believe to be true) and deliberately <em>lying</em>? Where is the line?</p>
+      <p style="margin-top:10px;font-family:'Inter',Arial,sans-serif;font-size:14px;color:var(--grey);font-style:italic;">Keep these questions in mind as you read the podcast transcript below.</p>
+    </div>
+    <div class="card">
+      <h3>Colour code for this week</h3>
+      <p><span class="hl-red">Red</span> = Perfect modals of deduction (must have / might have / can't have). &nbsp;<span class="hl-gold">Gold</span> = Idiomatic collocations (bite the bullet / sit on the fence / break the ice). &nbsp;<span class="hl-teal">Teal</span> = Neither…nor (review). &nbsp;<span class="hl-blue">Blue</span> = Lying, disinformation &amp; media literacy vocabulary.</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Read first: The Northgate Files — Episode 31 -->
+  <div class="tab-section" id="ctx">
+    <div class="tab-header"><span class="tab-badge tb-ctx">CONTEXT</span><h2 class="tab-title">Read first: The Northgate Files — Episode 31</h2></div>
+    <hr class="tab-rule">
+    <div class="card"><p><strong>Before any grammar:</strong> What do Keiko and Dmitri disagree about? What do they think motivated the hoax? And where in the conversation does the language shift from describing facts to making inferences?</p></div>
+    <div class="article">
+      <div class="art-hd">
+        <div class="art-kick">Background · The story the podcast investigates</div>
+        <div class="art-hl">CEO Marcus Hale Resigns Amid Fraud Allegations — Later Found to Be Fabricated</div>
+        <div class="art-deck">Documents purporting to show financial irregularities at Hale Technologies circulated online for 96 hours before being debunked. By that time, Hale had resigned and the company's share price had dropped 34%.</div>
+        <div class="art-byline">Source: The Northgate Files, Episode 31 — "The Paper Trail That Wasn't"</div>
+      </div>
+      <div class="art-body">
+        <p class="dateline">Fictional account · For educational purposes</p>
+        <p>In November 2024, a set of financial documents — later proven to be <span class="hl-blue">fabricated</span> — began circulating on a fringe investment forum called DeepDig. The documents appeared to show that Marcus Hale, CEO of mid-sized technology firm Hale Technologies, had diverted company funds to a personal account. Within 24 hours, the story had been picked up by three mainstream financial news outlets, none of which had independently verified the documents' authenticity. Hale resigned on the second day, citing the need to "protect the company." On day four, forensic document analysts at two independent institutions confirmed the documents were forgeries. By then, the damage was done.</p>
+        <div class="pull-quote">"The story moved faster than the truth could follow — and that is precisely the design of <span class="hl-blue">disinformation</span>." — Dr. Camila Reyes, Media Studies, University of Lisbon</div>
+      </div>
+    </div>
+    <div class="transcript">
+      <div class="tr-head">The Northgate Files · Episode 31 · "The Paper Trail That Wasn't" · Edited transcript</div>
+      <div class="t-turn tk">
+        <div class="t-spk">Keiko Watanabe</div>
+        <p>So let's start where we always start — with what we actually know versus what we're inferring. The documents first appeared on DeepDig on a Tuesday evening. Someone <span class="hl-red">must have uploaded them carefully</span> — the metadata was scrubbed, the account was two days old, and the formatting was professional enough to pass a first glance. This <span class="hl-red">can't have been accidental</span>. Whoever did this knew exactly what they were doing.</p>
+      </div>
+      <div class="t-turn td">
+        <div class="t-spk">Dmitri Solov</div>
+        <p>I'd push back slightly. The account being two days old — that <span class="hl-red">might have been a coincidence</span>. I don't want us to assume coordination where there <span class="hl-red">might have been</span> just one person acting alone. <span class="hl-teal">Neither the metadata scrubbing nor the professional formatting</span> <span class="hl-teal">necessarily implies a group</span>. A single skilled person could have done all of this.</p>
+      </div>
+      <div class="t-turn tk">
+        <div class="t-spk">Keiko Watanabe</div>
+        <p>Fair. But I want to talk about the outlets that picked it up. Three financial news sites ran the story within 24 hours. Their editors <span class="hl-red">must have known</span> — or at least suspected — that something this explosive required independent <span class="hl-blue">corroboration</span>. And yet, <span class="hl-teal">neither the documents nor the source</span> <span class="hl-teal">were verified by any of the three newsrooms</span> before publication. They <span class="hl-red">can't have conducted</span> any meaningful <span class="hl-blue">fact-check</span> in that time frame. It's simply not possible.</p>
+      </div>
+      <div class="t-turn td">
+        <div class="t-spk">Dmitri Solov</div>
+        <p>And this is where it gets uncomfortable. At some point, the editors had to <span class="hl-gold">bite the bullet</span> and make a decision under competitive pressure. Every outlet was watching every other outlet. If you wait, you get scooped. The industry has been <span class="hl-gold">sitting on the fence</span> about <span class="hl-blue">platform accountability</span> for years — and cases like this are the direct consequence. The Hale story <span class="hl-red">might have been avoided</span> if a single editor had asked for one more day.</p>
+      </div>
+      <div class="t-turn tk">
+        <div class="t-spk">Keiko Watanabe</div>
+        <p>And Hale himself — he <span class="hl-red">must have been terrified</span>. To resign that quickly, he <span class="hl-red">can't have felt</span> that staying was a viable option. The board <span class="hl-red">might have pressured</span> him. His lawyers <span class="hl-red">might have advised</span> him that resignation would limit legal exposure. We don't know. But whoever designed this story understood how institutions respond to scandal — the resignation was almost certainly anticipated by the people who planted the <span class="hl-blue">disinformation</span>.</p>
+      </div>
+      <div class="t-turn td">
+        <div class="t-spk">Dmitri Solov</div>
+        <p>This podcast has, in a small way, <span class="hl-gold">broken the ice</span> on what had become an uncomfortable industry conversation. The question nobody wanted to ask publicly is: do financial journalists understand what <span class="hl-blue">disinformation</span> looks like well enough to recognise it? After the Hale case, people are finally asking it. But the reforms — they're going to need somebody to <span class="hl-gold">bite the bullet</span> and push for mandatory <span class="hl-blue">fact-checking</span> protocols. And so far, <span class="hl-teal">neither the regulator nor the industry bodies</span> <span class="hl-teal">have shown any appetite for that</span>.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Comprehension check</h3>
+      <p>1. What three pieces of evidence does Keiko cite to argue the hoax was deliberate and coordinated?</p>
+      <p>2. What is Dmitri's counter-argument — why is he more cautious about claiming coordination?</p>
+      <p>3. What does "sitting on the fence about platform accountability" mean — and what would "biting the bullet" look like in this context?</p>
+      <p>4. What two things does Keiko speculate might have led to Hale's rapid resignation?</p>
+    </div>
+  </div>
+
+  <!-- SECTION: Look at the red phrases — fact or inference? -->
+  <div class="tab-section" id="nd1">
+    <div class="tab-header"><span class="tab-badge tb-n">NOTICE &amp; DISCOVER</span><h2 class="tab-title">Look at the red phrases — fact or inference?</h2></div>
+    <hr class="tab-rule">
+    <div class="notice-box">
+      <h3>Perfect modals of deduction — noticing questions</h3>
+      <div class="nq">Compare: <em>"Someone <span class="hl-red">must have uploaded</span> them carefully."</em> vs <em>"The board <span class="hl-red">might have pressured</span> him."</em><br>Both are past inferences. What is the difference in certainty?<button class="rev-btn">Reveal a hint</button><p class="notice-reveal">"Must have uploaded carefully" = Keiko is very confident — the evidence (scrubbed metadata, professional formatting, new account) strongly points to deliberate action. The only logical conclusion. / "Might have pressured" = Keiko is speculating — no direct evidence, only a plausible possibility. So: must have = near-certain logical deduction. Might have = possible but unconfirmed.</p></div>
+      <div class="nq">Look at: <em>"They <span class="hl-red">can't have conducted</span> any meaningful fact-check in that time frame. It's simply not possible."</em><br>What is "can't have" doing — and how does it differ from Week 4's "couldn't have"?<button class="rev-btn">Reveal a hint</button><p class="notice-reveal">"Can't have conducted" = Keiko deduces that this is logically impossible based on the evidence (24 hours, what a real fact-check requires). It is a logical conclusion, not a complaint about a missed opportunity. Compare to Week 4: "couldn't have" (regret/advice strand) = it wasn't possible for them to do it given their resources — neutral past inability. "Can't have" (deduction strand) = based on the evidence, I conclude it didn't happen. Same structure, different meaning — the modal strand changes everything.</p></div>
+      <div class="nq">Compare Week 4: <em>"The government should have issued warnings earlier"</em> with this week: <em>"Someone must have uploaded this carefully."</em> Both use modal + have + past participle. What is the fundamental difference?<button class="rev-btn">Reveal a hint</button><p class="notice-reveal">Week 4 (regret/advice): SHOULD HAVE = the right thing didn't happen — this is a criticism. The speaker makes a moral/advisory judgement about what SHOULD have occurred. / Week 5 (deduction): MUST HAVE = I'm reasoning from evidence — this is what I believe happened. The speaker makes an EPISTEMIC claim (a claim about knowledge/certainty). / Same structure, completely different function — understanding the modal STRAND, not just the form, is the C1 key.</p></div>
+    </div>
+  </div>
+
+  <!-- SECTION: Must have / Might have / Can't have — Deduction -->
+  <div class="tab-section" id="s1">
+    <div class="tab-header"><span class="tab-badge tb-sr">STUDY</span><h2 class="tab-title">Must have / Might have / Can't have — Deduction</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3 class="red">Perfect Modals of Deduction (Speculation)</h3>
+      <p class="gsub">The same form as Week 4 (modal + have + past participle) — but a completely different purpose. This week: the speaker reasons from evidence to a conclusion about the past. This is the epistemic use of perfect modals.</p>
+      <div class="table-scroll"><table class="ct">
+        <tr><th class="ink">Modal</th><th class="red">must have</th><th class="gold">might have</th><th class="teal">can't have</th></tr>
+        <tr><td><strong>Deduction meaning</strong></td><td>Near-certain positive deduction — evidence strongly points to this. "I'm almost sure it happened."</td><td>Tentative deduction — a possibility among others. "It may have happened — I'm not sure."</td><td>Near-certain negative deduction — evidence makes this impossible. "I'm almost sure it DIDN'T happen."</td></tr>
+        <tr><td><strong>Evidence type</strong></td><td>Strong, specific evidence pointing to one conclusion</td><td>Partial or ambiguous evidence; multiple possibilities remain</td><td>Evidence that rules something out; logical impossibility given circumstances</td></tr>
+        <tr><td><strong>Certainty level</strong></td><td>~90% certain — "the only logical explanation"</td><td>~40–60% — "possible but not established"</td><td>~90% certain it DID NOT happen</td></tr>
+        <tr><td><strong>Example (transcript)</strong></td><td><em>"Someone <span class="hl-red">must have uploaded</span> them carefully — the metadata was scrubbed."</em></td><td><em>"The board <span class="hl-red">might have pressured</span> him to resign early."</em></td><td><em>"They <span class="hl-red">can't have conducted</span> any meaningful fact-check in 24 hours."</em></td></tr>
+        <tr><td><strong>UK/US note</strong></td><td>must have = standard in both BrE and AmE</td><td>could have = common AmE alternative for deduction possibility</td><td>can't have = BrE preference; couldn't have = AmE alternative for negative deduction</td></tr>
+      </table></div>
+      <p style="margin-top:18px;"><strong>Form — all three:</strong></p>
+      <div class="table-scroll"><table class="rt">
+        <tr><th>Form</th><th>Structure</th><th>Example</th></tr>
+        <tr><td>Affirmative</td><td>must / might + have + past participle</td><td><em>"Hale <span class="hl-red">must have been</span> told before the board meeting."</em></td></tr>
+        <tr><td>Negative</td><td>can't / couldn't + have + past participle</td><td><em>"They <span class="hl-red">can't have verified</span> the source in 24 hours."</em></td></tr>
+        <tr><td>Passive</td><td>must / might / can't + have + been + past participle</td><td><em>"The story <span class="hl-red">must have been planted</span> by someone with inside knowledge."</em></td></tr>
+        <tr><td>Negative of might</td><td>might not have + past participle</td><td><em>"The editor <span class="hl-red">might not have realised</span> the documents were forged."</em></td></tr>
+        <tr><td>Progressive</td><td>must / might / can't + have + been + -ing</td><td><em>"Someone <span class="hl-red">must have been monitoring</span> financial news cycles carefully."</em></td></tr>
+      </table></div>
+      <p style="margin-top:18px;"><strong>Common C1 errors:</strong></p>
+      <div class="er"><span class="bad">✗</span><span><em>They must have conduct a fact-check before publishing.</em><span class="nt">WRONG — past participle required: "must have conducted." Never base form after "have."</span></span></div>
+      <div class="er"><span class="bad">✗</span><span><em>Someone must uploaded the documents to cause damage.</em><span class="nt">WRONG — missing "have": must HAVE uploaded. Structure: modal + HAVE + past participle.</span></span></div>
+      <div class="er"><span class="ok">✓</span><span><em>The person who created the fake documents must have had detailed knowledge of how corporate financial records are formatted — the forgery was sophisticated.</em><span class="gl">CORRECT — strong deduction from specific evidence (sophistication → detailed prior knowledge). Must have had = past tense of "have" as a main verb.</span></span></div>
+      <div class="er"><span class="ok">✓</span><span><em>Keiko can't have spoken to Hale's lawyers — she would have mentioned it in the episode.</em><span class="gl">CORRECT — negative deduction from absence of evidence. "She would have mentioned it" = the reasoning that makes "can't have spoken" logical.</span></span></div>
+    </div>
+  </div>
+
+  <!-- SECTION: Week 4 vs Week 5 — Same Form, Different Meaning -->
+  <div class="tab-section" id="contrast">
+    <div class="tab-header"><span class="tab-badge tb-sr">CONTRAST</span><h2 class="tab-title">Week 4 vs Week 5 — Same Form, Different Meaning</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3 class="red">The Two Strands of Perfect Modals</h3>
+      <p class="gsub">This is the most important C1 insight about modal grammar. The form is identical — the modal strand changes everything.</p>
+      <div class="table-scroll"><table class="ct">
+        <tr><th class="ink">Sentence</th><th class="red">Week 4: Regret / Advice</th><th class="gold">Week 5: Deduction / Inference</th></tr>
+        <tr><td><strong>should have</strong></td><td><em>"The editor <span class="hl-red">should have verified</span> the source."</em><br><small style="color:var(--grey);">= It was the right thing to do — but it didn't happen. Criticism of a failure.</small></td><td><small style="color:var(--grey);">(should have does NOT appear in the deduction strand — it is exclusively regret/advice)</small></td></tr>
+        <tr><td><strong>might have</strong></td><td><em>"The retraction <span class="hl-red">might have come</span> sooner if they had been more cautious."</em><br><small style="color:var(--grey);">= Unrealised possibility — it was possible but didn't happen.</small></td><td><em>"The board <span class="hl-gold">might have pressured</span> him to resign."</em><br><small style="color:var(--grey);">= Tentative deduction — it may have happened, based on partial evidence.</small></td></tr>
+        <tr><td><strong>must have</strong></td><td><small style="color:var(--grey);">(must have rarely appears in the pure regret/advice strand)</small></td><td><em>"Someone <span class="hl-gold">must have uploaded</span> these carefully — the metadata was scrubbed."</em><br><small style="color:var(--grey);">= Near-certain deduction from evidence.</small></td></tr>
+        <tr><td><strong>can't / couldn't have</strong></td><td><em>"The journalist <span class="hl-red">couldn't have known</span> — they had no access to the data."</em><br><small style="color:var(--grey);">= Neutral past inability — it wasn't possible (no blame implied).</small></td><td><em>"They <span class="hl-gold">can't have conducted</span> a fact-check in 24 hours."</em><br><small style="color:var(--grey);">= Strong negative deduction — logically impossible given the time constraint.</small></td></tr>
+      </table></div>
+      <div class="card" style="background:var(--gold-pale);border-left:4px solid var(--gold-deep);margin:16px 0 0;">
+        <p><strong>How to identify the strand:</strong> Ask — is the speaker making a <em>moral/advisory judgement</em> about what should have happened (regret/advice)? Or are they <em>reasoning from evidence</em> to a conclusion about what did or didn't happen (deduction)? The grammatical form is identical — the speaker's intention and the discourse context make the difference.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Try it: Perfect Modals of Deduction -->
+  <div class="tab-section" id="p1">
+    <div class="tab-header"><span class="tab-badge tb-p">PRACTICE</span><h2 class="tab-title">Try it: Perfect Modals of Deduction</h2></div>
+    <hr class="tab-rule">
+    <div class="exercise">
+      <span class="ex-label red">Exercise 1 · Choose the correct deduction modal</span>
+      <h4>Choose must have, might have, or can't have — the one that best fits the certainty level the evidence supports.</h4>
+      <p class="instr">The evidence clues are in italics. Justify your choice based on the strength of the evidence.</p>
+      <div class="qr"><span class="qn">1.</span><span><em>Evidence: The forged documents used the exact same font and margin specifications as Hale Technologies' internal reports — information only available to someone inside the company.</em> → The person who forged them ______________ had access to confidential internal templates.</span></div>
+      <input type="text" class="bi wi" id="e1a" data-answer="must have" placeholder="must / might / can't have…">
+      <div class="qr" style="margin-top:8px;"><span class="qn">2.</span><span><em>Evidence: The deepfake video was produced in under 12 hours, using software that requires advanced technical skills and several days to render at that quality level.</em> → The person who created it ______________ worked alone — the timeline makes it logically impossible.</span></div>
+      <input type="text" class="bi wi" id="e1b" data-answer="can't have" placeholder="must / might / can't have…">
+      <div class="qr" style="margin-top:8px;"><span class="qn">3.</span><span><em>Evidence: One editor was known to have personal financial interests in Hale Technologies' main competitor — but this has not been confirmed as a factor in the publishing decision.</em> → A conflict of interest ______________ influenced the decision to publish without verification.</span></div>
+      <input type="text" class="bi wi" id="e1c" data-answer="might have" placeholder="must / might / can't have…">
+      <div class="qr" style="margin-top:8px;"><span class="qn">4.</span><span><em>Evidence: Hale's personal assistant confirmed she told him about the story within 30 minutes of it appearing — and that he immediately called his lawyer.</em> → Hale ______________ been aware of the story long before the board meeting.</span></div>
+      <input type="text" class="bi wi" id="e1d" data-answer="must have" placeholder="must / might / can't have…">
+      <div class="qr" style="margin-top:8px;"><span class="qn">5.</span><span><em>Evidence: The DeepDig account was two days old — but many users create accounts early for unrelated reasons.</em> → The timing ______________ been a coincidence — we can't rule it out.</span></div>
+      <input type="text" class="bi wi" id="e1e" data-answer="might have" placeholder="must / might / can't have…">
+      <button class="check-btn" onclick="checkEx1()">Check my answers</button>
+      <div class="feedback" id="fb-ex1"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">must have</span><span class="anote">Strong deduction: exact font + margin specifications = specific enough evidence to conclude near-certainty of insider access. The only logical explanation.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">can't have</span><span class="anote">Negative deduction from logical impossibility: rendering time makes solo creation in 12 hours impossible. "Can't have worked alone" = I deduce this is impossible.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">might have</span><span class="anote">Tentative deduction: "not been confirmed" = partial evidence, possible among several explanations. Might have = one possibility, not the only one.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">must have</span><span class="anote">Strong deduction: confirmed testimony (told within 30 min + immediate lawyer call) = near-certain prior knowledge before the board meeting.</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">might have</span><span class="anote">Tentative deduction: "can't rule it out" explicitly signals we must not use must have or can't have. The ambiguity requires the hedged form.</span></div>
+    
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label red">Exercise 2 · Build the deduction — full sentence</span>
+      <h4>Write a full deduction sentence using the evidence and modal indicated. Open-ended — model answers below. Bring to Session 1.</h4>
+      <div class="qr"><span class="qn">1.</span><span>[must have] The forger knew the exact format of Hale Tech's internal documents → write a deduction sentence:</span></div>
+      <textarea class="rb" id="e2a" placeholder="The forger must have had…"></textarea>
+      <div class="qr" style="margin-top:8px;"><span class="qn">2.</span><span>[can't have] Three newsrooms ran the story in under 24 hours → write a sentence about whether fact-checking was possible:</span></div>
+      <textarea class="rb" id="e2b" placeholder="The editors can't have…"></textarea>
+      <div class="qr" style="margin-top:8px;"><span class="qn">3.</span><span>[might have + passive] Dmitri wonders if the story was deliberately seeded across multiple platforms simultaneously → write a deduction:</span></div>
+      <textarea class="rb" id="e2c" placeholder="The story might have been…"></textarea>
+    
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show model answers</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">Model</span><span class="anote">"The forger must have had access to Hale Technologies' internal document templates — possibly as a current or former employee." / "They must have studied the formatting in detail over a significant period."</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">Model</span><span class="anote">"The editors can't have conducted a serious fact-check in under 24 hours — corroboration alone typically requires 48–72 hours for a story of this complexity." / "No meaningful fact-check can have been completed in that timeframe."</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">Model</span><span class="anote">"The story might have been deliberately seeded across multiple platforms simultaneously to prevent any single outlet from being identified as the origin." / "The pattern of amplification suggests the story might have been coordinated by a team with professional experience."</span></div>
+    
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label red">Exercise 3 · Deduction or regret? Identify the strand</span>
+      <h4>Label each sentence D (deduction) or R (regret/advice). Some are borderline — explain.</h4>
+      <div class="qr"><span class="qn">1.</span><span>"The editor should have waited 24 hours before publishing."</span></div>
+      <input type="text" class="bi wi" id="e3a" data-answer="r|R|regret" placeholder="D or R — and why…">
+      <div class="qr" style="margin-top:8px;"><span class="qn">2.</span><span>"Hale must have felt enormous pressure in those 48 hours — to resign that quickly was a significant decision."</span></div>
+      <input type="text" class="bi wi" id="e3b" data-answer="d|D|deduction" placeholder="D or R — and why…">
+      <div class="qr" style="margin-top:8px;"><span class="qn">3.</span><span>"The fact-checkers could have caught the inconsistencies in the document formatting."</span></div>
+      <input type="text" class="bi wi" id="e3c" data-answer="r|R|regret|ambiguous" placeholder="D or R — and why…">
+      <div class="qr" style="margin-top:8px;"><span class="qn">4.</span><span>"The story can't have been created by someone without insider knowledge of the company's reporting structure."</span></div>
+      <input type="text" class="bi wi" id="e3d" data-answer="d|D|deduction" placeholder="D or R — and why…">
+      <div class="qr" style="margin-top:8px;"><span class="qn">5.</span><span>"Whoever planted this might have been watching the media cycle for months before acting."</span></div>
+      <input type="text" class="bi wi" id="e3e" data-answer="d|D|deduction" placeholder="D or R — and why…">
+      <button class="check-btn" onclick="checkEx3()">Check my answers</button>
+      <div class="feedback" id="fb-ex3"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">R (Regret)</span><span class="anote">"Should have waited" = criticism of what didn't happen; it was the right thing to do. Moral/advisory judgement. Exclusively in the regret/advice strand.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">D (Deduction)</span><span class="anote">"Must have felt enormous pressure" = reasoning from evidence (speed of resignation, significance of the decision). Speaker deduces Hale's emotional state from observable behaviour.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">R — borderline</span><span class="anote">"Could have caught" = Week 4 unrealised possibility / regret. They had the capacity to catch it but didn't — criticism of a missed opportunity. NOTE: in a deduction context, "could have caught" would mean "it was possible they caught it" — the strand depends entirely on whether the speaker is criticising (R) or inferring (D).</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">D (Deduction)</span><span class="anote">"Can't have been created" = strong negative deduction from evidence. Speaker reasons to a conclusion: sophistication → insider knowledge required → outsider impossible.</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">D (Deduction)</span><span class="anote">"Might have been watching" = tentative past speculation — inferring a prior behaviour pattern from the timing and sophistication of the attack. No moral judgement — purely epistemic.</span></div>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Look at the gold phrases — literal or figurative? -->
+  <div class="tab-section" id="nd2">
+    <div class="tab-header"><span class="tab-badge tb-n">NOTICE &amp; DISCOVER</span><h2 class="tab-title">Look at the gold phrases — literal or figurative?</h2></div>
+    <hr class="tab-rule">
+    <div class="notice-box">
+      <h3>Idiomatic collocations — noticing questions</h3>
+      <div class="nq">Look at: <em>"At some point, the editors had to <span class="hl-gold">bite the bullet</span> and make a decision under competitive pressure."</em><br>What does this mean literally? What does it mean in context?<button class="rev-btn">Reveal a hint</button><p class="notice-reveal">Literally: to bite down on a bullet — historically, soldiers bit bullets during surgery to endure pain without anaesthetic. Figuratively: to accept a painful or unpleasant situation and act decisively, despite the difficulty or cost. Here: the editors had to make a hard, potentially costly choice (publishing without full verification) rather than wait and risk being scooped. The "pain" = professional and reputational risk. The "bullet" = the decision itself.</p></div>
+      <div class="nq">Look at: <em>"The industry has been <span class="hl-gold">sitting on the fence</span> about platform accountability for years."</em><br>What does this imply about the industry's position — and is Dmitri's tone positive or critical?<button class="rev-btn">Reveal a hint</button><p class="notice-reveal">Literally: sitting on a fence between two properties — not committing to either side. Figuratively: refusing to commit to a position on a controversial issue; deliberately staying neutral to avoid conflict or consequences. Here: the industry has avoided taking a clear stance on whether social media platforms should be held responsible for hosting disinformation. Dmitri's tone is critical — "fence-sitting" is generally negative in English, implying cowardice or evasion of responsibility.</p></div>
+      <div class="nq">Look at: <em>"This podcast has, in a small way, <span class="hl-gold">broken the ice</span> on what had become an uncomfortable industry conversation."</em><br>What does Dmitri mean — and why does he qualify it with "in a small way"?<button class="rev-btn">Reveal a hint</button><p class="notice-reveal">Literally: break the ice covering a frozen waterway — to clear a path. Figuratively: to do or say something that makes it easier to begin a difficult or awkward conversation; to overcome initial social or professional hesitation. Dmitri is saying the podcast started a conversation that the industry was too uncomfortable to have openly. "In a small way" is a hedge — modesty and accuracy: one podcast doesn't solve the problem, it only opens the conversation.</p></div>
+    </div>
+  </div>
+
+  <!-- SECTION: Idiomatic Collocations -->
+  <div class="tab-section" id="s2">
+    <div class="tab-header"><span class="tab-badge tb-sg">STUDY</span><h2 class="tab-title">Idiomatic Collocations</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3 class="gold">Bite the bullet · Sit on the fence · Break the ice</h3>
+      <p class="gsub">Corpus data (COCA) shows the main gap at C1 is not grammar but collocation and idiom. These three are high-frequency in journalistic, professional, and political discourse — and all three appear naturally in this week's context.</p>
+      <div class="idiom-grid">
+        <div class="ic">
+          <div class="ic-hd" style="background:var(--red);">
+            <div class="ic-phrase">bite the bullet</div>
+            <div class="ic-pron">/baɪt ðə ˈbʊlɪt/</div>
+          </div>
+          <div class="ic-body">
+            <div class="ic-lit">Origin: military surgery (pre-anaesthetic)</div>
+            <div class="ic-meaning">To accept a painful or unpleasant situation and act decisively, despite the difficulty. Used when a hard choice can no longer be avoided.</div>
+            <div class="ic-use">Register: neutral to formal. Very high COCA frequency. Journalism, politics, business. <em>Bite the bullet and [verb]</em> is the most common pattern.</div>
+            <div class="ic-ex">"At some point, the editors had to <strong>bite the bullet</strong> and make a decision." | "The regulator will eventually have to <strong>bite the bullet</strong> and impose mandatory standards." | "She finally <strong>bit the bullet</strong> and retracted the story."</div>
+          </div>
+        </div>
+        <div class="ic">
+          <div class="ic-hd" style="background:var(--gold-deep);">
+            <div class="ic-phrase">sit on the fence</div>
+            <div class="ic-pron">/sɪt ɒn ðə fens/</div>
+          </div>
+          <div class="ic-body">
+            <div class="ic-lit">Origin: literal fence between two properties</div>
+            <div class="ic-meaning">To deliberately avoid committing to a position on a controversial issue; to stay neutral when a decision is expected. Usually carries a negative connotation — implies cowardice or evasion.</div>
+            <div class="ic-use">Register: neutral to slightly informal. Political and journalistic commentary. Noun: <em>fence-sitter / fence-sitting.</em></div>
+            <div class="ic-ex">"The industry has been <strong>sitting on the fence</strong> about platform accountability for years." | "You can't <strong>sit on the fence</strong> on this — a decision is required." | "His <strong>fence-sitting</strong> damaged his credibility with both sides."</div>
+          </div>
+        </div>
+        <div class="ic">
+          <div class="ic-hd" style="background:var(--teal);">
+            <div class="ic-phrase">break the ice</div>
+            <div class="ic-pron">/breɪk ðə aɪs/</div>
+          </div>
+          <div class="ic-body">
+            <div class="ic-lit">Origin: icebreaker ships clearing frozen waterways</div>
+            <div class="ic-meaning">To say or do something that makes a difficult, awkward, or formal situation easier to begin; to initiate a previously avoided conversation.</div>
+            <div class="ic-use">Register: neutral to slightly informal. Social, professional, political. Noun: <em>icebreaker</em> (activity / first question). Adj: <em>ice-breaking.</em></div>
+            <div class="ic-ex">"This podcast has <strong>broken the ice</strong> on an uncomfortable conversation." | "The moderator used a short video to <strong>break the ice</strong> before the difficult discussion." | "Nobody raised it first — someone had to <strong>break the ice</strong>."</div>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top:18px;"><strong>Key collocation patterns — grammatical behaviour:</strong></p>
+      <div class="table-scroll"><table class="rt">
+        <tr><th>Idiom</th><th>Common patterns</th><th>Avoid</th></tr>
+        <tr><td><em>bite the bullet</em></td><td>have to / need to / finally / eventually bite the bullet; bit the bullet (past); bite the bullet and [verb]</td><td>✗ "bite a bullet" (always "the") ✗ "bited" (irregular: bite → bit → bitten)</td></tr>
+        <tr><td><em>sit on the fence</em></td><td>keep / stop sitting on the fence; fence-sitting (noun); fence-sitter (person); can't afford to sit on the fence</td><td>✗ "sit on a fence" ✗ "sitting in the fence"</td></tr>
+        <tr><td><em>break the ice</em></td><td>break the ice on [topic]; finally break the ice; icebreaker (n.); break the ice between [people]</td><td>✗ "break an ice" ✗ "breaking ice" (needs "the")</td></tr>
+      </table></div>
+      <p style="margin-top:16px;"><strong>Connected expressions (expanding your repertoire):</strong></p>
+      <div class="chip-row">
+        <span class="chip gold">grasp the nettle (BrE) ≈ bite the bullet</span>
+        <span class="chip gold">take the plunge = commit to a difficult decision</span>
+        <span class="chip gold">fence-sitter / fence-sitting (noun forms)</span>
+        <span class="chip gold">come off the fence = finally take a position</span>
+        <span class="chip gold">icebreaker = activity / question to start a conversation</span>
+        <span class="chip gold">open a can of worms = start a complicated difficult discussion</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Try it: Idiomatic Collocations -->
+  <div class="tab-section" id="p2">
+    <div class="tab-header"><span class="tab-badge tb-p">PRACTICE</span><h2 class="tab-title">Try it: Idiomatic Collocations</h2></div>
+    <hr class="tab-rule">
+    <div class="exercise">
+      <span class="ex-label gold">Exercise 4 · Gap-fill</span>
+      <h4>Complete each sentence with the correct idiom, using the correct verb form.</h4>
+      <p class="instr"><em>bite the bullet · sit on the fence · break the ice</em></p>
+      <div class="qr"><span class="qn">1.</span><span>The new media regulation has been discussed for three years, but no government has yet been willing to ______________ and introduce mandatory fact-checking requirements.</span></div>
+      <input type="text" class="bi wi" id="e4a" data-answer="bite the bullet" placeholder="idiom…">
+      <div class="qr" style="margin-top:8px;"><span class="qn">2.</span><span>The senator was asked repeatedly whether she supported the platform liability bill — but she continued to ______________, saying only that "all options needed further study."</span></div>
+      <input type="text" class="bi wi" id="e4b" data-answer="sit on the fence" placeholder="idiom…">
+      <div class="qr" style="margin-top:8px;"><span class="qn">3.</span><span>The Hale case has ______________ on a conversation about journalistic verification standards that the industry had avoided for a decade.</span></div>
+      <input type="text" class="bi wi" id="e4c" data-answer="broken the ice" placeholder="idiom — past participle…">
+      <div class="qr" style="margin-top:8px;"><span class="qn">4.</span><span>Dmitri argues that the regulator can no longer afford to ______________ — after three high-profile disinformation cases, a clear policy position is unavoidable.</span></div>
+      <input type="text" class="bi wi" id="e4d" data-answer="sit on the fence" placeholder="idiom…">
+      <div class="qr" style="margin-top:8px;"><span class="qn">5.</span><span>Nobody wanted to raise the question of editorial responsibility first. Eventually, Keiko ______________ by asking the outlet's editor-in-chief directly on air.</span></div>
+      <input type="text" class="bi wi" id="e4e" data-answer="broke the ice" placeholder="idiom — past tense…">
+      <button class="check-btn" onclick="checkEx4()">Check my answers</button>
+      <div class="feedback" id="fb-ex4"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">bite the bullet</span><span class="anote">Difficult, unavoidable action — introducing mandatory regulation despite industry resistance. "Finally bite the bullet" is the standard collocational pattern here.</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">sit on the fence</span><span class="anote">Refusing to commit — "all options needed further study" = diplomatic non-answer. "Continued to sit on the fence" emphasises ongoing evasion.</span></div>
+      <div class="ak-item"><span class="an">3.</span><span class="av">broken the ice</span><span class="anote">Present perfect past participle after "has." The Hale case initiated a previously avoided conversation — a one-time event with present relevance.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">sit on the fence</span><span class="anote">"Can no longer afford to sit on the fence" = the situation has become urgent enough that neutrality is no longer viable.</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">broke the ice</span><span class="anote">Simple past — the act of asking the editor directly was the specific moment the ice broke. A completed action, not an ongoing state.</span></div>
+    
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label gold">Exercise 5 · Rewrite using an idiom</span>
+      <h4>Rewrite each sentence using one of the three idioms without changing the meaning. Open-ended — model answers below.</h4>
+      <div class="qr"><span class="qn">1.</span><span>The CEO finally accepted the difficult reality and issued a public apology, despite the personal cost.</span></div>
+      <textarea class="rb" id="e5a" placeholder="The CEO finally bit the bullet and…"></textarea>
+      <div class="qr" style="margin-top:8px;"><span class="qn">2.</span><span>After years of avoiding the question of platform liability, the EU finally adopted a clear position.</span></div>
+      <textarea class="rb" id="e5b" placeholder="After years of fence-sitting / sitting on the fence…"></textarea>
+      <div class="qr" style="margin-top:8px;"><span class="qn">3.</span><span>The Northgate Files podcast was the first to publicly raise the question of whether financial journalists receive adequate training in document verification.</span></div>
+      <textarea class="rb" id="e5c" placeholder="The Northgate Files broke the ice on…"></textarea>
+    </div>
+  </div>
+
+  <!-- SECTION: Teal phrases — neither…nor in a new context -->
+  <div class="tab-section" id="nd3">
+    <div class="tab-header"><span class="tab-badge tb-n">NOTICE &amp; DISCOVER</span><h2 class="tab-title">Teal phrases — neither…nor in a new context</h2></div>
+    <hr class="tab-rule">
+    <div class="notice-box">
+      <h3>Neither…nor — review with new examples</h3>
+      <div class="nq">Find both uses of neither…nor in the transcript. For each, what are the two things being excluded — and why does the speaker choose this structure rather than "and…not"?<button class="rev-btn">Reveal a hint</button><p class="notice-reveal">"Neither the metadata scrubbing nor the professional formatting necessarily implies a group." — Dmitri is pushing back: both pieces of evidence could be achieved by one skilled person. Neither one alone, nor both together, proves coordination. / "Neither the documents nor the source were verified by any of the three newsrooms." — Keiko emphasises: two things that should have been verified (documents, source) — and neither was. Neither…nor makes this more emphatic and formal than "the documents and the source were not verified."</p></div>
+      <div class="nq">Look at: <em>"<span class="hl-teal">Neither the regulator nor the industry bodies have shown any appetite for that.</span>"</em><br>What is the verb form — and which subject does it agree with? Why?<button class="rev-btn">Reveal a hint</button><p class="notice-reveal">"Have" is plural. The proximity rule: verb agrees with the nearer subject. "Industry bodies" (plural) is closer to the verb than "the regulator" (singular) → "have." If reversed: "Neither the industry bodies nor the regulator has shown…" — "has" agrees with "the regulator" (singular, now nearer).</p></div>
+    </div>
+  </div>
+
+  <!-- SECTION: Neither…nor — applied to media analysis -->
+  <div class="tab-section" id="s3">
+    <div class="tab-header"><span class="tab-badge tb-st">REVIEW</span><h2 class="tab-title">Neither…nor — applied to media analysis</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3 class="teal">Neither…nor — focused review</h3>
+      <p class="gsub">You studied neither…nor in depth in Week 4. This week's context gives you a new domain to use it in — media analysis and investigative journalism. The key rules remain: exclusion · proximity agreement · parallel structure · no double negatives.</p>
+      <div class="table-scroll"><table class="rt">
+        <tr><th>Rule</th><th>Correct</th><th>Incorrect (and why)</th></tr>
+        <tr><td>Meaning: excludes both</td><td><em>"Neither the editor nor the fact-checker caught it."</em></td><td>N/A — the meaning itself is correct</td></tr>
+        <tr><td>Proximity agreement</td><td><em>"Neither the journalists nor the editor <strong>was</strong> available." (editor = singular → was)</em></td><td>✗ "Neither the journalists nor the editor <strong>were</strong> available." (ignores proximity)</td></tr>
+        <tr><td>Parallel structure</td><td><em>"Neither verifying the source nor checking the metadata was done." (gerund + gerund)</em></td><td>✗ "Neither verifying the source nor the metadata was checked." (gerund ≠ passive clause)</td></tr>
+        <tr><td>No double negative</td><td><em>"Neither the outlet nor the platform responded."</em></td><td>✗ "Neither the outlet nor the platform didn't respond." (double negative = wrong)</td></tr>
+      </table></div>
+      <p style="margin-top:18px;"><strong>New C1 uses in this week's context:</strong></p>
+      <div class="er"><span class="ok">✓</span><span><em>"Neither the speed of the story's spread nor the sophistication of the forgery was consistent with an amateur operation — the commission concluded it was coordinated."</em><span class="gl">Complex noun phrases as subjects. "Was" agrees with "the sophistication" (singular, nearer). High analytical register.</span></span></div>
+      <div class="er"><span class="ok">✓</span><span><em>"Neither sitting on the fence nor biting the bullet is a sustainable long-term strategy — the industry must adopt clear standards."</em><span class="gl">Idioms as subjects within neither…nor. "Is" agrees with "biting the bullet" (singular, nearer). Two grammar points from this week combining in one sentence.</span></span></div>
+    </div>
+  </div>
+
+  <!-- SECTION: Lying & Disinformation -->
+  <div class="tab-section" id="vocab">
+    <div class="tab-header"><span class="tab-badge tb-v">VOCABULARY</span><h2 class="tab-title">Lying &amp; Disinformation</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3 class="red">Core vocabulary: the anatomy of a lie</h3>
+      <div class="vocab-grid">
+        <div class="vc red"><span class="word">misinformation</span><span class="pos">noun</span><div class="pron">/ˌmɪsɪnfəˈmeɪʃən/</div><div class="def">False or inaccurate information — regardless of intent. The person spreading it may genuinely believe it. Compare to <em>disinformation</em> (which requires deliberate intent). The <em>mis-</em> prefix = wrong, not necessarily intentional.</div><div class="vex">"The three outlets spread misinformation — not disinformation — because they believed the documents were genuine."</div></div>
+        <div class="vc red"><span class="word">disinformation</span><span class="pos">noun</span><div class="pron">/dɪsɪnfəˈmeɪʃən/</div><div class="def">False information <strong>deliberately</strong> created and spread to deceive. The intent to mislead is definitional — without it, it's misinformation. Disinformation is a tool of political, financial, and corporate manipulation.</div><div class="vex">"Whoever forged the Hale documents was engaged in disinformation — the deception was systematic and intentional."</div></div>
+        <div class="vc red"><span class="word">fabrication</span><span class="pos">noun</span><div class="pron">/ˌfæbrɪˈkeɪʃən/</div><div class="def">Something invented with the intention of deceiving — entirely made up (unlike a <em>distortion</em>, which is based in fact but twisted). Verb: <em>to fabricate.</em> Adjective: <em>fabricated.</em></div><div class="vex">"The forensic analysis confirmed the financial documents were a fabrication — not based on any real data."</div></div>
+        <div class="vc red"><span class="word">deepfake</span><span class="pos">noun</span><div class="pron">/ˈdiːpfeɪk/</div><div class="def">AI-generated synthetic media — video, audio, or images — depicting a real person saying or doing something they never said or did. Named from "deep learning" + "fake." Increasingly powerful and difficult to detect.</div><div class="vex">"The viral video of Hale 'confessing' was later identified as a deepfake — lip movements didn't match the audio perfectly."</div></div>
+        <div class="vc gold"><span class="word">propaganda</span><span class="pos">noun</span><div class="pron">/ˌprɒpəˈɡændə/</div><div class="def">Information — often biased or misleading — used to promote a political cause or viewpoint. Propaganda doesn't have to be false (unlike disinformation) — it can be selective truth. Intent is to influence, not to inform.</div><div class="vex">"State-sponsored propaganda relies on the same psychological mechanisms as disinformation: repetition, emotional appeal, and confirmation bias."</div></div>
+        <div class="vc gold"><span class="word">gaslighting</span><span class="pos">noun / verb</span><div class="pron">/ˈɡæzlaɪtɪŋ/</div><div class="def">Psychological manipulation in which the perpetrator causes the target to question their own memory or perception of reality. In media contexts: when institutions deny documented events and insist the affected person is mistaken. From the 1944 film <em>Gaslight.</em></div><div class="vex">"Hale's initial statement — 'there is no story here, only rumour' — was seen by some as gaslighting a public that had already read the documents."</div></div>
+        <div class="vc gold"><span class="word">astroturfing</span><span class="pos">noun</span><div class="pron">/ˈæstrəʊtɜːfɪŋ/</div><div class="def">Masking the true origin of a campaign, making it appear to be a spontaneous grassroots initiative when it is professionally organised and funded. Named after AstroTurf (artificial grass) — fake grassroots.</div><div class="vex">"The flood of supportive comments under the DeepDig post in the first two hours suggested astroturfing — no organic post generates that pattern."</div></div>
+        <div class="vc gold"><span class="word">echo chamber</span><span class="pos">noun phrase</span><div class="pron">/ˈekəʊ ˌtʃeɪmbə/</div><div class="def">A social or media environment in which people are exposed only to information that reinforces existing beliefs — because algorithms or social networks filter out contradictory views. Echo chambers amplify disinformation because false information goes unchallenged.</div><div class="vex">"DeepDig functioned as an echo chamber — its users were already predisposed to believe executives were corrupt."</div></div>
+      </div>
+      <div style="margin-top:18px;">
+        <h3 style="font-family:'Playfair Display',Cambria,Georgia,serif;font-size:17px;margin:0 0 10px;">The precision distinctions — C1</h3>
+        <div class="table-scroll"><table class="rt">
+          <tr><th>Term</th><th>False?</th><th>Intentional?</th><th>Example</th></tr>
+          <tr><td><strong>misinformation</strong></td><td>Yes</td><td>Not necessarily</td><td>Sharing a debunked study you believed was valid</td></tr>
+          <tr><td><strong>disinformation</strong></td><td>Yes</td><td>Yes — deliberate</td><td>Creating forged documents to damage a reputation</td></tr>
+          <tr><td><strong>propaganda</strong></td><td>Not necessarily</td><td>Yes — to persuade</td><td>Selectively emphasising positive statistics in a government publication</td></tr>
+          <tr><td><strong>fabrication</strong></td><td>Entirely</td><td>Yes</td><td>Inventing quotes a person never said</td></tr>
+        </table></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Media Literacy -->
+  <div class="tab-section" id="vocab2">
+    <div class="tab-header"><span class="tab-badge tb-v">VOCABULARY</span><h2 class="tab-title">Media Literacy</h2></div>
+    <hr class="tab-rule">
+    <div class="grammar-box">
+      <h3 class="gold">Extended vocabulary: how to evaluate information</h3>
+      <div class="vocab-grid">
+        <div class="vc teal"><span class="word">fact-checking</span><span class="pos">noun / verb</span><div class="pron">/ˈfækt ˌtʃekɪŋ/</div><div class="def">Verifying factual claims before publication or broadcast — cross-referencing primary sources, documents, and expert testimony. <em>Fact-check</em> (verb). <em>Fact-checker</em> (person). Distinct from <em>editorial judgement</em> (opinion-based decisions).</div><div class="vex">"None of the three newsrooms had conducted a meaningful fact-check of the documents before publication."</div></div>
+        <div class="vc teal"><span class="word">primary source</span><span class="pos">noun phrase</span><div class="pron">/ˈpraɪmeri sɔːs/</div><div class="def">Original, first-hand evidence — a document, recording, or testimony that comes directly from the source rather than through an intermediary. Compare to <em>secondary source</em> (someone reporting what a primary source said).</div><div class="vex">"In the Hale case, the documents were treated as primary sources — without anyone verifying their provenance or authenticity."</div></div>
+        <div class="vc teal"><span class="word">corroboration</span><span class="pos">noun</span><div class="pron">/kəˌrɒbəˈreɪʃən/</div><div class="def">Confirmation of a claim from a second, independent source — the traditional gold standard of investigative journalism. Verb: <em>to corroborate.</em> Adjective: <em>corroborated / uncorroborated.</em></div><div class="vex">"The most glaring failure was the absence of corroboration — no outlet checked whether any independent source confirmed the documents."</div></div>
+        <div class="vc teal"><span class="word">editorial independence</span><span class="pos">noun phrase</span><div class="pron">/ˌedɪˈtɔːriəl ɪndɪˈpendəns/</div><div class="def">The principle that journalistic decisions should be made by editors on the basis of journalistic standards, free from political, commercial, or personal pressure. Opposite: <em>editorial capture.</em></div><div class="vex">"The competitive pressure to publish first directly compromised editorial independence — business interests overrode journalistic standards."</div></div>
+        <div class="vc"><span class="word">clickbait</span><span class="pos">noun</span><div class="pron">/ˈklɪkbeɪt/</div><div class="def">Online content designed to attract clicks through sensational or misleading headlines rather than to inform. The incentive structure of digital advertising rewards clicks, not accuracy.</div><div class="vex">"A fabricated story about a tech CEO accused of fraud is perfect clickbait — it has every element that generates high engagement: wealth, crime, and betrayal."</div></div>
+        <div class="vc"><span class="word">dog whistle</span><span class="pos">noun</span><div class="pron">/ˈdɒɡ wɪsəl/</div><div class="def">A political or rhetorical message with an overt meaning for a general audience but a coded message for a specific target group. Named after the fact that dogs hear frequencies humans cannot — allows a communicator to signal positions while maintaining plausible deniability.</div><div class="vex">"Some analysts argued the story was a dog whistle — framed as fraud news for general audiences but understood in certain circles as an attack on Hale's political associations."</div></div>
+        <div class="vc"><span class="word">platform accountability</span><span class="pos">noun phrase</span><div class="pron">/ˈplætfɔːm əˌkaʊntəˈbɪlɪti/</div><div class="def">The principle that social media platforms bear responsibility for the content they host — particularly harmful or false content. The central debate: should platforms be neutral conduits (like telephone companies) or publishers (responsible for what they distribute)?</div><div class="vex">"The industry has been sitting on the fence about platform accountability — and the Hale case shows why neutrality is no longer defensible."</div></div>
+        <div class="vc"><span class="word">post-truth</span><span class="pos">adjective / noun</span><div class="pron">/ˌpəʊst ˈtruːθ/</div><div class="def">Relating to circumstances in which objective facts are less influential in shaping opinion than appeals to emotion and personal belief. Oxford Dictionaries Word of the Year 2016. A <em>post-truth environment</em> normalises the irrelevance of the distinction between truth and falsehood.</div><div class="vex">"Disinformation campaigns thrive in a post-truth environment — where the goal is not to persuade people of a specific lie, but to make truth itself feel contested."</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Key collocations</h3>
+      <div class="chip-row">
+        <span class="chip red">spread / combat / amplify misinformation</span>
+        <span class="chip red">deliberate / state-sponsored disinformation</span>
+        <span class="chip red">fabricate / forge / plant documents</span>
+        <span class="chip gold">detect / identify / expose a deepfake</span>
+        <span class="chip gold">fall into / reinforce an echo chamber</span>
+        <span class="chip gold">engage in / accuse of gaslighting</span>
+        <span class="chip teal">verify / corroborate / check a source</span>
+        <span class="chip teal">editorial independence / capture / pressure</span>
+        <span class="chip teal">fact-check / retract / publish a story</span>
+        <span class="chip">platform accountability / liability / regulation</span>
+        <span class="chip">post-truth environment / politics / discourse</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: Try it: vocabulary -->
+  <div class="tab-section" id="vp">
+    <div class="tab-header"><span class="tab-badge tb-v">PRACTICE</span><h2 class="tab-title">Try it: vocabulary</h2></div>
+    <hr class="tab-rule">
+    <div class="exercise">
+      <span class="ex-label ink">Exercise 6 · The right word</span>
+      <h4>Choose the most precise word for each context. Some wrong answers are close — justify your choice.</h4>
+      <p class="instr"><em>misinformation · disinformation · fabrication · propaganda · astroturfing · echo chamber · corroboration · post-truth</em></p>
+      <div class="qr"><span class="qn">1.</span><span>A government agency paid 40 social media accounts to post supportive comments, making grassroots support appear to exist where there was none. This is ______________ .</span></div>
+      <input type="text" class="bi wi" id="e6a" data-answer="astroturfing" placeholder="word…">
+      <div class="qr" style="margin-top:8px;"><span class="qn">2.</span><span>A journalist shared a study claiming vaccines cause autism — genuinely believing it true, not realising it had been retracted. They spread ______________ .</span></div>
+      <input type="text" class="bi wi" id="e6b" data-answer="misinformation" placeholder="word…">
+      <div class="qr" style="margin-top:8px;"><span class="qn">3.</span><span>A rival company hired a team to create false financial records and plant them on investment forums. The fake documents themselves are a ______________ ; the broader campaign is ______________ .</span></div>
+      <input type="text" class="bi wi" id="e6c" data-answer="fabrication" placeholder="first blank…">
+      <input type="text" class="bi wi" id="e6d" data-answer="disinformation" placeholder="second blank…" style="margin-top:6px;">
+      <div class="qr" style="margin-top:8px;"><span class="qn">4.</span><span>Keiko argues that the second newsroom should not have published without independent ______________ — they had only one source, the original DeepDig post.</span></div>
+      <input type="text" class="bi wi" id="e6e" data-answer="corroboration" placeholder="word…">
+      <div class="qr" style="margin-top:8px;"><span class="qn">5.</span><span>Dmitri argues that in a ______________ environment, voters don't care whether stories are true — they care whether they feel emotionally resonant and ideologically consistent with existing beliefs.</span></div>
+      <input type="text" class="bi wi" id="e6f" data-answer="post-truth" placeholder="word…">
+      <button class="check-btn" onclick="checkEx6()">Check my answers</button>
+      <div class="feedback" id="fb-ex6"></div>
+      <div class="ak-inline">
+        <button class="ak-toggle" type="button" onclick="toggleAK(this)" aria-expanded="false">Show answers &amp; explanations</button>
+        <div class="ak-panel" hidden>
+      <div class="ak-item"><span class="an">1.</span><span class="av">astroturfing</span><span class="anote">Organised paid accounts creating the appearance of organic grassroots support = the definition of astroturfing. Not "propaganda" (which lacks the fake-grassroots element).</span></div>
+      <div class="ak-item"><span class="an">2.</span><span class="av">misinformation</span><span class="anote">Not disinformation: the journalist believed the study was valid. Absent intent → misinformation, not disinformation.</span></div>
+      <div class="ak-item"><span class="an">3a.</span><span class="av">fabrication</span><span class="anote">The documents themselves (entirely invented false records) = a fabrication.</span></div>
+      <div class="ak-item"><span class="an">3b.</span><span class="av">disinformation</span><span class="anote">The broader campaign (creating and planting the fabrications) = disinformation — deliberate, systematic deception.</span></div>
+      <div class="ak-item"><span class="an">4.</span><span class="av">corroboration</span><span class="anote">"Independent corroboration" = a second independent source confirming the claim. The journalistic gold standard absent here.</span></div>
+      <div class="ak-item"><span class="an">5.</span><span class="av">post-truth</span><span class="anote">A post-truth environment = emotional resonance and ideological consistency matter more than factual accuracy. Defined by the diminishing influence of objective facts on public opinion.</span></div>
+    
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <span class="ex-label ink">Exercise 7 · Integrated production</span>
+      <h4>Write three sentences, each combining one grammar point with vocabulary from this week. Open-ended — bring to Session 2.</h4>
+      <div class="qr"><span class="qn">A.</span><span>[must have / can't have + disinformation vocabulary]</span></div>
+      <textarea class="rb" id="e7a" placeholder="e.g. Whoever planted the disinformation must have been monitoring the financial news cycle for months before acting."></textarea>
+      <div class="qr" style="margin-top:8px;"><span class="qn">B.</span><span>[idiom + media literacy vocabulary]</span></div>
+      <textarea class="rb" id="e7b" placeholder="e.g. The regulator has been sitting on the fence about platform accountability for so long that the industry has had no incentive to develop voluntary corroboration standards."></textarea>
+      <div class="qr" style="margin-top:8px;"><span class="qn">C.</span><span>[neither…nor + vocabulary]</span></div>
+      <textarea class="rb" id="e7c" placeholder="e.g. Neither the deepfake technology nor the astroturfing campaign would have been detected without a proper fact-checking protocol — which none of the three outlets had."></textarea>
+    </div>
+  </div>
+
+  <!-- 15. PUTTING IT TOGETHER -->
+
+  <!-- SECTION: Speaking Practice -->
+  <div class="tab-section" id="speaking">
+    <div class="tab-header"><span class="tab-badge tb-speak">SPEAKING PRACTICE</span><h2 class="tab-title">Deduction &mdash; out loud</h2></div>
+    <hr class="tab-rule">
+    <p class="section-intro">Keiko and Dmitri's whole craft is spoken deduction: separating what they know from what they infer, live, in front of a microphone. These tasks give you the microphone. Your phone's voice memo app is all you need.</p>
+
+    <div class="speak-card">
+      <span class="speak-type">Roleplay scenario</span>
+      <h3>The fact-checker and the editor</h3>
+      <p><strong>Role A &mdash; Fact-checker:</strong> A viral video appears to show a politician taking a bribe. You've examined it. Present your inferences to your editor using deduction modals: <em>"The lighting is inconsistent &mdash; it must have been edited. The audio can't have come from the same room&hellip;"</em></p>
+      <p><strong>Role B &mdash; Editor:</strong> You want to publish. Push back: <em>"That might have been a compression artefact. You can't be certain."</em> Decide together: publish, hold, or investigate further?</p>
+      <div class="speak-how"><strong>How:</strong> Find a partner or play both roles, switching voices; record 3&ndash;4 minutes. <strong>When you listen back, check:</strong> Did every deduction match its evidence strength &mdash; <em>must have</em> only where the evidence is overwhelming, <em>might have</em> where it's thin?</div>
+    </div>
+
+    <div class="speak-card">
+      <span class="speak-type">Sentence challenge</span>
+      <h3>Five words, sixty seconds each</h3>
+      <p>Use each of the following items from this week's word set in a spoken sentence about a real story you've seen online. <strong>60 seconds per word</strong>, thinking time included:</p>
+      <ul>
+        <li><em>disinformation</em> (and make the contrast with <em>misinformation</em> explicit)</li>
+        <li><em>corroboration</em></li>
+        <li><em>echo chamber</em></li>
+        <li><em>primary source</em></li>
+        <li><em>clickbait</em></li>
+      </ul>
+      <div class="speak-how"><strong>How:</strong> One continuous recording, timer running. <strong>When you listen back, check:</strong> accuracy first (is that really <em>dis</em>information, or just an error?), then fluency. Re-record only the sentences that failed.</div>
+    </div>
+
+    <div class="speak-card">
+      <span class="speak-type">Shadowing drill</span>
+      <h3>In the studio with Keiko</h3>
+      <p>Return to the Context transcript and take Keiko's opening speech &mdash; from <em>"So let's start where we always start&hellip;"</em> to <em>"&hellip;knew exactly what they were doing."</em> Read it aloud <strong>three times</strong>:</p>
+      <ul>
+        <li>Once slowly, every word deliberate;</li>
+        <li>once at normal podcast pace;</li>
+        <li>once as naturally as you can &mdash; with her confidence, landing the stress on <em>must</em> and <em>can't</em>.</li>
+      </ul>
+      <div class="speak-how"><strong>How:</strong> Record the third read. <strong>When you listen back, check:</strong> deduction modals carry heavy stress in native speech &mdash; <em>"This <strong>CAN'T</strong> have been accidental."</em> Is that stress audible in your version, or did the modals get swallowed?</div>
+    </div>
+
+    <div class="tip-box">
+      <h3>Technique: calibrated language</h3>
+      <ul>
+        <li>Before recording, sort your claims into three piles: <em>know</em>, <em>strongly infer</em>, <em>merely suspect</em>. Then match the grammar: fact &rarr; present simple; strong inference &rarr; <em>must have / can't have</em>; suspicion &rarr; <em>might have</em>.</li>
+        <li>Overusing <em>must have</em> makes you sound less credible, not more. Listen back and downgrade at least one.</li>
+        <li>When you disagree in a roleplay, borrow Dmitri's softener: <em>"I'd push back slightly&hellip;"</em> &mdash; then disagree completely.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION: Write a media analysis paragraph -->
+  <div class="tab-section" id="together">
+    <div class="tab-header"><span class="tab-badge tb-tog">PUTTING IT TOGETHER</span><h2 class="tab-title">Write a media analysis paragraph</h2></div>
+    <hr class="tab-rule">
+    <div style="background:var(--ink);border-radius:8px;padding:26px 30px;border-bottom:4px solid var(--gold);">
+      <h3 style="color:var(--gold);font-family:'Playfair Display',Cambria,Georgia,serif;margin:0 0 12px;font-size:19px;">Writing task: podcast analysis (130–160 words)</h3>
+      <p style="color:rgba(255,255,255,.8);margin-bottom:10px;">You are writing an analytical paragraph for a media studies newsletter about the Hale case. Write in a formal register — the analytical tone of Keiko or Dmitri, not a tabloid journalist. Make a clear argument — not just a description of events.</p>
+      <p style="color:rgba(255,255,255,.65);font-family:'Inter',Arial,sans-serif;font-size:14px;">✓ At least 2 perfect modals of deduction (must have / might have / can't have)<br>✓ At least 1 idiom (bite the bullet / sit on the fence / break the ice)<br>✓ At least 1 neither…nor construction (correct agreement)<br>✓ At least 4 vocabulary items from this week<br>✓ A clear analytical argument</p>
+      <textarea class="rb" id="togetherBox" style="margin-top:14px;border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.97);" placeholder="Write your media analysis paragraph here…"></textarea>
+      <div class="wc" id="togetherCount" style="color:rgba(255,255,255,.4);">0 words</div>
+    </div>
+  </div>
+
+  <!-- 16. EXPLORE -->
+
+  <!-- SECTION: Listening & Watching -->
+  <div class="tab-section" id="listening">
+    <div class="tab-header"><span class="tab-badge tb-listen">LISTENING &amp; WATCHING</span><h2 class="tab-title">Truth, lies &amp; the language that carries them</h2></div>
+    <hr class="tab-rule">
+    <p class="section-intro">The Northgate Files is fiction; disinformation is not. These real, free sources cover the same ground &mdash; how false stories travel, and how language itself persuades and deceives. Each comes with a specific task.</p>
+
+    <div class="media-card">
+      <div class="media-head"><h3>TED Talks</h3><span class="media-platform">ted.com &middot; YouTube</span></div>
+      <p><strong>Why this week:</strong> Search TED for a full-length talk on misinformation, fake news, or how to spot manipulated media. These talks use this week's vocabulary &mdash; <em>fact-checking, deepfake, echo chamber</em> &mdash; and their speakers constantly reason by deduction from evidence.</p>
+      <div class="media-task"><strong>Your task:</strong> Listen once without subtitles, once with the transcript. (1) Write down verbatim any deduction you hear (<em>must have, can't have, may well have</em>). (2) Summarise the talk in 2&ndash;3 sentences using at least three words from this week's word set.</div>
+    </div>
+
+    <div class="media-card">
+      <div class="media-head"><h3>Lexicon Valley (John McWhorter)</h3><span class="media-platform">Podcast</span></div>
+      <p><strong>Why this week:</strong> A linguist on how words actually work &mdash; including how meaning shifts, how euphemism operates, and why some phrases persuade. This is the "language about language" layer of this week's theme (<em>dog whistle, gaslighting, post-truth</em> are all linguistic weapons), delivered fast and dense at C1&ndash;C2.</p>
+      <div class="media-task"><strong>Your task:</strong> Pick any episode. Note 3 words you didn't know, and one point where McWhorter corrects a popular belief about language. Record a 60-second spoken retell of that point in your own words &mdash; without notes.</div>
+    </div>
+
+    <div class="media-card">
+      <div class="media-head"><h3>The Allusionist (Helen Zaltzman)</h3><span class="media-platform">Podcast &middot; theallusionist.org</span></div>
+      <p><strong>Why this week:</strong> Short, beautifully produced episodes on etymology and language history &mdash; including how words for truth, lying, and persuasion got their meanings. A gentler C1 listen than Lexicon Valley, with transcripts available on the website.</p>
+      <div class="media-task"><strong>Your task:</strong> Choose an episode; listen once without the transcript, then check it. Note one idiomatic expression the host uses that you'd like to add to your active vocabulary &mdash; then use it in this week's roleplay task. Shadow the host for 30 seconds, copying her intonation exactly.</div>
+    </div>
+  </div>
+
+  <!-- SECTION: Go further -->
+  <div class="tab-section" id="explore">
+    <div class="tab-header"><span class="tab-badge tb-ex">EXPLORE ON YOUR OWN</span><h2 class="tab-title">Go further</h2></div>
+    <hr class="tab-rule">
+    <div class="explore-card">
+      <span class="ex-tag">Research</span>
+      <h3>A real disinformation case</h3>
+      <p>Research a real, documented disinformation campaign — Pizzagate, the 2016 US election interference, the Covid-19 infodemic, or the Navalny coverup narrative. For the case you choose:</p>
+      <ul>
+        <li>Write three deduction sentences (must have / might have / can't have) about the people who created or spread the disinformation. What can you infer from the evidence?</li>
+        <li>Identify which tactics from this week's vocabulary the campaign used: astroturfing, echo chambers, deepfakes, fabrication, propaganda, gaslighting.</li>
+        <li>Write one sentence using neither…nor to describe two things neither party did (or failed to do).</li>
+      </ul>
+    </div>
+    <div class="explore-card">
+      <span class="ex-tag">Listening</span>
+      <h3>Podcast on media literacy</h3>
+      <p>Search for a podcast about disinformation or fact-checking (Snopes, Full Fact, or AFP Fact Check). Listen for 10–15 minutes and note:</p>
+      <ul>
+        <li>How do the hosts express certainty? Do they use must have, might have, can't have — or other hedges (probably, likely, evidence suggests, appears to)?</li>
+        <li>Do any of this week's idioms appear — or near-equivalents?</li>
+        <li>Write 3–5 sentences summarising what you heard, using this week's language.</li>
+      </ul>
+    </div>
+    <div class="explore-card">
+      <span class="ex-tag">Grammar extension</span>
+      <h3>Hedging in academic writing</h3>
+      <p>Perfect modals of deduction are part of a broader set of hedging devices in formal writing. Research the following:</p>
+      <ul>
+        <li>Find 3–5 alternatives to "might have" that academics use: "it is possible that…", "the evidence suggests…", "it appears that…" — more or less formal than the modal?</li>
+        <li>Distinguish "apparently," "evidently," and "presumably" — which implies the strongest confidence?</li>
+        <li>Write a paragraph about the Hale case using at least 3 different hedging devices (not all modals). Bring it to class.</li>
+      </ul>
+    </div>
+    <div class="explore-card">
+      <span class="ex-tag">Vocabulary</span>
+      <h3>More idioms from COCA</h3>
+      <p>Research five more high-frequency idioms from journalism and political commentary:</p>
+      <ul>
+        <li>Look up: <em>throw someone under the bus · kick the can down the road · open a can of worms · grasp the nettle · come off the fence.</em></li>
+        <li>For each: write the meaning, one example in a media/politics context, and note whether it is BrE, AmE, or both.</li>
+        <li>Which is closest in meaning to one of this week's three idioms? How are they different in connotation?</li>
+      </ul>
+    </div>
+    <div class="explore-card">
+      <span class="ex-tag">Writing</span>
+      <h3>Write the other side — Hale's statement</h3>
+      <ul>
+        <li>Write Marcus Hale's public statement on the day of his resignation (100–120 words). He doesn't yet know the documents are forged — but he suspects it. Use perfect modals of deduction (must have / might have / can't have), idioms, and vocabulary from this week.</li>
+        <li>Then write his second statement — one week later, after the forgery is confirmed (80–100 words). Use Week 4 modals: what should have been done differently? What could have been avoided?</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION: Everything on one page -->
+  <div class="tab-section" id="ref">
+    <div class="tab-header"><span class="tab-badge tb-ref">QUICK REFERENCE</span><h2 class="tab-title">Everything on one page</h2></div>
+    <hr class="tab-rule">
+    <div style="overflow-x:auto;">
+      <div class="table-scroll"><table class="reft">
+        <tr><th>Form</th><th>Structure</th><th>Key use</th><th>Example</th></tr>
+        <tr><td><strong>must have</strong></td><td>must + have + p.p.</td><td>Near-certain positive deduction — evidence strongly supports this conclusion</td><td><em>"Someone must have had insider access — the formatting was exact."</em></td></tr>
+        <tr><td><strong>might have</strong></td><td>might + have + p.p.</td><td>Tentative deduction — possible but not established; one of several possibilities</td><td><em>"The board might have pressured him before the formal announcement."</em></td></tr>
+        <tr><td><strong>can't have</strong></td><td>can't + have + p.p.</td><td>Near-certain negative deduction — logically impossible given the evidence</td><td><em>"They can't have fact-checked this in under 24 hours."</em></td></tr>
+        <tr><td><strong>Passive deduction</strong></td><td>must/might/can't + have + been + p.p.</td><td>Deduction about something done to the subject</td><td><em>"The story must have been seeded across multiple platforms simultaneously."</em></td></tr>
+        <tr><td><strong>bite the bullet</strong></td><td>[have to / finally] bite the bullet [+ and verb]</td><td>Accept a painful situation and act decisively</td><td><em>"Someone will have to bite the bullet and demand mandatory protocols."</em></td></tr>
+        <tr><td><strong>sit on the fence</strong></td><td>[keep / can't afford to] sit/sitting on the fence</td><td>Refuse to commit to a position; avoid taking a side (usually negative)</td><td><em>"The industry has been sitting on the fence for too long."</em></td></tr>
+        <tr><td><strong>break the ice</strong></td><td>[finally] break the ice [on + topic]</td><td>Initiate a difficult or awkward conversation</td><td><em>"The podcast broke the ice on a conversation the industry avoided."</em></td></tr>
+        <tr><td><strong>neither…nor</strong></td><td>Neither [NP] nor [NP] + verb (proximity agreement)</td><td>Excludes both. No double negative. Parallel structure required.</td><td><em>"Neither the regulator nor the industry bodies have acted."</em></td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="wrapup">
+    <h3>Before Session 1, make sure you can…</h3>
+    <ul>
+      <li>Form must have / might have / can't have — active and passive — and connect each to the level of certainty it expresses</li>
+      <li>Distinguish the deduction strand (this week) from the regret/advice strand (Week 4) — same form, different function</li>
+      <li>Use bite the bullet, sit on the fence, and break the ice in context — correct grammatical form, appropriate register, right meaning</li>
+      <li>Explain the difference between misinformation, disinformation, fabrication, and propaganda with precise examples</li>
+      <li>Use neither…nor correctly — proximity agreement, no double negatives, parallel structure</li>
+      <li>Have your Putting It Together paragraph ready for peer review in Session 2</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- SECTION: Footer - Creator & Copyright -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p class="footer-copy">&copy; 2026 Bahar Esmaeelzadeh &middot; All rights reserved</p>
+    <p class="footer-line">Designed and created for English learners by Bahar Esmaeelzadeh.</p>
+    <p class="footer-links">
+      <a href="mailto:bahar.esmz.en@gmail.com">&#128231; bahar.esmz.en@gmail.com</a>
+      <span class="footer-dot">&middot;</span>
+      <a href="https://www.linkedin.com/in/bahar-esmaeelzadeh-650b98198" target="_blank" rel="noopener">&#128188; LinkedIn</a>
+    </p>
+    <p class="footer-note">If you found this helpful, feel free to get in touch.</p>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  document.getElementById('pf').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+});
+document.querySelectorAll('.rev-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{btn.nextElementSibling.style.display='block';btn.style.display='none';});
+});
+function norm(v){return v.trim().toLowerCase().replace(/[.,!?'"]/g,'');}
+function matches(val,ans){
+  const v=norm(val);
+  return ans.split('|').some(a=>{a=norm(a);return v===a||(v.length>5&&(a.startsWith(v.substring(0,Math.min(v.length,18)))||v.startsWith(a.substring(0,Math.min(a.length,18)))));});
+}
+function checkGroup(ids,answers,fbId){
+  let ok=0;
+  ids.forEach((id,i)=>{
+    const el=document.getElementById(id);if(!el)return;
+    if(answers[i]==='open'){el.style.borderColor='var(--teal)';ok++;return;}
+    if(matches(el.value,answers[i])){ok++;el.style.borderColor='var(--teal)';}
+    else el.style.borderColor='var(--gold-deep)';
+  });
+  const fb=document.getElementById(fbId);fb.classList.add('show');
+  if(ok===ids.length){fb.classList.remove('bad');fb.classList.add('good');fb.textContent='All correct!';}
+  else{fb.classList.remove('good');fb.classList.add('bad');fb.textContent=ok+' of '+ids.length+' correct — check gold borders. Then open “Show answers &amp; explanations” for the full key.';}
+}
+function checkEx1(){checkGroup(['e1a','e1b','e1c','e1d','e1e'],['must have','cant have|can\'t have','might have','must have','might have'],'fb-ex1');}
+function checkEx3(){checkGroup(['e3a','e3b','e3c','e3d','e3e'],['r|regret','d|deduction','r|regret|ambiguous','d|deduction','d|deduction'],'fb-ex3');}
+function checkEx4(){checkGroup(['e4a','e4b','e4c','e4d','e4e'],['bite the bullet','sit on the fence','broken the ice','sit on the fence','broke the ice'],'fb-ex4');}
+function checkEx6(){checkGroup(['e6a','e6b','e6c','e6d','e6e','e6f'],['astroturfing','misinformation','fabrication','disinformation','corroboration','post-truth'],'fb-ex6');}
+const tb=document.getElementById('togetherBox'),tc=document.getElementById('togetherCount');
+if(tb&&tc) tb.addEventListener('input',()=>{const w=tb.value.trim().split(/\s+/).filter(x=>x.length>0);tc.textContent=(tb.value.trim()===''?0:w.length)+' words';});
+
+/* Site frame (added): contents panel, back-to-top, table scroll hints */
+(function(){
+  var panel=document.getElementById('navPanel'),ov=document.getElementById('navOverlay'),
+      ham=document.getElementById('navHamburger'),closeB=document.getElementById('navClose'),
+      links=document.getElementById('navPanelLinks');
+  document.querySelectorAll('.toc a').forEach(function(a){
+    var n=document.createElement('a');
+    n.href=a.getAttribute('href');
+    n.textContent=a.textContent.replace(/^\s*\d+[a-z]?\.\s*/,'');
+    links.appendChild(n);
+  });
+  function openP(){panel.classList.add('open');ov.classList.add('open');ham.setAttribute('aria-expanded','true');panel.setAttribute('aria-hidden','false');}
+  function closeP(){panel.classList.remove('open');ov.classList.remove('open');ham.setAttribute('aria-expanded','false');panel.setAttribute('aria-hidden','true');}
+  ham.addEventListener('click',function(){panel.classList.contains('open')?closeP():openP();});
+  closeB.addEventListener('click',closeP);
+  ov.addEventListener('click',closeP);
+  links.addEventListener('click',function(e){if(e.target.tagName==='A')closeP();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeP();});
+  document.getElementById('navTopBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  function hints(){document.querySelectorAll('.table-scroll').forEach(function(w){
+    if(w.scrollWidth>w.clientWidth+2){w.classList.add('has-overflow');}else{w.classList.remove('has-overflow');}
+  });}
+  window.addEventListener('resize',hints);window.addEventListener('load',hints);hints();
+  document.querySelectorAll('.table-scroll').forEach(function(w){
+    w.addEventListener('scroll',function(){if(w.scrollLeft>12)w.classList.remove('has-overflow');},{passive:true});
+  });
+})();
+
+
+function toggleAK(btn){var p=btn.nextElementSibling;if(p.hasAttribute('hidden')){p.removeAttribute('hidden');btn.setAttribute('aria-expanded','true');btn.textContent=btn.textContent.replace(/^Show/,'Hide');}else{p.setAttribute('hidden','');btn.setAttribute('aria-expanded','false');btn.textContent=btn.textContent.replace(/^Hide/,'Show');}}
+</script>
+</body>
+</html>
