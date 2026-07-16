@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet">
+<title>Grade 3 · Week 5 — Discussing Time &amp; Place</title>
+<style>
+  :root{
+    --paper:#f7f3ea;
+    --paper-line:#e4dcc8;
+    --ink:#2b2620;
+    --ink-soft:#5c5346;
+    --green:#1d3557;
+    --green-soft:#dbe6f0;
+    --orange:#b8483a;
+    --orange-soft:#f2ddd8;
+    --blue:#2a6f6f;
+    --blue-soft:#dcecec;
+    --plum:#6b4226;
+    --plum-soft:#ece0d5;
+    --gold:#a67c1e;
+    --gold-soft:#f0e6c8;
+    --card-shadow: 0 2px 0 rgba(43,38,32,0.06), 0 8px 18px rgba(43,38,32,0.08);
+  }
+  *{box-sizing:border-box;}
+  h1,h2,h3,h4,h5{font-family:'Playfair Display',"Bookman Old Style",Cambria,Georgia,serif;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(ellipse at top left, rgba(29,53,87,0.05), transparent 40%),
+      radial-gradient(ellipse at bottom right, rgba(184,72,58,0.05), transparent 40%),
+      var(--paper);
+    color:var(--ink);
+    font-family:'Inter',Calibri,Arial,sans-serif;
+    line-height:1.6;
+    padding-bottom:80px;
+  }
+  #progress-wrap{position:fixed;top:0;left:0;width:100%;height:6px;background:var(--paper-line);z-index:999;}
+  #progress-bar{height:100%;width:0%;background:linear-gradient(90deg,var(--green),var(--orange));transition:width .1s;}
+
+  .wrap{max-width:920px;margin:0 auto;padding:34px 22px 10px;}
+
+  header.hero{
+    background:linear-gradient(135deg, var(--green) 0%, #0d1f33 100%);
+    color:#fbf8f0;
+    padding:38px 30px 30px;
+    border-radius:14px;
+    margin:26px auto 0;
+    max-width:920px;
+    box-shadow:var(--card-shadow);
+  }
+  header.hero .eyebrow{
+    font-family:'Playfair Display',"Bookman Old Style",Cambria,Georgia,serif;
+    text-transform:uppercase;letter-spacing:2px;font-size:12.5px;color:#cdd9e6;font-weight:bold;
+  }
+  header.hero h1{font-family:'Playfair Display',"Bookman Old Style",Cambria,Georgia,serif;font-size:32px;margin:8px 0 6px;line-height:1.25;}
+  header.hero p.sub{color:#e6ecf2;font-size:16px;margin:0 0 4px;font-style:italic;}
+  header.hero .storyline{
+    margin-top:16px;padding:12px 16px;background:rgba(255,255,255,0.09);border-radius:10px;font-size:14.5px;color:#f2ede0;
+  }
+
+  section{max-width:920px;margin:26px auto;padding:0 22px;}
+
+  .box{
+    background:#fffdf8;
+    border:1px solid var(--paper-line);
+    border-radius:12px;
+    padding:22px 24px;
+    box-shadow:var(--card-shadow);
+  }
+
+  h2.sec-title{
+    display:flex;align-items:center;gap:12px;
+    font-family:'Playfair Display',"Bookman Old Style",Cambria,Georgia,serif;
+    font-size:23px;margin:0 0 16px;color:var(--ink);
+  }
+  .tab-num{
+    flex:0 0 auto;width:38px;height:38px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Playfair Display',"Bookman Old Style",Cambria,Georgia,serif;
+    color:#fff;font-weight:bold;font-size:16px;box-shadow:0 2px 4px rgba(0,0,0,0.15);
+  }
+  .c1 .tab-num{background:var(--green);} .c2 .tab-num{background:var(--orange);}
+  .c3 .tab-num{background:var(--blue);} .c4 .tab-num{background:var(--plum);}
+  .c5 .tab-num{background:var(--gold);} .c6 .tab-num{background:var(--green);}
+  .c7 .tab-num{background:var(--orange);} .c8 .tab-num{background:var(--blue);}
+  .c9 .tab-num{background:var(--plum);}
+
+  .overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px;}
+  .overview-grid .item{
+    background:var(--green-soft);border-radius:10px;padding:14px 16px;font-size:14.5px;
+  }
+  .overview-grid .item b{font-family:'Playfair Display',"Bookman Old Style",Cambria,Georgia,serif;display:block;color:var(--green);font-size:13px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;}
+
+  .toc-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;
+  }
+  .toc-grid a{
+    display:flex;align-items:center;gap:10px;
+    text-decoration:none;color:var(--ink);font-size:15px;padding:8px 10px;border-radius:8px;
+    transition:background .15s;
+  }
+  .toc-grid a:hover{background:var(--paper-line);}
+  .toc-num{
+    flex:0 0 auto;width:26px;height:26px;border-radius:50%;color:#fff;font-size:12.5px;font-weight:bold;
+    font-family:'Playfair Display',"Bookman Old Style",Cambria,Georgia,serif;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .toc-grid a:nth-child(1) .toc-num{background:var(--green);}
+  .toc-grid a:nth-child(2) .toc-num{background:var(--orange);}
+  .toc-grid a:nth-child(3) .toc-num{background:var(--blue);}
+  .toc-grid a:nth-child(4) .toc-num{background:var(--plum);}
+  .toc-grid a:nth-child(5) .toc-num{background:var(--gold);}
+  .toc-grid a:nth-child(6) .toc-num{background:var(--green);}
+  .toc-grid a:nth-child(7) .toc-num{background:var(--orange);}
+  .toc-grid a:nth-child(8) .toc-num{background:var(--blue);}
+  .toc-grid a:nth-child(9) .toc-num{background:var(--plum);}
+  .toc-grid a:nth-child(10) .toc-num{background:var(--gold);}
+
+  .realia{
+    border:1px solid var(--paper-line);
+    border-radius:10px;
+    background:#fffefb;
+    padding:18px 20px;
+    margin:16px 0;
+    position:relative;
+  }
+  .realia .doc-tag{
+    position:absolute;top:-11px;left:16px;background:var(--blue);color:#fff;font-size:11.5px;
+    font-family:'Playfair Display',"Bookman Old Style",Cambria,Georgia,serif;
+    padding:3px 10px;border-radius:20px;letter-spacing:0.5px;text-transform:uppercase;font-weight:bold;
+  }
+  .blogpost h4{font-family:'Playfair Display',"Bookman Old Style",Cambria,Georgia,serif;margin:6px 0 2px;color:var(--green);font-size:19px;}
+  .blogpost .byline{font-size:12.5px;color:var(--ink-soft);margin-bottom:10px;font-style:italic;}
+  .blogpost table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;}
+  .blogpost table th, .blogpost table td{border:1px solid var(--paper-line);padding:7px 10px;text-align:left;}
+  .blogpost table th{background:var(--green-soft);color:var(--green);}
+
+  .chat{background:#fbf9f2;border-radius:10px;padding:14px 16px 6px;}
+  .chat .bubble{max-width:80%;padding:9px 14px;border-radius:14px;margin-bottom:10px;font-size:14.5px;}
+  .chat .left{background:#eee7d6;border-bottom-left-radius:2px;}
+  .chat .right{background:var(--green-soft);border-bottom-right-radius:2px;margin-left:auto;}
+  .chat .name{font-size:11.5px;font-weight:bold;color:var(--ink-soft);margin-bottom:2px;}
+
+  .highlight{background:#fce9c9;padding:0 3px;border-radius:3px;font-weight:bold;}
+  .highlight2{background:#d7e9f0;padding:0 3px;border-radius:3px;font-weight:bold;}
+  .highlight3{background:#e3d5c8;padding:0 3px;border-radius:3px;font-weight:bold;}
+
+  .notice-q{background:var(--gold-soft);border-radius:10px;padding:14px 18px;margin:10px 0;font-size:15px;}
+  .notice-q b{color:var(--gold);}
+
+  table.rules{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px;}
+  table.rules th{background:var(--blue);color:#fff;padding:9px 12px;text-align:left;}
+  table.rules td{padding:9px 12px;border-bottom:1px solid var(--paper-line);}
+  table.rules tr:nth-child(even) td{background:#faf7ee;}
+
+  .error-box{background:var(--plum-soft);border-radius:10px;padding:16px 20px;margin:16px 0;}
+  .error-box h4{font-family:'Playfair Display',"Bookman Old Style",Cambria,Georgia,serif;color:var(--plum);margin:0 0 8px;}
+
+  .vocab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:10px;}
+  .vocab-card{background:var(--orange-soft);border-radius:10px;padding:12px 15px;font-size:14.5px;display:flex;gap:10px;align-items:flex-start;}
+  .vocab-card .emoji{font-size:22px;line-height:1;}
+  .vocab-card b{font-family:'Playfair Display',"Bookman Old Style",Cambria,Georgia,serif;color:var(--orange);display:block;font-size:15.5px;}
+
+  .collo-row{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0;}
+  .collo-chip{background:var(--blue-soft);color:var(--blue);padding:6px 14px;border-radius:20px;font-size:14px;font-weight:bold;}
+
+  .tl-diagram{background:#fffefb;border:1px solid var(--paper-line);border-radius:12px;padding:14px 16px 10px;margin:16px 0;text-align:center;box-shadow:var(--card-shadow);}
+  .tl-diagram svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+  .tl-caption{font-size:13px;color:var(--ink-soft);margin-top:6px;font-style:italic;}
+  .tl-diagram-title{font-family:'Playfair Display',"Bookman Old Style",Cambria,Georgia,serif;font-size:14.5px;color:var(--ink);text-align:left;margin:0 0 6px;font-weight:bold;}
+
+  .quiz-item{background:#fffefb;border:1px solid var(--paper-line);border-radius:10px;padding:14px 18px;margin:10px 0;}
+  .quiz-item .q-text{font-size:15px;margin-bottom:10px;}
+  .tf-btns button, .mc-btns button{
+    font-family:inherit;font-size:14px;padding:7px 16px;margin-right:8px;border-radius:20px;border:2px solid var(--ink-soft);
+    background:#fff;cursor:pointer;transition:.15s;
+  }
+  .tf-btns button:hover, .mc-btns button:hover{background:var(--green-soft);}
+  .feedback{display:none;margin-top:8px;font-size:14px;font-weight:bold;padding:6px 12px;border-radius:8px;}
+  .feedback.correct{background:#dbe9db;color:var(--green);}
+  .feedback.incorrect{background:#f5d8d8;color:#8c2c2c;}
+
+  .reveal-btn{
+    display:inline-block;margin-top:8px;font-size:13.5px;background:var(--gold);color:#fff;border:none;
+    padding:6px 14px;border-radius:20px;cursor:pointer;font-family:inherit;
+  }
+  .reveal-content{display:none;margin-top:10px;background:var(--gold-soft);border-radius:8px;padding:10px 14px;font-size:14px;}
+
+  .match-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:12px;}
+  .match-col .match-item{
+    background:#fff;border:2px solid var(--paper-line);border-radius:8px;padding:8px 12px;margin-bottom:8px;
+    cursor:pointer;font-size:14px;transition:.15s;
+  }
+  .match-col .match-item.selected{border-color:var(--blue);background:var(--blue-soft);}
+  .match-col .match-item.matched{border-color:var(--green);background:var(--green-soft);cursor:default;}
+
+  .fill-blank input{
+    font-family:inherit;font-size:14px;border:none;border-bottom:2px solid var(--ink-soft);
+    background:transparent;width:110px;text-align:center;padding:2px 4px;
+  }
+  .fill-blank input:focus{outline:none;border-color:var(--green);}
+
+  textarea.writing-area{
+    width:100%;min-height:160px;font-family:inherit;font-size:14.5px;padding:14px;border-radius:10px;
+    border:1px solid var(--paper-line);resize:vertical;
+  }
+  .word-count{font-size:13px;color:var(--ink-soft);margin-top:6px;}
+
+  .score-track{font-size:13.5px;color:var(--ink-soft);margin-top:4px;}
+
+  .research-list{list-style:none;padding:0;margin:10px 0;}
+  .research-list li{
+    background:#fffefb;border:1px solid var(--paper-line);border-radius:10px;
+    padding:12px 16px;margin-bottom:10px;font-size:14.5px;
+  }
+  .research-list li b{color:var(--green);}
+
+  .summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px;}
+  .summary-card{
+    background:#fffefb;border-radius:10px;padding:16px;text-align:center;border:1px solid var(--paper-line);
+    box-shadow:var(--card-shadow);
+  }
+  .summary-card .icon{font-size:28px;margin-bottom:6px;}
+  .summary-card h5{font-family:'Playfair Display',"Bookman Old Style",Cambria,Georgia,serif;margin:4px 0;color:var(--green);font-size:14.5px;}
+  .summary-card p{font-size:12.5px;color:var(--ink-soft);margin:0;}
+
+  .checklist{list-style:none;padding:0;}
+  .checklist li{padding:8px 4px;font-size:14.5px;display:flex;gap:10px;align-items:flex-start;}
+  .checklist input{margin-top:3px;}
+
+  footer{text-align:center;font-size:12.5px;color:var(--ink-soft);margin-top:50px;padding:0 22px;}
+
+  @media(max-width:640px){
+    .toc-grid, .overview-grid, .vocab-grid, .match-grid, .summary-grid{grid-template-columns:1fr;}
+  }
+
+/* ============================================================
+   SITE FRAME (added): fixed top nav + progress bar, slide-out
+   contents panel with creator branding, sticky section headers,
+   responsive & overflow fixes, footer, speaking/listening cards
+   ============================================================ */
+:root{--navh:52px;}
+html{scroll-behavior:smooth;}
+body{overflow-x:hidden;padding-top:calc(var(--navh) + 4px);}
+[id]{scroll-margin-top:calc(var(--navh) + 20px);}
+img,svg,table{max-width:100%;}
+.wrap p,.wrap li,.wrap td,.wrap th,.wrap h1,.wrap h2,.wrap h3{overflow-wrap:break-word;word-break:break-word;}
+.masthead{margin-left:0;margin-right:0;}
+.debate-band{margin-left:0;margin-right:0;}
+
+/* Progress bar: fixed, always visible below the nav */
+.progress-track{position:fixed;top:var(--navh);left:0;right:0;height:4px;z-index:120;}
+
+/* Top navigation bar */
+.nav-bar{position:fixed;top:0;left:0;right:0;height:var(--navh);background:var(--green);color:#FFFFFF;display:flex;align-items:center;gap:10px;padding:0 12px;z-index:130;box-shadow:0 2px 12px rgba(0,0,0,.20);}
+.nav-btn{min-width:44px;min-height:44px;background:transparent;border:none;color:#FFFFFF;font-size:20px;cursor:pointer;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-family:'Inter',Arial,sans-serif;transition:background .15s;}
+.nav-btn:hover{background:rgba(255,255,255,.14);}
+.nav-top{font-size:13px;font-weight:700;letter-spacing:.03em;white-space:nowrap;padding:0 10px;}
+.nav-brand{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.25;}
+.nav-brand-week{font-family:'Inter',Arial,sans-serif;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;opacity:.75;}
+.nav-brand-title{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+/* Slide-out contents panel */
+.nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .25s;z-index:135;}
+.nav-overlay.open{opacity:1;pointer-events:auto;}
+.nav-panel{position:fixed;top:0;bottom:0;left:0;width:min(330px,88vw);background:#FFFFFF;z-index:140;transform:translateX(-103%);transition:transform .28s ease;display:flex;flex-direction:column;box-shadow:6px 0 28px rgba(0,0,0,.22);}
+.nav-panel.open{transform:translateX(0);}
+.nav-panel-head{display:flex;align-items:center;justify-content:space-between;padding:8px 10px 8px 20px;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);border-bottom:1px solid var(--paper-line);}
+.nav-panel-head .nav-btn{color:var(--ink);font-size:16px;}
+.nav-panel-links{flex:1;overflow-y:auto;padding:10px 8px;}
+.nav-panel-links a{display:flex;align-items:center;min-height:44px;padding:6px 14px;border-radius:8px;text-decoration:none;color:var(--ink);font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:600;line-height:1.4;}
+.nav-panel-links a:hover{background:var(--paper);color:var(--orange);}
+/* Branding zone: visually separated from navigation */
+.nav-panel-brand{border-top:2px solid var(--paper-line);background:var(--paper);padding:16px 20px 18px;}
+.nav-panel-brand .brand-name{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.nav-panel-brand .brand-line{font-family:'Inter',Arial,sans-serif;font-size:12.5px;color:var(--ink-soft);margin-bottom:10px;line-height:1.55;}
+.nav-panel-brand a{display:flex;align-items:center;min-height:40px;font-family:'Inter',Arial,sans-serif;font-size:13px;color:var(--orange);text-decoration:none;font-weight:600;}
+.nav-panel-brand a:hover{text-decoration:underline;}
+.nav-panel-brand .brand-copy{margin-top:10px;font-family:'Inter',Arial,sans-serif;font-size:11.5px;color:var(--ink-soft);}
+
+/* Sticky section headers: current section title stays visible */
+.tab-header{position:sticky;top:calc(var(--navh) + 4px);z-index:60;background:var(--paper);padding:10px 0 8px;}
+
+/* Scrollable table wrapper with mobile hint */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;}
+.table-scroll table{max-width:none;}
+.table-scroll.has-overflow{background:linear-gradient(to left,rgba(0,0,0,.12),rgba(0,0,0,0) 26px) right center / 26px 100% no-repeat;}
+.table-scroll.has-overflow::before{content:'scroll \2192';display:block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--ink-soft);text-align:right;padding:0 6px 4px;}
+
+/* Speaking & Listening sections */
+.tb-speak{background:var(--blue);color:#FFFFFF;}
+.tb-listen{background:var(--plum);color:#FFFFFF;}
+.section-intro{font-family:'Inter',Arial,sans-serif;font-size:14.5px;color:var(--ink-soft);margin:0 0 18px;line-height:1.65;}
+.speak-card{background:#FFFFFF;border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.07);border-left:4px solid var(--blue);}
+.speak-type{display:inline-block;font-family:'Inter',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:8px;}
+.speak-card h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0 0 10px;color:var(--ink);}
+.speak-card p{margin:0 0 10px;}
+.speak-card ul{margin:0 0 10px 20px;padding:0;}
+.speak-card li{margin-bottom:6px;}
+.speak-how{background:var(--paper);border-radius:8px;padding:12px 16px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;line-height:1.65;margin-top:12px;}
+.media-card{background:#FFFFFF;border-radius:10px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.07);border-left:4px solid var(--plum);}
+.media-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px;}
+.media-head h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:18px;margin:0;color:var(--ink);}
+.media-platform{font-family:'Inter',Arial,sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--plum);}
+.media-card p{margin:0 0 10px;}
+.media-task{border-left:3px solid var(--plum);background:var(--paper);padding:10px 14px;font-family:'Inter',Arial,sans-serif;font-size:13.5px;line-height:1.65;margin-top:10px;border-radius:0 8px 8px 0;}
+.tip-box{border:2px dashed var(--blue);border-radius:10px;padding:18px 22px;background:#FFFFFF;margin-top:6px;}
+.tip-box h3{font-family:'Playfair Display',Cambria,Georgia,serif;font-size:16px;margin:0 0 10px;color:var(--blue);}
+.tip-box ul{margin:0 0 0 20px;padding:0;}
+.tip-box li{margin-bottom:6px;font-size:14.5px;}
+
+/* Footer */
+.site-footer{background:var(--green);color:#FFFFFF;margin-top:56px;padding:34px 24px 40px;}
+.site-footer-inner{max-width:920px;margin:0 auto;text-align:center;}
+.footer-copy{font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:700;margin:0 0 6px;}
+.footer-line{font-family:'Playfair Display',Cambria,Georgia,serif;font-style:italic;font-size:14.5px;opacity:.88;margin:0 0 12px;}
+.footer-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 10px;}
+.footer-links a{color:#FFFFFF;font-family:'Inter',Arial,sans-serif;font-size:13.5px;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding:8px 2px;min-height:44px;display:inline-flex;align-items:center;}
+.footer-links a:hover{border-bottom-color:#FFFFFF;}
+.footer-dot{opacity:.5;}
+.footer-note{font-family:'Inter',Arial,sans-serif;font-size:12.5px;opacity:.72;margin:0;}
+
+/* Mobile refinements (375px-safe) */
+@media(max-width:600px){
+  .wrap{padding-left:18px;padding-right:18px;}
+  .masthead{padding:34px 20px 28px;}
+  .grammar-box,.card{padding:20px 18px;}
+  .oped-body{padding:20px 18px;}
+  .speak-card,.media-card{padding:18px 16px;}
+  .check-btn,.reveal-btn,.rev-btn,.poll-opt{min-height:44px;}
+  .vs-table{grid-template-columns:1fr;}
+  .vs-divider{display:none;}
+  table.rule-table{font-size:13.5px;}
+  .nav-top{font-size:12px;}
+  .site-footer{padding:28px 18px 34px;}
+}
+
+/* Box-skeleton frame adjustments */
+#progress-wrap{top:var(--navh);}
+h1,h2,h3{font-family:'Playfair Display',"Bookman Old Style","Century Schoolbook",Cambria,Georgia,serif;}
+.tab-num,.toc-num{font-family:'Inter',Calibri,Arial,sans-serif;}
+h2.sec-title{position:sticky;top:calc(var(--navh) + 8px);background:var(--paper);z-index:60;padding:6px 0;}
+section{scroll-margin-top:calc(var(--navh) + 24px);}
+main p,main li,main td,main th,section p,section li,section td,section th{overflow-wrap:break-word;word-break:break-word;}
+.method-note{max-width:960px;margin:30px auto 0;padding:0 5vw;font-size:12.5px;
+  color:var(--ink-soft);text-align:center;font-family:'Inter',Calibri,Arial,sans-serif;}
+@media(max-width:600px){.reveal-btn,.fill-input,.toc-grid a{min-height:44px;}}
+
+</style>
+</head>
+<body>
+
+<!-- SECTION: Top Navigation Bar -->
+<header class="nav-bar" id="navBar">
+  <button class="nav-btn nav-hamburger" id="navHamburger" aria-label="Open contents menu" aria-expanded="false">&#9776;</button>
+  <div class="nav-brand">
+    <span class="nav-brand-week">Grade 3 · Week 5</span>
+    <span class="nav-brand-title">Time & Place</span>
+  </div>
+  <button class="nav-btn nav-top" id="navTopBtn" aria-label="Back to top">&#8593; Top</button>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+<aside class="nav-panel" id="navPanel" aria-hidden="true">
+  <div class="nav-panel-head"><span>On this page</span><button class="nav-btn nav-close" id="navClose" aria-label="Close menu">&#10005;</button></div>
+  <nav class="nav-panel-links" id="navPanelLinks"></nav>
+  <!-- Creator & branding section of the menu -->
+  <div class="nav-panel-brand">
+    <div class="brand-name">Bahar Esmaeelzadeh</div>
+    <div class="brand-line">Designed and created for English learners by Bahar Esmaeelzadeh.</div>
+    <a href="mailto:bahar.esmz.en@gmail.com">&#128231; bahar.esmz.en@gmail.com</a>
+    <a href="https://www.linkedin.com/in/bahar-esmaeelzadeh-650b98198" target="_blank" rel="noopener">&#128188; LinkedIn &mdash; Bahar Esmaeelzadeh</a>
+    <div class="brand-copy">&copy; 2026 Bahar Esmaeelzadeh &middot; All rights reserved</div>
+  </div>
+</aside>
+
+<div id="progress-wrap"><div id="progress-bar"></div></div>
+
+<header class="hero">
+  <div class="eyebrow">Grade 3 · Week 5 · Discussing Time &amp; Place</div>
+  <h1>Where Shall We Meet? Finalising the Trip</h1>
+  <p class="sub">Prepositions of time &amp; place · Wh- questions (review) · making suggestions</p>
+  <div class="storyline">📍 <b>This week's story:</b> It's finally the morning of Tom and Maya's weekend trip! Before they set off, they need to agree on the exact time and place to meet, check the forecast, and make a few last-minute suggestions. Read their final messages carefully — this is the last piece of the puzzle before they go.</div>
+</header>
+
+<div class="wrap">
+
+<section class="box" id="overview">
+  <h2 class="sec-title"><span class="tab-num" style="background:var(--green)">★</span>What You'll Master This Week</h2>
+  <div class="overview-grid">
+    <div class="item"><b>Grammar</b>Prepositions of time (at/on/in), prepositions of place (extended), and a review of Wh- questions.</div>
+    <div class="item"><b>Vocabulary</b>Prepositions, and frequent weather words: forecast, degree, temperature.</div>
+    <div class="item"><b>Function</b>Making suggestions, and discussing exact times and places.</div>
+    <div class="item"><b>Skills</b>Listening, pronunciation (word stress in questions), writing clear arrangements.</div>
+  </div>
+</section>
+
+<!-- SECTION: On This Page -->
+<section id="toc">
+  <div class="box">
+    <h2 class="sec-title"><span class="tab-num" style="background:var(--orange)">≡</span>On This Page</h2>
+    <div class="toc-grid">
+      <a href="#context"><span class="toc-num">1</span>Context: The Morning of the Trip</a>
+      <a href="#notice"><span class="toc-num">2</span>Notice the Language</a>
+      <a href="#grammar"><span class="toc-num">3</span>Grammar Focus</a>
+      <a href="#suggestions"><span class="toc-num">4</span>Making Suggestions</a>
+      <a href="#vocab"><span class="toc-num">5</span>Vocabulary: Weather &amp; Places</a>
+      <a href="#practice"><span class="toc-num">6</span>Practice Zone</a>
+      <a href="#errorclinic"><span class="toc-num">7</span>Error Clinic</a>
+      <a href="#writing"><span class="toc-num">8</span>Your Turn: Writing Task</a>
+      <a href="#speaking"><span class="toc-num">&#128483;</span>Speaking Practice</a>
+      <a href="#listening"><span class="toc-num">&#127911;</span>Listening &amp; Watching</a>
+      <a href="#research"><span class="toc-num">9</span>Explore More (Autonomy)</a>
+      <a href="#summary"><span class="toc-num">10</span>Summary &amp; Self-Check</a>
+    </div>
+  </div>
+</section>
+
+<!-- 1: CONTEXT -->
+<!-- SECTION: Context First: Read Before Any Rule -->
+<section id="context" class="c1">
+  <h2 class="sec-title"><span class="tab-num">1</span>Context First: Read Before Any Rule</h2>
+  <p>Read Tom and Maya's final messages before the trip, then the weather forecast card. Just try to understand exactly when and where they're meeting — we'll look at the grammar afterwards.</p>
+
+  <div class="realia">
+    <span class="doc-tag">Text Messages</span>
+    <div class="chat">
+      <div class="bubble left"><div class="name">Tom</div>Morning! So, shall we meet <span class="highlight">at</span> the station <span class="highlight">at</span> 9am? The train leaves <span class="highlight">on</span> the hour.</div>
+      <div class="bubble right"><div class="name">Maya</div>Sounds good. Where exactly <span class="highlight2">at the station</span>?</div>
+      <div class="bubble left"><div class="name">Tom</div>I'll be standing <span class="highlight2">next to</span> the ticket machine, <span class="highlight2">in front of</span> the main entrance. It's <span class="highlight2">between</span> the coffee stand and the newspaper shop.</div>
+      <div class="bubble right"><div class="name">Maya</div>Got it! Why don't we grab a coffee <span class="highlight">before</span> the train, <span class="highlight">in</span> the morning rush? How about meeting 15 minutes early?</div>
+      <div class="bubble left"><div class="name">Tom</div>Good idea. Let's meet <span class="highlight">at</span> 8:45 then, <span class="highlight2">outside</span> the coffee stand.</div>
+      <div class="bubble right"><div class="name">Maya</div>Perfect. What's the forecast like for today?</div>
+      <div class="bubble left"><div class="name">Tom</div>Sunny all day, 22 degrees this afternoon. Let's check the full forecast below.</div>
+    </div>
+  </div>
+
+  <div class="realia blogpost">
+    <span class="doc-tag">Weather Forecast</span>
+    <h4>Riverside-on-Sea — Weekend Forecast</h4>
+    <p class="byline">City Weather Service</p>
+    <div class="table-scroll"><table>
+      <tr><th>Time</th><th>Conditions</th><th>Temperature</th></tr>
+      <tr><td><span class="highlight">In</span> the morning</td><td>☀️ Sunny</td><td>17 <span class="highlight3">degrees</span></td></tr>
+      <tr><td><span class="highlight">In</span> the afternoon</td><td>☀️ Sunny</td><td>22 <span class="highlight3">degrees</span></td></tr>
+      <tr><td><span class="highlight">In</span> the evening</td><td>⛅ Cloudy</td><td>18 <span class="highlight3">degrees</span></td></tr>
+    </table></div>
+    <p>Overall <span class="highlight3">temperature</span>: mild to warm. Full <span class="highlight3">forecast</span> updated <span class="highlight">at</span> 6am <span class="highlight">on</span> Saturday.</p>
+  </div>
+
+  <p><em>Notice:</em> Small words like "at", "on", "in", "next to", "in front of" and "between" appear constantly whenever people talk about exact times and exact places. The forecast card also introduces three very useful weather words: forecast, degree, temperature.</p>
+</section>
+
+<!-- 2: NOTICE -->
+<!-- SECTION: Notice the Language (Before Any Rule) -->
+<section id="notice" class="c2">
+  <h2 class="sec-title"><span class="tab-num">2</span>Notice the Language (Before Any Rule)</h2>
+  <p>Look again at the highlighted words. Talk to a partner about these questions.</p>
+  <div class="notice-q"><b>Q1.</b> Find every example of "at" in the chat. Look at what comes right after each one (9am, 8:45, 6am). What do these all have in common?</div>
+  <div class="notice-q"><b>Q2.</b> Now find every example of "in" in the forecast card (in the morning, in the afternoon, in the evening). Are these exact points in time, or longer periods?</div>
+  <div class="notice-q"><b>Q3.</b> Find "on" in "on the hour" and "on Saturday". What kind of time expression usually follows "on"?</div>
+  <div class="notice-q"><b>Q4.</b> Look at "next to the ticket machine", "in front of the main entrance", "between the coffee stand and the newspaper shop". Try to picture the scene — could you draw it based only on these words?</div>
+  <div class="notice-q"><b>Q5.</b> Find "Why don't we...", "How about...", and "Let's...". What job do all three phrases do in this conversation?</div>
+  <p style="font-size:14px;color:var(--ink-soft);">Discuss your answers before you move to Section 3.</p>
+</section>
+
+<!-- 3: GRAMMAR -->
+<!-- SECTION: Grammar Focus -->
+<section id="grammar" class="c3">
+  <h2 class="sec-title"><span class="tab-num">3</span>Grammar Focus</h2>
+
+  <h3 style="color:var(--blue);">3.1 — Prepositions of Time: At / On / In</h3>
+  <div class="tl-diagram">
+    <div class="tl-diagram-title">Three "sizes" of time</div>
+    <svg viewBox="0 0 660 190" xmlns="http://www.w3.org/2000/svg">
+      <rect x="20" y="30" width="190" height="130" rx="14" fill="#dbe6f0"/>
+      <text x="115" y="60" font-size="30" text-anchor="middle">⏰</text>
+      <text x="115" y="90" font-size="16" fill="#1d3557" font-family="Calibri" font-weight="bold" text-anchor="middle">AT</text>
+      <text x="115" y="112" font-size="12" fill="#2b2620" font-family="Calibri" text-anchor="middle">exact clock times</text>
+      <text x="115" y="130" font-size="11.5" fill="#5c5346" font-family="Calibri" text-anchor="middle">at 9am, at 8:45,</text>
+      <text x="115" y="146" font-size="11.5" fill="#5c5346" font-family="Calibri" text-anchor="middle">at night, at the weekend</text>
+
+      <rect x="235" y="30" width="190" height="130" rx="14" fill="#f2ddd8"/>
+      <text x="330" y="60" font-size="30" text-anchor="middle">📅</text>
+      <text x="330" y="90" font-size="16" fill="#b8483a" font-family="Calibri" font-weight="bold" text-anchor="middle">ON</text>
+      <text x="330" y="112" font-size="12" fill="#2b2620" font-family="Calibri" text-anchor="middle">days and dates</text>
+      <text x="330" y="130" font-size="11.5" fill="#5c5346" font-family="Calibri" text-anchor="middle">on Saturday, on July 5th,</text>
+      <text x="330" y="146" font-size="11.5" fill="#5c5346" font-family="Calibri" text-anchor="middle">on my birthday</text>
+
+      <rect x="450" y="30" width="190" height="130" rx="14" fill="#dcecec"/>
+      <text x="545" y="60" font-size="30" text-anchor="middle">🗓️</text>
+      <text x="545" y="90" font-size="16" fill="#2a6f6f" font-family="Calibri" font-weight="bold" text-anchor="middle">IN</text>
+      <text x="545" y="112" font-size="12" fill="#2b2620" font-family="Calibri" text-anchor="middle">longer periods</text>
+      <text x="545" y="130" font-size="11.5" fill="#5c5346" font-family="Calibri" text-anchor="middle">in the morning, in July,</text>
+      <text x="545" y="146" font-size="11.5" fill="#5c5346" font-family="Calibri" text-anchor="middle">in summer, in 2024</text>
+    </svg>
+    <div class="tl-caption">Think of it as small (a moment) → medium (a day) → large (a period) — AT is the smallest, IN is the biggest.</div>
+  </div>
+  <div class="table-scroll"><table class="rules">
+    <tr><th>Preposition</th><th>Used for</th><th>Examples</th></tr>
+    <tr><td><b>at</b></td><td>exact clock times, and a few fixed expressions</td><td>at 9am, at noon, at night, at the weekend</td></tr>
+    <tr><td><b>on</b></td><td>days and dates</td><td>on Saturday, on 5th July, on my birthday</td></tr>
+    <tr><td><b>in</b></td><td>parts of the day, months, seasons, years</td><td>in the morning, in July, in summer, in 2024</td></tr>
+  </table></div>
+
+  <h3 style="color:var(--blue);">3.2 — Prepositions of Place (Extended)</h3>
+  <p>You already know "in", "on" and "at" for place from earlier grades. This week we add more precise prepositions for describing exactly where something is.</p>
+  <div class="tl-diagram">
+    <div class="tl-diagram-title">The station scene: prepositions of place in action</div>
+    <svg viewBox="0 0 680 260" xmlns="http://www.w3.org/2000/svg">
+      <rect x="40" y="80" width="600" height="100" fill="#e4dcc8"/>
+      <rect x="90" y="60" width="110" height="40" rx="6" fill="#1d3557"/>
+      <text x="145" y="85" font-size="12" fill="#fff" font-family="Calibri" text-anchor="middle">Coffee Stand</text>
+      <rect x="230" y="50" width="140" height="60" rx="6" fill="#b8483a"/>
+      <text x="300" y="84" font-size="13" fill="#fff" font-family="Calibri" text-anchor="middle">Main Entrance</text>
+      <rect x="400" y="60" width="120" height="40" rx="6" fill="#2a6f6f"/>
+      <text x="460" y="85" font-size="12" fill="#fff" font-family="Calibri" text-anchor="middle">Newspaper Shop</text>
+      <circle cx="300" cy="150" r="10" fill="#a67c1e"/>
+      <text x="300" y="180" font-size="12.5" fill="#2b2620" font-family="Calibri" font-weight="bold" text-anchor="middle">🎫 ticket machine</text>
+      <line x1="200" y1="80" x2="230" y2="80" stroke="#5c5346" stroke-width="2" stroke-dasharray="3,2"/>
+      <line x1="370" y1="80" x2="400" y2="80" stroke="#5c5346" stroke-width="2" stroke-dasharray="3,2"/>
+      <line x1="300" y1="110" x2="300" y2="140" stroke="#5c5346" stroke-width="2" stroke-dasharray="3,2"/>
+      <text x="345" y="230" font-size="13" fill="#2b2620" font-family="Calibri" text-anchor="middle">The ticket machine is <tspan font-weight="bold" fill="#a67c1e">in front of</tspan> the main entrance.</text>
+      <text x="345" y="250" font-size="13" fill="#2b2620" font-family="Calibri" text-anchor="middle">The entrance is <tspan font-weight="bold" fill="#b8483a">between</tspan> the coffee stand and the newspaper shop.</text>
+    </svg>
+    <div class="tl-caption">Tom is standing "next to" the ticket machine, which is "in front of" the entrance, which is "between" the two shops.</div>
+  </div>
+  <div class="table-scroll"><table class="rules">
+    <tr><th>Preposition</th><th>Meaning</th><th>Example</th></tr>
+    <tr><td><b>next to</b> / <b>beside</b></td><td>directly at the side of</td><td>I'll be next to the ticket machine.</td></tr>
+    <tr><td><b>in front of</b></td><td>facing the front of something</td><td>It's in front of the main entrance.</td></tr>
+    <tr><td><b>behind</b></td><td>at the back of something</td><td>The car park is behind the station.</td></tr>
+    <tr><td><b>between</b></td><td>with one thing on each side</td><td>It's between the coffee stand and the shop.</td></tr>
+    <tr><td><b>opposite</b></td><td>facing something, across from it</td><td>The hotel is opposite the beach.</td></tr>
+    <tr><td><b>near</b></td><td>a short distance from</td><td>We're staying near the station.</td></tr>
+  </table></div>
+
+  <h3 style="color:var(--blue);">3.3 — Wh- Questions: A Quick Review</h3>
+  <p>You already know these question words from earlier grades. Here they are again, in a travel context.</p>
+  <div class="table-scroll"><table class="rules">
+    <tr><th>Question word</th><th>Asks about</th><th>Example</th></tr>
+    <tr><td><b>Where</b></td><td>place</td><td>Where shall we meet?</td></tr>
+    <tr><td><b>When / What time</b></td><td>time</td><td>What time does the train leave?</td></tr>
+    <tr><td><b>Who</b></td><td>person</td><td>Who else is coming?</td></tr>
+    <tr><td><b>Why</b></td><td>reason</td><td>Why don't we grab a coffee first?</td></tr>
+    <tr><td><b>How</b></td><td>manner/method</td><td>How are we getting there?</td></tr>
+    <tr><td><b>How much / How many</b></td><td>quantity</td><td>How much does the ticket cost?</td></tr>
+  </table></div>
+
+  <div class="error-box">
+    <h4>⚠️ Common Errors at This Level</h4>
+    <div class="table-scroll"><table class="rules">
+      <tr><th>❌ Incorrect</th><th>✅ Correct</th></tr>
+      <tr><td>Let's meet in Monday.</td><td>Let's meet <b>on</b> Monday.</td></tr>
+      <tr><td>The train leaves on 9am.</td><td>The train leaves <b>at</b> 9am.</td></tr>
+      <tr><td>I was born at July.</td><td>I was born <b>in</b> July.</td></tr>
+    </table></div>
+    <p style="margin-bottom:0;"><b>Rule of thumb:</b> think about the "size" of the time expression. A precise clock time or a fixed phrase like "at night" → <b>at</b>. A day or date → <b>on</b>. Anything longer (a part of the day, a month, a season, a year) → <b>in</b>.</p>
+  </div>
+</section>
+
+<!-- 4: SUGGESTIONS -->
+<!-- SECTION: Making Suggestions -->
+<section id="suggestions" class="c4">
+  <h2 class="sec-title"><span class="tab-num">4</span>Making Suggestions</h2>
+  <p>Tom and Maya use three common structures for suggesting an idea. Notice that two of them use a gerund after a preposition — exactly the pattern from Week 3!</p>
+  <div class="table-scroll"><table class="rules">
+    <tr><th>Structure</th><th>Example</th><th>Note</th></tr>
+    <tr><td><b>Let's</b> + base verb</td><td>Let's meet at 8:45.</td><td>no "to", no "-ing"</td></tr>
+    <tr><td><b>Why don't we</b> + base verb</td><td>Why don't we grab a coffee first?</td><td>a question form, but really a suggestion</td></tr>
+    <tr><td><b>How about</b> / <b>What about</b> + gerund</td><td>How about meeting 15 minutes early?</td><td>preposition "about" + "-ing" — recycled from Week 3!</td></tr>
+  </table></div>
+  <p style="font-size:14px;">All three structures are common and natural — native speakers switch between them freely in conversation. Using a mix, instead of only "Let's...", will make your English sound much more natural.</p>
+</section>
+
+<!-- 5: VOCAB -->
+<!-- SECTION: Vocabulary: Weather & Places -->
+<section id="vocab" class="c5">
+  <h2 class="sec-title"><span class="tab-num">5</span>Vocabulary: Weather &amp; Places</h2>
+
+  <h3 style="color:var(--plum);">5.1 — Weather Words: Forecast, Degree, Temperature</h3>
+  <div class="vocab-grid">
+    <div class="vocab-card"><span class="emoji">📻</span><div><b>forecast</b>a prediction of what the weather will be like</div></div>
+    <div class="vocab-card"><span class="emoji">🌡️</span><div><b>temperature</b>how hot or cold something (like the air) is</div></div>
+    <div class="vocab-card"><span class="emoji">🔢</span><div><b>degree(s)</b>the unit used to measure temperature (22 degrees)</div></div>
+    <div class="vocab-card"><span class="emoji">📈</span><div><b>high / low</b>used with temperature: "a high of 22 degrees"</div></div>
+  </div>
+
+  <h3 style="color:var(--plum);">5.2 — Prepositions of Place, Collected</h3>
+  <div class="collo-row">
+    <span class="collo-chip">next to · beside · in front of · behind · between · opposite · near · under · above · across from</span>
+  </div>
+
+  <h3 style="color:var(--plum);">5.3 — Meeting Point &amp; Station Vocabulary</h3>
+  <div class="vocab-grid">
+    <div class="vocab-card"><span class="emoji">🎫</span><div><b>ticket machine</b>a machine where you buy travel tickets</div></div>
+    <div class="vocab-card"><span class="emoji">🚉</span><div><b>platform</b>where you wait for and board a train</div></div>
+    <div class="vocab-card"><span class="emoji">🕐</span><div><b>rush hour</b>the busiest travel time of day (morning/evening)</div></div>
+    <div class="vocab-card"><span class="emoji">📍</span><div><b>meeting point</b>an agreed place to meet someone</div></div>
+  </div>
+
+  <h3 style="color:var(--plum);">5.4 — More Related Vocabulary to Recognise</h3>
+  <p style="font-size:14.5px;">chance of rain · humidity · overcast · a heatwave · a cold snap · on time / late / early · to catch a train · to miss a train · a delay.</p>
+</section>
+
+<!-- 6: PRACTICE -->
+<!-- SECTION: Practice Zone -->
+<section id="practice" class="c6">
+  <h2 class="sec-title"><span class="tab-num">6</span>Practice Zone</h2>
+
+  <h3 style="color:var(--gold);">6.1 — True or False: Comprehension Check</h3>
+  <div id="tf-quiz"></div>
+  <div class="score-track" id="tf-score"></div>
+
+  <h3 style="color:var(--gold);">6.2 — Match the Preposition to Its Use</h3>
+  <div class="match-grid" id="match-game"></div>
+  <div class="score-track" id="match-score"></div>
+
+  <h3 style="color:var(--gold);">6.3 — Multiple Choice: Grammar Check</h3>
+  <div id="mc-quiz"></div>
+
+  <h3 style="color:var(--gold);">6.4 — Fill in the Blank</h3>
+  <p style="font-size:14px;">Complete each sentence with at, on, or in. Then click "Check answers".</p>
+  <div class="box" style="padding:16px 20px;">
+    <p>1. Let's meet <span class="fill-blank"><input data-answer="at" placeholder="at/on/in"></span> 9am.</p>
+    <p>2. The train leaves <span class="fill-blank"><input data-answer="on" placeholder="at/on/in"></span> Saturday.</p>
+    <p>3. It's usually sunny <span class="fill-blank"><input data-answer="in" placeholder="at/on/in"></span> the morning.</p>
+    <p>4. My birthday is <span class="fill-blank"><input data-answer="in" placeholder="at/on/in"></span> July.</p>
+    <p>5. I'll see you <span class="fill-blank"><input data-answer="at" placeholder="at/on/in"></span> the weekend.</p>
+    <button class="reveal-btn" onclick="checkFillBlanks()">Check answers</button>
+    <div id="fill-feedback" class="score-track"></div>
+  </div>
+</section>
+
+<!-- 7: ERROR CLINIC -->
+<!-- SECTION: Error Clinic -->
+<section id="errorclinic" class="c7">
+  <h2 class="sec-title"><span class="tab-num">7</span>Error Clinic</h2>
+  <p>Read each sentence. Some have mistakes — fix them. <b>One sentence is already correct — do not "fix" it if it isn't broken.</b></p>
+  <div class="box" style="padding:16px 20px;">
+    <ol style="font-size:14.5px;">
+      <li>"Let's meet in Monday." <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button><div class="reveal-content">Incorrect — days take "on": "Let's meet <b>on</b> Monday."</div></li>
+      <li>"The train leaves on 9am." <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button><div class="reveal-content">Incorrect — exact clock times take "at": "The train leaves <b>at</b> 9am."</div></li>
+      <li>"The ticket machine is in front of the entrance." <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button><div class="reveal-content"><b>This sentence is already correct — no error here.</b> "In front of" is used correctly here. Resist the urge to change anything.</div></li>
+      <li>"How about go for a coffee first?" <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button><div class="reveal-content">Incorrect — "about" is a preposition, so it needs a gerund (recycled from Week 3!): "How about <b>going</b> for a coffee first?"</div></li>
+      <li>"I was born at 1998." <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Reveal</button><div class="reveal-content">Incorrect — years take "in": "I was born <b>in</b> 1998."</div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 8: WRITING -->
+<!-- SECTION: Your Turn: Writing Task -->
+<section id="writing" class="c8">
+  <h2 class="sec-title"><span class="tab-num">8</span>Your Turn: Writing Task</h2>
+  <p>Write a short message (<b>60–90 words</b>) suggesting a time and place to meet a friend. Use at least <b>3 prepositions of time</b> (at/on/in), <b>2 prepositions of place</b>, and <b>2 different suggestion structures</b> (Let's / Why don't we / How about).</p>
+  <textarea class="writing-area" id="writing-box" placeholder="Start writing here..."></textarea>
+  <div class="word-count" id="word-count">0 words</div>
+  <div class="notice-q" style="margin-top:14px;"><b>Self-check before you submit:</b> Did you match "at" with exact times, "on" with days/dates, and "in" with longer periods? Did you use a gerund after "how about" / "what about"? Did you use at least 2 different suggestion structures, not just one repeated?</div>
+</section>
+
+
+<!-- SECTION: Speaking Practice -->
+<section id="speaking">
+  <h2 class="sec-title"><span class="tab-num" style="background:var(--blue)">&#128483;</span>Speaking Practice</h2>
+  <p class="section-intro">Meeting someone means agreeing on a time and a place &mdash; <em>at six, on Monday, at the station</em> &mdash; and making suggestions until everyone says yes. That's this week's speaking, out loud. Voice memo app ready!</p>
+
+  <div class="speak-card">
+    <span class="speak-type">Roleplay scenario</span>
+    <h3>Let's meet!</h3>
+    <p><strong>Role A:</strong> You want to meet your friend this week. Suggest a day, a time, and a place: <em>"Shall we meet on Thursday? Let's say at half past six, at the main station &mdash; at the meeting point near the ticket machines?"</em></p>
+    <p><strong>Role B:</strong> The first idea doesn't work for you. Say why, and suggest a change: <em>"I can't on Thursday &mdash; how about Friday? And let's meet at the caf&eacute; instead, it's warmer."</em> Agree in the end and repeat the final plan.</p>
+    <div class="speak-how"><strong>How:</strong> With a partner, or both roles yourself; record 2 minutes. <strong>When you listen back, check the little words:</strong> <em>AT six, ON Friday, IN the evening, AT the station.</em> They're small, but everyone hears them.</div>
+  </div>
+
+  <div class="speak-card">
+    <span class="speak-type">Sentence challenge</span>
+    <h3>In / on / at &mdash; six true facts</h3>
+    <p>Say six TRUE sentences about your own week &mdash; each one with a time or place preposition. Up to <strong>60 seconds each</strong>:</p>
+    <ul>
+      <li>Something you do <em>in the morning</em></li>
+      <li>Something you do <em>on Sundays</em></li>
+      <li>Something that starts <em>at</em> an exact time</li>
+      <li>A place you often are <em>at</em></li>
+      <li>Something in your city that is <em>on</em> a famous street</li>
+      <li>Where you were born (<em>in</em> + city/country, <em>in</em> + year)</li>
+    </ul>
+    <div class="speak-how"><strong>How:</strong> One recording, timer on. <strong>When you listen back, check the rule of size:</strong> <em>in</em> for big (months, years, cities), <em>on</em> for days and streets, <em>at</em> for exact times and points.</div>
+  </div>
+
+  <div class="speak-card">
+    <span class="speak-type">Shadowing drill</span>
+    <h3>Copy the dialogue</h3>
+    <p>Choose 4 lines from this week's dialogue &mdash; two suggestions and two answers. Read them aloud <strong>three times</strong>:</p>
+    <ul>
+      <li>Slowly and clearly;</li>
+      <li>at normal speed;</li>
+      <li>with real feeling &mdash; like you really want to meet this friend!</li>
+    </ul>
+    <div class="speak-how"><strong>How:</strong> Record the third time. <strong>When you listen back, check:</strong> <em>"Shall we&hellip;? &#8599;"</em> goes up; <em>"Let's&hellip;"</em> goes down. Suggestions have a melody.</div>
+  </div>
+
+  <div class="tip-box">
+    <h3>Tips: never miss a meeting</h3>
+    <ul>
+      <li>Always repeat the final plan &mdash; day, time, place: <em>"OK: Friday, six thirty, at the caf&eacute;."</em> Three words can save a whole evening.</li>
+      <li>Learn the suggestion trio by heart: <em>Shall we&hellip;? / Let's&hellip; / How about&hellip;?</em> Three keys, every door.</li>
+      <li>Weather talk + a suggestion is the most natural invitation in English: <em>"It's going to be sunny on Saturday &mdash; shall we go to the park?"</em></li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- SECTION: Listening & Watching -->
+<section id="listening">
+  <h2 class="sec-title"><span class="tab-num" style="background:var(--plum)">&#127911;</span>Listening &amp; Watching</h2>
+  <p class="section-intro">Times, places, weather, suggestions &mdash; the small everyday English that fills real conversation. Slow, clear sources with one small task each.</p>
+
+  <div class="media-card">
+    <div class="media-head"><h3>English with Lucy</h3><span class="media-platform">YouTube</span></div>
+    <p><strong>Why this week:</strong> Clear, slow lessons with words on screen &mdash; including lessons on prepositions of time and place (<em>in / on / at</em>), this week's exact grammar, with memory tricks.</p>
+    <div class="media-task"><strong>Your task:</strong> Find her lesson on <em>in / on / at</em>. Watch once without subtitles, once with. Write the rule of size in your own words. Then say six true sentences about your week &mdash; the Sentence Challenge above, second take.</div>
+  </div>
+
+  <div class="media-card">
+    <div class="media-head"><h3>Rachel's English</h3><span class="media-platform">YouTube</span></div>
+    <p><strong>Why this week:</strong> The clearest pronunciation teaching on YouTube &mdash; and numbers and times are where learners get lost most. She has videos on saying (and hearing!) numbers, times, and dates clearly.</p>
+    <div class="media-task"><strong>Your task:</strong> Find her video on numbers or telling time. Watch and repeat after her. Then record yourself saying five meeting times clearly: <em>"at six fifteen, at half past two&hellip;"</em> Listen back &mdash; would YOU arrive at the right time?</div>
+  </div>
+
+  <div class="media-card">
+    <div class="media-head"><h3>Culips ESL Podcast</h3><span class="media-platform">Podcast &middot; culips.com</span></div>
+    <p><strong>Why this week:</strong> Slow, friendly conversations for learners &mdash; the hosts make real plans, talk about the weather, and suggest things to each other, exactly this week's language, live.</p>
+    <div class="media-task"><strong>Your task:</strong> Pick an episode about weekends, weather, or plans. Note 3 new words &mdash; and every suggestion you hear (<em>let's, how about, shall we, why don't we</em>). Which one do they use most? Use it in the Roleplay above &mdash; second take.</div>
+  </div>
+</section>
+
+<!-- 9: RESEARCH -->
+<!-- SECTION: Explore More: Build Your Own Independence -->
+<section id="research" class="c9">
+  <h2 class="sec-title"><span class="tab-num">9</span>Explore More: Build Your Own Independence</h2>
+  <p>Use these tasks to notice this week's language in real English before your next class.</p>
+  <ul class="research-list">
+    <li><b>Real forecast check:</b> Search online for tomorrow's weather forecast in a city of your choice. Write 3 sentences using "in the morning/afternoon/evening" and the actual temperatures in degrees.</li>
+    <li><b>More prepositions of time:</b> Look up "during", "since", "for", and "until" — these are closely related to at/on/in but do a different job. Write one example sentence for each.</li>
+    <li><b>Suggestion collection:</b> Watch a short video or read a conversation in English where people plan to meet. Note down every suggestion structure used (Let's, why don't we, how about, shall we, what if we...).</li>
+    <li><b>Describe your area:</b> Write 3 sentences describing where things are near your home, using next to / opposite / between / behind / in front of.</li>
+    <li><b>Speaking challenge:</b> Arrange a real (or imaginary) meeting with a friend or classmate out loud, using at least 2 suggestion structures and both types of prepositions from this week.</li>
+  </ul>
+</section>
+
+<!-- SECTION: Summary & Self-Check -->
+<section id="summary" class="c9">
+  <h2 class="sec-title"><span class="tab-num">✓</span>Summary &amp; Self-Check</h2>
+  <div class="summary-grid">
+    <div class="summary-card"><div class="icon">⏰</div><h5>At</h5><p>exact clock times, night, the weekend</p></div>
+    <div class="summary-card"><div class="icon">📅</div><h5>On</h5><p>days and dates</p></div>
+    <div class="summary-card"><div class="icon">🗓️</div><h5>In</h5><p>parts of day, months, seasons, years</p></div>
+    <div class="summary-card"><div class="icon">📍</div><h5>Place Prepositions</h5><p>next to, in front of, between, opposite</p></div>
+    <div class="summary-card"><div class="icon">💡</div><h5>Suggestions</h5><p>Let's / Why don't we / How about + -ing</p></div>
+    <div class="summary-card"><div class="icon">🌡️</div><h5>Weather Words</h5><p>forecast, degree, temperature</p></div>
+  </div>
+
+  <h3 style="color:var(--green);margin-top:26px;">Before Next Class — Checklist</h3>
+  <ul class="checklist">
+    <li><input type="checkbox"> I can choose correctly between at, on, and in for time expressions.</li>
+    <li><input type="checkbox"> I can use at least 5 prepositions of place to describe exact locations.</li>
+    <li><input type="checkbox"> I can review and use all the main Wh- question words correctly.</li>
+    <li><input type="checkbox"> I can make suggestions using at least 3 different structures.</li>
+    <li><input type="checkbox"> I completed the writing task (60–90 words) with the required grammar.</li>
+    <li><input type="checkbox"> I completed at least one "Explore More" task and can talk about it in class.</li>
+  </ul>
+</section>
+
+</div>
+
+<div class="method-note">Grade 3 · Week 5 · Discussing Time &amp; Place — Flipped Learning Reference · Study this page fully before your next class.</div>
+
+<!-- SECTION: Footer - Creator & Copyright -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p class="footer-copy">&copy; 2026 Bahar Esmaeelzadeh &middot; All rights reserved</p>
+    <p class="footer-line">Designed and created for English learners by Bahar Esmaeelzadeh.</p>
+    <p class="footer-links">
+      <a href="mailto:bahar.esmz.en@gmail.com">&#128231; bahar.esmz.en@gmail.com</a>
+      <span class="footer-dot">&middot;</span>
+      <a href="https://www.linkedin.com/in/bahar-esmaeelzadeh-650b98198" target="_blank" rel="noopener">&#128188; LinkedIn</a>
+    </p>
+    <p class="footer-note">If you found this helpful, feel free to get in touch.</p>
+  </div>
+</footer>
+
+
+<script>
+window.addEventListener('scroll', function(){
+  var h = document.documentElement;
+  var scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  document.getElementById('progress-bar').style.width = scrolled + '%';
+});
+
+var tfData = [
+  {q:"Tom and Maya are meeting at the station at 9am.", a:false, exp:"False — they agree to meet 15 minutes early, at 8:45."},
+  {q:"The ticket machine is between the coffee stand and the newspaper shop.", a:false, exp:"False — the main entrance is between them; the ticket machine is in front of the entrance."},
+  {q:"The forecast says it will be sunny in the morning and afternoon.", a:true, exp:"True — the forecast card shows sunny for both morning and afternoon."},
+  {q:"The temperature in the evening is higher than in the afternoon.", a:false, exp:"False — the afternoon is 22 degrees, the evening is only 18 degrees."},
+  {q:"Maya suggests grabbing a coffee before the train.", a:true, exp:"True — she says 'Why don't we grab a coffee before the train.'"}
+];
+var tfContainer = document.getElementById('tf-quiz');
+var tfCorrectCount = 0, tfAnswered = 0;
+tfData.forEach(function(item, i){
+  var div = document.createElement('div');
+  div.className = 'quiz-item';
+  div.innerHTML = '<div class="q-text">' + (i+1) + '. ' + item.q + '</div>' +
+    '<div class="tf-btns"><button data-val="true">True</button><button data-val="false">False</button></div>' +
+    '<div class="feedback"></div>';
+  tfContainer.appendChild(div);
+  var buttons = div.querySelectorAll('.tf-btns button');
+  var fb = div.querySelector('.feedback');
+  var done = false;
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if(done) return;
+      done = true; tfAnswered++;
+      var val = (btn.getAttribute('data-val') === 'true');
+      if(val === item.a){
+        fb.className = 'feedback correct'; fb.textContent = '✔ Correct! ' + item.exp; tfCorrectCount++;
+      } else {
+        fb.className = 'feedback incorrect'; fb.textContent = '✘ Not quite. ' + item.exp;
+      }
+      fb.style.display = 'block';
+      document.getElementById('tf-score').textContent = 'Score: ' + tfCorrectCount + ' / ' + tfData.length + ' (answered ' + tfAnswered + ')';
+    });
+  });
+});
+
+var matchPairs = [
+  {word:"at", def:"exact clock times (at 9am)"},
+  {word:"on", def:"days and dates (on Saturday)"},
+  {word:"in", def:"months, seasons, years (in July)"},
+  {word:"between", def:"with one thing on each side"},
+  {word:"opposite", def:"facing something, across from it"}
+];
+function shuffle(arr){ return arr.map(function(v){return [Math.random(), v];}).sort(function(a,b){return a[0]-b[0];}).map(function(v){return v[1];}); }
+var wordsShuffled = shuffle(matchPairs.map(function(p){return p.word;}));
+var defsShuffled = shuffle(matchPairs.map(function(p){return p.def;}));
+var matchContainer = document.getElementById('match-game');
+var colWords = document.createElement('div'); colWords.className = 'match-col';
+var colDefs = document.createElement('div'); colDefs.className = 'match-col';
+wordsShuffled.forEach(function(w){
+  var d = document.createElement('div'); d.className = 'match-item'; d.textContent = w; d.setAttribute('data-word', w);
+  colWords.appendChild(d);
+});
+defsShuffled.forEach(function(def){
+  var d = document.createElement('div'); d.className = 'match-item'; d.textContent = def; d.setAttribute('data-def', def);
+  colDefs.appendChild(d);
+});
+matchContainer.appendChild(colWords); matchContainer.appendChild(colDefs);
+var selectedWord = null, selectedDef = null, matchCount = 0;
+function checkMatch(){
+  if(selectedWord && selectedDef){
+    var w = selectedWord.getAttribute('data-word');
+    var pair = matchPairs.find(function(p){return p.word === w;});
+    if(pair && pair.def === selectedDef.getAttribute('data-def')){
+      selectedWord.classList.add('matched'); selectedDef.classList.add('matched');
+      selectedWord.classList.remove('selected'); selectedDef.classList.remove('selected');
+      matchCount++;
+      document.getElementById('match-score').textContent = 'Matched: ' + matchCount + ' / ' + matchPairs.length;
+    } else {
+      selectedWord.classList.remove('selected'); selectedDef.classList.remove('selected');
+    }
+    selectedWord = null; selectedDef = null;
+  }
+}
+colWords.querySelectorAll('.match-item').forEach(function(item){
+  item.addEventListener('click', function(){
+    if(item.classList.contains('matched')) return;
+    colWords.querySelectorAll('.match-item').forEach(function(i){ if(i!==item) i.classList.remove('selected'); });
+    item.classList.toggle('selected');
+    selectedWord = item.classList.contains('selected') ? item : null;
+    checkMatch();
+  });
+});
+colDefs.querySelectorAll('.match-item').forEach(function(item){
+  item.addEventListener('click', function(){
+    if(item.classList.contains('matched')) return;
+    colDefs.querySelectorAll('.match-item').forEach(function(i){ if(i!==item) i.classList.remove('selected'); });
+    item.classList.toggle('selected');
+    selectedDef = item.classList.contains('selected') ? item : null;
+    checkMatch();
+  });
+});
+
+var mcData = [
+  {q:"Let's meet ___ 9am.", options:["on","in","at"], correct:2},
+  {q:"The train leaves ___ Saturday.", options:["on","at","in"], correct:0},
+  {q:"It's usually cold ___ winter.", options:["at","on","in"], correct:2},
+  {q:"How about ___ for a coffee first?", options:["go","to go","going"], correct:2}
+];
+var mcContainer = document.getElementById('mc-quiz');
+mcData.forEach(function(item, i){
+  var div = document.createElement('div'); div.className = 'quiz-item';
+  var btnsHtml = item.options.map(function(opt, idx){ return '<button data-idx="'+idx+'">'+opt+'</button>'; }).join('');
+  div.innerHTML = '<div class="q-text">' + (i+1) + '. ' + item.q + '</div><div class="mc-btns">' + btnsHtml + '</div><div class="feedback"></div>';
+  mcContainer.appendChild(div);
+  var fb = div.querySelector('.feedback');
+  var done = false;
+  div.querySelectorAll('.mc-btns button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if(done) return; done = true;
+      var idx = parseInt(btn.getAttribute('data-idx'));
+      if(idx === item.correct){ fb.className='feedback correct'; fb.textContent = '✔ Correct!'; }
+      else { fb.className='feedback incorrect'; fb.textContent = '✘ The correct answer was: ' + item.options[item.correct]; }
+      fb.style.display = 'block';
+    });
+  });
+});
+
+function checkFillBlanks(){
+  var inputs = document.querySelectorAll('.fill-blank input');
+  var correct = 0;
+  inputs.forEach(function(inp){
+    var val = inp.value.trim().toLowerCase();
+    var ans = inp.getAttribute('data-answer').toLowerCase();
+    if(val === ans){ inp.style.borderColor = '#1d3557'; inp.style.color = '#1d3557'; correct++; }
+    else { inp.style.borderColor = '#8c2c2c'; inp.style.color = '#8c2c2c'; }
+  });
+  document.getElementById('fill-feedback').textContent = correct + ' / ' + inputs.length + ' correct. (Correct answers shown in blue, check spelling on red ones.)';
+}
+
+document.getElementById('writing-box').addEventListener('input', function(){
+  var text = this.value.trim();
+  var count = text.length ? text.split(/\s+/).length : 0;
+  var el = document.getElementById('word-count');
+  el.textContent = count + ' words';
+  el.style.color = (count >= 60 && count <= 90) ? '#1d3557' : '#5c5346';
+});
+
+/* Site frame (added): contents panel, back-to-top, table scroll hints */
+(function(){
+  var panel=document.getElementById('navPanel'),ov=document.getElementById('navOverlay'),
+      ham=document.getElementById('navHamburger'),closeB=document.getElementById('navClose'),
+      links=document.getElementById('navPanelLinks');
+  document.querySelectorAll('#toc a, .toc a').forEach(function(a){
+    var n=document.createElement('a');
+    n.href=a.getAttribute('href');
+    n.textContent=a.textContent.replace(/^[^A-Za-z]+/,'');
+    links.appendChild(n);
+  });
+  function openP(){panel.classList.add('open');ov.classList.add('open');ham.setAttribute('aria-expanded','true');panel.setAttribute('aria-hidden','false');}
+  function closeP(){panel.classList.remove('open');ov.classList.remove('open');ham.setAttribute('aria-expanded','false');panel.setAttribute('aria-hidden','true');}
+  ham.addEventListener('click',function(){panel.classList.contains('open')?closeP():openP();});
+  closeB.addEventListener('click',closeP);
+  ov.addEventListener('click',closeP);
+  links.addEventListener('click',function(e){if(e.target.tagName==='A')closeP();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeP();});
+  document.getElementById('navTopBtn').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  function hints(){document.querySelectorAll('.table-scroll').forEach(function(w){
+    if(w.scrollWidth>w.clientWidth+2){w.classList.add('has-overflow');}else{w.classList.remove('has-overflow');}
+  });}
+  window.addEventListener('resize',hints);window.addEventListener('load',hints);hints();
+  document.querySelectorAll('.table-scroll').forEach(function(w){
+    w.addEventListener('scroll',function(){if(w.scrollLeft>12)w.classList.remove('has-overflow');},{passive:true});
+  });
+})();
+
+</script>
+
+</body>
+</html>
